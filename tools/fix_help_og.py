@@ -24,7 +24,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SITE = "https://fastschedulebot.github.io/Fast-Scheduler"
+SITE = "https://fastscheduler.github.io"
 CANON = f"{SITE}/help.html"
 IMAGE = f"{SITE}/og-cover-v2.png"
 TITLE = "Help Center — Fast Scheduler for Telegram"

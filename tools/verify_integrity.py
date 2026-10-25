@@ -15,7 +15,7 @@ import xml.etree.ElementTree as ET
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, 'website')
-PREFIX = 'https://fastschedulebot.github.io/Fast-Scheduler/'
+PREFIX = 'https://fastscheduler.github.io/'
 NS = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
 MARKER = re.compile(r'@@[A-Z_]+@@|\{[a-z_]+\}')
 SCRIPT = re.compile(r'<script\b')

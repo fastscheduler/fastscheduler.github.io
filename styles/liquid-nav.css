@@ -1,1 +1,180 @@
-.liquid-layer{position:fixed;inset:0;z-index:64;pointer-events:none;display:none}body.liquid-drain .liquid-layer,body.liquid-mode .liquid-layer{display:block}.liquid-blob{position:absolute;will-change:transform,border-radius;background:color-mix(in srgb,var(--surface) 84%,transparent);border:1px solid var(--border);-webkit-backdrop-filter:blur(16px) saturate(1.5);backdrop-filter:blur(16px) saturate(1.5);box-shadow:0 8px 28px rgba(15,60,40,.12)}[data-theme=dark] .liquid-blob{box-shadow:0 8px 28px rgba(0,0,0,.5)}.liquid-drop{position:absolute;opacity:0;background:color-mix(in srgb,var(--surface) 88%,transparent);border:1px solid var(--border);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 6px 18px rgba(15,60,40,.1)}.liquid-drop.drop-center{width:58px;height:58px;border-radius:50%}.liquid-drop.drop-left{width:24px;height:34px;border-radius:50% 50% 55% 45%/62% 62% 38% 38%}.nav-rail{position:fixed;right:0;top:50%;z-index:65;transform:translateY(-50%);visibility:hidden;opacity:0}body.liquid-mode .nav-rail{visibility:visible;opacity:1}.nav-rail .rail-inner{position:relative;display:flex;flex-direction:column;gap:2px;padding:12px;width:220px;background:color-mix(in srgb,var(--surface) 92%,transparent);border:1px solid var(--border);border-right:none;border-radius:20px 0 0 20px;background:var(--surface);box-shadow:-12px 8px 30px rgba(15,60,40,.14)}[data-theme=dark] .nav-rail .rail-inner{box-shadow:-12px 8px 30px rgba(0,0,0,.55)}body.liquid-settled .liquid-blob{opacity:0;transition:opacity .25s}.nav-rail .rail-tab{position:absolute;left:-22px;top:50%;translate:0 -50%;display:inline-flex;align-items:center;justify-content:center;width:22px;height:56px;border:1px solid var(--border);border-right:none;border-radius:10px 0 0 10px;cursor:pointer;color:var(--text-dim);background:color-mix(in srgb,var(--surface) 86%,transparent);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);box-shadow:-6px 0 14px rgba(15,60,40,.08);transition:color .2s,border-color .2s,opacity .3s}.nav-rail .rail-tab:hover{color:var(--green-strong);border-color:var(--green)}.nav-rail .rail-tab svg{width:14px;height:14px;transition:transform .45s var(--ease-apple)}html.rail-off .nav-rail .rail-tab svg{transform:rotate(180deg)}html.rail-off .nav-rail .rail-inner{transform:translateX(100%);transition:transform .45s var(--ease-apple)}.nav-rail .rail-inner{transition:transform .45s var(--ease-apple)}html[data-motion=off] .nav-rail .rail-inner,html[data-motion=off] .nav-rail .rail-tab svg{transition:none!important}.nav-rail .rail-pill{position:absolute;left:10px;right:10px;top:10px;height:40px;border-radius:12px;opacity:0;background:color-mix(in srgb,var(--green) 16%,transparent);border:1px solid color-mix(in srgb,var(--green) 34%,transparent);transition:transform .55s var(--ease-spring),opacity .3s;pointer-events:none}.nav-rail .rail-links{display:flex;flex-direction:column;gap:2px}.nav-rail .rail-links a{width:100%;color:var(--text-dim);font-weight:650;font-size:.93rem;padding:11px 14px;border-radius:12px;display:flex;align-items:center;gap:8px}.nav-rail .rail-links a .tab-kbd-rail{flex:none}.nav-rail .rail-links a:hover{color:var(--green-strong);background:color-mix(in srgb,var(--green) 8%,transparent);text-decoration:none}.nav-rail .settings-wrap{display:inline-flex;align-items:center;justify-content:center;margin:0;flex:none}.nav-rail .settings-wrap .glass-pop{width:max-content;max-width:min(320px,calc(100vw - 24px))}.nav-rail .rail-foot{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:6px;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}.nav-rail .rail-foot .nav-cta,.nav-rail .rail-foot .nav-cta-sm{margin-top:0;padding:11px 10px;flex:1 1 auto;width:auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;justify-content:center}.nav-rail .rail-foot .nav-cta span,.nav-rail .rail-foot .nav-cta-sm span{overflow:hidden;text-overflow:ellipsis;min-width:0}.nav-rail .rail-foot .nav-cta .tab-kbd,.nav-rail .rail-foot .nav-cta-sm .tab-kbd{display:none}.nav-rail .rail-foot .settings-wrap{flex:none}.nav-rail .rail-foot .icon-btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;width:auto;min-width:40px;height:40px;padding:0 8px;flex:none}.nav-rail .rail-foot .icon-btn svg{width:18px;height:18px}.nav-rail .help-row{display:flex;align-items:center;justify-content:center;gap:6px}.nav-rail .help-pop{left:auto;right:calc(100% + 12px);top:0;translate:0 0;transform-origin:top right}.nav-rail .nav-cta svg,.nav-rail .nav-cta-sm svg{width:16px;height:16px;flex:none}.nav-rail .nav-cta{padding:11px 16px;font-size:.9rem}.nav-rail svg{max-width:20px;max-height:20px}.nav-rail a.active{color:var(--green-strong)}.nav-rail .glass-pop{left:auto;right:calc(100% + 12px);top:0}.nav-rail .glass-pop.menu-up{top:auto;bottom:calc(100% + 12px);transform-origin:bottom right}.brand-dock{position:fixed;top:0;left:50%;translate:-50% 0;z-index:65}.brand-dock .brand{display:inline-flex;align-items:center;gap:10px;padding:10px 20px 12px;border-radius:0 0 16px 16px;border:1px solid var(--border);border-top:none;background:color-mix(in srgb,var(--surface) 88%,transparent);-webkit-backdrop-filter:blur(16px) saturate(1.5);backdrop-filter:blur(16px) saturate(1.5);color:var(--text);font-weight:850;font-size:1.05rem;letter-spacing:-.01em;box-shadow:0 10px 26px rgba(15,60,40,.14)}[data-theme=dark] .brand-dock .brand{box-shadow:0 10px 26px rgba(0,0,0,.5)}.brand-dock .brand .logo-dot{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:var(--green-deep,#0b4630);color:#fff}.brand-dock .brand .logo-dot svg{width:17px;height:17px}.brand-dock::after,.brand-dock::before{content:"";position:absolute;top:0;width:18px;height:18px;background:radial-gradient(circle at 100% 100%,transparent 17.5px,var(--surface,#12211a) 18px);pointer-events:none}.brand-dock::before{left:-18px;transform:scaleX(-1)}.brand-dock::after{right:-18px}.brand-dock .brand{position:relative}body.liquid-mode:not(.liquid-drain) .brand-dock .brand{animation:.55s cubic-bezier(.3,.7,.25,1) .18s both dockLogoIn}@keyframes dockLogoIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}html[data-motion=off] .brand-dock .brand{animation:none!important}body.liquid-mode .home-nav,body.liquid-mode header.site{opacity:0;pointer-events:none;visibility:hidden}html[data-motion=off] body.liquid-drain .home-nav,html[data-motion=off] body.liquid-drain header.site,html[data-motion=off] body.liquid-mode .home-nav,html[data-motion=off] body.liquid-mode header.site{transition:none!important}body.liquid-drain .home-nav,body.liquid-drain header.site{opacity:1;pointer-events:auto;visibility:visible;transition:opacity .3s .15s}.tab-kbd{font:600 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--text-dim);background:var(--surface-2);border:1px solid var(--border);border-bottom-width:2px;border-radius:5px;padding:2px 5px;margin-left:2px}@media (max-width:860px){.brand-dock,.liquid-layer,.nav-rail,.tab-kbd{display:none!important}}
+/* ============ Liquid scroll navbar (shared: home / legal / help) ============
+   On scroll-down the navbar liquefies into a right-side glass rail + a
+   top-center docked logo; the glass bar pours between the two shapes. */
+.liquid-layer { position: fixed; inset: 0; z-index: 64; pointer-events: none; display: none; }
+body.liquid-mode .liquid-layer, body.liquid-drain .liquid-layer { display: block; }
+.liquid-blob {
+  position: absolute; will-change: transform, border-radius;
+  background: color-mix(in srgb, var(--surface) 84%, transparent);
+  border: 1px solid var(--border);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5); backdrop-filter: blur(16px) saturate(1.5);
+  box-shadow: 0 8px 28px rgba(15, 60, 40, .12);
+}
+[data-theme="dark"] .liquid-blob { box-shadow: 0 8px 28px rgba(0, 0, 0, .5); }
+.liquid-drop {
+  position: absolute; opacity: 0;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  border: 1px solid var(--border);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  box-shadow: 0 6px 18px rgba(15, 60, 40, .10);
+}
+.liquid-drop.drop-center { width: 58px; height: 58px; border-radius: 50%; }
+.liquid-drop.drop-left { width: 24px; height: 34px; border-radius: 50% 50% 55% 45% / 62% 62% 38% 38%; }
+/* settled glass stays calm — no pulsing/shining glow (user request) */
+/* right-side glass rail (the old navbar, liquefied) */
+.nav-rail {
+  position: fixed; right: 0; top: 50%; z-index: 65;
+  transform: translateY(-50%);
+  visibility: hidden; opacity: 0;
+}
+body.liquid-mode .nav-rail { visibility: visible; opacity: 1; }
+/* during the reverse pour the rail is instantly empty (nodes moved),
+   so keep it invisible; the blob visually replaces it */
+.nav-rail .rail-inner {
+  position: relative; display: flex; flex-direction: column; gap: 2px;
+  padding: 12px; width: 220px;
+  /* dense liquid glass: text must stay readable over any background */
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  border: 1px solid var(--border);
+  border-right: none;
+  border-radius: 20px 0 0 20px;
+  background: var(--surface);
+  box-shadow: -12px 8px 30px rgba(15, 60, 40, .14);
+}
+[data-theme="dark"] .nav-rail .rail-inner { box-shadow: -12px 8px 30px rgba(0, 0, 0, .55); }
+/* settled: the morph blob hides — the rail's own glass takes over */
+body.liquid-settled .liquid-blob { opacity: 0; transition: opacity .25s; }
+.nav-rail .rail-tab {
+  position: absolute; left: -22px; top: 50%; translate: 0 -50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 56px;
+  border: 1px solid var(--border); border-right: none; border-radius: 10px 0 0 10px;
+  cursor: pointer; color: var(--text-dim);
+  background: color-mix(in srgb, var(--surface) 86%, transparent);
+  -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
+  box-shadow: -6px 0 14px rgba(15, 60, 40, .08);
+  transition: color .2s, border-color .2s, opacity .3s;
+}
+.nav-rail .rail-tab:hover { color: var(--green-strong); border-color: var(--green); }
+.nav-rail .rail-tab svg { width: 14px; height: 14px; transition: transform .45s var(--ease-apple); }
+html.rail-off .nav-rail .rail-tab svg { transform: rotate(180deg); }
+/* collapsed state: rail slides off-screen right, tab stays reachable */
+html.rail-off .nav-rail .rail-inner { transform: translateX(100%); transition: transform .45s var(--ease-apple); }
+.nav-rail .rail-inner { transition: transform .45s var(--ease-apple); }
+html[data-motion="off"] .nav-rail .rail-inner, html[data-motion="off"] .nav-rail .rail-tab svg { transition: none !important; }
+.nav-rail .rail-pill {
+  position: absolute; left: 10px; right: 10px; top: 10px; height: 40px;
+  border-radius: 12px; opacity: 0;
+  background: color-mix(in srgb, var(--green) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--green) 34%, transparent);
+  transition: transform .55s var(--ease-spring), opacity .3s;
+  pointer-events: none;
+}
+.nav-rail .rail-links { display: flex; flex-direction: column; gap: 2px; }
+/* rail links must look like navbar links, not raw text links */
+.nav-rail .rail-links a { width: 100%; color: var(--text-dim); font-weight: 650; font-size: .93rem;
+  padding: 11px 14px; border-radius: 12px;
+  /* flex so a section hotkey badge can sit at the right edge of the row */
+  display: flex; align-items: center; gap: 8px; }
+.nav-rail .rail-links a .tab-kbd-rail { flex: none; }
+.nav-rail .rail-links a:hover { color: var(--green-strong); background: color-mix(in srgb, var(--green) 8%, transparent); text-decoration: none; }
+/* settings gear lives in the rail footer, left of the Open Bot CTA */
+.nav-rail .settings-wrap { display: inline-flex; align-items: center; justify-content: center; margin: 0; flex: none; }
+/* its popover must not stretch the footer row */
+.nav-rail .settings-wrap .glass-pop { width: max-content; max-width: min(320px, calc(100vw - 24px)); }
+/* footer row: gear + CTA share one line; CTA takes remaining width */
+.nav-rail .rail-foot { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 6px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
+.nav-rail .rail-foot .nav-cta-sm, .nav-rail .rail-foot .nav-cta { margin-top: 0; padding: 11px 10px; flex: 1 1 auto; width: auto; min-width: 0;
+  /* "Open Bot" must never break across two lines in a 220px panel, and the
+     long RU label must never squeeze the gear out of the row either */
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; justify-content: center; }
+.nav-rail .rail-foot .nav-cta-sm span, .nav-rail .rail-foot .nav-cta span { overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+/* one keycap per row is enough: the gear keeps its S, the CTA drops its B
+   rather than squeezing the label against the panel edge */
+.nav-rail .rail-foot .nav-cta .tab-kbd, .nav-rail .rail-foot .nav-cta-sm .tab-kbd { display: none; }
+.nav-rail .rail-foot .settings-wrap { flex: none; }
+/* the gear grows to fit the S keycap next to it (see .tab-kbd-rail) */
+.nav-rail .rail-foot .icon-btn { display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+  width: auto; min-width: 40px; height: 40px; padding: 0 8px; flex: none; }
+.nav-rail .rail-foot .icon-btn svg { width: 18px; height: 18px; }
+/* help row = link + support icon side by side, centered */
+.nav-rail .help-row { display: flex; align-items: center; justify-content: center; gap: 6px; }
+/* help popover opens leftward from the rail */
+.nav-rail .help-pop { left: auto; right: calc(100% + 12px); top: 0; translate: 0 0; transform-origin: top right; }
+/* CTA is compact and centered, matching the link rows */
+/* CTA icon must stay icon-sized (index.html sizes it inline; other pages don't) */
+.nav-rail .nav-cta-sm svg, .nav-rail .nav-cta svg { width: 16px; height: 16px; flex: none; }
+.nav-rail .nav-cta { padding: 11px 16px; font-size: .9rem; }
+/* safety net: no svg inside the rail may balloon */
+.nav-rail svg { max-width: 20px; max-height: 20px; }
+/* active section: green text, matching the green scrollspy pill behind it */
+.nav-rail a.active { color: var(--green-strong); }
+/* settings popover opens leftward from the rail */
+.nav-rail .glass-pop { left: auto; right: calc(100% + 12px); top: 0; }
+/* flipped variant (settings.js): same leftward sheet, hung above the gear */
+.nav-rail .glass-pop.menu-up { top: auto; bottom: calc(100% + 12px); transform-origin: bottom right; }
+
+/* center dock for the logo: a green tab attached to the top edge with
+   inward-curved (scooped) top corners, like a hanging glass tab */
+.brand-dock { position: fixed; top: 0; left: 50%; translate: -50% 0; z-index: 65; }
+/* the brand docks CENTER on every page when scrolled */
+.brand-dock .brand {
+  position: relative;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 20px 12px;
+  border-radius: 0 0 16px 16px;
+  border: 1px solid var(--border); border-top: none;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5); backdrop-filter: blur(16px) saturate(1.5);
+  color: var(--text); font-weight: 850; font-size: 1.05rem; letter-spacing: -.01em;
+  box-shadow: 0 10px 26px rgba(15, 60, 40, .14);
+}
+[data-theme="dark"] .brand-dock .brand { box-shadow: 0 10px 26px rgba(0, 0, 0, .5); }
+/* the docked logo is the MAIN logo, exactly as it looks in the top navbar:
+   same tile, same shadow — no extra rings or glow */
+.brand-dock .brand .logo-dot {
+  width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center;
+  background: var(--green-deep, #0b4630); color: #fff;
+}
+.brand-dock .brand .logo-dot svg { width: 17px; height: 17px; }
+/* the two scooped corners: quarter-circle pseudo elements that cut the
+   navbar glass away above the tab's shoulders — filled with the SAME surface
+   color as the tab itself so the curve reads as one continuous shape */
+.brand-dock::before, .brand-dock::after {
+  content: ""; position: absolute; top: 0; width: 18px; height: 18px;
+  background: radial-gradient(circle at 100% 100%, transparent 17.5px, var(--surface, #12211a) 18px);
+  pointer-events: none;
+}
+.brand-dock::before { left: -18px; transform: scaleX(-1); }
+.brand-dock::after { right: -18px; }
+/* no squash/ripple on landing — the docked logo fades in softly instead of
+   sliding across the whole page (the navbar fade covers the handoff) */
+.brand-dock .brand { position: relative; }
+body.liquid-mode:not(.liquid-drain) .brand-dock .brand {
+  animation: dockLogoIn .55s cubic-bezier(.3,.7,.25,1) .18s both;
+}
+@keyframes dockLogoIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+html[data-motion='off'] .brand-dock .brand { animation: none !important; }
+/* hide the drained navbar shell (index uses .home-nav; legal uses header.site).
+   visibility:hidden (not just opacity:0) — a faded shell still composited
+   during scroll and flashed a dark rectangle at the top of the page */
+body.liquid-mode .home-nav, body.liquid-mode header.site { opacity: 0; pointer-events: none; visibility: hidden; }
+html[data-motion="off"] body.liquid-mode .home-nav, html[data-motion="off"] body.liquid-mode header.site,
+html[data-motion="off"] body.liquid-drain .home-nav, html[data-motion="off"] body.liquid-drain header.site { transition: none !important; }
+/* during the reverse pour the shell re-appears as nodes fly in */
+body.liquid-drain .home-nav, body.liquid-drain header.site { opacity: 1; pointer-events: auto; visibility: visible; transition: opacity .3s .15s; }
+@media (max-width: 860px) {
+  .liquid-layer, .nav-rail, .brand-dock { display: none !important; }
+}
+
+/* keycap hints on collapse tabs (desktop only) */
+.tab-kbd {
+  font: 600 10px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--text-dim); background: var(--surface-2);
+  border: 1px solid var(--border); border-bottom-width: 2px;
+  border-radius: 5px; padding: 2px 5px; margin-left: 2px;
+}
+@media (max-width: 860px) { .tab-kbd { display: none !important; } }

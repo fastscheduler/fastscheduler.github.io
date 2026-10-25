@@ -1,1 +1,703 @@
-.phone-screen.tg .demo{position:static}.phone-screen.tg .demo .msg{animation:none}.phone-screen.tg .demo .msg:not(.shown){opacity:0;transform:translateY(14px) scale(.97)}.phone-screen.tg .demo .msg.shown{transition:opacity .45s var(--ease-apple),transform .45s var(--ease-apple);opacity:1;transform:none}.tg-typing{display:inline-flex;gap:4px;align-items:center;align-self:flex-start;margin:2px 0 4px;padding:10px 14px;border-radius:12px 12px 12px 4px;background:#182533;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s}.tg-typing.on{opacity:1;transform:none}.tg-typing span{width:6px;height:6px;border-radius:50%;background:#7d8e9e;animation:1.1s ease-in-out infinite tgTdot}.tg-typing span:nth-child(2){animation-delay:.18s}.tg-typing span:nth-child(3){animation-delay:.36s}@keyframes tgTdot{0%,100%,60%{transform:translateY(0);opacity:.45}30%{transform:translateY(-4px);opacity:1}}.mono-caret{display:inline-block;width:7px;height:1em;vertical-align:-2px;background:#8ecdf7;animation:.7s steps(1) infinite tgCaret}@keyframes tgCaret{50%{opacity:0}}.phone-screen.tg .demo .msg .mono{white-space:pre-line}.phone-screen.tg .demo .msg.pressed{transform:translateY(1px) scale(.955);filter:brightness(.85);transition:transform .12s,filter .12s}.upl-strip{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:6px;width:218px}.upl-thumb{width:100%;height:104px;border-radius:8px;background-size:cover;background-position:center}.upl-thumb.in{transition:opacity .35s var(--ease-apple),transform .45s var(--ease-spring);opacity:1;transform:none}.upl-name{display:none}.upl-thumb.landing::after{content:"";position:absolute;inset:0;border-radius:8px;border:2px solid rgba(74,157,122,.9);animation:.55s ease-out both landPulse}@keyframes landPulse{from{opacity:1;transform:scale(.9)}to{opacity:0;transform:scale(1.12)}}.tg-explorer{position:absolute;z-index:8;right:-46px;top:13%;width:246px;border-radius:12px;overflow:visible;transform:translateX(30px) scale(.92);opacity:0;pointer-events:none;background:#1f1f1f;border:1px solid #3c3c3c;box-shadow:0 24px 60px -12px rgba(0,0,0,.7),0 4px 14px rgba(0,0,0,.4);transition:transform .55s var(--ease-apple),opacity .45s;transform-origin:left center}.tg-explorer.on{transform:translateX(0) scale(1);opacity:1}.fx-bar{display:flex;align-items:center;gap:7px;padding:8px 10px;background:#2b2b2b;border-bottom:1px solid #3c3c3c;font-size:.68rem;font-weight:700;color:#ddd;border-radius:12px 12px 0 0}.fx-dot{width:8px;height:8px;border-radius:50%;background:#f6c445}.fx-min{margin-left:auto;color:#999;font-size:.6rem}.fx-min+.fx-min{margin-left:6px}.fx-list{padding:6px;display:flex;flex-direction:column;gap:2px;background:#1f1f1f}.fx-item{display:flex;align-items:center;gap:8px;padding:5px 7px;border-radius:7px;position:relative;transition:background .25s,box-shadow .25s,opacity .3s}.fx-item .fx-ic{width:26px;height:26px;border-radius:5px;background-size:cover;background-position:center;flex:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}.fx-item .fx-nm{font-size:.66rem;color:#eee;white-space:nowrap}.fx-item .fx-sz{font-size:.56rem;color:#8a8a8a}.fx-item .fx-info{display:flex;flex-direction:column;min-width:0}.fx-item.selected{background:#2f5d8a;box-shadow:inset 0 0 0 1px #4a7fb5}.fx-item.selected::after{content:"✓";position:absolute;right:8px;color:#fff;font-size:.68rem;font-weight:800;animation:fxCheck .3s var(--ease-spring)}@keyframes fxCheck{from{transform:scale(0)}to{transform:scale(1)}}.fx-item.lifted{opacity:.25}.fx-actions{display:flex;justify-content:flex-end;gap:6px;padding:8px 10px;border-top:1px solid #3c3c3c;background:#2b2b2b;border-radius:0 0 12px 12px}.fx-btn{font-size:.62rem;font-weight:700;padding:5px 14px;border-radius:6px;border:1px solid #4a4a4a;background:#383838;color:#ddd;font-family:inherit}.fx-btn.fx-open{background:#2f5d8a;border-color:#4a7fb5;color:#fff}.fx-cursor{position:absolute;z-index:40;width:20px;height:20px;left:0;top:0;opacity:0;filter:drop-shadow(0 2px 4px rgba(0,0,0,.65));transition:opacity .3s;pointer-events:none}.fx-cursor.on{opacity:1}.fx-cursor .fx-hold{position:absolute;inset:-7px;border-radius:50%;border:2px solid rgba(255,255,255,.85);opacity:0;transform:scale(.6)}.fx-cursor.holding .fx-hold{opacity:1;animation:1.1s ease-in-out infinite holdPulse}@keyframes holdPulse{0%,100%{transform:scale(.85);opacity:.9}50%{transform:scale(1.08);opacity:.45}}.fx-click{position:absolute;width:26px;height:26px;border-radius:50%;border:2px solid rgba(255,255,255,.9);transform:translate(-50%,-50%) scale(0);pointer-events:none}.fx-click.on{animation:.45s ease-out both fxClick}@keyframes fxClick{0%{transform:translate(-50%,-50%) scale(.2);opacity:1}100%{transform:translate(-50%,-50%) scale(1.5);opacity:0}}.drop-target-glow{position:absolute;inset:0;border-radius:42px;z-index:7;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(62% 42% at 50% 68%,rgba(74,157,122,.2),transparent 72%);box-shadow:inset 0 0 0 2px rgba(74,157,122,.6)}.drop-target-glow.on{opacity:1;animation:1.1s ease-in-out infinite glowBreath}@keyframes glowBreath{0%,100%{box-shadow:inset 0 0 0 2px rgba(74,157,122,.55)}50%{box-shadow:inset 0 0 0 3px rgba(74,157,122,.85)}}.fx-drag{position:absolute;z-index:30;width:54px;height:54px;border-radius:8px;background-size:cover;background-position:center;box-shadow:0 14px 34px rgba(0,0,0,.6),0 0 0 2px rgba(255,255,255,.25);pointer-events:none}.fx-ghost{position:absolute;z-index:29;width:46px;height:46px;border-radius:8px;background-size:cover;background-position:center;opacity:.5;box-shadow:0 6px 18px rgba(0,0,0,.45);pointer-events:none}.upl-bar{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:6px;width:218px}.upl-cell{height:104px;border-radius:8px;background-size:cover;background-position:center;position:relative;overflow:hidden}.upl-cell .upl-fill{position:absolute;left:0;right:0;bottom:0;height:0%;background:linear-gradient(0deg,rgba(15,30,22,.85) 55%,rgba(15,30,22,0))}.upl-cell .upl-ring{position:absolute;inset:0;display:grid;place-items:center}.upl-cell .upl-ring i{width:22px;height:22px;border-radius:50%;border:2.5px solid rgba(255,255,255,.28);border-top-color:#4a9d7a;animation:.8s linear infinite spin}.upl-cell .upl-pct{position:absolute;left:0;right:0;bottom:3px;text-align:center;font-size:.54rem;font-weight:800;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.8)}.upl-cell.done .upl-pct,.upl-cell.done .upl-ring{opacity:0;transition:opacity .3s}.upl-cell.done .upl-fill{opacity:0;transition:opacity .4s}.upl-cell.done::after{content:"✓";position:absolute;right:4px;bottom:3px;width:14px;height:14px;border-radius:50%;background:#4a9d7a;color:#fff;font-size:.55rem;font-weight:800;display:grid;place-items:center;animation:fxCheck .3s var(--ease-spring)}@keyframes spin{to{transform:rotate(360deg)}}.rl-stage{position:absolute;inset:0;z-index:12;display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:20px 16px;background:#0e1621;color:#e8edf2}.rl-stage.on{display:flex}.rl-stage.cinema{background:radial-gradient(120% 90% at 50% 0,#17222e 0,#0e1621 62%)}.rl-card{width:100%;max-width:300px;border-radius:18px;background:#182533;border:1px solid rgba(255,255,255,.07);box-shadow:0 18px 50px -14px rgba(0,0,0,.7);overflow:hidden}.rl-img{display:block;height:168px;background-size:cover;background-position:center;position:relative;border-radius:12px 12px 0 0;overflow:hidden}.rl-img.cp-shimmer{position:absolute;inset:0}.rl-cap{padding:12px 14px;font-size:.84rem;line-height:1.5;color:#e8edf2}.rl-cap .cp-time{display:block;margin-top:5px;font-size:.66rem;color:#7d8e9e}.rl-msg-in{animation:rlIn .6s var(--ease-apple) both}@keyframes rlIn{from{opacity:0;transform:translateY(22px) scale(.96)}to{opacity:1;transform:none}}.rl-holder{position:relative;height:74px;width:100%;max-width:300px}.rl-tile{position:absolute;top:0;width:56px;height:56px;border-radius:10px;background-size:cover;background-position:center;box-shadow:0 6px 16px rgba(0,0,0,.5),inset 0 0 0 1px rgba(255,255,255,.14);transition:left .55s var(--ease-apple),transform .45s var(--ease-apple),opacity .35s,box-shadow .35s}.rl-tile.focused{transform:scale(1.12);box-shadow:0 0 0 2.5px #4a9d7a,0 10px 26px rgba(0,0,0,.55)}.rl-tile.dim{opacity:.35}.rl-tile.ghost{opacity:.25}.rl-question{font-size:.72rem;color:#7d8e9e;letter-spacing:.02em}.rl-fly{position:absolute;z-index:14;width:74px;height:74px;border-radius:10px;background-size:cover;background-position:center;box-shadow:0 14px 40px rgba(0,0,0,.65);pointer-events:none;will-change:transform;transform-origin:0 0}.rl-burst{position:absolute;z-index:13;width:90px;height:90px;border-radius:18px;pointer-events:none;translate:-50% -50%;border:2.5px solid rgba(74,157,122,.85);box-shadow:0 0 40px rgba(74,157,122,.5);animation:.8s ease-out both burstOut}@keyframes burstOut{0%{transform:scale(.35);opacity:1}100%{transform:scale(2.1);opacity:0}}.rl-card.landed{animation:cardLand .55s var(--ease-spring)}@keyframes cardLand{0%,100%{transform:scale(1)}35%{transform:scale(1.035) translateY(-3px)}}.rl-img.settled{animation:imgSettle .5s var(--ease-spring)}@keyframes imgSettle{0%{filter:brightness(1.5)}100%{filter:brightness(1)}}.rl-attach{position:absolute;left:12px;bottom:12px;z-index:3;display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);font-size:.62rem;font-weight:700;color:#c6ded2;opacity:0;transform:translateY(8px);transition:opacity .4s var(--ease-apple),transform .4s var(--ease-apple)}.rl-attach.on{opacity:1;transform:none}.rl-cal{position:relative;width:100%;max-width:316px;border-radius:24px;overflow:hidden;background:linear-gradient(175deg,rgba(44,48,56,.92),rgba(22,24,28,.96));border:1px solid rgba(255,255,255,.12);box-shadow:0 30px 70px -18px rgba(0,0,0,.85),inset 0 1px 0 rgba(255,255,255,.09);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);opacity:0;transform:perspective(900px) rotateX(14deg) translateY(34px) scale(.94);transform-origin:50% 0;transition:opacity .6s var(--ease-apple),transform .75s cubic-bezier(.2,1.15,.3,1)}.rl-cal.on{opacity:1;transform:none}.rl-cal::before{content:"";position:absolute;left:10%;right:10%;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent)}.cal-head{display:flex;align-items:flex-end;gap:10px;padding:15px 18px 5px}.cal-when{display:flex;flex-direction:column}.cal-when small{font-size:.58rem;font-weight:800;color:#ff5b52}.cal-when b{font-size:1.05rem;font-weight:750;color:#fff;letter-spacing:-.015em;line-height:1.12}.cal-today{margin-left:auto;font-size:.7rem;font-weight:750;color:#ff5b52}.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;padding:5px 12px 10px}.cal-grid b{display:grid;place-items:center;height:20px;font-size:.57rem;font-weight:700;color:#868d97}.cal-grid span{display:grid;place-items:center;width:30px;height:30px;justify-self:center;border-radius:50%;position:relative;font-size:.68rem;font-weight:600;color:#dfe4ea;font-variant-numeric:tabular-nums;opacity:0;transform:scale(.72);animation:calCellIn .4s var(--ease-apple) both;animation-delay:calc(var(--i, 0) * 14ms + .1s)}@keyframes calCellIn{to{opacity:1;transform:none}}.cal-blank{visibility:hidden}.cal-cell.today{background:#ff453a;color:#fff;font-weight:800;box-shadow:0 5px 16px rgba(255,69,58,.42);animation:calCellIn .4s var(--ease-apple) both,todayPop .5s .5s var(--ease-spring) both}@keyframes todayPop{0%,100%{transform:scale(1)}45%{transform:scale(1.13)}}.cal-cell.ev::after{content:"";position:absolute;bottom:2px;left:50%;translate:-50% 0;width:4px;height:4px;border-radius:50%;background:#4a9d7a;animation:1.8s ease-in-out infinite evPulse;animation-delay:calc(var(--i, 0) * .18s + .8s)}@keyframes evPulse{0%,100%{opacity:.55;transform:translate(-50%,0) scale(1)}50%{opacity:1;transform:translate(-50%,-1px) scale(1.35)}}.cal-ev{padding:10px 12px 12px;border-top:1px solid rgba(255,255,255,.06)}.cal-row{display:flex;align-items:center;gap:11px;padding:9px 11px;border-radius:14px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.06);opacity:0;transform:translateY(10px);animation:calCellIn .5s .7s var(--ease-apple) both}.cal-ic{width:38px;height:38px;border-radius:10px;flex:none;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff;box-shadow:0 6px 16px rgba(255,69,58,.26)}.cal-ic i{font-style:normal;font-size:.4rem;font-weight:800;letter-spacing:.05em;width:100%;text-align:center;padding:2px 0;background:#ff453a;color:#fff}.cal-ic b{font-size:.92rem;font-weight:700;line-height:1;padding:3px 0;color:#1c1c1e}.cal-txt{display:flex;flex-direction:column;min-width:0}.cal-txt b{font-size:.74rem;color:#e8edf2}.cal-txt small{font-size:.6rem;color:#8a97a5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cal-badge{margin-left:auto;flex:none;font-size:.62rem;font-weight:750;padding:4px 10px;border-radius:999px;background:rgba(74,157,122,.16);color:#a9e0c4;border:1px solid rgba(74,157,122,.42);font-variant-numeric:tabular-nums;opacity:0;transform:scale(.6)}.cal-badge.on{opacity:1;transform:none;transition:opacity .35s,transform .4s var(--ease-spring)}.rl-count{font-variant-numeric:tabular-nums;font-size:.72rem;font-weight:800;color:#8ecdf7;letter-spacing:.04em;opacity:0;transition:opacity .4s}.rl-count.on{opacity:1}.rl-ios{position:absolute;inset:0;z-index:13;display:none;overflow:hidden;background:linear-gradient(165deg,#2b3f63 0,#1d2b47 45%,#131c31 100%);color:#fff}.rl-ios.on{display:block}.ios-blur{position:absolute;inset:0;background:radial-gradient(90% 55% at 50% 8%,rgba(255,255,255,.12),transparent 60%)}.ios-status{position:absolute;top:8px;left:0;right:0;display:flex;justify-content:space-between;padding:0 20px;font-size:.72rem;font-weight:700;color:#fff;z-index:3}.ios-spot{position:absolute;left:0;right:0;top:22%;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center}.ios-clock-wrap{position:relative;display:grid;place-items:center}.ios-mag{position:absolute;left:50%;top:50%;width:330px;height:330px;margin:-165px 0 0 -165px;max-width:none;max-height:none;overflow:visible;filter:drop-shadow(0 10px 26px rgba(0,0,0,.38));opacity:0;transform:translate(150px,170px) scale(.42);transition:transform 1.05s cubic-bezier(.22,1.14,.3,1),opacity .45s}.ios-spot.hunt .ios-mag{opacity:1;transform:translate(46px,34px) scale(.62)}.ios-spot.grow .ios-mag{opacity:1;transform:none}.mg-glass{fill:rgba(255,255,255,.07)}.mg-ring{fill:none;stroke:rgba(255,255,255,.62);stroke-width:2.4}.mg-handle{stroke:rgba(255,255,255,.62);stroke-width:6.5;stroke-linecap:round}.ios-clock{font-size:3rem;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;text-shadow:0 2px 18px rgba(0,0,0,.35);transform-origin:center;transition:transform .8s cubic-bezier(.2,1.16,.32,1)}.ios-spot.grow .ios-clock{transform:scale(1.26)}.ios-clock.tick{animation:clockTick .3s var(--ease-apple)}@keyframes clockTick{0%,100%{transform:scale(1.26)}45%{transform:scale(1.31)}}.tg-time.tick{animation:statusTick .3s var(--ease-apple)}@keyframes statusTick{0%,100%{opacity:1}45%{opacity:.45}}.ios-date{margin-top:2px;font-size:.78rem;font-weight:600;color:rgba(255,255,255,.85)}.ios-icons{position:absolute;left:18px;right:18px;top:47%;display:grid;grid-template-columns:repeat(4,1fr);gap:12px 8px;z-index:1}.ios-app{display:flex;flex-direction:column;align-items:center;gap:3px}.ios-app i{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-style:normal;font-size:1.1rem;box-shadow:0 6px 14px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.25)}.ios-app i svg{width:26px;height:26px}.ios-app span{font-size:.52rem;color:rgba(255,255,255,.85)}.ios-dock{position:absolute;left:14px;right:14px;bottom:14px;display:flex;justify-content:space-around;padding:8px 10px;border-radius:22px;background:rgba(255,255,255,.14);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);z-index:1}.rl-notif{position:absolute;left:12px;right:12px;top:40px;z-index:4;display:flex;gap:9px;align-items:center;padding:10px 12px;border-radius:16px;background:rgba(28,32,40,.88);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:0 14px 34px rgba(0,0,0,.5);opacity:0;transform:translateY(-16px) scale(.96);transition:opacity .45s var(--ease-apple),transform .55s var(--ease-spring)}.rl-notif.on{opacity:1;transform:none}.rl-notif.press{transform:scale(.96) translateY(2px);filter:brightness(.85);transition:transform .14s,filter .14s}.rl-ios.launch{pointer-events:none;animation:.6s cubic-bezier(.55,0,.8,.4) both launchZoom}.rl-ios.launch .rl-notif{opacity:1;transform:scale(1.35);filter:brightness(1.25);transition:transform .55s cubic-bezier(.5,0,.7,.4),filter .55s,opacity .2s .42s}.rl-ios.launch .ios-blur,.rl-ios.launch .ios-dock,.rl-ios.launch .ios-icons,.rl-ios.launch .ios-spot{opacity:0;transition:opacity .45s}.rl-ios.launch::after{content:"";position:absolute;inset:0;z-index:6;background:radial-gradient(46% 30% at 50% 12%,rgba(46,166,255,.28),transparent 70%);opacity:0;animation:.6s ease-out both notifFlash}@keyframes notifFlash{0%,100%{opacity:0}30%{opacity:1}}@keyframes launchZoom{0%{transform:scale(1)}70%{transform:scale(1.09);opacity:1}100%{transform:scale(1.16);opacity:0}}.nt-ic{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;flex:none;font-weight:800;font-size:.68rem;background:linear-gradient(135deg,#2ea6ff,#1c7fd6)}.rl-notif p{margin:0;font-size:.66rem;line-height:1.4;color:#e8edf2}.rl-notif p b{display:block;font-size:.7rem}.nt-t{margin-left:auto;align-self:flex-start;font-size:.56rem;color:#8a97a5;flex:none}.screen-layer{position:absolute;inset:0;z-index:11;display:none;flex-direction:column;background:#0e1621;color:#e8edf2}.screen-layer.on{display:flex;animation:layerIn .5s var(--ease-apple) both}@keyframes layerIn{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:none}}.sl-head{display:flex;align-items:center;gap:10px;padding:8px 12px 10px;background:#17212b;border-bottom:1px solid rgba(0,0,0,.35);flex:none}.sl-titles{display:flex;flex-direction:column;min-width:0}.sl-name{font-weight:800;font-size:.92rem;color:#fff;line-height:1.15}.sl-sub{font-size:.72rem;color:#7d8e9e}.sl-body{flex:1 1 auto;min-height:0;overflow:hidden;padding:14px 12px 10px;background:radial-gradient(1200px 500px at 85% -5%,rgba(46,166,255,.06),transparent 60%),#0e1621}.sl-foot{display:flex;align-items:center;gap:8px;margin:auto 10px 12px;padding:10px 14px;flex:none;background:#17212b;border-radius:18px;color:#7d8e9e;font-size:.82rem}.sl-foot svg{width:16px;height:16px}.chan-head{gap:9px}.chan-avatar{width:38px;height:38px;border-radius:50%;flex:none;display:grid;place-items:center;background:linear-gradient(135deg,#e08f26,#b5651d);color:#fff;font-weight:800;font-size:.78rem}.chan-head .sl-titles{flex:1 1 auto}.chan-head .sl-name{font-size:.96rem}.chan-head .sl-sub{font-size:.7rem;color:#8ea3b8}.hd-ics{display:inline-flex;align-items:center;gap:13px;flex:none;color:#7d8e9e;padding-right:2px}.hd-ics svg{width:17px;height:17px}.chan-body{display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}.chan-msgs{display:flex;flex-direction:column;gap:12px;flex:none}.chan-msg{width:100%;border-radius:12px;overflow:hidden;background:#182533;box-shadow:0 3px 14px rgba(0,0,0,.26);will-change:opacity,transform}.chan-msg:not(.on){display:none}.chan-msg.on{animation:chanPostIn .5s var(--ease-apple) both;animation-fill-mode:backwards}.chan-msg.on:not(.chan-hist){transform:none}.chan-hist{animation:none!important}@keyframes chanPostIn{from{opacity:0;transform:translateY(26px) scale(.985)}to{opacity:1;transform:none}}.chan-media{display:block;height:118px;background-size:cover;background-position:center 62%;position:relative}.chan-media .cp-shimmer{position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.14) 50%,transparent 70%);transform:translateX(-100%)}.chan-msg.loading .cp-shimmer{animation:1.1s linear infinite cpShimmer}.chan-post-cap,.chan-post-cap2{display:block;padding:9px 12px 2px;font-size:.81rem;line-height:1.4;color:#e8edf2}.chan-foot{display:flex;align-items:center;gap:8px;padding:5px 12px 9px}.cp-views{display:inline-flex;align-items:center;gap:4px;font-size:.62rem;color:#7d8e9e;font-variant-numeric:tabular-nums}.cp-views svg{width:13px;height:13px}.cp-time2{margin-left:auto;font-size:.62rem;color:#7d8e9e;font-variant-numeric:tabular-nums}.cp-share{display:inline-grid;place-items:center;width:26px;height:26px;margin-left:6px;border-radius:50%;background:rgba(255,255,255,.07);color:#7d8e9e;flex:none}.cp-share svg{width:12px;height:12px}.cp-reacts{display:flex;flex-wrap:wrap;gap:4px;padding:0 12px 6px;min-height:0}.cp-reacts:empty{display:none}.rx{display:inline-flex;align-items:center;gap:3px;padding:2px 7px 2px 4px;border-radius:999px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.07);font-size:.6rem;font-weight:700;color:#b7c6d4;font-variant-numeric:tabular-nums;opacity:0;transform:scale(.4) translateY(6px)}.rx i{font-style:normal;font-size:.68rem;line-height:1}.rx-star{background:rgba(255,199,64,.14);border-color:rgba(255,199,64,.35);color:#ffd97a}.rx.on{animation:rxPop .5s var(--ease-spring) both}@keyframes rxPop{0%{opacity:0;transform:scale(.4) translateY(6px)}60%{opacity:1;transform:scale(1.12)}100%{opacity:1;transform:none}}.rx.bump{animation:.45s ease-out rxBump}@keyframes rxBump{0%,100%{transform:scale(1)}40%{transform:scale(1.14)}}.chan-compose{color:#7d8e9e;font-size:.78rem}.chan-layer{z-index:13}.phone-glare{position:absolute;inset:12px;border-radius:42px;pointer-events:none;z-index:5;overflow:hidden;background:radial-gradient(120% 70% at 18% -10%,rgba(255,255,255,.16),transparent 42%),radial-gradient(80% 50% at 100% 110%,rgba(160,200,255,.08),transparent 55%),linear-gradient(115deg,rgba(255,255,255,.07) 0,transparent 26%,transparent 70%,rgba(255,255,255,.045) 100%);opacity:.8}.phone-glare::before{content:"";position:absolute;inset:-40%;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.1) 50%,transparent 58%);background-size:260% 100%;animation:7.5s ease-in-out infinite glareSweep;opacity:0;transition:opacity .8s}.phone.idle .phone-glare::before{opacity:1}@keyframes glareSweep{0%,100%{background-position:110% 0}50%{background-position:-10% 0}}.phone-screen::after{content:"";position:absolute;inset:0;border-radius:42px;pointer-events:none;z-index:6;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1),inset 0 0 14px rgba(140,190,255,.06),inset 0 0 2px rgba(255,255,255,.16)}html[data-fx=off] .phone-glare::before,html[data-motion=off] .phone-glare::before{animation:none;opacity:0}.phone.glare-still .phone-glare::before{opacity:0!important;animation:none!important}.rl-stage.finale{background:radial-gradient(120% 90% at 50% 8%,#1b2b40 0,#0e1621 58%,#0a1017 100%)}.cine-brand{display:inline-block;position:relative;font-weight:800;letter-spacing:-.04em;font-size:clamp(2rem, 7.5vw, 3.6rem);line-height:1.05;color:#fff;text-shadow:0 0 60px rgba(46,166,255,.35),0 0 120px rgba(31,170,89,.25);white-space:nowrap}.cine-brand::after{content:"";position:absolute;top:8%;bottom:8%;width:3px;border-radius:2px;background:linear-gradient(180deg,#6fe0a8,#2ea6ff);box-shadow:0 0 14px rgba(110,224,168,.9);animation:.85s steps(1) infinite cineCaret}@keyframes cineCaret{0%,49%{opacity:1}100%,50%{opacity:0}}.cine-brand .cl{display:inline-block;opacity:0;transform:translate(.85em,.55em) scale(.86);animation:.5s cubic-bezier(.2,1.1,.3,1) both clIn}@keyframes clIn{0%{opacity:0;transform:translate(.85em,.55em) scale(.86);filter:blur(5px)}100%{opacity:1;transform:none;filter:blur(0)}}.rl-stage.finale.written .cine-brand{animation:1.15s cubic-bezier(.35,.9,.28,1) forwards brandLift}.rl-stage.finale.written .cine-brand::after{opacity:0;transition:opacity .3s}@keyframes brandLift{0%{transform:none}100%{transform:translate(-16%,-110%) scale(.52);opacity:.92}}.cine-line{display:block;margin:0;font-size:clamp(.9rem, 2.6vw, 1.12rem);font-weight:600;color:#b9c6d4;letter-spacing:.01em;text-align:center;max-width:30em}.rl-stage.finale.written .cine-line{display:block;animation:subIn .8s var(--ease-apple) both}.rl-stage.finale.hero-back{background:0 0;transition:background .8s}.rl-stage.finale.hero-back .cine-brand,.rl-stage.finale.hero-back .cine-line{animation:.55s both cineOut}@keyframes cineOut{to{opacity:0;transform:translateY(-10px)}}.phone-stage.cinema{position:relative;z-index:2}.phone.cinema,.phone.finale{transform:rotateX(0) rotateY(0) rotateZ(0) translateX(var(--cinema-dx,0)) scale(1.02)!important;animation:none!important;transition:transform 1.1s cubic-bezier(.3,.73,.3,1)}.phone.cine-hide{transform:perspective(1900px) rotateX(0) rotateY(0) rotateZ(0) translateX(var(--cinema-dx,0)) translateY(120%) scale(.6)!important;opacity:0;transition:transform 1s cubic-bezier(.5,0,.75,0),opacity .8s}.phone.cine-restore{transform:perspective(1900px) rotateX(0) rotateY(0) rotateZ(0) translateX(calc(var(--cinema-dx,0) + 18%)) translateY(0) scale(1.02)!important;opacity:1;transition:transform 1.25s cubic-bezier(.16,1.1,.3,1),opacity .5s}.hero-copy{transition:opacity .6s var(--ease-apple),transform .7s var(--ease-apple)}.hero.cinema .hero-copy{opacity:0;transform:translateX(-34px) scale(.97);pointer-events:none}.hero-cine{position:absolute;left:50%;top:50%;translate:-50% -50%;z-index:6;display:none;flex-direction:column;align-items:center;gap:18px;text-align:center;width:min(94%,640px);pointer-events:none;opacity:0;visibility:hidden;transition:opacity .5s var(--ease-apple),visibility 0s .5s}.hero-cine.cine-on{display:flex}.hero.cinema .hero-cine.cine-on{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .5s var(--ease-apple)}.hero-cine .cine-brand:empty{display:none}.hero.cinema .hero-cine .cine-line{opacity:0}.hero.cinema .hero-cine.done .cine-line{opacity:1;transition:opacity .7s var(--ease-apple)}.hero:not(.cinema) .hero-cine{opacity:0;visibility:hidden;pointer-events:none}.hero-finale-head{opacity:0;transform:translateY(18px);transition:opacity .55s var(--ease-apple),transform .6s var(--ease-apple);position:absolute;left:50%;top:50%;translate:-50% -50%;z-index:5;text-align:center;pointer-events:none;width:min(92%,560px)}.hero.cinema.hero-back .hero-finale-head{opacity:1;transform:none;pointer-events:auto}.hero.cinema.hero-back .hero-cine{opacity:0;pointer-events:none}.hero-finale-head h2{font-size:clamp(1.7rem, 4.6vw, 3rem);margin:0 0 10px;letter-spacing:-.03em;line-height:1.12}.hero-finale-head h2 .grad{color:var(--green-strong)}.hero-finale-head p{color:var(--text-dim);margin:0 0 18px}.cta-big.finale-cta{padding:18px 34px;font-size:1.08rem;border-radius:999px;position:relative}.cta-big.finale-cta::after{content:"";position:absolute;inset:-3px;border-radius:999px;border:2px solid var(--green);opacity:0;animation:1.8s ease-out infinite ctaPulse}@keyframes ctaPulse{0%{opacity:.7;transform:scale(1)}100%{opacity:0;transform:scale(1.12)}}html[data-fx=off] .cta-big.finale-cta::after,html[data-motion=off] .cta-big.finale-cta::after{animation:none;content:none}.cta-big.finale-cta:hover{transform:translateY(-2px) scale(1.02)}.cta-big.finale-cta svg{width:22px;height:22px}.hero-replay{display:inline-flex;align-items:center;gap:7px;margin-top:16px;padding:8px 16px;border-radius:999px;border:1px solid var(--border);background:color-mix(in srgb,var(--surface) 55%,transparent);color:var(--text-dim);font:inherit;font-size:.8rem;font-weight:700;cursor:pointer;transition:color .2s,border-color .2s,background .2s}.hero-replay:hover{color:var(--text);border-color:var(--green);background:color-mix(in srgb,var(--green) 8%,transparent)}@media (max-width:1150px){.phone.cinema{translate:16% 0;scale:.92}.tg-explorer{right:-18px}}@media (max-width:860px){.phone.cine-hide{transform:translateY(110%) scale(.7)!important}.phone.cine-restore{transform:translateY(0) scale(1)!important}.phone.cinema,.phone.finale{transform:none!important;translate:0 0;scale:1}.tg-explorer{right:6px;top:12%;width:210px}.rl-img{height:130px}.hero-finale-head{position:static;translate:0 0;margin:8px auto 0;height:0;overflow:hidden;visibility:hidden}.hero.cinema.hero-back .hero-finale-head{height:auto;overflow:visible;visibility:visible}}@media (max-width:560px){.ios-mag{width:262px;height:262px;margin:-131px 0 0 -131px}}@media (prefers-reduced-motion:reduce){.drop-target-glow,.fx-cursor .fx-hold,.rl-tile,.tg-explorer{transition:none!important;animation:none!important}.ios-spot.grow .ios-mag,.ios-spot.hunt .ios-mag{opacity:1;transform:none;transition:none}.ios-spot.grow .ios-clock{transition:none!important}.ios-clock.tick,.rl-ios.launch,.tg-time.tick{animation:none!important}.rl-notif.press{transform:none}.rl-replay{animation:none}.chan-msgs{transition:none!important}.cal-grid span,.cal-row,.chan-msg.on{animation:none!important;opacity:1;transform:none}}.ios-sig{display:inline-flex;gap:4px;align-items:center}.ios-sig svg{width:13px;height:13px}.phone-screen.tg .demo .msg.user{padding-bottom:17px}.tg-ticks{position:absolute;right:9px;bottom:6px;height:10px;display:inline-flex;align-items:center;color:#7d8e9e;transition:color .35s;pointer-events:none}.tg-ticks svg{width:15px;height:10px;display:none}.tg-ticks .tk-clock{width:10px;height:10px}.tg-ticks[data-s=clock] .tk-clock,.tg-ticks[data-s=one] .tk-one,.tg-ticks[data-s=two] .tk-two{display:block}.tg-ticks.advance svg{animation:tkIn .3s var(--ease-apple)}@keyframes tkIn{from{opacity:0;transform:translateY(2px) scale(.7)}to{opacity:1;transform:none}}.tg-ticks.read{color:#6ab2f2}.phone-screen.tg .demo .msg.user:not(.shown){transform:translate3d(14px,18px,0) scale(.97)}.phone-screen.tg .demo .msg.bot:not(.shown){transform:translate3d(-12px,8px,0) scale(.985)}.phone-screen.tg .demo .msg.user.shown{transition:opacity .38s var(--ease-apple),transform .44s var(--ease-apple)}.phone-screen.tg .demo .msg.bot.shown{transition:opacity .44s var(--ease-apple),transform .48s var(--ease-apple)}.cp-date{align-self:center;margin:2px 0 10px;padding:4px 12px;flex:none;background:rgba(23,33,43,.85);color:#e8edf2;font-size:.72rem;font-weight:600;border-radius:999px}.cp-sender{display:flex;align-items:center;gap:6px;padding:9px 12px 0;font-size:.78rem;line-height:1.2}.cp-sender b{color:#9d8cff;font-weight:700}.cp-sender i{font-style:normal;font-size:.66rem;color:#7d8e9e}.cp-comments{display:flex;align-items:center;gap:7px;margin:8px 0 0;padding:9px 12px;border-top:1px solid rgba(255,255,255,.06);color:#6ab2f2;font-size:.78rem}.cp-comments svg{width:15px;height:15px;flex:none}.cp-comments b{flex:1 1 auto;font-weight:600}.cp-comments .chev{color:#6ab2f2}.chan-titles{align-items:center;text-align:center}.chan-actions{background:0 0;margin:auto 10px 12px;padding:0;gap:10px}.ca-btn{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:rgba(23,33,43,.92);color:#e8edf2;flex:none}.ca-btn svg{width:18px;height:18px}.ca-mute{flex:1 1 auto;text-align:center;padding:11px 0;border-radius:999px;background:rgba(46,166,255,.88);color:#fff;font-weight:700;font-size:.86rem}.chan-media{background-color:#24384d}.phone-screen.tg .tg-input.composing .tg-input-ph{box-shadow:0 0 0 1.5px rgba(106,178,242,.6)}.tg-user.state{color:#6ab2f2}
+/* ==================================================================
+   Fast Scheduler — hero cinema styles
+   Chat engine · file explorer · drag & drop upload · roulette ·
+   calendar reminder · iOS home screen · channel + bot layers · finale
+   ================================================================== */
+
+/* ---------- chat engine ---------- */
+.phone-screen.tg .demo { position: static; }
+.phone-screen.tg .demo .msg { animation: none; }
+.phone-screen.tg .demo .msg:not(.shown) { opacity: 0; transform: translateY(14px) scale(.97); }
+.phone-screen.tg .demo .msg.shown { transition: opacity .45s var(--ease-apple), transform .45s var(--ease-apple); opacity: 1; transform: none; }
+.tg-typing {
+  display: inline-flex; gap: 4px; align-items: center; align-self: flex-start;
+  margin: 2px 0 4px; padding: 10px 14px; border-radius: 12px 12px 12px 4px;
+  background: #182533; opacity: 0; transform: translateY(8px); transition: opacity .3s, transform .3s;
+}
+.tg-typing.on { opacity: 1; transform: none; }
+.tg-typing span { width: 6px; height: 6px; border-radius: 50%; background: #7d8e9e; animation: tgTdot 1.1s ease-in-out infinite; }
+.tg-typing span:nth-child(2) { animation-delay: .18s; }
+.tg-typing span:nth-child(3) { animation-delay: .36s; }
+@keyframes tgTdot { 0%, 60%, 100% { transform: translateY(0); opacity: .45; } 30% { transform: translateY(-4px); opacity: 1; } }
+
+.mono-caret { display: inline-block; width: 7px; height: 1em; vertical-align: -2px; background: #8ecdf7; animation: tgCaret .7s steps(1) infinite; }
+@keyframes tgCaret { 50% { opacity: 0; } }
+.phone-screen.tg .demo .msg .mono { white-space: pre-line; }
+
+/* user "tap" feedback: bubble presses in like a real keyboard key */
+.phone-screen.tg .demo .msg.pressed { transform: translateY(1px) scale(.955); filter: brightness(.85);
+  transition: transform .12s ease, filter .12s ease; }
+
+/* Inline-keyboard button accents used by the real bot (kb-green / kb-red) are
+   coloured in the .ikb-btn rules in index.html's Telegram skin. */
+
+/* ---------- outgoing photo album (matches Telegram's 2-col grid) ---------- */
+.upl-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-top: 6px;
+  width: 218px; }   /* explicit width: 1fr collapses to 0 inside a shrink-to-fit bubble */
+/* same cell metrics as .upl-bar: the upload bar converts into this album with
+   a plain node swap that is pixel-identical — nothing disappears, nothing pops */
+.upl-thumb { width: 100%; height: 104px; border-radius: 8px; background-size: cover; background-position: center; }
+.upl-thumb.in { transition: opacity .35s var(--ease-apple), transform .45s var(--ease-spring); opacity: 1; transform: none; }
+.upl-name { display: none; }
+
+/* green "uploading" pulse ring while a thumb lands */
+.upl-thumb.landing::after { content: ""; position: absolute; inset: 0; border-radius: 8px;
+  border: 2px solid rgba(74,157,122,.9); animation: landPulse .55s ease-out both; }
+@keyframes landPulse { from { opacity: 1; transform: scale(.9); } to { opacity: 0; transform: scale(1.12); } }
+
+/* ---------- file explorer (side window) ---------- */
+.tg-explorer {
+  position: absolute; z-index: 8; right: -46px; top: 13%; width: 246px;
+  border-radius: 12px; overflow: visible; transform: translateX(30px) scale(.92); opacity: 0; pointer-events: none;
+  background: #1f1f1f; border: 1px solid #3c3c3c;
+  box-shadow: 0 24px 60px -12px rgba(0,0,0,.7), 0 4px 14px rgba(0,0,0,.4);
+  transition: transform .55s var(--ease-apple), opacity .45s;
+  transform-origin: left center;
+}
+.tg-explorer.on { transform: translateX(0) scale(1); opacity: 1; }
+.fx-bar { display: flex; align-items: center; gap: 7px; padding: 8px 10px; background: #2b2b2b; border-bottom: 1px solid #3c3c3c;
+  font-size: .68rem; font-weight: 700; color: #ddd; border-radius: 12px 12px 0 0; }
+.fx-dot { width: 8px; height: 8px; border-radius: 50%; background: #f6c445; }
+.fx-min { margin-left: auto; color: #999; font-size: .6rem; }
+.fx-min + .fx-min { margin-left: 6px; }
+.fx-list { padding: 6px; display: flex; flex-direction: column; gap: 2px; background: #1f1f1f; }
+.fx-item { display: flex; align-items: center; gap: 8px; padding: 5px 7px; border-radius: 7px; position: relative;
+  transition: background .25s, box-shadow .25s, opacity .3s; }
+.fx-item .fx-ic { width: 26px; height: 26px; border-radius: 5px; background-size: cover; background-position: center; flex: none;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); }
+.fx-item .fx-nm { font-size: .66rem; color: #eee; white-space: nowrap; }
+.fx-item .fx-sz { font-size: .56rem; color: #8a8a8a; }
+.fx-item .fx-info { display: flex; flex-direction: column; min-width: 0; }
+.fx-item.selected { background: #2f5d8a; box-shadow: inset 0 0 0 1px #4a7fb5; }
+.fx-item.selected::after { content: "✓"; position: absolute; right: 8px; color: #fff; font-size: .68rem; font-weight: 800;
+  animation: fxCheck .3s var(--ease-spring); }
+@keyframes fxCheck { from { transform: scale(0); } to { transform: scale(1); } }
+.fx-item.lifted { opacity: .25; }
+.fx-actions { display: flex; justify-content: flex-end; gap: 6px; padding: 8px 10px; border-top: 1px solid #3c3c3c; background: #2b2b2b; border-radius: 0 0 12px 12px; }
+.fx-btn { font-size: .62rem; font-weight: 700; padding: 5px 14px; border-radius: 6px; border: 1px solid #4a4a4a;
+  background: #383838; color: #ddd; font-family: inherit; }
+.fx-btn.fx-open { background: #2f5d8a; border-color: #4a7fb5; color: #fff; }
+
+/* cursor is a screen-level layer so it can travel between explorer and chat */
+.fx-cursor { position: absolute; z-index: 40; width: 20px; height: 20px; left: 0; top: 0; opacity: 0;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.65)); transition: opacity .3s; pointer-events: none; }
+.fx-cursor.on { opacity: 1; }
+.fx-cursor .fx-hold { position: absolute; inset: -7px; border-radius: 50%; border: 2px solid rgba(255,255,255,.85);
+  opacity: 0; transform: scale(.6); }
+.fx-cursor.holding .fx-hold { opacity: 1; animation: holdPulse 1.1s ease-in-out infinite; }
+@keyframes holdPulse { 0%,100% { transform: scale(.85); opacity: .9; } 50% { transform: scale(1.08); opacity: .45; } }
+.fx-click { position: absolute; width: 26px; height: 26px; border-radius: 50%; border: 2px solid rgba(255,255,255,.9);
+  transform: translate(-50%,-50%) scale(0); pointer-events: none; }
+.fx-click.on { animation: fxClick .45s ease-out both; }
+@keyframes fxClick { 0% { transform: translate(-50%,-50%) scale(.2); opacity: 1; } 100% { transform: translate(-50%,-50%) scale(1.5); opacity: 0; } }
+
+/* drop-target glow while the dragged stack hovers over the chat.
+   inset:0 + border-radius keeps it clamped INSIDE the rounded screen —
+   the old 12px inset let it spill past the bezel at the corners. */
+.drop-target-glow { position: absolute; inset: 0; border-radius: 42px; z-index: 7; pointer-events: none;
+  opacity: 0; transition: opacity .35s;
+  background: radial-gradient(62% 42% at 50% 68%, rgba(74,157,122,.20), transparent 72%);
+  box-shadow: inset 0 0 0 2px rgba(74,157,122,.6); }
+.drop-target-glow.on { opacity: 1; animation: glowBreath 1.1s ease-in-out infinite; }
+@keyframes glowBreath { 0%,100% { box-shadow: inset 0 0 0 2px rgba(74,157,122,.55); } 50% { box-shadow: inset 0 0 0 3px rgba(74,157,122,.85); } }
+
+/* dragged photo stack + trailing ghosts */
+.fx-drag { position: absolute; z-index: 30; width: 54px; height: 54px; border-radius: 8px; background-size: cover;
+  background-position: center; box-shadow: 0 14px 34px rgba(0,0,0,.6), 0 0 0 2px rgba(255,255,255,.25); pointer-events: none; }
+.fx-ghost { position: absolute; z-index: 29; width: 46px; height: 46px; border-radius: 8px; background-size: cover;
+  background-position: center; opacity: .5; box-shadow: 0 6px 18px rgba(0,0,0,.45); pointer-events: none; }
+
+/* uploading bar animation, Telegram-style */
+.upl-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-top: 6px; width: 218px; }
+.upl-cell { height: 104px; border-radius: 8px; background-size: cover; background-position: center; position: relative; overflow: hidden; }
+.upl-cell .upl-fill { position: absolute; left: 0; right: 0; bottom: 0; height: 0%;
+  /* the darkening wash used to hug the very bottom edge, reading as a stray
+     band; it now covers the cell proportional to progress and is clearly a
+     "fill level" */
+  background: linear-gradient(0deg, rgba(15,30,22,.85) 55%, rgba(15,30,22,0)); }
+.upl-cell .upl-ring { position: absolute; inset: 0; display: grid; place-items: center; }
+.upl-cell .upl-ring i { width: 22px; height: 22px; border-radius: 50%;
+  border: 2.5px solid rgba(255,255,255,.28); border-top-color: #4a9d7a; animation: spin .8s linear infinite; }
+.upl-cell .upl-pct { position: absolute; left: 0; right: 0; bottom: 3px; text-align: center;
+  font-size: .54rem; font-weight: 800; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.8); }
+.upl-cell.done .upl-ring, .upl-cell.done .upl-pct { opacity: 0; transition: opacity .3s; }
+.upl-cell.done .upl-fill { opacity: 0; transition: opacity .4s; }
+.upl-cell.done::after { content: "✓"; position: absolute; right: 4px; bottom: 3px; width: 14px; height: 14px; border-radius: 50%;
+  background: #4a9d7a; color: #fff; font-size: .55rem; font-weight: 800; display: grid; place-items: center;
+  animation: fxCheck .3s var(--ease-spring); }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---------- roulette / calendar / finale stage ---------- */
+.rl-stage { position: absolute; inset: 0; z-index: 12; display: none; flex-direction: column; align-items: center;
+  justify-content: center; gap: 14px; padding: 20px 16px; background: #0e1621; color: #e8edf2; }
+.rl-stage.on { display: flex; }
+.rl-stage.cinema { background: radial-gradient(120% 90% at 50% 0%, #17222e 0%, #0e1621 62%); }
+
+.rl-card { width: 100%; max-width: 300px; border-radius: 18px; background: #182533; border: 1px solid rgba(255,255,255,.07);
+  box-shadow: 0 18px 50px -14px rgba(0,0,0,.7); overflow: hidden; }
+.rl-img { display: block; height: 168px; background-size: cover; background-position: center; position: relative;
+  border-radius: 12px 12px 0 0; overflow: hidden; }
+.rl-img.cp-shimmer { position: absolute; inset: 0; }
+.rl-cap { padding: 12px 14px; font-size: .84rem; line-height: 1.5; color: #e8edf2; }
+.rl-cap .cp-time { display: block; margin-top: 5px; font-size: .66rem; color: #7d8e9e; }
+.rl-msg-in { animation: rlIn .6s var(--ease-apple) both; }
+@keyframes rlIn { from { opacity: 0; transform: translateY(22px) scale(.96); } to { opacity: 1; transform: none; } }
+
+.rl-holder { position: relative; height: 74px; width: 100%; max-width: 300px; }
+.rl-tile { position: absolute; top: 0; width: 56px; height: 56px; border-radius: 10px; background-size: cover;
+  background-position: center; box-shadow: 0 6px 16px rgba(0,0,0,.5), inset 0 0 0 1px rgba(255,255,255,.14);
+  transition: left .55s var(--ease-apple), transform .45s var(--ease-apple), opacity .35s, box-shadow .35s; }
+.rl-tile.focused { transform: scale(1.12); box-shadow: 0 0 0 2.5px #4a9d7a, 0 10px 26px rgba(0,0,0,.55); }
+.rl-tile.dim { opacity: .35; }
+.rl-tile.ghost { opacity: .25; }
+.rl-question { font-size: .72rem; color: #7d8e9e; letter-spacing: .02em; }
+
+/* fly from the roulette to the message card. left/top pin its TOP-LEFT, so
+   all flight math is top-left based and the flyer lands exactly on the image
+   (scaling about the centre used to drift it up-left mid-flight) */
+.rl-fly { position: absolute; z-index: 14; width: 74px; height: 74px; border-radius: 10px; background-size: cover;
+  background-position: center; box-shadow: 0 14px 40px rgba(0,0,0,.65); pointer-events: none;
+  will-change: transform; transform-origin: 0 0; }
+/* glow burst when the photo lands in the card */
+.rl-burst { position: absolute; z-index: 13; width: 90px; height: 90px; border-radius: 18px; pointer-events: none;
+  translate: -50% -50%; border: 2.5px solid rgba(74,157,122,.85); box-shadow: 0 0 40px rgba(74,157,122,.5);
+  animation: burstOut .8s ease-out both; }
+@keyframes burstOut { 0% { transform: scale(.35); opacity: 1; } 100% { transform: scale(2.1); opacity: 0; } }
+.rl-card.landed { animation: cardLand .55s var(--ease-spring); }
+@keyframes cardLand { 0% { transform: scale(1); } 35% { transform: scale(1.035) translateY(-3px); } 100% { transform: scale(1); } }
+.rl-img.settled { animation: imgSettle .5s var(--ease-spring); }
+@keyframes imgSettle { 0% { filter: brightness(1.5); } 100% { filter: brightness(1); } }
+
+/* attached banner on the message card */
+.rl-attach { position: absolute; left: 12px; bottom: 12px; z-index: 3; display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 10px; border-radius: 999px; background: rgba(0,0,0,.55); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  font-size: .62rem; font-weight: 700; color: #c6ded2; opacity: 0; transform: translateY(8px);
+  transition: opacity .4s var(--ease-apple), transform .4s var(--ease-apple); }
+.rl-attach.on { opacity: 1; transform: none; }
+
+/* ---------- calendar: what the app on the phone really shows ----------
+   A month view, not a decorated number grid: single-letter weekday row, the
+   send day as a filled red disc, the queued days as dots, and one event row
+   underneath. The previous card shouted "MO TU WE" caps over a flat 7-wide
+   soup of 27px rectangles, which is where the "cringe" came from. */
+.rl-cal { position: relative; width: 100%; max-width: 316px; border-radius: 24px; overflow: hidden;
+  background: linear-gradient(175deg, rgba(44,48,56,.92), rgba(22,24,28,.96));
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 30px 70px -18px rgba(0,0,0,.85), inset 0 1px 0 rgba(255,255,255,.09);
+  -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
+  opacity: 0; transform: perspective(900px) rotateX(14deg) translateY(34px) scale(.94);
+  transform-origin: 50% 0;
+  transition: opacity .6s var(--ease-apple), transform .75s cubic-bezier(.2,1.15,.3,1); }
+.rl-cal.on { opacity: 1; transform: none; }
+/* a soft top light, the way iOS cards catch the screen glow */
+.rl-cal::before { content: ""; position: absolute; left: 10%; right: 10%; top: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.4), transparent); }
+.cal-head { display: flex; align-items: flex-end; gap: 10px; padding: 15px 18px 5px; }
+.cal-when { display: flex; flex-direction: column; }
+.cal-when small { font-size: .58rem; font-weight: 800; color: #ff5b52; }
+.cal-when b { font-size: 1.05rem; font-weight: 750; color: #fff; letter-spacing: -.015em; line-height: 1.12; }
+.cal-today { margin-left: auto; font-size: .7rem; font-weight: 750; color: #ff5b52; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; padding: 5px 12px 10px; }
+.cal-grid b { display: grid; place-items: center; height: 20px; font-size: .57rem; font-weight: 700; color: #868d97; }
+.cal-grid span { display: grid; place-items: center; width: 30px; height: 30px; justify-self: center;
+  border-radius: 50%; position: relative;
+  font-size: .68rem; font-weight: 600; color: #dfe4ea; font-variant-numeric: tabular-nums;
+  opacity: 0; transform: scale(.72); animation: calCellIn .4s var(--ease-apple) both;
+  animation-delay: calc(var(--i, 0) * 14ms + .1s); }
+@keyframes calCellIn { to { opacity: 1; transform: none; } }
+.cal-blank { visibility: hidden; }
+.cal-cell.today { background: #ff453a; color: #fff; font-weight: 800; box-shadow: 0 5px 16px rgba(255,69,58,.42);
+  animation: calCellIn .4s var(--ease-apple) both, todayPop .5s .5s var(--ease-spring) both; }
+@keyframes todayPop { 0% { transform: scale(1); } 45% { transform: scale(1.13); } 100% { transform: scale(1); } }
+/* queued days breathe: their dot gently pulses so the eye finds them */
+.cal-cell.ev::after { content: ""; position: absolute; bottom: 2px; left: 50%; translate: -50% 0; width: 4px; height: 4px;
+  border-radius: 50%; background: #4a9d7a; animation: evPulse 1.8s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * .18s + .8s); }
+@keyframes evPulse { 0%, 100% { opacity: .55; transform: translate(-50%, 0) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -1px) scale(1.35); } }
+.cal-ev { padding: 10px 12px 12px; border-top: 1px solid rgba(255,255,255,.06); }
+.cal-row { display: flex; align-items: center; gap: 11px; padding: 9px 11px; border-radius: 14px; background: rgba(255,255,255,.045);
+  border: 1px solid rgba(255,255,255,.06); opacity: 0; transform: translateY(10px); animation: calCellIn .5s .7s var(--ease-apple) both; }
+/* the event icon is the calendar tile itself: red header, today's number */
+.cal-ic { width: 38px; height: 38px; border-radius: 10px; flex: none; overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: #fff; box-shadow: 0 6px 16px rgba(255,69,58,.26); }
+.cal-ic i { font-style: normal; font-size: .4rem; font-weight: 800; letter-spacing: .05em;
+  width: 100%; text-align: center; padding: 2px 0; background: #ff453a; color: #fff; }
+.cal-ic b { font-size: .92rem; font-weight: 700; line-height: 1; padding: 3px 0; color: #1c1c1e; }
+.cal-txt { display: flex; flex-direction: column; min-width: 0; }
+.cal-txt b { font-size: .74rem; color: #e8edf2; }
+.cal-txt small { font-size: .6rem; color: #8a97a5; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cal-badge { margin-left: auto; flex: none; font-size: .62rem; font-weight: 750;
+  padding: 4px 10px; border-radius: 999px; background: rgba(74,157,122,.16); color: #a9e0c4;
+  border: 1px solid rgba(74,157,122,.42); font-variant-numeric: tabular-nums;
+  opacity: 0; transform: scale(.6); }
+.cal-badge.on { opacity: 1; transform: none; transition: opacity .35s, transform .4s var(--ease-spring); }
+
+/* countdown chip under the calendar */
+.rl-count { font-variant-numeric: tabular-nums; font-size: .72rem; font-weight: 800; color: #8ecdf7; letter-spacing: .04em;
+  opacity: 0; transition: opacity .4s; }
+.rl-count.on { opacity: 1; }
+
+/* ---------- iOS home screen layer ---------- */
+.rl-ios { position: absolute; inset: 0; z-index: 13; display: none; overflow: hidden;
+  background: linear-gradient(165deg, #2b3f63 0%, #1d2b47 45%, #131c31 100%); color: #fff; }
+.rl-ios.on { display: block; }
+.ios-blur { position: absolute; inset: 0;
+  background: radial-gradient(90% 55% at 50% 8%, rgba(255,255,255,.12), transparent 60%); }
+.ios-status { position: absolute; top: 8px; left: 0; right: 0; display: flex; justify-content: space-between;
+  padding: 0 20px; font-size: .72rem; font-weight: 700; color: #fff; z-index: 3; }/* magnifier highlight — ONE clock that genuinely grows inside a glass lens
+drawn around it. The old build clipped a second, differently sized copy of
+the time into a fixed 200px lens, so the digits, the ring and the handle
+never agreed with each other and the lens jumped between two positions
+(measured in JS) while it animated. The lens now wraps the real clock, so
+the glass can never drift away from the digits it is magnifying. */
+.ios-spot { position: absolute; left: 0; right: 0; top: 22%; z-index: 2; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; }
+.ios-clock-wrap { position: relative; display: grid; place-items: center; }
+/* The lens is bigger than the clock it magnifies, so it cannot be centred
+with `inset: 0; margin: auto` — when the containing block is the smaller
+box, auto margins collapse to zero and the whole lens slides off to the
+right. Negative half-size margins centre it whatever the clocks measures.
+The site's global `svg { max-width: 100% }` reset also has to be lifted, or
+the ring is capped at the clock's width and squashed to a third of its size. */
+.ios-mag { position: absolute; left: 50%; top: 50%; width: 330px; height: 330px;
+  margin: -165px 0 0 -165px; max-width: none; max-height: none; overflow: visible;
+  filter: drop-shadow(0 10px 26px rgba(0,0,0,.38)); opacity: 0;
+  transform: translate(150px, 170px) scale(.42);
+  transition: transform 1.05s cubic-bezier(.22,1.14,.3,1), opacity .45s ease; }
+/* .hunt: the lens SLIDES up from the corner toward the clock (JS adds it,
+   then swaps to .grow which lands the lens exactly on the digits) */
+.ios-spot.hunt .ios-mag { opacity: 1; transform: translate(46px, 34px) scale(.62); }
+.ios-spot.grow .ios-mag { opacity: 1; transform: none; }
+.mg-glass { fill: rgba(255,255,255,.07); }
+.mg-ring { fill: none; stroke: rgba(255,255,255,.62); stroke-width: 2.4; }
+.mg-handle { stroke: rgba(255,255,255,.62); stroke-width: 6.5; stroke-linecap: round; }
+/* the digits themselves grow into the lens instead of a duplicate appearing */
+.ios-clock { font-size: 3rem; font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums;
+  text-shadow: 0 2px 18px rgba(0,0,0,.35); transform-origin: center;
+  transition: transform .8s cubic-bezier(.2,1.16,.32,1); }
+.ios-spot.grow .ios-clock { transform: scale(1.26); }
+/* each simulated minute pulses the digits — the time visibly "ticks" */
+.ios-clock.tick { animation: clockTick .3s var(--ease-apple); }
+@keyframes clockTick { 0% { transform: scale(1.26); } 45% { transform: scale(1.31); } 100% { transform: scale(1.26); } }
+/* the phone status-bar clock ticks too (channel scene) */
+.tg-time.tick { animation: statusTick .3s var(--ease-apple); }
+@keyframes statusTick { 0% { opacity: 1; } 45% { opacity: .45; } 100% { opacity: 1; } }
+.ios-date { margin-top: 2px; font-size: .78rem; font-weight: 600; color: rgba(255,255,255,.85); }
+.ios-icons { position: absolute; left: 18px; right: 18px; top: 47%; display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 12px 8px; z-index: 1; }
+.ios-app { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.ios-app i { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; font-style: normal; font-size: 1.1rem;
+  box-shadow: 0 6px 14px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.25); }
+.ios-app i svg { width: 26px; height: 26px; }
+.ios-app span { font-size: .52rem; color: rgba(255,255,255,.85); }
+.ios-dock { position: absolute; left: 14px; right: 14px; bottom: 14px; display: flex; justify-content: space-around;
+  padding: 8px 10px; border-radius: 22px; background: rgba(255,255,255,.14); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); z-index: 1; }
+.rl-notif { position: absolute; left: 12px; right: 12px; top: 40px; z-index: 4; display: flex; gap: 9px; align-items: center;
+  padding: 10px 12px; border-radius: 16px; background: rgba(28,32,40,.88); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+  box-shadow: 0 14px 34px rgba(0,0,0,.5); opacity: 0; transform: translateY(-16px) scale(.96);
+  transition: opacity .45s var(--ease-apple), transform .55s var(--ease-spring); }
+.rl-notif.on { opacity: 1; transform: none; }
+/* the user taps the banner: it presses in like a real notification */
+.rl-notif.press { transform: scale(.96) translateY(2px); filter: brightness(.85);
+  transition: transform .14s ease, filter .14s ease; }
+/* Telegram LAUNCHES out of the banner: the whole home screen zooms toward
+   the notification while the banner grows bright, then the channel layer
+   takes over — the classic iOS "app opens from its icon" move */
+.rl-ios.launch { pointer-events: none; }
+.rl-ios.launch .rl-notif { opacity: 1; transform: scale(1.35); filter: brightness(1.25);
+  transition: transform .55s cubic-bezier(.5,0,.7,.4), filter .55s ease, opacity .2s ease .42s; }
+.rl-ios.launch .ios-spot,
+.rl-ios.launch .ios-icons,
+.rl-ios.launch .ios-dock,
+.rl-ios.launch .ios-blur { opacity: 0; transition: opacity .45s ease; }
+.rl-ios.launch::after { content: ""; position: absolute; inset: 0; z-index: 6;
+  background: radial-gradient(46% 30% at 50% 12%, rgba(46,166,255,.28), transparent 70%);
+  opacity: 0; animation: notifFlash .6s ease-out both; }
+@keyframes notifFlash { 0% { opacity: 0; } 30% { opacity: 1; } 100% { opacity: 0; } }
+.rl-ios.launch { animation: launchZoom .6s cubic-bezier(.55,0,.8,.4) both; }
+@keyframes launchZoom { 0% { transform: scale(1); } 70% { transform: scale(1.09); opacity: 1; }
+  100% { transform: scale(1.16); opacity: 0; } }
+.nt-ic { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; flex: none; font-weight: 800; font-size: .68rem;
+  background: linear-gradient(135deg,#2ea6ff,#1c7fd6); }
+.rl-notif p { margin: 0; font-size: .66rem; line-height: 1.4; color: #e8edf2; }
+.rl-notif p b { display: block; font-size: .7rem; }
+.nt-t { margin-left: auto; align-self: flex-start; font-size: .56rem; color: #8a97a5; flex: none; }
+
+/* ---------- channel / bot full-screen layers ---------- */
+.screen-layer { position: absolute; inset: 0; z-index: 11; display: none; flex-direction: column;
+  background: #0e1621; color: #e8edf2; }
+.screen-layer.on { display: flex; animation: layerIn .5s var(--ease-apple) both; }
+@keyframes layerIn { from { opacity: 0; transform: scale(1.03); } to { opacity: 1; transform: none; } }
+.sl-head { display: flex; align-items: center; gap: 10px; padding: 8px 12px 10px; background: #17212b; border-bottom: 1px solid rgba(0,0,0,.35); flex: none; }
+.sl-titles { display: flex; flex-direction: column; min-width: 0; }
+.sl-name { font-weight: 800; font-size: .92rem; color: #fff; line-height: 1.15; }
+.sl-sub { font-size: .72rem; color: #7d8e9e; }
+.sl-body { flex: 1 1 auto; min-height: 0; overflow: hidden; padding: 14px 12px 10px;
+  background: radial-gradient(1200px 500px at 85% -5%, rgba(46,166,255,.06), transparent 60%), #0e1621; }
+.sl-foot { display: flex; align-items: center; gap: 8px; margin: auto 10px 12px; padding: 10px 14px; flex: none;
+  background: #17212b; border-radius: 18px; color: #7d8e9e; font-size: .82rem; }
+.sl-foot svg { width: 16px; height: 16px; }
+
+/* ---------- the channel ----------
+   A channel is not a chat: one column, every post full width, no repeated
+   author tag inside the bubble, no reactions on a post that appeared three
+   seconds ago. What a real channel post shows underneath is exactly two
+   things — how many people saw it, and when it went out. */
+.chan-head { gap: 9px; }
+.chan-avatar { width: 38px; height: 38px; border-radius: 50%; flex: none; display: grid; place-items: center;
+  background: linear-gradient(135deg,#e08f26,#b5651d); color: #fff; font-weight: 800; font-size: .78rem; }
+.chan-head .sl-titles { flex: 1 1 auto; }
+.chan-head .sl-name { font-size: .96rem; }
+.chan-head .sl-sub { font-size: .7rem; color: #8ea3b8; }
+.hd-ics { display: inline-flex; align-items: center; gap: 13px; flex: none; color: #7d8e9e; padding-right: 2px; }
+.hd-ics svg { width: 17px; height: 17px; }
+/* The feed is bottom-anchored, like Telegram: the newest post sits at the
+   bottom and the older ones get pushed up past the top edge. Queued posts are
+   kept out of the flow entirely (display:none) until they go out, so a post
+   never reserves space before it exists — that is what used to shove the
+   freshly published photo half-way out of the phone. */
+.chan-body { display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
+.chan-msgs { display: flex; flex-direction: column; gap: 12px; flex: none; }
+.chan-msg { width: 100%; border-radius: 12px; overflow: hidden; background: #182533;
+  box-shadow: 0 3px 14px rgba(0,0,0,.26);
+  /* only the pop-in MOVES: after it the transform is cleared, so no stale
+     scale/translate can combine with later transforms and glitch the feed */
+  will-change: opacity, transform; }
+.chan-msg:not(.on) { display: none; }
+.chan-msg.on { animation: chanPostIn .5s var(--ease-apple) both; }
+.chan-msg.on { animation-fill-mode: backwards; }
+.chan-msg.on:not(.chan-hist) { transform: none; }
+/* posts that were already in the channel when the scene opens */
+.chan-hist { animation: none !important; }
+@keyframes chanPostIn { from { opacity: 0; transform: translateY(26px) scale(.985); }
+  to { opacity: 1; transform: none; } }
+.chan-media { display: block; height: 118px; background-size: cover; background-position: center 62%; position: relative; }
+.chan-media .cp-shimmer { position: absolute; inset: 0; background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.14) 50%, transparent 70%);
+  transform: translateX(-100%); }
+.chan-msg.loading .cp-shimmer { animation: cpShimmer 1.1s linear infinite; }
+.chan-post-cap, .chan-post-cap2 { display: block; padding: 9px 12px 2px; font-size: .81rem; line-height: 1.4; color: #e8edf2; }
+/* post footer: views on the left, send time in the middle, share forward
+   button on the right — the exact trio a real Telegram channel post shows */
+.chan-foot { display: flex; align-items: center; gap: 8px; padding: 5px 12px 9px; }
+.cp-views { display: inline-flex; align-items: center; gap: 4px; font-size: .62rem; color: #7d8e9e;
+  font-variant-numeric: tabular-nums; }
+.cp-views svg { width: 13px; height: 13px; }
+.cp-time2 { margin-left: auto; font-size: .62rem; color: #7d8e9e; font-variant-numeric: tabular-nums; }
+/* the forward/share roundel, bottom-right of every channel post */
+.cp-share { display: inline-grid; place-items: center; width: 26px; height: 26px; margin-left: 6px;
+  border-radius: 50%; background: rgba(255,255,255,.07); color: #7d8e9e; flex: none; }
+.cp-share svg { width: 12px; height: 12px; }
+/* ---------- reaction pills gathering under a post ----------
+   Real channels gather reactions over time: pills pop in one by one with a
+   spring, each count ticks up from zero, and the star pill carries the paid
+   reaction accent (Telegram's ⭐ gold). Zero pills stay invisible until the
+   first reaction lands, so a post never advertises an empty pill. */
+.cp-reacts { display: flex; flex-wrap: wrap; gap: 4px; padding: 0 12px 6px; min-height: 0; }
+.cp-reacts:empty { display: none; }
+.rx { display: inline-flex; align-items: center; gap: 3px; padding: 2px 7px 2px 4px;
+  border-radius: 999px; background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.07);
+  font-size: .6rem; font-weight: 700; color: #b7c6d4; font-variant-numeric: tabular-nums;
+  opacity: 0; transform: scale(.4) translateY(6px); }
+.rx i { font-style: normal; font-size: .68rem; line-height: 1; }
+/* star pill: gold tint, like Telegram's paid reactions */
+.rx-star { background: rgba(255,199,64,.14); border-color: rgba(255,199,64,.35); color: #ffd97a; }
+.rx.on { animation: rxPop .5s var(--ease-spring) both; }
+@keyframes rxPop { 0% { opacity: 0; transform: scale(.4) translateY(6px); }
+  60% { opacity: 1; transform: scale(1.12); } 100% { opacity: 1; transform: none; } }
+/* a freshly bumped pill flashes its border once */
+.rx.bump { animation: rxBump .45s ease-out; }
+@keyframes rxBump { 0% { transform: scale(1); } 40% { transform: scale(1.14); }
+  100% { transform: scale(1); } }
+/* the read-only bar a channel shows where a chat has its composer */
+.chan-compose { color: #7d8e9e; font-size: .78rem; }
+/* the channel layer owns the screen: nothing from the layers underneath
+   (stage, cursor, explorer) may bleed through mid-scene */
+.chan-layer { z-index: 13; }
+
+/* ---------- real liquid glass on the phone ----------
+   Two layers over the screen's content:
+   · a specular sheen that slides with the phone's idle tilt (background-
+     position driven, so it sweeps the glass like a light source),
+   · a refracting edge: the frame's inner rim gets a 1px chromatic line plus
+     a soft inner glow, which is what actual glass does at grazing angles.
+   Both are pure overlay — the Telegram UI underneath stays untouched. */
+.phone-glare {
+  position: absolute; inset: 12px; border-radius: 42px; pointer-events: none; z-index: 5;
+  /* the specular sweep band below paints OUTSIDE this box (inset:-40%):
+     without clipping it escaped the phone and read as a shining element
+     flying out of the screen */
+  overflow: hidden;
+  background:
+    radial-gradient(120% 70% at 18% -10%, rgba(255,255,255,.16), transparent 42%),
+    radial-gradient(80% 50% at 100% 110%, rgba(160,200,255,.08), transparent 55%),
+    linear-gradient(115deg, rgba(255,255,255,.07) 0%, transparent 26%,
+      transparent 70%, rgba(255,255,255,.045) 100%);
+  opacity: .8;
+}
+/* the sliding specular band — only while the phone idles (tilts), because
+   the light source moving is what sells the glass */
+.phone-glare::before {
+  content: ""; position: absolute; inset: -40%;
+  background: linear-gradient(105deg, transparent 42%, rgba(255,255,255,.10) 50%, transparent 58%);
+  background-size: 260% 100%;
+  animation: glareSweep 7.5s ease-in-out infinite;
+  opacity: 0; transition: opacity .8s;
+}
+.phone.idle .phone-glare::before { opacity: 1; }
+@keyframes glareSweep { 0%, 100% { background-position: 110% 0; } 50% { background-position: -10% 0; } }
+/* refracting inner rim on the screen itself */
+.phone-screen::after {
+  content: ""; position: absolute; inset: 0; border-radius: 42px; pointer-events: none; z-index: 6;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.10),
+    inset 0 0 14px rgba(140,190,255,.06),
+    inset 0 0 2px rgba(255,255,255,.16);
+}
+html[data-fx="off"] .phone-glare::before, html[data-motion="off"] .phone-glare::before { animation: none; opacity: 0; }
+/* while the demo runs a scene the light band is off: the sweep reads as a
+   stray shining element gliding across the cinema frame */
+.phone.glare-still .phone-glare::before { opacity: 0 !important; animation: none !important; }
+
+/* ---------- finale: cinematic brand title ----------
+   Beats: phone hides → "fast scheduler" is written right-to-left with a
+   caret, glides up-left from the ground → one sentence fades in under it →
+   everything fades → the hero copy + phone take over with the replay menu. */
+.rl-stage.finale { background: radial-gradient(120% 90% at 50% 8%, #1b2b40 0%, #0e1621 58%, #0a1017 100%); }
+.cine-brand {
+  display: inline-block; position: relative; font-weight: 800; letter-spacing: -.04em;
+  font-size: clamp(2rem, 7.5vw, 3.6rem); line-height: 1.05; color: #fff;
+  text-shadow: 0 0 60px rgba(46,166,255,.35), 0 0 120px rgba(31,170,89,.25);
+  white-space: nowrap;
+}
+/* the caret rides at the writing edge; the word grows right-to-left from it */
+.cine-brand::after {
+  content: ""; position: absolute; top: 8%; bottom: 8%; width: 3px; border-radius: 2px;
+  background: linear-gradient(180deg, #6fe0a8, #2ea6ff); box-shadow: 0 0 14px rgba(110,224,168,.9);
+  animation: cineCaret .85s steps(1) infinite;
+}
+@keyframes cineCaret { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+/* each letter slides in from the RIGHT and settles leftward, carrying the
+   whole word up from the ground as it fills */
+.cine-brand .cl {
+  display: inline-block; opacity: 0; transform: translate(.85em, .55em) scale(.86);
+  animation: clIn .5s cubic-bezier(.2,1.1,.3,1) both;
+}
+@keyframes clIn {
+  0% { opacity: 0; transform: translate(.85em, .55em) scale(.86); filter: blur(5px); }
+  100% { opacity: 1; transform: none; filter: blur(0); }
+}
+/* once written, the whole brand glides to the top-left of the screen */
+.rl-stage.finale.written .cine-brand { animation: brandLift 1.15s cubic-bezier(.35,.9,.28,1) forwards; }
+.rl-stage.finale.written .cine-brand::after { opacity: 0; transition: opacity .3s; }
+@keyframes brandLift {
+  0% { transform: none; }
+  100% { transform: translate(-16%, -110%) scale(.52); opacity: .92; }
+}
+.cine-line {
+  display: block; margin: 0; font-size: clamp(.9rem, 2.6vw, 1.12rem); font-weight: 600;
+  color: #b9c6d4; letter-spacing: .01em; text-align: center; max-width: 30em;
+}
+.rl-stage.finale.written .cine-line { display: block; animation: subIn .8s var(--ease-apple) both; }
+/* replay: the small pill inside .hero-copy (hidden in the markup) is shown
+   again once the finale hands the frame back to the hero - in normal flow
+   under the CTA, so it can never cover the headline, the CTA or the restored
+   phone (the old build appended an overlay button to the stage, which
+   covered the hero elements) */
+/* when the hero copy returns, the stage dims so the phone + headline own the
+   frame; the brand + sentence fade out beneath them */
+.rl-stage.finale.hero-back { background: transparent; transition: background .8s; }
+.rl-stage.finale.hero-back .cine-brand,
+.rl-stage.finale.hero-back .cine-line { animation: cineOut .55s ease both; }
+@keyframes cineOut { to { opacity: 0; transform: translateY(-10px); } }
+
+/* ---------- phone cinema choreography ---------- */
+.phone-stage.cinema { position: relative; z-index: 2; }
+/* hero copy fades out → the phone glides to the CENTER of the hero.
+   The exact offset is measured in JS (--cinema-dx); 0 is the safe default
+   for single-column layouts where the phone is already centered. */
+.phone.cinema { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(var(--cinema-dx, 0px)) scale(1.02) !important; animation: none !important;
+  transition: transform 1.1s cubic-bezier(.3,.73,.3,1); }
+.phone.finale { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(var(--cinema-dx, 0px)) scale(1.02) !important; animation: none !important;
+  transition: transform 1.1s cubic-bezier(.3,.73,.3,1); }
+
+/* ---------- phone hides / restores in the finale ----------
+   .cine-hide drops the device below the frame; .cine-restore slides it back
+   up from the ground on the right, like it was carried in for the encore. */
+.phone.cine-hide { transform: perspective(1900px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+  translateX(var(--cinema-dx, 0px)) translateY(120%) scale(.6) !important; opacity: 0;
+  transition: transform 1s cubic-bezier(.5,0,.75,0), opacity .8s ease; }
+.phone.cine-restore { transform: perspective(1900px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+  translateX(calc(var(--cinema-dx, 0px) + 18%)) translateY(0) scale(1.02) !important; opacity: 1;
+  transition: transform 1.25s cubic-bezier(.16,1.1,.3,1), opacity .5s ease; }
+@media (max-width: 860px) {
+  .phone.cine-hide { transform: translateY(110%) scale(.7) !important; }
+  .phone.cine-restore { transform: translateY(0) scale(1) !important; }
+}
+
+/* center-stage finale: hero copy fades and slides to center */
+.hero-copy { transition: opacity .6s var(--ease-apple), transform .7s var(--ease-apple); }
+/* the headline leaves to the LEFT and returns from the left, mirroring the
+   phone gliding right — the two halves read as one movement */
+.hero.cinema .hero-copy { opacity: 0; transform: translateX(-34px) scale(.97); pointer-events: none; }
+/* cinematic brand title overlay, shown ONLY during the finale. It must be
+   inert (invisible + unpaintable) during every other scene: leftover letters
+   used to bleed through the roulette screen when a replay re-entered cinema */
+.hero-cine { position: absolute; left: 50%; top: 50%; translate: -50% -50%; z-index: 6;
+  display: none; flex-direction: column; align-items: center; gap: 18px; text-align: center;
+  width: min(94%, 640px); pointer-events: none;
+  opacity: 0; visibility: hidden; transition: opacity .5s var(--ease-apple), visibility 0s .5s; }
+/* the overlay exists ONLY while the finale has it on (.cine-on is added by the
+   finale beat and removed at teardown / reset): every other scene — roulette,
+   channel, a replay mid-flight — can never paint the title again */
+.hero-cine.cine-on { display: flex; }
+.hero.cinema .hero-cine.cine-on { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity .5s var(--ease-apple); }
+/* the brand is empty until the finale writes it — never show an empty box */
+.hero-cine .cine-brand:empty { display: none; }
+.hero.cinema .hero-cine .cine-line { opacity: 0; }
+.hero.cinema .hero-cine.done .cine-line { opacity: 1; transition: opacity .7s var(--ease-apple); }
+/* when the film hands back to the page, the title fades with everything else */
+.hero:not(.cinema) .hero-cine { opacity: 0; visibility: hidden; pointer-events: none; }
+.hero-finale-head { opacity: 0; transform: translateY(18px); transition: opacity .55s var(--ease-apple), transform .6s var(--ease-apple);
+  position: absolute; left: 50%; top: 50%; translate: -50% -50%; z-index: 5; text-align: center; pointer-events: none; width: min(92%, 560px); }
+.hero.cinema.hero-back .hero-finale-head { opacity: 1; transform: none; pointer-events: auto; }
+.hero.cinema.hero-back .hero-cine { opacity: 0; pointer-events: none; }
+.hero-finale-head h2 { font-size: clamp(1.7rem, 4.6vw, 3rem); margin: 0 0 10px; letter-spacing: -.03em; line-height: 1.12; }
+.hero-finale-head h2 .grad { color: var(--green-strong); }
+.hero-finale-head p { color: var(--text-dim); margin: 0 0 18px; }
+
+/* oversized clickable CTA in the finale */
+.cta-big.finale-cta { padding: 18px 34px; font-size: 1.08rem; border-radius: 999px; position: relative; }
+/* the finale CTA pulses: a ring that expands and fades, drawing the eye to
+   the one action we want at the end of the film */
+.cta-big.finale-cta::after { content: ""; position: absolute; inset: -3px; border-radius: 999px; border: 2px solid var(--green);
+  opacity: 0; animation: ctaPulse 1.8s ease-out infinite; }
+@keyframes ctaPulse { 0% { opacity: .7; transform: scale(1); } 100% { opacity: 0; transform: scale(1.12); } }
+html[data-motion="off"] .cta-big.finale-cta::after, html[data-fx="off"] .cta-big.finale-cta::after { animation: none; content: none; }
+.cta-big.finale-cta:hover { transform: translateY(-2px) scale(1.02); }
+.cta-big.finale-cta svg { width: 22px; height: 22px; }
+
+/* replay pill under the hero CTA */
+.hero-replay { display: inline-flex; align-items: center; gap: 7px; margin-top: 16px; padding: 8px 16px; border-radius: 999px;
+  border: 1px solid var(--border); background: color-mix(in srgb, var(--surface) 55%, transparent); color: var(--text-dim);
+  font: inherit; font-size: .8rem; font-weight: 700; cursor: pointer; transition: color .2s, border-color .2s, background .2s; }
+.hero-replay:hover { color: var(--text); border-color: var(--green); background: color-mix(in srgb, var(--green) 8%, transparent); }
+
+/* ---------- responsive ---------- */
+@media (max-width: 1150px) {
+  .phone.cinema { translate: 16% 0; scale: .92; }
+  .tg-explorer { right: -18px; }
+}
+@media (max-width: 860px) {
+  .phone.cinema, .phone.finale { transform: none !important; translate: 0 0; scale: 1; }
+  .tg-explorer { right: 6px; top: 12%; width: 210px; }
+  .rl-img { height: 130px; }
+  /* Above 860px this block is position:absolute and never reserves space. On a
+     phone it has to sit in flow, and while it is still transparent (opacity:0,
+     waiting for the demo to finish) it used to hold ~260px of empty box —
+     that was the blank gap between the trust row and the marquee. Collapse it
+     until the hero-back class actually reveals it. */
+  .hero-finale-head {
+    position: static; translate: 0 0; margin: 8px auto 0;
+    height: 0; overflow: hidden; visibility: hidden;
+  }
+  .hero.cinema.hero-back .hero-finale-head {
+    height: auto; overflow: visible; visibility: visible;
+  }
+}
+@media (max-width: 560px) {
+  /* the lens scales with the screen, so the ring never leaves the digits */
+  .ios-mag { width: 262px; height: 262px; margin: -131px 0 0 -131px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tg-explorer, .rl-tile, .fx-cursor .fx-hold, .drop-target-glow { transition: none !important; animation: none !important; }
+  /* the lens must still ARRIVE when motion is off — only its travel is dropped,
+     otherwise the whole magnifier would sit at opacity 0 and never show up */
+  .ios-spot.hunt .ios-mag, .ios-spot.grow .ios-mag { opacity: 1; transform: none; transition: none; }
+  .ios-spot.grow .ios-clock { transition: none !important; }
+  .ios-clock.tick { animation: none !important; }
+  .tg-time.tick { animation: none !important; }
+  .rl-ios.launch { animation: none !important; }
+  .rl-notif.press { transform: none; }
+  .rl-replay { animation: none; }
+  .chan-msgs { transition: none !important; }
+  /* same rule for every reveal that is an animation with a backwards fill:
+     switched off, it would freeze at its first frame and hide the content */
+  .cal-grid span, .cal-row, .chan-msg.on { animation: none !important; opacity: 1; transform: none; }
+}
+
+/* ============================================================
+   POLISH PASS (later rules win) — magnifier with a real lens,
+   real-Telegram channel posts, richer calendar, icon polish
+   ============================================================ */
+
+/* --- iOS status icons --- */
+.ios-sig { display: inline-flex; gap: 4px; align-items: center; }
+.ios-sig svg { width: 13px; height: 13px; }
+
+/* ==================================================================
+   Telegram motion layer
+   Everything the real app does that the scripted flow can now reproduce:
+   every outgoing message walks clock -> single tick -> double tick (blue
+   once read), and messages arrive from the side they were sent from.
+   ================================================================== */
+
+/* ---------- delivery status (clock -> tick -> double tick -> read) ---------- */
+.phone-screen.tg .demo .msg.user { padding-bottom: 17px; }   /* reserve the status line */
+.tg-ticks {
+  position: absolute; right: 9px; bottom: 6px; height: 10px;
+  display: inline-flex; align-items: center; color: #7d8e9e;
+  transition: color .35s ease; pointer-events: none;
+}
+.tg-ticks svg { width: 15px; height: 10px; display: none; }
+.tg-ticks .tk-clock { width: 10px; height: 10px; }
+.tg-ticks[data-s="clock"] .tk-clock,
+.tg-ticks[data-s="one"]   .tk-one,
+.tg-ticks[data-s="two"]   .tk-two { display: block; }
+.tg-ticks.advance svg { animation: tkIn .3s var(--ease-apple); }
+@keyframes tkIn { from { opacity: 0; transform: translateY(2px) scale(.7); } to { opacity: 1; transform: none; } }
+.tg-ticks.read { color: #6ab2f2; }   /* Telegram paints read ticks in the accent blue */
+
+/* ---------- directional arrival ---------- */
+.phone-screen.tg .demo .msg.user:not(.shown) { transform: translate3d(14px, 18px, 0) scale(.97); }
+.phone-screen.tg .demo .msg.bot:not(.shown)  { transform: translate3d(-12px, 8px, 0) scale(.985); }
+.phone-screen.tg .demo .msg.user.shown { transition: opacity .38s var(--ease-apple), transform .44s var(--ease-apple); }
+.phone-screen.tg .demo .msg.bot.shown  { transition: opacity .44s var(--ease-apple), transform .48s var(--ease-apple); }
+
+/* ---------- Telegram channel fidelity ----------
+   Date badge, sender row (purple name + gray "channel" tag), comment row
+   and the bottom action bar (search · Mute pill · comment · gift), exactly
+   like the iOS client. Static artwork lives in the markup (never an empty
+   box); the player overwrites it with the scheduled photos at runtime. */
+.cp-date { align-self: center; margin: 2px 0 10px; padding: 4px 12px; flex: none;
+  background: rgba(23, 33, 43, .85); color: #e8edf2;
+  font-size: .72rem; font-weight: 600; border-radius: 999px; }
+.cp-sender { display: flex; align-items: center; gap: 6px; padding: 9px 12px 0;
+  font-size: .78rem; line-height: 1.2; }
+.cp-sender b { color: #9d8cff; font-weight: 700; }
+.cp-sender i { font-style: normal; font-size: .66rem; color: #7d8e9e; }
+.cp-comments { display: flex; align-items: center; gap: 7px; margin: 8px 0 0;
+  padding: 9px 12px; border-top: 1px solid rgba(255, 255, 255, .06);
+  color: #6ab2f2; font-size: .78rem; }
+.cp-comments svg { width: 15px; height: 15px; flex: none; }
+.cp-comments b { flex: 1 1 auto; font-weight: 600; }
+.cp-comments .chev { color: #6ab2f2; }
+.chan-titles { align-items: center; text-align: center; }
+.chan-actions { background: transparent; margin: auto 10px 12px; padding: 0; gap: 10px; }
+.ca-btn { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+  background: rgba(23, 33, 43, .92); color: #e8edf2; flex: none; }
+.ca-btn svg { width: 18px; height: 18px; }
+.ca-mute { flex: 1 1 auto; text-align: center; padding: 11px 0; border-radius: 999px;
+  background: rgba(46, 166, 255, .88); color: #fff; font-weight: 700; font-size: .86rem; }
+/* media blocks always have paint: gradient base under the artwork */
+.chan-media { background-color: #24384d; }
+
+/* ---------- composer ---------- */
+.phone-screen.tg .tg-input.composing .tg-input-ph { box-shadow: 0 0 0 1.5px rgba(106, 178, 242, .6); }
+
+/* ---------- header preset that says what the bot is doing ---------- */
+.tg-user.state { color: #6ab2f2; }
+
+/* There is no docked keyboard: the bot's buttons are an inline keyboard drawn
+   inside the bubble (see .ikb rules in index.html's Telegram skin). */

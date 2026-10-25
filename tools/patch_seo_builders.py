@@ -82,27 +82,27 @@ def patch_help():
         '@context': 'https://schema.org',
         '@type': 'CollectionPage',
         'name': 'Fast Scheduler Help Center',
-        'url': 'https://fastschedulebot.github.io/Fast-Scheduler/help.html',
+        'url': 'https://fastscheduler.github.io/help.html',
         'description': ('Searchable Fast Scheduler help center: %d answers on '
                         'scheduling, recurring posts, sender bots, channels, '
                         'premium and payments.' % len(article_order)),
         'inLanguage': 'en',
         'isPartOf': {'@type': 'WebSite', 'name': 'Fast Scheduler',
-                     'url': 'https://fastschedulebot.github.io/Fast-Scheduler/'},
+                     'url': 'https://fastscheduler.github.io/'},
         'mainEntity': {
             '@type': 'ItemList',
             'numberOfItems': len(article_order),
             'itemListElement': [
                 {'@type': 'ListItem', 'position': i, 'name': a['title'],
-                 'url': 'https://fastschedulebot.github.io/Fast-Scheduler/help/a/%s.html' % a['id']}
+                 'url': 'https://fastscheduler.github.io/help/a/%s.html' % a['id']}
                 for i, a in enumerate(article_order, 1)
             ],
         },
     }, ensure_ascii=False)""")
-    n += sub("build_help.py", """      {{"@type": "ListItem", "position": 2, "name": "Help Center", "item": "https://fastschedulebot.github.io/Fast-Scheduler/help.html"}}
+    n += sub("build_help.py", """      {{"@type": "ListItem", "position": 2, "name": "Help Center", "item": "https://fastscheduler.github.io/help.html"}}
     ]
   }}
-  </script>""", """      {{"@type": "ListItem", "position": 2, "name": "Help Center", "item": "https://fastschedulebot.github.io/Fast-Scheduler/help.html"}}
+  </script>""", """      {{"@type": "ListItem", "position": 2, "name": "Help Center", "item": "https://fastscheduler.github.io/help.html"}}
     ]
   }}
   </script>

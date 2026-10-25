@@ -27,7 +27,7 @@ from build_ru_pages import load_map, transform, set_head  # noqa: E402
 from build_ru_pages2 import inject_alts  # noqa: E402
 
 SITE = os.path.join(ROOT, 'website')
-BASE = 'https://fastschedulebot.github.io/Fast-Scheduler'
+BASE = 'https://fastscheduler.github.io'
 SRC = os.path.join(SITE, 'blog')
 DST = os.path.join(SITE, 'ru', 'blog')
 

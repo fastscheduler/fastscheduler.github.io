@@ -8,7 +8,7 @@ import collections
 
 ROOT = "website"
 SITEMAP = os.path.join(ROOT, "sitemap.xml")
-BASE = "https://fastschedulebot.github.io/Fast-Scheduler/"
+BASE = "https://fastscheduler.github.io/"
 
 
 def html_pages():

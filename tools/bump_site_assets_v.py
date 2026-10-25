@@ -2,7 +2,7 @@
 """Bump the ?v= cache stamp on styles/*.css and scripts/*.js references.
 
 The published tree (repo root, served at
-https://fastschedulebot.github.io/Fast-Scheduler/) caches CSS and JS by URL.
+https://fastscheduler.github.io/) caches CSS and JS by URL.
 Editing styles/main.css or scripts/*.js without bumping the stamp means
 returning visitors keep the old copy from their disk cache and the fix looks
 like it never shipped.

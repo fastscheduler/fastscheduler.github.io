@@ -97,7 +97,7 @@ def report(rows, root: str, verbose: bool = False):
             add("meta description length outside 70-160", r["page"])
         if r["title_len"] and not (30 <= r["title_len"] <= 65):
             add("title length outside 30-65", r["page"])
-        if r["canon"] and "fastschedulebot.github.io" not in r["canon"]:
+        if r["canon"] and "fastscheduler.github.io" not in r["canon"]:
             add("canonical off-domain", r["page"])
         if not r["hreflang"]:
             # Informational, not a defect. hreflang is only correct when two

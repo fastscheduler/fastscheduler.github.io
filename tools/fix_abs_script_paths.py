@@ -8,13 +8,13 @@ referenced the translation runtime as:
 
 A leading slash is resolved against the ORIGIN, not the site directory. The site
 is published from a repository subdirectory, so the live origin is
-https://fastschedulebot.github.io and "/scripts/lang.js" requests
+https://fastscheduler.github.io and "/scripts/lang.js" requests
 
-    https://fastschedulebot.github.io/scripts/lang.js   -> 404
+    https://fastscheduler.github.io/scripts/lang.js   -> 404
 
 while the file actually lives at
 
-    https://fastschedulebot.github.io/Fast-Scheduler/scripts/lang.js -> 200
+    https://fastscheduler.github.io/scripts/lang.js -> 200
 
 Every other asset on those pages (theme.js, settings.js, help-search.js,
 hotkeys.js, ...) already used a correct relative path, which is why the pages

@@ -8,7 +8,7 @@ import os
 import re
 import sys
 from collections import deque
-from urllib.parse import urldefrag, unquote
+from urllib.parse import urldefrag, unquote, urlsplit
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, 'website')
@@ -37,8 +37,8 @@ def resolve(base, href):
     if not href:
         return None
     if href.startswith(('http://', 'https://', '//', 'mailto:', 'tel:', 'javascript:')):
-        if 'fastschedulebot.github.io/Fast-Scheduler' in href:
-            href = href.split('/Fast-Scheduler', 1)[1]
+        if 'fastscheduler.github.io' in href:
+            href = urlsplit(href).path or '/'
         else:
             return None
     if href.startswith('#'):

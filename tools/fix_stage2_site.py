@@ -3,7 +3,7 @@ sheet, keep prev/next in fullscreen, legal mobile bar, jump menu trim, image
 and link repairs.
 
 Targets the published root tree (served at
-https://fastschedulebot.github.io/Fast-Scheduler/).
+https://fastscheduler.github.io/).
 """
 import io, os, re, glob, sys
 

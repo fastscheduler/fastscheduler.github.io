@@ -89,8 +89,15 @@
         var low = (d.t + ' ' + d.d + ' ' + d.b + ' ' + d.f).toLowerCase();
         if (low.indexOf(state.q) !== -1) ranked.push({ doc: d, s: 10 });
       });
-      hits = ranked.filter(function (r) { return r.s > 0; })
-        .sort(function (a, b) { return b.s - a.s; }).map(function (r) { return r.doc; });
+      ranked = ranked.filter(function (r) { return r.s > 0; })
+        .sort(function (a, b) { return b.s - a.s; });
+      /* relevance floor: one weak shared word ("post" is in nearly every
+         article) must not pull the whole blog into the results */
+      if (ranked.length) {
+        var floor = Math.max(25, ranked[0].s * 0.5);
+        ranked = ranked.filter(function (r) { return r.s >= floor; });
+      }
+      hits = ranked.map(function (r) { return r.doc; });
     } else {
       hits = DOCS.filter(function (d) {
         var low = (d.t + ' ' + d.d + ' ' + d.b + ' ' + d.f).toLowerCase();

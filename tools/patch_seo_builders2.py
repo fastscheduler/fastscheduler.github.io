@@ -7,7 +7,7 @@ fixes what was still keeping the site out of the index:
   1. CRAWL GRAPH (the big one). help.html is a hash-router SPA -- every
      category, article, breadcrumb and pager link is href="#/a/<id>". A
      crawler cannot follow fragments, so all 323 help pages were orphans:
-     `site:fastschedulebot.github.io` returned exactly one result, the
+     `site:fastscheduler.github.io` returned exactly one result, the
      homepage. build_help.py now emits a real-href index of every topic and
      article at the bottom of help.html.
 
@@ -235,7 +235,7 @@ edit('build_site.py',
      '<meta property="og:site_name" content="Fast Scheduler">\n'
      '<meta property="og:title" content="{title} — Fast Scheduler">\n'
      '<meta property="og:url" content="{canon}">\n'
-     '<meta property="og:image" content="https://fastschedulebot.github.io/Fast-Scheduler/og-cover-v2.png">\n',
+     '<meta property="og:image" content="https://fastscheduler.github.io/og-cover-v2.png">\n',
      '<meta name="description" content="{ldesc}">\n'
      '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">\n'
      '<link rel="canonical" href="{canon}">\n'
@@ -244,21 +244,21 @@ edit('build_site.py',
      '<meta property="og:title" content="{title} — Fast Scheduler">\n'
      '<meta property="og:description" content="{ldesc}">\n'
      '<meta property="og:url" content="{canon}">\n'
-     '<meta property="og:image" content="https://fastschedulebot.github.io/Fast-Scheduler/og-cover-v2.png">\n'
+     '<meta property="og:image" content="https://fastscheduler.github.io/og-cover-v2.png">\n'
      '<meta name="twitter:card" content="summary_large_image">\n'
      '<meta name="twitter:title" content="{title} — Fast Scheduler">\n'
      '<meta name="twitter:description" content="{ldesc}">\n'
-     '<meta name="twitter:image" content="https://fastschedulebot.github.io/Fast-Scheduler/og-cover-v2.png">\n'
+     '<meta name="twitter:image" content="https://fastscheduler.github.io/og-cover-v2.png">\n'
      '<script type="application/ld+json">{ldjson}</script>\n',
      'legal head: robots/og/twitter/JSON-LD')
 
 edit('build_site.py',
      "def legal_page(title, body_html, updated, cta_url, toc_box, toc_side, sheet_html, card_a, card_b, see_also, doc=''):\n"
      "    slug = doc.replace('.md', '.html') if doc else ''\n"
-     "    canon = f'https://fastschedulebot.github.io/Fast-Scheduler/legal/{slug}' if slug else 'https://fastschedulebot.github.io/Fast-Scheduler/'\n",
+     "    canon = f'https://fastscheduler.github.io/legal/{slug}' if slug else 'https://fastscheduler.github.io/'\n",
      "def legal_page(title, body_html, updated, cta_url, toc_box, toc_side, sheet_html, card_a, card_b, see_also, doc='', modified=''):\n"
      "    slug = doc.replace('.md', '.html') if doc else ''\n"
-     "    canon = f'https://fastschedulebot.github.io/Fast-Scheduler/legal/{slug}' if slug else 'https://fastschedulebot.github.io/Fast-Scheduler/'\n"
+     "    canon = f'https://fastscheduler.github.io/legal/{slug}' if slug else 'https://fastscheduler.github.io/'\n"
      "    ldesc = _fit(f'{title} for the Fast Scheduler Telegram bot: scheduling, '\n"
      "                 f'recurring posts, sender bots, channels, statistics and payments.')\n"
      "    _page = {\n"
@@ -266,11 +266,11 @@ edit('build_site.py',
      "        'name': f'{title} \\u2014 Fast Scheduler', 'description': ldesc,\n"
      "        'inLanguage': 'en',\n"
      "        'isPartOf': {'@type': 'WebSite', 'name': 'Fast Scheduler',\n"
-     "                    'url': 'https://fastschedulebot.github.io/Fast-Scheduler/'},\n"
+     "                    'url': 'https://fastscheduler.github.io/'},\n"
      "        'about': {'@type': 'SoftwareApplication', 'name': 'Fast Scheduler',\n"
      "                  'applicationCategory': 'BusinessApplication',\n"
      "                  'operatingSystem': 'Telegram',\n"
-     "                  'url': 'https://fastschedulebot.github.io/Fast-Scheduler/'},\n"
+     "                  'url': 'https://fastscheduler.github.io/'},\n"
      "    }\n"
      "    if modified:\n"
      "        _page['dateModified'] = modified\n"
@@ -280,9 +280,9 @@ edit('build_site.py',
      "            _page,\n"
      "            {'@type': 'BreadcrumbList', 'itemListElement': [\n"
      "                {'@type': 'ListItem', 'position': 1, 'name': 'Fast Scheduler',\n"
-     "                 'item': 'https://fastschedulebot.github.io/Fast-Scheduler/'},\n"
+     "                 'item': 'https://fastscheduler.github.io/'},\n"
      "                {'@type': 'ListItem', 'position': 2, 'name': 'Legal',\n"
-     "                 'item': 'https://fastschedulebot.github.io/Fast-Scheduler/legal/privacy.html'},\n"
+     "                 'item': 'https://fastscheduler.github.io/legal/privacy.html'},\n"
      "                {'@type': 'ListItem', 'position': 3, 'name': title, 'item': canon}]},\n"
      "        ]\n"
      "    }, ensure_ascii=False)\n",

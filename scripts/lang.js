@@ -1,1 +1,830 @@
-!function(){"use strict";var STR={en:{settings:"Settings",dark:"Dark mode",anim:"Animations",fx:"Effects",keys:"Hotkeys",seeKeys:"See hotkeys",help:"Help",support:"Support chat",openBot:"Open Bot",openShort:"Open",langLabel:"Language",openHelp:"Open Help Center",recent:"Recent searches",searchPh:"Search the help center…",openMenu:"Open menu",closeMenu:"Close menu"},ru:{settings:"Настройки",dark:"Тёмная тема",anim:"Анимации",fx:"Эффекты",keys:"Горячие клавиши",seeKeys:"Показать клавиши",help:"Помощь",support:"Чат поддержки",openBot:"Открыть",openShort:"Открыть",langLabel:"Язык",openHelp:"Открыть центр помощи",recent:"Недавние запросы",searchPh:"Поиск по центру помощи…",openMenu:"Открыть меню",closeMenu:"Закрыть меню"}},RU_MAP={"Time saved":"Экономия времени",Features:"Возможности","How it works":"Как это работает",Pricing:"Тарифы",FAQ:"Вопросы и ответы",Blog:"Блог",Help:"Помощь","Open Bot":"Открыть бота","Your channel posts itself.You just write.":"Ваш канал публикуется сам. Вы просто пишете.","Scheduled in one chat. Posted forever.":"Запланировали в одном чате. Публикуется всегда.","How much time you get back":"Сколько времени вы вернёте","Everything a channel needs, in one chat":"Всё для канала — в одном чате","Three steps. Sixty seconds.":"Три шага. Шестьдесят секунд.","Start free. Upgrade when it pays for itself.":"Начните бесплатно. Переходите на Premium, когда окупится.","Questions, answered":"Вопросы и ответы","Your next post is already scheduled.":"Ваш следующий пост уже запланирован.","Batch scheduling":"Пакетное планирование","Recurring posts":"Регулярные посты","Rich media posts":"Посты с медиа","Stats & leaderboards":"Статистика и рейтинги","Post from your own bot":"Публикация от вашего бота","Your timezone, your rules":"Ваш часовой пояс, ваши правила","Auto reports":"Автоматические отчёты","Multi-channel + team admins":"Мультиканальность и команда","Encrypted backups":"Зашифрованные бэкапы","Open the bot & connect a channel":"Откройте бота и подключите канал","Schedule one post or fifty":"Запланируйте один пост или пятьдесят","Live your life":"Живите своей жизнью","Full plan comparison":"Полное сравнение тарифов","Is Fast Scheduler really free?":"Fast Scheduler действительно бесплатный?","How does it save me time?":"Как он экономит моё время?","Do posts come from my own bot?":"Посты выходят от моего бота?","Will posts go out if I'm offline or asleep?":"Выйдут ли посты, если я офлайн или сплю?","Can I see who comments on my posts?":"Видно ли, кто комментирует мои посты?","Is my data safe?":"Мои данные в безопасности?",Free:"Бесплатно",Premium:"Premium","per month":"в месяц","Get started":"Начать","Try the bot":"Попробовать бота","Open Help Center":"Открыть центр помощи","Recent searches":"Недавние запросы","Search the help center…":"Поиск по центру помощи…","Search docs…":"Поиск по документам…","All articles":"Все статьи","Was this helpful?":"Было ли это полезно?",Yes:"Да",No:"Нет",Previous:"Назад",Next:"Далее","Table of contents":"Содержание","Help Center — Fast Scheduler for Telegram":"Центр помощи — Fast Scheduler для Telegram","Best result":"Лучший результат","More results":"Другие результаты","All results":"Все результаты","Up next":"Далее","Now reading":"Читаете сейчас","No previous article":"Нет предыдущей статьи","No next article":"Нет следующей статьи","Other categories:":"Другие категории:","Related topics":"Похожие темы","This article has no sections.":"В этой статье нет разделов.","0 results":"Ничего не найдено","No exact match for":"Точного совпадения нет:","— a human answers every ticket.":"— на каждый вопрос отвечает человек.","No results found for “":"Ничего не найдено: «","Try other words — for example":"Попробуйте другие слова — например","Back to Help Center":"Назад в центр помощи","That topic doesn’t exist (or moved). Try the search on the home page.":"Такой темы нет. Воспользуйтесь поиском на главной.","Maybe you meant:":"Возможно, вы имели в виду:","Still stuck?":"Не нашли ответ?","Ask in the bot":"Спросите в боте","You mean:":"Вы имеете в виду:","On this page":"На этой странице","Terms of Service":"Условия использования",Settings:"Настройки","Dark mode":"Тёмная тема",Animations:"Анимации",Effects:"Эффекты",Hotkeys:"Горячие клавиши","See hotkeys":"Показать клавиши","Support chat":"Чат поддержки",Language:"Язык","Back to top":"Наверх","Back to blog":"Назад в блог","Back to help":"Назад в помощь","Related articles":"Похожие статьи","Read more":"Читать далее","min read":"мин чтения","Last updated":"Обновлено","Page not found":"Страница не найдена","Go home":"На главную","All topics":"Все темы",Growth:"Рост",Content:"Контент","Bots & Tools":"Боты и инструменты","Premium & Safety":"Premium и безопасность",Platform:"Платформа",Monetization:"Монетизация","Subscribers, swaps, discoverability and retention — the playbooks that compound.":"Подписчики, свапы, поиск и удержание — стратегии, которые работают на перспективу.","Formatting, calendars and content systems that keep a channel alive.":"Оформление, календари и контент-системы, которые держат канал на плаву.","The bot stack behind successful channels — scheduling, analytics, moderation.":"Стек ботов успешных каналов — планирование, аналитика, модерация.","Verification, Premium perks, Mini Apps — the platform layer behind channels.":"Верификация, преимущества Premium, Mini Apps — платформа за кулисами каналов.","How Telegram itself works: channels vs groups, bot safety, algorithms.":"Как устроен сам Telegram: каналы и группы, безопасность ботов, алгоритмы.","Ads, Stars, subscriptions and products — what pays, and when.":"Реклама, Stars, подписки и товары — что приносит деньги и когда."},META={title:{en:"Fast Scheduler — Telegram Channel Post Scheduler",ru:"Fast Scheduler — Планировщик постов для Telegram-каналов"},desc:{en:"Fast Scheduler is a free Telegram bot that schedules, publishes and tracks your channel posts. Batch-schedule a week in one chat, post from your own bot.",ru:"Fast Scheduler — бесплатный Telegram-бот: планирование и публикация постов канала, аналитика. Планируйте неделю контента в одном чате и публикуйте от своего бота."}};function get(){try{var saved=localStorage.getItem("fs-lang");if("ru"===saved||"en"===saved)return saved}catch(e){}try{return"ru"===document.documentElement.getAttribute("lang")?"ru":"en"}catch(e){return"en"}}function sectionKind(path){try{var p="string"==typeof path?path:location.pathname;if(/(^|\/)help(\.html|\/|$)/.test(p))return"help";if(/(^|\/)blog(\/|$)/.test(p))return"blog";if(/(^|\/)legal(\/|$)/.test(p))return"legal"}catch(e){}return""}function set(lang){lang="ru"===lang?"ru":"en";try{localStorage.setItem("fs-lang",lang)}catch(e){}document.documentElement.setAttribute("lang",lang),apply(lang);try{window.dispatchEvent(new CustomEvent("fs-lang-change",{detail:{lang:lang}}))}catch(e){}var paired=function(lang){try{var p=location.pathname;if("ru"===lang&&sectionKind(p))return"";var base="/Fast-Scheduler/",isArchive=0===p.indexOf(base+"legal/history/"),isRuArchive=0===p.indexOf(base+"ru/legal/history/");if(isArchive||isRuArchive||p!==base&&p!==base+"index.html"&&p!==base+"help.html"&&0!==p.indexOf(base+"help/")&&0!==p.indexOf(base+"legal/")&&p!==base+"404.html"&&0!==p.indexOf(base+"blog/")&&p!==base+"ru/"&&p!==base+"ru/index.html"&&p!==base+"ru/help.html"&&0!==p.indexOf(base+"ru/help/")&&0!==p.indexOf(base+"ru/legal/")&&p!==base+"ru/404.html"&&0!==p.indexOf(base+"ru/blog/"))return"";var ru=0===p.indexOf(base+"ru/");if("ru"===lang&&!ru)return base+"ru/"+p.slice(16);if("ru"!==lang&&ru)return base+p.slice(19)}catch(e){}return""}(lang);if(paired&&paired!==location.pathname){var next=paired+(location.search||"")+(location.hash||"");try{history.replaceState({"fs-lang":lang},"",next),function(path){try{var abs=location.origin+path,c=document.querySelector('link[rel="canonical"]');c&&c.setAttribute("href",abs);var og=document.querySelector('meta[property="og:url"]');og&&og.setAttribute("content",abs)}catch(e){}}(paired)}catch(e){location.replace(next)}}}var FIXUPS=[];try{if(window.FS_RU_CHROME){if(window.FS_RU_CHROME.STR){var chromeSTR=window.FS_RU_CHROME.STR;Object.keys(chromeSTR).forEach(function(k){STR.ru[k]=chromeSTR[k]})}if(window.FS_RU_CHROME.META){var rm=window.FS_RU_CHROME.META;rm.title&&(META.title.ru="string"==typeof rm.title?rm.title:rm.title.ru),rm.desc&&(META.desc.ru="string"==typeof rm.desc?rm.desc:rm.desc.ru)}if(window.FS_RU_CHROME.MAP)for(var _ck in window.FS_RU_CHROME.MAP)RU_MAP[_ck]=window.FS_RU_CHROME.MAP[_ck];window.FS_RU_CHROME.FIXUPS&&(FIXUPS=window.FS_RU_CHROME.FIXUPS)}}catch(e){}var SKIP_SEL="[data-no-ru],code,pre,script,style,textarea,.phone-stage,.demo,.ios-app,.chan-msg,.sl-head,.sl-foot,.tg-header,.tg-input,.tg-explorer,.rl-notif,.fx-bar";var chromeOrig="undefined"!=typeof Map?new Map:null,chromeList=[];function translateTextNode(n,ru){if(n&&n.nodeValue&&!function(n){try{var p=n.parentNode;if(!p||1!==p.nodeType)return!0;if(p.closest(".fs-lang-seg"))return!0;if(p.closest(SKIP_SEL))return!0;var tag=(p.tagName||"").toLowerCase();if("script"===tag||"style"===tag||"code"===tag||"pre"===tag||"textarea"===tag)return!0}catch(e){return!0}return!1}(n)){var trimmed=n.nodeValue.trim();if(trimmed&&/[A-Za-z\u00C0-\u024F\u0400-\u04FF]/.test(trimmed))if(ru){var mapped=RU_MAP[trimmed];if(mapped&&-1===n.nodeValue.indexOf(mapped)){!function(n){if(chromeOrig)chromeOrig.has(n)||chromeOrig.set(n,n.nodeValue);else{for(var i=0;i<chromeList.length;i++)if(chromeList[i].n===n)return;chromeList.push({n:n,t:n.nodeValue})}}(n);var lead=(n.nodeValue.match(/^\s*/)||[""])[0],trail=(n.nodeValue.match(/\s*$/)||[""])[0];n.nodeValue=lead+mapped+trail}}else!function(n){if(chromeOrig){if(chromeOrig.has(n)){try{n.nodeValue=chromeOrig.get(n)}catch(e){}chromeOrig.delete(n)}}else for(var i=0;i<chromeList.length;i++)if(chromeList[i].n===n){try{n.nodeValue=chromeList[i].t}catch(e){}chromeList.splice(i,1);break}}(n)}}function applyTree(root,ru){try{for(var tn,walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null,!1),batch=[];tn=walker.nextNode();)batch.push(tn);for(var i=0;i<batch.length;i++)translateTextNode(batch[i],ru)}catch(e){}}function applyFixups(ru){FIXUPS&&FIXUPS.length&&FIXUPS.forEach(function(fx){var sel=fx[0],attr=fx[1],en=fx[2],ruStr=fx[3];document.querySelectorAll(sel).forEach(function(el){try{attr?ru?(el.dataset.fsAttrEn||(el.dataset.fsAttrEn=el.getAttribute(attr)||""),(el.getAttribute(attr)||"")!==en&&(el.dataset.fsAttrEn||"")!==en||el.setAttribute(attr,ruStr)):el.dataset.fsAttrEn&&(el.setAttribute(attr,el.dataset.fsAttrEn),delete el.dataset.fsAttrEn):(el.textContent||"").trim()===en?ru&&(el.dataset.fsEn||(el.dataset.fsEn=en),el.textContent=ruStr):ru&&el.dataset.fsEn===en?el.textContent=ruStr:ru||el.dataset.fsEn!==en||(el.textContent=el.dataset.fsEn,delete el.dataset.fsEn)}catch(e){}})})}function removeNoRu(){try{var old=document.getElementById("fsNoRu");old&&old.parentNode&&old.parentNode.removeChild(old)}catch(e){}}function apply(lang){var ru="ru"===lang,d=STR[lang]||STR.en;document.documentElement.setAttribute("lang",lang),document.querySelectorAll("#settingsMenu .gp-head:not([data-reading]):not([data-blog-reading])").forEach(function(el){el.dataset.fsEn||(el.dataset.fsEn=el.textContent.trim()),el.textContent=ru?d.settings:el.dataset.fsEn}),[["rowDark",d.dark],["rowAnim",d.anim],["rowFx",d.fx],["rowKeys",d.keys],["rowKeysHelp",d.seeKeys]].forEach(function(pair){var row=document.getElementById(pair[0]);if(row){var s=row.querySelector("span");s&&(s.textContent=pair[1])}}),document.querySelectorAll(".nav-cta-sm, .nav-cta-m, .nav-cta").forEach(function(a){var txt=d.openBot,label=a.querySelector("span");label?label.textContent=txt:a.childNodes.forEach(function(n){3===n.nodeType&&n.textContent.trim().length>2&&(n.textContent=" "+txt+" ")});try{ru?a.setAttribute("title","Открыть бота"):a.removeAttribute("title")}catch(e){}a.setAttribute("data-cta-short",d.openShort)}),document.querySelectorAll("#siteMenu .help-menu-open span").forEach(function(s){s.textContent=d.openHelp});var rt=document.getElementById("helpRecentTitle");rt&&(rt.textContent=d.recent),document.querySelectorAll("#helpSearchInput").forEach(function(inp){inp.setAttribute("placeholder",d.searchPh),inp.setAttribute("aria-label",d.searchPh)});var burger=document.getElementById("navBurger");burger&&burger.setAttribute("aria-label",ru?d.openMenu:STR.en.openMenu),document.querySelectorAll("[data-i18n]").forEach(function(el){var key=el.getAttribute("data-i18n"),dict=I18N[key];if(dict){var v=ru&&dict.ru||dict.en;v&&(el.textContent=v)}}),document.querySelectorAll("[data-i18n-ph]").forEach(function(el){var key=el.getAttribute("data-i18n-ph"),dict=I18N[key];dict&&el.setAttribute("placeholder",ru&&dict.ru||dict.en)}),applyTree(document.body,ru),applyFixups(ru);try{sectionKind()?(translateContent(!1),function(show){if(removeNoRu(),show){var kind=sectionKind();if(kind){try{if(window.sessionStorage&&sessionStorage.getItem("fs-noru-hide")===kind)return}catch(e){}var ru,en;if("help"===kind)ru="Справочный центр пока не переведён на русский язык.",en="The Help Center is not yet translated into Russian.";else if("blog"===kind)ru="Блог пока не переведён на русский язык.",en="The Blog is not yet translated into Russian.";else{var name="";try{var h1=document.querySelector("article.doc h1");h1&&(name=h1.textContent.trim())}catch(e){}name?(ru="Страница «"+name+"» пока не переведена на русский язык.",en="“"+name+"” is not yet translated into Russian."):(ru="Эта страница пока не переведена на русский язык.",en="This page is not yet translated into Russian.")}try{var bar=document.createElement("div");bar.id="fsNoRu",bar.className="fs-noru",bar.setAttribute("role","note"),bar.setAttribute("data-no-ru","1");var lineRu=document.createElement("span");lineRu.className="fs-noru-ru",lineRu.textContent=ru;var lineEn=document.createElement("span");lineEn.className="fs-noru-en",lineEn.textContent=en,bar.appendChild(lineRu),bar.appendChild(lineEn);var dismiss=document.createElement("button");dismiss.type="button",dismiss.className="fs-noru-x",dismiss.setAttribute("aria-label","Dismiss"),dismiss.textContent="×",dismiss.addEventListener("click",function(){try{window.sessionStorage&&sessionStorage.setItem("fs-noru-hide",kind)}catch(e){}removeNoRu()}),bar.appendChild(dismiss);var main=document.querySelector("main");main?main.insertBefore(bar,main.firstChild):document.body&&document.body.insertBefore(bar,document.body.firstChild)}catch(e){}}}}(ru)):(removeNoRu(),translateContent(ru))}catch(e){}document.querySelectorAll(".fs-lang-label").forEach(function(el){el.textContent=d.langLabel}),document.querySelectorAll(".fs-lang-seg button").forEach(function(b){var on=b.getAttribute("data-lang")===lang;b.setAttribute("aria-pressed",on?"true":"false"),b.setAttribute("aria-checked",on?"true":"false"),b.classList.toggle("on",on)});try{if(document.body&&document.body.classList.contains("home")){document.title=ru?META.title.ru:META.title.en;var md=document.querySelector('meta[name="description"]');md&&md.setAttribute("content",ru?META.desc.ru:META.desc.en)}}catch(e){}try{var ev=new CustomEvent("fs-lang-applied",{detail:{lang:lang}});window.dispatchEvent(ev)}catch(e){}}var contentOrig=null,contentDone=!1,contentStarted=!1,contentLoading=!1,origTitle=null;function normContent(s){return s.replace(/\s+/g," ").replace(/^\s+|\s+$/g,"").replace(/([A-Za-z\u00c0-\u024f\u0400-\u04ff])(\d+\.)/g,"$1 $2").replace(/([.!?])([A-Z\u0410-\u042f\u0401])/g,"$1 $2")}function ensureContent(cb){if(window.FS_RU_CONTENT)cb();else if(contentLoading)setTimeout(function(){ensureContent(cb)},300);else{contentLoading=!0;var src="scripts/ru-content.js?v=20261004b2";try{var self=document.querySelector('script[src*="lang.js"]');self&&(src=self.getAttribute("src").replace(/lang\.js.*$/,"ru-content.js?v=20261004b2"))}catch(e){}var el=document.createElement("script");el.src=src,el.onload=function(){cb()},el.onerror=function(){contentLoading=!1,contentStarted=!1},document.head.appendChild(el)}}function textAdjacent(a,b){for(var s=a?a.nextSibling:null;s&&s!==b;){if(1===s.nodeType)return!1;s=s.nextSibling}return s===b}function contentSet(n,val){n.nodeValue!==val&&(!function(n){for(var i=0;i<contentOrig.length;i++)if(contentOrig[i].n===n)return;contentOrig.push({n:n,t:n.nodeValue})}(n),n.nodeValue=val)}function skipContentNode(n){for(var p=n.parentNode;p&&1===p.nodeType;){var t=(p.tagName||"").toLowerCase();if("code"===t||"pre"===t||"script"===t||"style"===t||"textarea"===t)return!0;p=p.parentNode}return!1}function blockOf(n,scope){for(var p=n.parentNode;p&&p!==scope;){var t=(p.tagName||"").toLowerCase();if(/^(p|li|h1|h2|h3|h4|h5|h6|td|th|div|section|article|ul|ol|blockquote|summary)$/.test(t))return p;p=p.parentNode}return scope}function applyContent(){var dict=window.FS_RU_CONTENT||{},keys=[];for(var k in dict)Object.prototype.hasOwnProperty.call(dict,k)&&!RU_MAP[k]&&keys.push(k);if(keys.length){keys.sort(function(a,b){return b.length-a.length});var lookup={},anchor={};keys.forEach(function(kk){lookup[kk]=dict[kk];var m=kk.toLowerCase().match(/[a-z\u00c0-\u024f\u0400-\u04ff]{4,}/);if(m){var ak=m[0];Object.prototype.hasOwnProperty.call(anchor,ak)||(anchor[ak]=[]),anchor[ak].push(kk)}});var scopes=document.querySelectorAll(".doc, .blog-doc, .hc-art, .bento, .blog-chips");scopes.length&&Array.prototype.forEach.call(scopes,function(scope){try{if(scope.closest(".archived"))return}catch(e){}for(var tn,nodes=[],walker=document.createTreeWalker(scope,NodeFilter.SHOW_TEXT,null,!1);tn=walker.nextNode();)tn.nodeValue&&/[^\s]/.test(tn.nodeValue)&&(skipContentNode(tn)||nodes.push(tn));if(nodes.length){var i,norm,done=nodes.map(function(){return!1});nodes.forEach(function(n,idx){norm=normContent(n.nodeValue);var orig,val,hit=lookup[norm];if(!hit&&/[….]{1,3}\s*$/.test(norm)){var short=norm.replace(/[…\s.]+$/,"");hit=lookup[short]}hit&&(contentSet(n,(orig=n.nodeValue,val=hit,(orig.match(/^\s*/)||[""])[0]+val+(orig.match(/\s*$/)||[""])[0])),done[idx]=!0)}),[3,2].forEach(function(w){for(i=0;i+w<=nodes.length;i++){for(var free=!0,j=0;j<w;j++)if(done[i+j]){free=!1;break}if(free){var blk=blockOf(nodes[i],scope),same=!0;for(j=1;j<w;j++)if(blockOf(nodes[i+j],scope)!==blk){same=!1;break}if(same){for(j=1;j<w;j++)if(!textAdjacent(nodes[i+j-1],nodes[i+j])){same=!1;break}if(same){var joined="";for(j=0;j<w;j++)joined+=nodes[i+j].nodeValue;if(norm=normContent(joined),lookup[norm]){var lead=(nodes[i].nodeValue.match(/^\s*/)||[""])[0],trail=(nodes[i+w-1].nodeValue.match(/\s*$/)||[""])[0];for(contentSet(nodes[i],lead+lookup[norm]+(1===w?trail:"")),j=1;j<w;j++)contentSet(nodes[i+j],j===w-1?trail:"");for(j=0;j<w;j++)done[i+j]=!0}}}}}}),nodes.forEach(function(n,idx){if(!(done[idx]||n.nodeValue.length<40)){var words=n.nodeValue.toLowerCase().match(/[a-z\u00c0-\u024f\u0400-\u04ff]{4,}/g)||[],seen={};words.forEach(function(wd){if(!seen[wd]){seen[wd]=!0;var cands=Object.prototype.hasOwnProperty.call(anchor,wd)?anchor[wd]:null;cands&&cands.forEach(function(kk){if(!(kk.length<12||kk.length>n.nodeValue.length+20)){var s,re=new RegExp("(^|[^A-Za-z\\u00c0-\\u024f\\u0400-\\u04ff])("+(s=kk,s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")).replace(/\s+/g,"\\s+")+")(?![A-Za-z\\u00c0-\\u024f\\u0400-\\u04ff])");re.exec(n.nodeValue)&&contentSet(n,n.nodeValue.replace(re,"$1"+lookup[kk]))}})}})}})}})}}function translateContent(ru){if(ru)contentDone||contentStarted||(contentStarted=!0,ensureContent(function(){if(!contentDone){contentOrig=[];try{applyContent()}catch(e){}try{var suffix,h1=document.querySelector(".doc h1, .blog-doc h1");if(h1&&h1.textContent.trim().length>3)null===origTitle&&(origTitle=document.title),suffix=document.querySelector(".blog-doc")?" — Блог Fast Scheduler":document.body&&document.body.classList.contains("legal")?" — Fast Scheduler":" — Помощь Fast Scheduler",document.title=h1.textContent.trim()+suffix}catch(e2){}contentDone=!0}}));else if(contentOrig&&(contentOrig.forEach(function(rec){try{rec.n.nodeValue=rec.t}catch(e){}}),contentOrig=null),contentDone=!1,contentStarted=!1,null!==origTitle){try{document.title=origTitle}catch(e){}origTitle=null}}var I18N={};function boot(){!function(){var menu=document.getElementById("settingsMenu");if(menu&&!menu.querySelector(".fs-lang-seg")){var wrap=document.createElement("div");wrap.className="fs-lang-row",wrap.innerHTML='<span class="fs-lang-label">Language</span><div class="fs-lang-seg" role="group" aria-label="Language"><button type="button" data-lang="en" role="menuitemradio" aria-checked="true" aria-pressed="true"><span class="fs-flag"><svg viewBox="0 0 18 13" aria-hidden="true"><clipPath id="fsFlagGb"><rect width="18" height="13" rx="2.5"/></clipPath><g clip-path="url(#fsFlagGb)"><rect width="18" height="13" fill="#012169"/><path d="M0 0l18 13M18 0L0 13" stroke="#fff" stroke-width="2.6"/><path d="M0 0l18 13M18 0L0 13" stroke="#C8102E" stroke-width="1"/><path d="M9 0v13M0 6.5h18" stroke="#fff" stroke-width="4.4"/><path d="M9 0v13M0 6.5h18" stroke="#C8102E" stroke-width="2.6"/></g></svg></span>EN</button><button type="button" data-lang="ru" role="menuitemradio" aria-checked="false" aria-pressed="false"><span class="fs-flag"><svg viewBox="0 0 18 13" aria-hidden="true"><rect width="18" height="13" fill="#fff"/><rect y="4.33" width="18" height="4.34" fill="#0039A6"/><rect y="8.66" width="18" height="4.34" fill="#D52B1E"/></svg></span>RU</button></div>';var head=menu.querySelector(".gp-head");head&&head.nextSibling?menu.insertBefore(wrap,head.nextSibling):menu.insertBefore(wrap,menu.firstChild),wrap.querySelectorAll("button").forEach(function(b){if(b.addEventListener("click",function(e){e.stopPropagation(),set(b.getAttribute("data-lang"))}),"ru"===b.getAttribute("data-lang")){var warmed=!1,warm=function(){if(!warmed){warmed=!0;try{ensureContent(function(){})}catch(e){}}};b.addEventListener("pointerenter",warm),b.addEventListener("focus",warm)}})}}();var lang=get();document.documentElement.setAttribute("lang",lang),apply(lang),function(){try{if(!("MutationObserver"in window)||!document.body)return;new MutationObserver(function(muts){"ru"===get()&&(obsTimer||(obsTimer=setTimeout(function(){obsTimer=null;try{muts.forEach(function(){}),applyTree(document.body,!0),applyFixups(!0);try{window.FS_RU_CONTENT&&contentOrig&&applyContent()}catch(e){}}catch(e3){}},60)))}).observe(document.body,{childList:!0,subtree:!0})}catch(e){}}();try{(window.requestIdleCallback||function(cb){return setTimeout(cb,1500)})(function(){"ru"===get()&&ensureContent(function(){})})}catch(e){}}window.FS_LANG={get:get,set:set,t:function(key){return(STR[get()]||STR.en)[key]||STR.en[key]||key},apply:apply,RU_MAP:RU_MAP,I18N:I18N},"loading"===document.readyState?document.addEventListener("DOMContentLoaded",boot):boot(),window.addEventListener("storage",function(e){"fs-lang"===e.key&&e.newValue&&apply("ru"===e.newValue?"ru":"en")});var obsTimer=null;window.addEventListener("fs-lang-change",function(){}),setTimeout(function(){try{apply(get())}catch(e){}},1500)}();
+// Website language: EN/RU switcher, persisted in localStorage (fs-lang).
+// Dark pill EN/RU control in #settingsMenu (see styles/lang.css).
+// Russian covers the site chrome (settings/nav/footer/search) plus the
+// landing page. Help center, blog and legal articles are English-only:
+// switching to RU there keeps the English document, translates the chrome
+// and shows a "not yet translated" notice instead of navigating away.
+(function () {
+  'use strict';
+  var STR = {
+    en: {
+      settings: 'Settings', dark: 'Dark mode', anim: 'Animations', fx: 'Effects',
+      keys: 'Hotkeys', seeKeys: 'See hotkeys', help: 'Help', support: 'Support chat',
+      openBot: 'Open Bot', openShort: 'Open', langLabel: 'Language', openHelp: 'Open Help Center',
+      recent: 'Recent searches', searchPh: 'Search the help center…',
+      openMenu: 'Open menu', closeMenu: 'Close menu'
+    },
+    ru: {
+      settings: 'Настройки', dark: 'Тёмная тема', anim: 'Анимации', fx: 'Эффекты',
+      keys: 'Горячие клавиши', seeKeys: 'Показать клавиши', help: 'Помощь', support: 'Чат поддержки',
+      openBot: 'Открыть', openShort: 'Открыть', langLabel: 'Язык', openHelp: 'Открыть центр помощи',
+      recent: 'Недавние запросы', searchPh: 'Поиск по центру помощи…',
+      openMenu: 'Открыть меню', closeMenu: 'Закрыть меню'
+    }
+  };
+
+  // Exact English visible strings -> Russian. Landing-first, then shared chrome.
+  // Keep brand names, commands, URLs untouched.
+  var RU_MAP = {
+    // nav
+    'Time saved': 'Экономия времени',
+    'Features': 'Возможности',
+    'How it works': 'Как это работает',
+    'Pricing': 'Тарифы',
+    'FAQ': 'Вопросы и ответы',
+    'Blog': 'Блог',
+    'Help': 'Помощь',
+    'Open Bot': 'Открыть бота',
+    // hero
+    'Your channel posts itself.You just write.': 'Ваш канал публикуется сам. Вы просто пишете.',
+    'Scheduled in one chat. Posted forever.': 'Запланировали в одном чате. Публикуется всегда.',
+    // sections
+    'How much time you get back': 'Сколько времени вы вернёте',
+    'Everything a channel needs, in one chat': 'Всё для канала — в одном чате',
+    'Three steps. Sixty seconds.': 'Три шага. Шестьдесят секунд.',
+    'Start free. Upgrade when it pays for itself.': 'Начните бесплатно. Переходите на Premium, когда окупится.',
+    'Questions, answered': 'Вопросы и ответы',
+    'Your next post is already scheduled.': 'Ваш следующий пост уже запланирован.',
+    // features
+    'Batch scheduling': 'Пакетное планирование',
+    'Recurring posts': 'Регулярные посты',
+    'Rich media posts': 'Посты с медиа',
+    'Stats & leaderboards': 'Статистика и рейтинги',
+    'Post from your own bot': 'Публикация от вашего бота',
+    'Your timezone, your rules': 'Ваш часовой пояс, ваши правила',
+    'Auto reports': 'Автоматические отчёты',
+    'Multi-channel + team admins': 'Мультиканальность и команда',
+    'Encrypted backups': 'Зашифрованные бэкапы',
+    // how
+    'Open the bot & connect a channel': 'Откройте бота и подключите канал',
+    'Schedule one post or fifty': 'Запланируйте один пост или пятьдесят',
+    'Live your life': 'Живите своей жизнью',
+    // faq / pricing chrome
+    'Full plan comparison': 'Полное сравнение тарифов',
+    'Is Fast Scheduler really free?': 'Fast Scheduler действительно бесплатный?',
+    'How does it save me time?': 'Как он экономит моё время?',
+    'Do posts come from my own bot?': 'Посты выходят от моего бота?',
+    'Will posts go out if I\'m offline or asleep?': 'Выйдут ли посты, если я офлайн или сплю?',
+    'Can I see who comments on my posts?': 'Видно ли, кто комментирует мои посты?',
+    'Is my data safe?': 'Мои данные в безопасности?',
+    'Free': 'Бесплатно',
+    'Premium': 'Premium',
+    'per month': 'в месяц',
+    'Get started': 'Начать',
+    'Try the bot': 'Попробовать бота',
+    'Open Help Center': 'Открыть центр помощи',
+    'Recent searches': 'Недавние запросы',
+    'Search the help center…': 'Поиск по центру помощи…',
+    'Search docs…': 'Поиск по документам…',
+    'All articles': 'Все статьи',
+    'Was this helpful?': 'Было ли это полезно?',
+    'Yes': 'Да',
+    'No': 'Нет',
+    'Previous': 'Назад',
+    'Next': 'Далее',
+    'Table of contents': 'Содержание',
+    'Help Center — Fast Scheduler for Telegram': 'Центр помощи — Fast Scheduler для Telegram',
+    'Best result': 'Лучший результат',
+    'More results': 'Другие результаты',
+    'All results': 'Все результаты',
+    'Up next': 'Далее',
+    'Now reading': 'Читаете сейчас',
+    'No previous article': 'Нет предыдущей статьи',
+    'No next article': 'Нет следующей статьи',
+    'Other categories:': 'Другие категории:',
+    'Related topics': 'Похожие темы',
+    'This article has no sections.': 'В этой статье нет разделов.',
+    '0 results': 'Ничего не найдено',
+    'No exact match for': 'Точного совпадения нет:',
+    '— a human answers every ticket.': '— на каждый вопрос отвечает человек.',
+    'No results found for “': 'Ничего не найдено: «',
+    'Try other words — for example': 'Попробуйте другие слова — например',
+    'Back to Help Center': 'Назад в центр помощи',
+    'That topic doesn’t exist (or moved). Try the search on the home page.': 'Такой темы нет. Воспользуйтесь поиском на главной.',
+    'Maybe you meant:': 'Возможно, вы имели в виду:',
+    'Still stuck?': 'Не нашли ответ?',
+    'Ask in the bot': 'Спросите в боте',
+    'You mean:': 'Вы имеете в виду:',
+    'On this page': 'На этой странице',
+    // NOTE: 'Privacy Policy' / 'Refund Policy' intentionally absent here —
+    // those titles need per-context Russian cases, handled by scoped FIXUPs
+    // in ru-chrome.js plus multi-node window keys in ru-content.js. A
+    // whole-node MAP entry would mistranslate them inside sentences.
+    'Terms of Service': 'Условия использования',
+    'Settings': 'Настройки',
+    'Dark mode': 'Тёмная тема',
+    'Animations': 'Анимации',
+    'Effects': 'Эффекты',
+    'Hotkeys': 'Горячие клавиши',
+    'See hotkeys': 'Показать клавиши',
+    'Support chat': 'Чат поддержки',
+    'Language': 'Язык',
+    'Back to top': 'Наверх',
+    'Back to blog': 'Назад в блог',
+    'Back to help': 'Назад в помощь',
+    'Related articles': 'Похожие статьи',
+    'Read more': 'Читать далее',
+    'min read': 'мин чтения',
+    'Last updated': 'Обновлено',
+    'Page not found': 'Страница не найдена',
+    'Go home': 'На главную',
+    'All topics': 'Все темы',
+    'Growth': 'Рост',
+    'Content': 'Контент',
+    'Bots & Tools': 'Боты и инструменты',
+    'Premium & Safety': 'Premium и безопасность',
+    'Platform': 'Платформа',
+    'Monetization': 'Монетизация',
+    'Subscribers, swaps, discoverability and retention — the playbooks that compound.': 'Подписчики, свапы, поиск и удержание — стратегии, которые работают на перспективу.',
+    'Formatting, calendars and content systems that keep a channel alive.': 'Оформление, календари и контент-системы, которые держат канал на плаву.',
+    'The bot stack behind successful channels — scheduling, analytics, moderation.': 'Стек ботов успешных каналов — планирование, аналитика, модерация.',
+    'Verification, Premium perks, Mini Apps — the platform layer behind channels.': 'Верификация, преимущества Premium, Mini Apps — платформа за кулисами каналов.',
+    'How Telegram itself works: channels vs groups, bot safety, algorithms.': 'Как устроен сам Telegram: каналы и группы, безопасность ботов, алгоритмы.',
+    'Ads, Stars, subscriptions and products — what pays, and when.': 'Реклама, Stars, подписки и товары — что приносит деньги и когда.'
+  };
+
+  var META = {
+    title: {
+      en: 'Fast Scheduler — Telegram Post Scheduler Bot (@FastSchedulerBot)',
+      ru: 'Fast Scheduler — Планировщик постов для Telegram-каналов'
+    },
+    desc: {
+      en: 'Fast Scheduler (@FastSchedulerBot) is a free Telegram post scheduler bot. Paste many date + post blocks in one message — or upload a .txt — and it publishes each at the right time from your own bot.',
+      ru: 'Fast Scheduler — бесплатный Telegram-бот: планирование и публикация постов канала, аналитика. Планируйте неделю контента в одном чате и публикуйте от своего бота.'
+    }
+  };
+
+  function get() {
+    try {
+      var saved = localStorage.getItem('fs-lang');
+      if (saved === 'ru' || saved === 'en') return saved;
+    } catch (e) {}
+    // No stored preference: follow the language the server actually served.
+    // /ru/ pages are built with <html lang="ru">; without this a first-time
+    // visitor to /ru/... would be flipped back to English by this script.
+    try {
+      return document.documentElement.getAttribute('lang') === 'ru' ? 'ru' : 'en';
+    } catch (e) { return 'en'; }
+  }
+  /* Help center, blog and legal: article bodies are English-only, only the
+     site chrome is translated. Returns 'help' | 'blog' | 'legal' | '' for a
+     pathname (stale /ru/ content URLs included). */
+  function sectionKind(path) {
+    try {
+      var p = typeof path === 'string' ? path : location.pathname;
+      if (/(^|\/)help(\.html|\/|$)/.test(p)) return 'help';
+      if (/(^|\/)blog(\/|$)/.test(p)) return 'blog';
+      if (/(^|\/)legal(\/|$)/.test(p)) return 'legal';
+    } catch (e) {}
+    return '';
+  }
+  function isContentSection() { return !!sectionKind(); }
+
+  function staticLanguageCounterpart(lang) {
+    /* Only the landing page (and 404) have a server-rendered Russian copy.
+       Help, blog and legal stay on the English document when switching to
+       RU: lang.js translates the chrome client-side and paints the
+       "not yet translated" notice over the English bodies. */
+    try {
+      var p = location.pathname;
+      if (lang === 'ru' && sectionKind(p)) return '';
+      var base = '/';
+      var isArchive = p.indexOf(base + 'legal/history/') === 0;
+      var isRuArchive = p.indexOf(base + 'ru/legal/history/') === 0;
+      var isStatic = !isArchive && !isRuArchive && (p === base || p === base + 'index.html' ||
+        p === base + 'help/' || p.indexOf(base + 'help/') === 0 ||
+        p.indexOf(base + 'legal/') === 0 || p === base + '404.html' ||
+        p.indexOf(base + 'blog/') === 0 ||
+        p === base + 'ru/' || p === base + 'ru/index.html' ||
+        p === base + 'ru/help/' || p.indexOf(base + 'ru/help/') === 0 ||
+        p.indexOf(base + 'ru/legal/') === 0 || p === base + 'ru/404.html' ||
+        p.indexOf(base + 'ru/blog/') === 0);
+      if (!isStatic) return '';
+      var ru = p.indexOf(base + 'ru/') === 0;
+      if (lang === 'ru' && !ru) return base + 'ru/' + p.slice(base.length);
+      if (lang !== 'ru' && ru) return base + p.slice((base + 'ru/').length);
+    } catch (e) {}
+    return '';
+  }
+
+  /* Keep <link rel=canonical> / og:url in sync with the visible URL after
+     an instant language switch (history API changes the address bar
+     without reloading, so the tags would otherwise point at the old one.
+     Crawlers fetch the static URLs directly, this is only for correctness
+     of the live document: copy/share actions read these tags. */
+  function syncCanonical(path) {
+    try {
+      var abs = location.origin + path;
+      var c = document.querySelector('link[rel="canonical"]');
+      if (c) c.setAttribute('href', abs);
+      var og = document.querySelector('meta[property="og:url"]');
+      if (og) og.setAttribute('content', abs);
+    } catch (e) {}
+  }
+  function set(lang) {
+    lang = lang === 'ru' ? 'ru' : 'en';
+    try { localStorage.setItem('fs-lang', lang); } catch (e) {}
+    /* Instant switch: translate this document in place (chrome is
+       synchronous; the article-body dictionary streams in a moment later
+       on first use) and move the address bar with the history API — no
+       reload. The /ru/ static copies remain for SEO/direct links; a
+       refresh lands on the equivalent server-rendered page. */
+    document.documentElement.setAttribute('lang', lang);
+    apply(lang);
+    try { window.dispatchEvent(new CustomEvent('fs-lang-change', { detail: { lang: lang } })); } catch (e) {}
+    var paired = staticLanguageCounterpart(lang);
+    if (paired && paired !== location.pathname) {
+      var next = paired + (location.search || '') + (location.hash || '');
+      try {
+        history.replaceState({ 'fs-lang': lang }, '', next);
+        syncCanonical(paired);
+      } catch (e) {
+        /* Very old browsers without the history API: classic navigation. */
+        location.replace(next);
+      }
+    }
+  }
+  function t(key) { return (STR[get()] || STR.en)[key] || STR.en[key] || key; }
+
+  // Extended RU dictionary lives in ru-chrome.js (separate file, loaded with
+  // `defer` BEFORE this file, so it is always available synchronously —
+  // switching languages translates the whole page instantly, no refresh.
+  // Merged over the inline core above, which stays as an offline fallback.
+  var FIXUPS = [];
+  try {
+    if (window.FS_RU_CHROME) {
+      /* Merge, never replace: the chrome file once shipped without
+         openShort and the wholesale assignment wiped the inline core's
+         key, so data-cta-short was stamped with the literal text
+         "undefined" and every zoomed/narrow RU bar read ✈ undefined. */
+      if (window.FS_RU_CHROME.STR) {
+        var chromeSTR = window.FS_RU_CHROME.STR;
+        Object.keys(chromeSTR).forEach(function (k) { STR.ru[k] = chromeSTR[k]; });
+      }
+      // ru-chrome.js ships META as a flat {title, desc} pair of RU strings,
+      // while lang.js keeps the nested {en, ru} shape and reads META.title.en
+      // on the home page. Assigning the flat object straight over META left
+      // META.title.en undefined, so every load stamped document.title and
+      // the meta description with the literal text "undefined" - which is
+      // also what a crawler rendering the page saw.
+      if (window.FS_RU_CHROME.META) {
+        var rm = window.FS_RU_CHROME.META;
+        if (rm.title) META.title.ru = typeof rm.title === 'string' ? rm.title : rm.title.ru;
+        if (rm.desc) META.desc.ru = typeof rm.desc === 'string' ? rm.desc : rm.desc.ru;
+      }
+      if (window.FS_RU_CHROME.MAP) {
+        for (var _ck in window.FS_RU_CHROME.MAP) RU_MAP[_ck] = window.FS_RU_CHROME.MAP[_ck];
+      }
+      if (window.FS_RU_CHROME.FIXUPS) FIXUPS = window.FS_RU_CHROME.FIXUPS;
+    }
+  } catch (e) {}
+
+  // Elements that must NEVER be translated: product-demo mockups (phone
+  // cinema, mock chats/channels, iOS home screen, review stats), code and
+  // form fields. Marketing copy around them still translates node by node.
+  var SKIP_SEL = '[data-no-ru],code,pre,script,style,textarea,.phone-stage,.demo,' +
+    '.ios-app,.chan-msg,.sl-head,.sl-foot,.tg-header,.tg-input,.tg-explorer,.rl-notif,.fx-bar';
+  function skipTextNode(n) {
+    try {
+      var p = n.parentNode;
+      if (!p || p.nodeType !== 1) return true;
+      if (p.closest('.fs-lang-seg')) return true;
+      if (p.closest(SKIP_SEL)) return true;
+      var tag = (p.tagName || '').toLowerCase();
+      if (tag === 'script' || tag === 'style' || tag === 'code' || tag === 'pre' || tag === 'textarea') return true;
+    } catch (e) { return true; }
+    return false;
+  }
+  // Revert-safe store: text nodes cannot carry dataset, so keep originals here.
+  var chromeOrig = (typeof Map !== 'undefined') ? new Map() : null;
+  var chromeList = [];
+  function chromeRemember(n) {
+    if (chromeOrig) { if (!chromeOrig.has(n)) chromeOrig.set(n, n.nodeValue); }
+    else {
+      for (var i = 0; i < chromeList.length; i++) { if (chromeList[i].n === n) return; }
+      chromeList.push({ n: n, t: n.nodeValue });
+    }
+  }
+  function chromeRestore(n) {
+    if (chromeOrig) {
+      if (chromeOrig.has(n)) { try { n.nodeValue = chromeOrig.get(n); } catch (e) {} chromeOrig.delete(n); }
+    } else {
+      for (var i = 0; i < chromeList.length; i++) {
+        if (chromeList[i].n === n) { try { n.nodeValue = chromeList[i].t; } catch (e) {} chromeList.splice(i, 1); break; }
+      }
+    }
+  }
+  function translateTextNode(n, ru) {
+    if (!n || !n.nodeValue) return;
+    if (skipTextNode(n)) return;
+    // Only whole-node matches: short keys can never corrupt longer sentences,
+    // and inline <svg>/<b>/<span> elements are never touched (no icon loss,
+    // no broken centering — layout and formatting survive translation).
+    var trimmed = n.nodeValue.trim();
+    if (!trimmed || !/[A-Za-z\u00C0-\u024F\u0400-\u04FF]/.test(trimmed)) return;
+    if (ru) {
+      var mapped = RU_MAP[trimmed];
+      if (mapped && n.nodeValue.indexOf(mapped) === -1) {
+        chromeRemember(n);
+        var lead = (n.nodeValue.match(/^\s*/) || [''])[0];
+        var trail = (n.nodeValue.match(/\s*$/) || [''])[0];
+        n.nodeValue = lead + mapped + trail;
+      }
+    } else {
+      chromeRestore(n);
+    }
+  }
+  function applyTree(root, ru) {
+    try {
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+      var batch = [];
+      var tn;
+      while ((tn = walker.nextNode())) batch.push(tn);
+      for (var i = 0; i < batch.length; i++) translateTextNode(batch[i], ru);
+    } catch (e) {}
+  }
+  function applyFixups(ru) {
+    if (!FIXUPS || !FIXUPS.length) return;
+    FIXUPS.forEach(function (fx) {
+      var sel = fx[0], attr = fx[1], en = fx[2], ruStr = fx[3];
+      document.querySelectorAll(sel).forEach(function (el) {
+        try {
+          if (attr) {
+            if (ru) {
+              if (!el.dataset.fsAttrEn) el.dataset.fsAttrEn = el.getAttribute(attr) || '';
+              if ((el.getAttribute(attr) || '') === en || (el.dataset.fsAttrEn || '') === en) el.setAttribute(attr, ruStr);
+            } else if (el.dataset.fsAttrEn) {
+              el.setAttribute(attr, el.dataset.fsAttrEn);
+              delete el.dataset.fsAttrEn;
+            }
+          } else if ((el.textContent || '').trim() === en) {
+            if (ru) {
+              if (!el.dataset.fsEn) el.dataset.fsEn = en;
+              el.textContent = ruStr;
+            }
+          } else if (ru && el.dataset.fsEn === en) {
+            el.textContent = ruStr;
+          } else if (!ru && el.dataset.fsEn === en) {
+            el.textContent = el.dataset.fsEn;
+            delete el.dataset.fsEn;
+          }
+        } catch (e) {}
+      });
+    });
+  }
+
+  // NOTE: the old element-level translateNode() was removed. It replaced
+  // el.textContent on elements holding an <svg>, which destroyed icons, and
+  // it skipped every element with inline tags (<b>/<span>/<br>), which left
+  // split headings half-English. translateTextNode() above replaces only
+  // text nodes, so markup, icons and layout always survive.
+
+  /* "Not yet translated" notice for help / blog / legal in RU mode. */
+  function removeNoRu() {
+    try { var old = document.getElementById('fsNoRu'); if (old && old.parentNode) old.parentNode.removeChild(old); } catch (e) {}
+  }
+  function paintNoRu(show) {
+    removeNoRu();
+    if (!show) return;
+    var kind = sectionKind();
+    if (!kind) return;
+    // Dismissed this session: stay dismissed (per section).
+    try { if (window.sessionStorage && sessionStorage.getItem('fs-noru-hide') === kind) return; } catch (e) {}
+    var ru, en;
+    if (kind === 'help') {
+      ru = 'Справочный центр пока не переведён на русский язык.';
+      en = 'The Help Center is not yet translated into Russian.';
+    } else if (kind === 'blog') {
+      ru = 'Блог пока не переведён на русский язык.';
+      en = 'The Blog is not yet translated into Russian.';
+    } else {
+      var name = '';
+      try {
+        var h1 = document.querySelector('article.doc h1');
+        if (h1) name = h1.textContent.trim();
+      } catch (e) {}
+      if (name) {
+        ru = 'Страница «' + name + '» пока не переведена на русский язык.';
+        en = '\u201c' + name + '\u201d is not yet translated into Russian.';
+      } else {
+        ru = 'Эта страница пока не переведена на русский язык.';
+        en = 'This page is not yet translated into Russian.';
+      }
+    }
+    try {
+      var bar = document.createElement('div');
+      bar.id = 'fsNoRu';
+      bar.className = 'fs-noru';
+      bar.setAttribute('role', 'note');
+      bar.setAttribute('data-no-ru', '1');
+      var lineRu = document.createElement('span');
+      lineRu.className = 'fs-noru-ru';
+      lineRu.textContent = ru;
+      var lineEn = document.createElement('span');
+      lineEn.className = 'fs-noru-en';
+      lineEn.textContent = en;
+      bar.appendChild(lineRu);
+      bar.appendChild(lineEn);
+      var dismiss = document.createElement('button');
+      dismiss.type = 'button';
+      dismiss.className = 'fs-noru-x';
+      dismiss.setAttribute('aria-label', 'Dismiss');
+      dismiss.textContent = '\u00d7';
+      dismiss.addEventListener('click', function () {
+        try { if (window.sessionStorage) sessionStorage.setItem('fs-noru-hide', kind); } catch (e) {}
+        removeNoRu();
+      });
+      bar.appendChild(dismiss);
+      var main = document.querySelector('main');
+      if (main) main.insertBefore(bar, main.firstChild);
+      else if (document.body) document.body.insertBefore(bar, document.body.firstChild);
+    } catch (e) {}
+  }
+
+  function apply(lang) {
+    var ru = lang === 'ru';
+    var d = STR[lang] || STR.en;
+    document.documentElement.setAttribute('lang', lang);
+    // settings head
+    /* the main "Settings" head only — "Reading" heads keep their own label
+       and translate through the exact-text map (no EN flash, no overwrite) */
+    document.querySelectorAll('#settingsMenu .gp-head:not([data-reading]):not([data-blog-reading])').forEach(function (el) {
+      if (!el.dataset.fsEn) el.dataset.fsEn = el.textContent.trim();
+      el.textContent = ru ? d.settings : el.dataset.fsEn;
+    });
+    var map = [['rowDark', d.dark], ['rowAnim', d.anim], ['rowFx', d.fx], ['rowKeys', d.keys], ['rowKeysHelp', d.seeKeys]];
+    map.forEach(function (pair) {
+      var row = document.getElementById(pair[0]);
+      if (row) { var s = row.querySelector('span'); if (s) s.textContent = pair[1]; }
+    });
+    // nav CTA (svg + text). Inner pages wrap the label in a <span> inside
+    // .nav-cta; the homepage uses bare text in .nav-cta-sm / .nav-cta-m.
+    document.querySelectorAll('.nav-cta-sm, .nav-cta-m, .nav-cta').forEach(function (a) {
+      var txt = d.openBot;
+      var label = a.querySelector('span');
+      if (label) label.textContent = txt;
+      else a.childNodes.forEach(function (n) {
+        if (n.nodeType === 3 && n.textContent.trim().length > 2) n.textContent = ' ' + txt + ' ';
+      });
+      /* RU shows the short "Открыть" (the full "Открыть бота" is ~50px
+         wider and breaks the navbar) — the full label lives in the hover
+         tooltip instead. EN shows the full text, so no tooltip needed. */
+      try {
+        if (ru) a.setAttribute('title', 'Открыть бота');
+        else a.removeAttribute('title');
+      } catch (e) {}
+      /* The phone bar paints the short label from data-cta-short (CSS zeroes the
+         long text so brand + CTA + gear + burger fit a 390px row). */
+      a.setAttribute('data-cta-short', d.openShort);
+    });
+    // help menu chrome
+    document.querySelectorAll('#siteMenu .help-menu-open span').forEach(function (s) { s.textContent = d.openHelp; });
+    var rt = document.getElementById('helpRecentTitle');
+    if (rt) rt.textContent = d.recent;
+    document.querySelectorAll('#helpSearchInput').forEach(function (inp) {
+      inp.setAttribute('placeholder', d.searchPh);
+      inp.setAttribute('aria-label', d.searchPh);
+    });
+    var burger = document.getElementById('navBurger');
+    if (burger) burger.setAttribute('aria-label', ru ? d.openMenu : STR.en.openMenu);
+    // data-i18n elements (templates that opt in)
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      var dict = I18N[key];
+      if (dict) {
+        var v = ru ? (dict.ru || dict.en) : dict.en;
+        if (v) el.textContent = v;
+      }
+    });
+    document.querySelectorAll('[data-i18n-ph]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-ph');
+      var dict = I18N[key];
+      if (dict) el.setAttribute('placeholder', ru ? (dict.ru || dict.en) : dict.en);
+    });
+    // generic exact-text map across body (landing + shared chrome).
+    // Text-node level: SVG icons, <b>/<span> formatting and alignment survive.
+    applyTree(document.body, ru);
+    applyFixups(ru);
+    // Full article bodies (blog titles/descs, landing sections) via the lazy
+    // ru-content.js dictionary — but never on help/blog/legal pages, which
+    // are English-only: bodies stay in English and a notice is shown instead.
+    try {
+      if (isContentSection()) { translateContent(false); paintNoRu(ru); }
+      else { removeNoRu(); translateContent(ru); }
+    } catch (e) {}
+    // segmented control state + label
+    document.querySelectorAll('.fs-lang-label').forEach(function (el) { el.textContent = d.langLabel; });
+    document.querySelectorAll('.fs-lang-seg button').forEach(function (b) {
+      var on = b.getAttribute('data-lang') === lang;
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      b.classList.toggle('on', on);
+    });
+    // title + meta description (home only; articles keep their own)
+    try {
+      if (document.body && document.body.classList.contains('home')) {
+        document.title = ru ? META.title.ru : META.title.en;
+        var md = document.querySelector('meta[name="description"]');
+        if (md) md.setAttribute('content', ru ? META.desc.ru : META.desc.en);
+      }
+    } catch (e) {}
+    try {
+      var ev = new CustomEvent('fs-lang-applied', { detail: { lang: lang } });
+      window.dispatchEvent(ev);
+    } catch (e) {}
+  }
+
+  // ---- Article-body RU translation (help center + blog titles/descs) ----
+  // EN sentences come from the bot's own RU translations (ru-content.js,
+  // lazy-loaded via this file's own <script> path, so it works at any page
+  // depth). Matching works across inline tags: exact text nodes, 2-3 node
+  // windows inside one block, and sentence substrings. Revert-safe: every
+  // touched text node is restored verbatim, so no listeners ever break.
+  var contentOrig = null;
+  var contentDone = false;
+  var contentStarted = false;
+  var contentLoading = false;
+  var origTitle = null;
+
+  function normContent(s) {
+    return s.replace(/\s+/g, ' ')
+      .replace(/^\s+|\s+$/g, '')
+      .replace(/([A-Za-z\u00c0-\u024f\u0400-\u04ff])(\d+\.)/g, '$1 $2')
+      .replace(/([.!?])([A-Z\u0410-\u042f\u0401])/g, '$1 $2');
+  }
+  function keepWS(orig, val) {
+    var lead = (orig.match(/^\s*/) || [''])[0];
+    var trail = (orig.match(/\s*$/) || [''])[0];
+    return lead + val + trail;
+  }
+  function escRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+  function ensureContent(cb) {
+    if (window.FS_RU_CONTENT) { cb(); return; }
+    if (contentLoading) { setTimeout(function () { ensureContent(cb); }, 300); return; }
+    contentLoading = true;
+    var src = 'scripts/ru-content.js?v=20261004b2';
+    try {
+      var self = document.querySelector('script[src*="lang.js"]');
+      if (self) src = self.getAttribute('src').replace(/lang\.js.*$/, 'ru-content.js?v=20261004b2');
+    } catch (e) {}
+    var el = document.createElement('script');
+    el.src = src;
+    el.onload = function () { cb(); };
+    el.onerror = function () { contentLoading = false; contentStarted = false; };
+    document.head.appendChild(el);
+  }
+  // Pass 2 must not merge across ELEMENT boundaries: joining text split by
+  // <b>/<a>/… and replacing it wholesale empties those elements, destroying
+  // bold, links and other inline formatting. Whitespace text between nodes
+  // is fine — only real elements block a merge.
+  function textAdjacent(a, b) {
+    var s = a ? a.nextSibling : null;
+    while (s && s !== b) {
+      if (s.nodeType === 1) return false;
+      s = s.nextSibling;
+    }
+    return s === b;
+  }
+  function contentTouch(n) {
+    for (var i = 0; i < contentOrig.length; i++) {
+      if (contentOrig[i].n === n) return;
+    }
+    contentOrig.push({ n: n, t: n.nodeValue });
+  }
+  function contentSet(n, val) {
+    if (n.nodeValue === val) return;
+    contentTouch(n);
+    n.nodeValue = val;
+  }
+  function skipContentNode(n) {
+    var p = n.parentNode;
+    while (p && p.nodeType === 1) {
+      var t = (p.tagName || '').toLowerCase();
+      if (t === 'code' || t === 'pre' || t === 'script' || t === 'style' || t === 'textarea') return true;
+      p = p.parentNode;
+    }
+    return false;
+  }
+  function blockOf(n, scope) {
+    var p = n.parentNode;
+    while (p && p !== scope) {
+      var t = (p.tagName || '').toLowerCase();
+      if (/^(p|li|h1|h2|h3|h4|h5|h6|td|th|div|section|article|ul|ol|blockquote|summary)$/.test(t)) return p;
+      p = p.parentNode;
+    }
+    return scope;
+  }
+  function applyContent() {
+    var dict = window.FS_RU_CONTENT || {};
+    var keys = [];
+    for (var k in dict) {
+      if (Object.prototype.hasOwnProperty.call(dict, k) && !RU_MAP[k]) keys.push(k);
+    }
+    if (!keys.length) return;
+    keys.sort(function (a, b) { return b.length - a.length; });
+    var lookup = {};
+    var anchor = {};
+    keys.forEach(function (kk) {
+      lookup[kk] = dict[kk];
+      var m = kk.toLowerCase().match(/[a-z\u00c0-\u024f\u0400-\u04ff]{4,}/);
+      if (m) { var ak = m[0]; if (!Object.prototype.hasOwnProperty.call(anchor, ak)) anchor[ak] = []; anchor[ak].push(kk); }
+    });
+    // .hc-art added 2026-10-09: help article bodies used to be skipped, so
+    // switching to RU translated the chrome but left every guide in English.
+    var scopes = document.querySelectorAll('.doc, .blog-doc, .hc-art, .bento, .blog-chips');
+    if (!scopes.length) return;
+    Array.prototype.forEach.call(scopes, function (scope) {
+      // archived legal versions stay in their original language
+      try { if (scope.closest('.archived')) return; } catch (e) {}
+      var nodes = [];
+      var walker = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT, null, false);
+      var tn;
+      while ((tn = walker.nextNode())) {
+        if (!tn.nodeValue || !/[^\s]/.test(tn.nodeValue)) continue;
+        if (skipContentNode(tn)) continue;
+        nodes.push(tn);
+      }
+      if (!nodes.length) return;
+      var done = nodes.map(function () { return false; });
+      var i, norm;
+      // pass 1: exact full-node matches (plus truncated-card … fallback)
+      nodes.forEach(function (n, idx) {
+        norm = normContent(n.nodeValue);
+        var hit = lookup[norm];
+        if (!hit && /[….]{1,3}\s*$/.test(norm)) {
+          var short = norm.replace(/[…\s.]+$/, '');
+          hit = lookup[short];
+        }
+        if (hit) { contentSet(n, keepWS(n.nodeValue, hit)); done[idx] = true; }
+      });
+      // pass 2: 3- and 2-node windows inside one block (inline-tag splits)
+      [3, 2].forEach(function (w) {
+        for (i = 0; i + w <= nodes.length; i++) {
+          var free = true;
+          for (var j = 0; j < w; j++) { if (done[i + j]) { free = false; break; } }
+          if (!free) continue;
+          var blk = blockOf(nodes[i], scope);
+          var same = true;
+          for (j = 1; j < w; j++) { if (blockOf(nodes[i + j], scope) !== blk) { same = false; break; } }
+          if (!same) continue;
+          for (j = 1; j < w; j++) { if (!textAdjacent(nodes[i + j - 1], nodes[i + j])) { same = false; break; } }
+          if (!same) continue;
+          var joined = '';
+          for (j = 0; j < w; j++) joined += nodes[i + j].nodeValue;
+          norm = normContent(joined);
+          if (lookup[norm]) {
+            var lead = (nodes[i].nodeValue.match(/^\s*/) || [''])[0];
+            var trail = (nodes[i + w - 1].nodeValue.match(/\s*$/) || [''])[0];
+            contentSet(nodes[i], lead + lookup[norm] + (w === 1 ? trail : ''));
+            for (j = 1; j < w; j++) contentSet(nodes[i + j], j === w - 1 ? trail : '');
+            for (j = 0; j < w; j++) done[i + j] = true;
+          }
+        }
+      });
+      // pass 3: sentence substrings inside long untouched nodes (anchored)
+      nodes.forEach(function (n, idx) {
+        if (done[idx] || n.nodeValue.length < 40) return;
+        var words = n.nodeValue.toLowerCase().match(/[a-z\u00c0-\u024f\u0400-\u04ff]{4,}/g) || [];
+        var seen = {};
+        words.forEach(function (wd) {
+          if (seen[wd]) return;
+          seen[wd] = true;
+          var cands = Object.prototype.hasOwnProperty.call(anchor, wd) ? anchor[wd] : null;
+          if (!cands) return;
+          cands.forEach(function (kk) {
+            if (kk.length < 12 || kk.length > n.nodeValue.length + 20) return;
+            var re = new RegExp('(^|[^A-Za-z\\u00c0-\\u024f\\u0400-\\u04ff])(' +
+              escRe(kk).replace(/\s+/g, '\\s+') + ')(?![A-Za-z\\u00c0-\\u024f\\u0400-\\u04ff])');
+            var m = re.exec(n.nodeValue);
+            if (m) contentSet(n, n.nodeValue.replace(re, '$1' + lookup[kk]));
+          });
+        });
+      });
+    });
+  }
+  function translateContent(ru) {
+    if (!ru) {
+      if (contentOrig) {
+        contentOrig.forEach(function (rec) { try { rec.n.nodeValue = rec.t; } catch (e) {} });
+        contentOrig = null;
+      }
+      contentDone = false;
+      contentStarted = false;
+      if (origTitle !== null) { try { document.title = origTitle; } catch (e) {} origTitle = null; }
+      return;
+    }
+    if (contentDone || contentStarted) return;
+    contentStarted = true;
+    ensureContent(function () {
+      if (contentDone) return;
+      contentOrig = [];
+      try { applyContent(); } catch (e) {}
+      try {
+        var h1 = document.querySelector('.doc h1, .blog-doc h1');
+        if (h1 && h1.textContent.trim().length > 3) {
+          if (origTitle === null) origTitle = document.title;
+          // The suffix must match what the page actually is. Legal pages share
+          // the same .doc scope as help articles, so the old two-way branch
+          // stamped every legal document with "\u041f\u043e\u043c\u043e\u0449\u044c"
+          // (Help) and produced titles like "\u0423\u0441\u043b\u043e\u0432\u0438\u044f \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u2014 \u041f\u043e\u043c\u043e\u0449\u044c"
+          // for a page that is not help at all.
+          var suffix;
+          if (document.querySelector('.blog-doc')) {
+            suffix = ' \u2014 \u0411\u043b\u043e\u0433 Fast Scheduler';
+          } else if (document.body && document.body.classList.contains('legal')) {
+            suffix = ' \u2014 Fast Scheduler';
+          } else {
+            suffix = ' \u2014 \u041f\u043e\u043c\u043e\u0449\u044c Fast Scheduler';
+          }
+          document.title = h1.textContent.trim() + suffix;
+        }
+      } catch (e2) {}
+      contentDone = true;
+    });
+  }
+
+  // data-i18n registry for templates (extend without touching HTML widely)
+  var I18N = {};
+
+  function inject() {
+    var menu = document.getElementById('settingsMenu');
+    if (!menu || menu.querySelector('.fs-lang-seg')) return;
+    var wrap = document.createElement('div');
+    wrap.className = 'fs-lang-row';
+    // Inline SVG flags: emoji flags render as "GB"/"RU" letter codes on
+    // systems without color-emoji fonts (notably Windows) — vector flags
+    // always look right. .fs-flag clips them to a rounded chip (lang.css).
+    var flagGb = '<svg viewBox="0 0 18 13" aria-hidden="true"><clipPath id="fsFlagGb"><rect width="18" height="13" rx="2.5"/></clipPath><g clip-path="url(#fsFlagGb)"><rect width="18" height="13" fill="#012169"/><path d="M0 0l18 13M18 0L0 13" stroke="#fff" stroke-width="2.6"/><path d="M0 0l18 13M18 0L0 13" stroke="#C8102E" stroke-width="1"/><path d="M9 0v13M0 6.5h18" stroke="#fff" stroke-width="4.4"/><path d="M9 0v13M0 6.5h18" stroke="#C8102E" stroke-width="2.6"/></g></svg>';
+    var flagRu = '<svg viewBox="0 0 18 13" aria-hidden="true"><rect width="18" height="13" fill="#fff"/><rect y="4.33" width="18" height="4.34" fill="#0039A6"/><rect y="8.66" width="18" height="4.34" fill="#D52B1E"/></svg>';
+    wrap.innerHTML = '<span class="fs-lang-label">Language</span>' +
+      '<div class="fs-lang-seg" role="group" aria-label="Language">' +
+      '<button type="button" data-lang="en" aria-pressed="true"><span class="fs-flag">' + flagGb + '</span>EN</button>' +
+      '<button type="button" data-lang="ru" aria-pressed="false"><span class="fs-flag">' + flagRu + '</span>RU</button>' +
+      '</div>';
+    var head = menu.querySelector('.gp-head');
+    if (head && head.nextSibling) menu.insertBefore(wrap, head.nextSibling);
+    else menu.insertBefore(wrap, menu.firstChild);
+    wrap.querySelectorAll('button').forEach(function (b) {
+      b.addEventListener('click', function (e) { e.stopPropagation(); set(b.getAttribute('data-lang')); });
+      /* Warm the 410KB article-body dictionary on hover/focus of the RU
+         button, so the first real switch translates bodies instantly too.
+         EN users who never touch it download nothing. */
+      if (b.getAttribute('data-lang') === 'ru') {
+        var warmed = false;
+        var warm = function () {
+          if (warmed) return;
+          warmed = true;
+          try { ensureContent(function () {}); } catch (e) {}
+        };
+        b.addEventListener('pointerenter', warm);
+        b.addEventListener('focus', warm);
+      }
+    });
+  }
+  window.FS_LANG = { get: get, set: set, t: t, apply: apply, RU_MAP: RU_MAP, I18N: I18N };
+  function boot() {
+    inject();
+    var lang = get();
+    document.documentElement.setAttribute('lang', lang);
+    apply(lang);
+    observeLate();
+    // idle preload: RU dict arrives before the user ever clicks RU,
+    // so the first switch is instant even on slow networks
+    try {
+      var idle = window.requestIdleCallback || function (cb) { return setTimeout(cb, 1500); };
+      idle(function () { if (get() === 'ru') ensureContent(function () {}); });
+    } catch (e) {}
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+  window.addEventListener('storage', function (e) {
+    if (e.key === 'fs-lang' && e.newValue) apply(e.newValue === 'ru' ? 'ru' : 'en');
+  });
+  // Instant switching for late/dynamic content: the plan-comparison table
+  // (main.js), help-search results and RU-dict bodies render AFTER this
+  // file, so watch for added nodes and translate them in the current
+  // language immediately — no refresh needed.
+  var obsTimer = null;
+  function observeLate() {
+    try {
+      if (!('MutationObserver' in window) || !document.body) return;
+      var obs = new MutationObserver(function (muts) {
+        if (get() !== 'ru') return;
+        if (obsTimer) return;
+        obsTimer = setTimeout(function () {
+          obsTimer = null;
+          try {
+            muts.forEach(function () {});
+            applyTree(document.body, true);
+            applyFixups(true);
+            // article-body dict covers new nodes too (guarded: store exists)
+            try { if (window.FS_RU_CONTENT && contentOrig) applyContent(); } catch (e) {}
+          } catch (e3) {}
+        }, 60);
+      });
+      obs.observe(document.body, { childList: true, subtree: true });
+    } catch (e) {}
+  }
+  window.addEventListener('fs-lang-change', function () {});
+  // safety net for very late widgets; the observer above does the real work
+  setTimeout(function () { try { apply(get()); } catch (e) {} }, 1500);
+})();

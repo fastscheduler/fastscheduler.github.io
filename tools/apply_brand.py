@@ -9,9 +9,9 @@ site reads as one product:
   * nav CTAs gain data-cta-short="Open" so the phone bar can print the short
     label (main.css zeroes the long text below 860px).
 
-Paths are RELATIVE on purpose. The site is published under
-/Fast-Scheduler/, so a leading "/" would resolve against the domain root and
-404. The prefix is computed from each file's depth under website/, and
+Paths are RELATIVE on purpose. The site is published at the domain root but
+pages sit at different depths, so the prefix is computed from each file's
+depth under website/, and
 favicon-32.png / brand-logo.png therefore resolve correctly from blog/a/,
 ru/help/a/ and every other depth.
 

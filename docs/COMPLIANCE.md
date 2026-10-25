@@ -1,7 +1,7 @@
 # Site compliance audit
 
 Audited 5 October 2026. Covers the static site served from
-`https://fastschedulebot.github.io/Fast-Scheduler/`. This is the deployed site
+`https://fastscheduler.github.io/`. This is the deployed site
 only; the Telegram bot has its own data flows, covered by the Privacy Policy.
 
 ## Third-party resource loading: none
@@ -38,7 +38,7 @@ versus embedding a Google CDN URL).
 
 The only external hosts appearing anywhere in the HTML are:
 
-- `fastschedulebot.github.io` — `rel="canonical"`, `og:url`, JSON-LD `@id`.
+- `fastscheduler.github.io` — `rel="canonical"`, `og:url`, JSON-LD `@id`.
   These are metadata values that are never fetched.
 - `schema.org` / `www.w3.org` — XML namespace identifiers in JSON-LD and inline
   SVG. Never fetched.
@@ -103,4 +103,4 @@ grep -rniE "gtag|googletagmanager|yandex|metrika|hotjar|clarity\.ms|facebook\.ne
 
 All four must return nothing. The greps catch a source-level regression; the
 decisive check is a **live network capture** on the deployed site (Preview →
-Network), where every request should be to `fastschedulebot.github.io`.
+Network), where every request should be to `fastscheduler.github.io`.

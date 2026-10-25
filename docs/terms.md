@@ -1,6 +1,6 @@
 ## 1. Acceptance of Terms
 
-By accessing or using **Fast Scheduler** ("Main Service"), **SetDate** ("SetDate Service"), **Fast Support** ("Support Service"), and our public website at https://fastschedulebot.github.io/Fast-Scheduler/ ("Website" — landing, help center, blog, and legal pages, and together the "**Services**") operated by Maxim Mkrtchyan, an individual operator based in Armenia ("**we**", "**us**", "**our**"), you agree to be bound by these Terms of Service ("**Terms**"). If you do not agree, do not use the Services.
+By accessing or using **Fast Scheduler** ("Main Service"), **SetDate** ("SetDate Service"), **Fast Support** ("Support Service"), and our public website at https://fastscheduler.github.io/ ("Website" — landing, help center, blog, and legal pages, and together the "**Services**") operated by Maxim Mkrtchyan, an individual operator based in Armenia ("**we**", "**us**", "**our**"), you agree to be bound by these Terms of Service ("**Terms**"). If you do not agree, do not use the Services.
 
 These Terms incorporate our **Privacy Policy** and, where you purchase a subscription, the refund terms in our **Refund Policy**.
 

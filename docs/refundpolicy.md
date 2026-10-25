@@ -1,3 +1,17 @@
+**Fast Scheduler refund policy** — how refunds work for **Fast Scheduler** Premium in **@FastSchedulerBot**, paid with Telegram Stars. This is the official policy for the Telegram post scheduler at https://fastscheduler.github.io/; it is not connected to any other product that shares the name.
+
+## Fast Scheduler refund policy: quick answers
+
+**Can I get a refund for Fast Scheduler Premium?** Premium is paid with Telegram Stars. Refunds are discretionary and limited to **7 days from that specific payment**. Email fastschedulebot@gmail.com with the transaction ID and your Telegram username.
+
+**How long do I have to request a Fast Scheduler refund?** Each Stars payment has its own 7-day window counted from the charge date. After 7 days that payment is not refundable, unless Fast Scheduler failed to deliver the paid feature.
+
+**How do I cancel Fast Scheduler Premium?** Open `/premium` in @FastSchedulerBot and cancel — see [Cancel Premium](../help/a/premium_cancel.html). Cancelling stops the next charge; the current paid period is not refunded.
+
+**Where are the paid features described?** See [Premium](../help/a/premium.html) and the in-bot checkout. Billing runs entirely through Telegram Stars.
+
+---
+
 ## 1. Overview
 
 This Refund Policy explains how refunds work for **Premium** subscriptions to **Fast Scheduler** ("the Service"), operated by Maxim Mkrtchyan, an individual operator based in Armenia ("**we**", "**us**"). Premium is paid exclusively with **Telegram Stars** (in-app virtual currency), processed entirely by Telegram.

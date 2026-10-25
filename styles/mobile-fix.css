@@ -1,1 +1,46 @@
-body,html{overflow-x:clip}canvas,img,svg,video{max-width:100%;height:auto}.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}@media(max-width:560px){.table-scroll table{min-width:520px;font-size:14px}}@media(hover:none),(pointer:coarse){.gp-row,.icon-btn,.nav-link,a,button{min-height:44px}.icon-btn{min-width:44px}}@media(max-width:860px){.hero-grid{grid-template-columns:1fr!important}.phone-stage{max-width:340px;margin:8px auto 0}}:focus-visible{outline:#1faa59 solid 3px;outline-offset:2px}.effective{font-size:14px;opacity:.85}.ver-banner{border:1px solid var(--border);background:var(--surface);border-radius:12px;padding:12px 16px;margin:0 0 12px}.ver-dd{position:relative;display:inline-block;margin:0 0 18px}.ver-pill{display:inline-flex;align-items:center;gap:9px;padding:9px 18px;border-radius:999px;font:inherit;font-size:14px;font-weight:650;color:var(--text);cursor:default;background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow-sm),inset 0 1px 0 rgba(255,255,255,.35);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4)}@supports (background:color-mix(in srgb,red 50%,blue)){.ver-pill{background:color-mix(in srgb,var(--surface) 72%,transparent)}}.ver-pill-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}.ver-pill .chev{width:14px;height:14px;opacity:.6}.ver-dd:focus-within .ver-pill,.ver-dd:hover .ver-pill{border-color:var(--green)}.ver-menu{left:0;right:auto;min-width:290px;transform-origin:top left}.ver-menu::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}.ver-dd:focus-within .ver-menu,.ver-dd:hover .ver-menu{opacity:1;transform:none;pointer-events:auto}.ver-dd:focus-within .ver-menu .gp-row,.ver-dd:hover .ver-menu .gp-row{opacity:1;transform:none}.ver-dd:focus-within .ver-menu .gp-row:nth-child(3),.ver-dd:hover .ver-menu .gp-row:nth-child(3){transition-delay:.07s}.ver-opt .ver-v{font-weight:700;display:block}.ver-opt .ver-s{font-size:.8rem;font-weight:500;color:var(--text-dim);display:block}.ver-opt .chev,.ver-opt .ver-check{width:15px;height:15px;margin-left:auto;flex:none}.ver-opt.on .ver-check{color:var(--green-strong)}.ver-changes{position:relative;border:0;border-left:3px solid var(--green);border-radius:0 12px 12px 0;background:var(--green-soft);padding:12px 16px 12px 18px;margin:0 0 18px;font-size:14px}.ver-changes ul{margin:8px 0 0;padding-left:20px}.ver-changes li{margin:5px 0}.ver-changes q{quotes:'“' '”'}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}img{border-style:none}button{font:inherit}@supports not (overflow:clip){body,html{overflow-x:hidden}}@supports not (background:color-mix(in srgb,red 50%,blue)){.glass,.glass-pop,.home-nav,.toc-bar,header.site{background:var(--surface)!important}.fs-lang-seg{background:rgba(127,127,127,.2)!important}.fs-lang-seg button.on{background:rgba(255,255,255,.9)!important}html[data-theme=dark] .fs-lang-seg button.on{background:rgba(255,255,255,.16)!important}.doc-tab.active,.doc-tab:hover,.hero-replay:hover,.hk-edit:hover,.hk-row:hover,.seg-pill,.toc-pill{background:var(--surface-2)!important;border-color:var(--border)!important}.comparison tbody tr:nth-child(2n),.legal .doc tbody tr:nth-child(2n),.legal .doc thead th{background:var(--surface-2)!important}}@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.fs-lang-seg,.glass-pop,.home-nav{background:var(--surface)!important}}
+/* mobile-fix v20261001 */
+html,body{overflow-x:clip}
+img,svg,video,canvas{max-width:100%;height:auto}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media(max-width:560px){.table-scroll table{min-width:520px;font-size:14px}}
+@media(hover:none),(pointer:coarse){a,button,.gp-row,.icon-btn,.nav-link{min-height:44px}.icon-btn{min-width:44px}}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr!important}.phone-stage{max-width:340px;margin:8px auto 0}}
+:focus-visible{outline:3px solid #1faa59;outline-offset:2px}
+/* legal version history: glass pill switcher + telegram quote changelog */
+.effective{font-size:14px;opacity:.85}
+.ver-banner{border:1px solid var(--border);background:var(--surface);border-radius:12px;padding:12px 16px;margin:0 0 12px}
+.ver-dd{position:relative;display:inline-block;margin:0 0 18px}
+.ver-pill{display:inline-flex;align-items:center;gap:9px;padding:9px 18px;border-radius:999px;font:inherit;font-size:14px;font-weight:650;color:var(--text);cursor:default;background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow-sm),inset 0 1px 0 rgba(255,255,255,.35);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4)}
+@supports (background:color-mix(in srgb,red 50%,blue)){.ver-pill{background:color-mix(in srgb,var(--surface) 72%,transparent)}}
+.ver-pill-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+.ver-pill .chev{width:14px;height:14px;opacity:.6}
+.ver-dd:hover .ver-pill,.ver-dd:focus-within .ver-pill{border-color:var(--green)}
+.ver-menu{left:0;right:auto;min-width:290px;transform-origin:top left}
+.ver-menu::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}
+.ver-dd:hover .ver-menu,.ver-dd:focus-within .ver-menu{opacity:1;transform:none;pointer-events:auto}
+.ver-dd:hover .ver-menu .gp-row,.ver-dd:focus-within .ver-menu .gp-row{opacity:1;transform:none}
+.ver-dd:hover .ver-menu .gp-row:nth-child(3),.ver-dd:focus-within .ver-menu .gp-row:nth-child(3){transition-delay:.07s}
+.ver-opt .ver-v{font-weight:700;display:block}
+.ver-opt .ver-s{font-size:.8rem;font-weight:500;color:var(--text-dim);display:block}
+.ver-opt .chev,.ver-opt .ver-check{width:15px;height:15px;margin-left:auto;flex:none}
+.ver-opt.on .ver-check{color:var(--green-strong)}
+.ver-changes{position:relative;border:0;border-left:3px solid var(--green);border-radius:0 12px 12px 0;background:var(--green-soft);padding:12px 16px 12px 18px;margin:0 0 18px;font-size:14px}
+.ver-changes ul{margin:8px 0 0;padding-left:20px}
+.ver-changes li{margin:5px 0}
+.ver-changes q{quotes:'“' '”'}
+/* compat v20261002: older browsers without color-mix (old Safari/Samsung Internet/UC/Firefox ESR) */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+img{border-style:none}
+button{font:inherit}
+@supports not (overflow:clip){html,body{overflow-x:hidden}}
+@supports not (background:color-mix(in srgb,red 50%,blue)){
+.home-nav,.glass,header.site,.toc-bar,.glass-pop{background:var(--surface)!important}
+.fs-lang-seg{background:rgba(127,127,127,.20)!important}
+.fs-lang-seg button.on{background:rgba(255,255,255,.9)!important}
+html[data-theme="dark"] .fs-lang-seg button.on{background:rgba(255,255,255,.16)!important}
+.seg-pill,.toc-pill,.doc-tab.active,.doc-tab:hover,.hk-row:hover,.hk-edit:hover,.hero-replay:hover{background:var(--surface-2)!important;border-color:var(--border)!important}
+.comparison tbody tr:nth-child(even),.legal .doc thead th,.legal .doc tbody tr:nth-child(even){background:var(--surface-2)!important}
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+.glass-pop,.home-nav,.fs-lang-seg{background:var(--surface)!important}
+}
