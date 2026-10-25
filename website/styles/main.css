@@ -639,10 +639,11 @@ footer.site { border-top: 1px solid var(--border); padding: 14px 0 14px; margin-
 [data-theme="dark"] .btn-primary:hover, [data-theme="dark"] .nav-cta-sm:hover,
 [data-theme="dark"] .nav-cta:hover { background: var(--green-deep); border-color: var(--green-deep); }
 .nav-cta-sm svg { width: 16px; height: 16px; flex: none; }
-/* The new mark is a self-contained green badge, so the old dark-green chip
-   behind it would only muddy the edge. */
-.brand-mark { background: none !important; }
-.brand-mark img { width: 30px; height: 30px; object-fit: contain; display: block; }
+/* The mark is a self-contained green badge: no chip behind it, and one radius
+   declared here so the plate keeps the same corners at every size instead of
+   showing the page background at the corners of the image box. */
+.brand-mark { background: none !important; border-radius: 28%; overflow: hidden; }
+.brand-mark img { width: 30px; height: 30px; object-fit: contain; display: block; border-radius: inherit; }
 @media (max-width: 560px) { .brand-mark img { width: 26px; height: 26px; } }
 
 /* The primary call-to-action breathes: a slow glow that swells and settles.
@@ -1756,12 +1757,13 @@ nav.hc-pager > span.hc-card.next.none > span {
 }
 
 /* 3. Bigger header brand mark (was a 30px tile). */
-.brand-mark { width: 38px !important; height: 38px !important; }
-.brand-mark img { width: 38px !important; height: 38px !important; }
+.brand-mark { width: 38px !important; height: 38px !important; border-radius: 28% !important; overflow: hidden !important; background: none !important; }
+.brand-mark img { width: 38px !important; height: 38px !important; border-radius: inherit !important; }
 @media (max-width: 560px) { .brand-mark img { width: 32px !important; height: 32px !important; } }
-.brand-dock .brand .logo-dot { width: 40px !important; height: 40px !important; }
-.home-nav .brand .logo-dot, .home-nav .brand .logo-dot img { width: 44px !important; height: 44px !important; }
-.home-nav .brand .logo-dot img { object-fit: contain; display: block; }
+.brand-dock .brand .logo-dot { width: 40px !important; height: 40px !important; border-radius: 28% !important; overflow: hidden !important; background: none !important; }
+.home-nav .brand .logo-dot, .home-nav .brand .logo-dot img { width: 44px !important; height: 44px !important; border-radius: 28% !important; }
+.home-nav .brand .logo-dot { overflow: hidden !important; background: none !important; }
+.home-nav .brand .logo-dot img { object-fit: contain; display: block; border-radius: inherit !important; }
 .home-nav .brand-full { font-size: 1.12rem !important; }
 @media (max-width: 560px) {
   .home-nav .brand .logo-dot, .home-nav .brand .logo-dot img { width: 38px !important; height: 38px !important; }
