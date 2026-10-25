@@ -153,10 +153,15 @@
     '@media (prefers-reduced-motion:reduce){.fs-cookie.show{animation:none}}',
     '.fs-cookie p{margin:0;flex:1 1 320px;color:inherit;opacity:.85}',
     '.fs-cookie a{color:inherit;text-decoration:underline}',
-    '.fs-cookie .fs-actions{display:flex;gap:10px;flex-wrap:wrap}',
+    /* the actions take a row of their own: Accept sits at the far end of that
+       row (margin-left:auto) and is deliberately the larger target, while
+       Decline keeps its original weight and position */
+    '.fs-cookie .fs-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;',
+    'flex:1 1 100%}',
     '.fs-cookie button{font:inherit;font-weight:700;padding:9px 16px;border-radius:10px;',
     'cursor:pointer;border:1px solid rgba(120,130,150,.5);background:transparent;color:inherit}',
-    '.fs-cookie button.fs-accept{background:#1f9d55;border-color:#1f9d55;color:#fff}',
+    '.fs-cookie button.fs-accept{background:#1f9d55;border-color:#1f9d55;color:#fff;',
+    'margin-left:auto;min-width:168px;padding:12px 28px;font-size:16px;border-radius:12px}',
     '.fs-cookie button:hover{filter:brightness(1.06)}',
     '@media (prefers-color-scheme:dark){.fs-cookie{background:var(--surface,#141a21);',
     'color:var(--text,#e8eef5);border-color:rgba(140,150,170,.35)}}',

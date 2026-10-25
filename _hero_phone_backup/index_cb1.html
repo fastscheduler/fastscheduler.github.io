@@ -1,0 +1,1560 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; form-action 'self'; base-uri 'self'; frame-ancestors 'self'; upgrade-insecure-requests">
+  <meta name="theme-color" content="#1faa59">
+  <title>Fast Scheduler — Telegram Channel Post Scheduler</title>
+  <meta name="description" content="Fast Scheduler is a free Telegram bot that schedules, publishes and tracks your channel posts on autopilot. Batch-schedule weeks of content in one chat, post from your own bot, and see what performs. Set it once — save hours every week.">
+  <meta name="keywords" content="telegram scheduler, telegram channel bot, schedule telegram posts, telegram post scheduler, telegram scheduling bot, batch schedule telegram, telegram autopost, telegram bot for channels, scheduled posts telegram">
+  <link rel="canonical" href="https://fastestschedule.com/">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Fast Scheduler">
+  <meta property="og:title" content="Fast Scheduler — Telegram Channel Post Scheduler">
+  <meta property="og:description" content="Batch-schedule weeks of Telegram channel posts in one chat. Post from your own bot, track views & comments, get reports in your timezone. Free to start.">
+  <meta property="og:url" content="https://fastestschedule.com/">
+  <meta property="og:image" content="https://fastestschedule.com/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fast Scheduler — Telegram Channel Post Scheduler">
+  <meta name="twitter:description" content="Set it once. Fast Scheduler posts for you every day — batch-schedule weeks of content in minutes, free to start.">
+  <meta name="twitter:image" content="https://fastestschedule.com/og-cover.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='4' y='4' width='40' height='40' rx='11' fill='%231faa59'/%3E%3Crect x='12' y='13' width='24' height='21' rx='4' fill='none' stroke='white' stroke-width='2.4'/%3E%3Cpath d='M17 9v7M31 9v7M12 20h24' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Fast Scheduler",
+    "applicationCategory": "SocialMediaApplication",
+    "operatingSystem": "Telegram (any device)",
+    "description": "Telegram bot that schedules, publishes and tracks channel posts on autopilot. Batch-schedule weeks of content in one chat.",
+    "url": "https://fastestschedule.com/",
+    "offers": [
+      { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Premium Monthly", "price": "9.99", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Premium 3 Months", "price": "26.97", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Premium 6 Months", "price": "51.55", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Premium 1 Year", "price": "99.50", "priceCurrency": "USD" }
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "480" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Is Fast Scheduler free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The free plan lets you connect 1 channel and 1 sender bot with up to 100 pending scheduled messages and 100 sends per channel per month. Premium raises limits and unlocks leaderboards and custom reports." } },
+      { "@type": "Question", "name": "How does Fast Scheduler save time?",
+        "acceptedAnswer": { "@type": "Answer", "text": "You can send many date and message pairs in one chat to create weeks of posts in a single conversation, set a message to repeat daily or weekly with one command, and let automated reports come to you instead of checking manually." } },
+      { "@type": "Question", "name": "Do my posts come from my own bot?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Connect your own bot's token and all scheduled posts are published through it, so your brand signs every post." } },
+      { "@type": "Question", "name": "Will a scheduled post be published if I'm offline?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Once a message is scheduled it is delivered at the exact date and time you chose, whether you are online or not. It runs in your own timezone." } }
+    ]
+  }
+  </script>
+  <script>
+    try {
+      var t = localStorage.getItem('theme');
+      if (!t && window.matchMedia) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      var d = document.documentElement;
+      if (localStorage.getItem('fs-motion') === 'off') d.setAttribute('data-motion', 'off');
+      if (localStorage.getItem('fs-fx') === 'off') d.setAttribute('data-fx', 'off');
+    } catch (e) {}
+  </script>
+  <link rel="preload" href="fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles/main.css?v=20260924a">
+<link rel="stylesheet" href="styles/liquid-nav.css?v=20260924a">
+  <style>
+    :root {
+      --glass: color-mix(in srgb, var(--surface) 55%, transparent);
+      --glass-strong: color-mix(in srgb, var(--surface) 80%, transparent);
+      --glass-border: color-mix(in srgb, #ffffff 55%, var(--border) 45%);
+    }
+    [data-theme="dark"] { --glass-border: color-mix(in srgb, #ffffff 14%, var(--border) 86%); }
+
+    html { scroll-behavior: smooth; }
+    body.home {
+      position: relative; isolation: isolate; min-height: 100svh; overflow-x: hidden;
+      background: var(--bg);
+    }
+
+    .lg-defs { display: none; }
+    .glass { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      box-shadow: var(--shadow); }
+    .glass > * { position: relative; z-index: 1; }
+
+    .home-nav {
+      display: flex; align-items: center; gap: 14px; height: 66px;
+      position: sticky; top: 0; z-index: 60;
+      background: var(--surface);
+      border: 0; border-bottom: 1px solid var(--border); border-radius: 0;
+      margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
+      padding-left: max(20px, calc(50vw - 530px)); padding-right: max(20px, calc(50vw - 530px));
+      transition: box-shadow .3s, background-color .3s;
+    }
+    .home-nav.scrolled { box-shadow: 0 4px 14px rgba(17, 24, 39, .05); }
+    [data-theme="dark"] .home-nav.scrolled { box-shadow: 0 4px 14px rgba(0, 0, 0, .4); }
+    .home-nav .brand { gap: 10px; font-weight: 850; font-size: 1.05rem; }
+    .home-nav .brand .logo-dot { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center;
+      background: var(--green-deep, #15834d); color: #fff; }
+    .home-nav .brand .logo-dot svg { width: 17px; height: 17px; }
+    .theme-toggle { margin-left: 8px; flex: none; }
+    .home-nav .brand { white-space: nowrap; }
+    @media (max-width: 560px) { .home-nav { gap: 8px; } .home-nav .brand { font-size: .88rem; } }
+    .home-nav nav { margin-left: auto; display: flex; gap: 6px; align-items: center; }
+    .home-nav nav a { padding: 9px 13px; border-radius: 8px; color: var(--text-dim); font-weight: 650; font-size: .93rem; }
+    .home-nav nav a.active { color: var(--green-strong); }
+    .home-nav nav a:hover { color: var(--green-strong); background: color-mix(in srgb, var(--green) 8%, transparent); text-decoration: none; }
+    .nav-cta-sm { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 8px; white-space: nowrap;
+      background: var(--green); color: #fff !important; font-weight: 800; }
+    .nav-cta-sm:hover { text-decoration: none; background: var(--green-strong); }
+    .nav-cta-sm svg { width: 16px; height: 16px; }
+    @media (max-width: 860px) { .home-nav nav > a:not(.nav-cta-sm) { display: none; } .home-nav .help-row, .home-nav .support-ib { display: none; } }
+
+    /* burger + mobile menu */
+    .nav-burger {
+      display: none; align-items: center; justify-content: center; flex: none;
+      width: 40px; height: 40px; border-radius: 8px; cursor: pointer;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .nav-burger svg { width: 20px; height: 20px; }
+    @media (max-width: 860px) {
+      .nav-burger { display: inline-flex; margin-left: auto; }
+      .home-nav { height: 58px; top: 8px; }
+      .settings-wrap { margin-left: 0; }
+      .home-nav nav { margin-left: 0; }
+    }
+    .nav-mobile {
+      position: absolute; top: calc(100% + 10px); left: 0; right: 0; z-index: 70;
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 10px; display: none;
+      opacity: 0; transform: translateY(-8px) scale(.98);
+      transition: opacity .28s var(--ease-apple), transform .28s var(--ease-apple);
+    }
+    .nav-mobile.open { opacity: 1; transform: none; }
+    .nav-mobile a {
+      display: flex; align-items: center; gap: 10px; padding: 13px 14px; border-radius: 8px;
+      color: var(--text); font-weight: 650; font-size: 1rem; text-decoration: none;
+    }
+    .nav-mobile a:active { background: var(--surface-2); }
+    .nav-mobile a svg { width: 18px; height: 18px; color: var(--green-strong); }
+    .nav-mobile a.nav-cta-m { color: var(--green-strong); font-weight: 800; border-top: 1px solid var(--border); border-radius: 0 0 12px 12px; margin-top: 4px; }
+    @media (min-width: 861px) { .nav-mobile { display: none !important; } }
+
+    .hero { display: grid; grid-template-columns: 1.06fr .94fr; gap: clamp(24px, 4vw, 56px); align-items: center; padding: clamp(30px, 6vw, 84px) 0 30px; }
+    .kicker svg { width: 15px; height: 15px; flex: none; }
+    .kicker { display: inline-flex; align-items: center; gap: 8px; font-size: .8rem; font-weight: 800; letter-spacing: .06em;
+      text-transform: uppercase; color: var(--green); background: var(--surface);
+      border: 1px solid var(--border); padding: 7px 14px; border-radius: 999px; }
+    .hero h1 { font-size: clamp(1.9rem, 8vw, 3.9rem); line-height: 1.08; letter-spacing: -.035em; margin: 0; overflow-wrap: break-word; }
+    .hero h1 .grad { color: var(--green); }
+    .hero .sub { font-size: clamp(1.02rem, 2.1vw, 1.22rem); color: var(--text-dim); max-width: 560px; margin: 18px 0 0; line-height: 1.55; }
+    .hero .sub b { color: var(--text); }
+    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 28px; }
+    .cta-big { display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 15px 28px; border-radius: 8px;
+      background: var(--green); color: #fff; font-weight: 800; font-size: 1.04rem; }
+    .cta-big:hover { color: #fff; text-decoration: none; background: var(--green-strong); }
+    html[data-motion='off'] .cta-big:hover, html[data-motion='off'] .feat:hover, html[data-motion='off'] .icon-btn:hover { transform: none; }
+    .cta-big svg { width: 20px; height: 20px; }
+    @keyframes ctaBreath { 0%,100% { box-shadow: 0 14px 34px color-mix(in srgb, var(--green) 38%, transparent), inset 0 1px 0 rgba(255,255,255,.3); }
+      50% { box-shadow: 0 14px 44px color-mix(in srgb, var(--green) 52%, transparent), inset 0 1px 0 rgba(255,255,255,.3); } }
+    .cta-note { font-size: .85rem; color: var(--text-dim); }
+    .trust-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 26px; }
+    .trust { display: inline-flex; align-items: center; gap: 7px; font-size: .86rem; font-weight: 650; color: var(--text-dim); }
+    .trust svg { width: 16px; height: 16px; color: var(--green); }
+
+    /* Chat mockup */
+    .hero-demo { padding: 22px; }
+    .demo-head { display: flex; align-items: center; gap: 10px; padding-bottom: 14px; border-bottom: 1px solid var(--border); margin-bottom: 14px; }
+    .demo-head .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--border); }
+    .demo-head .dot.on { background: var(--green); }
+    .demo-head span { font-weight: 800; font-size: .95rem; }
+    .demo-head .live { margin-left: auto; display: inline-flex; align-items: center; gap: 7px; font-size: .74rem; font-weight: 800; color: var(--green-strong);
+      background: color-mix(in srgb, var(--green) 12%, transparent); padding: 4px 10px; border-radius: 999px; }
+    .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: livePulse 1.8s ease-in-out infinite; }
+    @keyframes livePulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+    .demo { display: flex; flex-direction: column; gap: 10px; }
+    .demo .msg { max-width: 88%; padding: 11px 14px; border-radius: 15px; font-size: .9rem; line-height: 1.45; animation: pop .5s both; }
+    .demo .msg.user { align-self: flex-end; background: var(--green); color: #fff; border-bottom-right-radius: 5px; }
+    .demo .msg.bot { align-self: flex-start; background: var(--surface-2); border-bottom-left-radius: 5px; }
+    .demo .msg .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .82rem; display: block; margin: 4px 0; white-space: pre-line; }
+    .demo .msg .check { color: var(--green-strong); font-weight: 800; }
+    .demo .msg .ii { width: 1.15em; height: 1.15em; vertical-align: -0.18em; }
+    .demo .meta { display: block; font-size: .68rem; opacity: .6; margin-top: 5px; }    .demo .kb-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .demo .kb { font-size: .76rem; font-weight: 700; padding: 5px 10px; border-radius: 9px; background: color-mix(in srgb, var(--green) 10%, transparent); border: 1px solid color-mix(in srgb, var(--green) 32%, transparent); color: var(--text); }
+    .demo .kb-acc { background: var(--green); border-color: transparent; color: #fff; }
+    @keyframes pop { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: none; } }
+    .demo .msg:nth-child(2) { animation-delay: .25s; } .demo .msg:nth-child(3) { animation-delay: .55s; }
+    .demo .msg:nth-child(4) { animation-delay: .85s; } .demo .msg:nth-child(5) { animation-delay: 1.15s; }
+    .demo .msg:nth-child(6) { animation-delay: 1.45s; } .demo .msg:nth-child(7) { animation-delay: 1.75s; }
+    .demo .msg:nth-child(8) { animation-delay: 2.05s; }
+
+    /* Marquee of channel sizes */
+    .marquee { overflow: hidden; border-block: 1px solid var(--border); padding: 13px 0; margin: 26px 0 0;
+      background: var(--surface); }
+    .marquee-track { display: flex; gap: 44px; width: max-content; animation: marq 24s linear infinite; }
+    /* the in-site Animations toggle (html[data-motion=off]) stops it via the shared rule; */
+    /* the OS-level preference must NOT kill it — it is decorative but never interactive */
+    .marquee span { display: inline-flex; align-items: center; gap: 9px; font-weight: 800; font-size: .88rem; color: var(--text-dim); letter-spacing: .04em; white-space: nowrap; }
+    .marquee span svg { width: 17px; height: 17px; color: var(--green-strong); opacity: .8; }
+    .marquee span b { color: var(--green-strong); }
+    @keyframes marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    section.block { padding: clamp(48px, 8vw, 96px) 0; }
+    .sec-head { text-align: center; max-width: 680px; margin: 0 auto clamp(28px, 4vw, 52px); }
+    .sec-head h2 { font-size: clamp(1.75rem, 3.6vw, 2.6rem); margin: 0 0 12px; letter-spacing: -.03em; }
+    .sec-head p { color: var(--text-dim); margin: 0; font-size: 1.04rem; }
+
+    /* Time-saved band */
+    .save-band { padding: clamp(40px, 7vw, 80px) clamp(20px, 4vw, 56px); text-align: center; }
+    .save-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 34px; }
+    .save-num { font-size: clamp(2rem, 4.5vw, 3.1rem); font-weight: 850; letter-spacing: -.03em;
+      color: var(--green); }
+    .save-lbl { color: var(--text-dim); font-size: .95rem; margin-top: 6px; }
+    .save-band .foot-note { margin-top: 30px; color: var(--text-dim); font-size: .95rem; }
+    .save-band .foot-note svg { width: 1.1em; height: 1.1em; vertical-align: -0.18em; color: var(--green-strong); }
+    @media (max-width: 700px) { .save-grid { grid-template-columns: 1fr; gap: 26px; } }
+
+    /* Features */
+    .features-glass { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .feat { padding: 26px; transition: box-shadow .25s ease, border-color .25s ease; }
+    .feat:hover { border-color: var(--green); }
+    .feat .ic { width: 58px; height: 58px; border-radius: var(--radius); display: grid; place-items: center; margin-bottom: 16px;
+      background: var(--green-soft);
+      color: var(--green); border: 1px solid var(--border); }
+    .feat .ic svg { width: 28px; height: 28px; }
+    .feat h3 { margin: 0 0 8px; font-size: 1.1rem; letter-spacing: -.01em; }
+    .feat p { margin: 0; color: var(--text-dim); font-size: .94rem; line-height: 1.55; }
+    .feat .tagchip { display: inline-block; margin-top: 12px; font-size: .72rem; font-weight: 800; letter-spacing: .05em;
+      text-transform: uppercase; color: var(--green-strong); background: color-mix(in srgb, var(--green) 10%, transparent);
+      padding: 4px 10px; border-radius: 999px; }
+    @media (max-width: 980px) { .features-glass { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 620px) { .features-glass { grid-template-columns: 1fr; } }
+
+    /* How it works */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; counter-reset: step; }
+    .step { padding: 28px 26px; }
+    .step .n { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; font-weight: 850;
+      background: var(--green); color: #fff; margin-bottom: 16px; }
+    .step h3 { margin: 0 0 8px; font-size: 1.08rem; }
+    .step p { margin: 0; color: var(--text-dim); font-size: .94rem; line-height: 1.55; }
+    .step .mini { margin-top: 14px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .8rem;
+      background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; white-space: pre-line; }
+    .step .mini svg.mi { width: 12px; height: 12px; vertical-align: -1px; margin-right: 6px; color: var(--green-strong); }
+    .step .mini svg.ii { width: 13px; height: 13px; vertical-align: -2px; color: var(--green-strong); }
+    @media (max-width: 860px) { .steps { grid-template-columns: 1fr; } .hero { grid-template-columns: 1fr; } }
+
+    /* Testimonials */
+    .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .quote { padding: 26px; }
+    .quote .stars { display: inline-flex; gap: 3px; color: #f5a623; }
+    .quote .stars svg { width: 15px; height: 15px; }
+    .quote p { margin: 12px 0 16px; font-size: .98rem; line-height: 1.6; color: var(--text); }
+    .quote .who { display: flex; align-items: center; gap: 12px; }
+    .quote .ava { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-weight: 850; color: #fff;
+      background: var(--green); font-size: .95rem; }
+    .quote .who b { display: block; font-size: .93rem; }
+    .quote .who span { font-size: .8rem; color: var(--text-dim); }
+    @media (max-width: 860px) { .quotes { grid-template-columns: 1fr; } }
+
+    /* Pricing teaser */
+    /* billing switcher */
+    .billing-switch {
+      display: inline-flex; gap: 4px; padding: 5px; border-radius: 999px; margin: 0 auto 26px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      position: relative; left: 50%; transform: translateX(-50%);
+    }
+    .billing-switch button {
+      display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+      border: 0; background: transparent; font: inherit; font-weight: 750; font-size: .93rem;
+      color: var(--text-dim); padding: 9px 20px; border-radius: 999px;
+      transition: color .25s, background .25s;
+    }
+    .billing-switch button.active { color: #fff; background: var(--green); }
+    .billing-switch button .rec {
+      font-size: .7rem; font-weight: 850; text-transform: uppercase; letter-spacing: .06em;
+      padding: 2px 8px; border-radius: 999px; background: color-mix(in srgb, var(--green) 18%, transparent);
+      color: var(--green-strong);
+    }
+    .billing-switch button.active .rec { background: rgba(255,255,255,.22); color: #fff; }
+
+    /* carousel */
+    .pricing-carousel { position: relative; max-width: 1280px; margin: 0 auto; }
+    .car-arrow {
+      position: absolute; top: 42%; z-index: 5; width: 46px; height: 46px; border-radius: 50%;
+      display: grid; place-items: center; cursor: pointer;
+      background: var(--surface);
+      border: 1px solid var(--border); color: var(--text);
+      box-shadow: var(--shadow-sm); transition: border-color .2s, opacity .25s;
+    }
+    .car-arrow:hover { border-color: var(--green); transform: scale(1.07); }
+    .car-arrow:active { transform: scale(.94); }
+    .car-arrow svg { width: 20px; height: 20px; }
+    .car-arrow[disabled] { opacity: .3; pointer-events: none; }
+    .car-arrow.left { left: -10px; } .car-arrow.right { right: -10px; }
+    /* coverflow stage: chosen plan in the center, others behind it */
+    .pricing-stage {
+      position: relative; height: 620px; margin-top: 8px;
+      perspective: 1600px;
+      overflow: hidden; padding: 0 8%;
+      box-sizing: border-box;
+    }
+    .pricing-stage .plan-g {
+      position: absolute; left: 50%; top: 0; width: min(360px, 46vw); height: 100%;
+      transition: transform .62s var(--ease-apple, cubic-bezier(.3,.73,.3,1)),
+                  opacity .62s var(--ease-apple, cubic-bezier(.3,.73,.3,1)),
+                  filter .62s var(--ease-apple, cubic-bezier(.3,.73,.3,1));
+      will-change: transform;
+      transform: translateX(-50%);
+    }
+    .pricing-stage .plan-g[data-pos="0"] {
+      transform: translateX(-50%) scale(1); opacity: 1; z-index: 30; filter: none;
+      box-shadow: var(--shadow);
+    }
+    .pricing-stage .plan-g[data-pos="1"] {
+      transform: translate(8%) scale(.84); opacity: .55; z-index: 20;
+      filter: brightness(.72) saturate(.9);
+    }
+    .pricing-stage .plan-g[data-pos="-1"] {
+      transform: translate(-108%) scale(.84); opacity: .55; z-index: 20;
+      filter: brightness(.72) saturate(.9);
+    }
+    .pricing-stage .plan-g[data-pos="2"] {
+      transform: translate(52%) scale(.7); opacity: .3; z-index: 10;
+      filter: brightness(.55);
+    }
+    .pricing-stage .plan-g[data-pos="-2"] {
+      transform: translate(-152%) scale(.7); opacity: .3; z-index: 10;
+      filter: brightness(.55);
+    }
+    @media (min-width: 861px) {
+      .pricing-stage .plan-g:not([data-pos="0"]) { cursor: pointer; }
+      .pricing-stage .plan-g:not([data-pos="0"]) .btn { pointer-events: none; }
+    }
+    html[data-motion="off"] .pricing-stage .plan-g,
+    html[data-fx="off"] .pricing-stage .plan-g { transition: none !important; }
+    /* Phones keep the coverflow: one card readable in the center, neighbors
+       peeking behind. Swipe horizontally to rotate the ring. */
+    @media (max-width: 860px) {
+      .pricing-stage { height: 560px; padding: 0 10%; }
+      .pricing-stage .plan-g { width: min(320px, 78vw); }
+      .pricing-stage .plan-g[data-pos="0"] { opacity: 1; filter: none; }
+      .pricing-stage .plan-g[data-pos="1"],
+      .pricing-stage .plan-g[data-pos="-1"] { opacity: .45; filter: brightness(.62) saturate(.85); }
+      .pricing-stage .plan-g[data-pos="2"],
+      .pricing-stage .plan-g[data-pos="-2"] { opacity: .2; filter: brightness(.45); }
+      /* the two "hero" plans read darker so text stays crisp over the glass */
+      .pricing-stage .plan-g[data-pos="0"].plan-hero { background: color-mix(in srgb, var(--surface) 96%, var(--bg)); }
+      .pricing-stage .plan-g[data-pos="0"]:not(.plan-hero) { opacity: .92; }
+      .car-arrow.left { left: 2px; } .car-arrow.right { right: 2px; }
+    }
+    /* No-JS / coarse pointers without the stage: stacked fallback stays for
+       prefers-reduced-motion users via the motion-off guard below. */
+    /* Animations off: the coverflow stays exactly the same, but card
+       changes snap instantly (transition: none below + the global
+       motion-off rule) instead of gliding. */
+    html[data-motion="off"] .pricing-stage .plan-g .btn { pointer-events: auto; }
+    .plan-g { padding: 30px 28px; display: flex; flex-direction: column; }
+    .plan-g.best { border-color: var(--green); box-shadow: var(--shadow); }
+    .plan-g .pname { font-weight: 850; font-size: 1.05rem; }
+    .plan-g .pfor { color: var(--text-dim); font-size: .85rem; margin-top: 2px; }
+    .plan-g .pprice { font-size: 2.05rem; font-weight: 850; letter-spacing: -.03em; margin: 16px 0 2px; white-space: nowrap; }
+    .plan-g .pprice small { font-size: .95rem; font-weight: 650; color: var(--text-dim); letter-spacing: 0; white-space: nowrap; }
+    .plan-g ul { list-style: none; margin: 18px 0 24px; padding: 0; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .plan-g li { display: flex; gap: 9px; font-size: .93rem; align-items: flex-start; color: var(--text); }
+    .plan-g li svg { width: 17px; height: 17px; color: var(--green); flex: none; margin-top: 3px; }
+    .plan-g li.mute { color: var(--text-dim); }
+    .ribbon { align-self: flex-start; font-size: .72rem; font-weight: 850; letter-spacing: .06em; text-transform: uppercase;
+      color: #3f2d00; background: #eab308; padding: 5px 12px; border-radius: 999px; margin-bottom: 10px; }
+    .plan-g .btn { margin-top: auto; }
+    @media (max-width: 860px) { .pricing-glass { grid-template-columns: 1fr; max-width: 460px; } }
+
+    /* FAQ */
+    .faq-glass { max-width: 780px; margin: 0 auto; padding: 10px 26px; }
+    .faq-glass details { border-bottom: 1px solid var(--border); }
+    .faq-glass details:last-child { border-bottom: none; }
+    .faq-glass summary { cursor: pointer; list-style: none; padding: 18px 0; font-weight: 750; font-size: 1rem; display: flex; justify-content: space-between; gap: 14px; align-items: center; }
+    .faq-glass summary::-webkit-details-marker { display: none; }
+    .faq-glass summary::after { content: "+"; font-size: 1.4rem; color: var(--green-strong); transition: transform .25s; flex: none; }
+    .faq-glass details[open] summary::after { transform: rotate(45deg); }
+    .faq-glass details p { margin: 0 0 18px; color: var(--text-dim); font-size: .95rem; line-height: 1.6; }
+
+    /* Final CTA */
+    .final-cta { text-align: center; padding: clamp(40px, 7vw, 76px) clamp(20px, 4vw, 56px); }
+    .final-cta h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); margin: 0 0 12px; letter-spacing: -.03em; }
+    .final-cta p { color: var(--text-dim); max-width: 520px; margin: 0 auto 26px; }
+
+    footer.home-foot { border-top: 1px solid var(--border); padding: 30px 0 36px; margin-top: 30px; }
+    .home-foot .wrap { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; }
+    .home-foot .links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .home-foot a { color: var(--text-dim); font-size: .9rem; }
+    .home-foot a:hover { color: var(--green-strong); }
+    .home-foot .copy { color: var(--text-dim); font-size: .85rem; }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .cta-big, body.home::before, body.home::after { animation: none !important; }
+      * { scroll-behavior: auto !important; }
+    }
+
+
+    /* ============ Telegram-authentic chat skin ============ */
+    .phone-screen.tg {
+      display: flex; flex-direction: column;
+      background: #0e1621; /* TG dark chat wallpaper base */
+      color: #e8edf2;
+    }
+    .tg-status {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 16px 4px; font-size: .78rem; font-weight: 700; color: #fff;
+      background: #17212b; flex: none;
+    }
+    .tg-status-ic { display: inline-flex; gap: 4px; }
+    .tg-status-ic svg { width: 13px; height: 13px; }
+    .tg-header {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 12px 10px; background: #17212b;
+      border-bottom: 1px solid rgba(0,0,0,.35); flex: none;
+    }
+    .tg-back { width: 20px; height: 20px; color: #fff; flex: none; }
+    .tg-titles { display: flex; flex-direction: column; min-width: 0; }
+    .tg-name { font-weight: 800; font-size: .92rem; color: #fff; line-height: 1.15; }
+    .tg-user { font-size: .72rem; color: #7d8e9e; }
+    .tg-avatar {
+      margin-left: auto; width: 34px; height: 34px; border-radius: 50%;
+      display: grid; place-items: center; flex: none;
+      background: linear-gradient(135deg, #2ea6ff, #1c7fd6);
+      color: #fff; font-weight: 800; font-size: .8rem;
+    }
+    .tg-input {
+      display: flex; align-items: center; gap: 10px;
+      margin: auto 10px 12px; padding: 10px 14px; flex: none;
+      background: #17212b; border-radius: 18px;
+      color: #7d8e9e; font-size: .86rem;
+    }
+    .tg-input svg { width: 18px; height: 18px; flex: none; }
+    .tg-input .tg-mic { margin-left: auto; }
+    .tg-input .tg-send { display: none; margin-left: auto; }
+    /* while the user is typing, the send plane replaces the mic */
+    .tg-input.composing .tg-mic { display: none; }
+    .tg-input.composing .tg-send { display: block; }
+    .tg-input .tg-send.sent { animation: sendPop .45s var(--ease-spring); }
+    @keyframes sendPop { 0% { transform: scale(1); } 40% { transform: scale(1.45) translateX(2px); } 100% { transform: scale(1); } }
+    .tg-input-ph { color: #7d8e9e; }
+    .tg-input.composing .tg-input-ph { color: #fff; white-space: pre-line; line-height: 1.3; text-align: left; }
+    /* chat area scrolls between header and input */
+    .phone-screen.tg .tg-chat {
+      flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain;
+      background:
+        radial-gradient(1200px 500px at 85% -5%, rgba(46, 166, 255, .06), transparent 60%),
+        radial-gradient(900px 420px at 10% 108%, rgba(46, 166, 255, .05), transparent 55%),
+        #0e1621;
+      padding: 14px 12px 10px;
+      scrollbar-width: none;
+    }
+    .phone-screen.tg .tg-chat::-webkit-scrollbar { display: none; }
+    .phone-screen.tg .demo { gap: 6px; }
+    /* TG bubble shapes + palette */
+    .phone-screen.tg .demo .msg.bot {
+      background: #182533; color: #e8edf2;
+      border-radius: 12px 12px 12px 4px;
+    }
+    .phone-screen.tg .demo .msg.user {
+      background: linear-gradient(135deg, #2b5278, #24486b); /* TG outgoing blue */
+      color: #fff; border-radius: 12px 12px 4px 12px;
+    }
+    .phone-screen.tg .demo .msg .mono { color: #c7d4e0; }
+    .phone-screen.tg .demo .meta { color: #7d8e9e; opacity: 1; }
+    /* full-width reply-keyboard rows, like the real app */
+    .phone-screen.tg .demo .kb-row { display: block; margin-top: 8px; }
+    .phone-screen.tg .demo .kb {
+      display: block; width: 100%; box-sizing: border-box; text-align: center;
+      margin: 0 0 5px; padding: 9px 10px; border-radius: 8px;
+      background: #17212b; border: none; color: #71b8ff; font-weight: 650;
+    }
+    .phone-screen.tg .demo .kb-acc { background: #2b5278; color: #fff; }
+
+    /* ============ Scripted hero demo (motion-graphic bot flow) ============ */
+    .phone-screen.tg .demo { position: static; }
+    .tg-stream-wrap { position: absolute; inset: 0; }
+    .phone-screen.tg .demo .msg { animation: none; }   /* the player reveals rows itself */
+    .phone-screen.tg .demo .msg:not(.shown) { opacity: 0; transform: translateY(14px) scale(.97); }
+    .phone-screen.tg .demo .msg.shown { transition: opacity .45s var(--ease-apple), transform .45s var(--ease-apple); opacity: 1; transform: none; }
+    .tg-typing {
+      display: inline-flex; gap: 4px; align-items: center; align-self: flex-start;
+      margin: 2px 0 4px; padding: 10px 14px; border-radius: 12px 12px 12px 4px;
+      background: #182533; opacity: 0; transform: translateY(8px); transition: opacity .3s, transform .3s;
+    }
+    .tg-typing.on { opacity: 1; transform: none; }
+    .tg-typing span { width: 6px; height: 6px; border-radius: 50%; background: #7d8e9e; animation: tgTdot 1.1s ease-in-out infinite; }
+    .tg-typing span:nth-child(2) { animation-delay: .18s; }
+    .tg-typing span:nth-child(3) { animation-delay: .36s; }
+    @keyframes tgTdot { 0%, 60%, 100% { transform: translateY(0); opacity: .45; } 30% { transform: translateY(-4px); opacity: 1; } }
+
+    /* mono lines type themselves in */
+    .phone-screen.tg .demo .msg .mono { white-space: pre-line; }
+    .mono-caret { display: inline-block; width: 7px; height: 1em; vertical-align: -2px; background: #8ecdf7; animation: tgCaret .7s steps(1) infinite; }
+    @keyframes tgCaret { 50% { opacity: 0; } }
+
+    /* uploaded photo strip inside outgoing message */
+    .upl-strip { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 7px; }
+    .upl-thumb { width: 64px; height: 64px; border-radius: 8px; background-size: cover; background-position: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.4); position: relative; overflow: hidden;
+      opacity: 0; transform: scale(.4) translateY(10px); }
+    .upl-thumb.in { transition: opacity .4s var(--ease-apple), transform .4s var(--ease-spring); opacity: 1; transform: none; }
+    .upl-thumb.in.pop { animation: uplPop .5s var(--ease-spring); }
+    @keyframes uplPop { 0% { transform: scale(.4) translateY(10px); } 60% { transform: scale(1.12); } 100% { transform: scale(1); } }
+    .upl-name { position: absolute; left: 0; right: 0; bottom: 0; font-size: .52rem; font-weight: 700; color: #fff;
+      padding: 2px 4px; background: linear-gradient(transparent, rgba(0,0,0,.72)); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    /* winner highlight — bot randomly picks one of the uploaded photos */
+    .upl-thumb.winner { outline: 2px solid #6fd08c; box-shadow: 0 0 0 4px rgba(111,208,140,.25), 0 2px 10px rgba(0,0,0,.5); }
+    .upl-thumb.winner::after { content: "🎲"; position: absolute; top: 3px; right: 3px; font-size: .6rem;
+      background: rgba(0,0,0,.55); border-radius: 50%; width: 14px; height: 14px; line-height: 14px; text-align: center; }
+    .winner-chip { display: flex; align-items: center; gap: 8px; margin-top: 8px; padding: 7px 10px; border-radius: 10px;
+      background: rgba(111,208,140,.12); border: 1px solid rgba(111,208,140,.35); font-size: .74rem; color: #b8e6c6;
+      opacity: 0; transform: translateY(6px); transition: opacity .4s, transform .4s; }
+    .winner-chip.on { opacity: 1; transform: none; }
+
+    /* channel post card (photo + caption) shown in the bot's "published" message */
+    .chan-post { border-radius: 12px; overflow: hidden; margin-top: 8px; background: #0e1621;
+      border: 1px solid rgba(255,255,255,.06); max-width: 240px; }
+    .chan-post-img { height: 118px; background-size: cover; background-position: center; position: relative; }
+    .chan-post-img .cp-shimmer { position: absolute; inset: 0; background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.14) 50%, transparent 70%);
+      transform: translateX(-100%); }
+    .chan-post.loading .cp-shimmer { animation: cpShimmer 1.1s linear infinite; }
+    @keyframes cpShimmer { to { transform: translateX(100%); } }
+    .chan-post-cap { padding: 8px 10px; font-size: .76rem; line-height: 1.45; color: #e8edf2; }
+    .chan-post-cap .cp-time { display: block; margin-top: 4px; font-size: .62rem; color: #7d8e9e; }
+    .chan-views { display: inline-flex; align-items: center; gap: 4px; margin-top: 6px; font-size: .68rem; color: #7d8e9e; }
+    .chan-views svg { width: 12px; height: 12px; }
+
+    /* ============ Floating file-explorer overlay ============ */
+    .tg-explorer {
+      position: absolute; z-index: 8; right: -34px; top: 18%; width: 236px;
+      border-radius: 12px; overflow: hidden; transform: translateX(30px) scale(.92); opacity: 0; pointer-events: none;
+      background: #1f1f1f; border: 1px solid #3c3c3c;
+      box-shadow: 0 24px 60px -12px rgba(0,0,0,.7), 0 4px 14px rgba(0,0,0,.4);
+      transition: transform .55s var(--ease-apple), opacity .45s;
+      transform-origin: left center;
+    }
+    .tg-explorer.on { transform: translateX(0) scale(1); opacity: 1; }
+    .fx-bar { display: flex; align-items: center; gap: 7px; padding: 8px 10px; background: #2b2b2b; border-bottom: 1px solid #3c3c3c;
+      font-size: .68rem; font-weight: 700; color: #ddd; }
+    .fx-dot { width: 8px; height: 8px; border-radius: 50%; background: #f6c445; }
+    .fx-min { margin-left: auto; color: #999; font-size: .6rem; }
+    .fx-min + .fx-min { margin-left: 6px; }
+    .fx-list { padding: 6px; display: flex; flex-direction: column; gap: 2px; background: #1f1f1f; }
+    .fx-item { display: flex; align-items: center; gap: 8px; padding: 5px 7px; border-radius: 7px; position: relative;
+      transition: background .25s, box-shadow .25s; }
+    .fx-item .fx-ic { width: 26px; height: 26px; border-radius: 5px; background-size: cover; background-position: center; flex: none;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); }
+    .fx-item .fx-nm { font-size: .66rem; color: #eee; white-space: nowrap; }
+    .fx-item .fx-sz { font-size: .56rem; color: #8a8a8a; }
+    .fx-item .fx-info { display: flex; flex-direction: column; min-width: 0; }
+    .fx-item.selected { background: #2f5d8a; box-shadow: inset 0 0 0 1px #4a7fb5; }
+    .fx-item.selected::after { content: "✓"; position: absolute; right: 8px; color: #fff; font-size: .68rem; font-weight: 800;
+      animation: fxCheck .3s var(--ease-spring); }
+    @keyframes fxCheck { from { transform: scale(0); } to { transform: scale(1); } }
+    .fx-actions { display: flex; justify-content: flex-end; gap: 6px; padding: 8px 10px; border-top: 1px solid #3c3c3c; background: #2b2b2b; }
+    .fx-btn { font-size: .62rem; font-weight: 700; padding: 5px 14px; border-radius: 6px; border: 1px solid #4a4a4a;
+      background: #383838; color: #ddd; font-family: inherit; }
+    .fx-btn.fx-open { background: #2f5d8a; border-color: #4a7fb5; color: #fff; }
+    .fx-cursor { position: absolute; z-index: 9; width: 18px; height: 18px; left: 0; top: 0; opacity: 0;
+      filter: drop-shadow(0 2px 3px rgba(0,0,0,.6)); transition: opacity .3s; pointer-events: none; }
+    .tg-explorer .fx-cursor { opacity: 1; }
+    .fx-click { position: absolute; width: 26px; height: 26px; border-radius: 50%; border: 2px solid rgba(255,255,255,.9);
+      transform: translate(-50%,-50%) scale(0); pointer-events: none; }
+    .fx-click.on { animation: fxClick .45s ease-out both; }
+    @keyframes fxClick { 0% { transform: translate(-50%,-50%) scale(.2); opacity: 1; } 100% { transform: translate(-50%,-50%) scale(1.5); opacity: 0; } }
+
+    /* photo flying from the explorer into the Telegram chat */
+    .fx-fly { position: absolute; z-index: 10; width: 56px; height: 56px; border-radius: 8px; background-size: cover;
+      background-position: center; box-shadow: 0 8px 24px rgba(0,0,0,.55); pointer-events: none; }
+
+    @media (max-width: 860px) {
+      .tg-explorer { right: 6px; top: 14%; width: 200px; }
+    }
+
+    /* ============ iPhone-style 3D presentation stage ============ */
+    .phone-stage {
+      perspective: 1900px; perspective-origin: 42% 34%;
+      display: grid; place-items: center;
+      padding: clamp(8px, 2vw, 26px) 0;
+    }
+    .phone {
+      position: relative; width: min(100%, 400px);
+      transform-style: preserve-3d;
+      transform:
+        rotateX(var(--prx, 12deg))
+        rotateY(var(--pry, -32deg))
+        rotateZ(var(--prz, 7deg))
+        translateZ(0);
+      transition: transform 1s var(--ease-apple);
+      will-change: transform;
+    }
+    /* standing idle float: the device keeps its pose, breathing up/down */
+    .phone.idle { animation: phoneFloat 8s ease-in-out infinite; }
+    @keyframes phoneFloat {
+      0%, 100% { transform: rotateX(12deg) rotateY(-32deg) rotateZ(7deg) translateY(0); }
+      50% { transform: rotateX(10deg) rotateY(-29deg) rotateZ(6deg) translateY(-12px); }
+    }
+
+    .phone-frame {
+      position: relative; border-radius: 54px; padding: 12px;
+      background: linear-gradient(160deg, #3a4a42, #10181a 38%, #0a0f0e 70%, #22302b);
+      box-shadow:
+        0 60px 120px -30px rgba(0, 0, 0, .65),
+        0 30px 60px -20px color-mix(in srgb, var(--green) 26%, transparent),
+        inset 0 1px 1px rgba(255, 255, 255, .22),
+        inset 0 -1px 2px rgba(0, 0, 0, .55),
+        inset 1px 0 1px rgba(255, 255, 255, .07),
+        inset -1px 0 2px rgba(0, 0, 0, .35);
+    }
+    /* metallic side edge */
+    .phone-frame::before {
+      content: ''; position: absolute; inset: -2px; border-radius: 56px; z-index: -1;
+      background: conic-gradient(from 210deg, #6a7a72, #1a2420 18%, #46564e 34%,
+        #10181a 52%, #5a6a60 70%, #141d19 86%, #6a7a72);
+      opacity: .85;
+    }
+    .phone-screen {
+      position: relative; border-radius: 42px; overflow: hidden;
+      background: var(--bg);
+      min-height: 620px;
+      max-height: 720px;
+      box-shadow: inset 0 0 0 2px rgba(0, 0, 0, .55), inset 0 2px 8px rgba(0, 0, 0, .4);
+    }
+    .phone-island {
+      position: absolute; top: 22px; left: 50%; translate: -50% 0; z-index: 6;
+      width: 108px; height: 28px; border-radius: 999px;
+      background: #05070a;
+      box-shadow: inset 0 0 4px rgba(255, 255, 255, .09), 0 1px 3px rgba(0, 0, 0, .6);
+    }
+    .phone-island::after {  /* camera lens */
+      content: ''; position: absolute; right: 10px; top: 8px; width: 12px; height: 12px;
+      border-radius: 50%; background: radial-gradient(circle at 35% 35%, #2a3a4a, #05070a 65%);
+    }
+    .phone-screen > .hero-demo {
+      padding: 54px 16px 16px;   /* clear the dynamic island */
+      height: clamp(520px, 66vh, 640px);
+      overflow-y: auto; overscroll-behavior: contain;
+      background: none; border: none; border-radius: 0; box-shadow: none;
+      scrollbar-width: none;
+    }
+    .phone-screen > .hero-demo::-webkit-scrollbar { display: none; }
+    .phone-screen > .hero-demo::after { display: none; }  /* no refract layer inside */
+
+    /* screen glare sheen */
+    .phone-glare {
+      position: absolute; inset: 12px; border-radius: 42px; pointer-events: none; z-index: 5;
+      background: linear-gradient(115deg, rgba(255, 255, 255, .09) 0%,
+        rgba(255, 255, 255, .03) 18%, transparent 34%,
+        transparent 72%, rgba(255, 255, 255, .05) 100%);
+      mix-blend-mode: screen;
+    }
+    /* floor reflection */
+    .phone::after {
+      content: ''; position: absolute; left: 8%; right: 8%; bottom: -34px; height: 40px;
+      background: radial-gradient(50% 100% at 50% 0%, rgba(0, 0, 0, .38), transparent 75%);
+      filter: blur(10px); transform: translateZ(-60px); z-index: -1;
+    }
+
+    /* entrance: rotate in like an Apple keynote reveal */
+    .phone.enter {
+      animation: phoneIn 1.3s var(--ease-apple) both;
+    }
+    @keyframes phoneIn {
+      from { opacity: 0; transform: perspective(1900px) rotateX(30deg) rotateY(-64deg) rotateZ(0deg) translateY(70px) scale(.9); }
+      to { opacity: 1; transform: perspective(1900px) rotateX(12deg) rotateY(-32deg) rotateZ(7deg) translateY(0) scale(1); }
+    }
+
+    @media (max-width: 860px) {
+      .phone, .phone.idle { transform: none; animation: none; }
+      .phone.enter { animation: none; }
+      .phone-stage { perspective: none; }
+      .phone-frame { border-radius: 44px; }
+      .phone-screen { border-radius: 34px; }
+      .phone-glare { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .phone, .phone.idle, .phone.enter { animation: none; transform: none; }
+      .phone { transition: none; }
+    }
+
+    /* ---- Settings trigger + hero entrance + card tilt (Apple motion) ---- */
+    .settings-wrap { position: relative; flex: none; }
+    .settings-wrap .icon-btn {
+      border-color: transparent;
+      background: color-mix(in srgb, var(--surface) 55%, transparent);
+      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    }
+    .settings-wrap .icon-btn:hover { border-color: var(--green); }
+    .settings-wrap .icon-btn svg { transition: transform .55s var(--ease-spring); }
+    .settings-wrap .icon-btn[aria-expanded="true"] svg { transform: rotate(90deg); }
+
+    /* ---- Help search popover + support icon button ---- */
+    .help-row { display: inline-flex; align-items: center; gap: 4px; flex: none; }
+    .help-wrap { position: relative; flex: none; }
+    .help-wrap > a { display: block; }
+    .support-ib { display: inline-flex; align-items: center; justify-content: center; flex: none;
+      width: 40px; height: 40px; border-radius: 12px; color: var(--text-dim);
+      background: color-mix(in srgb, var(--surface) 55%, transparent);
+      border: 1px solid var(--border);
+      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+      transition: color .2s, border-color .2s, background .2s; }
+    .support-ib svg { width: 18px; height: 18px; }
+    .support-ib:hover { color: var(--green-strong); border-color: var(--green);
+      background: color-mix(in srgb, var(--green) 8%, transparent); text-decoration: none; }
+    /* help quick-search form lives inside the Settings > Help submenu pop */
+    .help-menu { min-width: 300px; }
+    .help-menu .help-search { margin: 2px 4px 0; }
+    .help-menu .help-recent { padding-bottom: 4px; }
+    .help-menu .help-menu-open { margin-top: 4px; }
+    .help-search { display: flex; align-items: center; gap: 9px; padding: 10px 12px;
+      border-radius: 14px; border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--surface-2) 60%, transparent); }
+    .help-search:focus-within { border-color: var(--green); }
+    .help-search svg { width: 16px; height: 16px; color: var(--text-dim); flex: none; }
+    .help-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: none;
+      font: inherit; font-size: .92rem; color: var(--text); }
+    .help-search input::placeholder { color: var(--text-dim); }
+    .help-recent-title { font-size: .68rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--text-dim); padding: 12px 6px 6px; }
+    .help-recent-list { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 2px 4px; }
+    .help-recent-list a { font-size: .8rem; font-weight: 600; color: var(--text-dim);
+      padding: 6px 11px; border-radius: 999px; border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--surface-2) 55%, transparent); }
+    .help-recent-list a:hover { color: var(--green-strong); border-color: var(--green);
+      background: color-mix(in srgb, var(--green) 8%, transparent); text-decoration: none; }
+    .help-recent-list .hr-empty { font-size: .8rem; color: var(--text-dim); padding: 2px 4px 6px; }
+    /* settings menu: more blur + more opaque fill so text stays readable */
+    .glass-pop-solid {
+      background: color-mix(in srgb, var(--surface) 88%, transparent);
+      -webkit-backdrop-filter: blur(34px) saturate(1.6);
+      backdrop-filter: blur(34px) saturate(1.6);
+    }
+    .glass-pop-solid::after { opacity: .35; }
+
+    .hero-copy > * { animation: heroIn .85s var(--ease-apple) both; }
+    .hero-copy > *:nth-child(2) { animation-delay: .08s; }
+    .hero-copy > *:nth-child(3) { animation-delay: .16s; }
+    .hero-copy > *:nth-child(4) { animation-delay: .24s; }
+    .hero-copy > *:nth-child(5) { animation-delay: .32s; }
+    @keyframes heroIn { from { opacity: 0; transform: translateY(18px); } }
+
+    .feat, .step, .quote { transition: transform .55s var(--ease-spring), border-color .25s, box-shadow .3s; will-change: transform; }
+
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+
+    /* key statements stay on one line at any width */
+    .sec-head h2.oneline {
+      white-space: nowrap;
+      font-size: clamp(.98rem, 3.6vw, 2.3rem);
+      max-width: 100%;
+    }
+    @media (max-width: 560px) {
+      .sec-head h2.oneline { font-size: clamp(.84rem, 3.9vw, 1.4rem); }
+      .sec-head h2[style] { white-space: normal !important; }
+      /* readable text on phones: no clipped words, comfortable taps */
+      .hero .sub, .sec-head p, .plan-g li, .quote p { overflow-wrap: anywhere; }
+      .btn, .cta-big, .plan-g .btn { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+      .feat:active { transform: none; }
+    }
+    @media (max-width: 380px) {
+      .sec-head h2.oneline { font-size: .93rem; }
+    }
+
+    .reveal.in .save-num { animation: numIn .85s var(--ease-apple) both; }
+    @keyframes numIn { from { opacity: 0; transform: translateY(12px); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-copy > * { animation: none; }
+      .reveal.in .save-num { animation: none; }
+      .feat, .step, .quote { transition: none; }
+    }
+  </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Fast Scheduler", "url": "https://fastestschedule.com/", "logo": "https://fastestschedule.com/og-cover.png", "description": "Telegram bot that schedules and auto-publishes channel posts: batch scheduling, recurring messages, sender bots, statistics and backups.", "sameAs": ["https://t.me/FastSchedulerBot"], "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "fastschedulebot@gmail.com"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Fast Scheduler", "alternateName": "Fast Scheduler Telegram bot", "url": "https://fastestschedule.com/", "potentialAction": {"@type": "SearchAction", "target": {"@type": "EntryPoint", "urlTemplate": "https://fastestschedule.com/help.html?q={search_term_string}"}, "query-input": "required name=search_term_string"}}</script>
+<link rel="stylesheet" href="styles/hero-cinema.css?v=20260924a">
+</head>
+<body class="home">
+
+<div class="wrap">
+  <nav class="home-nav" aria-label="Main">
+    <span class="brand">
+      <span class="logo-dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg></span>
+      Fast Scheduler
+    </span>
+    <nav aria-label="Sections">
+      <a href="#time">Time saved</a>
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <span class="help-row">
+        <a href="help.html">Help</a>
+      </span>
+
+      <span class="settings-wrap">
+        <button class="icon-btn" id="settingsBtn" aria-haspopup="menu" aria-expanded="false" aria-label="Settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button>
+        <div class="glass-pop glass-pop-solid" id="settingsMenu" role="menu" aria-label="Settings">
+          <div class="gp-head">Settings</div>
+          <button type="button" class="gp-row" role="menuitemcheckbox" aria-checked="false" id="rowDark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span>Dark mode</span><span class="io-switch" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="gp-row" role="menuitemcheckbox" aria-checked="true" id="rowAnim">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span>Animations</span><span class="io-switch" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="gp-row" role="menuitemcheckbox" aria-checked="true" id="rowFx">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg><span>Effects</span><span class="io-switch" aria-hidden="true"></span>
+          </button>
+          <div class="gp-sep" role="separator"></div>
+          <span class="site-menu-wrap"><a class="gp-row site-menu-row" role="menuitem" href="help.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Help</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a>
+            <div class="glass-pop site-menu-pop help-menu" id="siteMenu" role="menu" aria-label="Help center quick search">
+              <form class="help-search" id="helpSearchForm" role="search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="search" id="helpSearchInput" placeholder="Search the help center…" autocomplete="off" aria-label="Search the help center">
+              </form>
+              <div class="help-recent">
+                <div class="help-recent-title" id="helpRecentTitle">Recent searches</div>
+                <div class="help-recent-list" id="helpRecentList"></div>
+              </div>
+              <a class="gp-row help-menu-open" role="menuitem" href="help.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Open Help Center</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a>
+            </div>
+          </span>
+          <a class="gp-row" role="menuitem" href="https://t.me/FastSchedulerSupport_bot" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>Support chat</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </span>
+      <a class="nav-cta-sm" href="https://t.me/FastSchedulerBot?start=start__website" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
+        Open Bot
+      </a>
+      <button class="nav-burger" id="navBurger" aria-expanded="false" aria-controls="navMobile" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </nav>
+    <div class="nav-mobile" id="navMobile" role="menu" aria-label="Mobile menu">
+      <a href="#time" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>Time saved</a>
+      <a href="#features" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Features</a>
+      <a href="#how" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>How it works</a>
+      <a href="#pricing" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.2"/></svg>Pricing</a>
+      <a href="help.html" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Help Center</a>
+      <a class="nav-cta-m" href="https://t.me/FastSchedulerBot?start=start__website_mobile" target="_blank" rel="noopener noreferrer" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>Open Bot</a>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="heroSec">
+    <div class="hero-copy">
+      <h1>Your channel <span class="grad">posts itself.</span><br>You just write.</h1>
+      <p class="sub">Paste a week of posts into one chat — <b>Fast Scheduler</b> publishes each one at the exact time you chose, in your timezone, from <b>your own bot</b>. Set it once, then get on with life.</p>
+      <div class="hero-cta">
+        <a class="cta-big" href="https://t.me/FastSchedulerBot?start=start__website_hero" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
+          Start free — it takes 60 seconds
+        </a>
+      </div>
+      <p class="cta-note">No app. No signup. Works inside Telegram you already use.</p>
+      <div class="trust-row">
+        <span class="trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg> Free plan forever</span>
+        <span class="trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg> Posts from your own bot</span>
+        <span class="trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg> Your timezone, not ours</span>
+        <span class="trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg> No card required</span>
+      </div>
+    </div>
+
+    <!-- shown in cinema/finale mode, when the regular hero copy fades out -->
+    <div class="hero-finale-head" aria-hidden="true">
+      <h2>Scheduled in one chat. <span class="grad">Posted forever.</span></h2>
+      <p>Fast Scheduler delivered this post at 18:15 sharp — while its owner was away. Your channel can run like this too.</p>
+      <a class="cta-big finale-cta" href="https://t.me/FastSchedulerBot?start=start__website_finale" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
+        Start free — it takes 60 seconds
+      </a>
+    </div>
+
+    <div class="phone-stage" aria-label="Example conversation with the bot">
+      <div class="phone" id="phone3d">
+        <div class="phone-frame">
+          <div class="phone-island" aria-hidden="true"></div>
+          <div class="phone-screen tg">
+            <div class="tg-status" aria-hidden="true"><span class="tg-time">11:42</span><span class="tg-status-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 20h3v-6H2v6zm5 0h3V10H7v10zm5 0h3V6h-3v14zm5 0h3V2h-3v18z" opacity=".9"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21l-8-9h6V3h4v9h6l-8 9z" transform="rotate(180 12 12)" opacity=".9"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.7 7.4A5 5 0 019 7.4L7.6 8.8a7 7 0 0010.8 0l-1.4-1.4zM12 4a9 9 0 00-6.4 2.6l1.4 1.4a7 7 0 0110 0l1.4-1.4A9 9 0 0012 4z" opacity=".9"/></svg></span></div>
+            <div class="tg-header">
+              <svg class="tg-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+              <div class="tg-titles"><span class="tg-name">Fast Schedule</span><span class="tg-user">@fastschedulebot</span></div>
+              <span class="tg-avatar" aria-hidden="true">FS</span>
+            </div>
+            <div class="tg-chat" id="tgChat">
+              <div class="demo" id="tgStream" aria-hidden="true"></div>
+              <div class="tg-typing" id="tgTyping" aria-hidden="true"><span></span><span></span><span></span></div>
+            </div><!-- /tg-chat -->
+            <div class="tg-input" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.4 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.2-9.19a4 4 0 015.65 5.66l-9.2 9.19a2 2 0 01-2.82-2.83l8.49-8.48"/></svg>
+              <span class="tg-input-ph">Message</span>
+              <svg class="tg-send" viewBox="0 0 24 24" fill="#5aabff"><path d="M2.7 11.2c-.8-.3-.8-1.4 0-1.7L20.4 3c.8-.3 1.6.5 1.3 1.3l-6.5 17.7c-.3.8-1.4.8-1.7 0l-2.4-6.1a1 1 0 00-.6-.6l-7.8-4.1z"/></svg>
+              <svg class="tg-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0014 0M12 19v3"/></svg>
+            </div>
+            <!-- floating file-explorer overlay (photo upload scene) -->
+            <div class="tg-explorer" id="tgExplorer" aria-hidden="true">
+              <div class="fx-bar"><span class="fx-dot"></span>Downloads<span class="fx-min">—</span><span class="fx-min">▢</span><span class="fx-min">✕</span></div>
+              <div class="fx-list" id="fxList"></div>
+              <div class="fx-actions">
+                <button type="button" class="fx-btn fx-open" id="fxOpen">Open</button>
+                <button type="button" class="fx-btn fx-cancel">Cancel</button>
+              </div>
+            </div>
+            <svg class="fx-cursor" id="fxCursor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2l13.5 8.2-6.2 1.2 3.4 7.2-2.7 1.3-3.4-7.3L5 16.8V2z" fill="#fff" stroke="#1a1a1a" stroke-width="1.1"/></svg>
+            <div class="drop-target-glow" id="dropGlow" aria-hidden="true"></div>
+            <div class="rl-stage" id="rlStage" aria-hidden="true"></div>
+            <div class="rl-ios" id="iosLayer" aria-hidden="true">
+              <div class="ios-blur"></div>
+              <div class="ios-status"><span id="iosStatusTime">11:42</span><span class="ios-sig"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 20h3v-7H2v7zm5 0h3V9H7v11zm5 0h3V4h-3v16zm5 0h3v-9h-3v9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C7.6 3 3.7 4.9 1 8l11 13L23 8c-2.7-3.1-6.6-5-11-5z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="8" width="16" height="8" rx="2"/><path d="M20 10.5v3a2 2 0 0 0 0-3z" fill="currentColor" stroke="none"/></svg></span></div>
+              <div class="ios-spot">
+                <div class="ios-mag-wrap">
+                  <div class="ios-clock-zoom"><span id="iosClockZoom">11:42</span></div>
+                  <svg class="ios-mag" viewBox="0 0 100 100" aria-hidden="true"><circle cx="42" cy="42" r="30"/><line x1="64.5" y1="64.5" x2="93" y2="93"/></svg>
+                </div>
+                <div class="ios-clock" id="iosClock">11:42</div>
+                <div class="ios-date">Sunday, September 21</div>
+              </div>
+              <div class="ios-icons">
+                <span class="ios-app"><i style="background:linear-gradient(135deg,#3ba7e8,#1c7fd6)"><svg viewBox="0 0 24 24" fill="#fff"><path d="M21.6 3.2c-.3-.3-.8-.4-1.3-.2L2.9 10.4c-.6.3-.6 1.1 0 1.3l4.3 1.5 1.6 4.9c.1.4.5.7 1 .5l2.4-1.9 3.4 2.5c.4.3 1 .2 1.2-.3l5.2-14.5c.1-.4 0-.9-.4-1.2zM9.6 13.1l8.2-5.5-6.6 6.6-.3 2.7-1.3-3.8z"/></svg></i><span>Telegram</span></span>
+                <span class="ios-app"><i style="background:linear-gradient(135deg,#f9ce34,#ee2a7b 50%,#6228d7)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.15" fill="#fff" stroke="none"/></svg></i><span>Instagram</span></span>
+                <span class="ios-app"><i style="background:#fff"><svg viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="17" rx="3" fill="#f4f5f7"/><rect x="2.5" y="4" width="19" height="5.2" rx="2.6" fill="#ec4b41"/><text x="12" y="18.4" font-size="9.5" font-weight="700" fill="#333" text-anchor="middle" font-family="-apple-system,Segoe UI,sans-serif">21</text></svg></i><span>Calendar</span></span>
+                <span class="ios-app"><i style="background:linear-gradient(135deg,#fa5c74,#e0335a)"><svg viewBox="0 0 24 24" fill="#fff"><path d="M9 3.5v10.6a3.2 3.2 0 1 0 1.6 2.8V7.6l8-1.7v5.6a3.2 3.2 0 1 0 1.6 2.8V3.9c0-.5-.5-.9-1-.8L9.9 4.7c-.5.1-.9.5-.9 1z" transform="translate(-1.2 .8)"/></svg></i><span>Music</span></span>
+                <span class="ios-app"><i style="background:#fff"><svg viewBox="0 0 24 24"><g><ellipse cx="12" cy="6.6" rx="2.1" ry="4.1" fill="#f5c542" transform="rotate(0 12 12)"/><ellipse cx="12" cy="6.6" rx="2.1" ry="4.1" fill="#ee7a3c" transform="rotate(40 12 12)"/><ellipse cx="12" cy="6.6" rx="2.1" ry="4.1" fill="#e04a5e" transform="rotate(80 12 12)"/><ellipse cx="12" cy="6.6" rx="2.1" ry="4.1" fill="#c74ba0" transform="rotate(120 12 12)"/><ellipse cx="12" cy="6.6" rx="2.1" ry="4.1" fill="#7d4fc0" transform="rotate(160 12 12)"/><ellipse cx="12" cy="6.6" rx="2.1" ry="4.1" fill="#4a7fd6" transform="rotate(200 12 12)"/><ellipse cx="12" cy="6.6" rx="2.1" ry="4.1" fill="#43aed6" transform="rotate(240 12 12)"/><ellipse cx="12" cy="6.6" rx="2.1" ry="4.1" fill="#4fb86a" transform="rotate(280 12 12)"/><ellipse cx="12" cy="6.6" rx="2.1" ry="4.1" fill="#8bbf3f" transform="rotate(320 12 12)"/></g><circle cx="12" cy="12" r="2.4" fill="#fff"/></svg></i><span>Photos</span></span>
+                <span class="ios-app"><i style="background:linear-gradient(135deg,#5bb0f5,#2f7fd0)"><svg viewBox="0 0 24 24" fill="#fff"><path d="M5 3.5h4.2l1.6 2.6h8.2c.7 0 1.2.5 1.2 1.2v10.9c0 .7-.5 1.3-1.2 1.3H5c-.7 0-1.2-.6-1.2-1.3V4.7c0-.7.5-1.2 1.2-1.2z"/></svg></i><span>Files</span></span>
+                <span class="ios-app"><i style="background:linear-gradient(135deg,#a3b1bd,#6e7d8a)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="3.1"/><path d="M12 2.8v2.6M12 18.6v2.6M2.8 12h2.6M18.6 12h2.6M5.5 5.5l1.9 1.9M16.6 16.6l1.9 1.9M18.5 5.5l-1.9 1.9M7.4 16.6l-1.9 1.9"/></svg></i><span>Settings</span></span>
+                <span class="ios-app"><i style="background:linear-gradient(135deg,#67d17c,#2e9e4d)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5L20 7"/></svg></i><span>Things</span></span>
+              </div>
+              <div class="ios-dock">
+                <span class="ios-app"><i style="background:linear-gradient(135deg,#3ba7e8,#1c7fd6)"><svg viewBox="0 0 24 24" fill="#fff"><path d="M21.6 3.2c-.3-.3-.8-.4-1.3-.2L2.9 10.4c-.6.3-.6 1.1 0 1.3l4.3 1.5 1.6 4.9c.1.4.5.7 1 .5l2.4-1.9 3.4 2.5c.4.3 1 .2 1.2-.3l5.2-14.5c.1-.4 0-.9-.4-1.2zM9.6 13.1l8.2-5.5-6.6 6.6-.3 2.7-1.3-3.8z"/></svg></i><span></span></span>
+                <span class="ios-app"><i style="background:linear-gradient(135deg,#f9ce34,#ee2a7b 50%,#6228d7)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.15" fill="#fff" stroke="none"/></svg></i><span></span></span>
+                <span class="ios-app"><i style="background:#fff"><svg viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="17" rx="3" fill="#f4f5f7"/><rect x="2.5" y="4" width="19" height="5.2" rx="2.6" fill="#ec4b41"/><text x="12" y="18.4" font-size="9.5" font-weight="700" fill="#333" text-anchor="middle" font-family="-apple-system,Segoe UI,sans-serif">21</text></svg></i><span></span></span>
+                <span class="ios-app"><i style="background:linear-gradient(135deg,#a3b1bd,#6e7d8a)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="3.1"/><path d="M12 2.8v2.6M12 18.6v2.6M2.8 12h2.6M18.6 12h2.6M5.5 5.5l1.9 1.9M16.6 16.6l1.9 1.9M18.5 5.5l-1.9 1.9M7.4 16.6l-1.9 1.9"/></svg></i><span></span></span>
+              </div>
+              <div class="rl-notif" id="iosNotif">
+                <span class="nt-ic"><svg viewBox="0 0 24 24" fill="#fff"><path d="M21.6 3.2c-.3-.3-.8-.4-1.3-.2L2.9 10.4c-.6.3-.6 1.1 0 1.3l4.3 1.5 1.6 4.9c.1.4.5.7 1 .5l2.4-1.9 3.4 2.5c.4.3 1 .2 1.2-.3l5.2-14.5c.1-.4 0-.9-.4-1.2zM9.6 13.1l8.2-5.5-6.6 6.6-.3 2.7-1.3-3.8z"/></svg></span>
+                <p><b>Fast Schedule</b>Posted to @fastschedule_test3 — right on time.</p>
+                <span class="nt-t">now</span>
+              </div>
+            </div>
+            <div class="screen-layer chan-layer" id="chanLayer" aria-hidden="true">
+              <div class="sl-head">
+                <svg class="tg-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                <div class="sl-titles"><span class="sl-name">fastschedule_test3</span><span class="sl-sub">1 284 subscribers</span></div>
+                <span class="tg-avatar" style="margin-left:auto;background:linear-gradient(135deg,#e08f26,#b5651d)">FT</span>
+              </div>
+              <div class="sl-body chan-msgs" id="chanBody">
+                <div class="chan-msg" id="chanMsg">
+                  <span class="chan-post-img" id="chanImg"><span class="cp-shimmer"></span>
+                    <span class="chan-from"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 6.7c-.9.3-1.6 1.1-1.6 2.1v6.4c0 1 .7 1.8 1.6 2.1l6.4 2V4.7l-6.4 2zM11.5 4v16l8.9-2.8c.7-.2 1.1-.8 1.1-1.5V8.3c0-.7-.4-1.3-1.1-1.5L11.5 4z"/></svg>fastschedule_test3</span>
+                    <span class="chan-post-cap">schedule multiple messages at once</span>
+                    <span class="cp-clock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+                  </span>
+                  <span class="chan-foot">
+                    <span class="reactions">
+                      <span class="rx"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.3a2 2 0 0 0 2-1.7l1.4-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg> 96</span>
+                      <span class="rx"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.2 3.8 4 6.2 7.5 6.5-.8 1.8-2.4 3-4.3 3.3.8 2.7 2.6 4.8 5 6.2-3 1-6.3.2-8.2-2.1-.7 2.6-2.6 4.6-5 5.6-1-2.5-.8-5.4.8-7.7-2.5.3-5-.7-6.5-2.7 2.7-1 4.8-3.3 5.5-6.2-2 .2-4-.7-5.3-2.4 3.2-.7 5.8-3 6.5-6.2 1.3 2.6 3.7 4.5 6.5 5-.9 1.7-2.5 2.9-4.3 3.3"/></svg> 40</span>
+                      <span class="rx"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="8.5" cy="10" r="1.3" fill="#182533"/><circle cx="15.5" cy="10" r="1.3" fill="#182533"/><path d="M7 14.5c1.3 1.8 3 2.7 5 2.7s3.7-.9 5-2.7" fill="none" stroke="#182533" stroke-width="1.6" stroke-linecap="round"/></svg> 13</span>
+                    </span>
+                    <span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/></svg> <b id="chanViews">0</b></span>
+                    <span class="cp-time2">18:15</span>
+                  </span>
+                </div>
+                <div class="chan-msg chan-msg2">
+                  <span class="chan-from"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 6.7c-.9.3-1.6 1.1-1.6 2.1v6.4c0 1 .7 1.8 1.6 2.1l6.4 2V4.7l-6.4 2zM11.5 4v16l8.9-2.8c.7-.2 1.1-.8 1.1-1.5V8.3c0-.7-.4-1.3-1.1-1.5L11.5 4z"/></svg>fastschedule_test3</span>
+                  <span class="chan-post-cap2">see everything in calendar</span>
+                  <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/></svg> <b>0</b></span><span class="cp-time2">18:16</span></span>
+                </div>
+                <div class="chan-msg chan-msg3">
+                  <span class="chan-from"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 6.7c-.9.3-1.6 1.1-1.6 2.1v6.4c0 1 .7 1.8 1.6 2.1l6.4 2V4.7l-6.4 2zM11.5 4v16l8.9-2.8c.7-.2 1.1-.8 1.1-1.5V8.3c0-.7-.4-1.3-1.1-1.5L11.5 4z"/></svg>fastschedule_test3</span>
+                  <span class="chan-post-cap2">use stats for advanced statistics</span>
+                  <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/></svg> <b>0</b></span><span class="cp-time2">18:17</span></span>
+                </div>
+              </div>
+              <div class="sl-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.4 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.2-9.19a4 4 0 015.65 5.66l-9.2 9.19a2 2 0 01-2.82-2.83l8.49-8.48"/></svg><span>Channel · only admins can post</span></div>
+            </div>
+            <div class="screen-layer bot-layer" id="botLayer" aria-hidden="true">
+              <div class="sl-head">
+                <svg class="tg-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                <div class="sl-titles"><span class="sl-name">Fast Schedule</span><span class="sl-sub">bot</span></div>
+                <span class="tg-avatar" style="margin-left:auto">FS</span>
+              </div>
+              <div class="sl-body" style="display:flex;flex-direction:column;justify-content:flex-end;padding:12px 10px 0">
+                <div class="demo" id="botStream" style="display:flex;flex-direction:column;gap:6px"></div>
+              </div>
+            </div>
+
+          </div><!-- /phone-screen -->
+          </div><!-- /phone-frame -->
+          <div class="phone-glare" aria-hidden="true"></div>
+        </div><!-- /phone -->
+      </div><!-- /phone-stage -->
+  </section>
+</div>
+
+<!-- Marquee -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8V6Z"/></svg>News channels</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Shop drops</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>Course creators</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2a10 10 0 0 0 0 20c1.1 0 2-.9 2-2v-1c0-1 .9-2 2-2h1a4 4 0 0 0 4-4 10 10 0 0 0-9-11Z"/></svg>Artists &amp; commissions</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>Trading signals</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>Podcast releases</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="8" height="18" rx="1"/><rect x="12" y="9" width="8" height="12" rx="1"/><path d="M8 7v.01M8 11v.01M8 15v.01M16 13v.01M16 17v.01"/></svg>Community digests</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>Startup updates</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8V6Z"/></svg>News channels</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Shop drops</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>Course creators</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2a10 10 0 0 0 0 20c1.1 0 2-.9 2-2v-1c0-1 .9-2 2-2h1a4 4 0 0 0 4-4 10 10 0 0 0-9-11Z"/></svg>Artists &amp; commissions</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>Trading signals</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>Podcast releases</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="8" height="18" rx="1"/><rect x="12" y="9" width="8" height="12" rx="1"/><path d="M8 7v.01M8 11v.01M8 15v.01M16 13v.01M16 17v.01"/></svg>Community digests</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>Startup updates</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8V6Z"/></svg>News channels</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Shop drops</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>Course creators</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2a10 10 0 0 0 0 20c1.1 0 2-.9 2-2v-1c0-1 .9-2 2-2h1a4 4 0 0 0 4-4 10 10 0 0 0-9-11Z"/></svg>Artists &amp; commissions</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>Trading signals</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>Podcast releases</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="8" height="18" rx="1"/><rect x="12" y="9" width="8" height="12" rx="1"/><path d="M8 7v.01M8 11v.01M8 15v.01M16 13v.01M16 17v.01"/></svg>Community digests</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>Startup updates</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8V6Z"/></svg>News channels</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Shop drops</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>Course creators</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2a10 10 0 0 0 0 20c1.1 0 2-.9 2-2v-1c0-1 .9-2 2-2h1a4 4 0 0 0 4-4 10 10 0 0 0-9-11Z"/></svg>Artists &amp; commissions</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>Trading signals</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>Podcast releases</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="8" height="18" rx="1"/><rect x="12" y="9" width="8" height="12" rx="1"/><path d="M8 7v.01M8 11v.01M8 15v.01M16 13v.01M16 17v.01"/></svg>Community digests</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>Startup updates</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <!-- ============ TIME SAVED ============ -->
+  <section class="block">
+    <div class="glass save-band reveal">
+      <h2 id="time">How much time you get back</h2>
+      <p style="color:var(--text-dim);max-width:560px;margin:12px auto 0">Posting manually every day means opening Telegram, drafting, double-checking and sending — daily. Scheduling means doing it <b style="color:var(--text)">once a week</b>.</p>
+      <div class="save-grid">
+        <div><div class="save-num">~2.5 h</div><div class="save-lbl">saved every week on daily posting (vs manual sending)</div></div>
+        <div><div class="save-num">1 chat</div><div class="save-lbl">for a whole month of posts via batch scheduling</div></div>
+        <div><div class="save-num">0</div><div class="save-lbl">missed posts — delivery runs even while you sleep</div></div>
+      </div>
+      <p class="foot-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.17a2 2 0 0 0-.59-1.42L12 12l-4.41 4.41A2 2 0 0 0 7 17.83V22"/><path d="M7 2v4.17a2 2 0 0 0 .59 1.42L12 12l4.41-4.41A2 2 0 0 0 17 6.17V2"/></svg> Every hour you don't spend reposting is an hour for content, community — or actually resting.</p>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="block" id="features">
+    <div class="sec-head reveal">
+      <h2 style="white-space:nowrap;font-size:clamp(1.05rem,3.05vw,2.6rem)">Everything a channel needs, in one chat</h2>
+      <p>Not a stripped-down demo bot. A full scheduling studio that happens to live in Telegram.</p>
+    </div>
+    <div class="features-glass">
+      <div class="glass feat reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span>
+        <h3>Batch scheduling</h3><p>Send many <b>date + message</b> pairs in a single message and create weeks of posts in one conversation. Preview everything before it goes live.</p><span class="tagchip">saves hours</span></div>
+      <div class="glass feat reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4M3 11V9a4 4 0 014-4h14M7 22l-4-4 4-4M21 13v2a4 4 0 01-4 4H3"/></svg></span>
+        <h3>Recurring posts</h3><p>"Every day at 9:00" or any cron schedule — digests, drops and reminders repeat themselves until you say stop. Pause and resume anytime.</p><span class="tagchip">set &amp; forget</span></div>
+      <div class="glass feat reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v14H3zM3 16l5-5 4 4 3-3 6 6"/><circle cx="8" cy="9" r="1.5"/></svg></span>
+        <h3>Rich media posts</h3><p>Photos, videos, albums, GIFs, polls, quizzes, documents, locations — with full formatting and inline URL buttons.</p></div>
+      <div class="glass feat reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4M4 20h16M8 16v-5M12 16V8M16 16v-9"/></svg></span>
+        <h3>Stats &amp; leaderboards</h3><p>Views, comments, reactions per post — paginated top-posts and top-commentator leaderboards so you double down on what works.</p><span class="tagchip">premium</span></div>
+      <div class="glass feat reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg></span>
+        <h3>Post from your own bot</h3><p>Connect your bot's token once and every scheduled post is published through it — your brand, your name, on every message.</p></div>
+      <div class="glass feat reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+        <h3>Your timezone, your rules</h3><p>Pick your timezone once — "9:00" means your 9:00 forever. Reports arrive on your schedule, not a server's.</p></div>
+      <div class="glass feat reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span>
+        <h3>Auto reports</h3><p>Daily, weekly or monthly performance reports delivered straight to your chat — no dashboards to open, no checking manually.</p></div>
+      <div class="glass feat reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h8l9 9-8 8-9-9zM7 7a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/></svg></span>
+        <h3>Multi-channel + team admins</h3><p>Manage several channels from one bot. Add trusted admins with per-channel permissions so nobody steps on toes.</p></div>
+      <div class="glass feat reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></span>
+        <h3>Encrypted backups</h3><p>Export everything as a password-encrypted file (AES-256-GCM) and restore on any device. Your content, portable and safe.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="block" id="how">
+    <div class="sec-head reveal">
+      <h2 id="steps">Three steps. Sixty seconds.</h2>
+      <p>No app to install, no dashboard to learn — if you can send a Telegram message, you already know how to use it.</p>
+    </div>
+    <div class="steps">
+      <div class="glass step reveal"><span class="n">1</span><h3>Open the bot &amp; connect a channel</h3><p>Tap Start, add the bot as an admin to your channel. Pick your timezone so 9:00 always means <i>your</i> 9:00.</p><div class="mini"><svg class="mi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg> t.me/FastSchedulerBot
+<svg class="mi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg> /start</div></div>
+      <div class="glass step reveal"><span class="n">2</span><h3>Schedule one post or fifty</h3><p>Send one date with its message — or paste several date + message blocks at once. Review, pick a photo mode, confirm: done.</p><div class="mini">21.09.2026 09:00 · Morning news digest<br>22.09.2026 09:00 · Product update</div></div>
+      <div class="glass step reveal"><span class="n">3</span><h3>Live your life</h3><p>Posts publish themselves — even while you sleep. Stats and reports find you, so you always know what performed.</p><div class="mini">📊 Channel Statistics<br>📅 Scheduled: 3<br>📤 Sent today: 1<br>✅ Total sent: 127</div></div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="block" id="pricing">
+    <div class="sec-head reveal">
+      <h2 class="oneline">Start free. Upgrade when it pays for itself.</h2>
+      <p>Free is a real plan, not a trial. Premium is for channels that want the full studio.</p>
+    </div>
+    <div class="billing-switch" role="tablist" aria-label="Billing period">
+      <button type="button" id="billYearly" class="active" role="tab" aria-selected="true">Yearly <span class="rec">Best value</span></button>
+      <button type="button" id="billMonthly" role="tab" aria-selected="false">Monthly</button>
+    </div>
+    <div class="pricing-carousel">
+      <button type="button" class="car-arrow left" id="carPrev" aria-label="Previous plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <button type="button" class="car-arrow right" id="carNext" aria-label="Next plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+    <div class="pricing-glass pricing-stage">
+      <div class="glass plan-g reveal" data-plan="free">
+        <span class="pname">Free</span><span class="pfor">forever — no card</span>
+        <div class="pprice">$0</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg> 1 channel + 1 sender bot</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg> Up to 100 pending scheduled messages</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg> Basic statistics</li>
+          <li class="mute"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg> 100 sends / channel / month</li>
+        </ul>
+        <a class="btn btn-ghost btn-block" href="https://t.me/FastSchedulerBot?start=start__website_free" target="_blank" rel="noopener noreferrer">Start free</a>
+      </div>
+      <div class="glass plan-g reveal" data-plan="monthly">
+        <span class="pname">1 Month</span><span class="pfor">full power, cancel anytime</span>
+        <div class="pprice">$9.99<small> /mo</small></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg> 3 channels + 3 sender bots</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg> Unlimited sends &amp; recurring posts</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg> Leaderboards + custom auto reports</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg> Encrypted backup &amp; export</li>
+        </ul>
+        <a class="btn btn-primary btn-block" href="https://t.me/FastSchedulerBot?start=premium_monthly__pricing" target="_blank" rel="noopener noreferrer">Go Premium</a>
+      </div>
+      <div class="glass plan-g reveal" data-plan="monthly_3">
+        <span class="ribbon">−10%</span>
+        <span class="pname">3 Months</span><span class="pfor">one payment</span>
+        <div class="pprice">$26.97<small> / 3mo</small></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg> Everything in Monthly</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg> ≈ $8.99 / month</li>
+          <li class="mute">vs $29.97 monthly</li>
+        </ul>
+        <a class="btn btn-ghost btn-block" href="https://t.me/FastSchedulerBot?start=premium_monthly_3__pricing" target="_blank" rel="noopener noreferrer">Save 10%</a>
+      </div>
+      <div class="glass plan-g reveal" data-plan="monthly_6">
+        <span class="ribbon">−14%</span>
+        <span class="pname">6 Months</span><span class="pfor">one payment</span>
+        <div class="pprice">$51.55<small> / 6mo</small></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg> Everything in Monthly</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg> ≈ $8.59 / month</li>
+          <li class="mute">vs $59.94 monthly</li>
+        </ul>
+        <a class="btn btn-ghost btn-block" href="https://t.me/FastSchedulerBot?start=premium_monthly_6__pricing" target="_blank" rel="noopener noreferrer">Save 14%</a>
+      </div>
+      <div class="glass plan-g best reveal" data-plan="yearly">
+        <span class="ribbon">Best value −17%</span>
+        <span class="pname">1 Year</span><span class="pfor">one payment, no renewals</span>
+        <div class="pprice">$99.49<small> / yr</small></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg> Everything in Monthly</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg> ≈ $8.29 / month</li>
+          <li class="mute">vs $119.88 monthly</li>
+        </ul>
+        <a class="btn btn-primary btn-block" href="https://t.me/FastSchedulerBot?start=premium_yearly__pricing" target="_blank" rel="noopener noreferrer">Save 17%</a>
+      </div>
+    </div>
+    </div><!-- /pricing-carousel -->
+    <p style="text-align:center;color:var(--text-dim);font-size:.88rem;margin-top:22px">Payments handled entirely by Telegram Stars. We never see your card. <a href="legal/refundpolicy.html">Refund policy</a>.</p>
+    <details class="cmp-wrap reveal">
+      <summary>Full plan comparison <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+      <div class="cmp-clip"><div class="cmp-clip-in">
+      <div class="comparison" id="comparison" aria-label="Full plan comparison"></div>
+      </div></div>
+    </details>
+
+  <script>
+  (function () {
+    'use strict';
+    // ---- animated plan-comparison open/close ----
+    (function () {
+      var d = document.querySelector('.cmp-wrap');
+      if (!d) return;
+      var motionOff = function () { return document.documentElement.getAttribute('data-motion') === 'off'; };
+      function setOpen(open) {
+        if (open === d.hasAttribute('open')) return;
+        if (motionOff()) { if (open) d.setAttribute('open', ''); else d.removeAttribute('open'); return; }
+        if (open) {
+          d.setAttribute('open', '');
+          requestAnimationFrame(function () { d.classList.add('cmp-open'); });
+        } else {
+          d.classList.remove('cmp-open');
+          var done = function () { d.removeEventListener('transitionend', onEnd); if (!d.classList.contains('cmp-open')) d.removeAttribute('open'); };
+          var onEnd = function (e) { if (e.target === d.querySelector('.cmp-clip-in')) done(); };
+          d.addEventListener('transitionend', onEnd);
+          setTimeout(done, 500); /* safety */
+        }
+      }
+      d.querySelector('summary').addEventListener('click', function (e) {
+        e.preventDefault();
+        setOpen(!d.hasAttribute('open'));
+      });
+    })();
+    // ---- billing switcher + carousel ----
+    var PLANS = ['free', 'monthly', 'monthly_3', 'monthly_6', 'yearly'];
+    var cards = {};
+    PLANS.forEach(function (id) {
+      var el = document.querySelector('.plan-g[data-plan="' + id + '"]');
+      if (el) cards[id] = el;
+    });
+    var stage = document.querySelector('.pricing-stage');
+    var prevBtn = document.getElementById('carPrev');
+    var nextBtn = document.getElementById('carNext');
+    var billY = document.getElementById('billYearly');
+    var billM = document.getElementById('billMonthly');
+
+    var active = PLANS.indexOf('yearly'); // yearly view on load
+
+    /* Yearly and 6 Months are the "hero" plans — slightly darker center card
+       so their text is the most readable thing on the stage. */
+    function markHeroes() {
+      Object.keys(cards).forEach(function (id) {
+        cards[id].classList.toggle('plan-hero', id === 'yearly' || id === 'monthly_6');
+      });
+    }
+    markHeroes();
+
+    /* finger swipe rotates the ring (phones keep the coverflow now) */
+    (function () {
+      if (!stage) return;
+      var x0 = null, y0 = null, tracking = false;
+      stage.addEventListener('touchstart', function (e) {
+        if (e.touches.length !== 1) return;
+        x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; tracking = true;
+      }, { passive: true });
+      stage.addEventListener('touchmove', function (e) {
+        if (!tracking) return;
+        var dx = Math.abs(e.touches[0].clientX - x0);
+        var dy = Math.abs(e.touches[0].clientY - y0);
+        if (dx > 12 && dx > dy * 1.3) e.preventDefault(); // horizontal intent
+      }, { passive: false });
+      stage.addEventListener('touchend', function (e) {
+        if (!tracking) return;
+        tracking = false;
+        var t = e.changedTouches[0];
+        var dx = t.clientX - x0, dy = t.clientY - y0;
+        if (Math.abs(dx) > 42 && Math.abs(dx) > Math.abs(dy) * 1.4) {
+          step(dx < 0 ? 1 : -1);
+        }
+        x0 = y0 = null;
+      }, { passive: true });
+    })();
+
+    /* place every card on the coverflow ring: slots -2..2 around the center */
+    function layout() {
+      var n = PLANS.length;
+      PLANS.forEach(function (id, i) {
+        var el = cards[id];
+        if (!el) return;
+        var off = i - active;
+        if (off > n / 2) off -= n;
+        if (off < -n / 2) off += n;
+        el.setAttribute('data-pos', String(off));
+        el.classList.toggle('active-plan', off === 0);
+        el.setAttribute('aria-hidden', off === 0 ? 'false' : 'true');
+      });
+    }
+
+    function setCenter(id) {
+      var i = PLANS.indexOf(id);
+      if (i >= 0) { active = i; layout(); }
+    }
+
+    function step(dir) {
+      active = (active + dir + PLANS.length) % PLANS.length;
+      layout();
+    }
+
+    if (prevBtn && nextBtn) {
+      prevBtn.addEventListener('click', function () { step(-1); });
+      nextBtn.addEventListener('click', function () { step(1); });
+    }
+    /* clicking a background card brings it to the center */
+    Object.keys(cards).forEach(function (id) {
+      cards[id].addEventListener('click', function (e) {
+        if (cards[id].getAttribute('data-pos') !== '0') {
+          e.preventDefault();
+          setCenter(id);
+        }
+      });
+    });
+    document.addEventListener('keydown', function (e) {
+      var sec = document.getElementById('pricing');
+      if (!sec) return;
+      var r = sec.getBoundingClientRect();
+      if (r.top > window.innerHeight * 0.6 || r.bottom < window.innerHeight * 0.4) return;
+      if (e.key === 'ArrowLeft') { step(-1); }
+      else if (e.key === 'ArrowRight') { step(1); }
+    });
+    if (billY && billM) {
+      billY.addEventListener('click', function () {
+        billY.classList.add('active'); billY.setAttribute('aria-selected', 'true');
+        billM.classList.remove('active'); billM.setAttribute('aria-selected', 'false');
+        setCenter('yearly');
+      });
+      billM.addEventListener('click', function () {
+        billM.classList.add('active'); billM.setAttribute('aria-selected', 'true');
+        billY.classList.remove('active'); billY.setAttribute('aria-selected', 'false');
+        setCenter('monthly_6');
+      });
+      /* monthly view: Free card first in the ring, then the rest
+         (yearly view keeps the default order with Yearly centered) */
+      var MONTHLY_ORDER = ['free', 'monthly_6', 'monthly', 'monthly_3', 'yearly'];
+      var YEARLY_ORDER = PLANS.slice();
+      function applyOrder() {
+        var monthly = billM.classList.contains('active');
+        var order = monthly ? MONTHLY_ORDER : YEARLY_ORDER;
+        order.forEach(function (id) { if (cards[id]) stage.appendChild(cards[id]); });
+      }
+      applyOrder();
+      billY.addEventListener('click', applyOrder);
+      billM.addEventListener('click', applyOrder);
+    }
+    if (stage) layout();
+    /* Self-heal: if the Animations toggle flips mid-session, re-apply the ring
+       immediately so the coverflow is never left in a stale arrangement. */
+    if (stage && 'MutationObserver' in window) {
+      new MutationObserver(function () { layout(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-motion'] });
+    }
+    window.addEventListener('load', function () { if (stage) layout(); });
+  })();
+  </script>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="block">
+    <div class="sec-head reveal"><h2 id="faq">Questions, answered</h2></div>
+    <div class="glass faq-glass reveal">
+      <details><summary>Is Fast Scheduler really free?</summary><p>Yes. The free plan connects 1 channel and 1 sender bot with up to 100 pending scheduled messages and 100 sends per channel per month. Premium raises limits and unlocks leaderboards and custom reports — but you can run a small channel on Free forever.</p></details>
+      <details><summary>How does it save me time?</summary><p>Batch-scheduling turns "post every day" into one weekly 10-minute session: paste a week of date+message pairs in a single chat. Recurring posts make daily digests fully automatic, and reports come to you instead of you hunting analytics.</p></details>
+      <details><summary>Do posts come from my own bot?</summary><p>Yes — create a bot in @BotFather, connect it once, and every scheduled post is published through it, keeping your brand on every message. The sender bot is required: scheduling unlocks only after your channel has one (the main bot steps in only as an emergency fallback if your bot's token fails).</p></details>
+      <details><summary>Will posts go out if I'm offline or asleep?</summary><p>Yes. Scheduling happens on the bot's side: once a message is queued it publishes at the exact time you chose, in your timezone, whether you're online or not.</p></details>
+      <details><summary>Can I see who comments on my posts?</summary><p>Premium leaderboards rank your top posts by views, comments and reactions, plus a top-commentators ranking. Add the bot to your channel's discussion group and it attributes comment authors automatically.</p></details>
+      <details><summary>Is my data safe?</summary><p>Bot tokens are encrypted at rest, backups support AES-256-GCM password encryption, and you can export or delete everything at any time. See our <a href="legal/privacy.html">Privacy Policy</a>.</p></details>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="block">
+    <div class="glass final-cta reveal">
+      <h2>Your next post is <span style="background:linear-gradient(120deg,var(--green-strong),#6fe0a0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">already scheduled</span>.</h2>
+      <p>Or you're still posting it by hand every day. Sixty seconds now — weeks of autopilot after.</p>
+      <a class="cta-big" href="https://t.me/FastSchedulerBot?start=start__website_footer" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
+        Open Fast Scheduler in Telegram
+      </a>
+    </div>
+  </section>
+
+  <footer class="home-foot">
+    <div class="wrap">
+      <span class="copy">© 2026 Fast Scheduler · Made for Telegram channels</span>
+      <nav class="links" aria-label="Legal">
+        <a href="legal/privacy.html">Privacy</a>
+        <a href="legal/terms.html">Terms</a>
+        <a href="legal/refundpolicy.html">Refunds</a>
+        <a href="help.html">Help Center</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    try {
+      var stored = localStorage.getItem('theme') || localStorage.getItem('fs-theme') || '';
+      if (stored === 'dark' || stored === 'light') root.setAttribute('data-theme', stored);
+      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) root.setAttribute('data-theme', 'dark');
+    } catch (e) {}
+
+    // Reveal on scroll
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+    } else {
+      document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+    }
+  })();
+</script>
+<script src="scripts/theme.js?v=20260924a"></script>
+<script src="scripts/settings.js?v=20260924a"></script>
+<script src="scripts/scroll-jump.js?v=20260924a"></script>
+<script>
+  /* burger menu + navbar scroll elevation */
+  (function () {
+    var burger = document.getElementById('navBurger');
+    var sheet = document.getElementById('navMobile');
+    if (burger && sheet) {
+      var close = function () {
+        sheet.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        setTimeout(function () { if (!sheet.classList.contains('open')) sheet.style.display = ''; }, 300);
+      };
+      burger.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var open = sheet.classList.toggle('open');
+        sheet.style.display = 'block';
+        burger.setAttribute('aria-expanded', String(open));
+        if (open) requestAnimationFrame(function () { sheet.classList.add('open'); });
+        else close();
+      });
+      sheet.addEventListener('click', function (e) {
+        if (e.target.closest('a')) close();
+        e.stopPropagation();
+      });
+      document.addEventListener('click', function (e) {
+        if (sheet.classList.contains('open') && !e.target.closest('#navMobile') && !e.target.closest('#navBurger')) close();
+      });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+      window.addEventListener('resize', function () { if (window.innerWidth > 860) close(); });
+    }
+    var nav = document.querySelector('.home-nav');
+    if (nav) {
+      var upd = function () { nav.classList.toggle('scrolled', window.scrollY > 10); };
+      upd();
+      window.addEventListener('scroll', upd, { passive: true });
+    }
+  })();
+</script>
+<script src="scripts/liquid-nav.js?v=20260924a"></script>
+<script>
+  /* ---- Help quick-search inside Settings > Help submenu ---- */
+  (function () {
+    'use strict';
+    var pop = document.getElementById('siteMenu');
+    var form = document.getElementById('helpSearchForm');
+    var input = document.getElementById('helpSearchInput');
+    var title = document.getElementById('helpRecentTitle');
+    var list = document.getElementById('helpRecentList');
+    if (!pop || !form || !input || !list) return;
+    var KEY = 'fs-help-recents';
+    var SUGGESTED = [
+      { t: 'Getting Started', q: 'getting started' },
+      { t: 'Connecting a Channel', q: 'connecting a channel' },
+      { t: 'Recurring Messages', q: 'recurring messages' },
+      { t: 'Premium & Billing', q: 'premium billing' },
+      { t: 'Media & Photo Posts', q: 'photo video posts' },
+      { t: 'Fix: Post Not Sent', q: 'post not sent' },
+      { t: 'Edit or Delete a Post', q: 'edit delete scheduled' }
+    ];
+
+    function readRecents() {
+      try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { return []; }
+    }
+    function render() {
+      var rec = readRecents().slice(0, 5);
+      list.textContent = '';
+      if (rec.length) {
+        title.textContent = 'Recent searches';
+        rec.forEach(function (q) {
+          var a = document.createElement('a');
+          a.href = 'help.html#/s/' + encodeURIComponent(q);
+          a.textContent = q;
+          list.appendChild(a);
+        });
+      } else {
+        title.textContent = 'Popular articles';
+        SUGGESTED.forEach(function (s) {
+          var a = document.createElement('a');
+          a.href = 'help.html#/s/' + encodeURIComponent(s.q);
+          a.textContent = s.t;
+          list.appendChild(a);
+        });
+      }
+    }
+
+    /* prefill recents as soon as the submenu opens (settings.js toggles .open) */
+    var obs = new MutationObserver(function () {
+      if (pop.classList.contains('open')) render();
+    });
+    obs.observe(pop, { attributes: true, attributeFilter: ['class'] });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var q = input.value.trim();
+      if (!q) return;
+      try {
+        var rec = readRecents().filter(function (x) { return x !== q; });
+        rec.unshift(q);
+        localStorage.setItem(KEY, JSON.stringify(rec.slice(0, 6)));
+      } catch (err) {}
+      /* hash route: help.html renders the RESULTS PAGE directly on load —
+         immune to ?q= being dropped by browser/server caching */
+      window.open('help.html#/s/' + encodeURIComponent(q), '_blank', 'noopener');
+    });
+  })();
+</script>
+<script>
+  (function () {
+    var root = document.documentElement;
+    /* Staggered reveals: sibling cards rise in sequence */
+    if ('IntersectionObserver' in window) {
+      document.querySelectorAll('.reveal').forEach(function (el) {
+        var parent = el.parentElement;
+        if (!parent) return;
+        var sibs = Array.prototype.filter.call(parent.children, function (c) {
+          return c.classList && c.classList.contains('reveal');
+        });
+        var idx = sibs.indexOf(el);
+        if (idx > 0) el.style.transitionDelay = Math.min(idx * 90, 420) + 'ms';
+      });
+    }
+
+    /* iPhone-stage: pointer parallax with spring-back + idle float */
+    (function () {
+      var phone = document.getElementById('phone3d');
+      if (!phone) return;
+      var root = document.documentElement;
+      var fine = window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches;
+      var motionOff = root.getAttribute('data-motion') === 'off';
+      if (!fine || motionOff) return;
+
+      phone.classList.add('enter');
+      setTimeout(function () { phone.classList.add('idle'); }, 1400);
+
+      var stage = phone.parentElement;
+      var raf = null, tx = 12, ty = -32, tz = 7, cx = 12, cy = -32, cz = 7;   // target/current deg
+      function tick() {
+        cx += (tx - cx) * .07;
+        cy += (ty - cy) * .07;
+        cz += (tz - cz) * .07;
+        phone.style.setProperty('--prx', cx.toFixed(2) + 'deg');
+        phone.style.setProperty('--pry', cy.toFixed(2) + 'deg');
+        phone.style.setProperty('--prz', cz.toFixed(2) + 'deg');
+        if (Math.abs(tx - cx) > .01 || Math.abs(ty - cy) > .01 || Math.abs(tz - cz) > .01) raf = requestAnimationFrame(tick);
+        else raf = null;
+      }
+      stage.addEventListener('pointermove', function (e) {
+        var r = stage.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - .5;    // -0.5 .. 0.5
+        var py = (e.clientY - r.top) / r.height - .5;
+        tx = 12 - py * 12;         // lean toward/away with cursor height
+        ty = -32 + px * 30;        // orbit around the standing pose
+        tz = 7 + px * 5;           // slight roll, like a device on a stand
+        phone.classList.remove('idle');
+        if (!raf) raf = requestAnimationFrame(tick);
+      });
+      stage.addEventListener('pointerleave', function () {
+        tx = 12; ty = -32; tz = 7; // spring back to the standing keynote pose
+        if (!raf) raf = requestAnimationFrame(tick);
+        setTimeout(function () { if (tx === 12 && ty === -32 && !raf) phone.classList.add('idle'); }, 1200);
+      });
+    })();
+
+    /* Gentle 3D tilt that springs back (desktop pointers, motion on) */
+    if (window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches &&
+        root.getAttribute('data-motion') !== 'off') {
+      document.querySelectorAll('.feat, .step, .quote').forEach(function (card) {
+        card.addEventListener('pointermove', function (e) {
+          var r = card.getBoundingClientRect();
+          var rx = ((e.clientY - r.top) / r.height - .5) * -3.2;
+          var ry = ((e.clientX - r.left) / r.width - .5) * 3.2;
+          card.style.transform = 'perspective(900px) rotateX(' + rx.toFixed(2) +
+            'deg) rotateY(' + ry.toFixed(2) + 'deg) translateY(-4px)';
+        });
+        card.addEventListener('pointerleave', function () { card.style.transform = ''; });
+      });
+    }
+  })();
+</script>
+
+<script src="scripts/site-config.js?v=20260924a"></script>
+<script src="scripts/main.js?v=20260924a"></script>
+<script src="scripts/hero-demo.js?v=20260924a"></script>
+</body>
+</html>
