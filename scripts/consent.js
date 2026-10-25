@@ -107,6 +107,7 @@
       decline: 'Decline',
       more: 'Privacy Policy',
       settings: 'Cookie settings',
+      thanks: 'Thanksss!',
       title: 'Cookies'
     },
     ru: {
@@ -117,6 +118,7 @@
       decline: 'Отклонить',
       more: 'Политика конфиденциальности',
       settings: 'Настройки cookie',
+      thanks: 'Спасибо!',
       title: 'Cookie'
     },
     es: {
@@ -127,6 +129,7 @@
       decline: 'Rechazar',
       more: 'Política de privacidad',
       settings: 'Ajustes de cookies',
+      thanks: '¡Graciasss!',
       title: 'Cookies'
     }
   };
@@ -163,6 +166,23 @@
     '.fs-cookie button.fs-accept{background:#1f9d55;border-color:#1f9d55;color:#fff;',
     'margin-left:auto;min-width:168px;padding:12px 28px;font-size:16px;border-radius:12px}',
     '.fs-cookie button:hover{filter:brightness(1.06)}',
+    /* Accepted: the banner turns into a short thank-you card, then leaves. */
+    '.fs-cookie.fs-done{justify-content:center;padding:20px 18px}',
+    '.fs-cookie .fs-thanks{display:inline-flex;align-items:center;gap:11px;',
+    'font-size:17px;font-weight:800;letter-spacing:-.01em;',
+    'animation:fs-thanks-in .5s cubic-bezier(.19,1.4,.36,1) both}',
+    '.fs-cookie .fs-thanks svg{width:24px;height:24px;flex:none;color:#1f9d55}',
+    '.fs-cookie .fs-thanks .fs-tick{stroke-dasharray:26;stroke-dashoffset:26;',
+    'animation:fs-tick .45s .12s ease forwards}',
+    '@keyframes fs-thanks-in{0%{transform:scale(.7);opacity:0}',
+    '62%{transform:scale(1.06);opacity:1}100%{transform:scale(1);opacity:1}}',
+    '@keyframes fs-tick{to{stroke-dashoffset:0}}',
+    '@keyframes fs-cookie-bye{to{transform:translateY(130%) scale(.94);opacity:0}}',
+    '.fs-cookie.fs-leave{animation:fs-cookie-bye .45s cubic-bezier(.4,0,.7,1) forwards}',
+    '@media (prefers-reduced-motion:reduce){',
+    '.fs-cookie .fs-thanks,.fs-cookie .fs-thanks .fs-tick{animation:none}',
+    '.fs-cookie .fs-thanks .fs-tick{stroke-dashoffset:0}',
+    '.fs-cookie.fs-leave{animation:none;opacity:0}}',
     '@media (prefers-color-scheme:dark){.fs-cookie{background:var(--surface,#141a21);',
     'color:var(--text,#e8eef5);border-color:rgba(140,150,170,.35)}}',
     '.fs-cookie-link{background:none;border:0;padding:0;font:inherit;color:inherit;',
@@ -170,6 +190,23 @@
   ].join('');
 
   var banner = null;
+
+  /* The choice UI, kept as a function so the thank-you state can hand the
+     banner back to its normal self if "Cookie settings" reopens it. */
+  function bannerContent() {
+    var c = copy();
+    return '<p>' + c.text + '<br><a href="' + ROOT + '/legal/privacy.html">' + c.more + '</a></p>' +
+      '<div class="fs-actions">' +
+      '<button type="button" data-cookie="decline">' + c.decline + '</button>' +
+      '<button type="button" class="fs-accept" data-cookie="accept">' + c.accept + '</button>' +
+      '</div>';
+  }
+
+  function resetBanner() {
+    if (!banner) return;
+    banner.classList.remove('fs-done', 'fs-leave');
+    banner.innerHTML = bannerContent();
+  }
 
   function buildBanner() {
     if (banner) return banner;
@@ -185,12 +222,7 @@
     banner.id = 'cookieBanner';
     banner.setAttribute('role', 'dialog');
     banner.setAttribute('aria-label', c.title);
-    banner.innerHTML =
-      '<p>' + c.text + '<br><a href="' + ROOT + '/legal/privacy.html">' + c.more + '</a></p>' +
-      '<div class="fs-actions">' +
-      '<button type="button" data-cookie="decline">' + c.decline + '</button>' +
-      '<button type="button" class="fs-accept" data-cookie="accept">' + c.accept + '</button>' +
-      '</div>';
+    banner.innerHTML = bannerContent();
     /* the choice is written by main.js on the same keys; do it here too so the
        banner works on pages that do not load main.js */
     banner.addEventListener('click', function (ev) {
@@ -204,6 +236,8 @@
 
   function showBanner() {
     var el = buildBanner();
+    clearTimeout(thanksTimer);
+    resetBanner();
     setTimeout(function () { el.classList.add('show'); }, 600);
   }
 
@@ -211,12 +245,37 @@
     if (banner) banner.classList.remove('show');
   }
 
+  var THANKS_ICON =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" ' +
+    'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    '<circle cx="12" cy="12" r="9" stroke-width="1.7" opacity=".35"/>' +
+    '<path class="fs-tick" d="m7.6 12.4 3 3 5.8-6.2"/></svg>';
+
+  /* Accepting deserves an answer: the banner collapses into a thank-you beat
+     and then leaves, instead of blinking out from under the pointer. */
+  function playThanks(el) {
+    clearTimeout(thanksTimer);
+    el.classList.add('show', 'fs-done');
+    el.innerHTML = '<div class="fs-thanks" role="status" aria-live="polite">' +
+      THANKS_ICON + '<span>' + copy().thanks + '</span></div>';
+    thanksTimer = setTimeout(function () {
+      el.classList.add('fs-leave');
+      thanksTimer = setTimeout(function () {
+        el.classList.remove('show', 'fs-done', 'fs-leave');
+        resetBanner();
+      }, 460);
+    }, 1350);
+  }
+
+  var thanksTimer = null;
+
   function decide(choice) {
     saveChoice(choice);
-    hideBanner();
     if (choice === 'accepted') {
+      playThanks(buildBanner());
       loadGTM();
     } else {
+      hideBanner();
       dropAnalyticsCookies();
       /* keep the object for pages that probe it, but nothing is sent */
       window.dataLayer = window.dataLayer || [];

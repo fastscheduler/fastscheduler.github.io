@@ -210,6 +210,42 @@
     form.querySelector('.ns-kbd').textContent = KBD;
   }
 
+  /* Phones: the blog's hero search box is too tall to sit above the cards, so
+     it is replaced by a compact magnifier in the navbar, just left of the Help
+     Center pill. Same search bar, same results — the styles ride along with
+     the button so no generated page has to be touched. */
+  var SEARCH_ICON =
+    '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+    'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    '<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>';
+  (function blogNavButton() {
+    if (SCOPE !== 'blog' || !form) return;
+    var navRight = document.querySelector('header.site .nav-right');
+    if (!navRight || navRight.querySelector('.nav-search-btn')) return;
+    var st = document.createElement('style');
+    st.id = 'fs-nav-search-css';
+    st.textContent =
+      '.nav-search-btn{display:none}' +
+      '@media (max-width:700px){' +
+      '.nav-unified .nav-link.nav-search-btn{display:inline-flex;width:42px;height:42px;' +
+      'padding:0;justify-content:center;align-items:center;flex:none}' +
+      '.blog-search{display:none !important}}';
+    document.head.appendChild(st);
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'nav-link nav-search-btn';
+    btn.setAttribute('aria-label', T.blogAria);
+    btn.title = T.blogAria;
+    btn.innerHTML = SEARCH_ICON;
+    btn.addEventListener('click', function (ev) {
+      ev.preventDefault();
+      focusBar();
+    });
+    var helpWrap = navRight.querySelector('.site-menu-wrap');
+    if (helpWrap) navRight.insertBefore(btn, helpWrap);
+    else navRight.appendChild(btn);
+  })();
+
   function showBar() {
     if (!form) return;
     form.classList.add('show');
@@ -434,7 +470,7 @@
   /* ------------------------------------------------------------------
      Ctrl/Cmd + K
        help  → the docs-header / hero search
-       blog  → the hub's search field while visible, else the bar
+       blog  → the navbar bar, so a scrolled page never jumps to the top
        legal → the bar (this document)
        home  → untouched (no search on the landing page)
   ------------------------------------------------------------------ */
@@ -471,19 +507,10 @@
         return;
       }
       if (SCOPE === 'blog') {
-        /* The hub's own field wins even when it has scrolled away: it searches
-           INTO this page's results view (topic filters included), while the
-           nav bar would only navigate back to the same hub. Bring it on screen
-           first, then focus it without a second scroll. */
-        var bq = document.getElementById('blog-q');
-        if (bq) {
-          if (!onScreen(bq)) {
-            try { bq.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
-            catch (err) { bq.scrollIntoView(); }
-          }
-          putCaret(bq);
-          return;
-        }
+        /* The navbar bar, not the hub's hero field: scrolling the hero back
+           into view yanked the page upward, which is exactly what Ctrl+K
+           should never do. The bar submits into the same results view. */
+        if (form) { focusBar(); return; }
       }
       if (form) focusBar();
     }, true);
