@@ -1,0 +1,12 @@
+<div class="hc-body">Если токен вашего бота утёк, отзовите его в @BotFather (<code>/revoke</code>) и обновите здесь:
+
+<b>Боты</b> → выберите бота → <b>Заменить токен</b> → вставьте новый токен.
+
+Отложенные сообщения возобновятся автоматически, как только новый токен сохранён. При подозрении на утечку меняйте токен немедленно.</div>
+    
+  </article>
+  <div class="hc-cta"><div><b>Всё ещё нужна помощь?</b><p>Встроенный помощник отвечает на те же вопросы, а каждый тикет читает человек.</p></div><a class="btn" href="https://t.me/FastSchedulerSupport_bot" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Написать в Telegram</a></div>
+</div>
+</main>
+<footer class="site">
+  

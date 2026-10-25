@@ -1,0 +1,15 @@
+<div class="hc-faq"><h2>Common questions</h2>
+<details><summary>How many channels can I connect?</summary><div class="hc-fa"><p>Free users can connect 1 channel. Premium users can connect multiple channels (up to the plan limit).</p></div></details>
+<details><summary>Why can&#x27;t I connect my channel?</summary><div class="hc-fa"><p>Make sure @FastSchedulerBot is an admin in your channel with posting permissions. Also verify you're the channel owner or an admin.</p></div></details>
+</div>
+        <div class="hc-others" data-others><span>Other categories:</span><a href="#/c/start">Getting Started</a><a href="#/c/scheduling">Scheduling Messages</a><a href="#/c/bots">Sender Bots</a><a href="#/c/admins">Admins</a><a href="#/c/premium">Premium</a><a href="#/c/referral">Referrals</a><a href="#/c/limits">Limits</a><a href="#/c/timezone">Time Zone</a><a href="#/c/language">Language</a><a href="#/c/export">Export</a><a href="#/c/import">Import</a><a href="#/c/backup">Backup</a><a href="#/c/media_storage">Media Storage</a><a href="#/c/tools">Tools</a><a href="#/c/tips">Pro Tips</a><a href="#/c/feedback">Feedback &amp; Support</a><a href="#/c/faq">Frequently Asked Questions</a><a href="#/c/commands">Text Commands</a><a href="#/c/errors">Troubleshooting</a><a href="#/c/privacy">Privacy</a><a href="#/c/contact">Contact &amp; Support</a><a href="#/c/config">Settings &amp; Configuration</a><a href="#/c/misc">More topics</a></div>
+        <button type="button" class="hc-more" data-more hidden><span data-more-t>Show more</span><span data-less-t hidden>Show less</span></button>
+      </section>
+
+      <section class="view" data-view="category" data-cat="bots" hidden>
+        <nav class="hc-crumbs" aria-label="Breadcrumb">
+          <a href="#/">Help Center</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          <span aria-current="page">Sender Bots</span>
+        </nav>
+        <header class="hc-cat-head">
+          <span class="hc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-

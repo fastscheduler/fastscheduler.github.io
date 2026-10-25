@@ -1,0 +1,12 @@
+KEY=before day 17. SEC=?
+ils><summary>Will my media be deleted when Premium expires?</summary><div class="hc-fa"><p>Media you choose to keep is safe. On day 0 you pick 1 storage to keep. Day 3 is a final warning. Day 17: excess storages are <b>permanently deleted</b>. Your kept storage is trimmed to the newest 100 items (videos are removed first, oldest first). To keep everything: renew Premium with <code>/premium</code> before day 17.</p><div class="hc-chips" style="margin-top:10px"><a class="hc-chip" href="#/a/premium_expiry"><span>Истечение Premium</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
+====
+KEY=on the main menu SEC=?
+ aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a>         </div>         <button type="button" class="hc-more" data-more hidden><span data-more-t>Show more</span><span data-less-t hidden>Show less</span></button>         <div class="hc-faq"><h2>Common questions</h2> <details><summary>How do I purchase Premium?</summary><div class="hc-fa"><p>Step by step:<br>1. Click <b>Premium</b> on the main menu (or use <code>/premium</code>)<br>2. Choose a plan: <b>Monthly</b> (auto-renewing), <b>3-month</b>, <b>6-month</b>, or <b>Yearly</b> (prepaid, one-time)<br>3. Select payment method: <
+====
+KEY=Step by step: SEC=?
+e-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a>         </div>         <button type="button" class="hc-more" data-more hidden><span data-more-t>Show more</span><span data-less-t hidden>Show less</span></button>         <div class="hc-faq"><h2>Common questions</h2> <details><summary>How do I purchase Premium?</summary><div class="hc-fa"><p>Step by step:<br>1. Click <b>Premium</b> on the main menu (or use <code>/premium</code>)<br>2. Choose a plan: <b>Monthly</b> (auto-renewing), <b>3-month</b>, <b>6-month</b>, or <b>Yearly</b> (prepaid,
+====
+KEY=1. Click SEC=?
+ stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a>         </div>         <button type="button" class="hc-more" data-more hidden><span data-more-t>Show more</span><span data-less-t hidden>Show less</span></button>         <div class="hc-faq"><h2>Common questions</h2> <details><summary>How do I purchase Premium?</summary><div class="hc-fa"><p>Step by step:<br>1. Click <b>Premium</b> on the main menu (or use <code>/premium</code>)<br>2. Choose a plan: <b>Monthly</b> (auto-renewing), <b>3-month</b>, <b>6-month</b>, or <b>Yearly</b> (prepaid, one-time)<br>3. 
+====

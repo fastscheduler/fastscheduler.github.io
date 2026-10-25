@@ -1,0 +1,11 @@
+glossary_premium :: Premium
+premium :: Premium
+payment_stars :: Telegram Stars
+faq_telegram :: FAQ: Telegram
+faq_api :: FAQ: API
+commands_schedule :: /schedule
+commands_search :: /search
+commands_premium :: /premium
+commands_referral :: /referral
+commands_language :: /language
+contact_email :: Email

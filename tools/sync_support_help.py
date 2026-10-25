@@ -34,8 +34,10 @@ sys.path.insert(0, HERE)
 from help_v2_en import CONTENT_EN  # noqa: E402
 from help_v2_es import CONTENT_ES  # noqa: E402
 from help_v2_ru import CONTENT_RU  # noqa: E402
+from help_v2_getting_started import CONTENT_GS  # noqa: E402
 
-SOURCES = {'en': CONTENT_EN, 'es': CONTENT_ES, 'ru': CONTENT_RU}
+SOURCES = {lang: {**tree, **CONTENT_GS[lang]}
+           for lang, tree in (('en', CONTENT_EN), ('es', CONTENT_ES), ('ru', CONTENT_RU))}
 WIKI = re.compile(r'\[\[([a-z0-9_]+)(?:\|([^\]]+))?\]\]')
 
 

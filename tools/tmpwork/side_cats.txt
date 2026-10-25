@@ -1,0 +1,23 @@
+start | Getting Started
+scheduling | Scheduling Messages
+channels | Channels
+bots | Sender Bots
+admins | Admins
+premium | Premium
+referral | Referrals
+limits | Limits
+timezone | Time Zone
+language | Language
+export | Export
+import | Import
+backup | Backup
+media_storage | Media Storage
+tools | Tools
+tips | Pro Tips
+feedback | Feedback & Support
+faq | Frequently Asked Questions
+commands | Text Commands
+errors | Troubleshooting
+privacy | Privacy
+contact | Contact & Support
+config | Settings & Configuration

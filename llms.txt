@@ -7,7 +7,7 @@
 - Support / feedback bot (a human reads every ticket): https://t.me/FastSchedulerSupport_bot
 - Help Center (interactive search): https://fastscheduler.github.io/help.html
 - Blog (Telegram channel growth guides): https://fastscheduler.github.io/blog/ (77 articles)
-- Full help corpus for AI retrieval: https://fastscheduler.github.io/llms-full.txt (348 articles)
+- Full help corpus for AI retrieval: https://fastscheduler.github.io/llms-full.txt (356 articles)
 - Pricing: Free plan (1 channel, 100 pending scheduled messages, 100 sends/channel/month, 1 recurring message); Premium $6.83/month or $68.03/year (3 channels, unlimited sends, unlimited recurring, 100MB media, leaderboards, backups). Batch scheduling (many posts in one message or a .txt file) is included on both plans.
 - Privacy Policy: https://fastscheduler.github.io/legal/privacy.html
 - Terms: https://fastscheduler.github.io/legal/terms.html
@@ -39,7 +39,7 @@ Accepted first lines: `today HH:MM`, `tomorrow HH:MM`, `day after tomorrow HH:MM
 
 ## Help topics
 
-- [Getting Started](https://fastscheduler.github.io/help/c/start.html): 28 guides
+- [Getting Started](https://fastscheduler.github.io/help/c/start.html): 20 guides
 - [Scheduling Messages](https://fastscheduler.github.io/help/c/scheduling.html): 37 guides
 - [Channels](https://fastscheduler.github.io/help/c/channels.html): 15 guides
 - [Sender Bots](https://fastscheduler.github.io/help/c/bots.html): 14 guides
@@ -61,6 +61,7 @@ Accepted first lines: `today HH:MM`, `tomorrow HH:MM`, `day after tomorrow HH:MM
 - [Legal & Terms](https://fastscheduler.github.io/help/c/legal.html): 9 guides
 - [Contact & Support](https://fastscheduler.github.io/help/c/contact.html): 7 guides
 - [Settings & Configuration](https://fastscheduler.github.io/help/c/config.html): 2 guides
+- [More topics](https://fastscheduler.github.io/help/c/misc.html): 8 guides
 
 ## Key answers
 
@@ -73,32 +74,8 @@ Paste several date + message blocks in one Telegram message, or upload a .txt fi
 ### Getting Started
 New here? This section takes you from an empty chat to a published post: connect your channel, connect a sender bot, schedule the first message - then Full guide: https://fastscheduler.github.io/help/a/start.html
 
-### Getting Started
-What Fast Scheduler does, what the first-run tutorial walks you through, and how to publish your first scheduled Telegram post in about ten minutes. Full guide: https://fastscheduler.github.io/help/a/getting_started.html
-
-### Step 1: Connect Your Sender Bot
-Start with the bot that publishes. Create it in @BotFather or paste an existing token, and open it from the green button that follows. Full guide: https://fastscheduler.github.io/help/a/gs_step1.html
-
-### Step 2: Connect the Channel and Set the Time Zone
-Inside the sender bot: add it to the channel from the green button, let the automatic check run, then set the zone for that channel. Full guide: https://fastscheduler.github.io/help/a/gs_step2.html
-
-### Step 3: Schedule a Message
-The exact scheduling format, what the review card shows, and how to fix rejected dates, media and buttons. Full guide: https://fastscheduler.github.io/help/a/gs_step3.html
-
-### Connecting a Channel
-Requirements, every accepted channel format, multiple channels, permissions and the exact error messages you may hit. Full guide: https://fastscheduler.github.io/help/a/connect_channel.html
-
-### Connecting a Bot
-Create the sender bot, connect its token, promote it in the channel, and understand what moves into it afterwards. Full guide: https://fastscheduler.github.io/help/a/connect_bot.html
-
-### Send Your First Post
-A complete first run: open the scheduler, send date and text, choose media, review the card and confirm the queue. Full guide: https://fastscheduler.github.io/help/a/start_schedule.html
-
-### Your Account
-How the account is created, what is stored, where your user ID is, and how language, time zone and plan fit together. Full guide: https://fastscheduler.github.io/help/a/start_account.html
-
-### Quick Tips
-Small habits that make the first week of scheduling smooth: batching, previews, IDs, time zones and storage. Full guide: https://fastscheduler.github.io/help/a/start_tips.html
+### Get Started: What Fast Scheduler Does
+What Fast Scheduler is, why channel owners use it, the two-step setup (sender bot first, then the channel and its time zone) and your first post. Full guide: https://fastscheduler.github.io/help/a/getting_started.html
 
 ### Sender Bot First: the New Setup
 The rewritten first run: connect your own sender bot, add it to the channel from a green button, wait ten seconds, then set the channel's time zone - and Full guide: https://fastscheduler.github.io/help/a/sender_bot_setup.html
@@ -141,3 +118,27 @@ Loading exported data or a backup back into an account. Full guide: https://fast
 
 ### Export
 Saving your data to a file you control. Full guide: https://fastscheduler.github.io/help/a/glossary_export.html
+
+### Storage
+Reusable media boxes inside the bot. Full guide: https://fastscheduler.github.io/help/a/glossary_storage.html
+
+### Feedback
+How to send a ticket to support. Full guide: https://fastscheduler.github.io/help/a/glossary_feedback.html
+
+### SetDate Integration
+Bulk-create a whole posting calendar in the SetDate companion bot and import it into Fast Scheduler in one click. Full guide: https://fastscheduler.github.io/help/a/setdate.html
+
+### Advertising & Promotion
+How to reach Fast Scheduler users, and how to promote your own channel. Full guide: https://fastscheduler.github.io/help/a/advertising.html
+
+### Scheduling Messages
+How one-time scheduling works, every content type the bot can post, media modes, the review card and the tools that manage your queue. Full guide: https://fastscheduler.github.io/help/a/scheduling.html
+
+### One-Time Schedule
+Create a post that is sent exactly once, from the date line to the confirmation card and the queued message ID. Full guide: https://fastscheduler.github.io/help/a/schedule_one_time.html
+
+### Text Posts
+Plain and formatted text posts, caption limits, spoilers, links and the exact inline-button syntax. Full guide: https://fastscheduler.github.io/help/a/schedule_text.html
+
+### Photo & Video Posts
+Attach one file, a random set or an ordered sequence; size limits, compression and how the caption is handled. Full guide: https://fastscheduler.github.io/help/a/schedule_media.html

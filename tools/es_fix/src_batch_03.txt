@@ -1,0 +1,240 @@
+KEY: help.legal_gdpr.title
+GDPR
+============================================================
+KEY: help.schedule_animation.title
+GIFs
+============================================================
+KEY: help.commands_help.title
+/help
+============================================================
+KEY: help.premium_renew.title
+Renew
+============================================================
+KEY: help.premium_trial.title
+Trial
+============================================================
+KEY: help.referral_fraud.title
+Abuse
+============================================================
+KEY: help.referral_rules.title
+Rules
+============================================================
+KEY: help.referral_share.title
+Share
+============================================================
+KEY: help.schedule_poll.title
+Polls
+============================================================
+KEY: help.tools.title
+Tools
+============================================================
+KEY: help.admins.title
+Admins
+============================================================
+KEY: help.payment_crypto.title
+Crypto
+============================================================
+KEY: help.premium.title
+Premium
+============================================================
+KEY: help.commands_search.title
+/search
+============================================================
+KEY: help.glossary_premium.title
+Premium
+============================================================
+KEY: help.premium_refund.title
+Refunds
+============================================================
+KEY: help.privacy.title
+Privacy
+============================================================
+KEY: help.privacy_consent.title
+Consent
+============================================================
+KEY: help.commands_premium.title
+/premium
+============================================================
+KEY: help.premium_invoice.title
+Invoices
+============================================================
+KEY: help.schedule_sticker.title
+Stickers
+============================================================
+KEY: help.timezone_examples.title
+Examples
+============================================================
+KEY: help.troubleshoot_bot.title
+Bot Down
+============================================================
+KEY: help.payment.title
+Payments
+============================================================
+KEY: help.tips.title
+Pro Tips
+============================================================
+KEY: help.commands_language.title
+/language
+============================================================
+KEY: help.commands_referral.title
+/referral
+============================================================
+KEY: help.commands_schedule.title
+/schedule
+============================================================
+KEY: help.referral.title
+Referrals
+============================================================
+KEY: help.referral_link.title
+Your Link
+============================================================
+KEY: help.storage_lifecycle.title
+Lifecycle
+============================================================
+KEY: help.tips_bulk.title
+Bulk Tips
+============================================================
+KEY: help.troubleshoot_late.title
+Late Post
+============================================================
+KEY: help.payment_currencies.title
+Currencies
+============================================================
+KEY: help.premium_reactivate.title
+Reactivate
+============================================================
+KEY: help.schedule_forward.title
+Forwarding
+============================================================
+KEY: help.schedule_poll_quiz.title
+Quiz Polls
+============================================================
+KEY: help.schedule_text.title
+Text Posts
+============================================================
+KEY: help.start_tips.title
+Quick Tips
+============================================================
+KEY: help.tips_queue.title
+Queue Tips
+============================================================
+KEY: help.troubleshoot_perm.title
+Permission
+============================================================
+KEY: help.payment_invoice_pay.title
+Pay Invoice
+============================================================
+KEY: help.payment_promo_apply.title
+Apply Promo
+============================================================
+KEY: help.premium_buy.title
+Buy Premium
+============================================================
+KEY: help.promocode.title
+Promo Codes
+============================================================
+KEY: help.schedule_video.title
+Video Posts
+============================================================
+KEY: help.security_data.title
+Data Safety
+============================================================
+KEY: help.timezone_detect.title
+Auto Detect
+============================================================
+KEY: help.onboarding_step1.title
+Step 1: Link
+============================================================
+KEY: help.premium_grace.title
+Grace Period
+============================================================
+KEY: help.referral_beta.title
+Beta Program
+============================================================
+KEY: help.security_token.title
+Token Safety
+============================================================
+KEY: help.start_account.title
+Your Account
+============================================================
+KEY: help.tips_payment.title
+Payment Tips
+============================================================
+KEY: help.tips_premium.title
+Premium Tips
+============================================================
+KEY: help.premium_compare.title
+Compare Plans
+============================================================
+KEY: help.premium_freeze.title
+Frozen Assets
+============================================================
+KEY: help.privacy_thirdparty.title
+Third Parties
+============================================================
+KEY: help.tips_referral.title
+Referral Tips
+============================================================
+KEY: help.tips_security.title
+Security Tips
+============================================================
+KEY: help.payment_stars.title
+Telegram Stars
+============================================================
+KEY: help.premium_expiry.title
+Premium Expiry
+============================================================
+KEY: help.premium_welcome_bonus.title
+Referral Bonus
+============================================================
+KEY: help.recurring_pause_resume.title
+Pause & Resume
+============================================================
+KEY: help.referral_stats_detail.title
+Detailed Stats
+============================================================
+KEY: help.schedule_document.title
+Document Posts
+============================================================
+KEY: help.schedule_location.title
+Location Posts
+============================================================
+KEY: help.security_2fa.title
+Account Safety
+============================================================
+KEY: help.tips_migration.title
+Migration Tips
+============================================================
+KEY: help.premium_features.title
+Premium Features
+============================================================
+KEY: help.premium_referral.title
+Referral Program
+============================================================
+KEY: help.referral_rewards.title
+Referral Rewards
+============================================================
+KEY: help.tips_troubleshoot.title
+Troubleshoot Tips
+============================================================
+KEY: help.premium_activate.title
+Premium Activation
+============================================================
+KEY: help.premium_welcome.title
+Welcome to Premium
+============================================================
+KEY: help.referral_how.title
+How Referrals Work
+============================================================
+KEY: help.referral_credit.title
+How Crediting Works
+============================================================
+KEY: help.referral_stats.title
+Your Referral Stats
+============================================================
+KEY: help.schedule_media.title
+Photo & Video Posts
+============================================================
+KEY: help.schedule_caption.title
+Captions & Formatting
+============================================================

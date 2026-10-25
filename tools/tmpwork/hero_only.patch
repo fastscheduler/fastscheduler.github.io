@@ -1,0 +1,212 @@
+diff --git a/index.html b/index.html
+index 7d9e9de..97757fa 100644
+--- a/index.html
++++ b/index.html
+@@ -997,7 +997,7 @@
+   </style>
+ <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Fast Scheduler", "url": "https://fastscheduler.github.io/Fast-Schedule/", "logo": "https://fastscheduler.github.io/Fast-Schedule/og-cover-v2.png", "description": "Telegram bot that schedules and auto-publishes channel posts: batch scheduling, recurring messages, sender bots, statistics and backups.", "sameAs": ["https://t.me/FastSchedulerBot"], "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "fastschedulebot@gmail.com"}}</script>
+ <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Fast Scheduler", "alternateName": "Fast Scheduler Telegram bot", "url": "https://fastscheduler.github.io/Fast-Schedule/", "potentialAction": {"@type": "SearchAction", "target": {"@type": "EntryPoint", "urlTemplate": "https://fastscheduler.github.io/Fast-Schedule/help.html?q={search_term_string}"}, "query-input": "required name=search_term_string"}}</script>
+-<link rel="stylesheet" href="styles/hero-cinema.css?v=20261005a1">
++<link rel="stylesheet" href="styles/hero-cinema.css?v=20261006a2">
+ <link rel="stylesheet" href="styles/hotkeys-modal.css?v=20260930a1">
+ <link rel="stylesheet" href="styles/mobile-fix.css?v=20261001b1">
+ <!--fs:ru-alt-->
+@@ -1172,29 +1172,26 @@
+             <div class="screen-layer chan-layer" id="chanLayer" aria-hidden="true">
+               <div class="sl-head chan-head">
+                 <svg class="tg-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+-                <span class="chan-avatar" aria-hidden="true">FT</span>
+-                <div class="sl-titles"><span class="sl-name">fastschedule_test3</span><span class="sl-sub">1 284 subscribers</span></div>
+-                <span class="hd-ics" aria-hidden="true">
+-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20.4 20.4l-3.9-3.9"/></svg>
+-                  <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg>
+-                </span>
++                <span class="tg-back-t">Chats</span>
++                <div class="sl-titles chan-titles"><span class="sl-name">Fast Schedule</span><span class="sl-sub">@fastschedule_test3</span></div>
++                <span class="chan-avatar" aria-hidden="true">FS</span>
+               </div>
+               <div class="sl-body chan-body" id="chanBody">
+-                <div class="chan-msgs" id="chanFeed">
+-                <div class="chan-msg chan-hist on">
+-                  <span class="chan-media"></span>
++                <div class="chan-msgs" id="chanFeed"><div class="cp-date" id="chanDate">Today</div>
++                <div class="chan-msg chan-hist on"><span class="cp-sender"><b>Fast Schedule</b><i>channel</i></span>
++                  <span class="chan-media" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27180%27%20height%3D%27120%27%3E%3Crect%20width%3D%27180%27%20height%3D%27120%27%20fill%3D%27%23f2c94c%27%2F%3E%3Crect%20y%3D%2754%27%20width%3D%27180%27%20height%3D%2766%27%20fill%3D%27%23e8862e%27%20opacity%3D%27.3%27%2F%3E%3Ccircle%20cx%3D%27135%27%20cy%3D%2740%27%20r%3D%2715%27%20fill%3D%27%23e8862e%27%20opacity%3D%27.92%27%2F%3E%3Cpath%20d%3D%27M0%2076%20Q36%2052%2072%2074%20T180%2066%20V120%20H0%20Z%27%20fill%3D%27%237a9d3f%27%20opacity%3D%27.85%27%2F%3E%3Cpath%20d%3D%27M0%2094%20Q44%2074%2082%2092%20T180%2086%20V120%20H0%20Z%27%20fill%3D%27%237a9d3f%27%2F%3E%3C%2Fsvg%3E')"></span>
+                   <span class="chan-post-cap">posted from the queue — nothing to click</span>
+                   <span class="cp-reacts"><span class="rx on"><i>👍</i><b>42</b></span><span class="rx on"><i>🔥</i><b>18</b></span><span class="rx rx-star on"><i>⭐</i><b>6</b></span></span>
+-                  <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b>1 148</b></span><span class="cp-time2">09:12</span><span class="cp-share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></span></span>
+-                </div>
+-                <div class="chan-msg chan-hist on">
+-                  <span class="chan-media"></span>
++                  <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b>1 148</b></span><span class="cp-time2">09:12</span></span>
++                <span class="cp-comments"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><b>Leave a comment</b><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
++                <div class="chan-msg chan-hist on"><span class="cp-sender"><b>Fast Schedule</b><i>channel</i></span>
++                  <span class="chan-media" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27180%27%20height%3D%27120%27%3E%3Crect%20width%3D%27180%27%20height%3D%27120%27%20fill%3D%27%238a6a4a%27%2F%3E%3Crect%20y%3D%2754%27%20width%3D%27180%27%20height%3D%2766%27%20fill%3D%27%23d9b06a%27%20opacity%3D%27.3%27%2F%3E%3Ccircle%20cx%3D%27135%27%20cy%3D%2740%27%20r%3D%2715%27%20fill%3D%27%23d9b06a%27%20opacity%3D%27.92%27%2F%3E%3Cpath%20d%3D%27M0%2076%20Q36%2052%2072%2074%20T180%2066%20V120%20H0%20Z%27%20fill%3D%27%235d442e%27%20opacity%3D%27.85%27%2F%3E%3Cpath%20d%3D%27M0%2094%20Q44%2074%2082%2092%20T180%2086%20V120%20H0%20Z%27%20fill%3D%27%235d442e%27%2F%3E%3C%2Fsvg%3E')"></span>
+                   <span class="chan-post-cap">one batch, a whole week of posts</span>
+                   <span class="cp-reacts"><span class="rx on"><i>👍</i><b>31</b></span><span class="rx on"><i>❤️</i><b>9</b></span><span class="rx rx-star on"><i>⭐</i><b>3</b></span></span>
+-                  <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b>864</b></span><span class="cp-time2">14:05</span><span class="cp-share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></span></span>
+-                </div>
+-                <div class="chan-msg" id="chanMsg">
+-                  <span class="chan-media" id="chanImg"><span class="cp-shimmer"></span></span>
++                  <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b>864</b></span><span class="cp-time2">14:05</span></span>
++                <span class="cp-comments"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><b>Leave a comment</b><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
++                <div class="chan-msg" id="chanMsg"><span class="cp-sender"><b>Fast Schedule</b><i>channel</i></span>
++                  <span class="chan-media" id="chanImg" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27180%27%20height%3D%27120%27%3E%3Crect%20width%3D%27180%27%20height%3D%27120%27%20fill%3D%27%234e6b46%27%2F%3E%3Crect%20y%3D%2754%27%20width%3D%27180%27%20height%3D%2766%27%20fill%3D%27%2393b564%27%20opacity%3D%27.3%27%2F%3E%3Ccircle%20cx%3D%27135%27%20cy%3D%2740%27%20r%3D%2715%27%20fill%3D%27%2393b564%27%20opacity%3D%27.92%27%2F%3E%3Cpath%20d%3D%27M0%2076%20Q36%2052%2072%2074%20T180%2066%20V120%20H0%20Z%27%20fill%3D%27%232e4028%27%20opacity%3D%27.85%27%2F%3E%3Cpath%20d%3D%27M0%2094%20Q44%2074%2082%2092%20T180%2086%20V120%20H0%20Z%27%20fill%3D%27%232e4028%27%2F%3E%3C%2Fsvg%3E')"><span class="cp-shimmer"></span></span>
+                   <span class="chan-post-cap">schedule multiple messages at once</span>
+                   <span class="cp-reacts">
+                     <span class="rx"><i>👍</i><b>0</b></span><span class="rx"><i>🔥</i><b>0</b></span><span class="rx rx-star"><i>⭐</i><b>0</b></span>
+@@ -1202,24 +1199,29 @@
+                   <span class="chan-foot">
+                     <span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b id="chanViews">0</b></span>
+                     <span class="cp-time2">18:15</span>
+-                    <span class="cp-share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></span>
++                    
+                   </span>
+-                </div>
+-                <div class="chan-msg chan-msg2">
+-                  <span class="chan-media"></span>
++                <span class="cp-comments"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><b>Leave a comment</b><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
++                <div class="chan-msg chan-msg2"><span class="cp-sender"><b>Fast Schedule</b><i>channel</i></span>
++                  <span class="chan-media" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27180%27%20height%3D%27120%27%3E%3Crect%20width%3D%27180%27%20height%3D%27120%27%20fill%3D%27%23d99a4e%27%2F%3E%3Crect%20y%3D%2754%27%20width%3D%27180%27%20height%3D%2766%27%20fill%3D%27%23f2c94c%27%20opacity%3D%27.3%27%2F%3E%3Ccircle%20cx%3D%27135%27%20cy%3D%2740%27%20r%3D%2715%27%20fill%3D%27%23f2c94c%27%20opacity%3D%27.92%27%2F%3E%3Cpath%20d%3D%27M0%2076%20Q36%2052%2072%2074%20T180%2066%20V120%20H0%20Z%27%20fill%3D%27%238a5a26%27%20opacity%3D%27.85%27%2F%3E%3Cpath%20d%3D%27M0%2094%20Q44%2074%2082%2092%20T180%2086%20V120%20H0%20Z%27%20fill%3D%27%238a5a26%27%2F%3E%3C%2Fsvg%3E')"></span>
+                   <span class="chan-post-cap2">see everything in calendar</span>
+                   <span class="cp-reacts"><span class="rx"><i>👍</i><b>0</b></span><span class="rx"><i>❤️</i><b>0</b></span><span class="rx rx-star"><i>⭐</i><b>0</b></span></span>
+-                  <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b>0</b></span><span class="cp-time2">18:16</span><span class="cp-share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></span></span>
+-                </div>
+-                <div class="chan-msg chan-msg3">
+-                  <span class="chan-media"></span>
++                  <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b>0</b></span><span class="cp-time2">18:16</span></span>
++                <span class="cp-comments"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><b>Leave a comment</b><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
++                <div class="chan-msg chan-msg3"><span class="cp-sender"><b>Fast Schedule</b><i>channel</i></span>
++                  <span class="chan-media" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27180%27%20height%3D%27120%27%3E%3Crect%20width%3D%27180%27%20height%3D%27120%27%20fill%3D%27%23f2c94c%27%2F%3E%3Crect%20y%3D%2754%27%20width%3D%27180%27%20height%3D%2766%27%20fill%3D%27%23e8862e%27%20opacity%3D%27.3%27%2F%3E%3Ccircle%20cx%3D%27135%27%20cy%3D%2740%27%20r%3D%2715%27%20fill%3D%27%23e8862e%27%20opacity%3D%27.92%27%2F%3E%3Cpath%20d%3D%27M0%2076%20Q36%2052%2072%2074%20T180%2066%20V120%20H0%20Z%27%20fill%3D%27%237a9d3f%27%20opacity%3D%27.85%27%2F%3E%3Cpath%20d%3D%27M0%2094%20Q44%2074%2082%2092%20T180%2086%20V120%20H0%20Z%27%20fill%3D%27%237a9d3f%27%2F%3E%3C%2Fsvg%3E')"></span>
+                   <span class="chan-post-cap2">use stats for advanced statistics</span>
+                   <span class="cp-reacts"><span class="rx"><i>👍</i><b>0</b></span><span class="rx"><i>🔥</i><b>0</b></span><span class="rx rx-star"><i>⭐</i><b>0</b></span></span>
+-                  <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b>0</b></span><span class="cp-time2">18:17</span><span class="cp-share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></span></span>
+-                </div>
++                  <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b>0</b></span><span class="cp-time2">18:17</span></span>
++                <span class="cp-comments"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><b>Leave a comment</b><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
+                 </div><!-- /channel feed -->
+               </div>
+-              <div class="sl-foot chan-compose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 9.5v5a1.5 1.5 0 0 0 1.5 1.5H8l8.5 4.3V3.7L8 8H5.5A1.5 1.5 0 0 0 4 9.5z"/><path d="M19.5 8.6a5 5 0 0 1 0 6.8"/><path d="M17.6 6.6a8 8 0 0 1 0 10.8"/></svg><span>Channel · only admins can post</span></div>
++              <div class="sl-foot chan-actions" aria-hidden="true">
++                <span class="ca-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20.4 20.4l-3.9-3.9"/></svg></span>
++                <span class="ca-mute">Mute</span>
++                <span class="ca-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
++                <span class="ca-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M5 12v9h14v-9"/><path d="M12 8s-4 0-5.5-1.5S5 3.5 6.5 3.5 12 8 12 8zm0 0s4 0 5.5-1.5S19 3.5 17.5 3.5 12 8 12 8z"/></svg></span>
++              </div>
+             </div>
+             <div class="screen-layer bot-layer" id="botLayer" aria-hidden="true">
+               <div class="sl-head">
+@@ -1710,6 +1712,6 @@
+ 
+ <script defer src="scripts/site-config.js?v=20260930a1"></script>
+ <script defer src="scripts/main.js?v=20261005a2"></script>
+-<script defer src="scripts/hero-demo.js?v=20261006a1"></script>
++<script defer src="scripts/hero-demo.js?v=20261006a2"></script>
+ </body>
+ </html>
+diff --git a/ru/index.html b/ru/index.html
+index 470759f..38b7b28 100644
+--- a/ru/index.html
++++ b/ru/index.html
+@@ -997,7 +997,7 @@
+   </style>
+ <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Fast Scheduler", "url": "https://fastscheduler.github.io/Fast-Schedule/", "logo": "https://fastscheduler.github.io/Fast-Schedule/og-cover-v2.png", "description": "Telegram bot that schedules and auto-publishes channel posts: batch scheduling, recurring messages, sender bots, statistics and backups.", "sameAs": ["https://t.me/FastSchedulerBot"], "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "fastschedulebot@gmail.com"}}</script>
+ <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Fast Scheduler", "alternateName": "Fast Scheduler Telegram bot", "url": "https://fastscheduler.github.io/Fast-Schedule/", "potentialAction": {"@type": "SearchAction", "target": {"@type": "EntryPoint", "urlTemplate": "https://fastscheduler.github.io/Fast-Schedule/help.html?q={search_term_string}"}, "query-input": "required name=search_term_string"}}</script>
+-<link rel="stylesheet" href="../styles/hero-cinema.css?v=20261005a1">
++<link rel="stylesheet" href="../styles/hero-cinema.css?v=20261006a2">
+ <link rel="stylesheet" href="../styles/hotkeys-modal.css?v=20260930a1">
+ <link rel="stylesheet" href="../styles/mobile-fix.css?v=20261001b1">
+ <!--fs:ru-alt-->
+@@ -1172,29 +1172,26 @@
+             <div class="screen-layer chan-layer" id="chanLayer" aria-hidden="true">
+               <div class="sl-head chan-head">
+                 <svg class="tg-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+-                <span class="chan-avatar" aria-hidden="true">FT</span>
+-                <div class="sl-titles"><span class="sl-name">fastschedule_test3</span><span class="sl-sub">1 284 subscribers</span></div>
+-                <span class="hd-ics" aria-hidden="true">
+-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20.4 20.4l-3.9-3.9"/></svg>
+-                  <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg>
+-                </span>
++                <span class="tg-back-t">Чаты</span>
++                <div class="sl-titles chan-titles"><span class="sl-name">Fast Schedule</span><span class="sl-sub">@fastschedule_test3</span></div>
++                <span class="chan-avatar" aria-hidden="true">FS</span>
+               </div>
+               <div class="sl-body chan-body" id="chanBody">
+-                <div class="chan-msgs" id="chanFeed">
+-                <div class="chan-msg chan-hist on">
+-                  <span class="chan-media"></span>
++                <div class="chan-msgs" id="chanFeed"><div class="cp-date" id="chanDate">Сегодня</div>
++                <div class="chan-msg chan-hist on"><span class="cp-sender"><b>Fast Schedule</b><i>канал</i></span>
++                  <span class="chan-media" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27180%27%20height%3D%27120%27%3E%3Crect%20width%3D%27180%27%20height%3D%27120%27%20fill%3D%27%23f2c94c%27%2F%3E%3Crect%20y%3D%2754%27%20width%3D%27180%27%20height%3D%2766%27%20fill%3D%27%23e8862e%27%20opacity%3D%27.3%27%2F%3E%3Ccircle%20cx%3D%27135%27%20cy%3D%2740%27%20r%3D%2715%27%20fill%3D%27%23e8862e%27%20opacity%3D%27.92%27%2F%3E%3Cpath%20d%3D%27M0%2076%20Q36%2052%2072%2074%20T180%2066%20V120%20H0%20Z%27%20fill%3D%27%237a9d3f%27%20opacity%3D%27.85%27%2F%3E%3Cpath%20d%3D%27M0%2094%20Q44%2074%2082%2092%20T180%2086%20V120%20H0%20Z%27%20fill%3D%27%237a9d3f%27%2F%3E%3C%2Fsvg%3E')"></span>
+                   <span class="chan-post-cap">posted from the queue — nothing to click</span>
+                   <span class="cp-reacts"><span class="rx on"><i>👍</i><b>42</b></span><span class="rx on"><i>🔥</i><b>18</b></span><span class="rx rx-star on"><i>⭐</i><b>6</b></span></span>
+-                  <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b>1 148</b></span><span class="cp-time2">09:12</span><span class="cp-share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></span></span>
+-                </div>
+-                <div class="chan-msg chan-hist on">
+-                  <span class="chan-media"></span>
++                  <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b>1 148</b></span><span class="cp-time2">09:12</span></span>
++                <span class="cp-comments"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><b>Оставить комментарий</b><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
++                <div class="chan-msg chan-hist on"><span class="cp-sender"><b>Fast Schedule</b><i>канал</i></span>
++                  <span class="chan-media" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27180%27%20height%3D%27120%27%3E%3Crect%20width%3D%27180%27%20height%3D%27120%27%20fill%3D%27%238a6a4a%27%2F%3E%3Crect%20y%3D%2754%27%20width%3D%27180%27%20height%3D%2766%27%20fill%3D%27%23d9b06a%27%20opacity%3D%27.3%27%2F%3E%3Ccircle%20cx%3D%27135%27%20cy%3D%2740%27%20r%3D%2715%27%20fill%3D%27%23d9b06a%27%20opacity%3D%27.92%27%2F%3E%3Cpath%20d%3D%27M0%2076%20Q36%2052%2072%2074%20T180%2066%20V120%20H0%20Z%27%20fill%3D%27%235d442e%27%20opacity%3D%27.85%27%2F%3E%3Cpath%20d%3D%27M0%2094%20Q44%2074%2082%2092%20T180%2086%20V120%20H0%20Z%27%20fill%3D%27%235d442e%27%2F%3E%3C%2Fsvg%3E')"></span>
+                   <span class="chan-post-cap">one batch, a whole week of posts</span>
+                   <span class="cp-reacts"><span class="rx on"><i>👍</i><b>31</b></span><span class="rx on"><i>❤️</i><b>9</b></span><span class="rx rx-star on"><i>⭐</i><b>3</b></span></span>
+-                  <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b>864</b></span><span class="cp-time2">14:05</span><span class="cp-share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></span></span>
+-                </div>
+-                <div class="chan-msg" id="chanMsg">
+-                  <span class="chan-media" id="chanImg"><span class="cp-shimmer"></span></span>
++                  <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b>864</b></span><span class="cp-time2">14:05</span></span>
++                <span class="cp-comments"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><b>Оставить комментарий</b><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
++                <div class="chan-msg" id="chanMsg"><span class="cp-sender"><b>Fast Schedule</b><i>канал</i></span>
++                  <span class="chan-media" id="chanImg" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27180%27%20height%3D%27120%27%3E%3Crect%20width%3D%27180%27%20height%3D%27120%27%20fill%3D%27%234e6b46%27%2F%3E%3Crect%20y%3D%2754%27%20width%3D%27180%27%20height%3D%2766%27%20fill%3D%27%2393b564%27%20opacity%3D%27.3%27%2F%3E%3Ccircle%20cx%3D%27135%27%20cy%3D%2740%27%20r%3D%2715%27%20fill%3D%27%2393b564%27%20opacity%3D%27.92%27%2F%3E%3Cpath%20d%3D%27M0%2076%20Q36%2052%2072%2074%20T180%2066%20V120%20H0%20Z%27%20fill%3D%27%232e4028%27%20opacity%3D%27.85%27%2F%3E%3Cpath%20d%3D%27M0%2094%20Q44%2074%2082%2092%20T180%2086%20V120%20H0%20Z%27%20fill%3D%27%232e4028%27%2F%3E%3C%2Fsvg%3E')"><span class="cp-shimmer"></span></span>
+                   <span class="chan-post-cap">schedule multiple messages at once</span>
+                   <span class="cp-reacts">
+                     <span class="rx"><i>👍</i><b>0</b></span><span class="rx"><i>🔥</i><b>0</b></span><span class="rx rx-star"><i>⭐</i><b>0</b></span>
+@@ -1202,24 +1199,29 @@
+                   <span class="chan-foot">
+                     <span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b id="chanViews">0</b></span>
+                     <span class="cp-time2">18:15</span>
+-                    <span class="cp-share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></span>
++                    
+                   </span>
+-                </div>
+-                <div class="chan-msg chan-msg2">
+-                  <span class="chan-media"></span>
++                <span class="cp-comments"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><b>Оставить комментарий</b><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
++                <div class="chan-msg chan-msg2"><span class="cp-sender"><b>Fast Schedule</b><i>канал</i></span>
++                  <span class="chan-media" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27180%27%20height%3D%27120%27%3E%3Crect%20width%3D%27180%27%20height%3D%27120%27%20fill%3D%27%23d99a4e%27%2F%3E%3Crect%20y%3D%2754%27%20width%3D%27180%27%20height%3D%2766%27%20fill%3D%27%23f2c94c%27%20opacity%3D%27.3%27%2F%3E%3Ccircle%20cx%3D%27135%27%20cy%3D%2740%27%20r%3D%2715%27%20fill%3D%27%23f2c94c%27%20opacity%3D%27.92%27%2F%3E%3Cpath%20d%3D%27M0%2076%20Q36%2052%2072%2074%20T180%2066%20V120%20H0%20Z%27%20fill%3D%27%238a5a26%27%20opacity%3D%27.85%27%2F%3E%3Cpath%20d%3D%27M0%2094%20Q44%2074%2082%2092%20T180%2086%20V120%20H0%20Z%27%20fill%3D%27%238a5a26%27%2F%3E%3C%2Fsvg%3E')"></span>
+                   <span class="chan-post-cap2">see everything in calendar</span>
+                   <span class="cp-reacts"><span class="rx"><i>👍</i><b>0</b></span><span class="rx"><i>❤️</i><b>0</b></span><span class="rx rx-star"><i>⭐</i><b>0</b></span></span>
+-                  <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b>0</b></span><span class="cp-time2">18:16</span><span class="cp-share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></span></span>
+-                </div>
+-                <div class="chan-msg chan-msg3">
+-                  <span class="chan-media"></span>
++                  <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b>0</b></span><span class="cp-time2">18:16</span></span>
++                <span class="cp-comments"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><b>Оставить комментарий</b><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
++                <div class="chan-msg chan-msg3"><span class="cp-sender"><b>Fast Schedule</b><i>канал</i></span>
++                  <span class="chan-media" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27180%27%20height%3D%27120%27%3E%3Crect%20width%3D%27180%27%20height%3D%27120%27%20fill%3D%27%23f2c94c%27%2F%3E%3Crect%20y%3D%2754%27%20width%3D%27180%27%20height%3D%2766%27%20fill%3D%27%23e8862e%27%20opacity%3D%27.3%27%2F%3E%3Ccircle%20cx%3D%27135%27%20cy%3D%2740%27%20r%3D%2715%27%20fill%3D%27%23e8862e%27%20opacity%3D%27.92%27%2F%3E%3Cpath%20d%3D%27M0%2076%20Q36%2052%2072%2074%20T180%2066%20V120%20H0%20Z%27%20fill%3D%27%237a9d3f%27%20opacity%3D%27.85%27%2F%3E%3Cpath%20d%3D%27M0%2094%20Q44%2074%2082%2092%20T180%2086%20V120%20H0%20Z%27%20fill%3D%27%237a9d3f%27%2F%3E%3C%2Fsvg%3E')"></span>
+                   <span class="chan-post-cap2">use stats for advanced statistics</span>
+                   <span class="cp-reacts"><span class="rx"><i>👍</i><b>0</b></span><span class="rx"><i>🔥</i><b>0</b></span><span class="rx rx-star"><i>⭐</i><b>0</b></span></span>
+-                  <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b>0</b></span><span class="cp-time2">18:17</span><span class="cp-share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></span></span>
+-                </div>
++                  <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b>0</b></span><span class="cp-time2">18:17</span></span>
++                <span class="cp-comments"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><b>Оставить комментарий</b><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
+                 </div><!-- /channel feed -->
+               </div>
+-              <div class="sl-foot chan-compose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 9.5v5a1.5 1.5 0 0 0 1.5 1.5H8l8.5 4.3V3.7L8 8H5.5A1.5 1.5 0 0 0 4 9.5z"/><path d="M19.5 8.6a5 5 0 0 1 0 6.8"/><path d="M17.6 6.6a8 8 0 0 1 0 10.8"/></svg><span>Channel · only admins can post</span></div>
++              <div class="sl-foot chan-actions" aria-hidden="true">
++                <span class="ca-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20.4 20.4l-3.9-3.9"/></svg></span>
++                <span class="ca-mute">Выкл. звук</span>
++                <span class="ca-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
++                <span class="ca-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M5 12v9h14v-9"/><path d="M12 8s-4 0-5.5-1.5S5 3.5 6.5 3.5 12 8 12 8zm0 0s4 0 5.5-1.5S19 3.5 17.5 3.5 12 8 12 8z"/></svg></span>
++              </div>
+             </div>
+             <div class="screen-layer bot-layer" id="botLayer" aria-hidden="true">
+               <div class="sl-head">
+@@ -1710,6 +1712,6 @@
+ 
+ <script defer src="../scripts/site-config.js?v=20260930a1"></script>
+ <script defer src="../scripts/main.js?v=20261005a2"></script>
+-<script defer src="../scripts/hero-demo.js?v=20261006a1"></script>
++<script defer src="../scripts/hero-demo.js?v=20261006a2"></script>
+ </body>
+ </html>

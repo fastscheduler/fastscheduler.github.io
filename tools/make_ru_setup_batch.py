@@ -27,10 +27,16 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
 from help_v2_ru import CONTENT_RU  # noqa: E402
+from help_v2_getting_started import CONTENT_GS  # noqa: E402
+
+# The Getting Started article is rewritten together with the setup articles.
+CONTENT_RU = dict(CONTENT_RU)
+CONTENT_RU.update(CONTENT_GS['ru'])
 
 OUT = os.path.join(HERE, 'ru_batches', 'help_11_setup_rbac.py')
 
 WIKI = re.compile(r'\[\[([a-z0-9_]+)\|([^\]]+)\]\]')
+HEADING = re.compile(r'(?m)^##\s+(.+)$')
 
 
 def relink(text):
@@ -38,6 +44,10 @@ def relink(text):
     if not isinstance(text, str):
         return text
     text = WIKI.sub(lambda m: '<a href="%s.html">%s</a>' % (m.group(1), m.group(2)), text)
+    # The Russian renderer has no markdown pass, so a "## Heading" line would
+    # ship literally (it did, ten times per page). Bold on its own line is what
+    # the RU article layout supports.
+    text = HEADING.sub(lambda m: '<b>%s</b>' % m.group(1).strip(), text)
     # A bare [[id]] would be a missing label — fail loudly instead of shipping it.
     if '[[' in text or ']]' in text:
         raise SystemExit('unresolved wiki link left in: %r' % text[:80])

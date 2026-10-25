@@ -1,0 +1,13 @@
+PAT <article[^>]*> -> 6
+<article class="hc-art hc-card">
+<article class="hc-art hc-card">
+<article class="hc-art hc-card">
+<article class="hc-art hc-card">
+PAT data-article[^>]* -> 0
+PAT id="a-[a-z_0-9-]+" -> 0
+PAT href="#/a/getting_started"[^>] -> 5
+href="#/a/getting_started"><
+href="#/a/getting_started" data-toc-nav><
+href="#/a/getting_started"><
+href="#/a/getting_started" data-toc-nav><
+PAT <section[^>]*id="[^"]*"[^>]*> -> 0

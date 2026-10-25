@@ -1,0 +1,82 @@
+FIXUPS: selector-based replacements for lone words inside formatting
+ * tags (e.g. <i>your</i>) and aria-labels that have no safe text key.
+ */
+(function () {
+  'use strict';
+  window.FS_RU_CHROME = {
+    STR: {
+      settings: 'Настройки', dark: 'Тёмная тема', anim: 'Анимации', fx: 'Эффекты',
+      keys: 'Горячие клавиши', seeKeys: 'Показать клавиши', help: 'Помощь', support: 'Чат поддержки',
+      openBot: 'Открыть бота', openShort: 'Открыть', langLabel: 'Язык', openHelp: 'Открыть центр помощи',
+      recent: 'Недавние запросы', searchPh: 'Поиск по центру помощи…',
+      openMenu: 'Открыть меню', closeMenu: 'Закрыть меню'
+    },
+    META: {
+      title: 'Fast Scheduler — Планировщик постов для Telegram-каналов',
+      desc: 'Fast Scheduler — бесплатный Telegram-бот: планирование и публикация постов канала, аналитика. Планируйте неделю контента в одном чате и публикуйте от своего бота.'
+    },
+    MAP: {
+      // nav (desktop + mobile sheet)
+      'Time saved': 'Экономия времени',
+      'Features': 'Возможности',
+      'How it works': 'Как это работает',
+      'Pricing': 'Тарифы',
+      'FAQ': 'Вопросы и ответы',
+      'Blog': 'Блог',
+      'Help': 'Помощь',
+      'Help Center': 'Центр помощи',
+      'Open Bot': 'Открыть бота',
+      // hero (split across inline tags — part keys keep <span>/<b> intact)
+      'Your channel': 'Ваш канал',
+      'posts itself.': 'публикуется сам.',
+      'You just write.': 'Вы просто пишете.',
+      'Paste a week of posts into one chat —': 'Вставьте неделю постов в один чат —',
+      'publishes each one at the exact time you chose, in your timezone, from': 'публикует каждый в точное выбранное время, в вашем часовом поясе, от',
+      'your own bot': 'вашего собственного бота',
+      '. Set it once, then get on with life.': '. Настройте один раз — и занимайтесь жизнью.',
+      'Start free — it takes 60 seconds': 'Начать бесплатно — это займёт 60 секунд',
+      'No app. No signup. Works inside Telegram you already use.': 'Без приложений. Без регистрации. Работает в привычном Telegram.',
+      '↺ Replay demo': '↺ Смотреть демо ещё раз',
+      'Free plan forever': 'Бесплатный тариф навсегда',
+      'Posts from your own bot': 'Посты от вашего бота',
+      'Your timezone, not ours': 'Ваш часовой пояс, а не наш',
+      'No card required': 'Карта не нужна',
+      'Scheduled in one chat.': 'Запланировали в одном чате.',
+      'Posted forever.': 'Публикуется всегда.',
+      'Fast Scheduler delivered this post at 18:15 sharp — while its owner was away. Your channel can run like this too.': 'Fast Scheduler опубликовал этот пост ровно в 18:15 — пока владелец был офлайн. Ваш канал тоже так может.',
+      'One chat in. Your whole week, published right on time.': 'Один чат. Вся неделя — вовремя.',
+      // marquee
+      'News channels': 'Новостные каналы',
+      'Shop drops': 'Дропы магазинов',
+      'Course creators': 'Авторы курсов',
+      'Artists & commissions': 'Художники и заказы',
+      'Trading signals': 'Торговые сигналы',
+      'Podcast releases': 'Выпуски подкастов',
+      'Community digests': 'Дайджесты сообществ',
+      'Startup updates': 'Новости стартапов',
+      // time-saved band
+      'How much time you get back': 'Сколько времени вы вернёте',
+      'Posting manually every day means opening Telegram, drafting, double-checking and sending — daily. Scheduling means doing it': 'Постить вручную каждый день — значит открывать Telegram, писать, проверять и отправлять. Каждый день. А планировать — значит делать это',
+      'once a week': 'раз в неделю',
+      'saved every week on daily posting (vs manual sending)': 'экономии каждую неделю на ежедневном постинге (вместо ручной отправки)',
+      '1 chat': '1 чат',
+      'for a whole month of posts via batch scheduling': 'на целый месяц постов благодаря пакетному планированию',
+      'missed posts — delivery runs even while you sleep': 'пропущенных постов — доставка работает, даже пока вы спите',
+      'Every hour you don\'t spend reposting is an hour for content, community — or actually resting.': 'Каждый час без репостов — это час на контент, сообщество или просто отдых.',
+      // features
+      'Everything a channel needs, in one chat': 'Всё для канала — в одном чате',
+      'Not a stripped-down demo bot. A full scheduling studio that happens to live in Telegram.': 'Не урезанное демо, а полноценная студия планирования, которая живёт в Telegram.',
+      'Batch scheduling': 'Пакетное планирование',
+      'Send many': 'Отправляйте сразу много',
+      'date + message': '«дата + сообщение»',
+      'pairs in a single message and create weeks of posts in one conversation. Preview everything before it goes live.': 'пар одним сообщением и создавайте посты на недели вперёд в одном диалоге. Проверяйте всё перед публикацией.',
+      'saves hours': 'экономит часы',
+      'Recurring posts': 'Регулярные посты',
+      '"Every day at 9:00" or any cron schedule — digests, drops and reminders repeat themselves until you say stop. Pause and resume anytime.': '«Каждый день в 9:00» или любое cron-расписание — дайджесты, дропы и напоминания повторяются сами, пока вы не скажете «стоп». Пауза и продолжение в любой момент.',
+      'set & forget': 'настроил и забыл',
+      'Rich media posts': 'Посты с медиа',
+      'Photos, videos, albums, GIFs, polls, quizzes, documents, locations — with full formatting and inline URL buttons.': 'Фото, видео, альбомы, GIF, опросы, викторины, документы, геопозиции — с полным форматированием и inline-кнопками.',
+      'Stats & leaderboards': 'Статистика и рейтинги',
+      'Views, comments, reactions per post — paginated top-posts and top-commentator leaderboards so you double down on what works.': 'Просмотры, комментарии и реакции по каждому посту — топ постов и топ комментаторов, чтобы усиливать то, что работает.',
+      'Post from your own bot': 'Публикация от вашего бота',
+      'Connect your bot\'s token once and every scheduled post is published through it — your brand, your name, on every message.':

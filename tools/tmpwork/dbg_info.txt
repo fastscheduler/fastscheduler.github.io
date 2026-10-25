@@ -1,0 +1,11 @@
+channels -> keys=['children', 'content', 'faq', 'title'] content_len=0 faq_n=2 children=11
+premium -> keys=['children', 'content', 'faq', 'title'] content_len=0 faq_n=7 children=16
+commands -> keys=['children', 'content', 'faq', 'title'] content_len=271 faq_n=4 children=8
+misc -> MISSING
+bots -> keys=['children', 'content', 'faq', 'title'] content_len=0 faq_n=2 children=10
+backup -> keys=['children', 'content', 'faq', 'title'] content_len=0 faq_n=6 children=10
+media_storage -> keys=['children', 'content', 'faq', 'title'] content_len=0 faq_n=7 children=9
+catfaq written
+rawQA_n=0 sample_hex=[]
+rowm=['1 Q&amp;A', '15 Q&amp;A', '2 Q&amp;A', '3 Q&amp;A', '4 Q&amp;A', '5 Q&amp;A']
+dots=['1 Q&amp;A', '15 Q&amp;A', '2 Q&amp;A', '3 Q&amp;A', '4 Q&amp;A', '5 Q&amp;A']

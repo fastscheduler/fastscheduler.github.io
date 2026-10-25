@@ -1,0 +1,461 @@
+KEY: attachment.name
+📎 {name}
+============================================================
+KEY: backup.no
+No
+============================================================
+KEY: blocked.alert
+🚫 {reason}
+============================================================
+KEY: bot.btn
+bot
+============================================================
+KEY: bot.list_item
+🤖 {username}
+============================================================
+KEY: bots.btn
+🤖 Bots ({limit}, {type})
+============================================================
+KEY: bots.label
+🤖 Bots ({count})
+============================================================
+KEY: bulk.check_off
+@@STORAGE@@⬜
+============================================================
+KEY: bulk.check_on
+@@STORAGE@@✅
+============================================================
+KEY: calendar.channel
+📢 {channel}
+============================================================
+KEY: calendar.day
+📅 {day}
+============================================================
+KEY: calendar.day_empty
+{day}
+============================================================
+KEY: calendar.day_with_msgs
+{day} ({count})
+============================================================
+KEY: calendar.header
+📅 <b>{month} {year}</b>
+============================================================
+KEY: calendar.message_line
+• #{id} — {time} — {channel}
+============================================================
+KEY: calendar.month_nav
+{month} {year}
+============================================================
+KEY: chadm_btn_no
+❌ No
+============================================================
+KEY: chadm_state_off
+OFF
+============================================================
+KEY: chadm_state_on
+ON
+============================================================
+KEY: channel.visibility_visible
+👁 Visible ({channel})
+============================================================
+KEY: comment.count
+💬 {count}
+============================================================
+KEY: complaint.id
+🆔 ID
+============================================================
+KEY: complaint.status_spam
+🚫 Spam
+============================================================
+KEY: confirm.no
+❌ No
+============================================================
+KEY: continue.btn
+▶ Continue
+============================================================
+KEY: continue.inline_btn
+▶ Continue
+============================================================
+KEY: continue.wo_bot_btn
+➡️ Continue Without Bot
+============================================================
+KEY: count.10
+@@STORAGE@@10
+============================================================
+KEY: count.20
+@@STORAGE@@20
+============================================================
+KEY: count.30
+@@STORAGE@@30
+============================================================
+KEY: csv.btn
+CSV
+============================================================
+KEY: csv.id
+ID
+============================================================
+KEY: download.format_tar
+@@STORAGE@@TAR
+============================================================
+KEY: download.format_tarbz2
+@@STORAGE@@TAR.BZ2
+============================================================
+KEY: download.format_targz
+@@STORAGE@@TAR.GZ
+============================================================
+KEY: download.format_tarxz
+@@STORAGE@@TAR.XZ
+============================================================
+KEY: download.format_zip
+@@STORAGE@@ZIP
+============================================================
+KEY: duplicate.no
+❌ No
+============================================================
+KEY: error.btn
+❌ Error
+============================================================
+KEY: export.format_csv
+CSV
+============================================================
+KEY: export.format_json
+JSON
+============================================================
+KEY: export.stats_csv
+Stats (CSV)
+============================================================
+KEY: faq.btn
+FAQ
+============================================================
+KEY: feedback.id
+ID: {id}
+============================================================
+KEY: feedback.status_spam
+🚫 Spam
+============================================================
+KEY: filter.spam
+Spam
+============================================================
+KEY: frozen.bot_line
+🧊 {count} bot(s)
+============================================================
+KEY: help.commands_help.title
+/help
+============================================================
+KEY: help.commands_language.title
+/language
+============================================================
+KEY: help.commands_premium.title
+/premium
+============================================================
+KEY: help.commands_referral.title
+/referral
+============================================================
+KEY: help.commands_schedule.title
+/schedule
+============================================================
+KEY: help.commands_search.title
+/search
+============================================================
+KEY: help.glossary_premium.title
+Premium
+============================================================
+KEY: help.legal_gdpr.title
+GDPR
+============================================================
+KEY: help.payment_stars.title
+Telegram Stars
+============================================================
+KEY: help.premium.title
+Premium
+============================================================
+KEY: help.root_children
+start,scheduling,channels,bots,premium,referral,limits,timezone,language,export,import,backup,media_storage,tools,tips,feedback,faq,commands,errors,privacy,legal,contact,help,config
+============================================================
+KEY: help.schedule_sticker.title
+Stickers
+============================================================
+KEY: inline.callback_error_line
+• <code>{data}</code>
+============================================================
+KEY: inline.syntax_error_line
+• {snippet}
+============================================================
+KEY: json.btn
+JSON
+============================================================
+KEY: lang.sync_tg_no
+❌ No
+============================================================
+KEY: leaderboard_channel_line
+📢 {channel}
+============================================================
+KEY: leaderboard_period_line
+📅 {period}
+============================================================
+KEY: leaderboard_top_count_line
+🏆 #{count}
+============================================================
+KEY: legal.menu_text
+ <b>Legal & Privacy</b>
+
+Review our policies and terms.
+============================================================
+KEY: media.caption_template
+@@STORAGE@@{caption}
+============================================================
+KEY: media.label_audio
+@@STORAGE@@Audio
+============================================================
+KEY: media.label_sticker
+@@STORAGE@@Sticker
+============================================================
+KEY: media.pick_photo
+📷 {name}
+============================================================
+KEY: media.pick_video
+🎬 {name}
+============================================================
+KEY: media.type_audio
+@@STORAGE@@Audio
+============================================================
+KEY: media.type_sticker
+@@STORAGE@@Sticker
+============================================================
+KEY: my.bots_list_item
+🤖 @{username} — {channel}
+============================================================
+KEY: no.btn
+❌ No
+============================================================
+KEY: no.simple
+No
+============================================================
+KEY: normal.photo_mode
+📷 Normal
+============================================================
+KEY: normal_photo_mode
+📷 Normal
+============================================================
+KEY: odt.btn
+ODT
+============================================================
+KEY: ok.btn
+✅ OK
+============================================================
+KEY: ok.button
+✅ OK
+============================================================
+KEY: premium.bot_selected
+✅ @{username}
+============================================================
+KEY: premium.bot_unselected
+⬜ @{username}
+============================================================
+KEY: premium.channel_selected
+✅ {name}
+============================================================
+KEY: premium.channel_unselected
+⬜ {name}
+============================================================
+KEY: premium.price_line
+💰 {price}
+============================================================
+KEY: premium.recurring_selected
+✅ {name}
+============================================================
+KEY: premium.recurring_unselected
+⬜ {name}
+============================================================
+KEY: premium_status_pending_cancel_word
+Pending cancellation
+============================================================
+KEY: processed.media
+📁 {count} media file(s) processed.
+============================================================
+KEY: promocode.active
+🎟 {code}: {discount_text} ({remaining})
+============================================================
+KEY: referral.fail_status
+❌ {msg}
+============================================================
+KEY: referral.join_count_format
+👥 {count}
+============================================================
+KEY: report.channel_line
+📢 {channel}
+============================================================
+KEY: report.channel_link
+📢 {channel}
+============================================================
+KEY: report.cron_line
+⏰ {cron}
+============================================================
+KEY: report.header
+📊 <b>{name}</b>
+============================================================
+KEY: report.info_btn
+ℹ️ Info
+============================================================
+KEY: report.item_cron_line
+⏰ {cron}
+============================================================
+KEY: report.item_line
+📋 #{id} — {name} ({status})
+============================================================
+KEY: report.line_calendar
+📅 {text}: {value}
+============================================================
+KEY: report.line_channel
+📢 {channel}: {text}
+============================================================
+KEY: report.line_chart
+📊 {text}
+============================================================
+KEY: report.line_total
+📊 {count} total — {text}
+============================================================
+KEY: report.line_trophy
+🏆 {text}
+============================================================
+KEY: report.line_warning
+⚠️ {text}
+============================================================
+KEY: report.metric_header
+📊 {metric}
+============================================================
+KEY: report.stats_total
+Total: {total}
+============================================================
+KEY: report.top_line
+📋 <b>Top {count}</b>
+============================================================
+KEY: reports.channel_line
+📢 {channel}
+============================================================
+KEY: rtf.btn
+RTF
+============================================================
+KEY: scheduled.item_line
+{icon} {id}: {preview} — {datetime}
+============================================================
+KEY: search.total_count
+Total: {count}
+============================================================
+KEY: sender.bot_redirect_btn
+🤖 @{bot}
+============================================================
+KEY: sequential.order_detail
+📝 <b>Sequential Order Settings</b>
+
+Choose how your photos should be ordered when using sequential mode:
+
+<b>📅 By Date</b>
+Photos are ordered by their upload date. Newest photos appear first or last based on your selection.
+
+<b>📤 By Sent Order</b>
+Photos are ordered by when they were last sent. This is useful for rotating through your media library.
+
+<b>💡 Tips:</b>
+• Use "By Date" for chronological content (e.g., photo series)
+• Use "By Sent Order" to ensure fresh content is always shown first
+• The order affects how photos are distributed across scheduled posts
+============================================================
+KEY: server.time
+Server time: {time}
+============================================================
+KEY: signature.auto_label
+Auto
+============================================================
+KEY: snapshot.label
+📸 #{sid} ({cats})
+============================================================
+KEY: stars.payment
+⭐ Telegram Stars
+============================================================
+KEY: stats.channel_btn
+📢 {display} (@{uname})
+============================================================
+KEY: stats.channel_header
+📢 {display}
+============================================================
+KEY: stats.channel_nobot_btn
+📢 {display}
+============================================================
+KEY: stats.leaderboard_channel
+📢 {channel}
+============================================================
+KEY: stats.leaderboard_content
+📋 {content}
+============================================================
+KEY: stats.leaderboard_period
+📅 {period}
+============================================================
+KEY: stats.leaderboard_position
+#{pos}
+============================================================
+KEY: stats.leaderboard_top
+🏆 Top {limit}
+============================================================
+KEY: stats.total_line
+📊 Total: {count}
+============================================================
+KEY: stats.view_channel_formatted
+📢 {channel}
+============================================================
+KEY: stats.view_messages_formatted
+📋 {count}
+============================================================
+KEY: stats.view_note_formatted
+📝 {note}
+============================================================
+KEY: stats.view_title_formatted
+📊 {title}
+============================================================
+KEY: storage.attach_line
+{icon} <b>{name}</b>
+============================================================
+KEY: storage.box_btn
+@@STORAGE@@💾 {name}
+============================================================
+KEY: storage.content_header
+@@STORAGE@@💾 <b>{name}</b>
+
+{stats}
+============================================================
+KEY: suggested.command_btn
+💡 {cmd}
+============================================================
+KEY: timezone.channel_bullet
+• {channel}: {tz}
+============================================================
+KEY: timezone.per_channel
+📢 {channel}: {tz}
+============================================================
+KEY: timezone.utc_offset
+UTC{offset}
+============================================================
+KEY: total.btn
+Total: {count}
+============================================================
+KEY: total.messages
+📋 Total: {count}
+============================================================
+KEY: total.users
+👥 Total: {count}
+============================================================
+KEY: txt.btn
+TXT
+============================================================
+KEY: upload.btn
+📥 Upload
+============================================================
+KEY: user.blocked_msg
+🚫 {reason}
+============================================================
+KEY: user.id
+ID: {id}
+============================================================
+KEY: user.premium
+Premium: {status}
+============================================================

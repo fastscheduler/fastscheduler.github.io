@@ -1,0 +1,562 @@
+KEY: help.language_list.content
+The bot is available in the languages shown in the Language menu (English, and more being translated).
+
+English is always available as the fallback. If you spot mistakes in a translation, mention it via <b>Feedback</b> so it can be corrected.
+============================================================
+KEY: help.import_chat.content
+Import messages for your chat from a .txt or .csv file.
+
+Each message block becomes a scheduled message. In the import options you can pick which channel to target.
+
+This is handy for migrating content from another bot or a prepared spreadsheet.
+============================================================
+KEY: help.schedule_voice.content
+Schedule voice messages by sending the voice file during scheduling.
+
+Voice messages appear as a playable audio bubble in the channel - great for daily podcasts, briefings, or personal updates. The bot can also attach a caption to the voice post.
+============================================================
+KEY: help.language_sync.content
+Fast Scheduler and @SetDate_bot share your language preference.
+
+When you change the language in one bot, the other asks if you want to sync the change - tap <b>Yes</b> to apply it to both.
+
+You can disable sync notifications in the Language menu.
+============================================================
+KEY: help.export_chat.content
+Export your scheduled and recurring content for a <b>specific channel</b> to see exactly what's planned there.
+
+Useful when handing a channel over to a teammate or archiving a campaign.
+
+The export file lists each message with its time and content.
+============================================================
+KEY: help.glossary_feedback.content
+Feedback is how you report issues, request features, or get in touch with support.
+
+Open <b>Feedback</b> (or <code>/feedback</code>), choose a category, describe your issue, and submit. You can view replies to your reports under <b>My Feedback</b>.
+============================================================
+KEY: help.tips_security.content
+• Enable Telegram two-step verification on your account.
+• Never share your bot token or payment details in chat.
+• Only grant channel admin (Post Messages) to the bot and your sender bots.
+• Revoke sender bot access from devices you no longer use.
+============================================================
+KEY: help.schedule_animation.content
+Schedule animated GIFs the same way as photos: send the animation during scheduling and it becomes the message media.
+
+Animations play inline in the channel. Add a caption for context. Large animations are compressed by the bot to keep sending fast.
+============================================================
+KEY: help.search_messages.content
+Find any scheduled or recurring message by keyword.
+
+1. Tap <b>Search</b> (or <code>/search</code>).
+2. Send a word or phrase.
+3. Browse the matching messages; tap one to preview, edit, or delete.
+
+Search is case-insensitive and matches partial words.
+============================================================
+KEY: help.timezone_list.content
+All standard IANA time zones are supported - from UTC-12 to UTC+14, including half-hour and quarter-hour offsets.
+
+Search by city, country, or abbreviation (e.g. "Hanoi", "NYC", "CET"). The bot shows the current local time so you can verify the choice.
+============================================================
+KEY: help.referral_link.content
+Your personal link is generated in <code>/referral</code>.
+
+Share it wherever your audience is: channels, groups, stories, or other bots. The link only credits you when a user is <b>new</b> to the bot.
+
+Tip: combine it with a promo code for maximum value.
+============================================================
+KEY: help.limit_recurring.content
+Free plan allows <b>{recurring_free}</b> recurring message. Premium: unlimited.
+
+Recurring messages expire after <b>{recurring_expiry_days} days</b> and are auto-removed, so create a new one when an old campaign ends.
+
+Manage them from <b>Message List</b>.
+============================================================
+KEY: help.export_data.content
+From <b>Export</b> (or <code>/export</code>) you can export:
+• <b>Scheduled messages</b> - content, times, channels.
+• <b>Recurring messages</b> - schedule rules and content.
+• Everything in one file.
+
+Pick the format and the bot sends the file to your chat.
+============================================================
+KEY: help.referral_activate.content
+If you're on the free plan, activate your earned referral days from the referral menu - they start a Premium period immediately.
+
+If you already have paid Premium, the days stay in your balance; activate them from the referral menu once your paid period ends.
+============================================================
+KEY: help.error_rate.content
+• Telegram and the bot throttle very fast bursts of actions.
+• If you hit a rate limit, wait a few seconds and retry.
+• The Free plan has a monthly send cap ({monthly_sent_free} per channel) - check <code>/stats</code>.
+
+Premium removes the send caps entirely.
+============================================================
+KEY: help.security_token.content
+Your bot token is like a password for your sender bot.
+
+• Never share it publicly (screenshots, support chats).
+• If leaked, reset it in @BotFather and <b>Replace Token</b> in the bot.
+• Tokens are stored encrypted.
+
+A leaked token lets anyone post as your bot.
+============================================================
+KEY: help.tips_queue.content
+• Messages are processed in schedule order — earliest time first.
+• If many messages share the same time, they send in creation order.
+• Missed send windows are handled gracefully; check your sent reports.
+• Use reports for a send confirmation after each batch.
+============================================================
+KEY: help.legal_privacy_detail.content
+Data retention: messages and media are kept until you delete them or remove the account; payment records are kept as required by law.
+
+Security: tokens are encrypted; access requires your Telegram account.
+
+Contact <b>@MaximalXP</b> for data requests or deletion.
+============================================================
+KEY: help.payment.content
+Fast Scheduler Premium is paid with <b>Telegram Stars</b> — in-app purchase, instant, no card details needed.
+
+Monthly Stars plans renew automatically until cancelled; 3-month, 6-month, and yearly Stars plans are one-time purchases. See the sub-topics for details.
+============================================================
+KEY: help.security_data.content
+• Your data is stored securely and used only for the service.
+• It's not sold or shared beyond payment processing.
+• Export a backup regularly (<code>/backup</code>) to keep a copy.
+• Request deletion anytime via <b>@MaximalXP</b>.
+
+See Privacy for the full policy.
+============================================================
+KEY: help.tips_preview.content
+• Always preview before confirming a scheduled message.
+• The preview shows text, media, time, channel, and options.
+• You can edit a preview — change time, channel, or content — before it's saved.
+• Use <b>Message List</b> to re-open any message for preview later.
+============================================================
+KEY: help.tips_search.content
+• Search matches keywords and partial words, case-insensitively.
+• You can search by job ID (e.g. <code>s_123</code>).
+• Search covers all your channels at once.
+• Found messages can be previewed, edited, or deleted right from results.
+
+See <b>Search</b> for usage.
+============================================================
+KEY: help.commands.content
+Fast Scheduler Bot can be controlled with text commands — handy on desktop or when you open the bot from a search.
+
+Pick a command below for details, or use the main-menu buttons for the same features. Commands work with both the main bot and the @setdate companion.
+============================================================
+KEY: help.legal_privacy.content
+What we store: your channels, messages, settings, and referral data - only what's needed to run the service.
+
+What we don't do: sell data, read unrelated chats, or share beyond payment processing.
+
+You can export or delete your data anytime. See the Privacy category.
+============================================================
+KEY: help.storage_use_case.content
+Use media storage when you:
+• Post the same photos/videos repeatedly (products, headers, promos).
+• Want consistent branding across posts.
+• Build schedules in bulk and need media without re-uploading.
+
+For one-off posts, just attach media directly during scheduling.
+============================================================
+KEY: help.payment_status.content
+Check your payment and Premium status at any time:
+
+• Open <code>/premium</code> — it shows your plan, expiry date, and usage
+• Stars purchases appear in your Telegram Stars settings
+
+If status doesn't update after a successful payment, contact support with your user ID.
+============================================================
+KEY: help.error_forbidden.content
+• "Bot was kicked from the chat" - re-add the bot as admin.
+• "Bot can't post" - grant Post Messages permission.
+• "Blocked by user" - the channel owner removed the bot; re-invite it.
+
+These are Telegram permission errors - fix them in your channel settings, not in the bot.
+============================================================
+KEY: help.premium_invoice.content
+When you choose a plan, the bot sends a <b>payment invoice</b> message.
+
+• <b>Telegram Stars:</b> the invoice is a Stars payment request - open it and confirm the purchase in Telegram.
+
+If the invoice was not completed, check your Stars balance and retry from <b>Premium</b>.
+============================================================
+KEY: help.tips_language.content
+• Change language with <code>/language</code> — it applies immediately.
+• Set your timezone in the same settings area so schedule times align.
+• If your language is missing, use Feedback to request it — new languages are added over time.
+
+See <b>Language</b> for the full list.
+============================================================
+KEY: help.tips_timezone.content
+• Always set the time zone for each channel you use.
+• Times in the calendar are shown in the channel's timezone.
+• Use <code>/timezone</code> to check or change it quickly.
+• For audiences in a different region, schedule in their local time.
+
+See <b>Time Zone</b> for details.
+============================================================
+KEY: help.privacy_data.content
+The bot stores what's needed to run: your channels, scheduled/recurring messages, settings, and referral info.
+
+It doesn't read your other chats or messages. Media uploads are compressed and stored only for your schedules.
+
+Export or delete your data anytime - see <b>Privacy</b>.
+============================================================
+KEY: help.schedule_document.content
+Schedule any file as a document: PDF, DOCX, XLSX, ZIP, and more.
+
+Send the file during scheduling - the bot attaches it to the scheduled message with an optional caption.
+
+Documents are stored and sent without compression (unlike photos/videos). File size limits follow your plan.
+============================================================
+KEY: help.referral_stats.content
+Your referral stats live in <code>/referral</code>:
+• Your personal referral link
+• How many users joined through it
+• Premium days earned, used and available
+• The list of referred users
+
+Everything updates automatically - when a new user qualifies, your available days grow by 3.
+============================================================
+KEY: help.security_2fa.content
+• Access to the bot is tied to your Telegram account (no extra passwords).
+• Enable Telegram's two-step verification for extra security on your account.
+• Never send your bot token or payment details in plain chat to strangers.
+
+Telegram's own security settings protect your login.
+============================================================
+KEY: help.tips_signature.content
+• Signatures are appended after message content — great for branding.
+• You can set a different signature per channel.
+• Keep signatures short; they count toward the message length limit.
+• Signatures are stripped when Premium expires (after day 3).
+
+See <b>Signatures</b> for setup.
+============================================================
+KEY: help.commands_referral.content
+Opens the referral program: invite friends and earn free Premium days.
+
+How it works:
+• You get a unique invite link
+• Friends who join and send enough messages earn you reward days
+• Your balance and history are shown here
+
+See the <b>Referral</b> category for rules and reward details.
+============================================================
+KEY: help.root.content
+Choose a category to explore. Each topic explains what it is, how to use it, and answers the most common questions.
+
+<b>First time here?</b> Start with the <b>Getting Started</b> category - it walks you through connecting your channel and scheduling your first message in about 5 minutes.
+============================================================
+KEY: help.tips_referral.content
+• Share your invite link everywhere — groups, channels, your bio.
+• Friends must join and send enough messages for you to earn days.
+• Track your balance and referrals in <code>/referral</code>.
+• Watch for the minimum-message rule to avoid abuse.
+
+See <b>Referral</b> for rules and rewards.
+============================================================
+KEY: help.legal_terms.content
+By using Fast Scheduler you agree to:
+• Use the bot legally and not spam or abuse it.
+• Not violate Telegram's Terms of Service.
+• Keep your bot tokens private.
+• Pay for Premium as agreed if you purchase it.
+
+We may suspend accounts that abuse the service. See the full Terms in the bot menu.
+============================================================
+KEY: help.error_network.content
+• Messages queue while the bot or Telegram is offline and send when it's back - nothing is lost.
+• If a sender bot shows disconnected, verify its token and admin status.
+• Long downtimes are rare; check <b>Bots</b> status to confirm.
+
+If the problem persists, contact support via <b>Feedback</b>.
+============================================================
+KEY: help.premium_status.content
+The Premium menu shows your:
+• Plan (Monthly / 3-month / 6-month / Yearly)
+• Status (active, cancelled, expiring)
+• Expiry date
+• Payment method and auto-renew state
+• User ID (for support)
+
+Check it anytime with <code>/premium</code> - especially if you think Premium should be active but isn't.
+============================================================
+KEY: help.payment_invoice_pay.content
+An invoice is the payment request the bot generates when you buy Premium.
+
+To pay an invoice:
+• Open the invoice message
+• Tap <b>Pay</b>
+• Confirm the Stars purchase in Telegram
+• Confirm — Premium activates once approved
+
+If an invoice expires, simply start a new one from <code>/premium</code>.
+============================================================
+KEY: help.contact_email.content
+For formal requests, contracts, or bulk deals you can write an email.
+
+Include in the email:
+• Your user ID (from <code>/premium</code>)
+• A clear subject (support, partnership, etc.)
+• Screenshots or links when relevant
+
+Email is checked less often than Telegram support, so expect a slower reply.
+============================================================
+KEY: help.limit_scheduled.content
+Free plan stores up to <b>{scheduled_free}</b> scheduled messages pending at once. Premium: unlimited.
+
+When you hit the limit, schedule another after deleting old ones (use <b>Message List</b>). Past-dated messages that were sent are removed automatically.
+
+Check your count in <code>/stats</code>.
+============================================================
+KEY: help.advertising.content
+To advertise to Fast Scheduler users, contact <b>@MaximalXP</b> to discuss placements and packages.
+
+For standard audience reach, Telegram's own <b>Telegram Ads</b> platform is also an option for public channels.
+
+Love the bot? Earn free Premium days by inviting friends - use <code>/referral</code>.
+============================================================
+KEY: help.schedule_review.content
+Before a message is scheduled, the bot always shows a <b>preview</b> with all details: text, media, channel, date/time, signature, and inline buttons.
+
+You can:
+• Confirm to schedule,
+• Edit the content, time, or channel,
+• Or cancel.
+
+This prevents mistakes like the wrong date or a missing attachment.
+============================================================
+KEY: help.glossary_import.content
+Import brings data back into the bot from a file: a .fsback backup, a .txt list of messages, a .csv spreadsheet, or a schedule created in SetDate.
+
+Use <b>Import</b> from the main menu (or <code>/import</code>) and send the file. Password-protected backups ask for the password you set when creating them.
+============================================================
+KEY: help.troubleshoot_late.content
+If a message posts later than scheduled:
+
+• Check the <b>channel timezone</b> — schedule times use it.
+• Verify the sender bot is online and an admin.
+• Telegram can delay delivery under load — the bot retries.
+• Check the sent report for the actual posting time.
+
+Set the correct timezone to fix the issue.
+============================================================
+KEY: help.tips_payment.content
+• Telegram Stars monthly plans renew automatically; 3-month, 6-month, and yearly plans are one-time purchases.
+• Keep payment receipts — they help support verify issues quickly.
+• Redeem promo codes before they expire.
+• Yearly plans are the best value per day.
+
+See <b>Payments</b> for how each method works.
+============================================================
+KEY: help.referral_how.content
+1. Run <code>/referral</code> to get your personal link.
+2. Share it with friends.
+3. When a <b>new</b> user starts via your link, <b>connects a channel</b>, and creates at least {referral_min_messages} message, you earn Premium days.
+4. Your friend also gets a bonus.
+
+Track everything from the referral menu.
+============================================================
+KEY: help.commands_help.content
+Shows the Help Center with all categories and answers.
+
+Usage examples:
+• <code>/help</code> — open Help Center
+• <code>/help search</code> (if enabled) — search topics
+• <code>/help scheduling</code> — jump straight to a category
+
+If a topic doesn't answer your question, use <b>Feedback</b> to contact support.
+============================================================
+KEY: help.commands_language.content
+Changes the bot's interface language.
+
+1. Send <code>/language</code>
+2. Pick your language from the list
+3. The bot language switches immediately
+
+Your choice is saved per-user, not per-channel, and applies to all your channels in this bot.
+
+See also: <b>Language</b> category for FAQ about adding new languages.
+============================================================
+KEY: help.channel_unlink.content
+• <b>Unlink / Remove a channel</b> - the bot stops posting to it; its messages are paused but preserved.
+• <b>Delete a message</b> - the scheduled/recurring message is removed permanently.
+
+Unlinking is reversible: re-connect the channel and everything resumes. Deleting is permanent - use it only when you're sure.
+============================================================
+KEY: help.payment_promo_apply.content
+Use a promo code to get extra Premium days or a discount.
+
+1. Open <code>/premium</code>
+2. Choose <b>Redeem Promo Code</b>
+3. Enter the code exactly as provided
+4. The bonus is applied to your account
+
+Codes are single-use and may have a deadline. Invalid or expired codes show an error — double-check the spelling.
+============================================================
+KEY: help.premium_trial.content
+Occasionally, the bot offers free Premium trial days or promo bonuses.
+
+Watch the <b>Premium</b> menu and official announcements for current promotions. Promo codes can be redeemed directly in the Premium menu.
+
+Trial/referral Premium behaves exactly like paid Premium - all features unlocked for the granted period.
+============================================================
+KEY: help.schedule_timezone.content
+Every date/time you enter is interpreted in the <b>channel's time zone</b>, not necessarily yours.
+
+Set or check the channel's time zone: <b>Channels</b> → select the channel → <b>Time Zone</b>.
+
+If your messages seem to post at the wrong hour, this is almost always the cause - update the time zone and re-schedule.
+============================================================
+KEY: help.tips_troubleshoot.content
+• Messages not sending? Check the bot is still a channel admin.
+• Media failing? Check size limits and bot permissions.
+• Late posts? Verify the channel's timezone and sender bot status.
+• When stuck, check the <b>Troubleshooting</b> category first.
+
+For step-by-step fixes, open the <b>Troubleshooting</b> category.
+============================================================
+KEY: help.tips_recurring.content
+• Use recurring messages for daily digests, weekly roundups, or monthly posts.
+• Premium unlocks unlimited recurring messages.
+• Recurring messages count separately from one-time scheduled messages.
+• On Premium expiry you keep up to {recurring_free} recurring message — choose which.
+
+See <b>Recurring</b> for setup.
+============================================================
+KEY: help.error_media.content
+• <b>"File too large"</b> - videos over {max_video_free} on Free / {max_video_prem} on Premium. Compress or upgrade.
+• <b>"Unsupported format"</b> - use common formats (MP4, JPG, PNG, GIF, PDF).
+• <b>"Media not found"</b> - the file was removed from storage; the message becomes text-only.
+
+Re-upload the media to fix.
+============================================================
+KEY: help.referral_rules.content
+• The referred user must be new (never used the bot before).
+• They must use your link as their first interaction.
+• They must connect a channel and create at least {referral_min_messages} message.
+• One referral per user (no double crediting).
+• Max 45 premium days from referrals.
+
+Disputes? Contact <b>@MaximalXP</b>.
+============================================================
+KEY: help.timezone_auto.content
+The bot can detect your time zone automatically from your approximate location.
+
+• Allow Telegram to share your location once.
+• The bot picks the closest time zone.
+• You can still change it manually afterwards.
+
+Automatic detection is a good starting point; fine-tune manually if you travel or live near a zone border.
+============================================================
+KEY: help.export.content
+Export your data as a downloadable file.
+
+Choose what to export (scheduled, recurring, all) and a format:
+• <b>.txt</b> - plain text, human-readable.
+• <b>.csv</b> - spreadsheet, opens in Excel/Sheets.
+• <b>.json</b> - structured data for developers.
+
+For a complete backup with restore, use <code>/backup</code> instead.
+============================================================
+KEY: help.schedule_forward.content
+You can schedule a <b>forward</b> of an existing message instead of typing new content.
+
+During scheduling, forward the message from any chat. The bot copies its text and media into the scheduled post. You can then edit the caption before confirming.
+
+Forwarding is a fast way to re-post your best content at a later time.
+============================================================
+KEY: help.premium_welcome_bonus.content
+Referral-bonus Premium days work exactly like paid Premium while they last.
+
+You earned them by inviting friends who connected a channel.
+
+If you already have paid Premium, referral days stay in your balance until your paid period ends — then activate them from the referral menu. Track your balance under <b>Referrals</b>.
+============================================================
+KEY: help.schedule_caption.content
+When you schedule a photo or video, the text you send becomes the <b>caption</b>.
+
+Captions support the same formatting as text posts: bold, italic, links, spoilers, and inline buttons.
+
+Keep captions short - they wrap under the media. For longer text, consider a text-only post followed by the media in a separate message.
+============================================================
+KEY: help.import_from_storage.content
+When building schedules in SetDate or bulk import, you can attach media from your storage library.
+
+In the import flow, pick media from storage to attach to imported messages - useful when your spreadsheet references file names that exist in your storage boxes.
+
+This keeps your content consistent without re-uploading files.
+============================================================
+KEY: help.schedule_edit.content
+Change a message after it was scheduled:
+1. Open <b>Message List</b> (<code>/list</code>).
+2. Tap the message → <b>Edit</b>.
+3. Choose what to change: <b>Text</b>, <b>Date/Time</b>, <b>Media</b>, or <b>Channel</b>.
+4. Confirm.
+
+You can also use <code>/edit &lt;job_id&gt;</code> to jump straight to editing a specific message.
+============================================================
+KEY: help.contact_telegram.content
+The fastest way to get help is Telegram support (<b>@MaximalXP</b>).
+
+To help us answer quickly, send:
+• Your user ID (shown in <code>/premium</code>)
+• A short description of the problem
+• A screenshot, if it's a visual issue
+• The channel name involved, when relevant
+
+Telegram messages are usually answered within a few hours.
+============================================================
+KEY: help.glossary_export.content
+Export saves your data to a file you can download and keep.
+
+You can export scheduled and recurring messages, or run a full backup (.fsback) that restores everything - channels, bots, settings, media.
+
+Use <b>Export</b> from the main menu (or <code>/export</code>) for selective export, and <code>/backup</code> for a full backup.
+============================================================
+KEY: help.ms_boxes.content
+Your media is organized into <b>boxes</b> (storages). Each box holds photos, videos, and documents you can reuse in schedules.
+
+Free plan: {storage_count_free} box up to {storage_items_free} items. Premium: up to {storage_count_prem} boxes, {storage_items_prem} items total.
+
+Open <b>Storage</b> from the main menu to see your boxes.
+============================================================
+KEY: help.channel_signature_position.content
+Choose where the signature appears in the sent message:
+• <b>At the end</b> (default) - classic sign-off under the content.
+• <b>At the start</b> - the signature line first, then your content.
+
+You can also add blank lines before the signature so it is visually separated from the message body. Preview before saving to see the result.
+============================================================
+KEY: help.contact_support.content
+Need help? Here are the channels you can use:
+
+• <b>Telegram support</b> — fastest way to get help
+• <b>Email</b> — formal requests and deals
+• <b>Feedback</b> — report bugs or suggest features
+
+Before writing, check the Help Center or the Feedback FAQ — many questions are already answered there.
+
+See the sub-topics below for details.
+============================================================
+KEY: help.premium_referral.content
+Referral days are granted when a new user joins from your link, connects a channel, and creates a message.
+
+They work like paid Premium. If you're mid-subscription, the days stay in your balance until your paid period ends — then activate them yourself from the referral menu.
+
+Get your link and see earnings with <code>/referral</code>.
+============================================================
+KEY: help.commands_settings.content
+There is no single Settings screen. Each setting lives in its own menu or command:
+• <code>/language</code> — interface language
+• <code>/timezone</code> — timezones
+• <code>/signature</code> — default signature for new messages
+• <code>/channel</code> — connected channels
+
+Settings are stored per-user and apply across all your channels.
+============================================================

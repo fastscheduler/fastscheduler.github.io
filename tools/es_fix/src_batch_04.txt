@@ -1,0 +1,403 @@
+KEY: help.premium_troubleshooting.title
+Premium Troubleshooting
+============================================================
+KEY: help.ms_video.title
+@@STORAGE@@Stored Videos
+============================================================
+KEY: help.list
+/list — List your messages
+============================================================
+KEY: help.legal_update.title
+October 2026 Policy Refresh
+============================================================
+KEY: help.referral_verify.title
+Why Verification Is Required
+============================================================
+KEY: help.format_title
+<b>Batch Scheduling (key feature):</b>
+============================================================
+KEY: help.ms_bulk.title
+@@STORAGE@@Bulk Move, Copy & Box Download
+============================================================
+KEY: help.faq_security.content
+How your tokens and data are protected. Tap a question below.
+============================================================
+KEY: help.faq_account.content
+Your account, user ID, language, and data. Tap a question below.
+============================================================
+KEY: help.faq_troubleshoot.content
+Most common problems and their quick fixes. Tap a question below.
+============================================================
+KEY: help.faq_tips.content
+Practical tricks to get more from the scheduler. Tap a question below.
+============================================================
+KEY: help.faq_best_practices.content
+Tips on when and how to post for the best results. Tap a question below.
+============================================================
+KEY: help.faq_api.content
+The SetDate companion bot and automation questions. Tap a question below.
+============================================================
+KEY: help.faq_migration.content
+Moving your publishing setup between accounts, bots, or servers. Tap a question below.
+============================================================
+KEY: help.faq_storage.content
+Media Storage saves photos, videos, GIFs, and documents for reuse. Tap a question below.
+============================================================
+KEY: help.faq_telegram.content
+How Telegram platform rules interact with scheduled posts and payments. Tap a question below.
+============================================================
+KEY: help.faq_billing.content
+Billing details: methods, auto-renewal, renewed payments, and plan changes. Tap a question below.
+============================================================
+KEY: help.limit_raise_bots.content
+Free: {bots_free} bot. Premium: {bots_prem} bots.
+
+Each bot serves one channel. To get more bots, upgrade to Premium.
+============================================================
+KEY: help.ms_rename.content
+Rename any storage box to keep your library tidy (e.g. "Products", "Screenshots").
+
+<b>Storage</b> → open the box → rename.
+============================================================
+KEY: help.faq_payment.content
+Everything about paying for Premium: methods, auto-renewal, cancellation, and refunds.
+
+Tap a question below for the answer.
+============================================================
+KEY: help.tips.content
+A collection of tips to get the most out of Fast Scheduler Bot.
+
+Pick a topic below — each has practical advice plus a quick FAQ.
+============================================================
+KEY: help.export_odt.content
+ODT is the open-document text format used by LibreOffice and OpenOffice.
+
+Use it when you need an editable, standard text file for documents.
+============================================================
+KEY: help.feedback_view.content
+Open <b>Feedback</b> → <b>My Feedback</b> to see all your submitted reports and their status.
+
+Useful for tracking open issues you're waiting on.
+============================================================
+KEY: help.feedback_category_feature_detail.content
+Request new features under <b>Feedback</b> → <b>Suggestion</b>.
+
+Describe what you'd like and why. Feature ideas that help many users are prioritized.
+============================================================
+KEY: help.ms_preview.content
+Preview any stored item before using it - check the image, video frame, or document title.
+
+Previewing avoids picking the wrong file in your schedules.
+============================================================
+KEY: help.ms_search.content
+Search your media boxes by filename or caption to find an item fast.
+
+Use it before scheduling to grab the exact file you want via <b>From Storage</b>.
+============================================================
+KEY: help.ms_replace.content
+Replace a stored file with a new version while keeping its name and position.
+
+Schedules that use this media automatically use the new file from then on.
+============================================================
+KEY: help.legal_contact.content
+For legal, privacy, or data-deletion requests, contact <b>@MaximalXP</b> on Telegram.
+
+Please include your user ID and a clear description of your request.
+============================================================
+KEY: help.payment_currencies.content
+Supported payment currency:
+
+• Telegram Stars: in-app currency, used directly in Telegram
+
+The final price is always shown to you before you confirm the payment.
+============================================================
+KEY: help.legal_data.content
+The data controller for Fast Scheduler is the bot operator. Data is processed to provide scheduling, payments, and support.
+
+See Privacy and GDPR topics for details.
+============================================================
+KEY: help.feedback_category_other_detail.content
+Anything that doesn't fit another category? Use <b>Feedback</b> → <b>Other</b> and describe it.
+
+Questions, partnership ideas, and general help requests are all welcome.
+============================================================
+KEY: help.export_rtf.content
+RTF (Rich Text Format) keeps simple formatting and opens in most word processors.
+
+Good for producing a nicely formatted copy of your schedule that you can share or print.
+============================================================
+KEY: help.faq_schedule.content
+Questions people most often ask about scheduling: formats, editing, limits, multiple channels, media, recurring messages, and more. Tap a question below to see the answer.
+============================================================
+KEY: help.limit_bots.content
+Free plan: <b>{bots_free}</b> sender bot. Premium: up to <b>{bots_prem}</b>.
+
+Each bot is tied to one channel. If you reach the limit, remove an unused bot or upgrade to Premium.
+============================================================
+KEY: help.ms_document_storage.content
+Documents (PDF, DOCX, etc.) can be saved to storage and reused.
+
+Unlike photos/videos, documents are stored without compression, so sizes add up - mind your plan's storage limits.
+============================================================
+KEY: help.ms_move.content
+Move items between your boxes to reorganize your library.
+
+Pick the item → <b>Move</b> → choose the destination box. The media is relocated; schedules referencing it keep working.
+============================================================
+KEY: help.feedback_reply.content
+When support answers your feedback, you get a reply in the same conversation.
+
+You can keep the thread going by replying to the feedback. Mark it resolved once your issue is fixed.
+============================================================
+KEY: help.root_children
+start,scheduling,channels,bots,premium,referral,limits,timezone,language,export,import,backup,media_storage,tools,tips,feedback,faq,commands,errors,privacy,legal,contact,help,config
+============================================================
+KEY: help.privacy_delete.content
+To delete your account and data, contact <b>@MaximalXP</b>.
+
+Deletion is permanent: messages, media, settings, and referral data are removed.
+
+Export first if you want to keep a copy.
+============================================================
+KEY: help.export_csv.content
+CSV exports open in Excel, Google Sheets, and other spreadsheet tools.
+
+Columns include channel, date/time, content, and media info. Perfect for planning and reporting in a spreadsheet.
+============================================================
+KEY: help.ms_archive.content
+Archive boxes you no longer use actively - they stay saved but out of the way.
+
+Archived boxes don't count against your active box quota in the free plan view and can be unarchived anytime.
+============================================================
+KEY: help.limit_raise_daily.content
+Free plans can send up to <b>{monthly_sent_free} messages per channel per month</b>. There is no daily cap.
+
+Premium removes the monthly cap completely - schedule and send as much as you need.
+============================================================
+KEY: help.ms_delete.content
+Remove items from a box with the delete action.
+
+<b>Careful:</b> deleting media from a box doesn't delete scheduled messages that used it - those are converted to text-only instead of failing.
+============================================================
+KEY: help.ms_box_manage.content
+From inside a box you can:
+• Add, rename, move, copy, or delete items.
+• Search and preview media.
+• Replace a file.
+• Delete the box itself.
+
+Manage storage from <b>Storage</b> in the main menu.
+============================================================
+KEY: help.limit_raise_channels.content
+Free: {channels_free} channel. Premium: up to {channels_prem}.
+
+More channels = more audience reach. Upgrade via <code>/premium</code> and connect additional channels from <b>Connected Channel</b>.
+============================================================
+KEY: help.ms_from_storage_help.content
+During scheduling, choose the media option <b>From Storage</b> to pick an item from your saved boxes instead of uploading a new file.
+
+It's the fastest way to reuse on-brand media across many posts.
+============================================================
+KEY: help.export_formats.content
+Available formats:
+• <b>.txt</b> - plain text
+• <b>.csv</b> - spreadsheet
+• <b>.json</b> - structured data
+• <b>.rtf</b> / <b>.odt</b> - word processor
+
+Choose whichever fits how you'll use the file.
+============================================================
+KEY: help.payment_crypto.content
+Crypto payments are <b>currently unavailable</b>.
+
+Premium is paid with <b>Telegram Stars</b> — choose any plan in <code>/premium</code> and confirm the Stars invoice. See <b>Payments</b> for details.
+============================================================
+KEY: help.export_text.content
+A .txt export writes each message as readable text, one after another - easy to review, copy, or reuse.
+
+Message blocks are separated by blank lines so the file can be re-imported as multiple messages.
+============================================================
+KEY: help.errors.content
+Something went wrong? Every error has a cause and a fix. Tap a question below — the most common cases (messages not posting, late posts, media failures, permission problems) each have a dedicated answer.
+============================================================
+KEY: help.admins.content
+The <b>Admins</b> section manages who can use a connected channel and what they can do. It lives inside <b>Sender Bots Management → Admins</b> and is available to every channel that has at least one admin.
+============================================================
+KEY: help.export_json.content
+JSON export keeps the full structured data of your messages, settings, and media references.
+
+Aimed at developers and tools that process schedules programmatically. JSON import supports the same structure.
+============================================================
+KEY: help.ms_video.content
+Videos in storage are a <b>Premium</b> feature.
+
+Store videos {storage_video_prem} and reuse them in schedules. Videos are compressed to keep storage reasonable.
+
+Free accounts cannot add videos to storage.
+============================================================
+KEY: help.faq_bot.content
+A sender bot is required for every channel: posts appear from your bot's name, with lower delay, better security, and per-channel stats.
+
+One bot per channel. Free: {bots_free} bot; Premium: up to {bots_prem}.
+============================================================
+KEY: help.legal_terms_detail.content
+Key points: the service is provided as-is; you're responsible for your content; Premium is non-transferable; refunds are case-by-case; abusive use may lead to suspension.
+
+Questions? Contact <b>@MaximalXP</b>.
+============================================================
+KEY: help.feedback_file.content
+Add screenshots or files to your feedback to help support understand the issue faster.
+
+You can attach media when submitting. Attachments in closed tickets are deleted after 30 days; the conversation text stays.
+============================================================
+KEY: help.privacy_export.content
+You can export a copy of your data anytime:
+• <code>/export</code> for scheduled/recurring messages.
+• <code>/backup</code> (Premium) for a full backup.
+
+This lets you take your data with you or switch services.
+============================================================
+KEY: help.schedule_location.content
+Scheduled messages can include a <b>location</b> pin.
+
+Send a location during scheduling and the bot attaches it to the post with an optional caption - useful for event announcements, meetups, or store openings.
+============================================================
+KEY: help.ms_photo.content
+Photos in storage can be reused in any scheduled message via <b>From Storage</b>.
+
+Photos are compressed on upload (see Media Compression). Free plan stores up to {storage_items_free} items total across your box.
+============================================================
+KEY: help.privacy_consent.content
+By using the bot you agree to the processing of the data needed to provide the service.
+
+Accepting the Terms and Privacy Policy is required on first use. You can stop using the bot and request deletion at any time.
+============================================================
+KEY: help.limit_channels.content
+Free plan: <b>{channels_free}</b> connected channel. Premium: up to <b>{channels_prem}</b>.
+
+Each channel can have its own sender bot, time zone, and signature. To add more channels, upgrade via <code>/premium</code>.
+============================================================
+KEY: help.legal_gdpr.content
+If you're in the EU, you have the right to:
+• Access and export your data.
+• Correct inaccurate data.
+• Request deletion.
+• Object to processing.
+
+Exercise these rights by contacting <b>@MaximalXP</b> with your request.
+============================================================
+KEY: help.language_change.content
+1. Tap <b>Language</b> in the main menu (or use <code>/language</code>).
+2. Pick your language from the list.
+3. The bot confirms and switches immediately.
+
+If a language isn't available yet, see <b>Missing Language</b>.
+============================================================
+KEY: help.ms_save.content
+Save media to a storage box for reuse:
+1. Open <b>Storage</b> → pick a box.
+2. Send photos, videos, or documents to add them.
+
+Media is compressed on upload (see Media Compression). Documents and stickers are stored as-is.
+============================================================
+KEY: help.storage_lifecycle.content
+Storage items persist until you delete them. When Premium expires, non-kept boxes are deleted on day 17 and the kept box is trimmed to {storage_items_free} items (videos first).
+
+Renew Premium before day 17 to keep all media.
+============================================================
+KEY: help.feedback_category_bug_detail.content
+Report bugs under <b>Feedback</b> → <b>Bug Report</b>.
+
+Include: what you did, what you expected, and what actually happened. Screenshots and the affected feature help a lot.
+
+Bug reports with clear steps are fixed the fastest.
+============================================================
+KEY: help.schedule_album.content
+An album is a group of photos (or mixed media) sent as one Telegram album.
+
+To schedule an album: send several photos together during the media step, then choose <b>Normal</b> mode - they are posted as a single grouped message.
+============================================================
+KEY: help.privacy_thirdparty.content
+We share data only where required to deliver the service:
+• <b>Payment provider</b> (Telegram Stars) for processing payments.
+• <b>Telegram</b> itself for sending your messages.
+
+No data is sold, rented, or used for advertising.
+============================================================
+KEY: help.ms_quota.content
+Your storage quota is the total of your boxes: free {storage_items_free} items; Premium unlimited across {storage_count_prem} boxes.
+
+The storage menu shows how full you are. Delete unused items to free up space on the free plan.
+============================================================
+KEY: help.referral_share.content
+Promote your referral link where channel owners are:
+• Your channel posts and pins.
+• Telegram groups and comments.
+• Social media stories.
+
+The referred user gets a bonus too - mention that in your message for a higher conversion.
+============================================================
+KEY: help.feedback_status_help.content
+• <b>Open</b> - received, not yet answered.
+• <b>Replied</b> - support answered; waiting on you or resolved.
+• <b>Closed</b> - the issue was resolved and closed.
+• <b>Spam</b> - flagged as spam.
+
+Premium reports are processed first.
+============================================================
+KEY: help.timezone_detect.content
+Instead of picking from a long list, tap <b>Auto-Detect</b> and share your location once - the bot sets the correct time zone for you.
+
+Works best when you grant location in Telegram. You can override the result manually at any time.
+============================================================
+KEY: help.limit_storage_detail.content
+Free: {storage_count_free} box / {storage_items_free} items, no videos. Premium: {storage_count_prem} boxes / {storage_items_prem} items total, videos {storage_video_prem}.
+
+Your storage menu shows current usage and the closest limit.
+============================================================
+KEY: help.language_help.content
+Stuck in the wrong language? Reopen the bot and run <code>/language</code> to switch.
+
+Language preference is stored per Telegram account, so it follows you across devices. Contact <b>Feedback</b> if a menu looks broken or untranslated.
+============================================================
+KEY: help.tips_migration.content
+• Moving to a new phone? Install the bot and connect the same channels as admin.
+• Use <b>/import</b> to restore settings and messages from a backup file.
+• Your Premium is tied to your Telegram account, so it follows you automatically.
+============================================================
+KEY: help.referral_fraud.content
+Only genuine new users count. Referrals from accounts that never connect a channel or create a message don't qualify.
+
+Creating fake accounts to farm days isn't allowed and may result in the removal of earned days or account restrictions.
+============================================================
+KEY: help.timezone_examples.content
+• UTC+0: London, Lisbon
+• UTC+3: Moscow, Nairobi
+• UTC+4: Dubai, Baku
+• UTC+5.5: India
+• UTC+8: Beijing, Singapore, Manila
+• UTC+10: Sydney
+• UTC-5: New York
+• UTC-8: Los Angeles
+
+Search by city in the time zone picker to find yours fast.
+============================================================
+KEY: help.limit_raise_storage.content
+Free: {storage_count_free} box, {storage_items_free} items. Premium: {storage_count_prem} boxes, {storage_items_prem} items total, videos allowed.
+
+Upgrade to Premium from <code>/premium</code> to unlock more storage for your media library.
+============================================================
+KEY: help.error_timeout.content
+• Slow internet or large media can cause timeouts - retry the action.
+• Large imports run in the background; check progress.
+• If timeouts repeat, reduce file sizes or split the operation.
+
+Queued work continues once the connection is stable.
+============================================================
+KEY: help.feedback_history.content
+View all your previous reports under <b>My Feedback</b>.
+
+Each entry shows its status: <b>Open</b> (not yet answered), <b>Replied</b> (support answered), <b>Closed</b> (resolved), or <b>Spam</b>.
+
+Click an entry to read the full conversation.
+============================================================

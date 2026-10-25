@@ -1,0 +1,11 @@
+channels cyr=0 lat=0
+bots cyr=0 lat=0
+premium cyr=0 lat=0
+referral cyr=0 lat=0
+timezone cyr=0 lat=0
+language cyr=0 lat=0
+import cyr=0 lat=0
+backup cyr=0 lat=0
+media_storage cyr=0 lat=0
+faq_account cyr=37 lat=6
+faq_security cyr=49 lat=0

@@ -1,0 +1,381 @@
+KEY: signature.pos_end_label
+End
+============================================================
+KEY: signature.auto_label
+Auto
+============================================================
+KEY: signature.pos_start_label
+Start
+============================================================
+KEY: signature.pos_end
+📝 End
+============================================================
+KEY: signature.pos_start
+📝 Start
+============================================================
+KEY: signature.edit_lines_btn
+📏 Lines
+============================================================
+KEY: signature.lines_setting_btn
+📏 Lines
+============================================================
+KEY: signature.try_preview
+👁 Preview
+============================================================
+KEY: signature.edit_position_btn
+📍 Position
+============================================================
+KEY: signature.pos_setting_btn
+📍 Position
+============================================================
+KEY: signature.btn
+📝 Signature
+============================================================
+KEY: signature.label
+📝 Signature
+============================================================
+KEY: signature.title
+📝 Signatures
+============================================================
+KEY: signature.try_btn
+👁 Try Preview
+============================================================
+KEY: signature.try_sample
+📝 Sample text:
+============================================================
+KEY: signature.add_btn
+➕ Add Signature
+============================================================
+KEY: signature.saved
+✅ Signature saved!
+============================================================
+KEY: signature.disable_auto_btn
+🔕 Disable Auto-Add
+============================================================
+KEY: signature.current_none
+📝 No signature set.
+============================================================
+KEY: signature.menu_title
+📝 <b>Signatures</b>
+============================================================
+KEY: signature.removed
+🗑 Signature removed.
+============================================================
+KEY: signature.deleted_ok
+🗑 Signature deleted.
+============================================================
+KEY: signature.toggle_ok
+✅ Signature toggled.
+============================================================
+KEY: signature.updated
+✅ Signature updated.
+============================================================
+KEY: signature.no_saved
+🗭 No saved signatures.
+============================================================
+KEY: signature.confirm
+✅ Signature: {signature}
+============================================================
+KEY: signature.auto_enabled
+✅ Auto-signature enabled.
+============================================================
+KEY: signature.auto_disabled
+❌ Auto-signature disabled.
+============================================================
+KEY: signature.try_demo_result
+✅ Demo preview shown above.
+============================================================
+KEY: signature.lines_custom_prompt
+📝 Enter the number of lines:
+============================================================
+KEY: signature.try_demo_hint
+💡 This is just a demo preview.
+============================================================
+KEY: signature.try_applied
+✅ Signature applied to preview.
+============================================================
+KEY: signature.edit_text_prompt
+📝 Enter the new signature text:
+============================================================
+KEY: signature.auto_added_to
+✅ Signature added to: {channels}
+============================================================
+KEY: signature.delete_also_remove
+🗑 Also remove from existing posts
+============================================================
+KEY: signature.position_prompt
+📍 Where should the signature appear?
+============================================================
+KEY: signature.current
+📝 <b>Current Signature:</b>
+
+{signature}
+============================================================
+KEY: signature.upsell_try
+⭐ Try Premium to unlock custom signatures
+============================================================
+KEY: signature.lines_prompt
+📝 How many lines should the signature use?
+============================================================
+KEY: signature.too_long
+❌ Signature is too long. Max {max} characters.
+============================================================
+KEY: signature.auto_prompt
+⚡ Add signature automatically to all messages?
+============================================================
+KEY: signature.lines_invalid
+❌ Invalid number. Enter a valid number of lines.
+============================================================
+KEY: signature.update_posts_prompt
+🔄 Update existing scheduled posts with this signature?
+============================================================
+KEY: signature.try_applied_all
+✅ Signature will be added to all your scheduled posts.
+============================================================
+KEY: signature.try_no_posts
+No scheduled posts found. Schedule a post first and try again.
+============================================================
+KEY: signature.set
+✅ Signature saved!
+
+It will appear at the bottom of every message.
+============================================================
+KEY: signature.try_upsell
+
+
+⭐ <b>Upgrade to Premium</b> to add signatures to unlimited posts!
+============================================================
+KEY: signature.upsell_tried
+⭐ You already used a trial. Upgrade to Premium for unlimited signatures.
+============================================================
+KEY: signature.free_limit_notice
+
+
+📌 Only 1 post got the signature (free limit). Upgrade to sign all {count} posts.
+============================================================
+KEY: signature.delete_used_by
+⚠️ This signature is used by <b>{scheduled}</b> scheduled and <b>{recurring}</b> recurring messages.
+============================================================
+KEY: signature.edit_detail
+📝 <b>Signature:</b> {text}
+<b>Position:</b> {pos}
+<b>Lines:</b> {lines}
+<b>Auto:</b> {auto}
+
+Default: {default}
+============================================================
+KEY: signature.menu_text
+📝 <b>Signatures</b>
+
+Add a signature line to your scheduled messages. The signature will be appended automatically to every post.
+============================================================
+KEY: tips.fun.3
+🎯 Shooting in the dark? Try one of the commands above!
+============================================================
+KEY: tips.fun.26
+🚴 Pedal to the metal! Let's get those messages scheduled.
+============================================================
+KEY: tips.fun.21
+🧩 I'll help you piece together the perfect posting schedule.
+============================================================
+KEY: tips.fun.22
+🎂 Every day is a celebration when your posts go out on time!
+============================================================
+KEY: tips.fun.10
+🌈 I speak multiple languages! Use <b>/language</b> to switch.
+============================================================
+KEY: tips.fun.13
+💪 I can handle thousands of scheduled messages. Bring them on!
+============================================================
+KEY: tips.fun.20
+🌊 Stay ahead of the wave — schedule your content before the rush!
+============================================================
+KEY: tips.fun.33
+🍀 Lucky you! A bot that never forgets to send your posts on time.
+============================================================
+KEY: tips.fun.27
+🏄 Catch the wave of perfectly timed content. Start with /schedule!
+============================================================
+KEY: tips.fun.17
+🏆 You miss 100% of the posts you don't schedule. Use /schedule now!
+============================================================
+KEY: tips.fun.32
+🦉 I'm owl-wise about scheduling — let me handle the timing for you.
+============================================================
+KEY: tips.fun.8
+🍕 I'm hungry for messages! Send me something with <b>/schedule</b>.
+============================================================
+KEY: tips.fun.34
+🎩 Abracadabra! Your messages will appear in your channel like magic!
+============================================================
+KEY: tips.fun.7
+🎉 Let's get those messages scheduled! Try <b>/schedule</b> to start.
+============================================================
+KEY: tips.random.10
+💡 <b>Tip:</b> Use <b>/channel</b> to manage your connected channels.
+============================================================
+KEY: tips.fun.23
+📡 Signal received! But I think you meant to use a command. Try /help.
+============================================================
+KEY: tips.fun.31
+📖 Chapter one: Press /schedule. Chapter two: Watch your channel grow!
+============================================================
+KEY: tips.fun.35
+🛰️ Orbiting your channel 24/7, ready to deliver your scheduled posts.
+============================================================
+KEY: tips.fun.12
+🎯 Your messages, perfectly timed. Use <b>/schedule</b> to get started!
+============================================================
+KEY: tips.fun.16
+🎵 I'm pitch perfect when it comes to timing your posts. Try /schedule!
+============================================================
+KEY: tips.fun.14
+🧠 I learn new tricks every update. Try <b>/start</b> to see what's new!
+============================================================
+KEY: tips.fun.15
+☕ Coffee first, then scheduling! Take your time — your drafts are safe.
+============================================================
+KEY: tips.fun.19
+🎪 Step right up! Get your messages scheduled, formatted, and delivered!
+============================================================
+KEY: tips.fun.30
+🎸 Rock on! Your messages will hit the channel at just the right moment.
+============================================================
+KEY: tips.fun.36
+🎄 Every day is Christmas when your scheduled messages arrive perfectly!
+============================================================
+KEY: tips.random.7
+💡 <b>Tip:</b> Use <b>/search</b> to quickly find any scheduled message.
+============================================================
+KEY: tips.fun.18
+🦸 Not all heroes wear capes — some just schedule their messages on time!
+============================================================
+KEY: tips.fun.28
+🎯 Bullseye! Every post lands exactly when you want it to. Use /schedule.
+============================================================
+KEY: tips.fun.0
+🤖 Beep boop! I'm a scheduling robot, not a mind reader. Try <b>/help</b>!
+============================================================
+KEY: tips.fun.2
+🤔 Hmm, I'm not sure what you mean. Maybe you're looking for <b>/help</b>?
+============================================================
+KEY: tips.fun.25
+🎭 Behind every great channel is a bot that never misses a scheduled post.
+============================================================
+KEY: tips.fun.5
+⚡ Fast and precise — that's me! But I didn't get that. Try <b>/start</b>.
+============================================================
+KEY: tips.fun.29
+🧘 Patience, young grasshopper. Your posts will be sent at the perfect time.
+============================================================
+KEY: tips.fun.11
+🚀 Ready to launch your posts? Use <b>/schedule</b> and I'll handle the rest!
+============================================================
+KEY: tips.fun.24
+🔮 I foresee scheduled posts in your future! Use /schedule to make it happen.
+============================================================
+KEY: tips.fun.6
+📬 I send messages to your channel automatically. Need help? Try <b>/help</b>!
+============================================================
+KEY: tips.random.9
+💡 <b>Tip:</b> Refer friends with <b>/referral</b> and earn free Premium days!
+============================================================
+KEY: tips.fun.1
+🐱 Meow? I don't understand, but I appreciate the message! Try <b>/schedule</b>.
+============================================================
+KEY: tips.random.34
+💡 <b>Tip:</b> Use <b>/delete</b> to clean up old or unwanted scheduled messages.
+============================================================
+KEY: tips.random.18
+💡 <b>Tip:</b> You can upload videos up to 25MB on Free and up to 50MB on Premium.
+============================================================
+KEY: tips.random.31
+💡 <b>Tip:</b> Scheduled messages survive bot restarts — your data is stored safely.
+============================================================
+KEY: tips.fun.9
+🎮 I can handle polls, checklists, and circular videos — all from the /schedule flow!
+============================================================
+KEY: tips.random.26
+💡 <b>Tip:</b> Premium unlocks <b>bulk copy/move and box download</b> in media storage.
+============================================================
+KEY: tips.random.1
+💡 <b>Tip:</b> Connect your own bot via <b>/addbot</b> to send messages from your brand.
+============================================================
+KEY: tips.random.23
+💡 <b>Tip:</b> Need help? Use <b>/feedback</b> to contact support directly from the bot.
+============================================================
+KEY: tips.fun.4
+🌟 I can schedule posts, manage channels, and more! Type <b>/help</b> to see all options.
+============================================================
+KEY: tips.random.11
+💡 <b>Tip:</b> Use <b>/calendar</b> to see all your scheduled messages in a monthly view.
+============================================================
+KEY: tips.random.32
+💡 <b>Tip:</b> You can <b>edit or delete</b> any scheduled message from the message list.
+============================================================
+KEY: tips.random.22
+💡 <b>Tip:</b> The <b>yearly Premium plan</b> saves you money compared to monthly billing.
+============================================================
+KEY: tips.random.24
+💡 <b>Tip:</b> You can <b>test your sender bot</b> by sending a message to any chat first.
+============================================================
+KEY: tips.random.30
+💡 <b>Tip:</b> Use <b>AM/PM format</b> like <code>2:30 PM</code> — the bot understands it!
+============================================================
+KEY: tips.random.29
+@@STORAGE@@💡 <b>Tip:</b> Premium users can store <b>videos up to 50MB</b> in media storage.
+============================================================
+KEY: tips.random.13
+@@STORAGE@@💡 <b>Tip:</b> Free users can connect <b>1 channel, 1 bot, and 1 media storage</b>.
+============================================================
+KEY: tips.random.2
+💡 <b>Tip:</b> Use <b>/recurring</b> to set up messages that repeat daily, weekly, or monthly.
+============================================================
+KEY: tips.random.20
+💡 <b>Tip:</b> Use <b>/stats</b> to track how many messages you've sent and your usage limits.
+============================================================
+KEY: tips.random.25
+💡 <b>Tip:</b> Use <b>/list</b> to see all your scheduled and recurring messages in one place.
+============================================================
+KEY: tips.random.0
+💡 <b>Tip:</b> You can use <b>/schedule</b> to send messages automatically at any date and time.
+============================================================
+KEY: tips.random.5
+@@STORAGE@@💡 <b>Tip:</b> Use <b>/storage</b> to save photos and videos for reuse in your posts.
+============================================================
+KEY: tips.random.27
+💡 <b>Tip:</b> You can connect <b>multiple sender bots</b> and assign each to a different channel.
+============================================================
+KEY: tips.random.28
+@@STORAGE@@💡 <b>Tip:</b> Media storage supports <b>photos, videos, animations, and audio files</b>.
+============================================================
+KEY: tips.random.4
+💡 <b>Tip:</b> You can forward a message from your channel to connect it — no need to type the link.
+============================================================
+KEY: tips.random.21
+💡 <b>Tip:</b> You can schedule <b>multiple messages at once</b> by uploading a .txt file with dates.
+============================================================
+KEY: tips.random.19
+💡 <b>Tip:</b> You can send a <b>circular video</b> instead of a regular one — great for announcements!
+============================================================
+KEY: tips.random.14
+💡 <b>Tip:</b> Type just a time like <code>14:30</code> and the bot will use today's date automatically.
+============================================================
+KEY: tips.random.3
+@@STORAGE@@💡 <b>Tip:</b> Upgrade to <b>Premium</b> for up to 3 channels, 3 bots, and 20 media storages!
+============================================================
+KEY: tips.random.8
+💡 <b>Tip:</b> You can send a <b>.txt file</b> with dates and messages to schedule multiple posts at once.
+============================================================
+KEY: tips.random.16
+💡 <b>Tip:</b> You can schedule <b>polls and checklists</b> during the /schedule flow — just choose the option.
+============================================================
+KEY: tips.random.15
+💡 <b>Tip:</b> Use <b>inline buttons</b> with <code>&lt;inline&gt;Text&lt;link=&quot;url&quot;&gt;</code> syntax.
+============================================================
+KEY: tips.random.17
+💡 <b>Tip:</b> European (DD.MM.YYYY), American (MM/DD/YYYY), and ISO (YYYY-MM-DD) date formats are all supported.
+============================================================
+KEY: tips.random.12
+💡 <b>Tip:</b> The bot supports <b>bold</b>, <i>italic</i>, <u>underline</u>, <s>strikethrough</s> and other types of formatting, including adding inline buttons.
+============================================================

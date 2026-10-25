@@ -1,0 +1,463 @@
+KEY: complaint.status_spam
+🚫 Spam
+============================================================
+KEY: lang.sync_setdate_applied
+✅ Language synced with SetDate Bot!
+
+Now both bots use <b>{lang}</b>.
+============================================================
+KEY: lang.sync_setdate_offer
+🌐 <b>Sync with SetDate</b>
+
+Your SetDate bot language is <b>{lang}</b>. Sync it here too?
+============================================================
+KEY: lang.sync_tg_offer
+🌐 Your Telegram interface language is <b>{lang}</b>.
+
+Use the same language in FastSchedule?
+============================================================
+KEY: lang.sync_not_supported
+⚠️ <b>{lang}</b> is not fully supported yet.
+
+Please choose from the available languages below:
+============================================================
+KEY: lang.sync_notify_setdate
+🌐 Your FastSchedule language changed to <b>{lang}</b>.
+
+SetDate Bot has been updated automatically.
+============================================================
+KEY: lang.sync_offer
+🌐 <b>Language Sync</b>
+
+Your language in FastSchedule is set to <b>{lang}</b>.
+
+Apply the same language here?
+============================================================
+KEY: lang.sync_explainer
+<b>Auto-sync:</b> when enabled, changing the language here also updates @SetDate_bot (and vice versa), and the bot can follow your Telegram app language. Disable it to keep this bot's language independent.
+============================================================
+KEY: rate.no_review
+No review.
+============================================================
+KEY: rate.new_rating_btn
+➕ New Rating
+============================================================
+KEY: rate.rated_on
+Rated on: {date}
+============================================================
+KEY: rate.see_admin_reply
+💬 See Admin Reply
+============================================================
+KEY: rate.write_review
+✍️ Write a Review
+============================================================
+KEY: rate.not_found
+❌ Rating not found.
+============================================================
+KEY: rate.your_review
+Your review:
+{review}
+============================================================
+KEY: rate.empty_cancelled
+❌ Empty review cancelled.
+============================================================
+KEY: rate.review_saved
+✅ Review saved. Thank you!
+============================================================
+KEY: rate.my_ratings_title
+⭐ <b>My Ratings ({count})</b>
+============================================================
+KEY: rate.limit_action
+⚠️ Too fast! Please try again in a few seconds.
+============================================================
+KEY: rate.no_admin_reply
+ℹ️ The admin hasn't replied to this rating yet.
+============================================================
+KEY: rate.no_ratings_yet
+⭐ You haven't rated the bot yet.
+
+Tap a star to rate:
+============================================================
+KEY: rate.media_unavailable
+⚠️ The media in the admin reply is no longer available.
+============================================================
+KEY: rate.feedback_required_retry
+⚠️ Your feedback is required. Please write a short review:
+============================================================
+KEY: rate.limit
+⚠️ Send limit reached. Upgrade to Premium for unlimited sends.
+============================================================
+KEY: rate.edit_prompt
+✍️ <b>Write your review</b>
+
+Tell us what you think (text only):
+============================================================
+KEY: rate.limit_global
+⚠️ Too fast! Please slow down a little and try again in a few seconds.
+============================================================
+KEY: rate.media_not_allowed
+❌ Attachments are not allowed in reviews. Please send your review as text.
+============================================================
+KEY: rate.mid_feedback_prompt
+🤔 <b>Thanks for the 3-star rating.</b>
+
+What could we do better? Your feedback helps us improve:
+============================================================
+KEY: rate.low_feedback_required
+🙏 <b>Thanks for your rating.</b>
+
+Please tell us what went wrong so we can improve — your feedback is required:
+============================================================
+KEY: rate.high_review_prompt
+⭐ <b>Thanks for the high rating!</b>
+
+Would you like to leave a short review? If you love the bot, consider Premium to support development — every upgrade keeps the bot running.
+============================================================
+KEY: rate.high_no_premium
+⭐ <b>Thanks for the great rating!</b>
+
+If you love the bot that much, please consider upgrading to Premium to support further development — you'll also unlock:
+• 📅 Unlimited scheduled messages (Free: 100)
+• 🔄 Unlimited recurring posts (Free: 1)
+• 📤 Unlimited sends per month (Free: 100 per channel)
+• 📢 Up to 3 channels and 3 sender bots (Free: 1 and 1)
+• 💾 20 media storage files and 500 media items (Free: 1 and 100)
+• 📊 Leaderboard, auto-reports and backup & export
+============================================================
+KEY: recurring.start_label
+starting
+============================================================
+KEY: recurring.paused_label
+⏸ Paused
+============================================================
+KEY: recurring.no_text
+(media message)
+============================================================
+KEY: recurring.edit_content_updated
+✏️ Content updated.
+============================================================
+KEY: recurring.review_question
+❓ Do you want to change anything?
+============================================================
+KEY: recurring.error
+❌ An error occurred while setting up recurring messages.
+============================================================
+KEY: recurring.signature_prompt
+Would you like to add a signature to these recurring messages?
+============================================================
+KEY: recurring.edit_date_updated
+✅ Start date/time updated. The old version is no longer scheduled.
+============================================================
+KEY: recurring.edit_replaced
+✅ Recurring message replaced. The old version is no longer scheduled.
+============================================================
+KEY: recurring.expired
+⏳ A recurring message has expired or its channel is no longer accessible.
+============================================================
+KEY: recurring.time_prompt
+Great. Now send the time for each recurring post, for example 09:00 or 9:00 AM.
+============================================================
+KEY: recurring.review_title
+🔄 <b>Recurring Message Review</b>
+
+{preview}
+
+⏰ Schedule: {schedule}
+📢 Channel: {channel}
+============================================================
+KEY: recurring.start_date_prompt
+When should this recurring message begin?
+Send a date like YYYY-MM-DD, or choose today/tomorrow.
+============================================================
+KEY: recurring.created
+✅ Recurring message created!
+
+🔄 Schedule: {schedule}
+📢 Channel: {channel}
+🆔 ID: <code>{id}</code>
+============================================================
+KEY: recurring.without_bot_warning
+🤖 A sender bot is required to create recurring messages. Connect one for your channel - it takes about a minute.
+============================================================
+KEY: recurring.resume_confirm
+▶ <b>Resume Recurring Message?</b>
+
+Message ID: <code>{job_id}</code>
+
+The message will <b>start sending again</b> on its schedule.
+The next send will happen at the next scheduled time.
+============================================================
+KEY: recurring.pause_confirm
+⏸ <b>Pause Recurring Message?</b>
+
+Message ID: <code>{job_id}</code>
+
+The message will <b>stop sending</b> until you resume it.
+All settings and content are preserved.
+
+You can resume it anytime from the Message List.
+============================================================
+KEY: recurring.prompt
+🔄 <b>Set Up Recurring Messages</b>
+
+Recurring messages are automatically posted on a schedule — daily, weekly, monthly, or custom (cron).
+
+Send the message text you want to post recurringly:
+
+📌 <b>Inline Buttons:</b>
+Add clickable buttons: <code>&lt;inline&gt;Button Text&lt;link="https://example.com"&gt;</code>
+Use <code>--</code> for side-by-side buttons and <code>//</code> for a new row.
+============================================================
+KEY: recurring.edit_prompt
+✏️ <b>Edit Recurring Message</b>
+
+Send the <b>new version</b> of your recurring message — it will <b>replace</b> the old one.
+
+You can change the <b>start date/time</b> too:
+<code>DD.MM.YYYY HH:MM</code>
+<code>your message</code>
+<i>Or together:</i> <code>DD.MM.YYYY HH:MM your message</code>
+
+Previously sent media will be saved. You can also send new media to add to the current selection or replace it.
+============================================================
+KEY: referral.info
+🎁 Referral Info
+============================================================
+KEY: referral.your_referred_users
+👥 Your referred users:
+============================================================
+KEY: referral.link_invalid
+❌ Invalid referral link.
+============================================================
+KEY: referral.err_self_referral
+You cannot refer yourself.
+============================================================
+KEY: referral.no_referral_days_left
+No referral days available
+============================================================
+KEY: referral.activate_failed
+❌ Could not activate referral days.
+============================================================
+KEY: referral.credited_referee
+✅ You earned {days} Premium days from a referral!
+============================================================
+KEY: referral.success_status
+✅ They received 3 days of Premium! You also got 3 days.
+============================================================
+KEY: referral.err_already_referred
+❌ This account has already been referred by someone else.
+============================================================
+KEY: referral.premium_activated_text
+✅ Activated {avail} days of Premium from your referral balance!
+============================================================
+KEY: referral.err_qualified_premium
+❌ This link only works for brand-new users — this account already has Premium.
+============================================================
+KEY: referral.requirement_note
+✅ Referred users need to schedule at least one message for the referral to count.
+============================================================
+KEY: referral.err_qualified_used_premium
+❌ This link only works for brand-new users — this account has used Premium before.
+============================================================
+KEY: referral.recorded_pending
+⏳ Referral recorded! You'll earn Premium days once they schedule their first message.
+============================================================
+KEY: referral.err_qualified_channel
+❌ This link only works for brand-new users — this account already connected a channel.
+============================================================
+KEY: referral.copied_alert
+✅ Link copied! Share it with friends. When they sign up, you both get 3 days of Premium!
+============================================================
+KEY: referral.err_qualified_scheduled
+❌ This link only works for brand-new users — this account has already scheduled messages.
+============================================================
+KEY: referral.err_qualified_recurring
+❌ This link only works for brand-new users — this account already has recurring messages.
+============================================================
+KEY: referral.err_qualified_bot
+❌ This link only works for brand-new users — this account already connected a sender bot.
+============================================================
+KEY: referral.err_qualified_media
+❌ This link only works for brand-new users — this account already saved media to storage.
+============================================================
+KEY: referral.err_generic
+❌ The referral could not be applied. Please contact support if you think this is a mistake.
+============================================================
+KEY: referral.days_unused_note
+💡 You still have <b>{avail}</b> unused referral Premium days. Use them from the Premium menu!
+============================================================
+KEY: referral.err_qualified_active
+❌ This link only works for brand-new users — this account has already been active in the bot.
+============================================================
+KEY: referral.premium_active_note
+💡 Your referral Premium (<b>{avail}</b> days) remains active and is unaffected by this cancellation.
+============================================================
+KEY: referral.err_max_reached
+❌ This referral link has reached its limit of 15 invited users and can no longer grant Premium days.
+============================================================
+KEY: referral.notification
+🎉 <b>New Referral!</b>
+
+Someone used your referral link!
+
+You'll earn Premium days once they schedule their first message.
+============================================================
+KEY: referral.promo_text
+🎁 <b>Get Premium Days Free!</b>
+
+Use my referral link and we both get free Premium days:
+{link}
+
+Join Fast Scheduler Bot and start scheduling your posts!
+============================================================
+KEY: referral.err_referrer_not_active
+❌ This referral link is not active right now. Ask the sender to open /referral in the bot and make sure their channel is still connected, then try again.
+============================================================
+KEY: referral.failed_notification
+ℹ️ <b>Referral update</b>
+
+Someone opened your referral link, but the referral could not be applied:
+{reason}
+
+No Premium days were earned from this click.
+============================================================
+KEY: referral.welcome_premium
+🎉 <b>Welcome!</b>
+
+You joined via a referral link and received <b>3 days of Premium</b>! The person who invited you also got 3 days.
+
+Enjoy your Premium features!
+============================================================
+KEY: referral.arrived_via_link
+🎁 <b>You arrived via a referral link!</b>
+
+Connect your channel and schedule your first message — you and the person who invited you will both get <b>3 days of Premium</b>.
+============================================================
+KEY: referral.info_text
+🎁 <b>Referral Program (BETA)</b>
+
+Your referral link:
+{ref_link}
+
+• Referred users: {ref_count}
+• Max referrals: {referral_max}
+• Earned days: {total_days}
+• Used days: {used_days}
+• Available days: {avail_days}
+
+{referral_requirement_note}
+============================================================
+KEY: search.status_pending
+Pending
+============================================================
+KEY: search.apply_btn
+✅ Apply
+============================================================
+KEY: search.prev_btn
+◀ Previous
+============================================================
+KEY: search.total_count
+Total: {count}
+============================================================
+KEY: search.clear_filters
+❌ Clear Filters
+============================================================
+KEY: search.no_filters
+No filters applied
+============================================================
+KEY: search.by_status_prompt
+🔍 Filter by status:
+============================================================
+KEY: search.page_info
+Page {page}/{pages}
+============================================================
+KEY: search.hint
+🔍 Type to search...
+============================================================
+KEY: search.no_results
+🔍 No messages found.
+============================================================
+KEY: search.by_date_prompt
+🔍 Filter by date range:
+============================================================
+KEY: search.result_click_hint
+Click a result to edit.
+============================================================
+KEY: search.found
+🔍 Found {count} result(s)
+============================================================
+KEY: search.more
+... and {count} more message(s)
+============================================================
+KEY: search.too_many_results_warning
+Too many results. Refine your search.
+============================================================
+KEY: search.too_many_results
+🔍 Found {count} results. Showing first {max}:
+============================================================
+KEY: search.result_item
+📋 #{id} — {channel}
+{text_preview}
+{i} Status: {status} — {date}
+============================================================
+KEY: search.prompt
+🔍 <b>Search Messages</b>
+
+Send a keyword or phrase to search your messages.
+
+You can search by:
+• Message text or caption
+• Channel name
+• Date range (e.g. "last week")
+• Status (sent/pending/failed)
+============================================================
+KEY: send.photo_please
+📷 Please send a photo.
+============================================================
+KEY: send.error_unexpected
+❌ Unexpected error sending to {channel_id}: {error} (job #{job_id})
+============================================================
+KEY: send.error_both_failed
+❌ Both send attempts failed for channel {channel_id}:
+{error}
+{error2}
+============================================================
+KEY: send.photos_prompt
+📷 Send media files (photos, videos, documents, anything) or click Done:
+============================================================
+KEY: send.error_no_channel
+The channel for scheduled message #{job_id} no longer exists or was removed.
+============================================================
+KEY: send.error_token_invalid
+Your sender bot's access token is invalid or revoked.
+
+Run /bots to check your connected bots.
+============================================================
+KEY: send.error_bot_blocked
+Bot was blocked or removed from channel {channel_id}.
+
+Add the bot back as an admin.
+
+Error: {error}
+============================================================
+KEY: send.error_bot_not_admin
+Bot is not an admin of channel {channel_id} or lacks 'Send Messages' permission.
+
+Check channel admin settings and try again.
+
+Error: {error}
+============================================================
+KEY: send.error_main_bot_failed
+Message could not be sent to channel {channel_id} via {bot}.
+
+Reason: {error}
+
+Make sure the bot is an admin of the channel with 'Send Messages' permission.
+============================================================
+KEY: send.error_channel_not_found
+Channel {channel_id} was not found or is inaccessible.
+
+The channel may have been deleted or the bot was removed as admin.
+
+Check your channels with /channel.
+============================================================

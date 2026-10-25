@@ -1,0 +1,395 @@
+KEY: media.type_poll
+Poll
+============================================================
+KEY: media.file
+📄 File
+============================================================
+KEY: media.type_venue
+🏢 Venue
+============================================================
+KEY: media.label_venue
+🏢 Venue
+============================================================
+KEY: media.image
+🖼 Image
+============================================================
+KEY: media.type_checklist
+Checklist
+============================================================
+KEY: media.type_location
+📍 Location
+============================================================
+KEY: media.label_location
+📍 Location
+============================================================
+KEY: media.download
+📥 Download
+============================================================
+KEY: media.type_mixed
+Mixed media
+============================================================
+KEY: media.use_btn
+@@STORAGE@@💾 Use
+============================================================
+KEY: media.type_audio
+@@STORAGE@@Audio
+============================================================
+KEY: media.type_photo
+@@STORAGE@@Photo
+============================================================
+KEY: media.type_video
+@@STORAGE@@Video
+============================================================
+KEY: media.type_voice
+@@STORAGE@@Voice
+============================================================
+KEY: media.label_photo
+@@STORAGE@@Photo
+============================================================
+KEY: media.label_video
+@@STORAGE@@Video
+============================================================
+KEY: media.label_voice
+@@STORAGE@@Voice
+============================================================
+KEY: media.label_audio
+@@STORAGE@@Audio
+============================================================
+KEY: media.page_size_set
+✅ Page size set.
+============================================================
+KEY: media.type_sticker
+@@STORAGE@@Sticker
+============================================================
+KEY: media.label_sticker
+@@STORAGE@@Sticker
+============================================================
+KEY: media.download_sent
+📥 Here's the file:
+============================================================
+KEY: media.type_document
+@@STORAGE@@Document
+============================================================
+KEY: media.label_document
+@@STORAGE@@Document
+============================================================
+KEY: media.items_total
+💾 Total media items
+============================================================
+KEY: media.rename_btn
+@@STORAGE@@✏️ Rename
+============================================================
+KEY: media.type_animation
+@@STORAGE@@Animation
+============================================================
+KEY: media.label_animation
+@@STORAGE@@Animation
+============================================================
+KEY: media.caption_template
+@@STORAGE@@{caption}
+============================================================
+KEY: media.type_video_note
+@@STORAGE@@Video Note
+============================================================
+KEY: media.label_video_note
+@@STORAGE@@Video Note
+============================================================
+KEY: media.renamed_confirm
+✏️ Renamed to {name}.
+============================================================
+KEY: media.saved_count
+@@STORAGE@@✅ {count} media files saved.
+============================================================
+KEY: media.saved_multiple
+@@STORAGE@@✅ {count} media files saved to storage.
+============================================================
+KEY: media.received_waiting_date
+📷 {media_type} received. Now send the date and time:
+============================================================
+KEY: media.emoji_received_waiting_date
+✨ {media_type} received. Now send the date and time:
+============================================================
+KEY: media.text_without_media
+@@STORAGE@@❌ This storage action requires media files.
+============================================================
+KEY: media.caption_too_long
+❌ Caption is too long ({count} chars). Max {max} chars.
+============================================================
+KEY: media.exceeds_limit
+@@STORAGE@@❌ This file exceeds the size limit ({limit} MB).
+============================================================
+KEY: media.exceeds_premium_limit
+@@STORAGE@@❌ This file exceeds the maximum size limit ({limit} MB).
+============================================================
+KEY: media.pick_prompt
+@@STORAGE@@💾 Choose media from storage:
+
+Select a file to attach to your message.
+============================================================
+KEY: media.replace_prompt
+@@STORAGE@@❓ Replace this media file with a new one?
+
+The old file will be deleted.
+============================================================
+KEY: media.storage_list
+@@STORAGE@@💾 <b>Storage List</b>
+
+{legend}
+
+{media_count} item(s) — Page {page}/{total_pages}
+============================================================
+KEY: media.save_prompt
+@@STORAGE@@💾 Save to Media Storage?
+
+You can save this media file to your storage for reuse in future messages.
+============================================================
+KEY: media.doc_text_received
+📄 {media_type} + text received.
+
+⚠️ <b>Note:</b> If you want to import scheduled messages, delete the caption from the document and send it again.
+============================================================
+KEY: media.text_received_waiting_date
+✅ {media_type} + text received. Now send the date and time:
+
+Example: <code>25.12.2024 10:00</code> or <code>10:00</code> for today.
+The text will be posted together with the {media_type}.
+============================================================
+KEY: media.limit_reached_premium
+@@STORAGE@@⚠️ <b>Media Storage limit reached ({limit})</b>
+
+Delete one of your storages or add media to one of your existing storages instead of creating a new one — or contact our admin (@MaximalXP) for custom higher limits.
+============================================================
+KEY: report.info_btn
+ℹ️ Info
+============================================================
+KEY: report.pause_btn
+⏸️ Pause
+============================================================
+KEY: report.status_paused
+⏸ Paused
+============================================================
+KEY: report.type_summary
+📊 Summary
+============================================================
+KEY: report.resume_btn
+▶️ Resume
+============================================================
+KEY: report.rename_btn
+✏️ Rename
+============================================================
+KEY: report.type_custom
+Custom Range
+============================================================
+KEY: report.stats_type
+Type: {type}
+============================================================
+KEY: report.type_line
+Type: {type}
+============================================================
+KEY: report.stats_note
+📝 Note: {text}
+============================================================
+KEY: report.stats_total
+Total: {total}
+============================================================
+KEY: report.type_reactions
+❤️ Most Reacted
+============================================================
+KEY: report.type_comments
+💬 Most Commented
+============================================================
+KEY: report.stats_avg_views
+Avg views: {avg}
+============================================================
+KEY: report.cron_custom
+⏰ Custom: {cron}
+============================================================
+KEY: report.no_reports
+📭 No reports yet.
+============================================================
+KEY: report.metric_comments
+💬 Comments: {count}
+============================================================
+KEY: report.stats_avg_comments
+Avg comments: {avg}
+============================================================
+KEY: report.no_data
+❌ No data to report.
+============================================================
+KEY: report.metric_reactions
+📷 Reactions: {count}
+============================================================
+KEY: report.stats_avg_reactions
+Avg reactions: {avg}
+============================================================
+KEY: report.top_line
+📋 <b>Top {count}</b>
+============================================================
+KEY: report.confirm_pause
+⏸ Pause this report?
+============================================================
+KEY: report.total_sent
+📊 Total sent: {count}
+============================================================
+KEY: report.generating
+⏳ Generating report...
+============================================================
+KEY: report.confirm_resume
+▶️ Resume this report?
+============================================================
+KEY: report.prev_send
+📅 Previous send: {time}
+============================================================
+KEY: report.email_invalid
+❌ Invalid email address.
+============================================================
+KEY: report.line_total
+📊 {count} total — {text}
+============================================================
+KEY: report.line_views
+👁 {count} views — {text}
+============================================================
+KEY: report.line_comments
+💬 {count} comments — {text}
+============================================================
+KEY: report.stats_top_reactions
+🔥 Top reactions: {reactions}
+============================================================
+KEY: report.line_reactions
+📷 {count} reactions — {text}
+============================================================
+KEY: report.deleted_text
+✅ The report has been deleted.
+============================================================
+KEY: report.email_prompt
+📨 Enter email to receive the report:
+============================================================
+KEY: report.name_invalid
+❌ Invalid report name. Use letters, numbers, and underscores.
+============================================================
+KEY: report.updated
+✅ Report <b>{name}</b> updated.
+
+New schedule: {interval_label}.
+============================================================
+KEY: report.free_limit_reached
+⚠️ <b>Automated Reports Are Premium-Only</b>
+
+Report schedules are available on Premium only.
+
+💎 <b>Upgrade to Premium</b> for unlimited reports with custom schedules!
+============================================================
+KEY: stats.date_to
+To:
+============================================================
+KEY: stats.date_from
+From:
+============================================================
+KEY: stats.chart_btn
+📊 Chart
+============================================================
+KEY: stats.leaderboard_by_posts
+By Posts
+============================================================
+KEY: stats.leaderboard_empty
+No data yet.
+============================================================
+KEY: stats.metric_reactions
+Most Reacted
+============================================================
+KEY: stats.leaderboard_top
+🏆 Top {limit}
+============================================================
+KEY: stats.interval_3h
+Every 3 hours
+============================================================
+KEY: stats.interval_6h
+Every 6 hours
+============================================================
+KEY: stats.no_data_yet
+(no data yet)
+============================================================
+KEY: stats.channel_breakdown
+📢 Per channel:
+============================================================
+KEY: stats.metric_comments
+Most Commented
+============================================================
+KEY: stats.interval_12h
+Every 12 hours
+============================================================
+KEY: stats.leaderboard_views
+👁 {views} views
+============================================================
+KEY: stats.leaderboard_posts
+📤 {posts} posts
+============================================================
+KEY: stats.note_text
+📝 Notes: {count}
+============================================================
+KEY: stats.total_line
+📊 Total: {count}
+============================================================
+KEY: stats.interval
+📊 Stats Interval
+============================================================
+KEY: stats.total_pending
+⏳ Pending: {count}
+============================================================
+KEY: stats.dashboard_title
+📊 <b>Dashboard</b>
+============================================================
+KEY: stats.sent_total
+Total sent: {count}
+============================================================
+KEY: stats.avg_views_line
+👁 Avg views: {count}
+============================================================
+KEY: stats.view_avg_views_formatted
+👁 Avg views: {count}
+============================================================
+KEY: stats.total_sent
+✅ Total sent: {count}
+============================================================
+KEY: stats.avg_sent_per_day
+📊 Avg sent/day: {avg}
+============================================================
+KEY: stats.avg_comments_line
+💬 Avg comments: {count}
+============================================================
+KEY: stats.view_avg_comments_formatted
+💬 Avg comments: {count}
+============================================================
+KEY: stats.view_avg_reactions_formatted
+💬 Avg reactions: {count}
+============================================================
+KEY: stats.avg_reactions_line
+💬 Avg reactions: {count}
+============================================================
+KEY: stats.interval_quarterly
+Quarterly (Jan 1 @ 09:00)
+============================================================
+KEY: stats.view_top_reactions_formatted
+🔥 Top reactions: {reactions}
+============================================================
+KEY: stats.channel_line
+{name}: {sent} sent, {failed} failed
+============================================================
+KEY: stats.daily_line
+{date}: {sent} sent, {failed} failed
+============================================================
+KEY: stats.busiest_day
+📅 Busiest day: {date} ({count} messages)
+============================================================
+KEY: stats.select_metric
+📊 <b>What would you like to track?</b>
+
+Choose a metric to view detailed statistics:
+
+👁 <b>Most Viewed</b> — Posts with the highest view counts
+💬 <b>Most Commented</b> — Posts generating the most discussion
+❤️ <b>Most Reacted</b> — Posts with the most emoji reactions
+📊 <b>All Metrics</b> — See all metrics combined
+
+Each metric shows your top-performing content to help you understand what resonates with your audience.
+============================================================

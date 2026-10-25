@@ -1,0 +1,355 @@
+KEY: help.schedule_text.content
+Send plain or formatted text in your scheduled message.
+
+Supported formatting (Telegram syntax): <code>**bold**</code>, <code>__italic__</code>, <code>~~strikethrough~~</code>, <code>||spoiler||</code>, <code>[text](url)</code>, <code>`code`</code>.
+
+You can also add <b>inline buttons</b> with the <code>&lt;inline&gt;Button&lt;link="..."&gt;</code> syntax - see <b>Formatting &amp; Inline Buttons</b>.
+============================================================
+KEY: help.limit_increase.content
+Most limits are raised by upgrading to <b>Premium</b>:
+• More channels, bots, media storage, and recurring messages.
+• More pending scheduled messages and unlimited monthly sends.
+• Larger files and videos.
+
+Some limits are fixed by design (e.g. one sender bot per channel, anonymous polls only in channels - enforced by Telegram).
+
+Open <code>/premium</code> to see current prices and raise your limits.
+============================================================
+KEY: help.limits_free.content
+Your free account allows:
+• {channels_free} connected channel
+• {bots_free} sender bot
+• Up to {scheduled_free} scheduled messages pending at once
+• {recurring_free} recurring message
+• {monthly_sent_free} sent messages per channel per month
+@@STORAGE@@• {storage_count_free} media storage box, {storage_items_free} items
+• Video uploads {max_video_free}
+
+Check <code>/stats</code> for your current usage.
+============================================================
+KEY: help.limit_media.content
+Media uploads are capped by your plan:
+• Max media size: {max_media_free} free / {max_media_prem} premium
+• Video upload: {max_video_free} free / {max_video_prem} premium
+@@STORAGE@@• Video in storage: {storage_video_free} free / {storage_video_prem} premium
+• 4K media: {free_allow_4k} free / {premium_allow_4k} premium
+
+Photos/videos are compressed automatically on upload (see <b>Media Compression</b>).
+============================================================
+KEY: help.feedback_category_payment_detail.content
+Report payment problems under <b>Feedback</b> → <b>Payment</b>, then choose a subcategory: refund, charged but Premium not activated, duplicate/incorrect charge, cancellation or renewal, failed payment, plan/price/promo, or other payment issue.
+
+Include your user ID and transaction ID where available. Never send card details, passwords, or bot tokens.
+
+See <b>Premium Troubleshooting</b> for common fixes first.
+============================================================
+KEY: help.referral_rewards.content
+Each qualifying referral adds Premium days to your account, up to a <b>45-day total</b>.
+
+• You earn days when the referred user connects a channel and creates a message.
+• If you already have paid Premium, earned days stay in your balance until your paid period ends — then activate them from the referral menu.
+• Referral Premium works like paid Premium.
+
+See your balance at any time with <code>/referral</code>.
+============================================================
+KEY: help.onboarding_step1.content
+Connect your Telegram channel to Fast Scheduler:
+1. Add <b>@FastSchedulerBot</b> as an administrator to your channel.
+2. Open the bot → <b>Connected Channel</b> → <b>Connect Channel</b>.
+3. Send <code>@yourchannel</code>, forward a post, or send an invite link.
+
+The bot needs at least the <b>Post Messages</b> permission. Grant <b>Delete Messages</b> and <b>Edit Messages</b> too if you want the bot to manage posts.
+============================================================
+KEY: help.ms_manage.content
+All storage actions are available from <b>Storage</b> in the main menu:
+• Create/rename/delete boxes.
+• Upload, preview, copy, move, replace, and delete items.
+• Premium bulk tools inside an open box: <b>Move All</b>, <b>Copy All</b> (optionally filtered by type) and <b>Download Box</b> for the whole box as an archive.
+
+Items are kept until you delete them. If Premium lapses, the expiry cleanup may remove excess media.
+============================================================
+KEY: help.commands_premium.content
+Opens the Premium panel: your plan, limits, payment, and expiry info.
+
+From here you can:
+• See your current plan and usage vs limits
+• Buy or upgrade to Premium (monthly, 3-month, 6-month, or yearly)
+• Choose a payment method: <b>Telegram Stars</b> (in-app purchase)
+• Redeem a promo code
+• Cancel or re-enable auto-renewal
+• Check the expiry timeline if Premium ended
+
+See the <b>Premium</b> category for a full feature list and FAQ.
+============================================================
+KEY: help.glossary_sender.content
+A sender bot is a Telegram bot <b>you</b> create via @BotFather. Fast Scheduler uses it to post messages so they appear from your bot's name. Every channel needs one sender bot - connecting it is required after the channel is connected.
+
+Benefits: your brand on every post, lower sending delay, per-channel statistics and leaderboards.
+
+Each sender bot is assigned to <b>one</b> channel. Free plan: {bots_free} bot. Premium: up to {bots_prem}.
+============================================================
+KEY: help.ms_create.content
+A box is your reusable media library. Fill one with photos, videos or files, then pick <b>From Storage</b> while scheduling and the bot attaches media for you — even randomly.
+
+<b>How to create:</b>
+1. Open <b>Storage</b> from the main menu.
+2. Tap <b>➕ Add Storage</b>.
+3. Give the box a name and send it.
+
+Free: {storage_count_free} box. Premium: up to {storage_count_prem} boxes — great for organizing media by campaign, product, or channel.
+============================================================
+KEY: help.contact.content
+Need help? Here are the ways to reach us:
+
+• <b>Telegram support</b> — fastest way to get help
+• <b>Support</b> — overview of all contact options
+• <b>Report a Bug</b> — report a problem you found
+• <b>Request a Feature</b> — suggest an improvement
+• <b>Email</b> — formal requests and deals
+• <b>Response Time</b> — how fast you'll get an answer
+
+Before writing, check the Help Center or the Feedback FAQ — many questions are already answered there.
+============================================================
+KEY: help.media_modes.content
+Choose how media files are attached to scheduled posts (photos, videos, documents — every mode accepts any mix).
+
+<b>📷 Available Modes:</b>
+• <b>Normal</b> — Same file for all posts
+• <b>Random</b> — Random file from your mix
+• <b>Sequential</b> — Files in order
+• <b>Skip Media</b> — Text-only posts
+
+<b>💡 Use Cases:</b>
+• Normal: Branding, logos, watermarks
+• Random: Variety, A/B testing
+• Sequential: Stories, tutorials
+• Skip: Text announcements
+============================================================
+KEY: help.feedback_new.content
+1. Open <b>Feedback</b> (or <code>/feedback</code>).
+2. Choose a category: bug, feature request, payment, or other.
+3. For payment issues, choose a subcategory such as refund, charged but Premium not activated, duplicate charge, cancellation or renewal, failed payment, plan/price/promo, or other payment issue.
+4. Describe the issue clearly and optionally attach a screenshot.
+5. Submit - support reviews and replies.
+
+Premium users get priority response time.
+============================================================
+KEY: help.error_common.content
+• <b>"Bot is not an admin"</b> - add the bot as an administrator in the channel with Post Messages permission.
+• <b>"Invalid token"</b> - copy the FULL token from @BotFather, no extra spaces.
+• <b>"Channel not found"</b> - check the username/link; use <code>@username</code> or an invite link.
+• <b>"Limit reached"</b> - check <code>/stats</code>; delete old messages or upgrade.
+
+Most errors are fixed by one of these. See <b>Troubleshooting</b> for the full guide.
+============================================================
+KEY: help.ms_copy.content
+Copy places a duplicate of an item into another box while the original stays where it is — unlike Move, which relocates the item.
+
+<b>When copying beats moving</b>
+• A logo that belongs to several campaign boxes at once.
+• Seasonal collections that share evergreen assets.
+• A "favourites" box that mirrors items from working boxes.
+
+Copies are independent: editing or deleting one copy never affects the other, and every schedule that references either box keeps working.
+============================================================
+KEY: help.schedule_media.content
+Attach photos, videos, GIFs, or documents to any scheduled message.
+
+During scheduling, after sending the text, choose how to attach media:
+• <b>Normal</b> - one file attached to every message.
+• <b>Random</b> - each message gets a random file from the mix you sent (any types mixed).
+• <b>Sequential</b> - files are assigned in order, repeating as needed.
+@@STORAGE@@• <b>From Storage</b> - reuse saved media.
+
+Free plan videos: {max_video_free}. Premium: {max_video_prem}.
+============================================================
+KEY: help.polls.content
+Engage your audience with interactive polls.
+
+<b>📊 Creating Polls:</b>
+1. Create a poll in any Telegram chat
+2. Forward the poll during scheduling
+3. Set the date and time
+4. The bot sends the poll automatically
+
+<b>🎯 Poll Types:</b>
+• Regular polls — Multiple choice
+• Quizzes — One correct answer
+• Anonymous polls — Hide who voted
+• Multiple answers — Allow several choices
+
+<b>💡 Tips:</b>
+• Use polls for feedback
+• Create quizzes for engagement
+• Keep questions simple and clear
+============================================================
+KEY: help.start_account.content
+Your account is created automatically the first time you open the bot - nothing to sign up for.
+
+• Your <b>user ID</b> is shown in <code>/premium</code> and is used by support to find your account.
+• Your <b>language</b> and <b>time zone</b> are stored in your settings.
+• Your <b>plan</b> (Free or Premium) controls your limits.
+
+To change language use <code>/language</code>; to set your time zone use <code>/timezone</code>. To delete your data or account, contact <b>@MaximalXP</b>.
+============================================================
+KEY: help.start_tips.content
+• Use <code>HH:MM</code> alone to schedule for today at that time.
+• Upload a .txt file during scheduling to create many messages at once (blank line = new message).
+• Use <b>Message List</b> (<code>/list</code>) to edit or delete posts later.
+• Add a <b>sender bot</b> so posts appear from your own bot's name.
+• Set your <b>time zone</b> so times mean what you expect.
+• Anything you type in the bot works in both bots: <b>@FastSchedulerBot</b> and <b>@SetDate_bot</b> share your settings.
+============================================================
+KEY: help.premium_grace.content
+After your Premium expires you have a <b>grace period</b> before anything is limited. During it:
+• All messages keep sending to every channel.
+• Nothing is frozen or deleted yet.
+• You can still change your "keep" choices.
+• A renew prompt with <b>pay again / change plan / cancel</b> is shown.
+
+If you renew during the grace period, Premium is restored instantly and the expiry process is cancelled. After the grace period ends (day 3), the limits from your keep-selection start being applied.
+============================================================
+KEY: help.payment_stars.content
+Pay with Telegram Stars — the built-in Telegram currency.
+
+1. Go to <code>/premium</code> and choose a plan
+2. Select <b>Telegram Stars</b>
+3. Confirm in the native Telegram payment window
+
+<b>Plan behaviour:</b> the monthly subscription renews automatically until cancelled; 3-month, 6-month, and yearly prepaid plans are one-time purchases (with up-front discounts on 3/6 months) and never auto-renew.
+
+Activation is instant. Buying Stars is done inside Telegram; the bot never handles your card.
+============================================================
+KEY: help.glossary_premium.content
+Premium is a paid subscription that raises or removes the free plan limits:
+• More channels and sender bots ({channels_prem}/{bots_prem}).
+• Unlimited scheduled, recurring, and sent messages (Free: {scheduled_free} pending / {monthly_sent_free} sends per month).
+• @@STORAGE@@20 media storage boxes, videos in storage, larger uploads.
+• Signatures, leaderboards, unlimited report schedules.
+
+Pay with Telegram Stars. See the <b>Premium</b> category for all details, including what happens when it expires.
+============================================================
+KEY: help.recurring.content
+Recurring messages repeat automatically - daily, on chosen weekdays, or monthly.
+
+<b>How to create:</b>
+1. Tap <b>Recurring Message</b>.
+2. Pick the channel and the interval (daily/weekly/monthly).
+3. Set the send time.
+4. Send the content and confirm.
+
+Free plan: {recurring_free} recurring message. Premium: unlimited.
+
+Manage them from <b>Message List</b> - edit time, pause, resume, or delete. Recurring messages expire after {recurring_expiry_days} days.
+
+See also: <b>Pause & Resume</b> for temporary stopping.
+============================================================
+KEY: help.tools.content
+Four tools manage everything you schedule:
+
+• <b>Message List</b> — the workhorse. Browse messages per channel, preview, edit, delete.
+• <b>Calendar</b> — the month at a glance; tap a day to see its posts.
+• <b>Search</b> — keyword search across all scheduled and recurring messages.
+• <b>Statistics</b> — sends, limits, and per-channel counters.
+
+All four are one tap from the main menu (second page), and each has a matching command: <code>/list</code>, <code>/calendar</code>, <code>/search</code>, <code>/stats</code>.
+============================================================
+KEY: help.ms_premium.content
+Premium storage benefits:
+• {storage_count_prem} boxes instead of {storage_count_free}, with up to {storage_items_prem} items total.
+• Videos allowed in storage ({storage_video_prem}).
+• Max media size ({max_media_prem}).
+• <b>Move All / Copy All</b> — reorganize a whole box in one tap, optionally filtered by type (images, videos, files).
+• <b>Download Box</b> — save an entire box as a single archive.
+
+On Free you can still move, copy, and download items one at a time.
+
+Upgrade via <code>/premium</code> to unlock them.
+============================================================
+KEY: help.premium_reactivate.content
+Premium can be reactivated after it expires or even after the final disconnect.
+
+• <b>Before the final disconnect (day 35+12h):</b> open <code>/premium</code>, pay, and everything is restored automatically.
+• <b>After the final disconnect:</b> subscribe again, then re-connect your excess channels and sender bots manually - the bot will guide you through it.
+
+Your data that was within the free limits (kept channel, up to {scheduled_free} scheduled messages, one recurring message) is never removed, so nothing you kept is lost.
+============================================================
+KEY: help.contact_response.content
+How fast you'll get an answer depends on the channel:
+
+• <b>Telegram support</b> — usually within a few hours (weekdays)
+• <b>Email</b> — 1-3 business days
+• <b>Bug reports</b> — fixed and confirmed via feedback status
+
+Include your user ID and details to get the fastest reply.
+
+<b>How fast do you answer?</b>
+Most reports get a reply within a day or two. Premium reports are answered first — when you submit, add as much detail as you can (screenshots, steps, transaction IDs) so the issue can be fixed without extra back-and-forth.
+============================================================
+KEY: help.search_delete.content
+Every search result opens the same controls as the Message List: preview, edit, and <b>delete</b>.
+
+To clean up a finished campaign: search for its keyword, walk the results, and delete each message you no longer need. Deletion is <b>permanent</b> — the bot asks for confirmation and shows the removed job ID afterwards.
+
+Need to wipe everything for one channel? <b>Delete All</b> in the Message List removes all scheduled and recurring messages for that channel in one confirmed step — faster than deleting search results one by one.
+============================================================
+KEY: help.referral_stats_detail.content
+Open your referral menu with <code>/referral</code> to see how your program is going.
+
+• <b>Referred users</b> - how many people have joined through your link.
+• <b>Earned days</b> - the total Premium days your referrals have generated.
+• <b>Available days</b> - what you can activate right now.
+• <b>Used days</b> - the days already converted into Premium time.
+
+You can also expand the list of users who joined via your link right in the menu.
+
+Want more referrals? Share your link where channel owners hang out - that is the audience that converts.
+============================================================
+KEY: help.import_json.content
+JSON import restores structured exports — including the exports made by this bot.
+
+Send the <code>.json</code> file during the import flow (Data → Import, or <code>/import</code>). The bot reads each record and recreates the scheduled message: text, date, and channel reference. If the file was exported from a different setup, messages land in your currently connected channel.
+
+Prefer a complete snapshot restore — settings, bots, recurring messages and all? A <code>.fsback</code> backup restore is the right tool; JSON is for message-level transfers.
+============================================================
+KEY: help.onboarding_step2.content
+Create your first scheduled message:
+1. Tap <b>Schedule Message</b> in the main menu.
+2. Pick the channel and enter the date and time (for example <code>25.12.2025 10:00</code>).
+3. Type your message — attach media if you like.
+4. Review the preview and confirm.
+
+The message appears in the <b>Calendar</b> and the <b>Message List</b> immediately, and posts automatically at the chosen time. For regular content like daily digests or weekly roundups, set up a <b>recurring</b> message instead — it repeats on its own schedule until you pause or delete it.
+============================================================
+KEY: help.promocode.content
+Promo codes give you a discount or bonus months on a Premium purchase.
+
+<b>How to redeem:</b>
+1. Open <b>Premium</b> and choose a plan (monthly / 3-month / 6-month / yearly).
+2. On the payment screen tap <b>Apply promo code</b>.
+3. Enter the code exactly as provided — it is applied to the price immediately.
+
+The code stays attached to your account for its remaining months; you can remove it from the same payment screen. Codes are case-sensitive and each works once per user. Where to find them: official Fast Scheduler announcements and seasonal promotions.
+============================================================
+KEY: help.premium_troubleshooting.content
+<b>Paid but not active?</b>
+• Wait 2-3 minutes (some providers are slow to confirm).
+• Reopen <code>/premium</code> to refresh.
+• Stars: check your purchase went through in your Stars balance.
+
+If still nothing after 5 minutes, contact <b>@MaximalXP</b> with your user ID, payment method, and transaction ID.
+
+<b>Reversed payment?</b> Premium is revoked automatically and your account may be restricted until resolved.
+
+<b>Auto-renew not working?</b> Only monthly Stars plans auto-renew. Prepaid 3-month, 6-month, and yearly plans are one-time - you renew manually.
+============================================================
+KEY: help.import_formats.content
+The import flow accepts:
+• <b>.fsback / .fspback</b> — full bot backups (restore with Overwrite or Add).
+• <b>.txt</b> — message lists; a blank line starts a new message, with the date on its own line (see the Format topic).
+• <b>.csv</b> — spreadsheets with <code>Date/Time</code> and <code>Content</code> columns.
+• <b>SetDate files</b> — schedules generated by @SetDate_bot, imported as-is.
+• <b>.json</b> — structured exports.
+
+Everything except full backups imports into your connected channel, in the channel's time zone. Connect the channel first, then import.
+============================================================

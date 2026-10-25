@@ -1,0 +1,1435 @@
+KEY: paysupport.text
+For payments support, open support bot
+============================================================
+KEY: my.feedback_none
+You haven't submitted any feedback yet.
+============================================================
+KEY: expiry_disconnect_warn_footer
+Renew Premium to cancel the disconnect.
+============================================================
+KEY: expiry_download_scheduled_caption
+Here is your complete backup (.fsback).
+============================================================
+KEY: no.access_channel
+❌ You don't have access to that channel.
+============================================================
+KEY: notification.complaint
+⚠️ Complaint from {user}:
+
+{description}
+============================================================
+KEY: expiry_day15_footer
+Renew Premium to keep everything active.
+============================================================
+KEY: expiry_media_deletion_footer
+Renew Premium to keep all storage boxes.
+============================================================
+KEY: timezone.detect_none
+❌ No timezone detected. Please try again.
+============================================================
+KEY: flood.wait
+⏳ Too many requests. Waiting {seconds}s...
+============================================================
+KEY: export_no_channels
+You don't have any channels to export yet.
+============================================================
+KEY: bot_switch_confirm
+Move @{bot} from {old} to {new}?
+
+{occupant}
+============================================================
+KEY: bot_swap_done
+✅ Bots swapped:
+
+@{a} → {ch_a}
+@{b} → {ch_b}
+============================================================
+KEY: no.other_storage_boxes_found
+@@STORAGE@@No other storage boxes available.
+============================================================
+KEY: notify.blocked
+🚫 You have been blocked by the administrator.
+============================================================
+KEY: expiry_scheduled_excess_footer
+Renew Premium to keep all scheduled messages.
+============================================================
+KEY: expiry_day4_footer
+Renew Premium to resume all sending instantly.
+============================================================
+KEY: content.received_waiting_date
+✅ Content received. Now send the date and time:
+============================================================
+KEY: management.menu_only_sender_bot
+This menu is only available in sender bot mode.
+============================================================
+KEY: no.bots_connected_hint
+🗭 No bots connected. Use /addbot to connect one.
+============================================================
+KEY: stars.payment_failed
+❌ Telegram Stars payment failed or was cancelled.
+============================================================
+KEY: stars.payment_link_prompt
+Click the button below to open the payment panel:
+============================================================
+KEY: import.quota_exceeded
+❌ Import quota exceeded: {limit} messages allowed.
+============================================================
+KEY: promocode.usage_hint
+💡 Enter a promo code to get a discount on Premium.
+============================================================
+KEY: expiry_day3_footer
+Tap below to choose what to keep or renew Premium.
+============================================================
+KEY: onboarding.completed
+✅ Onboarding complete! You're ready to use the bot.
+============================================================
+KEY: maintenance.mode
+⚠️ Bot is under maintenance. Please try again later.
+============================================================
+KEY: bot_switch_done
+✅ @{bot} is now attached to {channel}. All data kept.
+============================================================
+KEY: import.too_many_messages
+❌ Too many messages: {count} found, limit is {limit}.
+============================================================
+KEY: promocode.applied
+✅ Promo {code} applied! {discount_text} ({remaining})
+============================================================
+KEY: rating_invalid
+⚠️ Invalid rating. Please select a value from 1 to 5.
+============================================================
+KEY: bot_manage_desc_remove
+🗑 <b>Remove bot</b> — detach the bot from its channel.
+============================================================
+KEY: contact
+📞 <b>Contact</b>
+
+For support or questions:
+@MaximalXP
+============================================================
+KEY: legal.menu_text
+ <b>Legal & Privacy</b>
+
+Review our policies and terms.
+============================================================
+KEY: frozen.footer
+Renew Premium now to unfreeze everything and keep posting.
+============================================================
+KEY: restore.confirm_prompt
+⚠️ Restore from backup?
+
+Your current data will be replaced.
+============================================================
+KEY: video.upload_premium_notice
+⭐ Video upload is a Premium feature. Upgrade to send videos.
+============================================================
+KEY: autotime.insufficient_posts
+❌ Need at least {min} posts to analyze. Currently: {current}.
+============================================================
+KEY: daily.limit_reached
+⚠️ Send limit reached. Come back later or upgrade to Premium.
+============================================================
+KEY: notification.feedback
+💬 New feedback from {user}:
+
+Subject: {subject}
+{description}
+============================================================
+KEY: cancel.premium_confirm_text
+⚠️ Are you sure you want to cancel Premium? 
+
+Reason: {reason}
+============================================================
+KEY: choose.plan_to_upgrade
+💳 <b>Upgrade to Premium</b>
+
+Choose a plan that works for you:
+============================================================
+KEY: disconnect.warning_scheduled
+⚠️ {count} scheduled message(s) will be deleted or reassigned.
+============================================================
+KEY: album.media_received
+🖼 Album received ({count} item(s)). Now send the date and time:
+============================================================
+KEY: receipt_sent_via_main
+✅ Done! The full confirmation was sent to you via the main bot.
+============================================================
+KEY: expiry_day14_footer
+Renew Premium any time before the disconnect to keep everything.
+============================================================
+KEY: bot_manage_desc_swap
+⇄ <b>Swap bots</b> — exchange channels between two of your bots.
+============================================================
+KEY: autorenew.reenabled
+✅ Auto-renewal re-enabled!
+
+Your Premium will automatically renew.
+============================================================
+KEY: seq.mismatch_text
+⚠️ {media_count} media vs {msg_count} messages ({surplus} surplus)
+============================================================
+KEY: subscribe.required
+⚠️ <b>Subscription Required</b>
+
+Subscribe to unlock all features:
+============================================================
+KEY: no.channel_connected
+You haven't connected any channels yet. Connect one to get started.
+============================================================
+KEY: bot_swap_continue
+⇄ Ready to continue the swap for @{bot}? Pick the bot to swap with:
+============================================================
+KEY: subscription.success
+✅ <b>Thank you for subscribing!</b>
+
+All features are now available.
+============================================================
+KEY: expiry_disconnected_footer
+Renew Premium any time to reconnect — your data is kept for 35 days.
+============================================================
+KEY: bot_switch_occupant
+@{other} will be left without a channel (it stays in your bot list).
+============================================================
+KEY: cancel.premium_prompt
+📝 Why are you cancelling? (optional)
+
+Your feedback helps us improve.
+============================================================
+KEY: notify.premium_revoked
+⚠️ <b>Premium Deactivated.</b>
+
+Your premium access has been removed.
+============================================================
+KEY: promo.code_applied_msg
+✅ Promo applied! {discount_text}
+Price: {price}
+Remaining: {remaining}
+============================================================
+KEY: bot_chtoken_done
+✅ Token for @{bot} updated. The bot is back online with the new token.
+============================================================
+KEY: select.recurring_type
+🔄 <b>Choose Recurring Type</b>
+
+How often should this message be posted?
+============================================================
+KEY: daily.limit_reached_alert
+⚠️ Send limit reached for @{bot_username} (job #{job_id}). Limit: {limit}
+============================================================
+KEY: notify.premium_granted
+🎉 <b>Premium Activated!</b>
+
+You now have access to all premium features!
+============================================================
+KEY: album.too_many
+❌ A Telegram album can contain at most 10 items. Extra items were skipped.
+============================================================
+KEY: autotime.promo_premium_body
+⭐ AutoTime suggests the best time to post based on your audience activity.
+============================================================
+KEY: dub.usage
+Usage: /dub &lt;message_id&gt; — duplicates an existing scheduled message.
+============================================================
+KEY: invoice.sent_check
+📨 Invoice sent! Please check your Telegram messages for the payment request.
+============================================================
+KEY: autotime.promo
+⏳ AutoTime will suggest the best posting time based on your channel activity.
+============================================================
+KEY: grant.premium_title
+🎯 <b>Grant Premium</b>
+
+User: <code>{user_id}</code>
+
+Choose expiration type:
+============================================================
+KEY: promocode.already_used
+❌ You have already used the promo code {code}. Each code works once per user.
+============================================================
+KEY: forward.not_channel
+❌ That message is not from a channel. Please forward a post from your channel.
+============================================================
+KEY: reports.free_limit_notice
+📊 Automated reports are a Premium feature. Upgrade to create report schedules.
+============================================================
+KEY: autotime.no_data
+❌ Not enough data to determine the best time. Post more messages and try again.
+============================================================
+KEY: disconnect.downsides
+⚠️ After disconnecting: all scheduled messages for this channel will be removed.
+============================================================
+KEY: my.bots_none
+No sender bots connected yet. Connect one to unlock advanced channel management.
+============================================================
+KEY: support.first_rating_support_note
+💬 You can access support and track your ratings in @FastSchedulerSupport_bot Bot
+============================================================
+KEY: bot_swap_other_no_channel
+@{other} has no channel yet. Connect it to a channel first, or pick another bot.
+============================================================
+KEY: terms.accepted_thanks
+✅ Thank you for accepting our Terms of Service, Privacy Policy and Refund Policy!
+============================================================
+KEY: expiry_choice_limit_reached
+On the Free plan you can keep at most {limit} channel. Renew Premium to keep more.
+============================================================
+KEY: change.bot_warning
+⚠️ Changing the bot for <b>{channel}</b> will disconnect the current bot. Continue?
+============================================================
+KEY: subscription.failed
+❌ <b>Not subscribed to all channels</b>
+
+Please subscribe to all required channels:
+============================================================
+KEY: notify.complaint_closed
+📮 <b>Feedback Update</b>
+
+Your feedback <code>{complaint_id}</code> has been closed.
+============================================================
+KEY: notify.complaint_deleted
+📮 <b>Feedback Update</b>
+
+Your feedback <code>{complaint_id}</code> has been deleted.
+============================================================
+KEY: admin.unsupported_lang_notification
+⚠️ The user's language ({lang}) is not supported — using the default language instead.
+============================================================
+KEY: edit.usage
+Usage: /edit &lt;message_id&gt; — opens the editing interface for the specified message.
+============================================================
+KEY: limit.reached
+⚠️ <b>Limit Reached</b>
+
+You've reached the limit for <b>{type}</b> ({limit}).
+
+{upsell}
+============================================================
+KEY: max.bots_reached
+⚠️ Maximum bots connected ({limit}).
+
+Disconnect a bot or upgrade to Premium to add more.
+============================================================
+KEY: bot_swap_title
+⇄ <b>Swap channels between bots</b>
+
+@{bot} is on {channel}. Choose the bot to swap with:
+============================================================
+KEY: expiry_backup_marketing
+Miss Premium? Renew now to keep all channels, bots and media without restoring from backup.
+============================================================
+KEY: main.bot_feature_in_sender_bot
+🤖 <b>This feature now lives in your sender bot.</b>
+
+Open your sender bot below to continue.
+============================================================
+KEY: notify.complaint_spam
+📮 <b>Feedback Update</b>
+
+Your feedback <code>{complaint_id}</code> has been marked as spam.
+============================================================
+KEY: start.btn
+🚀 <b>Fast Scheduler Bot</b>
+
+Schedule and automate your Telegram channel posts effortlessly.
+============================================================
+KEY: expiry_choice_help
+✅ = keep  ❌ = remove. A kept channel keeps its sender bot automatically. Tap Save when done.
+============================================================
+KEY: expiry_disconnected_info
+Your excess channels and sender bots have been disconnected. Your kept channel stays active.
+============================================================
+KEY: export_channel_title
+📢 <b>Choose which channel's data to export</b>
+
+Select a channel below, or export everything:
+============================================================
+KEY: compression.too_large
+❌ File too large ({size}). Your plan allows up to {max} per file — please send a smaller file.
+============================================================
+KEY: support.feedback_moved_note
+📮 To send feedback, rate the bot or view your feedback history, open @FastSchedulerSupport_bot.
+============================================================
+KEY: bot_manage_desc_replace
+🔁 <b>Replace bot</b> — swap this bot for a different one. All data moves over, nothing is lost.
+============================================================
+KEY: delete.all_confirm
+⚠️ Are you sure you want to delete <b>all</b> {count} message(s)?
+
+This action cannot be undone.
+============================================================
+KEY: global.error_msg
+❌ <b>An error occurred.</b>
+
+The admin has been notified and will fix it soon. Please try again.
+============================================================
+KEY: premium_status_details
+Plan: {plan}
+Status: {status}
+Active since: {started}
+Expires: {expires}
+Auto-renew: {autorenew}
+============================================================
+KEY: donate.text
+💰 <b>Support Fast Scheduler Bot</b>
+
+If you find this bot useful, consider supporting development.
+============================================================
+KEY: about.bot_info
+🤖 Fast Scheduler Bot — @FastSchedulerBot
+
+Schedule messages, manage channels, and track your posts.
+============================================================
+KEY: cancel.premium_referral_days_note
+💡 You have <b>{avail}</b> unused referral Premium days that won't be affected by this cancellation.
+============================================================
+KEY: my.bots_hint
+💡 Sender bots let your channel appear managed by your own bot rather than the main FastSchedule bot.
+============================================================
+KEY: autotime.menu_text
+🕐 <b>AutoTime</b>
+
+Automatically set the best posting time based on your channel's audience activity.
+============================================================
+KEY: main.menu
+📋 <b>Main Menu</b>
+
+Select an option below to manage your scheduled messages, channels, and settings.
+============================================================
+KEY: video.exceeds_limit
+❌ This video exceeds the {limit} MB limit for your plan.
+
+Upgrade to Premium to upload larger videos.
+============================================================
+KEY: premium_status_details_renewal
+Plan: {plan}
+Status: {status}
+Active since: {started}
+Next renewal: {expires}
+Auto-renew: {autorenew}
+============================================================
+KEY: bot_switch_title
+🔀 <b>Switch @{bot} to another channel</b>
+
+Pick the channel. Data is kept — the bot just moves there.
+============================================================
+KEY: bot_swap_no_second
+You need two bots to swap. Connect another bot first — then come back here and the swap will continue.
+============================================================
+KEY: bot_manage_desc_switch
+🔀 <b>Switch channel</b> — attach the bot to another of your channels. Data is kept, the bot just moves.
+============================================================
+KEY: about.text
+📋 <b>About Fast Scheduler Bot</b>
+
+Version: {version}
+
+Schedule and manage your Telegram posts with ease.
+============================================================
+KEY: management.menu_text
+Configure <b>{channel}</b>.
+
+Each sender bot handles its own channel — this menu is for this channel only.
+============================================================
+KEY: bot_manage_desc_token
+🔑 <b>Change token</b> — update the token when it was revoked in BotFather. Same bot, nothing else changes.
+============================================================
+KEY: persist.flush_recovered_admin
+✅ <b>Persistence recovered: {domain}</b>
+
+Background saves are succeeding again. Deletions are re-enabled.
+============================================================
+KEY: modify.ask_poll_content
+Send a new poll to replace the existing one, or send text to keep the poll and just update its description:
+============================================================
+KEY: expiry_day0_footer
+You can keep 1 channel, 1 bot and 1 recurring message on the Free plan. Open Premium to restore everything.
+============================================================
+KEY: no.free_channels
+All your channels already have a sender bot connected.
+
+You can disconnect one first or connect a new channel.
+============================================================
+KEY: expiry_media_deletion_info
+On day {days} your non-kept storage boxes will be deleted. Choose which one to keep now to avoid losing media.
+============================================================
+KEY: bot_chtoken_mismatch
+❌ That token belongs to @{new}, not @{bot}. Send the token for @{bot}, or go back and use Replace bot instead.
+============================================================
+KEY: delete.id_prompt
+Send the ID(s) of the message(s) to delete.
+
+Separate multiple IDs with commas.
+Example: <code>5, 12, 23</code>
+============================================================
+KEY: sender_bot_admin_dashboard
+👥 <b>Channel Admin Panel</b>
+
+You are an admin of this channel. Your permissions are managed by the Main Owner.
+============================================================
+KEY: expiry_media_choice_info
+On the Free plan you can keep 1 media storage box. Tap the one you want to keep; the rest are deleted on day 17.
+============================================================
+KEY: bot_swap_confirm
+Swap channels?
+
+@{a} → {ch_b}
+@{b} → {ch_a}
+
+Schedules and settings stay with the channels — only the bots move.
+============================================================
+KEY: tutorial_replace_bot_prompt
+⚠️ You've already sent a token for <b>@{old}</b>.
+
+Do you want to cancel @{old} and connect <b>@{new}</b> instead?
+============================================================
+KEY: expiry_backup_sent_info
+Here is a full backup of your data (.fsback). Save it — you can restore everything via /import if you renew later.
+============================================================
+KEY: user_no_post_permission
+⛔ You must have <b>Post Messages</b> permission in the channel to connect it. Ask an admin to enable it, then try again.
+============================================================
+KEY: support.first_rating_thanks
+⭐ Thank you for rating Fast Scheduler!
+
+💬 You can access support and track your ratings in @FastSchedulerSupport_bot Bot
+============================================================
+KEY: connect.limit_reached
+Sorry, you can only connect up to {limit} channels. Disconnect one of them or contact our admin if you need higher limits.
+============================================================
+KEY: locked.channel_calendar
+🔴 <b>Calendar unavailable</b>
+
+Management for this channel is done through <b>@{bot}</b>.
+
+Use @{bot} to view the calendar.
+============================================================
+KEY: main.token_as_sender_rejected
+⛔ That's the MAIN bot's token — it cannot be connected as a sender bot. Create a new bot via @BotFather and send ITS token.
+============================================================
+KEY: expiry_choice_confirmed_info
+You chose to keep {channels} channel(s). The rest will be disconnected on day 35. You can change this any time before then.
+============================================================
+KEY: video.exceeds_limit_tg
+❌ This video is {limit} MB — that's Telegram's hard limit, not ours. Even Premium cannot send videos larger than {limit} MB.
+============================================================
+KEY: my.bots_title
+🤖 <b>My Sender Bots</b>
+
+Connected bots help manage your channels with full inline keyboard support and a personal interface.
+============================================================
+KEY: terms_accepted_thanks
+✅ <b>Thank you for accepting our Terms of Service, Privacy Policy and Refund Policy!</b>
+
+You are all set — welcome aboard! 🚀
+============================================================
+KEY: crypto.payment_text
+ 🪙 <b>CryptoBot — {plan}</b>
+
+<b>Price:</b> {price}
+
+<a href="{pay_url}">💳 Pay with cryptocurrency</a>
+
+<code>{pay_url}</code>
+============================================================
+KEY: monthly.prompt
+📅 <b>Monthly Schedule</b>
+
+Which day of the month and at what time?
+
+Format: <code>DAY HH:MM</code>
+Example: <code>15 09:00</code>
+============================================================
+KEY: persist.deletes_paused
+⏳ Deletions are temporarily paused while the bot recovers its saved data. Nothing was deleted — please try again in a few minutes.
+============================================================
+KEY: weekly.prompt
+📅 <b>Weekly Schedule</b>
+
+Which day of the week and at what time?
+
+Format: <code>DAY HH:MM</code>
+Example: <code>Monday 09:00</code>
+============================================================
+KEY: export_channel_hint
+Tip: pick a single channel to export only its scheduled and recurring messages. Account settings and statistics are always included.
+============================================================
+KEY: cancel.premium_request_sent
+✅ Your cancellation request has been submitted.
+
+Your Premium benefits will remain active until the end of the current billing period.
+============================================================
+KEY: hide.channel_toggled
+{state} visibility toggled for {channel}.
+
+Strangers will now see it as "{display}" — you and the channel admins keep full visibility.
+============================================================
+KEY: subscription.lost
+⚠️ <b>Subscription Lost!</b>
+
+You have left one of our channels.
+Premium features have been disabled.
+
+Subscribe again to restore access.
+============================================================
+KEY: tutorial_shared_bot_step_text
+✅ This channel already has the sender bot <b>@{bot}</b> connected. You do not need to connect another bot. Open it to manage the channel.
+============================================================
+KEY: scheduled.limit_reached
+⚠️ Channel limit reached: {used}/{limit} scheduled messages pending.
+
+Delete some pending messages or upgrade to Premium to schedule more.
+============================================================
+KEY: tutorial_addbot_verify_hint
+Add the bot as an administrator (with <b>Post Messages</b> permission) in your channel, then tap <b>Check Again</b>. Or choose another bot:
+============================================================
+KEY: terms.accept_required
+⚠️ To use this bot, please accept our <b>Terms of Service</b>, <b>Privacy Policy</b> and <b>Refund Policy</b>. You only need to do this once.
+============================================================
+KEY: daily.prompt
+📅 <b>Daily Schedule</b>
+
+At what time should the message be posted each day?
+
+Format: <code>HH:MM</code> (24-hour)
+Example: <code>09:00</code>
+============================================================
+KEY: autotime.result
+🕐 <b>Best Posting Time for {channel}</b>
+
+Recommended time: {time}
+
+Based on {samples} recent posts, your audience is most active at this time.
+============================================================
+KEY: expiry_day15_info
+Post-expiry cleanup pipeline: on {date} (only a few weeks left) excess channels are disconnected. Renew now to keep all your channels and bots.
+============================================================
+KEY: leaderboard_discussion_group_tip
+Want to see who comments? Add the bot to your channel's <b>discussion group</b> — then it can track commenter names and build this leaderboard.
+============================================================
+KEY: frozen_bot_disconnect_only
+This sender bot is frozen because its channel exceeds the free plan limit. Disconnecting is the only available action until Premium is restored.
+============================================================
+KEY: frozen.action_blocked
+This sender bot is frozen because its channel exceeds the free plan limit. Disconnecting is the only available action until Premium is restored.
+============================================================
+KEY: doc_text_received
+📄 {media_type} + text received.
+
+⚠️ <b>Note:</b> If you want to import scheduled messages, delete the caption from the document and send it again.
+============================================================
+KEY: frozen_channel_no_resume_connect
+⚠️ This channel is frozen because it exceeds the free plan limit. Connecting or swapping a bot will not resume delivery until Premium is restored.
+============================================================
+KEY: connect.from_main_bot
+📢 <b>Connect New Channel</b>
+
+You can connect a new channel only from the main bot.
+Click the button below to open it and connect your new channel.
+============================================================
+KEY: support.feedback_redirect_title
+📮 <b>Feedback & Support</b>
+
+Support, feedback and help topics now live in @FastSchedulerSupport_bot.
+
+Tap the button below to open the Support Bot:
+============================================================
+KEY: mgmt.moved_auto
+✅ <b>Management moved to @{bot}</b>
+
+Your channel {channel} is now fully managed by your sender bot. Use @{bot} to schedule and manage your messages.
+============================================================
+KEY: frozen_channel_no_resume_bot
+⚠️ This channel is frozen because it exceeds your free plan limit. Reconnecting or swapping a bot will not resume delivery until Premium is restored.
+============================================================
+KEY: start.without_bot_hint
+💡 After connecting a channel, connect a sender bot for it - scheduling and posting require one. It also unlocks inline keyboards and managed channels.
+============================================================
+KEY: expiry_day3_info
+Post-expiry cleanup pipeline reminder: on {date} (tomorrow), messages to channels you did not keep will stop sending. Your kept channel keeps working.
+============================================================
+KEY: inline.import_skipped
+⚠️ {count} message(s) were skipped because they contain invalid inline button syntax. Fix the <code>&lt;inline&gt;</code> markup and import them again.
+============================================================
+KEY: premium_status_pending_cancel
+⏳ Premium Pending Cancellation
+
+Expires: {expires}
+Auto-renew is off — you keep Premium until this date, then drop to the Free plan (1 channel, 1 bot).
+============================================================
+KEY: stars.yearly_one_time_note
+
+
+ℹ️ <b>One-time payment:</b> this yearly Stars plan is paid once. It lasts once a year; after 1 year, we'll remind you to choose and pay for a new plan.
+============================================================
+KEY: bot_chtoken_prompt
+🔑 Send the <b>new token</b> for @{bot} (from BotFather, e.g. after the old one was revoked).
+
+Nothing else changes — same bot, same channel, all data kept.
+============================================================
+KEY: addbot_create_info
+If you already created a bot in @BotFather, paste its token here.
+
+If not, tap <b>Create New Bot</b> below, create the bot, make bot admin, and you all set!
+============================================================
+KEY: send_rate_limited
+⏳ Flood control hit for message {job_id} ({channel_id}): retrying via the same bot in {seconds}s. It was NOT sent via another bot to avoid a duplicate post.
+============================================================
+KEY: cron.examples
+<b>Common cron examples:</b>
+• <code>0 9 * * 1</code> — Every Monday 9:00
+• <code>30 18 * * *</code> — Daily 18:30
+• <code>0 8 1 * *</code> — 1st of month 8:00
+============================================================
+KEY: expiry_day14_info
+Post-expiry cleanup pipeline: in about {weeks} weeks (on {date}) your excess channels and bots will be disconnected. Choose what to keep or renew to avoid losing them.
+============================================================
+KEY: managed.info_text
+📢 <b>Channel Settings Info</b>
+
+<b>{channel}</b>
+
+Managed by: @{bot}
+
+• All posts go through @{bot}
+• The main bot still handles scheduling
+• Use @{bot} for quick actions
+============================================================
+KEY: expiry_choice_info
+Your Premium has expired. On the Free plan you can keep up to {channels} channel, {bots} bot and {recurring} recurring message. Tap an item to mark it Keep or Remove, then Save.
+============================================================
+KEY: stars.auto_renew_note
+
+
+✅ <b>Auto-renewal ON:</b> this standard monthly Telegram Stars subscription renews every 30 days. Cancel from the Premium menu; access remains until the current paid period ends.
+============================================================
+KEY: main.data_menu_title
+🗂 <b>Data</b>
+
+Import or export your data:
+• <b>Export</b> — save your messages, channels, bots and settings to a file
+• <b>Import</b> — restore data from a backup or an export file
+============================================================
+KEY: channel_frozen_skip
+⏸ Your message {job_id} for {channel_id} was skipped — the channel is frozen while Premium is expired. It was rescheduled automatically and will send once the channel is active again.
+============================================================
+KEY: expiry_disconnect_warn_info
+Post-expiry cleanup pipeline final warning: on {date} (in {hours} hours) your excess channels and sender bots will be disconnected. This cannot be undone — renew Premium now to keep them.
+============================================================
+KEY: expiry_scheduled_excess_info
+You have {count} scheduled messages but the Free plan allows {limit}. After the post-expiry cleanup pipeline grace ends on {date} (3 days after expiry), excess messages will be trimmed. Export them now.
+============================================================
+KEY: timezone_location_found
+📍 <b>Location Detected</b>
+
+Based on your location, your timezone is:
+
+<b>🕐 Timezone: {tz}</b>
+
+All scheduled messages will use this timezone for accurate local publishing times.
+
+<b>Is this correct?</b>
+============================================================
+KEY: addbot_verify_no_channel
+❌ You need to connect a channel before I can verify this bot.
+
+1. Add a channel first
+2. Add @{username} as admin in that channel
+3. Give it at least "Post Messages" permission
+4. Click <b>Check Again</b>
+============================================================
+KEY: expiry_no_choice_needed
+Your Premium has expired. You are now on the Free plan (1 channel, 1 bot). Since you are already within the free limits, your channel stays active and nothing changes. Renew Premium any time to unlock more.
+============================================================
+KEY: same_day.limit_reached
+⚠️ Channel limit reached: {used}/{limit} messages scheduled for {day}.
+
+A channel can have at most {limit} messages targeting the same day. Spread them across days or upgrade to Premium for unlimited scheduling.
+============================================================
+KEY: frozen.info
+Your Premium subscription has expired. This sender bot is connected to a channel you didn't choose to keep, so it is frozen and posts are not sent from it.
+
+Your kept channels and their sender bots keep working.
+============================================================
+KEY: managed.info_text_in_bot
+🤖 <b>Managed by this bot</b>
+
+📢 <b>Channel:</b> {channel}
+🔗 <b>Connected:</b> {connected_date}
+🔄 <b>Management moved:</b> {moved_date}
+
+You can return management back to the Main Bot anytime using the button below.
+============================================================
+KEY: send_uncertain_recurring
+⚠️ Your recurring message {job_id} for {channel_id} was skipped this time — the sender bot request timed out ({error}). It was NOT resent automatically to avoid a duplicate post. The next scheduled run will try again.
+============================================================
+KEY: disconnect.channel_confirm
+⚠️ <b>Disconnect Channel?</b>
+
+Are you sure you want to disconnect <b>{channel}</b>?
+
+• {scheduled} scheduled message(s) will be removed or reassigned
+• Recurring messages for this channel are not redirected automatically
+============================================================
+KEY: schedule.prompt_poll
+📊 <b>Schedule a Poll</b>
+
+Send a poll question followed by options (one per line):
+
+<b>Example:</b>
+What's your favorite color?
+Red
+Blue
+Green
+
+💡 You can also create polls in any chat, then forward them during scheduling.
+============================================================
+KEY: persist.flush_failed_admin
+🚨 <b>Persistence failure: {domain}</b>
+
+Background saves failed {count} times in a row ({error}).
+
+Destructive deletions are now paused until saving recovers; the bot keeps serving. A last-good snapshot was kept for recovery.
+============================================================
+KEY: expiry_day0_info
+Your Premium has ended and the post-expiry cleanup pipeline has started. Until {date} (the next {days} days) everything still works while you choose what to keep. After that date, messages to channels you did not keep will stop.
+============================================================
+KEY: managed.mode_minimal_no_bot
+🤖 <b>Main Menu (Simplified)</b>
+
+<i>Management has been moved to your sender bot(s).</i>
+
+Use your sender bot(s) to schedule messages, manage content, and view statistics.
+
+You can restore full management to this bot at any time.
+============================================================
+KEY: addbot_instruction_text
+A sender bot is a dedicated Telegram bot that manages one channel independently. It gives you better performance, security, and control.
+
+Use <b>Create New Bot</b> if you still need one, or <b>I Have a Token</b> if it is already created.
+============================================================
+KEY: upsell_daily_messages
+📈 <b>Send More</b>
+
+You've reached your current send limit. Upgrade to Premium for unlimited sends!
+
+<b>Free plan:</b> {monthly_sent_free} sent messages per channel per month
+<b>Premium:</b> unlimited sends
+
+Need more? Upgrade to Premium!
+============================================================
+KEY: help.error_timeout.content
+• Slow internet or large media can cause timeouts - retry the action.
+• Large imports run in the background; check progress.
+• If timeouts repeat, reduce file sizes or split the operation.
+
+Queued work continues once the connection is stable.
+============================================================
+KEY: send_uncertain_oneoff
+⚠️ Your message {job_id} for {channel_id} may or may not have been sent — the sender bot request timed out ({error}). It was NOT resent automatically to avoid a duplicate post. Please check the channel and reschedule it yourself if it did not arrive.
+============================================================
+KEY: bot_benefits_detailed
+• Your channel appears managed by your own bot
+• Full inline keyboard support
+• Faster posting with dedicated resources
+• Stranger users see "@{bot}" instead of the main bot
+• Hidden channels stay truly private
+• Premium users can connect multiple bots
+============================================================
+KEY: managed.mode_minimal_menu
+🤖 <b>Main Menu (Simplified)</b>
+
+<i>Management has been moved to your sender bot.</i>
+
+Use your sender bot (@{bot}) to schedule messages, manage content, and view statistics.
+
+You can restore full management to this bot at any time using the button below.
+============================================================
+KEY: timezone.input_not_found
+❌ Couldn't detect your time zone from that.
+
+Try one of these:
+• 🏙 Send a <b>city name</b> (e.g. <code>London</code>, <code>New York</code>, <code>Tokyo</code>)
+• 🕐 Send your <b>current time</b> (e.g. <code>15:30</code>)
+• 📍 Send your <b>live location</b>
+============================================================
+KEY: timezone_time_found
+🕐 <b>Time Analysis</b>
+
+Based on your current time ({time}), your timezone is:
+
+<b>🌍 Timezone: {tz}</b>
+
+This means:
+• Messages scheduled for 09:00 will send at 9:00 AM {tz} time
+• All times you enter will be interpreted in this timezone
+
+<b>Is this correct?</b>
+============================================================
+KEY: timezone_city_found
+🏙 <b>City Found: {city}</b>
+
+Based on your input, your timezone is:
+
+<b>📍 Timezone: {tz}</b>
+
+This means scheduled messages will be sent at the local time for {city}.
+
+For example, a post set for "09:00" will be sent at 9:00 AM {tz} time.
+
+<b>Is this correct?</b>
+============================================================
+KEY: addbot_create_failed
+❌ <b>Could not finish connecting the bot.</b>
+
+Something went wrong while setting up your sender bot. Please try again, or use the <b>🔑 I Have a Token</b> method: open @BotFather, copy your bot's token, and paste it here.
+
+If the problem persists, contact support.
+============================================================
+KEY: managed.mode_desc
+All your channels are managed via their sender bot(s). Use the sender bot below to schedule messages, view stats, and manage your content.
+
+<code>╔══════════════════════════╗</code>
+<code>║  Use @{bot} to manage     ║</code>
+<code>╚══════════════════════════╝</code>
+============================================================
+KEY: timezone_detect_time_prompt
+🕐 <b>What time is it for you right now?</b>
+
+Send me your current time in 24-hour format (HH:MM).
+
+<b>Examples:</b>
+• <code>15:30</code> (3:30 PM)
+• <code>09:00</code> (9:00 AM)
+• <code>22:15</code> (10:15 PM)
+
+I'll use this to determine your timezone automatically.
+============================================================
+KEY: inline.callback_error_hint
+<b>These buttons would do nothing when clicked</b> — the bot has no handler for this callback data.
+
+<b>Options:</b>
+• Use a link button instead: <code>&lt;inline&gt;Button Text&lt;link="https://example.com"&gt;</code>
+• Or use callback data that matches an existing bot action.
+============================================================
+KEY: cron.format
+<b>Cron Format:</b> <code>minute hour day month weekday</code>
+
+<b>Examples:</b>
+• <code>0 9 * * 1</code> — Every Monday at 09:00
+• <code>30 18 * * *</code> — Every day at 18:30
+• <code>0 */2 * * *</code> — Every 2 hours
+• <code>0 8 1 * *</code> — On the 1st of every month at 08:00
+============================================================
+KEY: sender_bot_admin_manual
+⚠️ I couldn't add <b>@{username}</b> as a channel administrator automatically — @FastSchedulerBot doesn't have permission to manage admins in that channel. Please add <b>@{username}</b> as an administrator with <b>Post Messages</b> permission in your channel yourself, then tap <b>Check Again</b>.
+============================================================
+KEY: support.help_blank
+Quick commands:
+/schedule - schedule messages
+/recurring - recurring posts
+/list - my messages
+/search - find messages
+/premium - Premium plans
+/referral - referral program
+/language - language
+/timezone - timezone
+/data - import and export hub
+
+For detailed guides open @FastSchedulerSupport_bot:
+============================================================
+KEY: inline.syntax_error_hint
+<b>Correct format:</b>
+<code>&lt;inline&gt;Button Text&lt;link="https://example.com"&gt;</code>
+<code>&lt;inline&gt;Action Name&lt;callback="action_data"&gt;</code>
+Use <code>--</code> to place buttons side by side and <code>//</code> to start a new row.
+
+Fix the syntax and send the message again.
+============================================================
+KEY: change.channel_prompt
+🔄 <b>Replace Channel</b>
+
+You're about to replace <b>{channel}</b> with a new channel.
+
+• {count} scheduled message(s) will move to the new channel
+• Recurring messages keep the old channel — update them separately (they are not redirected automatically)
+
+Forward a message from the new channel to continue.
+============================================================
+KEY: referral_info_text
+🎁 <b>Referral Program</b>
+
+Share your link and earn free Premium days!
+
+<b>Your referral link:</b>
+{ref_link}
+
+<b>📊 Your stats:</b>
+• 👥 Referred users: {ref_count}
+• 📊 Max referrals: {referral_max}
+• 🎁 Earned days: {total_days}
+• ⏱ Used days: {used_days}
+• 📅 Available days: {avail_days}
+
+{referral_requirement_note}
+============================================================
+KEY: referral_requirement_note
+✅ <b>How referrals work:</b>
+• Share your unique referral link with friends
+• When someone joins through your link AND schedules at least one message, it counts
+• You earn {days} free Premium days per successful referral
+• Maximum {max_referrals} referrals allowed
+• Free days are added automatically after verification
+============================================================
+KEY: stats_leaderboard_title
+🏆 <b>Leaderboard</b>
+
+Your top-performing posts ranked by engagement.
+
+Use this to identify:
+• Which content types get the most attention
+• The best times to post
+• What topics generate the most discussion
+• Trends in your channel's growth
+
+<b>💡 Tip:</b> Check your leaderboard weekly to spot patterns and optimize your content strategy.
+============================================================
+KEY: action_channel_pick_title
+📢 <b>Select a Channel</b>
+
+Choose which channel you want to manage:
+
+<b>💡 Tips:</b>
+• Each channel has its own schedule and settings
+• You can connect multiple channels (Premium for 2+)
+• Click a channel name to select it
+
+<b>Don't see your channel?</b>
+Make sure @FastSchedulerBot is an admin in the channel, then use the refresh button.
+============================================================
+KEY: addbot_connected_text
+✅ <b>Bot Connected Successfully!</b>
+
+<b>@{username}</b> is now managing your channel.
+
+<b>What happens next:</b>
+• 📅 Messages will be sent through your sender bot
+• 📊 Statistics will be tracked for this channel
+• 🔒 Your channel data is now isolated and secure
+
+<b>💡 Tip:</b> You can now manage this channel directly from your sender bot!
+============================================================
+KEY: crypto.manual_renew_note
+
+
+⚠️ <b>Important:</b> Crypto payments do not support auto-renewal — you'll need to renew manually every time your subscription ends. 💡 <b>Tip:</b> choose the <b>yearly plan</b> so you only renew <b>once a year</b> instead of every month (renewal is boring — why do it 12 times when you can do it 1?). You also save money with the yearly discount!
+============================================================
+KEY: start.no_args
+🚀 <b>Fast Scheduler Bot</b>
+
+Your personal channel post scheduler. Automate posts, manage channels, and track performance — all from one bot.
+
+<b>Quick start:</b>
+1. Connect a channel (/channel)
+2. Connect a sender bot (/addbot)
+3. Schedule a message (/schedule)
+4. Relax — your bot posts for you!
+
+Use the menu below or type /help to explore all features.
+============================================================
+KEY: media_caption_too_long
+❌ <b>Caption Too Long</b>
+
+Your caption is {count} characters, but the maximum is {max} characters.
+
+<b>Telegram limits:</b>
+• Regular messages: 1024 characters for captions
+• With media: 1024 characters
+
+<b>💡 Tips:</b>
+• Use shorter captions or split into multiple posts
+• Use abbreviations or links to save space
+• Premium users get access to longer captions in some cases
+============================================================
+KEY: upsell_channels
+📢 <b>Connect More Channels</b>
+
+You've reached the free channel limit. Upgrade to Premium to connect up to {limit} channels and manage all your Telegram content from one place.
+
+<b>Premium channel benefits:</b>
+• 📢 Connect up to {limit} channels
+•  Per-channel statistics
+• Dedicated sender bots per channel and much more. 
+
+Upgrade now to unlock the full power of Fast Scheduler!
+============================================================
+KEY: start.onboarding
+🚀 <b>Welcome to Fast Scheduler Bot!</b>
+
+I help you schedule and automate posts for your Telegram channels with ease.
+
+<b>What you can do:</b>
+• Schedule one-time or recurring messages
+• Connect multiple channels and sender bots
+• Store media files for reuse
+• Export and backup your data
+• Track statistics and leaderboards
+
+Use the menu below to get started or type /help for detailed guidance.
+============================================================
+KEY: connected.bot_welcome_creator
+👋 <b>Welcome, {name}!</b>
+
+✅ <b>@{bot}</b> is connected to Fast Scheduler.
+
+📢 <b>Channel:</b> {channel}
+
+<b>What this bot does:</b>
+📨 Sends scheduled messages to your channel
+⚠️ Notifies you if a send fails
+✅ Confirms when messages are delivered
+
+<b>Manage everything from:</b> @FastSchedulerBot
+
+💡 Strangers who start this bot will see your channel name by default. Use the button below to hide it.
+============================================================
+KEY: schedule.edit_prompt
+✏️ <b>Edit Scheduled Message</b>
+
+Send the <b>new version</b> of your scheduled message(s) — it will <b>replace</b> the old one.
+
+You can change the <b>date/time</b> too:
+<code>DD.MM.YYYY HH:MM</code>
+<code>your message</code>
+<i>Or together:</i> <code>DD.MM.YYYY HH:MM your message</code>
+
+Previously sent media will be saved. You can also send new media to add to the current selection or replace it.
+============================================================
+KEY: premium_expiry_no_freeze_thanks
+🎉 Your free Premium has come to an end — thank you for trying Fast Scheduler! We really hope you loved it. 💚
+
+Usually, when Premium ends, the bot freezes everything above the free limits until you choose what to keep — but not for you: your channels, bots and scheduled messages stay exactly as they are, because this Premium came from the <b>{code}</b> competition code. Good luck, and happy scheduling! 🚀
+============================================================
+KEY: weekly_prompt
+📅 <b>Weekly Schedule Setup</b>
+
+Create a recurring weekly post. Choose which day and time this message should repeat.
+
+<b>Format:</b> <code>DAY HH:MM</code>
+
+<b>Examples:</b>
+• <code>Monday 09:00</code> — Every Monday at 9 AM
+• <code>Friday 18:30</code> — Every Friday at 6:30 PM
+• <code>Sunday 12:00</code> — Every Sunday at noon
+
+<b>💡 Available days:</b>
+Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+============================================================
+KEY: backup.export_premium
+🔒 <b>Backup & Export is a Premium Feature</b>
+
+Free users can only view their data. To export your messages, settings, channels, feedback, and other data as a backup file, you need a Premium subscription.
+
+<b>Premium includes:</b>
+• Full backup export (.fsback file)
+• Selective export (choose what to include)
+• Password-protected backups
+• Scheduled automatic backups
+
+💎 <b>Upgrade to Premium to unlock backup and export features.</b>
+============================================================
+KEY: upsell_recurring
+🔄 <b>More Recurring Messages</b>
+
+You've reached the free recurring message limit. Upgrade for up to {limit} recurring schedules!
+
+<b>What are recurring messages?</b>
+Automated posts that repeat on a schedule — perfect for:
+• 📰 Daily news updates
+• 📅 Weekly announcements
+• 🎉 Monthly newsletters
+• 🔔 Regular reminders
+
+<b>Free:</b> 1 recurring message
+<b>Premium:</b> {limit} recurring messages
+
+Automate your content — upgrade to Premium!
+============================================================
+KEY: user_not_admin_channel
+❌ <b>Not a Channel Admin</b>
+
+I couldn't verify your admin status for this channel. To use Fast Scheduler, you need to be an administrator with posting permissions.
+
+<b>To fix this:</b>
+1. Open your channel settings
+2. Go to Administrators
+3. Make sure <b>@FastSchedulerBot</b> is listed as an admin
+4. Ensure "Post Messages" permission is enabled
+
+<b>Already an admin?</b> Try sending the channel link again or forward a message from the channel.
+============================================================
+KEY: admin_panel_text
+🛡 <b>Admin Panel</b>
+
+<b>📊 Bot Management:</b>
+• 👥 <b>Users</b> — View and manage registered users
+• 📢 <b>Channels</b> — Monitor connected channels
+• 📊 <b>Statistics</b> — View bot-wide metrics
+• 💳 <b>Promos</b> — Create and manage promo codes
+• 📢 <b>Broadcasts</b> — Send messages to all users
+• ⭐ <b>Premium</b> — Manage premium subscriptions
+• 🛡 <b>Security</b> — Review security events
+
+<b>💡 Tip:</b> Use the buttons below to access each section.
+============================================================
+KEY: upsell_scheduled_messages
+📅 <b>Schedule More Messages</b>
+
+You've reached the free scheduling limit. Upgrade to Premium for unlimited scheduling!
+
+<b>Free plan:</b> up to {scheduled_free} scheduled messages pending
+<b>Premium plan:</b> unlimited
+
+With Premium, you can:
+• 📅 Schedule weeks of content in advance
+• 🔄 Set up recurring posts (daily, weekly, monthly)
+• 📊 Track all your scheduled content performance
+• 💾 Save media for quick reuse
+
+Start planning ahead — upgrade to Premium today!
+============================================================
+KEY: media_storage_title
+💾 <b>Media Storage</b>
+
+Store and reuse media files across your scheduled messages. Save time by uploading once and using multiple times.
+
+<b>📦 What you can store:</b>
+• 📷 Photos and images
+• 🎬 Videos
+• 🎞 GIFs and animations
+• 📄 Documents
+
+<b>✨ Features:</b>
+• 📁 Organize into storage boxes
+• 🔄 Quick attach to any scheduled message
+• 📊 Track usage and manage files
+• 💾 Premium gets more storage space
+
+<b>💡 Tip:</b> Save your most-used images (logos, templates) for quick access!
+============================================================
+KEY: addbot_token_prompt
+🔑 <b>Enter Your Bot Token</b>
+
+Paste the token you received from <b>@BotFather</b>.
+
+<b>What it looks like:</b>
+<code>1234567890:ABCdefGHIjklmNO_pQrStUvWxYz</code>
+
+<b>⚠️ Security note:</b>
+• This token gives full control over your bot — keep it safe
+• Fast Scheduler stores it encrypted
+• Never share your token publicly
+
+<b>Before pasting, make sure:</b>
+✓ Your bot is created via @BotFather
+✓ Your bot is added as admin in your channel
+✓ You copied the full token (not just the bot ID)
+============================================================
+KEY: addbot_management_disabled
+⚠️ <b>Bot Management is disabled</b>
+
+The <b>Create Bot</b> button needs <b>@{bot}</b> to have <b>Bot Management</b> enabled in @BotFather.
+
+<b>To enable it (bot owner only):</b>
+1. Open @BotFather
+2. Send <code>/setbotmanagement</code>
+3. Select <b>@{bot}</b>
+4. Turn on <b>Can manage other bots</b>
+
+Once enabled, the <b>Create Bot</b> button will work automatically.
+
+<b>You can still connect a bot manually right now:</b> tap <b>🔑 I Have a Token</b>, paste the token you got from @BotFather, and add the bot as a channel admin.
+============================================================
+KEY: tutorial_tz_text
+🕐 <b>Step 2/3 — Time Zone Setup</b>
+
+Setting your timezone ensures messages are published at the exact time you specify — in YOUR local time.
+
+<b>For example:</b>
+If you set a post for "Monday 09:00" and you're in Moscow (UTC+3), it will be sent at 09:00 Moscow time.
+
+<b>Just send me:</b>
+• 🏙 A <b>city name</b> (e.g., <code>London</code>, <code>New York</code>, <code>Tokyo</code>)
+• 🕐 Your <b>current time</b> (e.g., <code>15:30</code>) — I'll detect your zone
+• 📍 A <b>location</b> — for automatic detection
+
+Or pick from the list:
+============================================================
+KEY: sequential_order_detail
+📝 <b>Sequential Order Settings</b>
+
+Choose how your photos should be ordered when using sequential mode:
+
+<b>📅 By Date</b>
+Photos are ordered by their upload date. Newest photos appear first or last based on your selection.
+
+<b>📤 By Sent Order</b>
+Photos are ordered by when they were last sent. This is useful for rotating through your media library.
+
+<b>💡 Tips:</b>
+• Use "By Date" for chronological content (e.g., photo series)
+• Use "By Sent Order" to ensure fresh content is always shown first
+• The order affects how photos are distributed across scheduled posts
+============================================================
+KEY: addbot_verify_error
+❌ <b>Verification Failed</b>
+
+I couldn't verify your bot. This usually means one of these issues:
+
+<b>Common problems:</b>
+• 🔑 <b>Invalid token</b> — Double-check you copied the full token from @BotFather
+• 👤 <b>Bot not in channel</b> — Add your bot as an admin in your channel first
+• 🔐 <b>Missing permissions</b> — The bot needs "Post Messages" permission
+• 🔄 <b>Already connected</b> — This bot might already be linked to another account
+
+<b>To fix:</b>
+1. Verify the token is correct (check @BotFather)
+2. Add the bot as admin in your channel
+3. Give it posting permissions
+4. Click <b>Check Again</b>
+============================================================
+KEY: welcome_addbot_needed
+🤖 <b>Unlock Full Power with a Sender Bot</b>
+
+A sender bot is a dedicated Telegram bot that manages your channel directly. This gives you:
+
+<b>✨ Benefits:</b>
+• 🚀 <b>Faster scheduling</b> — No rate limits from shared bots
+• 🔒 <b>Better security</b> — Your channel data stays isolated
+• 📊 <b>Detailed stats</b> — Track performance per channel
+• ⚡ <b>Priority delivery</b> — Messages sent with higher priority
+
+<b>📋 How to set up:</b>
+1. Open <b>@BotFather</b> in Telegram
+2. Create a new bot with <code>/newbot</code>
+3. Copy the bot token
+4. Send it to me here!
+
+Premium users can connect up to {limit} sender bots.
+============================================================
+KEY: import.select_photo_mode
+📷 <b>Select Media Mode</b>
+
+Choose how your media will be attached to scheduled posts (photos, videos, documents and other files all work in every mode):
+
+<b>📷 Normal</b>
+Each post gets the exact same file. Perfect for branding — use your logo, watermark, or a consistent visual identity across all messages.
+
+<b>🎲 Random</b>
+Each post gets a random file from the mix you uploaded — photos, videos, documents, anything. Great for variety — keeps your channel fresh without repeating the same file.
+
+<b>🔀 Sequential</b>
+Files are sent in order, one per post. Ideal for story-like content, step-by-step tutorials, or any sequence where order matters.
+
+<b>⏭ Skip Media</b>
+Don't attach any files — send text-only posts.
+============================================================
+KEY: select_photo_mode
+📷 <b>Select Media Mode</b>
+
+Choose how your media will be attached to scheduled posts (photos, videos, documents and other files all work in every mode):
+
+<b>📷 Normal</b>
+Each post gets the exact same file. Perfect for branding — use your logo, watermark, or a consistent visual identity across all messages.
+
+<b>🎲 Random</b>
+Each post gets a random file from the mix you uploaded — photos, videos, documents, anything. Great for variety — keeps your channel fresh without repeating the same file.
+
+<b>🔀 Sequential</b>
+Files are sent in order, one per post. Ideal for story-like content, step-by-step tutorials, or any sequence where order matters.
+
+<b>⏭ Skip Media</b>
+Don't attach any files — send text-only posts.
+============================================================
+KEY: help.channel_posting.content
+Every post in your channel is delivered by a <b>sender bot</b> — that is what makes scheduling possible at all. This is not an optional nicety: the scheduler unlocks only after each connected channel has its own sender bot, because Telegram requires a bot to hold <b>Post Messages</b> rights in the channel it posts to.
+
+<b>What this means in practice</b>
+• Posts appear from <b>your bot's name and avatar</b>, not from @FastSchedulerBot — your brand stays in front of readers.
+• One bot per channel. A second channel needs a second bot (create as many as you like in @BotFather).
+• Free plan includes {bots_free} sender bot; Premium raises this to {bots_prem}.
+• If a send ever fails (say, the bot lost its admin rights), Fast Scheduler retries through the main bot so the post is not lost — and warns you to restore the bot's permissions.
+
+Connected a channel but not a bot yet? Open <b>Bots</b> → <b>🔑 I Have a Token</b> and finish the pairing — scheduling, the calendar, and every other sending feature stay locked until then.
+============================================================
+KEY: schedule.prompt
+📝 <b>Schedule a Message</b>
+
+Send me your message with the date and time.
+
+<b>Format:</b>
+<code>DD.MM.YYYY HH:MM</code>
+<code>Your message</code>
+
+<b>Examples:</b>
+<code>25.12.2026 15:30</code>
+<code>Happy Holidays!</code>
+<code>25.12.2026 20:00</code>
+<code>Evening post</code>
+
+<b>Features:</b>
+• Add photos, videos, or documents
+• Create polls and quizzes (anonymous only)
+• Add inline buttons
+• Use formatting (bold, italic, links, etc.)
+
+📌 <b>Inline Buttons:</b>
+Add clickable buttons to your message:
+<code>&lt;inline&gt;Button Text&lt;link="https://example.com"&gt;</code>
+Use <code>--</code> to place buttons side by side, and <code>//</code> to start a new row.
+Button colors: add <code>style="success"</code> (green), <code>style="primary"</code> (blue) or <code>style="danger"</code> (red) inside the button tag.
+
+<blockquote expandable>📝 <b>Notes</b>
+• <b>Premium emojis</b> are not supported.
+• <b>Documents</b> are supported.
+• <b>Telegram Date formatting</b> and <b>Articles</b> are not yet supported.
+• <b>Checklists</b> are not supported.
+• Any Premium-only feature is not yet supported.
+• <b>Multiple messages at once:</b> separate each message with an <b>empty line</b> — a date/time line, then your message, then a blank line, then the next one. You can send as many scheduling messages as you need, one after another — every batch adds to your queue.
+• <b>Supported:</b> text, photos, videos, animations, voice, audio (music), location/venue, documents, polls (anonymous only), stickers.
+</blockquote>
+============================================================
+KEY: schedule.prompt_multi
+📝 <b>Schedule Messages</b>
+
+You have <b>{count}</b> pending.
+
+Add one or more messages using the format below — <b>each message must be separated by an empty line</b> (date/time line, message, blank line, next message…). You can send them separately or include multiple dated messages in one text/file, and you can repeat this as many times as you need. When finished, click <b>Done</b>.
+
+<b>Format:</b>
+<code>DD.MM.YYYY HH:MM</code>
+<code>Your message</code>
+
+<b>Example — 4 messages at once:</b>
+<code>25.12.2026 10:00
+First message
+26.12.2026 10:00
+Second message
+27.12.2026 10:00
+Third message
+28.12.2026 10:00
+Fourth message</code>
+
+📌 <b>Inline Buttons:</b>
+Add clickable buttons: <code>&lt;inline&gt;Button Text&lt;link="https://example.com"&gt;</code>
+Use <code>--</code> for side-by-side buttons and <code>//</code> for a new row.
+Button colors: add <code>style="success"</code> (green), <code>style="primary"</code> (blue) or <code>style="danger"</code> (red) inside the button tag.
+
+<blockquote expandable>📝 <b>Notes</b>
+• <b>Premium emojis</b> (custom emoji) are not supported — will be stripped, text remains.
+• <b>Documents</b> (PDF, DOC, ZIP, etc.) are supported as files.
+• <b>Telegram Date formatting</b> (<code>tg://time</code>) and <b>Articles</b> (rich media) are not yet supported.
+• <b>Checklists</b> are not supported.
+• Any other feature requiring <b>Telegram Premium</b> (paid media, premium stickers, etc.) is not yet supported.
+• <b>Supported:</b> text, photos, videos, animations, voice, audio (music), location/venue, documents, polls (anonymous only), stickers — all compressed per your plan.
+</blockquote>
+============================================================

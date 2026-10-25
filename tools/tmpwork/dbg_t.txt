@@ -1,0 +1,5 @@
+faq_api raw='FAQ: API' cleaned='FAQ: API'
+faq_telegram raw='FAQ: Telegram' cleaned='FAQ: Telegram'
+payment_stars raw='Telegram Stars' cleaned='Telegram Stars'
+contact_email raw='Email' cleaned='Email'
+contact_telegram raw='Поддержка в Telegram' cleaned='Поддержка в Telegram'

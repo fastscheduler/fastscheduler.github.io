@@ -1,0 +1,26 @@
+ia_storage">Media Storage</a><a href="#/c/tools">Tools</a><a href="#/c/tips">Pro Tips</a><a href="#/c/feedback">Feedback &amp; Support</a><a href="#/c/faq">Frequently Asked Questions</a><a href="#/c/commands">Text Commands</a><a href="#/c/errors">Troubleshooting</a><a href="#/c/privacy">Privacy</a><a href="#/c/contact">Contact &amp; Support</a><a href="#/c/config">Settings &amp; Configuration</a></div>
+        <button type="button" class="hc-more" data-more hidden><span data-more-t>Show more</span><span data-less-t hidden>Show less</span></button>
+      </section>
+
+      <section class="view" data-view="article" data-art="start" hidden>
+        <div class="hc-toolbar"><nav class="hc-crumbs" aria-label="Breadcrumb"><a href="#/">Help Center</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg><span aria-current="page">Getting Started</span></nav><div class="hc-tools" data-tools><button type="button" class="hc-tool" data-fs-btn aria-label="Fullscreen article" title="Fullscreen article"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg></button></div></div>
+        <div class="hc-doc">
+        <article class="hc-art hc-card">
+          <h2>Getting Started</h2>
+          <div class="hc-art-meta"><a href="#/c/start">Getting Started</a></div>
+          <div class="hc-body"><p>New here? This section takes you from an empty chat to a published post: connect your channel, connect a sender bot, schedule the first message — then explore the tools that keep a channel running on autopilot.</p>
+<p>The three setup steps are short guides with pictures of what to tap. After that, the glossary explains any term you meet along the way, and the SetDate topic covers bulk-creating schedules from a file.</p></div>
+          
+          
+          
+        </article>
+        
+        
+        <button type="button" class="hc-toc-fab" data-toc-fab aria-label="Open contents" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Contents</span></button>
+        <div class="hc-toc-scrim" data-toc-scrim hidden></div>
+        <div class="hc-toc-sheet" data-toc-sheet role="dialog" aria-modal="true" aria-label="Contents" hidden>
+          <div class="hc-toc-head"><span>Contents</span><button type="button" class="icon-btn" data-toc-close aria-label="Close contents"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+          <div class="hc-toc-nav">
+            <span class="hc-toc-navc prev none"><small>No previous article</small></span>
+            <div class="hc-toc-navc cur"><small>Now reading</small><b>Getting Started</b></div>
+            <a class="hc-toc-navc next" href="#/a/getting_started" data-toc-nav><small>Up next</small><b>Getting Started</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 

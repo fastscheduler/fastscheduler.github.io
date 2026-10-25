@@ -1,0 +1,755 @@
+KEY: backup.no
+No
+============================================================
+KEY: csv.id
+ID
+============================================================
+KEY: no.simple
+No
+============================================================
+KEY: csv.btn
+CSV
+============================================================
+KEY: dup
+Dup
+============================================================
+KEY: faq.btn
+FAQ
+============================================================
+KEY: odt.btn
+ODT
+============================================================
+KEY: rtf.btn
+RTF
+============================================================
+KEY: txt.btn
+TXT
+============================================================
+KEY: confirm.no
+❌ No
+============================================================
+KEY: poll_type_label
+Poll
+============================================================
+KEY: csv.type
+Type
+============================================================
+KEY: duplicate.no
+❌ No
+============================================================
+KEY: json.btn
+JSON
+============================================================
+KEY: no.btn
+❌ No
+============================================================
+KEY: ok.btn
+✅ OK
+============================================================
+KEY: ok.button
+✅ OK
+============================================================
+KEY: copy.btn
+📋 Copy
+============================================================
+KEY: csv.photo_count
+Photos
+============================================================
+KEY: custom.btn
+Custom
+============================================================
+KEY: main.data_btn
+🗂 Data
+============================================================
+KEY: more.btn
+▶ More
+============================================================
+KEY: stop.btn
+⏹ Stop
+============================================================
+KEY: premium_status_active_word
+Active
+============================================================
+KEY: csv.content
+Content
+============================================================
+KEY: en
+English
+============================================================
+KEY: share.btn
+🔗 Share
+============================================================
+KEY: dl.box
+This Box
+============================================================
+KEY: donate.btn
+💰 Donate
+============================================================
+KEY: legal.website_btn
+ Website
+============================================================
+KEY: normal.photo_mode
+📷 Normal
+============================================================
+KEY: pause.btn
+⏸️ Pause
+============================================================
+KEY: random.photo_mode
+🎲 Random
+============================================================
+KEY: terms.accept_btn
+✅ Accept
+============================================================
+KEY: update.btn
+🔄 Update
+============================================================
+KEY: upload.btn
+📥 Upload
+============================================================
+KEY: normal_photo_mode
+📷 Normal
+============================================================
+KEY: random_photo_mode
+🎲 Random
+============================================================
+KEY: copied
+✅ Copied!
+============================================================
+KEY: errors.title
+⚠️ Errors
+============================================================
+KEY: my.bots
+🤖 My Bots
+============================================================
+KEY: no.media_mode
+Text only
+============================================================
+KEY: no.text
+(No text)
+============================================================
+KEY: preview.btn
+👁 Preview
+============================================================
+KEY: resume.btn
+▶️ Resume
+============================================================
+KEY: continue.btn
+▶ Continue
+============================================================
+KEY: continue.inline_btn
+▶ Continue
+============================================================
+KEY: csv.photo_mode
+Photo Mode
+============================================================
+KEY: date.format
+DD.MM.YYYY
+============================================================
+KEY: leaderboard_comments
+💬 Comments
+============================================================
+KEY: pager.prev
+◀ Previous
+============================================================
+KEY: prev.btn
+◀ Previous
+============================================================
+KEY: seq.res_addmore_btn
+➕ Add More
+============================================================
+KEY: seq.res_text_btn
+📝 Add Text
+============================================================
+KEY: checklist.default_title
+📋 Checklist
+============================================================
+KEY: duplicate.btn
+📋 Duplicate
+============================================================
+KEY: main.menu_prev_page
+⬅️ Previous
+============================================================
+KEY: no.items
+🗭 No items.
+============================================================
+KEY: no.review
+(No review)
+============================================================
+KEY: previous
+⬅️ Previous
+============================================================
+KEY: reconnect.bot
+🔄 Reconnect
+============================================================
+KEY: timezone.utc_offset
+UTC{offset}
+============================================================
+KEY: warnings.title
+⚠️ Warnings
+============================================================
+KEY: tutorial_replace_bot_keep_btn
+Keep @{old}
+============================================================
+KEY: bulk.check_on
+@@STORAGE@@✅
+============================================================
+KEY: bulk.check_off
+@@STORAGE@@⬜
+============================================================
+KEY: crypto.payment
+💱 Crypto Bot
+============================================================
+KEY: discount.amount_off
+{amount} off
+============================================================
+KEY: from.today
+📅 From today
+============================================================
+KEY: leaderboard_reactions
+❤️ Reactions
+============================================================
+KEY: learn.benefits
+💡 Learn More
+============================================================
+KEY: loading.text
+⏳ Loading...
+============================================================
+KEY: msg.list_menu
+Menu content
+============================================================
+KEY: not.saved
+❌ Not saved.
+============================================================
+KEY: sequential_photo_mode
+🔀 Sequential
+============================================================
+KEY: sequential_order_choose
+🔀 Sequential
+============================================================
+KEY: stats_channel_wide_tag
+channel-wide
+============================================================
+KEY: count.10
+@@STORAGE@@10
+============================================================
+KEY: count.20
+@@STORAGE@@20
+============================================================
+KEY: count.30
+@@STORAGE@@30
+============================================================
+KEY: no.sender_bot
+No sender bot
+============================================================
+KEY: open.sender_bot_chat
+🚀 Open @{bot}
+============================================================
+KEY: single.post_btn
+📄 Single Post
+============================================================
+KEY: updating
+🔄 Updating...
+============================================================
+KEY: yearly.savings_short
+2 MONTHS FREE
+============================================================
+KEY: media_use_from_storage
+💾From storage
+============================================================
+KEY: expiry_choice_keep_btn
+✅ Keep {name}
+============================================================
+KEY: build.info
+Build: {build}
+============================================================
+KEY: discount.percent_off
+{percent}% off
+============================================================
+KEY: go.to_sender_bot
+🤖 Go to @{bot}
+============================================================
+KEY: legal.refund_btn
+ Refund Policy
+============================================================
+KEY: link.copied
+🔗 Link copied!
+============================================================
+KEY: mark.spam
+🚫 Mark as Spam
+============================================================
+KEY: seq.res_random_btn
+🎲 Random Order
+============================================================
+KEY: total.btn
+Total: {count}
+============================================================
+KEY: leaderboard_commentators
+👥 Commentators
+============================================================
+KEY: dashboard.api
+📊 Dashboard API
+============================================================
+KEY: from.tomorrow
+📅 From tomorrow
+============================================================
+KEY: items.count
+{count} item(s)
+============================================================
+KEY: legal.privacy_btn
+ Privacy Policy
+============================================================
+KEY: move.btn
+@@STORAGE@@Move
+============================================================
+KEY: processing
+⏳ Processing...
+============================================================
+KEY: bots.label
+🤖 Bots ({count})
+============================================================
+KEY: custom.cron
+⚙️ Custom (cron)
+============================================================
+KEY: discounted.price
+discounted price
+============================================================
+KEY: files.btn
+@@STORAGE@@Files
+============================================================
+KEY: frozen.bot_line
+🧊 {count} bot(s)
+============================================================
+KEY: other.btn
+@@STORAGE@@Other
+============================================================
+KEY: privacy.policy
+🛡 Privacy Policy
+============================================================
+KEY: promo.apply
+Apply promo code
+============================================================
+KEY: reply.to_admin
+📩 Reply to Admin
+============================================================
+KEY: reply.to_admin_button_text
+📩 Reply to Admin
+============================================================
+KEY: selected.count
+{count} selected
+============================================================
+KEY: seq.res_specific_btn
+📋 Specific Order
+============================================================
+KEY: stars.payment
+⭐ Telegram Stars
+============================================================
+KEY: time.format
+DD.MM.YYYY HH:MM
+============================================================
+KEY: total.users
+👥 Total: {count}
+============================================================
+KEY: total.messages
+📋 Total: {count}
+============================================================
+KEY: uptime.text
+Uptime: {uptime}
+============================================================
+KEY: waiting
+⏳ Please wait...
+============================================================
+KEY: paysupport.open_btn
+Open Support Bot
+============================================================
+KEY: exit.admin_mode
+🚪 Exit Admin Mode
+============================================================
+KEY: images.btn
+@@STORAGE@@Images
+============================================================
+KEY: last.seen
+Last seen: {date}
+============================================================
+KEY: legal.terms_btn
+ Terms of Service
+============================================================
+KEY: photo.attached
+📷 Photo attached.
+============================================================
+KEY: private.channel
+a private channel
+============================================================
+KEY: rename.btn
+@@STORAGE@@Rename
+============================================================
+KEY: reports.no_data
+🗭 No reports yet.
+============================================================
+KEY: videos.btn
+@@STORAGE@@Videos
+============================================================
+KEY: date.format_hint
+Format: YYYY-MM-DD
+============================================================
+KEY: empty.btn
+@@STORAGE@@🗑 Empty
+============================================================
+KEY: first.seen
+First seen: {date}
+============================================================
+KEY: fsback.nopw_btn
+🔒 Without Password
+============================================================
+KEY: no.media_selected
+No media selected.
+============================================================
+KEY: terms.of_service
+📖 Terms of Service
+============================================================
+KEY: version.text
+Version: {version}
+============================================================
+KEY: bot_manage_no_channel
+No channel attached
+============================================================
+KEY: cron.schedule
+Custom cron: {cron}
+============================================================
+KEY: import.with_normal_photo
+📷 With normal photo
+============================================================
+KEY: preference.saved
+✅ Preference saved.
+============================================================
+KEY: server.time
+Server time: {time}
+============================================================
+KEY: time.format_hint
+Format: HH:MM (24h)
+============================================================
+KEY: unknown.timezone
+❌ Unknown timezone.
+============================================================
+KEY: bot_manage_channel
+📢 Channel: {channel}
+============================================================
+KEY: addbot_to_channel_btn
+Add bot to a channel
+============================================================
+KEY: conversation.history
+Conversation History
+============================================================
+KEY: frozen.channel_line
+🧊 {count} channel(s)
+============================================================
+KEY: fspback.pw_btn
+🔒 Password Protected
+============================================================
+KEY: import.with_random_photos
+📷 With random photos
+============================================================
+KEY: list.empty
+🗭 The list is empty.
+============================================================
+KEY: no.reason
+No reason specified.
+============================================================
+KEY: no.messages
+🗭 No messages found.
+============================================================
+KEY: no.media_received
+❌ No media received.
+============================================================
+KEY: no.bots_connected
+🗭 No bots connected.
+============================================================
+KEY: no.hint_available
+🗭 No hint available.
+============================================================
+KEY: proceed.to_payment
+💳 Proceed to Payment
+============================================================
+KEY: session.cancelled
+❌ Session cancelled.
+============================================================
+KEY: unknown.file_type
+❌ Unknown file type.
+============================================================
+KEY: upgrade.to_premium
+⭐ Upgrade to Premium
+============================================================
+KEY: premium_status_pending_cancel_word
+Pending cancellation
+============================================================
+KEY: no.changes
+❌ No changes to save.
+============================================================
+KEY: promo.code_invalid
+❌ Invalid promo code.
+============================================================
+KEY: promocode.invalid
+❌ Invalid promo code.
+============================================================
+KEY: show.attached_files
+📁 Show Attached Files
+============================================================
+KEY: translations.backup_caption
+🌍 Translations backup
+============================================================
+KEY: bot_manage_title
+⚙ <b>Manage @{bot}</b>
+============================================================
+KEY: compression.help_btn
+🖼️ Compression Details
+============================================================
+KEY: compression.progress
+⏳ Compressing {label}…
+============================================================
+KEY: conversation.closed
+❌ Conversation closed.
+============================================================
+KEY: generating.export
+⏳ Generating export...
+============================================================
+KEY: invoice.label
+⭐ Premium Subscription
+============================================================
+KEY: page.info
+Page {page} of {total}
+============================================================
+KEY: promocodes.none
+No promo codes active.
+============================================================
+KEY: unknown.export_type
+❌ Unknown export type.
+============================================================
+KEY: remove_select_prompt
+Select a bot to remove:
+============================================================
+KEY: continue.wo_bot_btn
+➡️ Continue Without Bot
+============================================================
+KEY: no.bot_connected
+No sender bot connected
+============================================================
+KEY: no.images_received
+No images received yet.
+============================================================
+KEY: promo.applied
+✅ Promo applied: {code}
+============================================================
+KEY: subscribe.channels
+📢 Subscribe to channels
+============================================================
+KEY: subscribed.users
+👥 {count} subscriber(s)
+============================================================
+KEY: timezone.no_tz_selected
+❌ No timezone selected.
+============================================================
+KEY: expiry_disconnected_bots
+Bots removed ({count}):
+============================================================
+KEY: frozen_restore_premium_btn
+Frozen — restore Premium
+============================================================
+KEY: bots.btn
+🤖 Bots ({limit}, {type})
+============================================================
+KEY: datetime.format_hint
+Format: YYYY-MM-DD HH:MM
+============================================================
+KEY: no.photos_received
+❌ No media received yet.
+============================================================
+KEY: payment.error
+❌ Payment error: {error}
+============================================================
+KEY: rename.box_btn
+@@STORAGE@@✏️ Rename Box
+============================================================
+KEY: unknown.command
+❌ Unknown command: {cmd}
+============================================================
+KEY: leaderboard_page_line
+📄 Page {page} of {total}
+============================================================
+KEY: cron.title
+⚙️ Custom Cron Expression
+============================================================
+KEY: max.media_size_mb
+Max media size: {size} MB
+============================================================
+KEY: max.video_size_mb
+Max video size: {size} MB
+============================================================
+KEY: telegram.error
+❌ Telegram error: {error}
+============================================================
+KEY: update.available
+🔄 An update is available!
+============================================================
+KEY: expiry_excess_bots
+Bots to remove ({count}):
+============================================================
+KEY: leaderboard_commentators_title
+👥 <b>Top Commentators</b>
+============================================================
+KEY: duplicate.done
+✅ Duplicate created: {ids}
+============================================================
+KEY: leaderboard_no_data
+🗭 No leaderboard data yet.
+============================================================
+KEY: unknown.action
+❌ Unknown action: {action}
+============================================================
+KEY: connect.channel_sender_bot
+📢 Or connect via sender bot
+============================================================
+KEY: frozen.title
+🧊 <b>This bot is frozen</b>
+============================================================
+KEY: fuzzy.match_multi
+💡 Multiple matches:
+{lines}
+============================================================
+KEY: nopromocodes
+🗭 No promo codes available.
+============================================================
+KEY: page.btn
+📄 Page {current} of {total}
+============================================================
+KEY: pending.bot_ready
+✅ @{bot_username} is ready!
+============================================================
+KEY: reports.active_line
+📊 {active} / {limit} active
+============================================================
+KEY: seq.addmore_progress
+📷 {count}/{needed} received
+============================================================
+KEY: file.parse_error
+❌ Could not parse this file.
+============================================================
+KEY: no.target_user
+No target user. Start again.
+============================================================
+KEY: promocodes.list_title
+🎟 <b>Promo Codes</b>
+
+{list}
+============================================================
+KEY: confirm.photos
+📷 {count} photo(s) confirmed.
+============================================================
+KEY: no.referral_days
+❌ No referral days available.
+============================================================
+KEY: no.referral_days_left
+❌ No referral days remaining.
+============================================================
+KEY: expiry_media_keep_btn
+✅ Keep {name} ({count} items)
+============================================================
+KEY: cron.example_daily
+0 9 * * * — Every day at 09:00
+============================================================
+KEY: frozen.recurring_line
+🧊 {count} recurring message(s)
+============================================================
+KEY: keep.old_media
+@@STORAGE@@Keep existing media
+============================================================
+KEY: promocode.expired
+⌛ This promo code has expired.
+============================================================
+KEY: seq.session_expired
+⏳ Session expired. Start over.
+============================================================
+KEY: cron.example_monthly
+0 9 1 * * — On the 1st at 09:00
+============================================================
+KEY: fuzzy.match_single
+💡 Did you mean: /{cmd} — {desc}
+============================================================
+KEY: message.scheduled
+✅ {count} message(s) scheduled.
+============================================================
+KEY: remember.keep_old_media
+@@STORAGE@@💡 Remember my choice
+============================================================
+KEY: url.button_added
+🔗 URL button: {label} → {value}
+============================================================
+KEY: bot_manage_intro
+Choose what to do with this bot:
+============================================================
+KEY: verify.admin_failed
+❌ Could not verify admin status.
+============================================================
+KEY: status_line_free
+You are on the <b>Free</b> plan.
+============================================================
+KEY: cron.example_weekly
+0 9 * * 1 — Every Monday at 09:00
+============================================================
+KEY: photos.received
+📷 {count} media file(s) received.
+============================================================
+KEY: conversation.closed_text
+This conversation has been closed.
+============================================================
+KEY: no.media_to_save
+@@STORAGE@@No media files to save.
+============================================================
+KEY: processed.media
+📁 {count} media file(s) processed.
+============================================================
+KEY: random.photo_attached
+🎲 Random media attached ({count}).
+============================================================
+KEY: scheduled.sent_late
+⏳ Job #{job_id} sent {delay} late.
+============================================================
+KEY: calendar.messages_for
+📅 <b>{date}</b>
+
+{count} message(s)
+============================================================
+KEY: internal.error_alert
+❌ Internal error. Please try again.
+============================================================
+KEY: duplicate.ask_date
+📅 When should the duplicate be sent?
+============================================================
+KEY: preview.count_prompt
+@@STORAGE@@💾 How many items to show?
+============================================================
+KEY: scheduled.expired_on_restart
+⏳ Job #{job_id} expired ({datetime})
+============================================================
+KEY: select.channel_for_message
+📢 For which channel is this message?
+============================================================
+KEY: crypto.not_configured
+❌ Crypto payments are not configured.
+============================================================
+KEY: feature.disabled
+❌ This feature is currently disabled.
+============================================================
+KEY: file.too_large
+❌ File too large ({size}). Max {max}.
+============================================================
+KEY: session.expired
+⏳ Session expired. Please start over.
+============================================================
+KEY: inline.syntax_error_title
+⚠️ <b>Invalid Inline Button Syntax</b>
+============================================================
+KEY: inline.callback_error_title
+⚠️ <b>Unregistered Callback Button</b>
+============================================================
+KEY: select.channel_for_bot
+📢 Which channel should new bot manage?
+============================================================

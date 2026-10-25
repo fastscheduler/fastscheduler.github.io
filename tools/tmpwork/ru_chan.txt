@@ -1,0 +1,23 @@
+chanLayer" aria-hidden="true">
+              <div class="sl-head chan-head">
+                <svg class="tg-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                <span class="chan-avatar" aria-hidden="true">FT</span>
+                <div class="sl-titles"><span class="sl-name">fastschedule_test3</span><span class="sl-sub">1 284 subscribers</span></div>
+                <span class="hd-ics" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20.4 20.4l-3.9-3.9"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg>
+                </span>
+              </div>
+              <div class="sl-body chan-body" id="chanBody">
+                <div class="chan-msgs" id="chanFeed">
+                <div class="chan-msg chan-hist on">
+                  <span class="chan-media"></span>
+                  <span class="chan-post-cap">posted from the queue — nothing to click</span>
+                  <span class="cp-reacts"><span class="rx on"><i>👍</i><b>42</b></span><span class="rx on"><i>🔥</i><b>18</b></span><span class="rx rx-star on"><i>⭐</i><b>6</b></span></span>
+                  <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b>1 148</b></span><span class="cp-time2">09:12</span><span class="cp-share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></span></span>
+                </div>
+                <div class="chan-msg chan-hist on">
+                  <span class="chan-media"></span>
+                  <span class="chan-post-cap">one batch, a whole week of posts</span>
+                  <span class="cp-reacts"><span class="rx on"><i>👍</i><b>31</b></span><span class="rx on"><i>❤️</i><b>9</b></span><span class="rx rx-star on"><i>⭐</i><b>3</b></span></span>
+                  <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b>864</b></span><span class="cp-time2">14:05</span><span class="cp-share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg><

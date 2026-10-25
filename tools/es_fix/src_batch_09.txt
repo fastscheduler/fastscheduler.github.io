@@ -1,0 +1,780 @@
+KEY: help.edit.content
+Change the content, schedule, or settings of an existing message.
+
+<b>How to Access:</b>
+• From <b>Message List</b>: preview a message, then tap <b>Edit</b>
+• Use <code>/edit</code> followed by a job ID
+
+<b>What You Can Edit:</b>
+<b>Text</b> — change the message content
+<b>Date/Time</b> — reschedule for a different time
+<b>Media</b> — add, change, or remove attached media
+<b>Channel</b> — send to a different channel
+<b>Recurring Schedule</b> — change daily/weekly/monthly settings
+
+<b>Editing a Recurring Message:</b>
+• You can change the time, day, or interval
+• Changes take effect immediately for all future sends
+• Past sends are not affected
+
+<b>Duplicate a Message (⧾ /dub):</b>
+• Use <code>/dub</code> to create an exact copy of a scheduled message
+• Useful for creating variations of the same post
+• The copy starts in edit mode so you can change the date/time
+
+See also: <b>Message List</b> and <b>Delete Messages</b>.
+============================================================
+KEY: help.import_csv.content
+CSV import turns a spreadsheet into scheduled messages — perfect for content plans prepared in Excel or Google Sheets.
+
+<b>The format</b>
+The file needs two columns: <code>Date/Time</code> and <code>Content</code>. Export your sheet as CSV (UTF-8) and send it to the bot during the import flow. Each row becomes one scheduled message; the date column accepts the same formats the bot accepts when typing (for example <code>25.12.2025 10:00</code>).
+
+<b>Where messages land</b>
+Rows are imported into your connected channel — the import targets it directly, there is no channel picker. Times are interpreted in the channel's time zone.
+
+<b>Tips for clean imports</b>
+• Keep one message per row; put line breaks inside the Content cell.
+• Test with a two-row file first, review the result in the Message List, then import the full sheet.
+• Need richer structure (multiple channels, media)? Use <code>.txt</code> blocks or a full backup restore instead.
+============================================================
+KEY: help.search.content
+The search tool finds any scheduled or recurring message by its text — no scrolling through the calendar needed.
+
+<b>How to search</b>
+1. Tap <b>Search</b> on the main menu (second page) or send <code>/search</code>.
+2. Type a keyword or phrase.
+3. The bot lists every matching scheduled and recurring message with its job ID and send time.
+4. Results show job ID and send time — open one and you get the same preview and edit/delete controls as the Message List.
+
+<b>What is searched</b>
+• The text content of all scheduled messages.
+• The text content of all recurring messages.
+• Job IDs such as <code>s_123</code> or <code>r_456</code>.
+Search is case-insensitive, matches partial words ("hel" finds "hello"), and covers <b>all</b> your messages across every channel at once.
+
+<b>Narrowing results</b>
+Use more specific words — the bot matches any of them. To browse by channel or date instead of keyword, the <b>Message List</b> and <b>Calendar</b> tools are the better fit.
+============================================================
+KEY: help.message_list.content
+View, preview, edit, and delete all your scheduled and recurring messages.
+
+<b>How to Access:</b>
+• Click <b>Message List</b> on the main menu or use <code>/list</code>
+• Pick a channel (if you have multiple)
+
+<b>What You See:</b>
+• <b>Scheduled messages</b> — shown with date, time, and preview
+• <b>Recurring messages</b> — shown with schedule info (daily/weekly/monthly)
+• <b>Media type</b> — photo, video, document, or text-only
+
+<b>What You Can Do:</b>
+• <b>Preview</b> — see the full message content and settings
+• <b>Edit</b> — change text, media, date/time, or channel
+• <b>Pause/Resume</b> — temporarily stop a recurring message without deleting it
+• <b>Delete</b> — remove individual messages
+• <b>Delete All</b> — remove all messages at once
+• <b>Delete by ID</b> — remove a specific job ID
+
+<b>Pagination:</b>
+Messages are shown 10 per page. Use <b>Previous</b> / <b>Next</b> to browse.
+
+See also: <b>Edit Messages</b>, <b>Delete Messages</b>, and <b>Pause & Resume</b>.
+============================================================
+KEY: help.legal_update.content
+In October 2026 the three legal documents were rewritten for clarity — no new data collection, no new fees, no change to what the bot does:
+
+• <b>Privacy Policy</b> — now names every service explicitly (Fast Scheduler, SetDate, Support bot, website) and lists exactly what is stored and why. Your rights are unchanged: export a copy anytime (<code>/export</code>, full backup with <code>/backup</code> on Premium) and delete everything on request.
+• <b>Terms of Service</b> — clearer plan and fair-use rules, plus how material changes are announced (in-app notice; continued use after the effective date means acceptance).
+• <b>Refund Policy</b> — spelled out for Telegram Stars: Stars purchases are final under Telegram's own rules, with discretionary refunds for genuine failures (double charge, technical fault). Request via fastschedulebot@gmail.com; we acknowledge within 7 business days.
+
+Each document shows its effective date, and previous versions stay available in the version history on the website.
+============================================================
+KEY: help.admins_transfer.content
+Transferring the Main Owner role is deliberately protected by multiple confirmation layers.
+
+<b>The flow:</b>
+1. The current Main Owner opens the target admin's profile and presses <b>Make Main Owner</b>.
+2. The bot asks the owner to type a confirmation phrase <i>exactly</i> (GitHub-style), e.g. "I confirm that I transfer management of [channel] to [username]".
+3. After the phrase is accepted, a final confirmation button appears — the transfer is not created until it's pressed.
+4. A pending transfer request is sent to the target admin, who must <b>accept</b> or decline it.
+
+<b>While pending:</b> the current owner can cancel the request at any time, and it expires automatically after <b>24 hours</b>.
+
+<b>On accept:</b> the ownership swap is performed atomically — the target becomes the new Main Owner, the old owner stays as a regular admin with full permissions, and both parties are notified. At every critical step the bot re-validates that the target is still a real admin with Post Messages permission.
+============================================================
+KEY: help.sender_bot_management.content
+A sender bot is more than a posting tool — it is also a full management interface for your channel.
+
+<b>How it works</b>
+When you connect a sender bot to a channel, management moves to it <b>automatically</b> — no extra setup. The main bot then shows a restricted menu (or a private "Public Mode" view if you hide the channel), while the full dashboard lives inside your bot.
+
+<b>Inside the sender bot (Management menu)</b>
+• <b>Hide / Show Channel</b> — in Public Mode your channel name is hidden from strangers who start the bot; they only see a generic welcome and an Open Main Bot button.
+• <b>Admins</b> — grant other Telegram accounts limited access to your channel: scheduling, viewing stats, or managing settings (RBAC).
+• Channel admins open the same bot and see exactly the tools their role allows — nothing more.
+
+<b>Restore to the main bot?</b> Not needed. Management stays with the sender bot; if the bot's token ever breaks, Fast Scheduler falls back to the main bot for delivery so posts are never lost.
+============================================================
+KEY: help.channel_posting.content
+Every post in your channel is delivered by a <b>sender bot</b> — that is what makes scheduling possible at all. This is not an optional nicety: the scheduler unlocks only after each connected channel has its own sender bot, because Telegram requires a bot to hold <b>Post Messages</b> rights in the channel it posts to.
+
+<b>What this means in practice</b>
+• Posts appear from <b>your bot's name and avatar</b>, not from @FastSchedulerBot — your brand stays in front of readers.
+• One bot per channel. A second channel needs a second bot (create as many as you like in @BotFather).
+• Free plan includes {bots_free} sender bot; Premium raises this to {bots_prem}.
+• If a send ever fails (say, the bot lost its admin rights), Fast Scheduler retries through the main bot so the post is not lost — and warns you to restore the bot's permissions.
+
+Connected a channel but not a bot yet? Open <b>Bots</b> → <b>🔑 I Have a Token</b> and finish the pairing — scheduling, the calendar, and every other sending feature stay locked until then.
+============================================================
+KEY: help.getting_started.content
+Three steps and your first post is scheduled. The whole setup usually takes five minutes.
+
+<b>Step 1: Connect your channel</b>
+Add <b>@FastSchedulerBot</b> as an administrator of your channel with at least the <b>Post Messages</b> permission. Then in the bot: <b>Channels</b> → <b>Connect Channel</b>, and send <code>@yourchannel</code> or simply forward any post from the channel.
+
+<b>Step 2: Connect a sender bot</b> — required
+Posts are delivered by your own bot; scheduling stays locked until every connected channel has one. Create a bot in <b>@BotFather</b> (<code>/newbot</code>), copy its token, and paste it in <b>Bots</b> → <b>🔑 I Have a Token</b>. Then make <b>your bot</b> an administrator of the same channel, also with Post Messages.
+
+<b>Step 3: Schedule your first message</b>
+Tap <b>📅 Schedule a Message</b>, enter the date and time (<code>25.12.2025 10:00</code>), type the post, preview, confirm. Done — it publishes itself.
+
+Each step has a detailed guide below, plus answers to the questions new users ask most.
+============================================================
+KEY: help.gs_step2.content
+Every channel needs its own sender bot - it is required to post scheduled messages. Your own bot also makes posts appear from your bot's name.
+
+<b>1. Create a bot</b>
+Open <b>@BotFather</b> in Telegram. Send <code>/newbot</code> and follow the prompts. Choose a name and username. Copy the token — it looks like: <code>1234567890:ABCdef..._XYZ</code>
+
+<b>2. Enter the token</b>
+In Fast Scheduler, click <b>Bots</b> → <b>I Have a Token</b>. Paste the token. The bot will be verified and connected automatically.
+
+<b>3. Assign to a channel</b>
+Choose which channel this bot should send to. Make sure your bot is an <b>Administrator</b> in that channel (add it in channel settings with Post Messages permission).
+
+<b>4. Done!</b>
+Messages will now be sent from your own bot.
+
+<b>Limits</b>
+Free: 1 bot. Premium: up to 3 bots.
+
+<b>Common Issues</b>
+"Invalid token" — copy the FULL token including the colon and all characters.
+"Bot is not admin" — add your bot as admin in the target channel.
+"Bot limit reached" — disconnect an existing bot or upgrade to Premium.
+============================================================
+KEY: help.scheduling.content
+Everything about one-time scheduling: the basic flow, every content type the bot can post, and the tools to manage what you have queued.
+
+<b>The basic flow</b>
+1. Tap <b>Schedule Message</b> (or send <code>/schedule</code>).
+2. Pick the channel — the bot you paired with it will do the posting.
+3. Enter the date and time: use the format <code>DD.MM.YYYY HH:MM</code> (for example <code>25.12.2025 10:00</code>) or send it in the same message as the text.
+4. Send the message content — plain text or with photos, videos, documents, polls, stickers, voice, locations.
+5. Review the preview and confirm.
+
+The post goes out automatically at the chosen time, in the channel's time zone. Before scheduling works at all, two things must be connected: the channel (bot as admin) and its sender bot — see Getting Started if you are not there yet.
+
+<b>Managing the queue</b>
+Everything you schedule lands in the <b>Message List</b> and <b>Calendar</b>: preview before it posts, edit any detail, or delete what changed. The topics below cover each content type and every management tool.
+============================================================
+KEY: help.connect_channel.content
+Before you can schedule messages, you need to connect a Telegram channel.
+
+<b>Requirements</b>
+• The main bot <b>@FastSchedulerBot</b> must be an <b>Administrator</b> in the channel
+• Give it at least <b>Post Messages</b> permission
+• For sender bots: the sender bot must also be an admin
+
+<b>How to Connect</b>
+1. Add the bot to your channel as Administrator
+2. In Fast Scheduler, go to <b>Connected Channel</b>
+3. Click <b>Connect Channel</b>
+4. Send the channel username: <code>@yourchannel</code>
+ • Or forward any message from the channel
+ • Or send an invite link
+ • Or send the channel ID (e.g., <code>-1001234567890</code>)
+
+<b>Multiple Channels</b>
+• Free plan: 1 channel
+• Premium: up to 3 channels
+• Switch between channels at any time during scheduling
+
+<b>Removing a Channel</b>
+• Go to <b>Connected Channel</b> → click on the channel
+• Scheduled messages for that channel will be paused
+
+<b>Common Errors</b>
+• "Bot is not an admin" — add the bot as admin in channel settings
+• "Channel not found" — check the username/link is correct
+• "Invalid format" — use @username or full invite link
+============================================================
+KEY: help.import_data.content
+Import brings messages back into the scheduler from a file — the mirror image of Export.
+
+<b>How to import</b>
+1. Open <b>Data</b> → <b>Import</b> (or send <code>/import</code>).
+2. Send the file: a <code>.fsback</code>/<code>.fspback</code> backup, a <code>.txt</code> message list, a <code>.csv</code> spreadsheet, or a SetDate schedule.
+3. For password-protected backups, enter the password when asked.
+4. Confirm — full backups restore with an <b>Overwrite</b> or <b>Add</b> choice.
+
+<b>Two kinds of import</b>
+• <b>Backup restore</b> (from your own <code>/backup</code> files): everything comes back — scheduled and recurring messages, settings, channels, bots, media boxes. Overwrite replaces the current data; Add merges on top of it.
+• <b>Message lists</b> (<code>.txt</code> / <code>.csv</code> / SetDate): each block or row becomes a scheduled message in <b>your connected channel</b>, so make sure the channel is connected before you start.
+
+<b>Before you confirm</b>
+A full restore with <b>Overwrite</b> replaces your current data. If in doubt, run <code>/export</code> first (Premium) so you always have a way back.
+============================================================
+KEY: help.referral_credit.content
+Here is exactly what happens from click to Premium days, for both sides.
+
+<b>1. Click.</b> A new user opens your link and starts the bot. The click is recorded instantly, but nothing is granted yet — this is what the "pending" state in your list means.
+
+<b>2. Verify.</b> The new user connects a channel and schedules at least {referral_min_messages} message — the same verification you completed to unlock the program. Until then, the referral stays pending.
+
+<b>3. Credit.</b> The moment they qualify, <b>both of you receive 3 Premium days</b>: the days land in your referral balance (see them with <code>/referral</code> under Available days). If you already have paid Premium, the days wait in your balance until it ends.
+
+<b>4. Activate.</b> On the free plan, activate earned days from the referral menu — a Premium period starts immediately. Used days move to the Used counter so you always see earned, used and available totals.
+
+<b>Limits.</b> Each user can generate referral rewards from up to 15 referees, i.e. a 45-day total. One referral per user — the same newcomer can never credit you twice, even if they click your link again.
+============================================================
+KEY: help.referral_beta.content
+The Referral Program is currently in <b>BETA</b>. It works end to end — links, tracking, crediting and day activation are all live — but you may occasionally run into rough edges: a counter that updates with a delay, a list that needs a reopen to refresh, or a message that reads slightly differently from what you expected.
+
+<b>Your earned days are safe.</b> Beta status affects polish, never balances. Every qualifying referral is recorded the moment it happens, and Premium days, once earned, are never lost because of a display glitch. If something looks wrong, reopen the <code>/referral</code> menu first — most counters refresh on open.
+
+<b>Help us finish it.</b> If you spot an error, tell us through <code>/feedback</code> with what you did step by step and, if possible, a screenshot. Beta reporters directly shape the final version: unclear texts get rewritten and confusing flows get simplified because of your reports.
+
+<b>What may change.</b> Reward sizes, limits and rules can still be tuned while the program is in beta. Any change will be announced in the referral menu itself — earned balances are always honored under the rules that were live when they were earned.
+============================================================
+KEY: help.admins_limits.content
+All message-related limits are counted <b>per channel</b>, never per user.
+
+<b>Who counts:</b> every admin of the channel — the Main Owner and everyone else — contributes to and shares one single quota. Two admins scheduling for the same channel consume the same budget.
+
+<b>Monthly send limit (Free):</b> counts messages actually <i>sent</i> to the channel during the current calendar month — up to {monthly_sent_free}. The counter never drops when messages are deleted; it resets on the 1st of the next month, or immediately when Premium becomes active for the channel. <b>Pending queue cap:</b> up to {scheduled_free} scheduled messages can wait to be sent at once (per channel, shared).
+
+<b>Pending scheduled cap:</b> messages waiting to be sent for the channel, shared across all admins.
+
+<b>Recurring limit:</b> active recurring messages for the channel, again shared.
+
+<b>Premium is per channel:</b> if any admin activates Premium, the channel gets the Premium limits for everyone who uses it, while your other channels stay unaffected.
+
+This prevents the classic free-plan loophole where several admins each connect the same channel to multiply the free limits — the quota is on the channel itself.
+============================================================
+KEY: help.recurring_uses.content
+Recurring messages handle most repeat-posting needs. A few common ways to use them:
+
+<b>Daily Digest</b>
+Send a daily roundup every morning:
+1. Use <b>Recurring Message</b>, set it to repeat every day.
+2. Enter the send time, e.g. <code>09:00</code>.
+3. Write the digest content (or use the SetDate bot to prepare a full month).
+
+<b>Event Reminder</b>
+Remind your audience about an event:
+• Schedule an announcement at the event time.
+• Add reminder posts: <b>-1 day</b>, <b>-3 hours</b>, <b>-10 minutes</b>.
+• Use inline buttons for "Add to calendar" or "Buy ticket".
+
+<b>News Roundup</b>
+Post a daily or weekly news roundup:
+• Create a recurring message that runs on weekdays.
+• Use SetDate to preload a month of news scripts.
+• Attach a header image from your media storage.
+
+<b>Promo Blast</b>
+Schedule a promotion across channels:
+• Write the promo and add inline buttons ("Shop", "Learn more").
+• Schedule it at your best posting time per channel.
+• Add follow-up reminders on days 2 and 5.
+
+<b>Daily Quote</b>
+Post a quote every morning:
+• Use a recurring daily message at <code>08:00</code>.
+• Prepare a month of quotes in SetDate and import them.
+• Optionally attach a matching image from storage.
+============================================================
+KEY: help.recurring_pause_resume.content
+Pause and resume recurring messages without deleting them.
+
+<b>How to Pause:</b>
+1. Open <b>Message List</b> (or use <code>/list</code>)
+2. Select <b>Recurring Messages</b>
+3. Find the message you want to pause
+4. Tap the <b>⏸</b> button next to it
+5. Confirm the pause
+
+<b>What Happens When Paused:</b>
+• The message stops sending immediately
+• The message is NOT deleted — it stays in your list
+• The schedule is preserved
+• You can see it marked as 'Paused' in the list
+
+<b>How to Resume:</b>
+1. Open <b>Message List</b>
+2. Select <b>Recurring Messages</b>
+3. Find the paused message (marked with ⏸ Paused)
+4. Tap the <b>▶</b> button next to it
+5. Confirm the resume
+
+<b>What Happens When Resumed:</b>
+• The message starts sending again on its schedule
+• No content or settings are lost
+• The next send happens at the next scheduled time
+
+<b>Use Cases:</b>
+• <b>Seasonal content</b> — pause holiday posts when out of season
+• <b>Temporary breaks</b> — pause during vacations or events
+• <b>Testing</b> — pause to review content before going live
+• <b>Rotation</b> — pause one message while another takes priority
+
+<b>Tip:</b> Pausing is better than deleting if you might want to use the message again later.
+============================================================
+KEY: help.premium_expiry.content
+When your Premium subscription ends, nothing is deleted on day one. You get a grace period, reminders, and a chance to choose what to keep.
+
+<b>The timeline at a glance:</b>
+• <b>Before expiry:</b> you receive reminders at 7, 3 and 1 day(s) left.
+• <b>Day 0:</b> a "Choose What to Keep" menu appears - pick up to {channels_free} channel, {bots_free} bot and {recurring_free} recurring message, plus (if you use it) the media storage box you want to keep.
+• <b>Days 1-2:</b> everything still works normally; you can change your choices.
+• <u>Day 3:</u> you get a final warning and an automatic backup file (.fsback).
+• <u>Day 4:</u> messages to the channels you did NOT keep stop sending. Your kept channel keeps working.
+• <u>Day 17:</u> media cleanup - non-kept storage boxes are deleted and the kept box is trimmed to {storage_items_free} items (videos first).
+• <u>Day 35 + 12 h:</u> final warning, then excess channels and sender bots are disconnected and their data removed. Signatures are deleted.
+
+<b>Good news:</b> renew at any point before the final disconnect and everything restores instantly - channels, bots, messages and media.
+
+See the sub-topics below for the grace period, frozen assets, renewal and refunds.
+============================================================
+KEY: help.referral_verify.content
+To unlock the Referral Program you must <b>connect a channel</b> and <b>schedule at least {referral_min_messages} message</b>. This is not bureaucracy — it is how we verify your account is real.
+
+<b>Why we do it.</b> Every referral reward is paid out as Premium time, and Premium time costs us real money (Telegram Stars fees and server costs). Without verification, anyone could spin up dozens of empty accounts in minutes and drain the reward pool — which would force us to shut the program down for everyone, including honest users.
+
+<b>What counts as verification.</b> Connecting a channel proves you have something real to post to; scheduling a message proves you actually use the bot. Both checks are automatic and take most users under two minutes: send your channel link in Step 1 of the tutorial, then schedule any post — even a test message to yourself counts.
+
+<b>What we check — and what we don't.</b> We only look at anonymous counters (channels connected, messages created). We never read your message contents, never ask for documents or phone numbers, and never share anything with third parties. Verification is purely about activity, not identity.
+
+<b>Common confusion.</b> Opening the Referral menu before verifying shows a locked screen — that is expected, not a bug. Finish the two steps above and the menu unlocks by itself; nothing else is required.
+============================================================
+KEY: help.media_types.content
+After sending your message text, you choose how media (photos, videos, etc.) is attached.
+
+<b>1. Random Mix Mode </b>
+• Send <b>multiple</b> files during scheduling — photos, videos, documents, anything, even mixed together
+• Each scheduled message gets a <b>random</b> item from your collection, sent with the right method for its type
+• Different media each time — great for variety and engagement
+
+<b>2. Normal Photo Mode </b>
+• Send <b>one</b> photo or video during scheduling
+• That single media is attached to <b>every</b> scheduled message
+• Simple and consistent — same image for all posts
+
+<b>3. Sequential Order </b>
+• Send multiple media files <b>in order</b>
+• They are assigned <b>in sequence</b> to your messages
+• First media → first message, second → second, etc.
+• After the last media, repeats from the first
+• Choose order by <b>date</b> (upload time) or <b>sent</b> (input order)
+
+@@STORAGE@@<b>4. From Storage </b>
+@@STORAGE@@• Use media you've saved in <b>Media Storage</b>
+• Pick from your saved collection
+• Saves time if you reuse media across multiple schedules
+
+<b>5. No Media </b>
+• Text-only messages
+• No photos, videos, or files attached
+
+<b>Tips:</b>
+• For photo albums, send multiple photos in one batch using Normal mode
+• Videos must be under plan limits (Free: {max_video_free}, Premium: {max_video_prem})
+• You can mix text-only and media messages in the same batch
+============================================================
+KEY: help.admins_permissions.content
+The Main Owner manages an RBAC-style permission list for every admin of the channel.
+
+<b>What can be controlled:</b>
+• Scheduling messages
+• Creating recurring messages
+• Viewing statistics
+• Leaderboard access
+• Exporting data
+• Managing messages (edit/delete)
+• Managing sender bots
+
+<b>Editing:</b> the owner opens an admin's profile and toggles permissions. Changes are collected into a draft — press <b>Save Changes</b> to apply them, and the bot shows a clear summary of exactly what changed before notifying the affected admin. Leaving the editor with unsaved changes prompts you to save or discard.
+
+<b>Immediate effect:</b> as soon as permissions are saved, buttons for disabled features disappear from that admin's menu, and enabled ones appear. If the admin taps an old button anyway, the bot replies "You do not have permission…" with a <b>Request permission from the admin</b> button.
+
+<b>Auto-revocation:</b> if an admin is removed from the channel in Telegram, or loses the <b>Post Messages</b> permission, all their bot-side permissions are revoked automatically on the next check — no manual cleanup needed.
+
+<b>Requests:</b> an admin who lacks a permission can request it (optionally with an explanation). The owner receives a Yes/No request and can send back a reply when declining. Anti-spam: one request per permission per user per week. The owner can also switch off request notifications for a specific admin.
+============================================================
+KEY: help.config.content
+Configure Fast Scheduler to work exactly how you want.
+
+<b>Language </b>
+• Use <code>/language</code> or tap <b>Language</b> on the main menu
+• Choose from available languages
+• Changes sync with @SetDate_bot (you'll be asked to confirm)
+• See <b>Language</b> help topic for details about sync, disabling, and hiding notifications
+
+<b>Timezone </b>
+• Use <code>/timezone</code> to set your timezone
+• Set per-channel timezones for multi-channel users
+• Supports city search, location detection, and manual offset
+• Messages are scheduled in your local time
+• See <b>Timezone</b> help topic for details
+
+<b>Signature </b>
+• Premium feature — add a signature to your messages
+• Choose position (start/end) and blank lines before it
+• Preview before saving
+• See <b>Signature</b> help topic for details
+
+<b>Channels </b>
+• Each channel can have its own timezone
+• Manage connected channels with <code>/channel</code>
+
+<b>Commands </b>
+• See <b>Commands Overview</b> for the full command list
+• Most features are accessible via both commands and buttons
+
+<b>Language Sync</b>
+• Language is shared between @FastSchedulerBot and @SetDate_bot
+• Can be disabled entirely in the Language menu
+• Anyone can disable sync entirely in the Language menu
+
+<b>Managing Multiple Channels & Bots</b>
+• Connect up to {channels_free} channel ({channels_prem} on Premium)
+• Connect up to {bots_free} sender bot ({bots_prem} on Premium)
+• Each channel can use a different sender bot
+• See relevant help topics for details
+============================================================
+KEY: help.commands_list.content
+Here is the full command list:
+• <code>/start</code> — open the main menu
+• <code>/help</code> — help center
+• <code>/channel</code> — connect or manage a channel
+• <code>/schedule</code> — schedule a message
+• <code>/recurring</code> — create a recurring message
+• <code>/list</code> — see all scheduled messages
+• <code>/search</code> — search your messages
+• <code>/calendar</code> — monthly calendar view
+• <code>/delete</code> — delete messages or media
+• <code>/bots</code> — manage sender bots
+• <code>/storage</code> — manage media storage
+• <code>/premium</code> — view or buy Premium
+• <code>/referral</code> — invite friends and earn days
+• <code>/language</code> — change language
+• <code>/timezone</code> — manage timezones
+• <code>/stats</code> — usage statistics
+• <code>/data</code> — import/export hub
+• <code>/export</code> — export messages as a file
+• <code>/import</code> — import messages from a file
+• <code>/backup</code> — create/restore a backup
+• <code>/feedback</code> — feedback & support
+• <code>/paysupport</code> — payments support
+• <code>/cancel</code> — cancel any active operation
+• <code>/dub</code> — duplicate a scheduled message
+• <code>/edit</code> — edit a scheduled message
+• <code>/signature</code> — signature menu
+• <code>/promocode</code> — apply a promo code
+• <code>/addbot</code> — connect a sender bot
+• <code>/listbots</code> — list your sender bots
+• <code>/removebot</code> — remove a sender bot
+• <code>/skip</code> — skip the current step
+• <code>/newchannel</code> — connect a new channel
+
+Most features are also reachable from the main menu buttons.
+============================================================
+KEY: help.setdate.content
+Need to schedule many posts at once? The <b>SetDate Bot</b> lets you bulk-create schedules in minutes.
+
+<b>What is SetDate?</b>
+SetDate is a companion bot that helps you create multiple scheduled messages quickly. Instead of entering each message one by one, you prepare all messages in SetDate and import them in one click.
+
+<b>How It Works</b>
+1. Click <b>Open SetDate</b> during the scheduling flow
+2. The SetDate bot opens with your context
+3. Set a start date and how many posts per day
+4. Define posting times (e.g., 09:00, 14:00, 18:00)
+5. Send your text messages — one per block separated by blank lines (or one by one, then Done); .txt upload works too, media is added later during import
+6. Generate a schedule file
+7. Click <b>Import to Fast Scheduler</b>
+8. You return to Fast Scheduler with all messages pre-loaded
+9. Choose media options and confirm
+
+<b>Benefits</b>
+• Schedule 10, 50, or 100+ posts in just a few minutes
+• Auto-assigns dates and times to each message
+• Supports European and American date formats
+• Supports inline buttons with custom layouts
+• Plain-text posts; <inline> button markup carries over to Fast Scheduler
+
+<b>Features</b>
+• Flexible time parsing: <code>08:00</code>, <code>2:00 PM</code>, <code>12;00</code>
+• Upload .txt files with your posts
+• Download your schedule as .txt, .csv, or .json
+• Summary with dates and totals plus downloads before importing
+• One-click import back to Fast Scheduler
+
+<b>Language Sync</b>
+Both bots share your language preference. When you change the language in one, the other bot sends you a message asking if you want to sync the change — tap Yes to apply it.
+============================================================
+KEY: help.schedule_advanced.content
+Beyond the basic flow, the scheduler covers a set of practical extras. Here is the complete picture.
+
+<b>Editing scheduled messages</b>
+Everything about a pending message stays editable until the moment it is sent: open the <b>Message List</b>, tap the message, and choose <b>🔄 Replace</b> (or use <code>/edit</code> with the job ID). You can change the text, the date and time, the attached media, and even the target channel. The bot shows a fresh preview before saving.
+
+<b>Deleting messages</b>
+Pending messages can be removed one by one from the Message List, via <code>/delete</code>, or by job ID. <b>Delete All</b> wipes every scheduled and recurring message for a channel at once — use it with care, the bot asks for confirmation first.
+
+<b>Scheduling forwardable content</b>
+Anything you can forward inside Telegram can be scheduled: forward a post from another channel while scheduling, and the bot copies its text and media into your own post. Polls and <b>quizzes</b> work the same way: create the poll in any chat and forward it to the bot during scheduling (or create it inline in the bot if your Telegram version supports poll sending), then pick a date. Only anonymous polls may post in channels — that is a Telegram rule for channels, not a bot limit.
+
+<b>Special content types</b>
+• <b>Location and venues</b> — send the location during scheduling.
+• <b>Voice messages and video notes</b> — recorded or forwarded as usual.
+• <b>Animated GIFs and stickers</b> — stickers can even carry a text caption, posted right after the sticker.
+
+<b>Time zones</b>
+Every date you enter is interpreted in the <b>channel's time zone</b>, so a channel with an international audience posts exactly when its readers are awake. Set or check it under <b>Channels</b> → the channel → <b>Time Zone</b>, or with <code>/timezone</code>.
+============================================================
+KEY: help.content_types.content
+Here is everything you can send in your scheduled messages on the <b>Free plan</b>:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+<b>Text</b>
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Plain text or formatted text (bold, italic, underline, strikethrough, spoiler, code, links)
+• Inline buttons with <code>&lt;inline&gt;</code> syntax — add clickable links
+• Polls and quizzes (send a poll from any chat and forward it during scheduling — only <b>anonymous</b> polls work in channels)
+• Text-only messages (no media attached)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+<b>Photos</b>
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Single photos (JPEG, PNG) with optional caption
+• Photo albums (multiple photos grouped in one message — send them together during scheduling)
+• Random photo mode: send multiple photos, each message gets a random one
+• Sequential photo mode: photos assigned in order to your messages
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+<b>Videos</b>
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Videos {max_video_free} each
+• Supported formats: MP4, MOV, AVI
+• Can be sent with or without a text caption
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+<b>Documents & Files</b>
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Any file type: PDF, DOC, XLS, ZIP, TXT, etc.
+• Animations (GIF)
+• Voice messages (OGG)
+• Audio files (MP3)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+<b>What Requires Premium</b>
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Videos larger than {max_video_free} ({max_video_prem} on Premium)
+@@STORAGE@@• Media Storage <b>videos</b> (not allowed on Free)
+@@STORAGE@@• More than <b>1 Media Storage</b> box (up to 20 on Premium)
+@@STORAGE@@• More than <b>{storage_items_free} storage items</b> ({storage_items_prem} on Premium)
+• Everything else works on the Free plan!
+
+<b>Tip:</b> To see your current plan limits, use <code>/stats</code> or check the <b>Plan Limits</b> help topic.
+
+@@STORAGE@@<b>Need to send larger files?</b> Upgrade to Premium with <code>/premium</code> to unlock {max_video_prem} video support and {storage_items_prem} storage.
+============================================================
+KEY: help.media_retention.content
+All media you send to the bot is automatically <b>compressed</b> &mdash; this shrinks the file Telegram stores and sends, and keeps it within your plan's size limits.
+
+<b>Compression Comparison</b>
+<pre>Feature            │ Free               │ Premium
+───────────────────┼────────────────────┼───────────────────────
+Photo max          │ {free_photo_max_dim}px            │ {premium_photo_max_dim}px
+Photo quality      │ Q{free_photo_quality}               │ Q{premium_photo_quality}
+Video max          │ {free_video_max_dim}p              │ {premium_video_max_dim}p
+Video CRF          │ {free_video_crf}                 │ {premium_video_crf}
+Video bitrate      │ {free_video_bitrate}bps             │ {premium_video_bitrate}bps
+Audio bitrate      │ {free_audio_bitrate}                │ {premium_audio_bitrate}
+Voice bitrate      │ {free_voice_bitrate}               │ {premium_voice_bitrate}
+4K media           │ Blocked          │ Allowed</pre>
+
+Compression is applied automatically when you upload media to: Media Storage, Scheduled / Recurring messages, Feedback attachments, Broadcasts, and anywhere else in the bot.
+Documents and stickers are stored as-is without compression.
+
+<b>Media Retention & Cleanup</b>
+
+The bot periodically removes old media references that are no longer needed:
+
+<b>Ratings</b>
+• Admin reply media in rating reviews: deleted after <b>30 days</b>
+• The rating (stars, review text) stays forever
+
+<b>Feedback / Support tickets</b>
+• Attachments in closed / spam tickets: deleted after <b>30 days</b> from closure
+• The conversation text stays forever
+
+<b>Media Storage</b>
+• Items are kept until <b>you delete them</b> manually
+• Never auto-deleted
+
+<b>Scheduled Messages</b>
+• Media reference is removed immediately <b>after the message is sent</b>
+• No data lingers
+
+<b>Recurring Messages</b>
+• Media stays until <b>you delete the recurring message</b>
+• Free accounts: recurring message expires after <b>1 year</b> and is auto-removed
+============================================================
+KEY: help.connect_bot.content
+Every channel needs its own sender bot - a Telegram bot <b>you</b> own that posts messages to your channel under the bot's name.
+
+<b>Why Connect Your Own Bot?</b>
+• Messages are sent from YOUR bot, not the main bot
+• Your bot's name and photo appear as the author
+• Professional appearance for your channel
+• Low sending delays — your messages go out through your bot, not the shared main bot queue
+• Detailed channel leaderboards — see most viewed, most reacted, and most commented posts for each channel
+
+<b>How to Get a Bot Token</b>
+1. Open <b>@BotFather</b> on Telegram
+2. Send <code>/newbot</code> and follow the instructions
+3. Choose a name and username for your bot
+4. Copy the token (format: <code>1234567890:ABCdef..._XYZ</code>)
+5. <b>Never share your token</b> with anyone you don't trust
+
+<b>How to Connect</b>
+1. In Fast Scheduler, click <b>Bots</b> or use <code>/bots</code>
+2. Click <b>🔑 I Have a Token</b>
+3. Send the bot token you copied from @BotFather
+4. Select which channel this bot should send to
+5. Make sure your bot is an <b>Administrator</b> in the target channel
+
+<b>Limits</b>
+• Free plan: 1 bot
+• Premium: up to 3 bots
+
+<b>Managing Bots</b>
+• Click <b>Bots</b> on the main menu to see all connected bots
+• You can replace a bot's token or disconnect it
+• Disconnecting a bot puts its channel back into "connect a sender bot" state — reconnect a bot to schedule again
+
+<b>Inside Your Sender Bot</b>
+• Management moves to the sender bot automatically when it is connected
+• <b>Management → Hide Channel</b> — strangers who start your bot won't see your channel name (Public Mode)
+• <b>Management → Admins</b> — give other people limited access to your channel
+• <b>Statistics</b> — open per-channel stats and leaderboards
+
+<b>Troubleshooting</b>
+• "Invalid token" — make sure you copied the FULL token from @BotFather
+• "Bot is not admin" — add your bot as an administrator in the channel
+• "Bot limit reached" — remove an existing bot or upgrade to Premium
+============================================================
+KEY: help.gs_step3.content
+Click <b>Schedule Message</b> on the main menu or use the <code>/schedule</code> command.
+
+<b>2. Pick a channel</b>
+If you have multiple channels, select one. If you have only one, this step is skipped.
+
+<b>3. Enter date/time</b>
+Formats: <code>DD.MM.YYYY HH:MM</code>, <code>YYYY-MM-DD HH:MM</code>
+Example: <code>25.12.2025 10:00</code> or <code>2025-12-25 10:00</code>
+You can also use 12-hour format: <code>25.12.2025 10:00 AM</code>
+Or relative: <code>tomorrow 09:00</code>, <code>today 18:00</code>
+Or just time: <code>HH:MM</code> or <code>HH.MM</code> — schedules for today (rolls to tomorrow if passed)
+
+<b>4. Send message content</b>
+Type your message text. Use Telegram formatting: <code>**bold**</code>, <code>__italic__</code>, <code>[text](url)</code>, etc. You can also send a photo with caption, video, document, poll, or voice message.
+
+<b>5. Add media (optional)</b>
+Choose how to attach media:
+• <b>Random</b> — pick from multiple files (any mix: photos, videos, documents), each message gets a random one, sent with the right method for its type
+• <b>Normal</b> — one photo/video attached to every message
+• <b>Sequential</b> — files assigned in order
+@@STORAGE@@• <b>From Storage</b> — pick from saved media
+• <b>None</b> — text only
+
+<b>6. Confirm</b>
+Review the details and confirm. Your message is now scheduled!
+
+<b>Need multiple messages?</b>
+Leave <b>at least one empty line</b> after each message: a date/time line, then your message, then a blank line, then the next dated message. You can repeat this as many times as you need — in one text or across several messages — and everything will be scheduled. A .txt upload with the same blank-line rule works too.
+
+<b>Clickable buttons (optional)</b>
+Add a button under your post with <code>&lt;inline&gt;Button Text&lt;link="https://example.com"&gt;</code> on its own line. Use <code>--</code> between two buttons for side-by-side, <code>//</code> for a new row. Color a button with <code>style="success"</code> (green), <code>style="primary"</code> (blue) or <code>style="danger"</code> (red) inside the tag.
+============================================================
+KEY: help.formatting.content
+You can use Telegram markdown-style formatting in your messages:
+
+<code>**bold**</code> — <b>bold</b>
+<code>__italic__</code> — <i>italic</i>
+<code>___underline___</code> — <u>underline</u>
+<code>~~strikethrough~~</code> — <s>strikethrough</s>
+<code>||spoiler||</code> — <tg-spoiler>spoiler</tg-spoiler>
+<code>`code`</code> — <code>inline code</code>
+<code>```block```</code> — code block
+<code>[text](url)</code> — <a href="https://example.com">text link</a>
+
+<b>Note:</b> URLs in text are not automatically clickable in sent messages. Use inline buttons for clickable links.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+<b>Inline Buttons — Full Guide</b>
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Add clickable buttons below any post. There is no button-builder in the bot — just type the markup into your message text (usually at the end).
+
+<b>Basic Syntax</b>
+<code>&lt;inline&gt;Button Text&lt;link=&quot;https://url.com&quot;&gt;</code>
+
+<b>Multiple Buttons (Each on its own row)</b>
+<code>&lt;inline&gt;Buy Now&lt;link=&quot;https://shop.com&quot;&gt;
+&lt;inline&gt;Learn More&lt;link=&quot;https://info.com&quot;&gt;</code>
+
+<b>Side by Side with --</b>
+<code>&lt;inline&gt;Buy&lt;link=&quot;https://shop.com&quot;&gt; -- &lt;inline&gt;Info&lt;link=&quot;https://info.com&quot;&gt;</code>
+Result: [Buy] [Info] (same row)
+
+<b>New Row with //</b>
+<code>&lt;inline&gt;Catalog&lt;link=&quot;https://shop.com&quot;&gt; // &lt;inline&gt;Support&lt;link=&quot;https://support.com&quot;&gt;</code>
+Result:
+[Catalog]
+[Support]
+
+<b>Full Layout Example</b>
+<code>&lt;inline&gt;Catalog&lt;link=&quot;https://shop.com&quot;&gt; -- &lt;inline&gt;Sale&lt;link=&quot;https://shop.com/sale&quot;&gt; // &lt;inline&gt;Reviews&lt;link=&quot;https://shop.com/reviews&quot;&gt; -- &lt;inline&gt;Support&lt;link=&quot;https://support.com&quot;&gt;</code>
+Result:
+[Catalog] [Sale]
+[Reviews] [Support]
+
+<b>Button Colors</b>
+Add <code>style=&quot;success&quot;</code> (green), <code>style=&quot;primary&quot;</code> (blue) or <code>style=&quot;danger&quot;</code> (red) inside the tag:
+<code>&lt;inline&gt;Buy Now&lt;link=&quot;https://shop.com&quot; style=&quot;success&quot;&gt; -- &lt;inline&gt;Remove&lt;link=&quot;https://shop.com/remove&quot; style=&quot;danger&quot;&gt;</code>
+Unknown styles are ignored.
+
+<b>Important:</b>
+• Use full URLs with <code>https://</code>
+• Keep button text short (a few words) so it fits on phone screens
+• The markup lines are removed from the published post — buttons appear BELOW the message text
+
+<b>Examples</b>
+• Link button: <code>&lt;inline&gt;Visit Site&lt;link=&quot;https://example.com&quot;&gt;</code>
+• Side by side: <code>&lt;inline&gt;Like&lt;link=&quot;https://t.me/yourbot?start=like&quot;&gt; -- &lt;inline&gt;Dislike&lt;link=&quot;https://t.me/yourbot?start=dislike&quot;&gt;</code>
+
+<b>Callback Buttons</b>
+<code>&lt;inline&gt;Action Name&lt;callback="action_data"&gt;</code>
+
+Callback buttons send data back to the bot instead of opening a link — use them for actions, confirmations, and interactive posts. They follow the same layout rules (<code>--</code> for the same row, <code>//</code> for a new row) and can be mixed with link buttons. Colors work here too: <code>&lt;inline&gt;Confirm&lt;callback=&quot;confirm&quot; style=&quot;success&quot;&gt;</code>.
+
+<b>Important:</b>
+• Callback data is limited to 64 bytes
+• Malformed <code>&lt;inline&gt;</code> markup shows a warning — fix the syntax and resend
+• Callback buttons only work when the bot recognizes the data — you'll be warned before scheduling if a callback has no matching handler
+============================================================

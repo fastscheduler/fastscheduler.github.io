@@ -1,0 +1,24 @@
+start faq_en=False intro_en=True content_len=406 faq_n=0
+scheduling faq_en=False intro_en=True content_len=1081 faq_n=0
+channels faq_en=True intro_en=False content_len=0 faq_n=2
+bots faq_en=True intro_en=False content_len=0 faq_n=2
+admins faq_en=True intro_en=True content_len=236 faq_n=4
+premium faq_en=True intro_en=False content_len=0 faq_n=7
+referral faq_en=True intro_en=False content_len=0 faq_n=2
+limits faq_en=True intro_en=True content_len=740 faq_n=1
+timezone faq_en=True intro_en=False content_len=0 faq_n=3
+language faq_en=True intro_en=False content_len=0 faq_n=2
+export faq_en=False intro_en=True content_len=348 faq_n=0
+import faq_en=True intro_en=False content_len=0 faq_n=2
+backup faq_en=True intro_en=False content_len=0 faq_n=6
+media_storage faq_en=True intro_en=False content_len=0 faq_n=7
+tools faq_en=False intro_en=True content_len=564 faq_n=0
+tips faq_en=False intro_en=True content_len=136 faq_n=0
+feedback faq_en=False intro_en=True content_len=497 faq_n=0
+faq faq_en=False intro_en=False content_len=0 faq_n=0
+commands faq_en=True intro_en=True content_len=271 faq_n=4
+errors faq_en=True intro_en=True content_len=195 faq_n=8
+privacy faq_en=False intro_en=True content_len=704 faq_n=0
+contact faq_en=False intro_en=True content_len=449 faq_n=0
+config faq_en=True intro_en=True content_len=1600 faq_n=3
+misc faq_en=False intro_en=False NO_PATCH

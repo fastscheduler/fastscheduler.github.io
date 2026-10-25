@@ -1,0 +1,400 @@
+KEY: help.search_filter.content
+While the search box matches any word you type, you can focus results before searching:
+• Open Search from inside a channel's context (via <b>Bots</b> → a connected bot) to scope results to that channel only.
+• Combine keywords: the bot finds messages containing any of them, so adding words narrows the practical result set.
+• Job IDs give an exact match — ideal when you know the ID from a previous preview or notification.
+
+For everything else — channel-by-channel browsing, month view, per-channel cleanup — the Message List and Calendar remain the fastest tools.
+============================================================
+KEY: help.multichannel.content
+Premium unlocks up to {channels_prem} channels, each with its own sender bot, schedule, and identity.
+
+<b>How it works</b>
+• Every channel pairs with its own sender bot — posts always appear from that bot's name.
+• When scheduling, you pick the target channel.
+• Each channel keeps its own time zone, signature, and settings.
+
+<b>Everyday workflow</b>
+• Use Message List with the channel filter to review one channel at a time.
+• Cross-posting the same message? Schedule it once per channel.
+
+Free plan covers {channels_free} channel and {bots_free} bot; Premium raises both to {channels_prem}.
+============================================================
+KEY: help.premium_cancel.content
+Cancelling only stops <b>auto-renewal</b> — your Premium stays active until the paid period ends.
+
+<b>How to cancel:</b>
+1. Open <b>Premium</b> → <b>❌ Cancel Premium</b>.
+2. Choose a reason (optional) and confirm with <b>✅ Yes, Cancel Premium</b>.
+
+Changed your mind? Open <b>Premium</b> again and buy a plan — you are Premium again instantly.
+
+Cancel applies to the auto-renewing monthly plan. Prepaid 3-month, 6-month, and yearly plans never auto-renew — there is nothing to cancel; they simply end.
+
+If you don't renew after the period ends, the <b>expiry process</b> begins — see <b>Premium Expiry</b>.
+============================================================
+KEY: help.glossary.content
+Six terms cover most of the bot:
+
+• <b>Channel</b> — the Telegram channel your posts go to. The bot must be its admin.
+• <b>Sender bot</b> — your own bot that actually delivers the posts. Required for every channel; one bot per channel.
+• <b>Scheduled message</b> — a one-time post queued for a specific date and time.
+• <b>Recurring message</b> — a post that repeats (hourly, daily, weekly, monthly) until paused or deleted.
+• <b>Signature</b> — text appended to every post in a channel.
+• <b>Premium</b> — the paid plan: more channels and bots, unlimited sends, bigger media storage.
+
+Tap any term below for the full explanation.
+============================================================
+KEY: help.limits_premium.content
+Premium removes most caps:
+• {channels_prem} channels and {bots_prem} sender bots
+• Unlimited pending scheduled messages ({scheduled_free} on Free) and unlimited recurring messages
+• Unlimited sent messages ({monthly_sent_free} per channel per month on Free)
+@@STORAGE@@• Up to {storage_count_prem} media storage boxes, {storage_items_prem} items total
+• Larger media: {max_video_prem} videos, {max_media_prem} max
+• Videos allowed in storage ({storage_video_prem})
+• Signatures, leaderboards, unlimited report schedules
+
+If you downgrade, your data is <b>kept</b> but only the free allowances stay active until the expiry process removes the excess.
+============================================================
+KEY: help.ms_bulk.content
+Reorganizing a box item by item is slow. Premium adds three bulk tools inside any open box:
+
+<b>Move All</b>
+• Moves every item (or only one type: images, videos, files) into a box you pick.
+• Use it to split a mixed box by type or to retire a finished campaign in one tap.
+
+<b>Copy All</b>
+• Same flow, but the source box keeps its items — handy for seeding a new campaign box from an archive without touching the original.
+
+<b>Download Box</b>
+• Saves the whole box as a single archive, so you can keep an offline copy or hand assets to a teammate.
+
+On Free, open any item and use <b>Move</b>, <b>Copy</b>, or <b>Download</b> for one file at a time.
+============================================================
+KEY: help.channel_remove.content
+To unlink a channel:
+1. Open <b>Channels</b> → find the channel.
+2. Tap <b>🔗 Disconnect Channel</b> → confirm.
+
+What happens to the channel's messages:
+• <b>Scheduled messages</b> on that channel are removed or reassigned to another connected channel — the bot tells you exactly how many.
+• <b>Recurring messages</b> are reassigned to another connected channel too; if none is connected, they stop.
+• If a sender bot was attached only to this channel, the bot notifies you that it no longer has a channel to post to.
+
+Re-connecting the channel later starts fresh — reconnect its sender bot before scheduling again. To delete individual messages, use <b>Message List</b> instead.
+============================================================
+KEY: help.limits.content
+Fast Scheduler's plans differ in five numbers: pending scheduled messages, sends per month, recurring messages, channels, and sender bots. The bot counts them live — <code>/stats</code> always shows your current usage.
+
+• <b>Free</b>: {scheduled_free} pending messages, {monthly_sent_free} sends per channel per month, {recurring_free} recurring message, {channels_free} channel, {bots_free} sender bot.
+• <b>Premium</b>: unlimited pending and sent messages, unlimited recurring messages, {channels_prem} channels, {bots_prem} bots, plus larger media storage and longer videos.
+
+There is no daily cap on either plan — the only send quota on Free is monthly, and it resets on the 1st.
+============================================================
+KEY: help.legal.content
+The service runs under three documents, all on the website:
+
+• <b>Terms of Service</b> — the rules for using Fast Scheduler, plan limits, and fair use.
+• <b>Privacy Policy</b> — what data is stored and how it is protected.
+• <b>Refund Policy</b> — when and how Premium payments are refunded.
+
+The documents were last refreshed in October 2026 (each shows its effective date). Previous versions are kept in the version history on the website, so you can always see what changed.
+
+Short version: schedule only content you have the right to publish, keep your channel compliant with Telegram's own rules, and refunds follow the published policy. The full texts are linked from the website footer.
+============================================================
+KEY: help.privacy.content
+What the bot stores and why:
+• <b>Telegram identifiers</b> — your user ID and channel IDs, so the bot knows what it manages and for whom.
+• <b>Content you schedule</b> — message texts and media references, kept only to deliver your posts on time.
+• <b>Settings</b> — language, time zone, signatures, bot tokens you connect.
+• <b>Operational logs</b> — delivery results, used to fix failures and show you statistics.
+
+The bot never reads channels it is not connected to, never posts anything you did not schedule, and never shares your data with third parties. Deleting a message in the bot deletes it from storage; deleting your account deletes everything. Full details are in the website Privacy Policy.
+============================================================
+KEY: help.start_schedule.content
+1. Add <b>@FastSchedulerBot</b> to your channel as an <b>Administrator</b> (Post Messages permission is enough).
+2. In the bot: <b>Connected Channel</b> → <b>Connect Channel</b>, then send <code>@yourchannel</code> or forward any post.
+3. Connect a <b>sender bot</b> for the channel from <b>Bots</b> (create one via @BotFather or connect an existing bot) - required before you can schedule.
+4. Tap <b>Schedule Message</b>, pick the channel, enter a date and time (e.g. <code>25.12.2025 10:00</code>).
+5. Type your message, attach media if you like, review the preview and confirm.
+
+That's it - your sender bot posts for you at the chosen time. See <b>Getting Started</b> for the detailed step-by-step guide.
+============================================================
+KEY: help.premium_buy.content
+1. Open <b>Premium</b> (main menu or <code>/premium</code>).
+2. Choose a plan:
+• ⭐ Standard monthly subscription — auto-renews, cancel anytime
+• 3️⃣ 3 months — prepaid, <b>save 10%</b> vs paying monthly
+• 6️⃣ 6 months — prepaid, <b>save 14%</b> vs paying monthly
+• 1️⃣ Yearly — prepaid, best per-month price
+3. Pick a payment method: Telegram Stars.
+4. Follow the instructions and confirm.
+5. Premium activates immediately after payment confirms.
+
+Prepaid 3/6-month and yearly plans are one-time purchases — they never auto-renew. The monthly subscription auto-renews until you cancel. Promo codes can be applied before paying; referral days are activated separately from the referral menu — see the Premium menu.
+============================================================
+KEY: help.premium_renew.content
+Renewing restores your full Premium account - usually instantly.
+
+<b>How to renew:</b>
+1. Open <b>Premium</b> (main menu or <code>/premium</code>).
+2. Tap <b>Pay Again</b> or choose a plan.
+3. Pay with Telegram Stars.
+4. Premium activates immediately after payment confirms.
+
+<b>If you're in the middle of the expiry process:</b>
+• Before day 4: everything is restored, nothing is lost.
+• Between day 4 and day 35: excess channels/bots were frozen but still connected - they are restored.
+• After day 35: excess channels and bots were disconnected; you re-connect them manually after renewing.
+
+<b>Auto-renew:</b> monthly Stars plans renew automatically. Yearly Stars plans are one-time payments - you renew manually.
+============================================================
+KEY: help.schedule_one_time.content
+A one-time scheduled message is sent exactly once at the date and time you choose.
+
+<b>How to create one:</b>
+1. Tap <b>Schedule Message</b> (or /schedule) and pick the channel.
+2. Send your message in blocks: a date-time line, the message text on the next line, then a blank line before the next block — three blocks means three messages.
+3. Choose the <b>Photo Mode</b> (skip / attach normally / random from storage / sequential).
+4. Check the <b>Review</b> screen and confirm.
+
+The bot replies with the queued job IDs and times — everything is editable or deletable from <b>Message List</b> until the moment of sending. Use it for announcements, promos and reminders; for repeating posts use Recurring Messages instead.
+============================================================
+KEY: help.contact_bug.content
+Found something broken? Two easy ways to report it:
+
+• <b>In the bot:</b> use <code>/feedback</code> and choose <b>Report a Bug</b>
+• <b>Telegram:</b> write to <b>@MaximalXP</b>
+
+Please include:
+• Your user ID (from <code>/premium</code>)
+• What you did right before the issue
+• The exact error text or screenshot
+• The affected channel, if any
+
+When you report a bug, we collect:
+• Your user ID (not your phone number)
+• The bot version and error logs
+• The channel/bot involved (only if you mention it)
+
+<b>What happens next:</b>
+1. Your report gets a status in <code>/feedback</code>
+2. We reproduce and fix the issue
+3. You're notified once it's resolved
+
+Adding a precise description and screenshot cuts the fix time dramatically.
+============================================================
+KEY: help.premium_features.content
+What Premium gives you:
+• {channels_prem} connected channels and {bots_prem} sender bots (Free: {channels_free}/{bots_free}).
+• <b>Unlimited</b> scheduled, recurring, and sent messages (Free: {scheduled_free} pending / {monthly_sent_free} sends per month).
+• Up to {storage_count_prem} media storage boxes with {storage_items_prem} items total (Free: {storage_count_free} box / {storage_items_free} items).
+• Videos in storage, 4K media, and larger uploads ({max_video_prem} videos, {max_media_prem} media).
+• Signatures, paginated leaderboards (views / comments / reactions / top commentators), and unlimited report schedules.
+• Sender-bot management: Hide Channel (Public Mode) and channel Admins.
+
+Open <b>Premium</b> for the full comparison.
+============================================================
+KEY: help.premium_compare.content
+The comparison table in the Premium menu shows every limit side by side:
+
+• Channels: {channels_free} free / {channels_prem} premium
+• Sender bots: {bots_free} free / {bots_prem} premium
+• Scheduled messages: {scheduled_free} free / {scheduled_prem} premium
+• Recurring messages: {recurring_free} free / {recurring_prem} premium
+• Sent messages: {monthly_sent_free} free / {monthly_sent_prem} premium
+@@STORAGE@@• Media storage: {media_storages_free} free / {media_storages_prem} premium
+• Videos: {max_video_free} free / {max_video_prem} premium
+• Video in storage: {storage_video_free} free / {storage_video_prem} premium
+• Max media size: {max_media_free} free / {max_media_prem} premium
+
+Prices and payment methods are shown in the Premium menu.
+============================================================
+KEY: help.channel_signature.content
+A signature is your custom footer (or header) — for example "Posted by @yourchannel" — added automatically when a post goes out.
+
+<b>How:</b> send <code>/signature</code> (or tap <b>📝 Signature</b> on the review screen) → create a signature with <b>➕ Add Signature</b> → choose its position (<b>start</b> or <b>end</b> of the post) and how many blank lines separate it from the content. When saving you can enable <b>auto-add</b> and pick the channels it should attach to.
+
+• Saved signatures are reusable — edit, re-position, or delete them from <b>Saved Signatures</b>.
+• Signatures are attached at <b>send time</b>, so your stored messages stay clean.
+• Free users can try the feature once; after that it is <b>Premium</b>.
+
+See also: Signature Position.
+============================================================
+KEY: help.language_add.content
+The bot ships in several languages, and English is always available. If yours isn't in the list yet:
+
+<b>Check the full list</b>
+Open <b>Language</b> (or <code>/language</code>) and scroll — the menu shows every currently supported language, and new ones are added over time.
+
+<b>Request a translation</b>
+Ask via <b>Feedback</b> in the bot or write to @MaximalXP and tell us which language you need. Popular requests get prioritised.
+
+<b>In the meantime</b>
+• English commands like <code>/schedule</code> and <code>/list</code> work no matter which language is active.
+• Your channel content is never translated — only the bot's interface language changes.
+• @SetDate_bot shares your language preference, so both bots switch together once your language is added.
+============================================================
+KEY: help.premium_refund.content
+Premium is paid in Telegram Stars, and Stars purchases are final under Telegram's own rules. Outside mandatory consumer rights, refunds are discretionary and granted case by case — typically for a double charge or a technical fault on our side.
+
+To request a refund, email <b>fastschedulebot@gmail.com</b> with:
+• The transaction ID (in the Stars payment confirmation or Settings → Payments).
+• Your Telegram username.
+• The purchase date and a short reason.
+
+We acknowledge requests within <b>7 business days</b>. Approved refunds return through Telegram only; referral days and promo free periods have no monetary value and are never refundable.
+
+To stop future billing on a monthly plan, cancel via <code>/premium</code> — the paid period stays active until its end date.
+============================================================
+KEY: help.feedback.content
+Every ticket goes to a human. Open <b>Feedback</b> in the bot (or <code>/feedback</code>), pick a category, and describe the issue — attach a file or screenshot if it helps.
+
+<b>What happens next</b>
+• You get a ticket number immediately.
+• Replies arrive in the bot chat; you can continue the conversation in the same thread.
+• <b>My requests</b> shows the status of every ticket you filed.
+
+Bug reports with concrete details (job ID, time, what you expected vs. what happened) get fixed fastest.
+
+<b>Keep it clean</b>
+Feedback must not contain offensive language. One mild expression triggers a warning (the message is still sent); heavily offensive messages are blocked, and 3 warnings temporarily block new feedback. Mistaken flags can be reported from the warning itself.
+============================================================
+KEY: help.channel_manage.content
+Everything about one channel lives in two places: the <b>Channels</b> list and the channel's own <b>info screen</b>.
+
+<b>Channels</b> (main menu) lists every channel you have connected. For each channel you get:
+• The channel name.
+• <b>Time Zone</b> — posts for this channel are sent in the channel's own time zone, so you never juggle UTC offsets yourself.
+• <b>Change Channel</b> — replace this channel with a different one; its scheduled messages move with you.
+• <b>Disconnect Channel</b> — unlink the channel (see Remove a Channel).
+
+Tap a channel's <b>→</b> button for the details screen: connection role, sender bot, time zone, and how many scheduled and recurring messages the channel holds.
+
+Each channel is configured independently — ideal for multi-channel setups.
+============================================================
+KEY: help.bot_stats.content
+Per-channel statistics show how each channel's posts perform: totals, averages for views, comments and reactions, plus top reactions.
+
+<b>How:</b> open <b>Statistics</b> (main menu page 2 or /stats) → pick the channel under the overview. The full stats view is delivered via your main bot; each channel row can also deep-link straight into the sender bot that posts there.
+
+<b>Leaderboards (Premium):</b> inside a channel's stats, tap <b>Leaderboard</b> to browse top posts by 👁 views, 💬 comments, or ❤️ reactions — paginated, with period filters (today / week / month / year / all) and page sizes of 10 / 25 / 50 rows. Comment attribution (top commentators) works once the bot is in your channel's linked discussion group.
+
+These stats cover posts sent through Fast Scheduler only.
+============================================================
+KEY: help.calendar.content
+See all your scheduled messages on a monthly calendar.
+
+<b>How to Access:</b>
+1. Click <b>Calendar</b> on the main menu (page 2) or use <code>/calendar</code>
+2. Select a channel (if you have multiple)
+3. Browse the month — each day shows scheduled send times
+
+<b>Features:</b>
+• Navigate between months with <b>Previous</b> / <b>Next</b> buttons
+• Both <b>scheduled</b> (one-time) and <b>recurring</b> messages appear
+• Recurring messages are expanded across the month based on their schedule
+• Times are shown in <b>your channel’s timezone</b>
+
+<b>Tips:</b>
+• Use the calendar to spot conflicts or gaps in your schedule
+• If you don’t see a message, check its timezone setting
+• For channel-specific views, pick a channel when prompted
+
+See also: <b>Timezone Settings</b> and <b>Message List</b>.
+============================================================
+KEY: help.premium_freeze.content
+When Premium expires, the assets that don't fit your free plan are <b>frozen</b> first and disconnected later - they are NOT deleted at once.
+
+<b>What gets frozen:</b>
+• <b>Channels</b> beyond the free limit stop receiving messages after day 3.
+• <b>Sender bots</b> of frozen channels are turned off.
+• <b>Recurring messages</b> beyond the free limit are paused.
+@@STORAGE@@• <b>Media storages</b> you didn't choose are deleted on day 17.
+• <b>Signatures</b> are stripped from outgoing messages and removed at disconnect.
+
+<b>What keeps working:</b>
+• Your kept channel and its sender bot continue as normal.
+• Scheduled messages on the kept channel keep sending.
+• Your account, settings, language and referral days remain.
+
+Reactivate Premium before the final disconnect to unfreeze everything instantly.
+============================================================
+KEY: help.statistics.content
+See your scheduling activity and how your posts perform.
+
+<b>How to open:</b> tap <b>Statistics</b> on the main menu (page 2) or send /stats.
+
+<b>The overview shows:</b>
+• Scheduled and recurring message counts right now
+• Messages sent today and total sent
+• Messages created in total
+• Connected channels
+
+<b>Per-channel stats:</b> every channel row opens its own view — total messages, average views, comments and reactions, plus the top reactions on your posts.
+
+<b>Leaderboards (Premium):</b> from a channel's stats tap <b>Leaderboard</b> — top posts by views, comments or reactions, paginated up to 50 rows per page, filtered by period (today / week / month / year / all). Comment attribution needs the bot in your linked discussion group.
+
+Only posts sent through Fast Scheduler are counted — manually published posts don't appear.
+============================================================
+KEY: help.channel_stats.content
+Premium users can view per-channel statistics and paginated leaderboards: top posts by views, comments, or reactions (up to 50 per page), plus a top-commentators ranking of the people who comment most on your posts.
+
+<b>Filtering:</b> combine metric (views / comments / reactions / commentators), period (today / week / month / year / all), and page size (10 / 25 / 50) — then flip pages with the pager buttons.
+
+<b>Comment authors:</b> to see who actually comments, add the bot to your channel's discussion group. Until then, the leaderboard shows a tip reminding you — once the bot is in the group, comments are attributed automatically.
+
+These stats help you learn what content performs best so you can schedule more of what works. Channel stats are available for every connected channel — shown in the main bot, or inside its sender bot.
+============================================================
+KEY: help.delete.content
+Remove scheduled or recurring messages you no longer need.
+
+<b>How to delete:</b>
+• From <b>Message List</b>: tap the 🗑 trash icon next to a message → confirm.
+• Use <b>🗑 Delete All</b> at the bottom of the list — it removes all scheduled <b>and</b> recurring messages at once after a confirmation that shows exactly how many messages will go.
+• Use <b>🗑 Delete by ID</b> and enter a job ID to remove one specific message (scheduled IDs look like s482913_7, recurring IDs like r482913_7 — you can copy them from the list).
+
+What happens after deletion:
+• Deleted scheduled messages are removed from the queue and will NOT be sent.
+• Deleted recurring messages are stopped and removed from the scheduler.
+• Deletion is permanent — it cannot be undone.
+
+Tip: to find a job ID first, use Message List or /search. Removing a <i>channel</i> is different — see Remove a Channel.
+============================================================
+KEY: help.signature.content
+Add a custom signature — for example "Posted by @yourbot" — to every post on the channels you choose.
+
+<b>How to set up:</b>
+1. Tap <b>📝 Signature</b> on the main menu or send /signature.
+2. Use <b>Add Signature</b> and send your signature text (bold, italic, code and links work).
+3. Pick the position — start or end of the post — and how many blank lines separate it.
+4. Enable <b>auto-add</b> and select the channels it should attach to; or add it per message from the signature list.
+
+Good to know:
+• Signatures are appended at <b>send time</b> — your stored messages stay clean.
+• They never take over your inline button rows.
+• Free users can try signatures once; after that it is a Premium feature.
+
+<b>When Premium expires:</b> auto-add stops once Premium is gone, and signature settings are deleted when the expiry process fully completes. Reactivate Premium to keep everything.
+============================================================
+KEY: help.gs_step1.content
+Open your channel settings → Administrators → Add Admin. Search for <b>@FastSchedulerBot</b> and add it. Give it at least <b>Post Messages</b> permission. For sender bots: also add your sender bot as admin.
+
+<b>2. Connect in Fast Scheduler</b>
+Go back to the bot and click <b>Channels</b> → <b>Connect Channel</b>. You'll be asked to identify your channel.
+
+<b>3. Send channel info</b>
+Send the channel username: <code>@yourchannel</code>
+Or forward a message from the channel.
+Or send an invite link: <code>https://t.me/yourchannel</code>
+Or send the channel numeric ID: <code>-1001234567890</code>
+
+<b>4. Done!</b>
+The channel is now connected. Next, connect a sender bot (Step 2) — posting only works through your own bot.
+
+<b>Troubleshooting</b>
+"Bot is not an admin" — add the bot as admin in channel settings.
+"Channel not found" — double-check the username or link.
+"Invalid format" — use @username or a full invite link.
+============================================================

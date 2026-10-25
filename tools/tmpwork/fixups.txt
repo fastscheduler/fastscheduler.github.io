@@ -1,0 +1,53 @@
+FIXUPS: selector-based replacements for lone words inside formatting
+ * tags (e.g. <i>your</i>) and aria-labels that have no safe text key.
+ */
+(function () {
+  'use strict';
+  window.FS_RU_CHROME = {
+    STR: {
+      settings: 'Настройки', dark: 'Тёмная тема', anim: 'Анимации', fx: 'Эффекты',
+      keys: 'Горячие клавиши', seeKeys: 'Показать клавиши', help: 'Помощь', support: 'Чат поддержки',
+      openBot: 'Открыть бота', openShort: 'Открыть', langLabel: 'Язык', openHelp: 'Открыть центр помощи',
+      recent: 'Недавние запросы', searchPh: 'Поиск по центру помощи…',
+      openMenu: 'Открыть меню', closeMenu: 'Закрыть меню'
+    },
+    META: {
+      title: 'Fast Scheduler — Планировщик постов для Telegram-каналов',
+      desc: 'Fast Scheduler — бесплатный Telegram-бот: планирование и публикация постов канала, аналитика. Планируйте неделю контента в одном чате и публикуйте от своего бота.'
+    },
+    MAP: {
+      // nav (desktop + mobile sheet)
+      'Time saved': 'Экономия времени',
+      'Features': 'Возможности',
+      'How it works': 'Как это работает',
+      'Pricing': 'Тарифы',
+      'FAQ': 'Вопросы и ответы',
+      'Blog': 'Блог',
+      'Help': 'Помощь',
+      'Help Center': 'Центр помощи',
+      'Open Bot': 'Открыть бота',
+      // hero (split across inline tags — part keys keep <span>/<b> intact)
+      'Your channel': 'Ваш канал',
+      'posts itself.': 'публикуется сам.',
+      'You just write.': 'Вы просто пишете.',
+      'Paste a week of posts into one chat —': 'Вставьте неделю постов в один чат —',
+      'publishes each one at the exact time you chose, in your timezone, from': 'публикует каждый в точное выбранное время, в вашем часовом поясе, от',
+      'your own bot': 'вашего собственного бота',
+      '. Set it once, then get on with life.': '. Настройте один раз — и занимайтесь жизнью.',
+      'Start free — it takes 60 seconds': 'Начать бесплатно — это займёт 60 секунд',
+      'No app. No signup. Works inside Telegram you already use.': 'Без приложений. Без регистрации. Работает в привычном Telegram.',
+      '↺ Replay demo': '↺ Смотреть демо ещё раз',
+      'Free plan forever': 'Бесплатный тариф навсегда',
+      'Posts from your own bot': 'Посты от вашего бота',
+      'Your timezone, not ours': 'Ваш часовой пояс, а не наш',
+      'No card required': 'Карта не нужна',
+      'Scheduled in one chat.': 'Запланировали в одном чате.',
+      'Posted forever.': 'Публикуется всегда.',
+      'Fast Scheduler delivered this post at 18:15 sharp — while its owner was away. Your channel can run like this too.': 'Fast Scheduler опубликовал этот пост ровно в 18:15 — пока владелец был офлайн. Ваш канал тоже так может.',
+      'One chat in. Your whole week, published right on time.': 'Один чат. Вся неделя — вовремя.',
+      // marquee
+      'News channels': 'Новостные каналы',
+      'Shop drops': 'Дропы магазинов',
+      'Course creators': 'Авторы курсов',
+      'Artists & commissions': 'Художники и заказы',
+      'Trading signals': 'Торговые сигналы',

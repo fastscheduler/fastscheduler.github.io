@@ -1,0 +1,481 @@
+KEY: send.error_poll_non_anonymous
+Non-anonymous polls can't be sent to channel chats.
+
+Polls sent to channels must be set to <b>anonymous</b> mode (the default in Telegram).
+
+Create a new poll with anonymous mode enabled and try again.
+============================================================
+KEY: sender.bot_owner_dashboard
+🤖 @{bot} Dashboard
+============================================================
+KEY: sender.bot_locked_alert
+⚠️ This sender bot is locked. Contact support for assistance.
+============================================================
+KEY: sender.bot_referral_welcome
+🤖 You were referred here by a friend! Connect your channel to start scheduling.
+============================================================
+KEY: sender.bot_management_active
+✅ <b>Management Active!</b>
+
+You are managing <b>{channel}</b> from this bot.
+
+Use the menu below to manage your channel.
+============================================================
+KEY: sender.bot_channel_changed
+🔄 Channel changed!
+
+{bot} is now linked to 📢 {new_channel}.
+
+All scheduled posts & settings have been transferred automatically.
+============================================================
+KEY: sender.bot_about
+🤖 This is the personal bot for <b>{channel}</b>. Use @FastSchedulerBot to manage your settings.
+
+• Schedule new posts
+• Track statistics
+• Manage channels
+• Get premium features
+============================================================
+KEY: sender.bot_required
+🤖 <b>Sender Bot Required</b>
+
+A sender bot with management moved is required to use bot features.
+
+Connect a new sender bot for your channel, or you can't use the bot for tasks.
+============================================================
+KEY: sender.bot_about_hidden
+🤖 <b>About @{bot}</b>
+
+This bot sends scheduled messages to a channel.
+
+🚀 <b>Want your own bot like this?</b>
+Try Fast Scheduler and connect your own sender bot!
+
+➡️ @FastSchedulerBot
+============================================================
+KEY: sender.bot_no_channel_main_has_channels
+⚠️ <b>Sender bot {bot} now has no channel</b>
+
+{bot} was disconnected from <code>{channel}</code> and is now idle.
+
+📌 Connect {bot} to one of your other channels via the channel settings.
+============================================================
+KEY: sender.bot_no_channel_bot
+⚠️ <b>No channel connected</b>
+
+I was disconnected from <code>{channel}</code> and am now idle.
+
+To use me again, please connect me to one of your channels via the main bot:
+
+👉 @{main_bot_username}
+============================================================
+KEY: sender.bot_mgmt_in_main
+⚙️ <b>Management is with the Main Bot</b>
+
+Your channel <b>{channel}</b> is currently managed from the Main Bot. This bot's tools are turned off.
+
+Click the button below to move management back to this bot.
+============================================================
+KEY: sender.bot_no_channel_main_no_channels
+⚠️ <b>Sender bot {bot} now has no channel</b>
+
+{bot} was disconnected from <code>{channel}</code> and is now idle.
+
+📌 You have no channels yet — please connect at least one channel using @{main_bot_username}, then connect {bot} to it via the channel settings.
+============================================================
+KEY: sender.bot_not_ready
+⚠️ <b>Sender bot setup incomplete</b>
+
+<b>@{bot}</b> is not yet verified as an administrator with <b>Post Messages</b> permission in {channel}.
+
+Scheduling and channel management are locked until this is fixed. Add the bot as an administrator, then tap <b>Check Again</b>.
+============================================================
+KEY: sender.bot_welcome
+👋 <b>Welcome, {name}!</b>
+
+✅ This bot is connected to <b>Fast Scheduler</b>.
+
+📢 <b>Channel:</b> {channel}
+
+<b>What this bot does:</b>
+📨 Sends scheduled messages to your channel
+✅ Confirms when messages are delivered
+
+<b>Move management</b> to manage this channel directly from this bot.
+============================================================
+KEY: sequential.by_date
+By date
+============================================================
+KEY: sequential.order_choose
+🔀 Sequential
+============================================================
+KEY: sequential.order_date_desc
+Newest first
+============================================================
+KEY: sequential.photo_mode
+🔀 Sequential
+============================================================
+KEY: sequential.by_sent
+By sent order
+============================================================
+KEY: sequential.order_by_date
+Order by date
+============================================================
+KEY: sequential.order_by_sent
+Order by sent
+============================================================
+KEY: sequential.order_sent_desc
+Last sent first
+============================================================
+KEY: sequential.media_ready
+📷 {count} media file(s) ready.
+============================================================
+KEY: sequential.order_prompt
+🔀 Order: {order} ({order_desc})
+============================================================
+KEY: sequential.media_received
+📷 {count} {type_label} received.
+============================================================
+KEY: sequential.order_detail
+📝 <b>Sequential Order Settings</b>
+
+Choose how your photos should be ordered when using sequential mode:
+
+<b>📅 By Date</b>
+Photos are ordered by their upload date. Newest photos appear first or last based on your selection.
+
+<b>📤 By Sent Order</b>
+Photos are ordered by when they were last sent. This is useful for rotating through your media library.
+
+<b>💡 Tips:</b>
+• Use "By Date" for chronological content (e.g., photo series)
+• Use "By Sent Order" to ensure fresh content is always shown first
+• The order affects how photos are distributed across scheduled posts
+============================================================
+KEY: setdate.promo_off
+🔕 Hide Ad
+============================================================
+KEY: setdate.hide_ad_premium_btn
+🚫 Hide ads
+============================================================
+KEY: setdate.dont_show_btn
+🚫 Hide this ad
+============================================================
+KEY: setdate.disable_no
+❌ No, keep enabled
+============================================================
+KEY: setdate.promo_toggled_off
+🔕 Ad is now hidden.
+============================================================
+KEY: setdate.enable_no
+❌ No, keep disabled
+============================================================
+KEY: setdate.promo_toggled_on
+✅ Ad will now appear during scheduling.
+============================================================
+KEY: setdate.promo_premium_only
+⭐ Upgrade to Premium to hide this ad and unlock more features!
+============================================================
+KEY: setdate.promo_enabled
+✅ SetDate promo enabled. The ad will appear during scheduling.
+============================================================
+KEY: setdate.promo_hidden
+✅ Ad hidden. You can re-enable it anytime from the settings menu.
+============================================================
+KEY: setdate.disable_confirm
+Disable SetDate promo? The ad will no longer appear during scheduling.
+============================================================
+KEY: setdate.import_ready
+📥 <b>Messages Imported from SetDate!</b>
+
+Your schedule has been received. The messages are ready to be scheduled.
+
+Choose whether you want to add media:
+============================================================
+KEY: setdate.promo_premium_body
+⭐ <b>Premium Feature: Ad-Free Experience</b>
+
+Hiding promotional messages is a Premium feature. Upgrade to enjoy an ad-free experience and unlock all premium features!
+
+<b>✨ Premium benefits:</b>
+• 🚫 Hide all promotional messages
+• 📅 Schedule unlimited messages
+• 🔄 Create multiple recurring posts
+• 📊 Access detailed statistics
+• 💾 More media storage
+• 🤖 Connect multiple sender bots
+============================================================
+KEY: setdate.hide_ad_premium_body
+⭐ <b>Premium Feature: Ad-Free Experience</b>
+
+Hiding promotional messages is a Premium feature. Upgrade to enjoy an ad-free experience and unlock all premium features!
+
+<b>✨ Premium benefits:</b>
+• 🚫 Hide all promotional messages
+• 📅 Schedule unlimited messages
+• 🔄 Create multiple recurring posts
+• 📊 Access detailed statistics
+• 💾 More media storage
+• 🤖 Connect multiple sender bots
+============================================================
+KEY: setdate.promo
+📢 <b>Special Ad: SetDate Bot</b>
+
+Need to schedule dozens of posts in seconds? Try <b>SetDate Bot</b> — our recommended tool for bulk scheduling.
+
+<b>How it works:</b>
+1. Set a start date
+2. Choose posts per day and times
+3. Write your posts (or upload a .txt file)
+4. Generate a fully dated schedule
+5. Import it here with one click
+
+ • One-click import into Fast Scheduler — just choose media and go
+• Works with any number of posts — no limits during creation
+
+👇 Click the button below to open SetDate Bot:
+============================================================
+KEY: storage.box_btn
+@@STORAGE@@💾 {name}
+============================================================
+KEY: storage.video_size_mb
+Max video size: {size} MB
+============================================================
+KEY: storage.choose_filter
+@@STORAGE@@🔍 Filter by type:
+============================================================
+KEY: storage.is_empty
+@@STORAGE@@🗭 This storage is empty.
+============================================================
+KEY: storage.content_header
+@@STORAGE@@💾 <b>{name}</b>
+
+{stats}
+============================================================
+KEY: storage.stats
+@@STORAGE@@📊 {count} items | {types}
+============================================================
+KEY: storage.many_images_sent
+@@STORAGE@@✅ {count} media files sent.
+============================================================
+KEY: storage.remaining_prompt
+@@STORAGE@@💾 How many items to preview?
+============================================================
+KEY: storage.invalid_number
+@@STORAGE@@❌ Please send a valid positive number.
+============================================================
+KEY: storage.empty_warning
+@@STORAGE@@⚠️ This will permanently delete all items.
+============================================================
+KEY: storage.rename_prompt
+@@STORAGE@@📝 Send a new name for this storage.
+
+Current name: <b>{current_name}</b>
+============================================================
+KEY: storage.first_media_premium
+💾 <b>Send your first media!</b>
+
+Now send a photo, video, file, animation, voice, audio, sticker, or video note to save in <b>"{name}"</b>.
+
+📋 <b>What you can save:</b>
+• 📸 Photos
+• 🎬 Videos (up to 50MB)
+• 📄 Files, animations, documents
+• 🎵 Audio & voice messages
+• 🎨 Stickers & video notes
+
+📦 <b>Your limits (Premium):</b>
+@@STORAGE@@• 20 boxes, 500 items total
+• Videos up to 50MB each
+
+/skip — Skip this step
+============================================================
+KEY: storage.first_media_free
+💾 <b>Send your first media!</b>
+
+Now send a photo, file, animation, voice, audio, sticker, or video note to save in <b>"{name}"</b>.
+
+📋 <b>What you can save:</b>
+• 📸 Photos
+• 📄 Files (documents, animations)
+• 🎵 Audio & voice messages
+• 🎨 Stickers & video notes
+• ❌ Videos — <b>Premium only</b>
+
+📦 <b>Your limits (Free plan):</b>
+@@STORAGE@@• 1 storage box, max 100 items
+@@STORAGE@@• No videos in storage
+
+💎 <b>Premium unlocks:</b>
+@@STORAGE@@• 20 boxes, 500 items total
+• 🎬 Video uploads (up to 50MB)
+• 🔐 Backup & Export
+
+/skip — Skip this step
+============================================================
+KEY: tutorial.tz_location_found
+📍 Your time zone appears to be <b>{tz}</b>. Is this correct?
+============================================================
+KEY: tutorial.tz_found
+✅ Looks like your time zone is <b>{tz}</b>. Is this correct?
+============================================================
+KEY: tutorial.tz_city_not_found
+❌ Could not find <b>{city}</b>. Please try another city name.
+============================================================
+KEY: tutorial.tz_time_found
+🕐 Based on your current time ({time}), your time zone is likely <b>{tz}</b>. Is this correct?
+============================================================
+KEY: tutorial.tz_location_prompt
+📍 <b>Share your location</b>
+
+Send your live location and I'll detect your time zone automatically.
+============================================================
+KEY: tutorial.tz_location_not_found
+❌ Could not determine time zone from that location. Try sending a city name or your current time instead.
+============================================================
+KEY: tutorial.bot_error_help
+If you can't connect a bot right now, you can contact support and we'll be happy to help, read the help section.
+============================================================
+KEY: tutorial.tz_time_not_found
+❌ Could not determine time zone from the time provided. Try sending a city name, your current time, or your live location.
+============================================================
+KEY: tutorial.bot_step_text
+🤖 <b>Step 3/3 — Connect a Sender Bot</b>
+
+A <b>sender bot</b> is a personal bot for your channel. It gives you a full management interface, lets you add clickable inline buttons to your posts, and gives your channel's subscribers a familiar place to interact.
+
+This step is required for full functionality.
+============================================================
+KEY: tutorial.tz_input_not_found
+❌ Couldn't detect your time zone from that.
+
+Try one of these:
+• 🏙 Send a <b>city name</b> (e.g. <code>London</code>, <code>New York</code>, <code>Tokyo</code>)
+• 🕐 Send your <b>current time</b> (e.g. <code>15:30</code>)
+• 📍 Send your <b>live location</b>
+
+Or click <b>Choose from list</b> to select a time zone manually, or <b>Skip</b> to use UTC (you can change this later).
+============================================================
+KEY: tutorial.connect_channel_prompt
+📡 <b>Step 1/4 — Connect Your Channel</b>
+
+To schedule messages, I need access to your Telegram channel.
+
+<b>Before you begin, make sure:</b>
+• You are an <b>administrator</b> of the channel
+• <b>@FastSchedulerBot</b> is added as an <b>administrator</b> of the channel (with <b>Post Messages</b> permission)
+
+<b>How to connect:</b>
+• Send me your channel link: <code>https://t.me/yourchannel</code>
+• Or forward any message from your channel
+
+<b>💡 Tip:</b> You can connect multiple channels later from the Channel menu.
+============================================================
+KEY: upsell.video
+Upload videos — Premium enables video uploads ({limit}).
+============================================================
+KEY: upsell.bots
+Connect more sender bots — Premium lets you connect {limit} bots.
+============================================================
+KEY: upsell.channels
+Connect more channels — Premium lets you connect {limit} channels.
+============================================================
+KEY: upsell.scheduled_messages
+Schedule more messages — Premium gives you {limit} scheduled posts.
+============================================================
+KEY: upsell.leaderboard
+Access the leaderboard — Premium unlocks post performance rankings.
+============================================================
+KEY: upsell.recurring
+More recurring messages — Premium allows {limit} recurring messages.
+============================================================
+KEY: upsell.daily_messages
+Send more messages per day — Premium raises the daily limit to {limit}.
+============================================================
+KEY: upsell.media_storage
+More media storage — Premium gives you more storage boxes with {limit} items.
+============================================================
+KEY: upsell.4k_media
+❌ <b>4K Media Not Supported on Free Plan</b>
+
+The free plan does not support 4K resolution photos or videos (≥{photo_4k_threshold}px for photos, ≥{video_4k_threshold}p for videos).
+
+Your media has been blocked. Upgrade to Premium to send high-resolution media!
+
+<b>Premium includes:</b>
+• ✅ Send photos up to <b>{premium_photo_max_dim}px</b>
+• ✅ Send videos up to <b>{premium_video_max_dim}p</b>
+• ✅ Gentler compression — higher quality preserved
+
+💎 <b>Upgrade to Premium to unlock 4K media support.</b>
+============================================================
+KEY: user.id
+ID: {id}
+============================================================
+KEY: user.blocked
+❌ Blocked
+============================================================
+KEY: user.name
+Name: {name}
+============================================================
+KEY: user.subscribed
+✅ Subscribed
+============================================================
+KEY: user.access_level
+Access: {level}
+============================================================
+KEY: user.premium
+Premium: {status}
+============================================================
+KEY: user.blocked_alert
+You have been blocked by the administrator.
+============================================================
+KEY: user.not_admin_channel
+❌ You don't appear to be an admin of that channel.
+============================================================
+KEY: user.unblocked_alert
+✅ You have been unblocked and can now use the bot again.
+============================================================
+KEY: user.not_admin
+❌ You must be an admin or creator of this channel to connect it.
+============================================================
+KEY: user.premium_granted_alert
+🎉 <b>Premium Activated!</b>
+
+You now have access to all premium features!
+============================================================
+KEY: welcome.btn
+👋 <b>Welcome, {name}!</b>
+
+
+============================================================
+KEY: welcome.subscribed
+✅ You are subscribed and ready to go!
+============================================================
+KEY: welcome.bot_connected_user
+🤖 Bot @{username} connected! The full confirmation was sent to you via the main bot.
+============================================================
+KEY: welcome.no_channel
+📢 You haven't connected any channels yet.
+
+Connect a channel to start scheduling messages.
+============================================================
+KEY: welcome.not_subscribed
+⚠️ You are not subscribed to any channel yet.
+Use the <b>Channel</b> button to connect one.
+============================================================
+KEY: welcome.addbot_needed
+🤖 To unlock full features, you need to connect a sender bot.
+
+Send your bot token to get started.
+============================================================
+KEY: welcome.bot_connected
+🤖 Connected bot: @{bot_username}
+<i>Used for sending messages only. All management via main bot.</i>
+
+============================================================
+KEY: welcome.intro
+👋 <b>Welcome!</b>
+
+I'm Fast Scheduler — a scheduling bot for Telegram channels. Connect a channel, set your posting times, and I'll deliver your messages automatically.
+============================================================

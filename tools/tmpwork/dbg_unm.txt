@@ -1,0 +1,81 @@
+total=400
+[x20] Telegram Stars
+[x17] @MaximalXP
+[x14] Email
+[x13] FAQ: API
+[x13] FAQ: Telegram
+[x11] @FastSchedulerBot
+[x10] /premium
+[x10] /schedule
+[x10] /search
+[x9] /language
+[x9] /referral
+[x7] 1. Click
+[x6] .csv
+[x6] .json
+[x6] .txt
+[x6] Media Storage
+[x6] Step by step:
+[x5] @BotFather
+[x5] Free:
+[x4] . Premium:
+[x4] .fsback
+[x4] .fspback
+[x3] on the main menu (or use
+[x3] on the main menu (page 2) or use
+[x2] , or
+[x2] /import
+[x2] 2. Click
+[x2] : click
+[x2] @SetDate_bot
+[x2] @username
+[x2] Bots
+[x2] Choose What to Keep
+[x2] CryptoBot
+[x2] Delete Box
+[x2] Fast Scheduler
+[x2] From Storage
+[x2] If you don't choose:
+[x2] Item Freezing
+[x2] Save Selection
+[x2] SetDate
+[x2] Stars
+[x2] Telegram
+[x2] Warning:
+[x2] before day 17.
+[x2] full backup
+[x2] on the main menu \u2192 tap
+[x2] or click
+[x2] permanently deleted
+[x2] \u2022 Use
+[x2] \u2192 select the box \u2192 click
+[x1] "Disconnect in 3 weeks" notice
+[x1] (Cancel applies to the auto-renewing monthly plan; prepaid 3/6-month and yearly plans never auto-renew.)
+[x1] (Premium): use
+[x1] (auto-renewing),
+[x1] (in-app purchase)
+[x1] (not deleted). Their scheduled messages are skipped but preserved. You can still export them
+[x1] (optionally filtered by type: images, videos, files)
+[x1] (or tap
+[x1] (prepaid, one-time)
+[x1] (the channel creator) can manage the Admins section and change permissions. Other admins can use the features they've been granted.
+[x1] , and
+[x1] , excess sender bot tokens are
+[x1] . If Premium still shows as inactive, contact @MaximalXP with your user ID, payment method, and transaction details.
+[x1] . If you don't choose, the newest box is kept by default. Excess boxes are deleted after 17 days. The kept box is trimmed to the newest 100 items (videos are removed first, oldest first). To avoid this: reactivate Premium with
+[x1] . Sync still works but you won't see the notification popups. Toggle it back to show notifications again.
+[x1] . This stops cross-bot sync offers between Fast Scheduler and @SetDate_bot, and turns off Telegram language detection. You can re-enable it anytime from the same menu.
+[x1] . Without a backup, deleted data cannot be recovered. We recommend regular exports to avoid data loss.
+[x1] . Your kept storage is trimmed to the newest 100 items (videos are removed first, oldest first). To keep everything: renew Premium with
+[x1] .fsback / .fspback
+[x1] .odt
+[x1] .rtf
+[x1] /cancel stops any active operation and returns you to the main menu. Useful if the bot is waiting for input and you want to start over.
+[x1] /export
+[x1] 1 storage box to keep
+[x1] 1. Choose
+[x1] 1. Open @BotFather in Telegram
+[x1] 1. Use
+[x1] 2. Choose a plan:
+[x1] 2. Choose what to export:
+[x1] 2. Select a storage box

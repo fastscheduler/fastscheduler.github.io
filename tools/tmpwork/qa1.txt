@@ -1,0 +1,8 @@
+3"/><path d="M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg></button></div></div>
+        <div class="hc-doc">
+        <article class="hc-art hc-card">
+          <h2>Шаг 1: привязка</h2>
+          <div class="hc-art-meta"><a href="#/c/start">Начало работы</a><span class="dot">1 Q&amp;A</span></div>
+          <div class="hc-body">Подключите свой Telegram-канал к Fast Scheduler:
+1. Добавьте <b>@FastSchedulerBot</b> администратором в свой канал.
+2. Откройте бота → <b>Подключё

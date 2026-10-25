@@ -29,12 +29,17 @@ sys.path.insert(0, HERE)
 from help_v2_en import CONTENT_EN, REPLACE_EN   # noqa: E402
 from help_v2_es import CONTENT_ES               # noqa: E402
 from help_v2_ru import CONTENT_RU               # noqa: E402
+from help_v2_getting_started import CONTENT_GS  # noqa: E402
 
 # Exact-substring corrections for articles that only needed a stale claim
 # replaced (Spanish and Russian get full rewrites of these, so only EN here).
 REPLACE = {'en': REPLACE_EN, 'es': {}, 'ru': {}}
 
 CONTENT = {'en': CONTENT_EN, 'es': CONTENT_ES, 'ru': CONTENT_RU}
+# The "Get Started" article is the first thing the Help Center opens, so it is
+# rewritten alongside the setup articles it points at.
+for _lang, _extra in CONTENT_GS.items():
+    CONTENT[_lang].update(_extra)
 
 # Where a new article is linked from, so it is reachable from the hub.
 PARENT_CHILDREN = {

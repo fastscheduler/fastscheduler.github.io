@@ -1,0 +1,421 @@
+KEY: addbot.replace_error
+❌ Could not replace bot. The new token could not be verified.
+============================================================
+KEY: addbot.connected_hint
+💡 Each sender bot handles one channel. Premium users can connect up to {limit} bots.
+============================================================
+KEY: addbot.verify_error
+❌ Could not verify the bot. Make sure the token is correct and the bot is not already connected.
+============================================================
+KEY: addbot.replace_pending_admin_check
+⏳ New bot token saved. Make sure @{username} is admin in your channel and click <b>Check Again</b>.
+============================================================
+KEY: addbot.create_success
+✅ Bot created successfully!
+
+Now add @{username} as an admin in your channel and click <b>Check Again</b>.
+============================================================
+KEY: addbot.verified_success
+✅ Bot verified and connected!
+
+Bot: @{username}
+Token: <code>****{last4}</code>
+
+You can now use this bot to manage your channel.
+============================================================
+KEY: addbot.share_prompt
+🔗 Share your bot @{username} with someone else.
+
+Send this link to let them connect your bot to their channel:
+
+<code>{link}</code>
+============================================================
+KEY: addbot.token_prompt
+🔑 <b>Enter Bot Token</b>
+
+Paste the token you received from @BotFather.
+
+It looks like:
+<code>1234567890:ABCdefGHIjklmNOPqrstUVwxyz</code>
+============================================================
+KEY: addbot.verify_error_detail
+❌ Could not verify the bot.
+
+Possible reasons:
+• The token is invalid (check with @BotFather)
+• The bot is not an admin in your channel
+• The bot has been blocked by Telegram
+============================================================
+KEY: addbot.create_info
+<b>Create a Sender Bot</b>
+
+If you already have a bot token, paste it with <b>I Have a Token</b>.
+
+If not, use <b>Create New Bot</b> below, then come back with the token from @BotFather.
+============================================================
+KEY: addbot.remove_confirm_text
+Are you sure you want to remove <b>@{username}</b>?
+
+• The channel <b>{channel}</b> will return to main bot management
+• All scheduled messages stay intact
+
+You can reconnect the same bot later.
+============================================================
+KEY: addbot.verify_no_channel
+❌ You need to connect a channel before I can verify this bot.
+
+1. Add a channel first
+2. Add @{username} as admin in that channel
+3. Give it at least "Post Messages" permission
+4. Click <b>Check Again</b>
+============================================================
+KEY: addbot.instruction_text
+<b>A sender bot is a dedicated Telegram bot for one channel.</b>
+
+It gives you better performance, security, and control.
+
+Use <b>Create New Bot</b> if you still need one, or paste your token with <b>I Have a Token</b>.
+============================================================
+KEY: bot.btn
+bot
+============================================================
+KEY: bot.connected
+✅ Bot <b>@{username}</b> connected and linked to <b>{channel}</b>!
+============================================================
+KEY: bot.already_connected
+⚠️ This bot (@{username}) is already connected to another channel.
+============================================================
+KEY: bot.channel_connected
+✅ <b>Bot connected to channel</b>
+
+Bot @{bot} is now linked to <code>{channel}</code>.
+============================================================
+KEY: bot.removed
+❌ Bot <b>@{username}</b> disconnected from <b>{channel}</b>.
+
+Management has been returned to the main bot.
+============================================================
+KEY: bot.not_admin_yet
+💾 Token saved for @{username}. ({count}/{limit})
+
+But the bot is not an admin in your channel yet.
+Add @{username} as an administrator, then check.
+============================================================
+KEY: bot.limit_reached
+⚠️ <b>Sender-bot limit reached ({limit})</b>
+
+Delete one of your bots or replace an existing bot instead of creating a new one — or contact our admin (@MaximalXP) for custom higher limits.
+============================================================
+KEY: bot.sender_bot_online
+👋 I'm online and connected to your channel!
+
+I'm @{username} — your personal sender bot. Posts to your channel are delivered through me, and I'll notify you here if anything needs your attention.
+============================================================
+KEY: bot.no_post_permission
+💾 Token received for @{username}, but this bot lacks the <b>Post Messages</b> permission in your channel.
+
+Add @{username} as an administrator with <b>Post Messages</b> permission, then check again.
+============================================================
+KEY: bot.not_admin_channel
+❌ The bot is not an admin in that channel.
+
+Add @FastSchedulerBot as admin with these permissions:
+• Post Messages
+• Edit Messages
+• Delete Messages 
+ • Add administrators (optional)
+
+Once added, click the button below to check again.
+============================================================
+KEY: bot.benefits_detailed
+• Your channel appears managed by your own bot
+• Full inline keyboard support
+• Faster posting with dedicated resources
+• Stranger users see "@{bot}" instead of the main bot
+• Hidden channels stay truly private
+• Premium users can connect multiple bots
+============================================================
+KEY: bot.hide_info
+💡 <b>Hide/Show channel:</b> When hidden, strangers who start your connected bot won't see your channel name. The bot will just say it sends messages to "a channel" instead of revealing which one.<i>
+(Only affects the connected bot's welcome message — your channel is always visible in your Fast Scheduler management panel.)</i>
+============================================================
+KEY: complaint.id
+🆔 ID
+============================================================
+KEY: complaint.status_spam
+🚫 Spam
+============================================================
+KEY: complaint.saved_no_admin
+📮 Your feedback has been saved. An admin will review it shortly.
+============================================================
+KEY: complaint.only_media_allowed
+❌ Only images and videos are accepted. Please send a photo or video file.
+============================================================
+KEY: complaint.media_collected
+📎 Media collected: {current}/{max_count}. Send more media, add text, or press Submit.
+============================================================
+KEY: complaint.media_note
+📎 Note: After an admin processes this feedback, the attached media will no longer be visible in your feedback menu.
+============================================================
+KEY: complaint.reply_prompt
+💬 Write your reply. You can also send images or videos (up to 3, max 20MB each). Send files separately, then text to submit.
+============================================================
+KEY: complaint.received
+✅ <b>Feedback Submitted!</b>
+
+Your feedback has been received. We will review it and get back to you.
+
+Your ID: <code>{feedback_id}</code>
+============================================================
+KEY: complaint.send_prompt
+📮 <b>Submit Feedback</b>
+
+Please describe your issue in detail. Include any relevant information that will help us understand and resolve it.
+
+📎 You can attach up to <b>{max_files}</b> images or videos. Send each file separately, then add text to submit.
+📏 Max <b>{file_size}MB</b> per file, <b>{total_size}MB</b> total.
+⚠️ After admin processes your feedback, media files will no longer be visible in your feedback menu.
+============================================================
+KEY: download.btn
+📥 Download
+============================================================
+KEY: download.format_zip
+@@STORAGE@@ZIP
+============================================================
+KEY: download.format_tar
+@@STORAGE@@TAR
+============================================================
+KEY: download.format_targz
+@@STORAGE@@TAR.GZ
+============================================================
+KEY: download.format_tarxz
+@@STORAGE@@TAR.XZ
+============================================================
+KEY: download.format_tarbz2
+@@STORAGE@@TAR.BZ2
+============================================================
+KEY: download.failed_warning
+❌ Download failed.
+============================================================
+KEY: download.no_files
+❌ No files to download.
+============================================================
+KEY: download.box_btn
+@@STORAGE@@📥 Download Box
+============================================================
+KEY: download.error
+❌ Download error: {error}
+============================================================
+KEY: download.progress
+⏳ Downloading... {percent}%
+============================================================
+KEY: download.ready
+@@STORAGE@@✅ Download ready!
+============================================================
+KEY: download.started
+@@STORAGE@@⏳ Preparing download...
+============================================================
+KEY: error.btn
+❌ Error
+============================================================
+KEY: error.invalid_input
+❌ Invalid input. Please try again.
+============================================================
+KEY: error.timeout
+⏳ Request timed out. Please try again.
+============================================================
+KEY: error.permission
+❌ You don't have permission to do this.
+============================================================
+KEY: error.network
+❌ Network error. Check your connection.
+============================================================
+KEY: error.generic
+❌ Something went wrong. Please try again.
+============================================================
+KEY: error.limit
+⚠️ Limit reached. Please try again later.
+============================================================
+KEY: error.occurred
+❌ <b>An error occurred.</b>
+
+{error}
+
+The admin has been notified.
+============================================================
+KEY: error.loading_bot
+❌ <b>An error occurred while loading this bot.</b>
+
+Please try again or contact support.
+============================================================
+KEY: export.format_csv
+CSV
+============================================================
+KEY: export.format_json
+JSON
+============================================================
+KEY: export.stats_csv
+Stats (CSV)
+============================================================
+KEY: export.translations_zip
+Translations (ZIP)
+============================================================
+KEY: export.success_format
+✅ {count} item(s) exported as {format}.
+============================================================
+KEY: export.ch_choose_any
+⚠️ Choose at least one channel below, or tap <b>Select All</b>.
+============================================================
+KEY: export.format_backup_note
+💾 <b>.fsback / .fspback</b> work with any selection — they package exactly the data you checked above.
+============================================================
+KEY: export.format_msg_only_note
+🔒 <b>JSON / CSV / TXT / RTF / ODT</b> export <b>messages only</b>. Enable <b>Scheduled</b> or <b>Recurring</b> in the list above to use them here.
+============================================================
+KEY: feedback.status_spam
+🚫 Spam
+============================================================
+KEY: feedback.id
+ID: {id}
+============================================================
+KEY: feedback.text_label
+Text: {text}
+============================================================
+KEY: feedback.reply_sent
+✅ Reply sent.
+============================================================
+KEY: feedback.reply_prompt
+📩 Write your reply:
+============================================================
+KEY: feedback.file_too_large
+❌ File too large ({size}).
+============================================================
+KEY: feedback.max_media
+📷 Max {count} media files.
+============================================================
+KEY: feedback.attached_files_present
+📎 {count} file(s) attached.
+============================================================
+KEY: feedback.no_media
+❌ No media files allowed here.
+============================================================
+KEY: feedback.total_too_large
+❌ Total size too large ({size}).
+============================================================
+KEY: feedback.only_media_allowed
+📷 Only media files (photos/videos) are allowed.
+============================================================
+KEY: feedback.send_prompt
+📝 <b>Write your message</b>
+
+Describe your issue or suggestion in detail.
+📷 You can attach <b>photos</b> or <b>videos</b> (albums are supported). Other file types are not accepted.
+
+When you're done, tap <b>Done</b> — or send more messages to add more.
+============================================================
+KEY: filter.spam
+Spam
+============================================================
+KEY: filter.other
+Other
+============================================================
+KEY: filter.files
+📄 Files
+============================================================
+KEY: filter.btn
+🔍 Filter
+============================================================
+KEY: filter.images
+🖼 Images
+============================================================
+KEY: filter.videos
+🎬 Videos
+============================================================
+KEY: filter.placeholder
+Filter...
+============================================================
+KEY: filter.files_short
+@@STORAGE@@Files
+============================================================
+KEY: filter.other_short
+@@STORAGE@@Other
+============================================================
+KEY: filter.images_short
+@@STORAGE@@Images
+============================================================
+KEY: filter.videos_short
+@@STORAGE@@Videos
+============================================================
+KEY: filter.images_files
+🖼📄 Images & Files
+============================================================
+KEY: filter.videos_files
+🎬📄 Videos & Files
+============================================================
+KEY: filter.images_videos
+🖼🎬 Images & Videos
+============================================================
+KEY: invalid.input
+❌ Invalid input.
+============================================================
+KEY: invalid.file_type
+❌ Invalid file type.
+============================================================
+KEY: invalid.datetime
+❌ Invalid date/time.
+============================================================
+KEY: invalid.button_value
+❌ Invalid button value.
+============================================================
+KEY: invalid.token
+❌ Invalid token: {error}
+============================================================
+KEY: invalid.channel_link
+❌ Invalid channel invite link.
+============================================================
+KEY: invalid.time_format
+❌ Invalid time format. Use HH:MM (24-hour).
+
+Example: <code>09:00</code>
+============================================================
+KEY: invalid.day
+❌ Invalid day. Please use a valid day name (e.g., Monday) or number (1-31).
+============================================================
+KEY: invalid.cron
+❌ Invalid cron expression. Use 5 space-separated fields: minute hour day month weekday.
+
+Example: <code>0 9 * * 1</code> for every Monday at 9:00
+============================================================
+KEY: lang.sync_tg_no
+❌ No
+============================================================
+KEY: lang.english_btn
+🇬🇧 English
+============================================================
+KEY: lang.russian_btn
+🇷🇺 Russian
+============================================================
+KEY: lang.sync_enable
+Enable auto-sync
+============================================================
+KEY: lang.sync_disable
+Disable auto-sync
+============================================================
+KEY: lang.sync_no
+❌ No, keep current
+============================================================
+KEY: lang.sync_setdate_no
+❌ No, keep current
+============================================================
+KEY: lang.sync_hide_on
+🔕 Hide cross-bot sync notifications
+============================================================
+KEY: lang.sync_hide_off
+🔔 Show cross-bot sync notifications
+============================================================
+KEY: lang.sync_hide_toggled_off
+🔔 Cross-bot sync notifications will be shown
+============================================================
+KEY: lang.sync_hide_toggled_on
+🔕 Cross-bot sync notifications will be hidden
+============================================================

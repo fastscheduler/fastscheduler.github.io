@@ -1,0 +1,6 @@
+premium :: Premium
+payment_stars :: Telegram Stars
+faq_telegram :: FAQ: Telegram
+commands_schedule :: /schedule
+contact_email :: Email
+glossary_premium :: Premium

@@ -1,0 +1,49 @@
+font-size: .9rem; }
+
+    .hc-content { flex: 1; min-width: 0; --hc-gut: clamp(20px, 4vw, 40px); padding: 0 var(--hc-gut) 90px; }
+    .hc-content > .view { max-width: 1120px; margin: 0 auto; }
+    .hc-content .hc-hero, .hc-content .hc-grid, .hc-content .hc-art,
+    .hc-content .hc-crumbs, .hc-content .hc-cat-head, .hc-content .hc-intro,
+    .hc-content .hc-list, .hc-content .hc-pager, .hc-content .hc-faq { margin-left: auto; margin-right: auto; }
+
+    /* mobile drawer */
+    .hc-scrim { position: fixed; inset: 0; z-index: 80; background: rgba(8,14,11,.45); opacity: 0; pointer-events: none; transition: opacity .25s; }
+    .hc-menu-btn { display: none; }
+    @media (max-width: 1020px) {
+      .hc-content { padding-left: var(--hc-gut); }
+      /* The drawer hangs off the right edge and slides in from it, under the
+         burger that opened it. */
+      .hc-side {
+        position: fixed; z-index: 90; top: 0; right: 0; left: auto; height: 100dvh; width: min(320px, 86vw);
+        background: var(--surface); transform: translateX(104%);
+        transition: transform .3s cubic-bezier(.22,.61,.36,1); box-shadow: var(--shadow); padding-top: 14px;
+      }
+      body.hc-side-open .hc-side { transform: none; }
+      body.hc-side-open .hc-scrim { opacity: 1; pointer-events: auto; }
+      .hc-menu-btn { display: inline-flex; }
+    }
+    @media (min-width: 1021px) { .hc-scrim { display: none; } }
+
+    /* ---------- header search (TikTok-style, every page) ---------- */
+    .hc-hsearch { position: relative; width: min(400px, 34vw); margin-left: 6px; }
+    .hc-hsearch .sic { position: absolute; left: 13px; top: 50%; translate: 0 -50%; width: 16px; height: 16px; color: var(--text-dim); pointer-events: none; z-index: 2; }
+    .hc-hsearch input {
+      width: 100%; height: 40px; padding: 0 42px 0 37px; font: inherit; font-size: .9rem; color: var(--text);
+      background: var(--surface-2); border: 1px solid transparent; border-radius: 999px; outline: none;
+      transition: background .2s, border-color .2s, box-shadow .2s;
+    }
+    .hc-hsearch input::placeholder { color: var(--text-dim); }
+    .hc-hsearch input:focus {
+      background: var(--surface); border-color: color-mix(in srgb, var(--green) 55%, transparent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--green) 14%, transparent);
+    }
+    .hc-hsearch kbd {
+      position: absolute; right: 10px; top: 50%; translate: 0 -50%; pointer-events: none;
+      font-family: inherit; font-size: .72rem; font-weight: 800; color: var(--text-dim);
+      background: var(--surface); border: 1px solid var(--border); border-bottom-width: 2px;
+      border-radius: 6px; padding: 2px 8px;
+    }
+    /* only one search per context: hero search owns the home page,
+       header search owns every other view */
+    body.hc-onhome .hc-hsearch { display: none; }
+    .hc-brand-help { color: var(--text-dim); font-weight: 600; font-s

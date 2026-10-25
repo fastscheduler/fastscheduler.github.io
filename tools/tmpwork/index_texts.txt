@@ -1,0 +1,181 @@
+Fast Scheduler — Telegram Channel Post Scheduler
+Fast Scheduler
+Time saved
+Features
+How it works
+Pricing
+FAQ
+Blog
+Help
+Open Bot
+Settings
+Dark mode
+Animations
+Effects
+Hotkeys
+Font size
+See hotkeys
+Support chat
+Help Center
+Your channel
+posts itself.
+You just write.
+Paste a week of posts into one chat —
+publishes each one at the exact time you chose, in your timezone, from
+your own bot
+. Set it once, then get on with life.
+Start free — it takes 60 seconds
+No app. No signup. Works inside Telegram you already use.
+↺ Replay demo
+Free plan forever
+Posts from your own bot
+Your timezone, not ours
+No card required
+Scheduled in one chat.
+Posted forever.
+Fast Scheduler delivered this post at 18:15 sharp — while its owner was away. Your channel can run like this too.
+One chat in. Your whole week, published right on time.
+Chats
+Fast Schedule
+bot
+Message
+Downloads
+Open
+Cancel
+Sunday, September 21
+Telegram
+Instagram
+Calendar
+Music
+Photos
+Files
+Things
+Posted to @fastschedule_test3 — right on time.
+now
+fastschedule_test3
+1 284 subscribers
+posted from the queue — nothing to click
+one batch, a whole week of posts
+schedule multiple messages at once
+see everything in calendar
+use stats for advanced statistics
+Channel · only admins can post
+News channels
+Shop drops
+Course creators
+Artists & commissions
+Trading signals
+Podcast releases
+Community digests
+Startup updates
+How much time you get back
+Posting manually every day means opening Telegram, drafting, double-checking and sending — daily. Scheduling means doing it
+once a week
+~2.5 h
+saved every week on daily posting (vs manual sending)
+1 chat
+for a whole month of posts via batch scheduling
+missed posts — delivery runs even while you sleep
+Every hour you don't spend reposting is an hour for content, community — or actually resting.
+Everything a channel needs, in one chat
+Not a stripped-down demo bot. A full scheduling studio that happens to live in Telegram.
+Batch scheduling
+Send many
+date + message
+pairs in a single message and create weeks of posts in one conversation. Preview everything before it goes live.
+saves hours
+Recurring posts
+"Every day at 9:00" or any cron schedule — digests, drops and reminders repeat themselves until you say stop. Pause and resume anytime.
+set & forget
+Rich media posts
+Photos, videos, albums, GIFs, polls, quizzes, documents, locations — with full formatting and inline URL buttons.
+Stats & leaderboards
+Views, comments, reactions per post — paginated top-posts and top-commentator leaderboards so you double down on what works.
+premium
+Post from your own bot
+Connect your bot's token once and every scheduled post is published through it — your brand, your name, on every message.
+Your timezone, your rules
+Pick your timezone once — "9:00" means your 9:00 forever. Reports arrive on your schedule, not a server's.
+Auto reports
+Daily, weekly or monthly performance reports delivered straight to your chat — no dashboards to open, no checking manually.
+Multi-channel + team admins
+Manage several channels from one bot. Add trusted admins with per-channel permissions so nobody steps on toes.
+Encrypted backups
+Export everything as a password-encrypted file (AES-256-GCM) and restore on any device. Your content, portable and safe.
+Three steps. Sixty seconds.
+No app to install, no dashboard to learn — if you can send a Telegram message, you already know how to use it.
+Open the bot & connect a channel
+Tap Start, add the bot as an admin to your channel. Pick your timezone so 9:00 always means
+your
+t.me/FastSchedulerBot
+/start
+Schedule one post or fifty
+Send one date with its message — or paste several date + message blocks at once. Review, pick a photo mode, confirm: done.
+21.09.2026 09:00 · Morning news digest
+22.09.2026 09:00 · Product update
+Live your life
+Posts publish themselves — even while you sleep. Stats and reports find you, so you always know what performed.
+📊 Channel Statistics
+📅 Scheduled: 3
+📤 Sent today: 1
+✅ Total sent: 127
+Start free. Upgrade when it pays for itself.
+Free is a real plan, not a trial. Premium is for channels that want the full studio.
+Yearly
+Best value
+Monthly
+Free
+forever — no card
+1 channel + 1 sender bot
+Up to 100 pending scheduled messages
+Basic statistics
+100 sends / channel / month
+Start free
+1 Month
+full power, cancel anytime
+/mo
+3 channels + 3 sender bots
+Unlimited sends & recurring posts
+Leaderboards + custom auto reports
+Encrypted backup & export
+Choose plan
+3 Months
+one payment
+/ 3mo
+Everything in Monthly
+≈ $6.15 / month
+vs $20.49 monthly
+6 Months
+/ 6mo
+≈ $5.94 / month
+vs $40.98 monthly
+Best value −17%
+1 Year
+one payment, no renewals
+/ yr
+≈ $5.67 / month
+vs $81.96 monthly
+Payments handled entirely by Telegram Stars. We never see your card.
+Refund policy
+Full plan comparison
+Questions, answered
+Is Fast Scheduler really free?
+Yes. The free plan connects 1 channel and 1 sender bot with up to 100 pending scheduled messages and 100 sends per channel per month. Premium raises limits and unlocks leaderboards and custom reports — but you can run a small channel on Free forever.
+How does it save me time?
+Batch-scheduling turns "post every day" into one weekly 10-minute session: paste a week of date+message pairs in a single chat. Recurring posts make daily digests fully automatic, and reports come to you instead of you hunting analytics.
+Do posts come from my own bot?
+Yes — create a bot in @BotFather, connect it once, and every scheduled post is published through it, keeping your brand on every message. The sender bot is required: scheduling unlocks only after your channel has one (the main bot steps in only as an emergency fallback if your bot's token fails).
+Will posts go out if I'm offline or asleep?
+Yes. Scheduling happens on the bot's side: once a message is queued it publishes at the exact time you chose, in your timezone, whether you're online or not.
+Can I see who comments on my posts?
+Premium leaderboards rank your top posts by views, comments and reactions, plus a top-commentators ranking. Add the bot to your channel's discussion group and it attributes comment authors automatically.
+Is my data safe?
+Bot tokens are encrypted at rest, backups support AES-256-GCM password encryption, and you can export or delete everything at any time. See our
+Privacy Policy
+Your next post is
+already scheduled
+Or you're still posting it by hand every day. Sixty seconds now — weeks of autopilot after.
+Privacy
+Terms
+Refunds
+© 2026 Fast Scheduler · Made for Telegram channels
