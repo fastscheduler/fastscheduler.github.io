@@ -1797,3 +1797,17 @@ html[lang="ru"] .nav-unified .nav-center .hc-hsearch { width: min(240px, 100%); 
    Help Center on help pages). Footer/settings links are untouched. */
 body.blog header.site a.nav-link[href*="blog/index.html"] { display: none !important; }
 body.help header.site a.nav-link[href*="help.html"] { display: none !important; }
+/* Settings popover on phones/tablets: it is fixed with a 12px left AND a fixed
+   width, so the width won the fight and the panel detached from the gear,
+   stretching in from the left edge. Anchor it right, under its trigger. */
+@media (max-width: 860px) {
+  #settingsMenu.glass-pop {
+    left: auto; right: 12px;
+    /* 100%, not 100vw: 100vw counts the scrollbar and pushes the left edge
+       off-screen on a phone. min-width must go too, or the desktop 300px
+       floor wins and the panel hangs off the left edge again. */
+    min-width: 0;
+    width: min(344px, calc(100% - 24px));
+    max-width: calc(100% - 24px);
+  }
+}
