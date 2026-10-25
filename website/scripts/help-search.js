@@ -431,14 +431,14 @@
         closePop();
         input.blur();
         form.classList.remove('focus');
-        if (scrollPos() < REVEAL_AT) hideBar();
+        if (scrollPos() < REVEAL_AT || phoneBlog()) hideBar();
       }
     });
     input.addEventListener('focus', function () { form.classList.add('focus'); });
     input.addEventListener('blur', function () {
       form.classList.remove('focus');
       setTimeout(closePop, 120);
-      if (scrollPos() < REVEAL_AT) hideBar();
+      if (scrollPos() < REVEAL_AT || phoneBlog()) hideBar();
     });
     document.addEventListener('click', function (e) {
       if (form.contains(e.target)) return;
@@ -446,9 +446,15 @@
     });
   }
 
-  /* Reveal on scroll. Legal pages on phones scroll inside main.legal. */
+  /* Reveal on scroll. Legal pages on phones scroll inside main.legal.
+     Phones on the blog are the exception: there the bar is opened on purpose
+     (the navbar magnifier), so scrolling an article must NOT slide a search
+     field over the text. */
   var REVEAL_AT = 200;
   var ticking = false;
+  function phoneBlog() {
+    return SCOPE === 'blog' && (window.innerWidth || 9999) <= 700;
+  }
   function onScroll() {
     if (ticking || !form) return;
     ticking = true;
@@ -456,6 +462,10 @@
        webviews, which would leave the bar permanently hidden */
     setTimeout(function () {
       ticking = false;
+      if (phoneBlog()) {
+        if (document.activeElement !== input) hideBar();
+        return;
+      }
       var y = scrollPos();
       if (y > REVEAL_AT) showBar();
       else if (document.activeElement !== input) hideBar();
