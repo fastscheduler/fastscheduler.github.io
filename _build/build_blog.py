@@ -789,7 +789,7 @@ SEARCH_BAR = ('<div class="blog-search" id="blog-search-bar">'
               '<div class="bsearch-row">' + bh.svg('search') +
               '<input id="blog-q" type="search" placeholder="Search the blog — titles, topics, tools…" '
               'autocomplete="off" spellcheck="false">'
-              '<kbd class="blog-search-kbd" aria-hidden="true">S</kbd></div>'
+              '<kbd class="blog-search-kbd" aria-hidden="true" title="Ctrl + K">Ctrl K</kbd></div>'
               '</div>')
 
 HUB_JS = '''<script>

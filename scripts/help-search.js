@@ -446,7 +446,11 @@
   }
   function putCaret(el) {
     try { el.focus({ preventScroll: true }); } catch (e) { try { el.focus(); } catch (e2) {} }
-    try { var n = (el.value || '').length; el.setSelectionRange(n, n); } catch (e) {}
+    /* Ctrl+K then typing should replace the old query, not append to it */
+    try {
+      if (el.value) { el.select(); return; }
+      var n = (el.value || '').length; el.setSelectionRange(n, n);
+    } catch (e) {}
   }
   if (SCOPE !== 'none') {
     document.addEventListener('keydown', function (e) {
@@ -467,8 +471,19 @@
         return;
       }
       if (SCOPE === 'blog') {
+        /* The hub's own field wins even when it has scrolled away: it searches
+           INTO this page's results view (topic filters included), while the
+           nav bar would only navigate back to the same hub. Bring it on screen
+           first, then focus it without a second scroll. */
         var bq = document.getElementById('blog-q');
-        if (bq && onScreen(bq)) { putCaret(bq); return; }
+        if (bq) {
+          if (!onScreen(bq)) {
+            try { bq.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+            catch (err) { bq.scrollIntoView(); }
+          }
+          putCaret(bq);
+          return;
+        }
       }
       if (form) focusBar();
     }, true);
