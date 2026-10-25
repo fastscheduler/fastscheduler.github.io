@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<script>
+  try {
+    var t = localStorage.getItem('theme');
+    if (!t && window.matchMedia) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    if (t) document.documentElement.setAttribute('data-theme', t);
+    if (localStorage.getItem('fs-motion') === 'off') document.documentElement.setAttribute('data-motion', 'off');
+    if (localStorage.getItem('fs-fx') === 'off') document.documentElement.setAttribute('data-fx', 'off');
+    if (localStorage.getItem('fs-hotkeys') === 'off') document.documentElement.setAttribute('data-keys', 'off');
+    if (localStorage.getItem('fs-rail') === 'off') document.documentElement.classList.add('rail-off');
+    if (localStorage.getItem('fs-blog-wide') === 'on') 
+document.documentElement.classList.add('blog-wide');
+    if (localStorage.getItem('fs-blog-fs') === 'on') 
+document.documentElement.classList.add('blog-fs');
+    var _ffb = localStorage.getItem('fs-font') || localStorage.getItem('fs-blog-font');
+    if (_ffb) { document.documentElement.setAttribute('data-font', _ffb); document.documentElement.setAttribute('data-blogfont', _ffb); }
+  } catch (e) {}
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1faa59">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; form-action 'self'; base-uri 'self'; upgrade-insecure-requests">
+<title>How to Delete, Pause or Hand Over a Telegram Channel</title>
+<meta name="description" content="How to delete a Telegram channel safely, what “pausing” really looks like, how to hand channels to a new owner, and what subscribers see in each case.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://fastscheduler.github.io/blog/a/how-to-delete-or-pause-telegram-channel/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Fast Scheduler">
+<meta property="og:title" content="How to Delete, Pause or Hand Over a Telegram Channel">
+<meta property="og:description" content="How to delete a Telegram channel safely, what “pausing” really looks like, how to hand channels to a new owner, and what subscribers see in each case.">
+<meta property="og:url" content="https://fastscheduler.github.io/blog/a/how-to-delete-or-pause-telegram-channel/">
+<meta property="og:image" content="https://fastscheduler.github.io/og-cover-v2.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Delete, Pause or Hand Over a Telegram Channel">
+<meta name="twitter:description" content="How to delete a Telegram channel safely, what “pausing” really looks like, how to hand channels to a new owner, and what subscribers see in each case.">
+<meta name="twitter:image" content="https://fastscheduler.github.io/og-cover-v2.png"><meta property="article:published_time" content="2026-09-26"><meta property="article:modified_time" content="2026-09-26">
+<link rel="icon" href="../../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../../favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="../../../icon-48.png" sizes="48x48" type="image/png">
+  <link rel="icon" href="../../../icon-192.png" sizes="192x192" type="image/png">
+  <link rel="icon" href="../../../icon-512.png" sizes="512x512" type="image/png">
+  <link rel="apple-touch-icon" href="../../../apple-touch-icon.png" sizes="180x180">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to Delete, Pause or Hand Over a Telegram Channel", "description": "How to delete a Telegram channel safely, what “pausing” really looks like, how to hand channels to a new owner, and what subscribers see in each case.", "articleBody": "Every channel eventually faces one of three endings: deliberate pause, permanent closure, or a handover to new management. All three have right ways and wrong ways — and the wrong ways burn the audience you spent years building. Here's each path done properly. Pausing: there is no pause button, but there is a pattern Telegram has no \"pause\" state — a channel exists or it doesn't. The recognized pattern for pausing: Announce the pause explicitly: a pinned post with the reason (honesty converts sympathy), the duration if known, and the return date if it exists. \"Pausing for the summer, back in September\" retains far more than silence. Reduce, don't stop, before the pause. A month of once-weekly posts before going quiet reads as intention; a cliff from daily to zero reads as abandonment. Keep the discussion group alive if you can — community conversations continuing during the pause are what keep members subscribed. On return: don't apologize for two paragraphs; post something worth the wait, then resume the old rhythm. The queue made before the pause (scheduled posts trickling out) is the pro move — channels that \"paused\" while a scheduler kept publishing weekly lost almost nobody. Deleting: what it does and what to do first Deleting a channel (channel settings → Delete channel) is permanent and total : posts, subscribers, the @username — all gone, no undo. Before deleting anything: Export the archive (Telegram Desktop → channel → Export history): JSON or HTML with all posts and media. Future-you will want this. Salvage the audience: announce the closure early, with where you're going. If a successor channel exists, post the link and pin it — a percentage of subscribers always migrates. Say goodbye properly: a final post with the story of the channel and thanks. Channels that vanish silently leave subscribers assuming the worst (scam? hack?). Release the username only deliberately: deleted channels free their @username, and it becomes claimable by anyone. If the name has value, consider keeping the channel as a redirect stub instead of deleting. Handover: selling or gifting a channel Channel ownership transfers by making the new owner the sole creator : add them as admin with full rights, then transfer ownership (in admin settings — requires their acceptance). The checklist for a clean handover: Transfer everything, not just the channel: the linked discussion group, any bots added (revoke and re-issue bot tokens), the emoji pack, and the branding assets. The announcement is a trust event: introduce the new owner personally, explain the why, and — if you can — stay visible for two weeks. Audiences forgive change; they don't forgive inexplicable change. If money changes hands: channel selling happens via escrow services and marketplaces (Guerrillabuzz-class platforms, or trusted escrow bots) — never direct payment first. And know your platform's rules: transferring a channel with an audience that joined for *your* content, disclosed or not, has reputation consequences on both sides. The redirect-stub pattern For migrations and closures alike, the gentlest ending is the stub: the old channel keeps one pinned post (\"moved to @newplace\" or \"this project ended, archive lives at...\") and nothing else. It costs nothing, catches search traffic indefinitely, and gives late arrivals the answer instead of a 404. Delete only when the username itself is a liability, not an asset.", "articleSection": "Platform", "author": {"@id": "https://fastscheduler.github.io/#organization"}, "publisher": {"@id": "https://fastscheduler.github.io/#organization"}, "image": "https://fastscheduler.github.io/blog/img/how-to-delete-or-pause-telegram-channel.webp", "mainEntityOfPage": "https://fastscheduler.github.io/blog/a/how-to-delete-or-pause-telegram-channel/", "datePublished": "2026-09-26", "dateModified": "2026-09-26", "isPartOf": {"@type": "Blog", "name": "Fast Scheduler Blog", "url": "https://fastscheduler.github.io/blog/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Fast Scheduler", "item": "https://fastscheduler.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://fastscheduler.github.io/blog/"}, {"@type": "ListItem", "position": 3, "name": "How to Delete, Pause or Hand Over a Telegram Channel", "item": "https://fastscheduler.github.io/blog/a/how-to-delete-or-pause-telegram-channel/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I pause a Telegram channel without losing subscribers?", "acceptedAnswer": {"@type": "Answer", "text": "There is no pause state, but the pattern works: announce the pause with a reason and duration, taper posting before it, keep the discussion group alive, and queue a few scheduled posts so the channel never goes fully silent."}}, {"@type": "Question", "name": "What happens when I delete a Telegram channel?", "acceptedAnswer": {"@type": "Answer", "text": "Everything is removed permanently: posts, media, subscribers and the @username (which becomes claimable by others). Export your archive first via Telegram Desktop, and post a goodbye with links to wherever you are going."}}, {"@type": "Question", "name": "How do I transfer my channel to a new owner?", "acceptedAnswer": {"@type": "Answer", "text": "Add them as an admin with full rights, then use the transfer ownership option in admin settings (they must accept). Move the linked group, re-issue bot tokens and hand over branding assets too — then introduce them personally to the audience."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://fastscheduler.github.io/#organization", "name": "Fast Scheduler", "alternateName": ["Fast Scheduler Bot", "FastSchedulerBot", "FastScheduler", "Fast Scheduler Telegram bot", "TG Scheduler", "Telegram Scheduler Bot", "Telegram post scheduler", "Fast Schedule Bot", "TG Fast Scheduler", "Fast Scheduler TG", "fast scheduler telegram bot"], "url": "https://fastscheduler.github.io/", "logo": {"@type": "ImageObject", "@id": "https://fastscheduler.github.io/#logo", "url": "https://fastscheduler.github.io/icon-512.png", "contentUrl": "https://fastscheduler.github.io/icon-512.png", "width": 512, "height": 512, "caption": "Fast Scheduler"}, "image": "https://fastscheduler.github.io/icon-512.png", "description": "Fast Scheduler is a Telegram bot (@FastSchedulerBot) that batch-schedules, auto-publishes and tracks channel posts. It is unrelated to calendar, project-management or crew-scheduling products that share the name.", "email": "fastschedulebot@gmail.com", "sameAs": ["https://t.me/FastSchedulerBot", "https://t.me/FastSchedulerSupport_bot"], "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "fastschedulebot@gmail.com", "availableLanguage": ["English", "Russian", "Spanish"], "url": "https://t.me/FastSchedulerSupport_bot"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://fastscheduler.github.io/#website", "name": "Fast Scheduler", "alternateName": ["Fast Scheduler Bot", "FastSchedulerBot", "FastScheduler", "Fast Scheduler Telegram bot", "TG Scheduler", "Telegram Scheduler Bot", "Telegram post scheduler", "Fast Schedule Bot", "TG Fast Scheduler", "Fast Scheduler TG", "fast scheduler telegram bot"], "url": "https://fastscheduler.github.io/", "publisher": {"@id": "https://fastscheduler.github.io/#organization"}, "inLanguage": ["en", "ru", "es"], "description": "Fast Scheduler is a Telegram bot (@FastSchedulerBot) that batch-schedules, auto-publishes and tracks channel posts. It is unrelated to calendar, project-management or crew-scheduling products that share the name.", "hasPart": [{"@type": "WebPage", "name": "Fast Scheduler Help Center", "url": "https://fastscheduler.github.io/help/"}, {"@type": "Blog", "name": "Fast Scheduler Blog", "url": "https://fastscheduler.github.io/blog/"}, {"@type": "WebPage", "name": "Pricing and plans", "url": "https://fastscheduler.github.io/#pricing"}]}</script>
+<link rel="preload" href="../../../fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../../styles/main.min.css?v=20261022a1">
+<link rel="stylesheet" href="../../../styles/hotkeys-modal.min.css?v=20261006a1">
+<style>
+    /* ===== Blog layout (uses main.css tokens + header/footer as-is) ===== */
+    body.blog { --maxw: 1280px; }
+    /* The mobile app-shell (fixed viewport, inner scroll) is a LEGAL-PAGES
+       layout only. Blog pages must scroll the document normally on phones. */
+    @media (max-width: 760px) {
+      body.blog { display: block; height: auto; min-height: 100vh; overflow: visible; padding: 0; }
+      body.blog main.legal { overflow: visible; padding: 0 0 30px; }
+      body.blog footer.site { display: block; }
+      html:has(body.blog) { height: auto; }
+    }
+    .blog-wrap { max-width: 1240px; margin: 0 auto; padding: 26px 28px 40px; }
+
+    /* Breadcrumb sizing: help.html carries its own inline CSS for .hc-crumbs;
+       blog pages only load main.css, so size the chevron icons here. */
+    .hc-crumbs { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 0 0 10px; font-size: .88rem; }
+    .hc-crumbs a { color: var(--text-dim); }
+    .hc-crumbs a:hover { color: var(--green-strong); }
+    .hc-crumbs svg { width: 14px; height: 14px; flex: none; color: var(--text-dim); }
+    .hc-crumbs [aria-current="page"] { color: var(--text); font-weight: 650; }
+
+    /* article body card, same material as .legal .doc */
+    .blog-doc { background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); box-shadow: var(--shadow-sm);
+      padding: 36px 40px; }
+    .blog-doc h1 { font-size: 2.05rem; margin: 0; letter-spacing: -.02em; line-height: 1.2; }
+    .blog-moreq { margin: 20px 0 0; }
+    .blog-moreq a { display: inline-flex; align-items: center; gap: 7px; font-size: .9rem;
+      font-weight: 650; color: var(--green-strong); text-decoration: none;
+      padding: 9px 15px; border: 1px solid color-mix(in srgb, var(--green) 35%, var(--border));
+      border-radius: 999px; transition: border-color .18s, background .18s; }
+    .blog-moreq a:hover { border-color: var(--green);
+      background: color-mix(in srgb, var(--green) 7%, transparent); text-decoration: none; }
+    .blog-moreq svg { width: 15px; height: 15px; }
+    .blog-byline { color: var(--text-dim); font-size: .85rem; margin: 10px 0 0; }
+    .blog-art-kicker { display: inline-flex; align-items: center; gap: 7px; font-size: .8rem;
+      font-weight: 800; letter-spacing: .03em; text-transform: uppercase;
+      color: var(--green-strong); margin: 0 0 12px; }
+    .blog-art-kicker svg { width: 14px; height: 14px; }
+    .blog-author { display: flex; align-items: center; gap: 12px; margin: 16px 0 4px;
+      padding: 12px 0 18px; border-bottom: 1px solid var(--border); }
+    .blog-ava { width: 40px; height: 40px; flex: none; border-radius: 50%; object-fit: cover;
+      background: var(--surface-2); }
+    .blog-author b { display: block; font-size: .92rem; }
+    .blog-author small { display: block; color: var(--text-dim); font-size: .8rem; margin-top: 1px; }
+    .blog-doc-cover { margin: 16px 0 4px; border-radius: 14px; overflow: hidden;
+      border: 1px solid var(--border); }
+    .blog-doc-cover img { display: block; width: 100%; height: auto; }
+    .blog-doc .hc-body { margin-top: 16px; }
+    .blog-doc .hc-body h3 { font-size: 1.1rem; margin: 26px 0 10px; color: var(--green-strong); }
+    .blog-doc .hc-body p { color: var(--text); line-height: 1.7; margin: 0 0 14px; }
+    .blog-doc .hc-body ul { padding-left: 22px; margin: 0 0 14px; }
+    .blog-doc .hc-body li { color: var(--text); line-height: 1.7; margin-bottom: 6px; }
+    .blog-doc .hc-body a { color: var(--green-strong); }
+    .blog-doc .hc-body code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .86em; background: var(--surface-2); padding: 1px 5px; border-radius: 6px; }
+
+    /* ----- table of contents (desktop: side rail, mobile: collapsible) ----- */
+    .blog-cols { display: grid; grid-template-columns: minmax(0, 860px) 220px; gap: 28px;
+      align-items: start; justify-content: center; }
+    .blog-toc { position: sticky; top: 88px; font-size: .85rem; }
+    .blog-toc-t { font-size: .92rem; font-weight: 800; letter-spacing: -.01em;
+      color: var(--text-dim); margin: 4px 0 10px; }
+    .blog-toc a { display: block; padding: 5px 10px; border-radius: 8px; color: var(--text-dim);
+      border-left: 2px solid var(--border); line-height: 1.35; }
+    .blog-toc a:hover { color: var(--green-strong); background: color-mix(in srgb, var(--green) 7%, transparent);
+      text-decoration: none; }
+    .blog-toc a.on { color: var(--green-strong); border-left-color: var(--green); font-weight: 650; }
+    .blog-toc-back { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--border); }
+
+    /* mobile TOC: a <details> above the article */
+    /* mobile Contents bottom sheet (legal-pages style) */
+    .blog-toc-fab { position: fixed; left: 14px; bottom: calc(14px + env(safe-area-inset-bottom)); z-index: 96;
+      display: none; align-items: center; gap: 7px; padding: 11px 16px; border-radius: 999px;
+      border: 1px solid var(--border); background: var(--surface); color: var(--text);
+      font: inherit; font-size: .88rem; font-weight: 700; cursor: pointer;
+      box-shadow: var(--shadow); }
+    .blog-toc-fab svg { width: 16px; height: 16px; color: var(--green-strong); }
+    .blog-toc-scrim { position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,.45); opacity: 0; pointer-events: none; transition: opacity .3s; }
+    .blog-toc-scrim.open { opacity: 1; pointer-events: auto; }
+    .blog-toc-sheet { position: fixed; left: 0; right: 0; bottom: 0; z-index: 101; max-height: 76dvh;
+      display: flex; flex-direction: column; padding: 10px 18px calc(14px + env(safe-area-inset-bottom));
+      background: var(--surface); border: 1px solid var(--border); border-bottom: 0;
+      border-radius: 18px 18px 0 0; box-shadow: 0 -12px 34px rgba(0,0,0,.28);
+      transform: translateY(100%); visibility: hidden; transition: transform .38s cubic-bezier(.32,.72,.35,1), visibility 0s .38s; }
+    .blog-toc-sheet.open { transform: none; visibility: visible; transition: transform .38s cubic-bezier(.32,.72,.35,1); }
+    .blog-toc-head { display: flex; align-items: center; justify-content: space-between; padding: 8px 0 10px; font-weight: 800; font-size: 1.05rem; flex: none; }
+    .blog-toc-mini { display: inline-flex; gap: 6px; margin-left: auto; margin-right: 8px; }
+    .blog-toc-mini button { font: inherit; font-size: .72rem; font-weight: 700; color: var(--text-dim); background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; padding: 4px 10px; cursor: pointer; }
+    .blog-toc-mini button[aria-pressed="true"] { color: #fff; background: var(--green-strong); border-color: var(--green-strong); }
+    .blog-toc-nav { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 8px; margin: 0 0 12px; flex: none; }
+    .blog-toc-navc { display: block; min-width: 0; padding: 9px 11px; border: 1px solid var(--border); border-radius: 12px;
+      background: color-mix(in srgb, var(--surface-2) 55%, transparent); text-decoration: none; color: var(--text); position: relative; }
+    .blog-toc-navc small { display: block; font-size: .76rem; font-weight: 700; letter-spacing: 0; color: var(--text-dim); }
+    .blog-toc-navc b { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font-size: .85rem; line-height: 1.35; margin-top: 3px; }
+    .blog-toc-navc svg { position: absolute; right: 8px; top: 50%; translate: 0 -50%; width: 14px; height: 14px; color: var(--text-dim); }
+    a.blog-toc-navc:hover { text-decoration: none; border-color: var(--green); }
+    .blog-toc-navc.cur { background: color-mix(in srgb, var(--green) 8%, transparent); border-color: color-mix(in srgb, var(--green) 35%, var(--border)); }
+    .blog-toc-navc.cur b { -webkit-line-clamp: 3; }
+    .blog-toc-navc.none { border-style: dashed; opacity: .6; }
+    .blog-toc-list { flex: 1 1 auto; min-height: 0; overflow-y: auto; border-left: 2px dotted var(--border); margin: 4px 0 4px 6px; padding: 0 0 0 4px; }
+    .blog-toc-list li { list-style: none; }
+    .blog-toc-list a { display: block; padding: 9px 0 9px 16px; color: var(--text); font-weight: 650; font-size: .93rem; position: relative; }
+    .blog-toc-list a::before { content: ''; position: absolute; left: -4px; top: 16px; width: 10px; height: 10px; border-radius: 50%; background: var(--surface); border: 2px solid var(--text-dim); box-sizing: border-box; }
+    .blog-toc-list a:hover { color: var(--green-strong); text-decoration: none; }
+    .blog-toc-empty { color: var(--text-dim); font-size: .9rem; padding: 6px 2px 10px; }
+    @media (max-width: 640px) { .blog-toc-fab { display: inline-flex; } .blog-toc-fab[hidden] { display: none; } }
+    @media (min-width: 641px) { .blog-toc-sheet, .blog-toc-scrim { display: none !important; } }
+    .blog-toc-m { display: none; margin: 0 0 18px; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 14px; padding: 2px 16px; }
+    .blog-toc-m summary { cursor: pointer; list-style: none; padding: 12px 0; font-weight: 750;
+      font-size: .92rem; display: flex; justify-content: space-between; align-items: center; }
+    .blog-toc-m summary::-webkit-details-marker { display: none; }
+    .blog-toc-m summary::after { content: "+"; font-size: 1.2rem; color: var(--green-strong); }
+    .blog-toc-m details[open] summary::after, .blog-toc-m[open] summary::after { transform: rotate(45deg); }
+    .blog-toc-m summary svg { display: none; }
+    .blog-toc-m nav { padding: 2px 0 12px; }
+    .blog-toc-m a { display: block; padding: 7px 2px; color: var(--text-dim); font-size: .9rem; }
+    .blog-toc-m a:hover { color: var(--green-strong); text-decoration: none; }
+
+    @media (max-width: 1140px) {
+      .blog-cols { grid-template-columns: minmax(0, 1fr); }
+      .blog-toc { display: none; }
+      .blog-toc-m { display: block; }
+    }
+
+    /* ===== hub: topic filter chips ===== */
+    .blog-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 6px; }
+    .blog-chip { font: inherit; font-size: .86rem; font-weight: 650; color: var(--text-dim);
+      background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+      padding: 8px 16px; cursor: pointer; transition: color .18s, border-color .18s, background .18s; }
+    .blog-chip:hover { color: var(--green-strong);
+      border-color: color-mix(in srgb, var(--green) 50%, transparent); }
+    .blog-chip.on { color: #fff; background: var(--green-strong); border-color: var(--green-strong); }
+
+    /* ===== hub: bento grid of article cards ===== */
+    .blog-sec { margin-top: 34px; }
+    .blog-sec h2 { margin: 0 0 4px; font-size: 1.35rem; letter-spacing: -.02em; color: var(--text); }
+    .blog-sec-desc { color: var(--text-dim); margin: 0 0 16px; font-size: .95rem; }
+    .bento { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; grid-auto-flow: dense;
+      align-items: start; }
+    .bcard { display: flex; flex-direction: column; min-width: 0; overflow: hidden;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+      color: var(--text); text-decoration: none;
+      transition: border-color .2s ease, transform .28s cubic-bezier(.22,.61,.36,1), box-shadow .28s ease; }
+    .bcard:hover { border-color: color-mix(in srgb, var(--green) 55%, var(--border));
+      text-decoration: none; transform: translateY(-3px);
+      box-shadow: 0 14px 34px -14px rgba(0,0,0,.28), var(--shadow-sm); }
+    .bcard-cover { display: block; aspect-ratio: 16 / 9; overflow: hidden; background: var(--surface-2); }
+    .bcard-cover img { display: block; width: 100%; height: 100%; object-fit: cover;
+      transition: transform .5s cubic-bezier(.22,.61,.36,1); }
+    .bcard:hover .bcard-cover img { transform: scale(1.045); }
+    .bcard-body { display: flex; flex-direction: column; gap: 8px; flex: 1; padding: 16px 18px 18px; }
+    .bcard-body b { font-size: 1rem; line-height: 1.35; letter-spacing: -.01em; }
+    .bcard-desc { color: var(--text-dim); font-size: .88rem; line-height: 1.5; }
+    .bcard-meta { margin-top: auto; padding-top: 8px; font-size: .78rem; color: var(--text-dim);
+      display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .bcard-meta i { font-style: normal; opacity: .55; }
+    .bcard-desc {
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .bcard.off { display: none; }
+
+    /* search bar — sticky above the topic chips */
+    .blog-search { position: sticky; top: 8px; z-index: 40; margin: 14px 0 2px; }
+    .bsearch-row { display: flex; align-items: center; gap: 10px; padding: 12px 16px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+      box-shadow: var(--shadow-sm); transition: border-color .18s, box-shadow .18s; }
+    .bsearch-row:focus-within { border-color: var(--green);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--green) 18%, transparent); }
+    .bsearch-row svg { width: 18px; height: 18px; flex: none; color: var(--text-dim); }
+    .bsearch-row input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent;
+      font: inherit; font-size: .98rem; color: var(--text); }
+    .bsearch-row input::placeholder { color: var(--text-dim); }
+    .blog-search-kbd { font-family: inherit; font-size: .74rem; font-weight: 700;
+      color: var(--text-dim); border: 1px solid var(--border); border-radius: 6px;
+      padding: 2px 7px; background: var(--surface-2); }
+    @media (max-width: 700px) { .blog-search-kbd { display: none; } }
+
+    .blog-empty { margin: 26px 0; color: var(--text-dim); font-size: .95rem; }
+
+    /* ---------- full search results view (help-center style) ---------- */
+    .blog-results[hidden] { display: none; }
+    .blog-results { margin-top: 26px; }
+    .blog-res-head h2 { margin: 0; font-size: 1.5rem; letter-spacing: -.02em; color: var(--text); }
+    .blog-res-head p { margin: 4px 0 0; color: var(--text-dim); font-size: .92rem; }
+    .blog-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 18px; }
+    .blog-fchip { font: inherit; font-size: .84rem; font-weight: 650; color: var(--text-dim);
+      background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+      padding: 7px 14px; cursor: pointer; transition: color .18s, border-color .18s, background .18s; }
+    .blog-fchip:hover { color: var(--green-strong); border-color: color-mix(in srgb, var(--green) 50%, transparent); }
+    .blog-fchip.on { color: #fff; background: var(--green-strong); border-color: var(--green-strong); }
+    .blog-fchip .blog-fcount { font-size: .78em; font-weight: 650; opacity: .62; margin-left: 2px; }
+    .blog-fchip.zero { opacity: .55; }
+    /* result cards reuse .bcard sizing but without images */
+    #blog-res-grid { grid-template-columns: repeat(3, 1fr); }
+    .bcard-text .bcard-cover { display: none; }
+    .bcard-text .bcard-body { padding: 18px 20px; }
+    .bcard-text .bcard-desc { display: -webkit-box; -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical; overflow: hidden; }
+    .bcard-text mark, .blog-results mark { background: color-mix(in srgb, #ffd84d 45%, transparent);
+      color: inherit; border-radius: 3px; padding: 0 1px; }
+    .blog-nores { padding: 40px 0; text-align: center; color: var(--text-dim); }
+    @media (max-width: 1100px) { #blog-res-grid { grid-template-columns: repeat(2, 1fr); } }
+    /* Phones keep two cards per row for search results, like the hub. */
+    @media (max-width: 700px) { #blog-res-grid { grid-template-columns: 1fr 1fr; gap: 10px; } }
+
+    @media (max-width: 1100px) { .bento { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 940px) { .bento { grid-template-columns: repeat(2, 1fr); } }
+    /* Phones keep two cards per row; featured spans go single like the rest. */
+    @media (max-width: 700px) {
+      .bento { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .s-lg, .s-md, .bsearch { grid-column: auto; }
+      .bcard-desc { display: none !important; }
+    }
+    @media (max-width: 400px) {
+      .bento { gap: 10px; }
+      .bcard-body { padding: 14px 15px 16px; }
+    }
+    @media (hover: none) { .bcard:hover { transform: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      .bcard, .bcard:hover { transition: none; transform: none; }
+    }
+
+    /* ===== components mirrored from help.html (blog pages don't load its
+       inline CSS) ===== */
+    .hc-chip {
+      display: inline-flex; align-items: center; gap: 8px; font-size: .88rem; font-weight: 650;
+      color: var(--text); background: var(--surface); border: 1px solid var(--border);
+      padding: 9px 16px; border-radius: 999px; line-height: 1.3; max-width: 300px;
+      transition: border-color .18s, color .18s; }
+    .hc-chip svg { width: 15px; height: 15px; flex: none; color: var(--green-strong); }
+    .hc-chip:hover { border-color: color-mix(in srgb, var(--green) 50%, transparent);
+      color: var(--green-strong); text-decoration: none; }
+    .hc-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .hc-related { margin-top: 26px; }
+    .hc-related h2 { font-size: .9rem; font-weight: 650; color: var(--text-dim); margin: 14px 0 10px; }
+    .hc-pager { max-width: 860px; margin: 16px auto 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+    .hc-pager a { display: flex; align-items: center; gap: 12px; padding: 14px 17px; color: var(--text);
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+      box-shadow: var(--shadow-sm); transition: border-color .2s; }
+    .hc-pager a:hover { text-decoration: none; border-color: color-mix(in srgb, var(--green) 45%, var(--border)); }
+    .hc-pager a.next { justify-content: flex-end; text-align: right; }
+    .hc-pager a.next svg { order: 2; }
+    .hc-pager svg { flex: none; width: 17px; height: 17px; color: var(--text-dim); }
+    .hc-pager small { display: block; font-size: .78rem; font-weight: 650; color: var(--text-dim); }
+    .hc-pager a span { min-width: 0; flex: 1 1 auto; }
+    .hc-pager b { display: block; font-size: .95rem; line-height: 1.35; margin-top: 2px; overflow: hidden;
+      display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; max-width: 100%; }
+    .hc-pager a.prev { text-align: left; }
+    .hc-pager a.prev svg { order: 0; }
+    .hc-pager .none { border-style: dashed; opacity: .6; }
+    @media (max-width: 640px) {
+      .hc-pager { gap: 9px; }
+      .hc-pager a { padding: 12px 13px; gap: 9px; }
+      .hc-pager b { font-size: .84rem; }
+      .hc-pager svg { width: 15px; height: 15px; }
+    }
+    .hc-faq { margin-top: 26px; border-top: 1px solid var(--border); padding-top: 6px; }
+    .hc-faq h2 { font-size: .9rem; font-weight: 650; color: var(--text-dim); margin: 14px 0 4px; }
+    .hc-faq details { border-bottom: 1px dashed var(--border); }
+    .hc-faq details:last-child { border-bottom: 0; }
+    .hc-faq summary code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em; background: var(--surface-2); padding: 1px 5px; border-radius: 6px; }
+    .hc-faq summary { cursor: pointer; list-style: none; padding: 13px 0; font-weight: 650; font-size: .95rem;
+      display: flex; justify-content: space-between; gap: 14px; align-items: center; }
+    .hc-faq summary::-webkit-details-marker { display: none; }
+    /* drawn plus (two bars, one shared center) instead of a "+" glyph:
+       glyphs rotate off-center and the open-state x looks broken. Both
+       bars spin together into a clean x. */
+    .hc-faq summary { position: relative; padding-right: 28px; }
+    .hc-faq summary::before, .hc-faq summary::after {
+      content: ""; position: absolute; top: 50%; background: var(--green-strong);
+      border-radius: 2px; transition: transform .25s var(--ease-spring, ease);
+    }
+    .hc-faq summary::before { right: 1px; width: 14px; height: 2px; transform: translateY(-50%); }
+    .hc-faq summary::after { right: 7px; width: 2px; height: 14px; transform: translateY(-50%); }
+    .hc-faq details[open] summary::before,
+    .hc-faq details[open] summary::after { transform: translateY(-50%) rotate(135deg); }
+    .hc-fa { padding: 0 0 16px; }
+    .hc-fa p { margin: 0 0 8px; color: var(--text-dim); font-size: .92rem; line-height: 1.65; }
+    .hc-cta {
+      max-width: 860px; margin: 16px auto 20px; padding: 22px 26px; border-radius: 18px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+      background: var(--green-strong); color: #fff; }
+    .hc-cta b { font-size: 1.02rem; }
+    .hc-cta p { margin: 3px 0 0; font-size: .88rem; opacity: .92; }
+    .hc-cta .btn { flex: none; background: #fff; color: var(--green-strong); border: 0; }
+    .hc-cta .btn:hover { background: #f0fff7; }
+    .hc-cta svg { width: 16px; height: 16px; }
+
+    /* hub hero — explicit colors: blog pages don't get help.html's inline
+       .doc heading rules, and main.css scopes some heading colors to
+       .legal .doc, which the hub's plain header doesn't match. */
+    .blog-hero { padding: 8px 0 6px; }
+    .blog-hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); margin: 0 0 10px; letter-spacing: -.03em; color: var(--text); }
+    .blog-hero .lead { color: var(--text-dim); font-size: 1.02rem; line-height: 1.6; max-width: 640px; margin: 0 0 6px; }
+    .blog-sec h2 { color: var(--text); }
+    .blog-doc h1 { color: var(--text); }
+
+    /* settings menu help popover reuses .help-menu rules from main.css */
+
+    /* ---- hub hero panel (light touch: rounded container, like modern blogs) ---- */
+    .blog-hero-panel { margin-top: 4px; border-radius: 24px; padding: clamp(28px, 4.5vw, 52px);
+      background:
+        radial-gradient(1200px 320px at 85% -10%, color-mix(in srgb, var(--green) 16%, transparent), transparent 60%),
+        radial-gradient(900px 300px at 8% 110%, color-mix(in srgb, #2563eb 10%, transparent), transparent 60%),
+        color-mix(in srgb, var(--green) 6%, var(--surface));
+      border: 1px solid var(--border); overflow: hidden; position: relative; }
+    html[data-theme="dark"] .blog-hero-panel {
+      background:
+        radial-gradient(1200px 320px at 85% -10%, color-mix(in srgb, var(--green) 22%, transparent), transparent 60%),
+        radial-gradient(900px 300px at 8% 110%, color-mix(in srgb, #2563eb 14%, transparent), transparent 60%),
+        var(--surface); }
+    .blog-kicker { display: inline-flex; align-items: center; gap: 8px; font-size: .82rem;
+      font-weight: 800; letter-spacing: .02em; color: var(--green-strong);
+      background: color-mix(in srgb, var(--green) 12%, transparent);
+      border: 1px solid color-mix(in srgb, var(--green) 30%, transparent);
+      padding: 6px 14px; border-radius: 999px; margin: 0 0 14px; }
+    .blog-kicker svg { width: 14px; height: 14px; }
+    .blog-stats { display: flex; flex-wrap: wrap; gap: 8px 26px; margin: 18px 0 0; }
+    .blog-stat { display: inline-flex; align-items: baseline; gap: 7px; font-size: .88rem;
+      color: var(--text-dim); }
+    .blog-stat b { font-size: 1.12rem; font-weight: 850; letter-spacing: -.02em; color: var(--text); }
+    .blog-hero-panel h1 { font-size: clamp(1.9rem, 4.5vw, 2.6rem); margin: 0 0 10px;
+      letter-spacing: -.03em; color: var(--text); }
+    .blog-hero-panel .lead { color: var(--text-dim); font-size: 1.02rem; line-height: 1.6;
+      max-width: 640px; margin: 0 0 6px; }
+    .blog-hero-panel .blog-search { position: static; margin: 20px 0 0; max-width: 640px; }
+    .blog-kindtabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 4px; }
+    .blog-kindtab { font: inherit; font-size: .9rem; font-weight: 750; color: var(--text-dim);
+      background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+      padding: 9px 20px; cursor: pointer; transition: color .18s, border-color .18s, background .18s; }
+    .blog-kindtab:hover { color: var(--green-strong);
+      border-color: color-mix(in srgb, var(--green) 50%, transparent); }
+    .blog-kindtab.on { color: #fff; background: var(--green-strong); border-color: var(--green-strong); }
+    .blog-kindtab .cnt { font-size: .78em; font-weight: 650; opacity: .65; margin-left: 4px; }
+    .bcard-kicker { display: inline-flex; align-items: center; gap: 6px; font-size: .78rem;
+      font-weight: 800; letter-spacing: 0;
+      color: var(--green-strong); }
+    .bcard-kicker.news { color: #b07a1e; }
+    html[data-theme="dark"] .bcard-kicker.news { color: #e0aa4e; }
+    .blog-sec[data-kind="news"] > h2::after { content: '•  News'; font-size: .72rem; font-weight: 800;
+      letter-spacing: 0; color: #b07a1e; margin-left: 10px; }
+
+    /* ---- featured spotlight (latest article, horizontal) ---- */
+    .blog-feat { margin-top: 22px; display: grid; grid-template-columns: 1.15fr 1fr;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+      overflow: hidden; color: var(--text); text-decoration: none;
+      transition: border-color .2s ease, transform .28s cubic-bezier(.22,.61,.36,1), box-shadow .28s ease; }
+    .blog-feat:hover { border-color: color-mix(in srgb, var(--green) 55%, var(--border));
+      text-decoration: none; transform: translateY(-3px);
+      box-shadow: 0 18px 44px -18px rgba(0,0,0,.3), var(--shadow-sm); }
+    .blog-feat-cover { display: block; min-height: 260px; overflow: hidden; background: var(--surface-2); }
+    .blog-feat-cover img { display: block; width: 100%; height: 100%; object-fit: cover;
+      transition: transform .5s cubic-bezier(.22,.61,.36,1); }
+    .blog-feat:hover .blog-feat-cover img { transform: scale(1.03); }
+    .blog-feat-body { display: flex; flex-direction: column; justify-content: center; gap: 10px;
+      padding: clamp(22px, 3.4vw, 38px); }
+    .blog-feat-flag { display: inline-flex; align-items: center; gap: 7px; align-self: flex-start;
+      font-size: .76rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase;
+      color: #fff; background: var(--green-strong); border-radius: 999px; padding: 5px 13px; }
+    .blog-feat-body b { font-size: clamp(1.25rem, 2.4vw, 1.65rem); line-height: 1.25; letter-spacing: -.02em; }
+    .blog-feat-desc { color: var(--text-dim); font-size: .95rem; line-height: 1.6;
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    @media (max-width: 760px) { .blog-feat { grid-template-columns: 1fr; }
+      .blog-feat-cover { min-height: 0; aspect-ratio: 16 / 9; } }
+
+    /* ---- keep-reading show more/less ---- */
+    .hc-chips.is-collapsed .hc-chip:nth-child(n+4) { display: none; }
+    .hc-chips.is-expanded .hc-chip:nth-child(n+4) { animation: hcMoreIn .35s cubic-bezier(.22,.61,.36,1) both; }
+    @keyframes hcMoreIn { from { opacity: 0; transform: translateY(8px); } }
+    .hc-more { display: inline-flex; align-items: center; gap: 8px; margin: 12px 0 0; font: inherit;
+      font-size: .88rem; font-weight: 700; color: var(--green-strong); background: var(--surface);
+      border: 1px solid var(--border); border-radius: 10px; padding: 9px 18px; cursor: pointer; }
+    /* docked to the right end of the chips row, beside the last chip */
+    .hc-chips.has-more { align-items: center; }
+    .hc-chips > .hc-more { margin: 0 0 0 auto; align-self: center; flex: none; }
+    .hc-more:hover { border-color: var(--green); }
+    .hc-more[hidden] { display: none; }
+
+    /* ---- reader settings (settings menu: Wide / Article navigation / Font) ---- */
+    .gp-reading[hidden] { display: none !important; }
+    @media (max-width: 1020px) {
+      #settingsMenu [data-blog-rail] { display: none !important; }
+    }
+    .gp-row.gp-fonts { cursor: default; }
+    .hc-fonts { display: inline-flex; align-items: baseline; gap: 2px; margin-left: auto; }
+    .hc-fonts button { font: inherit; background: none; border: 0; cursor: pointer; color: var(--text-dim);
+      padding: 3px 8px; border-radius: 8px; font-weight: 800; line-height: 1; }
+    .hc-fonts button:hover { color: var(--green-strong); }
+    .hc-fonts button.on { color: #fff; background: var(--green-strong); }
+    .hc-fonts button:nth-child(1) { font-size: .78rem; }
+    .hc-fonts button:nth-child(2) { font-size: .95rem; }
+    .hc-fonts button:nth-child(3) { font-size: 1.12rem; }
+    html[data-blogfont="s"] .blog-doc .hc-body { font-size: .88rem; }
+    html[data-blogfont="l"] .blog-doc .hc-body { font-size: 1.12rem; }
+    html.blog-wide .blog-cols { grid-template-columns: minmax(0, 1fr); }
+    html.blog-wide .blog-toc { display: none; }
+    html.blog-wide .blog-doc { max-width: 1020px; margin: 0 auto; width: 100%; }
+    html.rail-off .blog-cols { grid-template-columns: minmax(0, 1fr); }
+    html.rail-off .blog-toc { display: none; }
+    /* ---- fullscreen focus mode (same animated pattern as help pages) ---- */
+    .blog-doc, .hc-pager, footer.site, .blog-toc, .blog-reel, .blog-toc-fab, .hc-cta, .blog-moreq {
+      transition: opacity .3s cubic-bezier(.22,.61,.36,1), display .3s allow-discrete, visibility 0s; }
+    html.blog-fs header.site { transform: translateY(-100%); margin-bottom: calc(-1 * var(--nav-h, 64px)); }
+    /* Keep the previous/next article pager visible in focus mode; only
+       chrome, the CTA and cross-links leave. */
+    html.blog-fs footer.site, html.blog-fs .hc-cta, html.blog-fs .blog-toc,
+    html.blog-fs .blog-reel, html.blog-fs .blog-toc-fab, html.blog-fs .blog-moreq, html.blog-fs .hc-related {
+      display: none; opacity: 0; visibility: hidden;
+      transition: opacity .3s cubic-bezier(.22,.61,.36,1), display 0s .35s allow-discrete, visibility 0s .35s; }
+    html.blog-fs .blog-cols { grid-template-columns: minmax(0, 1fr); }
+    html.blog-fs .blog-doc { max-width: 960px; margin: 0 auto; width: 100%; }
+    html.blog-fs .blog-doc-cover { margin-top: 0; }
+    @media (prefers-reduced-motion: reduce) {
+      html.blog-fs footer.site, html.blog-fs .hc-cta, html.blog-fs .hc-pager, html.blog-fs .blog-toc,
+      html.blog-fs .blog-reel, html.blog-fs .blog-toc-fab, html.blog-fs .blog-moreq, html.blog-fs .hc-related,
+      .blog-doc, .hc-pager, footer.site, .blog-toc, .blog-reel, .blog-toc-fab, .hc-cta, .blog-moreq { transition: none !important; }
+    }
+    /* ---- liquid-glass section reel: floating prev/current/next ---- */
+    .blog-reel { position: fixed; left: auto; right: 18px; top: 50%; bottom: auto; z-index: 90;
+      transform: translateY(-50%) translateX(24px); width: min(300px, calc(100vw - 36px));
+      border-radius: 18px; padding: 10px 16px 12px; opacity: 0; pointer-events: none;
+      transition: opacity .3s, transform .3s cubic-bezier(.22,.61,.36,1);
+      background: linear-gradient(135deg, color-mix(in srgb, var(--surface) 62%, transparent), color-mix(in srgb, var(--surface-2) 45%, transparent));
+      -webkit-backdrop-filter: blur(18px) saturate(1.4); backdrop-filter: blur(18px) saturate(1.4);
+      border: 1px solid color-mix(in srgb, #fff 22%, var(--border));
+      box-shadow: 0 12px 40px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.18); overflow: hidden; }
+    .blog-reel.show { opacity: 1; pointer-events: auto; transform: translateY(-50%); }
+    @media (max-width: 900px) {
+      .blog-reel { display: none; left: 50%; right: auto; top: auto; bottom: calc(18px + env(safe-area-inset-bottom)); transform: translateX(-50%) translateY(24px); width: min(340px, calc(100vw - 32px)); }
+      .blog-reel.show { transform: translateX(-50%); }
+    }
+    .blog-reel::after { content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,.14) 45%, transparent 60%);
+      transform: translateX(-110%); animation: reelSheen 7s ease-in-out infinite; }
+    @keyframes reelSheen { 0%, 72% { transform: translateX(-110%); } 88%, 100% { transform: translateX(110%); } }
+    .blog-reel button { display: block; width: 100%; background: none; border: 0; padding: 0; font: inherit;
+      color: var(--text-dim); cursor: pointer; text-align: center; }
+    .blog-reel button span { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .blog-reel [data-reel-prev] span, .blog-reel [data-reel-next] span { font-size: .8rem; font-weight: 600; opacity: .85; white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+    .blog-reel [data-reel-cur] { margin: 2px 0; }
+    .blog-reel [data-reel-cur] span { font-size: 1rem; font-weight: 800; letter-spacing: -.01em; color: var(--text); }
+    .blog-reel.swap [data-reel-cur] span { animation: reelSwap .32s cubic-bezier(.22,.61,.36,1) both; }
+    @keyframes reelSwap { 0% { opacity: 0; transform: translateY(10px) scale(.94); } 60% { opacity: 1; transform: translateY(-1px) scale(1.02); } 100% { opacity: 1; transform: none; } }
+    html[data-motion="off"] .blog-reel::after, html[data-motion="off"] .blog-reel.swap [data-reel-cur] span { animation: none; }
+
+  </style>
+<link rel="ard" href="https://fastscheduler.github.io/.well-known/ard.json">
+</head>
+<body class="blog">
+<header class="site"><div class="wrap nav nav-unified"><div class="nav-group nav-left"><a class="brand" href="../../../" aria-label="Fast Scheduler — home (FS)"><span class="brand-mark"><img src="../../../brand-logo-128.png" alt="" width="30" height="30" decoding="async"></span><span class="brand-full">Fast Scheduler</span><span class="brand-short">FS</span></a></div><div class="nav-group nav-right"><a class="nav-link" href="../../" aria-label="Blog"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><span>Blog</span></a><span class="site-menu-wrap"><a class="nav-link site-menu-row" href="../../../help/" aria-label="Help Center" aria-haspopup="menu" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Help Center</span></a></span><a class="btn btn-primary nav-cta" data-cta-short="Open" aria-label="Open Bot" href="https://t.me/FastSchedulerBot?start=start__blog" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>Open Bot</span><kbd class="tab-kbd" aria-hidden="true">B</kbd></a><span class="settings-wrap"><button type="button" class="icon-btn" id="settingsBtn" aria-haspopup="menu" aria-expanded="false" aria-label="Settings" data-hk="settings dark anim fx keys"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button><div class="glass-pop" id="settingsMenu" role="group" aria-label="Settings"><div class="gp-head">Settings</div>
+        <button type="button" class="gp-row" aria-pressed="false" id="rowDark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span>Dark mode</span><span class="io-switch" aria-hidden="true"></span></button>
+        <button type="button" class="gp-row" aria-pressed="true" id="rowAnim"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span>Animations</span><span class="io-switch" aria-hidden="true"></span></button>
+        <button type="button" class="gp-row" aria-pressed="true" id="rowFx"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg><span>Effects</span><span class="io-switch" aria-hidden="true"></span></button>
+        <button type="button" class="gp-row" aria-pressed="true" id="rowKeys"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2.5"/><path d="M6.5 10h.01M10.5 10h.01M14.5 10h.01M18 10h.01M8 13.5h8"/></svg><span>Hotkeys</span><span class="io-switch" aria-hidden="true"></span></button>
+        <div class="gp-row gp-fonts" data-fonts><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Font size</span><span class="hc-fonts"><button type="button" data-font="s" aria-label="Small">A</button><button type="button" data-font="m" aria-label="Default">A</button><button type="button" data-font="l" aria-label="Large">A</button></span></div>
+        <div class="gp-sep gp-reading" data-blog-reading></div>
+          <div class="gp-head gp-reading" data-blog-reading>Reading</div>
+          <button type="button" class="gp-row gp-reading" data-blog-reading aria-pressed="true" data-blog-rail><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Article navigation</span><span class="io-switch" aria-hidden="true"></span></button>
+          <button type="button" class="gp-row gp-reading" data-blog-reading aria-pressed="false" data-blog-fs><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg><span>Fullscreen</span><span class="io-switch" aria-hidden="true"></span></button>
+          <div class="gp-row gp-fonts" data-fonts><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Font size</span><span class="hc-fonts"><button type="button" data-font="s" aria-label="Small">A</button><button type="button" data-font="m" aria-label="Default">A</button><button type="button" data-font="l" aria-label="Large">A</button></span></div>
+        <button type="button" class="gp-row gp-row-sub" id="rowKeysHelp"><svg viewBox="0 0 24 24" fill="none" stroke="none" aria-hidden="true" style="visibility:hidden;width:18px;height:18px"></svg><span class="gp-sub-label">See hotkeys</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div class="gp-sep" role="separator"></div>
+        <a class="gp-row" href="https://t.me/FastSchedulerSupport_bot" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>Support chat</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></div></span></div></div></header>
+<main class="legal">
+<div class="blog-cols">
+  <div>
+    <nav class="hc-crumbs" aria-label="Breadcrumb"><a href="../../">Blog</a><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg><span aria-current="page">How to Delete, Pause or Hand Over a Telegram Channel</span></nav>
+    <button type="button" class="blog-toc-fab" data-blog-toc-fab aria-label="Open contents" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Contents</span></button>
+<div class="blog-toc-scrim" data-blog-toc-scrim hidden></div>
+<div class="blog-toc-sheet" data-blog-toc-sheet role="dialog" aria-modal="true" aria-label="Contents" hidden>
+  <div class="blog-toc-head"><span>Contents</span><span class="blog-toc-mini"><button type="button" data-blog-wide aria-pressed="false" title="Wide format">Wide</button><button type="button" data-blog-rail aria-pressed="true" title="Article navigation">Nav</button><button type="button" data-blog-fs aria-pressed="false" title="Fullscreen">Full</button></span><button type="button" class="icon-btn" data-blog-toc-close aria-label="Close contents"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="blog-toc-nav">
+    <a class="blog-toc-navc prev" href="../telegram-groups-vs-whatsapp-vs-discord/"><small>Previous</small><b>Telegram vs WhatsApp vs Discord: Where Should Your Community Live</b><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></a>
+    <div class="blog-toc-navc cur"><small>Now reading</small><b>How to Delete, Pause or Hand Over a Telegram Channel</b></div>
+    <a class="blog-toc-navc next" href="../telegram-channel-for-crypto-signals/"><small>Up next</small><b>Running a Crypto Signals Channel: The Honest 2026 Guide</b><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+  <ol class="blog-toc-list"><a href="#s-pausing-there-is-no-pause-button-but-there-is-a-pattern">Pausing: there is no pause button, but there is a pattern</a><a href="#s-deleting-what-it-does-and-what-to-do-first">Deleting: what it does and what to do first</a><a href="#s-handover-selling-or-gifting-a-channel">Handover: selling or gifting a channel</a><a href="#s-the-redirect-stub-pattern">The redirect-stub pattern</a></ol>
+</div>
+    <article class="blog-doc">
+      <p class="blog-art-kicker"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Articles · Platform</p>
+      <h1>How to Delete, Pause or Hand Over a Telegram Channel</h1>
+      <p class="blog-byline">September 26, 2026 · 3 <span>min read</span></p>
+      <div class="blog-author"><img class="blog-ava" src="../../../brand-logo-128.png" alt="Fast Scheduler team" width="40" height="40" decoding="async" onerror="this.remove()"><span><b>Fast Scheduler team</b><small>Channel-growth notes from people who schedule posts for a living</small></span></div>
+      <figure class="blog-doc-cover"><img src="../../img/how-to-delete-or-pause-telegram-channel.webp" alt="How to Delete, Pause or Hand Over a Telegram Channel" width="1200" height="675" loading="lazy" decoding="async" onerror="this.parentNode.style.display='none'"></figure>
+      <div class="hc-body"><p>Every channel eventually faces one of three endings: deliberate pause, permanent closure, or a handover to new management. All three have right ways and wrong ways — and the wrong ways burn the audience you spent years building. Here's each path done properly.</p><h3 id="s-pausing-there-is-no-pause-button-but-there-is-a-pattern">Pausing: there is no pause button, but there is a pattern</h3><p>Telegram has no "pause" state — a channel exists or it doesn't. The recognized pattern for pausing:</p><ul><li><b>Announce the pause explicitly:</b> a pinned post with the reason (honesty converts sympathy), the duration if known, and the return date if it exists. "Pausing for the summer, back in September" retains far more than silence.</li><li><b>Reduce, don't stop, before the pause.</b> A month of once-weekly posts before going quiet reads as intention; a cliff from daily to zero reads as abandonment.</li><li><b>Keep the discussion group alive</b> if you can — community conversations continuing during the pause are what keep members subscribed.</li><li><b>On return:</b> don't apologize for two paragraphs; post something worth the wait, then resume the old rhythm. The queue made before the pause (scheduled posts trickling out) is the pro move — channels that "paused" while a scheduler kept publishing weekly lost almost nobody.</li></ul><h3 id="s-deleting-what-it-does-and-what-to-do-first">Deleting: what it does and what to do first</h3><p>Deleting a channel (channel settings → Delete channel) is <b>permanent and total</b>: posts, subscribers, the @username — all gone, no undo. Before deleting anything:</p><ol><li><b>Export the archive</b> (Telegram Desktop → channel → Export history): JSON or HTML with all posts and media. Future-you will want this.</li><li><b>Salvage the audience:</b> announce the closure early, with where you're going. If a successor channel exists, post the link and pin it — a percentage of subscribers always migrates.</li><li><b>Say goodbye properly:</b> a final post with the story of the channel and thanks. Channels that vanish silently leave subscribers assuming the worst (scam? hack?).</li><li><b>Release the username only deliberately:</b> deleted channels free their @username, and it becomes claimable by anyone. If the name has value, consider keeping the channel as a redirect stub instead of deleting.</li></ol><h3 id="s-handover-selling-or-gifting-a-channel">Handover: selling or gifting a channel</h3><p>Channel ownership transfers by making the new owner the <b>sole creator</b>: add them as admin with full rights, then transfer ownership (in admin settings — requires their acceptance). The checklist for a clean handover:</p><ul><li><b>Transfer everything, not just the channel:</b> the linked discussion group, any bots added (revoke and re-issue bot tokens), the emoji pack, and the branding assets.</li><li><b>The announcement is a trust event:</b> introduce the new owner personally, explain the why, and — if you can — stay visible for two weeks. Audiences forgive change; they don't forgive inexplicable change.</li><li><b>If money changes hands:</b> channel selling happens via escrow services and marketplaces (Guerrillabuzz-class platforms, or trusted escrow bots) — never direct payment first. And know your platform's rules: transferring a channel with an audience that joined for *your* content, disclosed or not, has reputation consequences on both sides.</li></ul><h3 id="s-the-redirect-stub-pattern">The redirect-stub pattern</h3><p>For migrations and closures alike, the gentlest ending is the stub: the old channel keeps one pinned post ("moved to @newplace" or "this project ended, archive lives at...") and nothing else. It costs nothing, catches search traffic indefinitely, and gives late arrivals the answer instead of a 404. Delete only when the username itself is a liability, not an asset.</p></div>
+      <div class="hc-faq"><h2>Common questions</h2><details><summary>Can I pause a Telegram channel without losing subscribers?</summary><div class="hc-fa"><p>There is no pause state, but the pattern works: announce the pause with a reason and duration, taper posting before it, keep the discussion group alive, and queue a few scheduled posts so the channel never goes fully silent.</p></div></details><details><summary>What happens when I delete a Telegram channel?</summary><div class="hc-fa"><p>Everything is removed permanently: posts, media, subscribers and the @username (which becomes claimable by others). Export your archive first via Telegram Desktop, and post a goodbye with links to wherever you are going.</p></div></details><details><summary>How do I transfer my channel to a new owner?</summary><div class="hc-fa"><p>Add them as an admin with full rights, then use the transfer ownership option in admin settings (they must accept). Move the linked group, re-issue bot tokens and hand over branding assets too — then introduce them personally to the audience.</p></div></details></div>
+      <div class="blog-moreq"><a href="../../#cat=platform">More on this topic<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      <div class="hc-related"><h2>Keep reading</h2><div class="hc-chips" data-chips-more><a class="hc-chip" href="../telegram-channel-vs-group/"><span>Telegram Channels vs Groups vs Supergroups: Which One Actually Fits You</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><a class="hc-chip" href="../telegram-bot-safety/"><span>Telegram Bot Safety: What You Should (and Shouldn’t) Give a Bot</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><a class="hc-chip" href="../telegram-algorithm-explained/"><span>Is There a Telegram Algorithm? How Reach Actually Works</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><a class="hc-chip" href="../telegram-privacy-for-channel-owners/"><span>Telegram Privacy Settings Every Channel Owner Should Know</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><a class="hc-chip" href="../telegram-comments-and-discussion-groups/"><span>How Telegram Comments Work (and How to Make Discussion Groups Thrive)</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><a class="hc-chip" href="../telegram-groups-vs-whatsapp-vs-discord/"><span>Telegram vs WhatsApp vs Discord: Where Should Your Community Live</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div><button type="button" class="hc-more" data-more hidden><span data-more-t>Show more</span><span data-less-t hidden>Show less</span></button></div>
+    </article>
+    <nav class="hc-pager" aria-label="More articles"><a class="hc-card prev" href="../telegram-groups-vs-whatsapp-vs-discord/"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg><span><small>Previous article</small><b>Telegram vs WhatsApp vs Discord: Where Should Your Community Live</b></span></a><a class="hc-card next" href="../telegram-channel-for-crypto-signals/"><span><small>Next article</small><b>Running a Crypto Signals Channel: The Honest 2026 Guide</b></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></nav>
+    <div class="hc-cta"><div><b>Posting on a schedule?</b><p>Fast Scheduler batch-schedules weeks of Telegram posts in one chat — free to start, posts from your own bot.</p></div>
+    <a class="btn" href="https://t.me/FastSchedulerBot?start=start__blog_post" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Try Fast Scheduler</a></div>
+  </div>
+  <nav class="blog-toc" aria-label="On this page"><div class="blog-toc-t">On this page</div><a href="#s-pausing-there-is-no-pause-button-but-there-is-a-pattern">Pausing: there is no pause button, but there is a pattern</a><a href="#s-deleting-what-it-does-and-what-to-do-first">Deleting: what it does and what to do first</a><a href="#s-handover-selling-or-gifting-a-channel">Handover: selling or gifting a channel</a><a href="#s-the-redirect-stub-pattern">The redirect-stub pattern</a><div class="blog-toc-back"><a href="../../">← All articles</a></div></nav>
+</div>
+<div class="blog-reel" data-blog-reel hidden aria-hidden="true"><button type="button" data-reel-prev tabindex="-1"><span></span></button><button type="button" data-reel-cur tabindex="-1"><span></span></button><button type="button" data-reel-next tabindex="-1"><span></span></button></div>
+</main>
+<footer class="site">
+  <div class="wrap foot">
+    <span class="copy">© 2026 Fast Scheduler — free Telegram scheduling bot</span>
+    <nav class="links" aria-label="Site">
+      <a href="../../../">Home</a>
+      <a href="../../">Blog</a>
+      <a href="../../../help/">Help Center</a>
+      <a href="../../../legal/terms/">Terms</a>
+      <a href="../../../legal/privacy/">Privacy</a>
+      <a href="../../../legal/refund-policy/">Refunds</a>
+    </nav>
+  </div>
+</footer>
+<script src="../../../scripts/theme.js?v=20260930a1"></script>
+<script src="../../../scripts/settings.js?v=20261005d1"></script>
+  <script src="../../../scripts/ru-content.js?v=20261004b2"></script><script src="../../../scripts/ru-chrome.js?v=20261010a2"></script><script src="../../../scripts/lang.js?v=20261010a2"></script>
+<script src="../../../scripts/hotkeys-modal.js?v=20261006a1"></script>
+<script src="../../../scripts/hotkeys.js?v=20261005d1"></script>
+<script src="../../../scripts/scroll-jump.js?v=20261005a1"></script>
+<script src="../../../scripts/help-search.js?v=20261022a3"></script>
+<script>
+/* Mobile Contents sheet: pill opens/closes, scrim + Esc + link tap close. */
+(function () {
+  'use strict';
+  function parts() {
+    return {
+      sheet: document.querySelector('[data-blog-toc-sheet]'),
+      scrim: document.querySelector('[data-blog-toc-scrim]')
+    };
+  }
+  function open(scrim, sheet) {
+    if (!sheet) return;
+    sheet.hidden = false; scrim.hidden = false;
+    void sheet.offsetWidth;
+    sheet.classList.add('open'); scrim.classList.add('open');
+  }
+  function close(scrim, sheet) {
+    if (!sheet || sheet.hidden) return;
+    sheet.classList.remove('open'); scrim.classList.remove('open');
+    setTimeout(function () { sheet.hidden = true; scrim.hidden = true; }, 400);
+  }
+  document.addEventListener('click', function (e) {
+    var p = parts();
+    if (e.target.closest && e.target.closest('[data-blog-toc-fab]')) { e.preventDefault(); open(p.scrim, p.sheet); return; }
+    if (e.target.closest && e.target.closest('[data-blog-toc-close]')) { close(p.scrim, p.sheet); return; }
+    if (e.target.classList && e.target.classList.contains('blog-toc-scrim')) { close(p.scrim, p.sheet); return; }
+    if (p.sheet && !p.sheet.hidden && e.target.closest && e.target.closest('.blog-toc-list a')) close(p.scrim, p.sheet);
+  });
+  /* keep-reading show more / less */
+  (function () {
+    function setup() {
+      document.querySelectorAll('[data-chips-more]').forEach(function (box) {
+        var btn = box.querySelector(':scope > [data-more]') || box.nextElementSibling;
+        var need = box.querySelectorAll('.hc-chip').length > 3;
+        box.classList.toggle('is-collapsed', need);
+        if (btn && btn.hasAttribute('data-more')) {
+          if (need) { box.classList.add('has-more'); if (btn.parentElement !== box) box.appendChild(btn); }
+          btn.hidden = !need;
+        }
+      });
+    }
+    document.addEventListener('click', function (e) {
+      var mb = e.target.closest && e.target.closest('[data-more]');
+      if (!mb) return;
+      var box = (mb.closest && mb.closest('[data-chips-more]')) || mb.previousElementSibling;
+      var collapsed = box && box.classList.contains('is-collapsed');
+      if (box) { box.classList.toggle('is-collapsed', !collapsed); box.classList.toggle('is-expanded', !!collapsed); }
+      var mt = mb.querySelector('[data-more-t]'), lt = mb.querySelector('[data-less-t]');
+      if (mt) mt.hidden = !!collapsed;
+      if (lt) lt.hidden = !collapsed;
+    });
+    setup();
+  })();
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    var p = parts();
+    close(p.scrim, p.sheet);
+  });
+  /* show the pill once the reader scrolls into the article */
+  var fab = document.querySelector('[data-blog-toc-fab]');
+  if (fab) {
+    var shown = false;
+    window.addEventListener('scroll', function () {
+      if (!shown && window.scrollY > 420) { shown = true; fab.hidden = false; }
+    }, { passive: true });
+  }
+})();
+/* Blog TOC: scroll-spy for the desktop rail + smooth anchor scrolling. */
+(function () {
+  'use strict';
+  var links = Array.prototype.slice.call(document.querySelectorAll('.blog-toc a[href^="#"]'));
+  if (links.length) {
+    var map = {};
+    links.forEach(function (a) {
+      var el = document.getElementById(a.getAttribute('href').slice(1));
+      if (el) map[el.id] = a;
+    });
+    var current = null;
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var best = null;
+      links.forEach(function (a) {
+        var el = document.getElementById(a.getAttribute('href').slice(1));
+        if (el && el.getBoundingClientRect().top <= 120) best = a;
+      });
+      if (best !== current) {
+        if (current) current.classList.remove('on');
+        current = best;
+        if (current) current.classList.add('on');
+      }
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+  }
+  /* smooth scroll respects the site's Animations switch + reduced motion */
+  document.querySelectorAll('.blog-toc a[href^="#"], .blog-toc-m a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var el = document.getElementById(a.getAttribute('href').slice(1));
+      if (!el) return;
+      e.preventDefault();
+      var off = el.getBoundingClientRect().top + window.pageYOffset - 76;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+                   document.documentElement.getAttribute('data-motion') === 'off';
+      window.scrollTo({ top: off, behavior: reduce ? 'auto' : 'smooth' });
+      try { history.replaceState(null, '', a.getAttribute('href')); } catch (err) {}
+      var m = document.querySelector('.blog-toc-m');
+      if (m && m.open) m.open = false;
+    });
+  });
+})();
+/* Reader settings: Wide / Article navigation / Font size (article pages). */
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  function store(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function paintBlogReader() {
+    var wide = load('fs-blog-wide') === 'on';
+    var railOff = load('fs-rail') === 'off';
+    var fson = load('fs-blog-fs') === 'on';
+    var font = load('fs-font') || load('fs-blog-font');
+    root.classList.toggle('blog-wide', wide);
+    root.classList.toggle('rail-off', railOff);
+    root.classList.toggle('blog-fs', fson);
+    if (font) { root.setAttribute('data-font', font); root.setAttribute('data-blogfont', font); } else { root.removeAttribute('data-font'); root.removeAttribute('data-blogfont'); }
+    var q = function (sel, fn) { Array.prototype.forEach.call(document.querySelectorAll(sel), fn); };
+    q('[data-blog-wide]', function (b) { b.setAttribute('aria-pressed', wide ? 'true' : 'false'); });
+    q('[data-blog-rail]', function (b) { b.setAttribute('aria-pressed', railOff ? 'false' : 'true'); });
+    q('[data-blog-fs]', function (b) { b.setAttribute('aria-pressed', fson ? 'true' : 'false'); });
+    if (window.__blogReelPaint) { try { window.__blogReelPaint(); } catch (e) {} }
+    q('[data-fonts]', function (box) {
+      Array.prototype.forEach.call(box.querySelectorAll('button'), function (b) {
+        b.classList.toggle('on', (font || 'm') === b.getAttribute('data-font'));
+      });
+    });
+  }
+  document.addEventListener('click', function (ev) {
+    if (!ev.target.closest) return;
+    var w = ev.target.closest('[data-blog-wide]');
+    if (w) { store('fs-blog-wide', w.getAttribute('aria-pressed') !== 'true' ? 'on' : 'off'); paintBlogReader(); return; }
+    var r = ev.target.closest('[data-blog-rail]');
+    if (r) { store('fs-rail', r.getAttribute('aria-pressed') === 'true' ? 'off' : 'on'); paintBlogReader(); return; }
+    var fsb = ev.target.closest('[data-blog-fs]');
+    if (fsb) { store('fs-blog-fs', fsb.getAttribute('aria-pressed') === 'true' ? 'off' : 'on'); paintBlogReader(); return; }
+    var f = ev.target.closest('[data-fonts] button');
+    if (f) { var fv = f.getAttribute('data-font'); store('fs-font', fv); store('fs-blog-font', fv); try { window.dispatchEvent(new CustomEvent('fs-font-change', { detail: { font: fv } })); } catch (e2) {} paintBlogReader(); return; }
+  });
+  window.addEventListener('fs-font-change', function () { paintBlogReader(); });
+  document.addEventListener('keydown', function (ev) {
+    if ((ev.key === 'Escape' || ev.key === 'Esc') && load('fs-blog-fs') === 'on') { store('fs-blog-fs', 'off'); paintBlogReader(); }
+  });
+  window.__blogPaintReader = paintBlogReader;
+  paintBlogReader();
+})();
+/* Floating liquid-glass section reel: prev / current / next section. */
+(function () {
+  'use strict';
+  var reel = document.querySelector('[data-blog-reel]');
+  if (!reel) return;
+  var bPrev = reel.querySelector('[data-reel-prev]');
+  var bCur = reel.querySelector('[data-reel-cur]');
+  var bNext = reel.querySelector('[data-reel-next]');
+  var curKey = null, ticking = false;
+  function tocLinks() {
+    var nav = document.querySelector('.blog-cols .blog-toc');
+    return nav ? Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]')) : [];
+  }
+  function railGone() {
+    if (document.documentElement.classList.contains('blog-wide')) return true;
+    try { return window.matchMedia('(max-width: 1140px)').matches; } catch (e) { return true; }
+  }
+  function setLabel(btn, link) {
+    btn.querySelector('span').textContent = link ? link.textContent.trim() : '';
+    btn._to = link ? link.getAttribute('href') : null;
+  }
+  function jump(btn) {
+    if (!btn._to) return;
+    var el = document.getElementById(btn._to.slice(1));
+    if (!el) return;
+    var off = el.getBoundingClientRect().top + window.pageYOffset - 76;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+                 document.documentElement.getAttribute('data-motion') === 'off';
+    window.scrollTo({ top: off, behavior: reduce ? 'auto' : 'smooth' });
+  }
+  function paint() {
+    var links = tocLinks();
+    var idx = -1;
+    links.forEach(function (a, i) { if (a.classList.contains('on')) idx = i; });
+    var sc = window.scrollY || document.documentElement.scrollTop || 0;
+    var navOff = document.documentElement.classList.contains('rail-off');
+    var show = !navOff && links.length >= 2 && sc > 480 && railGone();
+    reel.hidden = !show;
+    reel.setAttribute('aria-hidden', show ? 'false' : 'true');
+    if (reel.classList.contains('show') !== show) reel.classList.toggle('show', show);
+    if (!show) { curKey = null; return; }
+    if (idx === -1) idx = 0;
+    var key = links[idx].getAttribute('href');
+    if (key === curKey) return;
+    curKey = key;
+    setLabel(bPrev, links[idx - 1]);
+    setLabel(bCur, links[idx]);
+    setLabel(bNext, links[idx + 1]);
+    bPrev.style.visibility = links[idx - 1] ? 'visible' : 'hidden';
+    bNext.style.visibility = links[idx + 1] ? 'visible' : 'hidden';
+    reel.classList.remove('swap');
+    void reel.offsetWidth;
+    reel.classList.add('swap');
+  }
+  bPrev.addEventListener('click', function () { jump(bPrev); });
+  bCur.addEventListener('click', function () { jump(bCur); });
+  bNext.addEventListener('click', function () { jump(bNext); });
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    var raf = window.requestAnimationFrame || function (cb) { setTimeout(cb, 100); };
+    raf(function () { ticking = false; paint(); });
+  }, { passive: true });
+  window.__blogReelPaint = function () { curKey = null; paint(); };
+  window.addEventListener('fs-lang-change', function () { curKey = null; paint(); });
+  window.addEventListener('fs-lang-applied', function () { curKey = null; paint(); });
+  paint();
+})();
+</script>
+<script src="../../../scripts/site-footer.js?v=20261018g2"></script>
+</body>
+</html>

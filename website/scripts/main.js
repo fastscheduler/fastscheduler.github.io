@@ -5,8 +5,8 @@
   var bot = 'https://t.me/' + cfg.botUsername;
 
   /* Site root, derived from this script's own src.
-     The site lives in a subdirectory (/Fast-Scheduler/), so a relative path
-     only works at one depth. '../storage_state.json' resolved to /legal/
+     The site is served from the domain root, but pages live at many depths,
+     so a relative path only works at one of them. '../storage_state.json' resolved to /legal/
      storage_state.json on the legal pages and escaped the site entirely on the
      homepage, so the 60s feature-flag poll 404'd on every page that loads
      this file. Same trick lang.js uses to locate ru-content.js. */

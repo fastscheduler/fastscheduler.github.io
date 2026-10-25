@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+<script>
+  try {
+    var t = localStorage.getItem('theme');
+    if (!t && window.matchMedia) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    if (t) document.documentElement.setAttribute('data-theme', t);
+    if (localStorage.getItem('fs-motion') === 'off') document.documentElement.setAttribute('data-motion', 'off');
+    if (localStorage.getItem('fs-fx') === 'off') document.documentElement.setAttribute('data-fx', 'off');
+    if (localStorage.getItem('fs-hotkeys') === 'off') document.documentElement.setAttribute('data-keys', 'off');
+    if (localStorage.getItem('fs-rail') === 'off') document.documentElement.classList.add('rail-off');
+    var _ffs = localStorage.getItem('fs-font') || localStorage.getItem('fs-help-font') || localStorage.getItem('fs-blog-font');
+    if (_ffs) { document.documentElement.setAttribute('data-font', _ffs); }
+  } catch (e) {}
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1faa59">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; form-action 'self'; base-uri 'self'; upgrade-insecure-requests">
+<title>Политика конфиденциальности — Справка Fast Scheduler</title>
+<meta name="description" content="Политика конфиденциальности. Как мы собираем, используем, раскрываем и защищаем ваши данные.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://fastscheduler.github.io/ru/legal/privacy.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Fast Scheduler">
+<meta property="og:title" content="Политика конфиденциальности — Справка Fast Scheduler">
+<meta property="og:description" content="Политика конфиденциальности. Как мы собираем, используем, раскрываем и защищаем ваши данные.">
+<meta property="og:url" content="https://fastscheduler.github.io/ru/legal/privacy.html">
+<meta property="og:image" content="https://fastscheduler.github.io/og-cover-v2.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Политика конфиденциальности — Справка Fast Scheduler">
+<meta name="twitter:description" content="Политика конфиденциальности. Как мы собираем, используем, раскрываем и защищаем ваши данные.">
+<meta name="twitter:image" content="https://fastscheduler.github.io/og-cover-v2.png">
+<link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="../../icon-48.png" sizes="48x48" type="image/png">
+  <link rel="icon" href="../../icon-192.png" sizes="192x192" type="image/png">
+  <link rel="icon" href="../../icon-512.png" sizes="512x512" type="image/png">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png" sizes="180x180">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://fastscheduler.github.io/#organization", "name": "Fast Scheduler", "alternateName": ["Fast Scheduler Bot", "FastSchedulerBot", "FastScheduler", "fastscheduler", "fastschedulerbot", "@FastSchedulerBot", "FastSchedule", "FastSchedule Bot", "Fast Scheduler Telegram bot", "fast scheduler telegram bot", "TG Scheduler", "Telegram Scheduler Bot", "Telegram post scheduler", "TG Fast Scheduler", "Fast Scheduler TG"], "url": "https://fastscheduler.github.io/", "logo": {"@type": "ImageObject", "@id": "https://fastscheduler.github.io/#logo", "url": "https://fastscheduler.github.io/icon-512.png", "contentUrl": "https://fastscheduler.github.io/icon-512.png", "width": 512, "height": 512, "caption": "Fast Scheduler"}, "image": "https://fastscheduler.github.io/icon-512.png", "description": "Fast Scheduler is a Telegram bot (@FastSchedulerBot) that batch-schedules, auto-publishes and tracks channel posts. It is unrelated to calendar, project-management or crew-scheduling products that share the name.", "email": "fastschedulebot@gmail.com", "sameAs": ["https://t.me/FastSchedulerBot", "https://t.me/FastSchedulerSupport_bot"], "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "fastschedulebot@gmail.com", "availableLanguage": ["English", "Russian", "Spanish"], "url": "https://t.me/FastSchedulerSupport_bot"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://fastscheduler.github.io/#website", "name": "Fast Scheduler", "alternateName": ["Fast Scheduler Bot", "FastSchedulerBot", "FastScheduler", "fastscheduler", "fastschedulerbot", "@FastSchedulerBot", "FastSchedule", "FastSchedule Bot", "Fast Scheduler Telegram bot", "fast scheduler telegram bot", "TG Scheduler", "Telegram Scheduler Bot", "Telegram post scheduler", "TG Fast Scheduler", "Fast Scheduler TG"], "url": "https://fastscheduler.github.io/", "publisher": {"@id": "https://fastscheduler.github.io/#organization"}, "inLanguage": ["en", "ru", "es"], "description": "Fast Scheduler is a Telegram bot (@FastSchedulerBot) that batch-schedules, auto-publishes and tracks channel posts. It is unrelated to calendar, project-management or crew-scheduling products that share the name.", "hasPart": [{"@type": "WebPage", "name": "Fast Scheduler Help Center", "url": "https://fastscheduler.github.io/help.html"}, {"@type": "Blog", "name": "Fast Scheduler Blog", "url": "https://fastscheduler.github.io/blog/"}, {"@type": "WebPage", "name": "Pricing and plans", "url": "https://fastscheduler.github.io/#pricing"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Политика конфиденциальности — Справка Fast Scheduler", "description": "Политика конфиденциальности. Как мы собираем, используем, раскрываем и защищаем ваши данные.", "url": "https://fastscheduler.github.io/ru/legal/privacy.html", "inLanguage": "ru", "dateModified": "2026-10-04", "isPartOf": {"@type": "WebSite", "name": "Fast Scheduler", "url": "https://fastscheduler.github.io/"}}</script>
+<link rel="stylesheet" href="../../styles/mobile-fix.css?v=20261006a1">
+<!--fs:ru-alt-->
+<link rel="alternate" hreflang="ru" href="https://fastscheduler.github.io/ru/legal/privacy.html">
+<link rel="alternate" hreflang="en" href="https://fastscheduler.github.io/legal/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://fastscheduler.github.io/legal/privacy.html">
+<!--/fs:ru-alt-->
+<link rel="stylesheet" href="../../styles/main.css?v=20261022a1">
+<link rel="stylesheet" href="../../styles/hotkeys-modal.css?v=20261006a1">
+<style>.hc-card {
+  background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--hc-r);
+  box-shadow: var(--shadow-sm);
+}
+
+.hc-chiprow { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 13px; }
+
+.hc-chip {
+  display: inline-flex; align-items: center; gap: 8px; font-size: .88rem; font-weight: 650;
+  color: var(--text); background: var(--surface); border: 1px solid var(--border);
+  padding: 9px 16px; border-radius: 999px; cursor: pointer; font-family: inherit; line-height: 1.3;
+  transition: border-color .18s, color .18s, transform .18s, box-shadow .18s;
+}
+
+.hc-chip svg { width: 15px; height: 15px; flex: none; color: var(--green-strong); }
+
+.hc-chip:hover { border-color: color-mix(in srgb, var(--green) 50%, transparent); color: var(--green-strong); text-decoration: none; }
+
+.hc-grid > .hc-cat, .hc-list > .hc-row { min-width: 0; }
+
+.hc-cat { display: block; padding: 18px; color: var(--text); transition: transform .2s, border-color .2s, box-shadow .2s; }
+
+.hc-cat:hover { text-decoration: none; border-color: color-mix(in srgb, var(--green) 45%, var(--border)); transform: translateY(-2px); box-shadow: var(--shadow); }
+
+.hc-cat-head { display: flex; align-items: center; gap: 13px; }
+
+.hc-cat-head > * { min-width: 0; }
+
+.hc-grid > .hc-cat:nth-child(6n+2) .hc-ic { color: #2563eb; background: color-mix(in srgb, #2563eb 10%, transparent); border-color: color-mix(in srgb, #2563eb 24%, transparent); }
+
+.hc-grid > .hc-cat:nth-child(6n+3) .hc-ic { color: #7c3aed; background: color-mix(in srgb, #7c3aed 10%, transparent); border-color: color-mix(in srgb, #7c3aed 24%, transparent); }
+
+.hc-grid > .hc-cat:nth-child(6n+4) .hc-ic { color: #b45309; background: color-mix(in srgb, #b45309 10%, transparent); border-color: color-mix(in srgb, #b45309 24%, transparent); }
+
+.hc-grid > .hc-cat:nth-child(6n+5) .hc-ic { color: #0e7490; background: color-mix(in srgb, #0e7490 10%, transparent); border-color: color-mix(in srgb, #0e7490 24%, transparent); }
+
+.hc-grid > .hc-cat:nth-child(6n+6) .hc-ic { color: #be123c; background: color-mix(in srgb, #be123c 10%, transparent); border-color: color-mix(in srgb, #be123c 24%, transparent); }
+
+.hc-grid > .hc-cat:nth-child(6n+2) { border-radius: 20px; }
+
+.hc-grid > .hc-cat:nth-child(6n+4) { border-radius: 12px; }
+
+.hc-grid > .hc-cat:nth-child(6n+5) { border-radius: 22px 16px 22px 16px; }
+
+.hc-band-grid > a:nth-child(6n+2) { border-color: color-mix(in srgb, #2563eb 35%, var(--border)); }
+
+.hc-band-grid > a:nth-child(6n+3) { border-color: color-mix(in srgb, #7c3aed 35%, var(--border)); }
+
+.hc-band-grid > a:nth-child(6n+4) { border-color: color-mix(in srgb, #b45309 35%, var(--border)); }
+
+.hc-band-grid > a:nth-child(6n+5) { border-color: color-mix(in srgb, #0e7490 35%, var(--border)); }
+
+.hc-band-grid > a:nth-child(6n+6) { border-color: color-mix(in srgb, #be123c 35%, var(--border)); }
+
+.hc-cat-t { font-weight: 800; font-size: .98rem; letter-spacing: -.01em; }
+
+.hc-cat-c { display: block; font-size: .78rem; color: var(--text-dim); margin-top: 1px; }
+
+.hc-cat-go { margin-left: auto; color: var(--text-dim); transition: transform .2s, color .2s; }
+
+.hc-cat-go svg { width: 17px; height: 17px; display: block; }
+
+.hc-cat:hover .hc-cat-go { color: var(--green-strong); transform: translateX(3px); }
+
+.hc-cat-prev { margin: 13px 0 0; padding: 11px 0 0; border-top: 1px dashed var(--border); display: flex; flex-direction: column; gap: 5px; }
+
+.hc-cat-prev span { font-size: .82rem; color: var(--text-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.hc-cat-prev span::before { content: ""; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: color-mix(in srgb, var(--green) 55%, transparent); margin: 2px 8px 2px 2px; vertical-align: 2px; }
+
+.hc-cat-d {
+  display: block; margin-top: 10px; font-size: .84rem; color: var(--text-dim); line-height: 1.5;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+.hc-cta {
+  display: flex; align-items: center; gap: 16px; margin: 30px 0 4px; padding: 20px 22px;
+  border-radius: 20px; background: color-mix(in srgb, var(--green) 8%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--green) 26%, var(--border));
+}
+
+.hc-cta .hc-ic { width: 44px; height: 44px; flex: none; }
+
+.hc-cta-t { flex: 1; min-width: 0; }
+
+.hc-cta-t b { display: block; font-size: 1rem; letter-spacing: -.01em; }
+
+.hc-cta-t span { color: var(--text-dim); font-size: .88rem; }
+
+.hc-cta .btn { flex: none; }
+
+.hc-crumbs { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; padding: 26px 0 0; font-size: .87rem; color: var(--text-dim); }
+
+.hc-crumbs a { color: var(--text-dim); font-weight: 650; }
+
+.hc-crumbs a:hover { color: var(--green-strong); text-decoration: none; }
+
+.hc-crumbs svg { width: 13px; height: 13px; opacity: .6; }
+
+.hc-crumbs [aria-current] { color: var(--text); font-weight: 650; }
+
+.hc-cat-head { display: flex; align-items: center; gap: 16px; padding: 26px 0 6px; scroll-margin-top: 84px; }
+
+.hc-cat-head .hc-ic { width: 56px; height: 56px; border-radius: 16px; }
+
+.hc-cat-head .hc-ic svg { width: 26px; height: 26px; }
+
+.hc-cat-head h1, .hc-cat-head h2 { margin: 0; font-size: clamp(1.55rem, 3.4vw, 2.15rem); letter-spacing: -.025em; }
+
+.hc-cat-head p { margin: 3px 0 0; color: var(--text-dim); font-size: .92rem; }
+
+.hc-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; padding: 14px 0 26px; }
+
+.hc-row {
+  display: flex; align-items: center; gap: 12px; padding: 14px 6px;
+  color: var(--text); border-bottom: 1px solid color-mix(in srgb, var(--border) 62%, transparent);
+  transition: color .15s;
+}
+
+.hc-row:hover { text-decoration: none; color: var(--green-strong); }
+
+.hc-row-t { flex: 1; min-width: 0; font-weight: 650; font-size: .95rem; line-height: 1.4; }
+
+.hc-row:hover .hc-row-t { color: var(--green-strong); }
+
+.hc-row-m {
+  flex: none; font-size: .73rem; font-weight: 700; color: var(--text-dim);
+  background: var(--surface-2); border-radius: 999px; padding: 3px 9px; white-space: nowrap;
+}
+
+.hc-row-lead .hc-row-m { color: var(--green-strong); background: color-mix(in srgb, var(--green) 11%, transparent); }
+
+.hc-row > svg { flex: none; width: 15px; height: 15px; color: var(--text-dim); transition: transform .15s, color .15s; }
+
+.hc-row:hover > svg { color: var(--green-strong); transform: translateX(2px); }
+
+.hc-sempty .hc-list { text-align: left; }
+
+.hc-art { max-width: 860px; margin: 12px auto 0; padding: clamp(26px, 4.5vw, 48px); }
+
+.hc-art > h1, .hc-art > h2 { margin: 0; font-size: clamp(1.65rem, 3.6vw, 2.25rem); letter-spacing: -.025em; line-height: 1.15; }
+
+.hc-body { margin-top: 16px; }
+
+.hc-body p { margin: 0 0 13px; font-size: .98rem; line-height: 1.72; color: var(--text); }
+
+.hc-body ul { margin: 0 0 13px; padding-left: 22px; color: var(--text); font-size: .95rem; line-height: 1.7; }
+
+.hc-body li { margin: 3px 0; }
+
+.hc-body h3 { font-size: 1.2rem; letter-spacing: -.015em; margin: 30px 0 10px; scroll-margin-top: 86px; }
+
+.hc-body code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em;
+  background: color-mix(in srgb, var(--surface-2) 85%, transparent);
+  border: 1px solid var(--border); padding: 1px 6px; border-radius: 6px;
+}
+
+.hc-faq { margin-top: 26px; border-top: 1px solid var(--border); padding-top: 6px; }
+
+.hc-faq h2 { font-size: .9rem; font-weight: 650; letter-spacing: 0; color: var(--text-dim); margin: 14px 0 4px; }
+
+.hc-faq details { border-bottom: 1px dashed var(--border); }
+
+.hc-faq details:last-child { border-bottom: 0; }
+
+.hc-faq summary code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em; background: var(--surface-2); padding: 1px 5px; border-radius: 6px; }
+
+.hc-faq summary {
+  cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between;
+  gap: 14px; padding: 14px 0; font-weight: 700; font-size: .95rem;
+}
+
+.hc-faq summary::-webkit-details-marker { display: none; }
+
+.hc-faq summary { position: relative; padding-right: 28px; }
+
+.hc-faq summary::before, .hc-faq summary::after {
+  content: ""; position: absolute; top: 50%; background: var(--green-strong);
+  border-radius: 2px; transition: transform .25s var(--ease-spring, ease);
+}
+
+.hc-faq summary::before { right: 1px; width: 14px; height: 2px; transform: translateY(-50%); }
+
+.hc-faq summary::after { right: 7px; width: 2px; height: 14px; transform: translateY(-50%); }
+
+.hc-faq details[open] summary::before,
+    .hc-faq details[open] summary::after { transform: translateY(-50%) rotate(135deg); }
+
+.hc-fa { padding: 0 0 16px; }
+
+.hc-fa p { margin: 0 0 8px; color: var(--text-dim); font-size: .92rem; line-height: 1.65; }
+
+.hc-fa ul { margin: 0 0 8px; padding-left: 20px; color: var(--text-dim); font-size: .92rem; line-height: 1.65; }
+
+.hc-fa code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em; background: var(--surface-2); padding: 1px 5px; border-radius: 6px; }
+
+.hc-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.hc-chips .hc-chip { max-width: 300px; padding: 7px 14px; font-size: .85rem; }
+
+.hc-chips .hc-chip span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.hc-chips .hc-chip svg { width: 13px; height: 13px; }
+
+.hc-related { margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--border); }
+
+.hc-related h2 { font-size: .9rem; font-weight: 650; letter-spacing: 0; color: var(--text-dim); margin: 0 0 12px; }
+
+.hc-pager { max-width: 860px; margin: 16px auto 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+
+.hc-pager a { display: flex; align-items: center; gap: 12px; padding: 14px 17px; color: var(--text); }
+
+.hc-pager a:hover { text-decoration: none; transform: translateY(-2px); border-color: color-mix(in srgb, var(--green) 45%, var(--border)); }
+
+.hc-pager a.next { justify-content: flex-end; text-align: right; }
+
+.hc-pager a.next svg { order: 2; }
+
+.hc-pager svg { flex: none; width: 17px; height: 17px; color: var(--text-dim); }
+
+.hc-pager small { display: block; font-size: .78rem; font-weight: 650; letter-spacing: 0; color: var(--text-dim); }
+
+.hc-pager a span { min-width: 0; flex: 1 1 auto; }
+
+.hc-pager b { display: block; font-size: .9rem; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; }
+
+.hc-cta {
+  max-width: 860px; margin: 16px auto 20px; padding: 22px 26px; border-radius: var(--hc-r);
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  background: var(--green-strong); color: #fff;
+}
+
+.hc-cta b { font-size: 1.02rem; }
+
+.hc-cta p { margin: 3px 0 0; font-size: .88rem; opacity: .92; }
+
+.hc-cta .btn { flex: none; background: #fff; color: var(--green-strong); border: 0; }
+
+.hc-cta .btn:hover { background: #f0fff7; transform: translateY(-1px); }
+
+.hc-cta svg { width: 16px; height: 16px; }
+
+.view.anim .hc-side-title, .view.anim .hc-nav-item, .view.anim .hc-card,
+    .view.anim .hc-cat, .view.anim .hc-art > *, .view.anim .hc-fa, .view.anim details { animation: hcRise .6s var(--ease-apple) both; }
+
+.view.anim .hc-nav-item:nth-child(1), .view.anim .hc-cat:nth-of-type(1), .view.anim .hc-art > *:nth-child(1) { animation-delay: .04s; }
+
+.view.anim .hc-nav-item:nth-child(2), .view.anim .hc-cat:nth-of-type(2), .view.anim .hc-art > *:nth-child(2) { animation-delay: .08s; }
+
+.view.anim .hc-nav-item:nth-child(3), .view.anim .hc-cat:nth-of-type(3), .view.anim .hc-art > *:nth-child(3) { animation-delay: .12s; }
+
+.view.anim .hc-nav-item:nth-child(4), .view.anim .hc-cat:nth-of-type(4), .view.anim .hc-art > *:nth-child(4) { animation-delay: .16s; }
+
+.view.anim .hc-nav-item:nth-child(5), .view.anim .hc-cat:nth-of-type(5), .view.anim .hc-art > *:nth-child(5) { animation-delay: .2s; }
+
+.view.anim .hc-art > *:nth-child(n+6) { animation-delay: .24s; }
+
+.hc-chiprow .hc-chip { animation: hcRise .55s var(--ease-apple) both; }
+
+.hc-chiprow .hc-chip:nth-child(1) { animation-delay: .05s; }
+
+.hc-chiprow .hc-chip:nth-child(2) { animation-delay: .1s; }
+
+.hc-chiprow .hc-chip:nth-child(3) { animation-delay: .15s; }
+
+.hc-chiprow .hc-chip:nth-child(4) { animation-delay: .2s; }
+
+.hc-chiprow .hc-chip:nth-child(5) { animation-delay: .25s; }
+
+.hc-chiprow .hc-chip:nth-child(6) { animation-delay: .3s; }
+
+.hc-chiprow .hc-chip:nth-child(n+7) { animation-delay: .35s; }
+
+.hc-chip { transition: border-color .18s, color .18s, transform .5s var(--ease-spring), box-shadow .2s; }
+
+.hc-chip:active { transform: scale(.95); }
+
+.hc-card { transition: border-color .25s, box-shadow .3s; -webkit-tap-highlight-color: transparent; }
+
+a.hc-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+
+.hc-card { transition: border-color .25s, box-shadow .3s, transform .25s var(--ease-apple); }
+
+[data-theme="dark"] a.hc-card:hover { box-shadow: 0 1px 2px rgba(0,0,0,.5), 0 10px 26px rgba(0,0,0,.35); }
+
+a.hc-card:hover .hc-ic { transform: rotate(-6deg) scale(1.08); }
+
+.hc-faq details { transition: transform .3s var(--ease-apple); }
+
+.hc-faq details[open] { transform: none; }
+
+.hc-faq summary { transition: color .18s; }
+
+.hc-faq summary:hover { color: var(--green-strong); }
+
+.hc-rail {
+  position: sticky; top: calc(var(--hc-head) + 28px); max-height: calc(100vh - var(--hc-head) - 56px);
+  overflow-y: auto; scrollbar-width: thin; font-size: .83rem; padding-bottom: 24px;
+}
+
+.hc-rail-t {
+  font-weight: 800; font-size: .92rem; letter-spacing: -.01em;
+  color: var(--text); margin: 4px 0 10px;
+}
+
+.hc-rail nav { display: flex; flex-direction: column; gap: 1px; border-left: 2px solid var(--border); }
+
+.hc-rail a {
+  display: block; padding: 4px 0 4px 14px; margin-left: -2px; border-left: 2px solid transparent;
+  color: var(--text-dim); line-height: 1.45;
+}
+
+.hc-rail a:hover { color: var(--green-strong); text-decoration: none; }
+
+.hc-rail a.on { color: var(--green-strong); font-weight: 700; border-left-color: var(--green); }
+
+.hc-rail .hc-rail-rel { margin-top: 14px; }
+
+.hc-rail .hc-rail-rel span {
+  display: block; font-weight: 800; font-size: .88rem; letter-spacing: -.01em;
+  color: var(--text); margin-bottom: 6px;
+}
+
+.hc-docs-head .hc-chip { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.26); color: #fff; }
+
+.hc-docs-head .hc-chip svg { color: #fff; }
+
+.hc-docs-head .hc-chip:hover { background: rgba(255,255,255,.22); border-color: rgba(255,255,255,.55); color: #fff; }
+
+.hc-docs-head .hc-pop { justify-content: center; margin: 18px 0 0; color: rgba(255,255,255,.78); }
+
+.hc-docs-head .hc-pop b { color: #fff; }
+
+.hc-docs-head .hc-pop a { color: #fff; background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.26); }
+
+.hc-docs-head .hc-pop a:hover { background: rgba(255,255,255,.20); border-color: rgba(255,255,255,.55); color: #fff; }
+
+.hc-pop {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin: 20px 0 6px;
+  font-size: .87rem; color: var(--text-dim);
+}
+
+.hc-pop b { font-weight: 750; color: var(--text); }
+
+.hc-pop a {
+  color: var(--green-strong); font-weight: 600; padding: 4px 10px; border-radius: 999px;
+  border: 1px solid var(--border); background: var(--surface); white-space: nowrap;
+}
+
+.hc-pop a:hover { border-color: var(--green); text-decoration: none; }
+
+.hc-cat { display: flex; flex-direction: column; gap: 10px; padding: 20px; text-decoration: none; }
+
+.hc-grid > .hc-cat { padding: 22px; gap: 8px; border-radius: 20px; }
+
+.hc-grid > .hc-cat .hc-ic { width: 54px; height: 54px; border-radius: 16px; margin-bottom: 2px; }
+
+.hc-grid > .hc-cat .hc-ic svg { width: 27px; height: 27px; }
+
+.hc-grid > .hc-cat .hc-cat-t { font-size: 1.06rem; }
+
+.hc-cat:hover { text-decoration: none; border-color: color-mix(in srgb, var(--green) 45%, var(--border)); transform: translateY(-2px); box-shadow: var(--shadow); }
+
+.hc-cat-head { display: flex; align-items: center; gap: 12px; }
+
+.hc-cat-t { display: block; font-weight: 750; font-size: .98rem; color: var(--text); }
+
+.hc-cat-c { display: block; font-size: .8rem; color: var(--text-dim); font-weight: 600; margin-top: 2px; }
+
+.hc-cat-go { margin-left: auto; color: var(--text-dim); }
+
+.hc-cat-go svg { width: 16px; height: 16px; }
+
+.hc-cat:hover .hc-cat-go { color: var(--green-strong); }
+
+.hc-cat-prev { border-top: 1px dashed var(--border); padding-top: 10px; }
+
+.hc-art {
+  background: none; border: 0; box-shadow: none; border-radius: 0;
+  max-width: 780px; margin: 0; padding: 0;
+}
+
+.hc-crumbs { padding: 24px 0 0; font-size: .82rem; }
+
+.hc-art > h1, .hc-art > h2 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); margin: 12px 0 6px; }
+
+.hc-art-meta {
+  color: var(--text-dim); font-size: .87rem; margin: 0 0 18px; display: flex; gap: 8px;
+  align-items: center; flex-wrap: wrap;
+}
+
+.hc-art-meta .dot::before { content: "·"; margin-right: 8px; }
+
+.hc-body { font-size: 1.0rem; }
+
+.hc-body p, .hc-body li { line-height: 1.72; }
+
+.hc-body p { margin: 0 0 14px; }
+
+.hc-body ul { margin: 0 0 16px; padding-left: 22px; display: flex; flex-direction: column; gap: 7px; }
+
+.hc-body li::marker { color: var(--green-strong); }
+
+.hc-body a {
+  text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, var(--green-strong) 55%, transparent);
+}
+
+.hc-body a:hover { text-decoration-color: var(--green-strong); }
+
+.hc-body h2, .hc-body h3 { letter-spacing: -.015em; line-height: 1.3; margin: 30px 0 10px; }
+
+.hc-body h2 { font-size: 1.28rem; }
+
+.hc-body h3 { font-size: 1.08rem; }
+
+.hc-body code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em;
+  background: var(--surface-2); border: 1px solid var(--border); padding: 1px 6px; border-radius: 6px;
+}
+
+.hc-body pre {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  padding: 14px 16px; overflow-x: auto; font-size: .85rem; line-height: 1.6;
+}
+
+.hc-body table { border-collapse: collapse; width: 100%; font-size: .9rem; margin: 0 0 18px; }
+
+.hc-body th, .hc-body td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; }
+
+.hc-body th { background: var(--surface-2); font-weight: 750; }
+
+.hc-body img { max-width: 100%; border-radius: 12px; border: 1px solid var(--border); }
+
+.hc-faq { margin-top: 30px; }
+
+.hc-faq > h2 { font-size: 1.02rem; font-weight: 800; letter-spacing: -.01em; }
+
+.hc-faq details { border: 1px solid var(--border); border-radius: 12px; padding: 0 16px; margin-bottom: 8px; }
+
+.hc-faq details[open] { border-color: color-mix(in srgb, var(--green) 40%, var(--border)); }
+
+.hc-faq summary { padding: 13px 0; font-weight: 700; font-size: .95rem; cursor: pointer; list-style: none; }
+
+.hc-faq summary::-webkit-details-marker { display: none; }
+
+.hc-faq summary { position: relative; padding-right: 28px; }
+
+.hc-faq summary::before, .hc-faq summary::after {
+  content: ""; position: absolute; top: 50%; background: var(--green-strong);
+  border-radius: 2px; transition: transform .25s var(--ease-spring, ease);
+}
+
+.hc-faq summary::before { right: 1px; width: 14px; height: 2px; transform: translateY(-50%); }
+
+.hc-faq summary::after { right: 7px; width: 2px; height: 14px; transform: translateY(-50%); }
+
+.hc-faq details[open] summary::before,
+    .hc-faq details[open] summary::after { transform: translateY(-50%) rotate(135deg); }
+
+.hc-fa { padding: 0 0 16px; color: var(--text); }
+
+.hc-fa p, .hc-fa li { line-height: 1.7; }
+
+.hc-related { margin-top: 26px; }
+
+.hc-related > h2 {
+  font-size: 1.02rem; font-weight: 800; letter-spacing: -.01em;
+  color: var(--text); margin: 0 0 10px;
+}
+
+.hc-pager { max-width: 780px; margin: 30px 0 0; }
+
+.hc-pager a { border-radius: 14px; background: var(--surface); }
+
+.hc-pager small {
+  display: block; font-size: .82rem; font-weight: 700; letter-spacing: 0;
+  color: var(--text-dim); margin-bottom: 3px;
+}
+
+.hc-pager b { font-size: .95rem; }
+
+.hc-cta { max-width: 780px; border-radius: 16px; margin-top: 26px; }
+
+.hc-cat-head { display: flex; gap: 14px; align-items: center; margin: 14px 0 4px; }
+
+.hc-cat-head h1, .hc-cat-head h2 { margin: 0; font-size: clamp(1.6rem, 3.2vw, 2.1rem); letter-spacing: -.02em; }
+
+.hc-cat-head p { margin: 4px 0 0; color: var(--text-dim); }
+
+.hc-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; max-width: 960px; }
+
+.hc-row {
+  display: flex; align-items: center; gap: 12px; padding: 13px 16px; border: 1px solid var(--border);
+  border-radius: 12px; background: var(--surface);
+}
+
+.hc-row:hover { border-color: color-mix(in srgb, var(--green) 45%, var(--border)); text-decoration: none; }
+
+.hc-row-t { font-weight: 650; color: var(--text); }
+
+.hc-row-m { margin-left: auto; flex: none; font-size: .8rem; color: var(--text-dim); font-weight: 650; }
+
+.hc-list > .hc-row { flex-wrap: wrap; row-gap: 8px; }
+
+.hc-list .hc-row-t { flex: 1 1 100%; }
+
+.hc-list .hc-row-m { margin-left: 0; }
+
+.hc-list > .hc-row > svg { margin-left: auto; width: 15px; height: 15px; flex: none; color: var(--text-dim); }
+
+.hc-grp { margin: 16px 8px 5px; font-size: .86rem; font-weight: 800; letter-spacing: -.01em; color: var(--text); }
+
+.hc-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 22px 0 0; }
+
+.hc-toolbar .hc-crumbs { padding: 0; flex: 1; min-width: 0; }
+
+.hc-tools { position: relative; display: flex; align-items: center; gap: 6px; flex: none; }
+
+.hc-tool { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 9px; border: 1px solid transparent; background: var(--surface-2); color: var(--text-dim); cursor: pointer; }
+
+.hc-tool:hover { border-color: var(--border); color: var(--text); background: var(--surface); }
+
+.hc-tool.on { color: var(--green-strong); border-color: var(--green); }
+
+.hc-tool svg { width: 16px; height: 16px; }
+
+html[data-hcfont="s"] .hc-body { font-size: .88rem; }
+
+html[data-hcfont="l"] .hc-body { font-size: 1.22rem; }
+
+html[data-hcfont="l"] .hc-art > h1, html[data-hcfont="l"] .hc-art > h2 { font-size: clamp(1.9rem, 3.6vw, 2.5rem); }
+
+html[data-hcfont="s"] .hc-body { font-size: .94rem; }
+
+html[data-hcfont="l"] .hc-body { font-size: 1.12rem; }
+
+html.hc-wide .hc-rail { display: none; }
+
+html.hc-wide .hc-art, html.hc-wide .hc-pager, html.hc-wide .hc-cta { max-width: 960px; }
+
+html.rail-off .hc-rail { display: none; }
+
+.hc-feat { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 26px 0 6px; }
+
+.hc-feat a { display: flex; flex-direction: column; gap: 8px; padding: 18px; border-radius: 16px; background: var(--surface); border: 1px solid var(--border); text-decoration: none; }
+
+.hc-feat a:hover { border-color: var(--green); text-decoration: none; }
+
+.hc-feat .hc-ic { width: 38px; height: 38px; }
+
+.hc-feat b { color: var(--text); font-size: .93rem; }
+
+.hc-feat span.s { color: var(--text-dim); font-size: .82rem; line-height: 1.45; }
+
+.hc-band {
+  margin: 30px 0 8px; border-radius: 22px; padding: 28px; color: #fff;
+  background:
+    radial-gradient(700px 220px at 90% -20%, rgba(255,255,255,.14), transparent 60%),
+    linear-gradient(135deg, #07331d 0%, #0b6b38 60%, #12934e 100%);
+  border: 1px solid color-mix(in srgb, #1faa59 30%, transparent);
+}
+
+.hc-band h2 { margin: 0 0 4px; color: #fff; font-size: 1.3rem; }
+
+.hc-band p.sub { margin: 0 0 18px; color: rgba(255,255,255,.72); font-size: .9rem; }
+
+.hc-band-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+
+.hc-band-grid a { display: block; padding: 16px 18px; border-radius: 14px; text-decoration: none; background: #f2f0e8; color: #12312f; }
+
+.hc-band-grid a:hover { text-decoration: none; }
+
+.hc-band-grid b { display: block; font-size: .94rem; }
+
+.hc-band-grid span { display: block; margin-top: 3px; font-size: .8rem; color: rgba(18,49,47,.68); }
+
+.hc-fonts { display: inline-flex; align-items: baseline; gap: 2px; margin-left: auto; }
+
+.hc-fonts button {
+  font: inherit; background: none; border: 0; cursor: pointer; color: var(--text-dim);
+  padding: 3px 8px; border-radius: 8px; font-weight: 800; line-height: 1;
+}
+
+.hc-fonts button:hover { color: var(--green-strong); }
+
+.hc-fonts button.on { color: #fff; background: var(--green-strong); }
+
+.hc-fonts button:nth-child(1) { font-size: .78rem; }
+
+.hc-fonts button:nth-child(2) { font-size: .95rem; }
+
+.hc-fonts button:nth-child(3) { font-size: 1.12rem; }
+
+.hc-chips.has-more, .hc-others.has-more { align-items: center; }
+
+.hc-chips > .hc-more, .hc-others > .hc-more { margin: 0 0 0 auto; align-self: center; flex: none; }
+
+.hc-list.is-collapsed .hc-row:nth-child(n+7) { display: none; }
+
+.hc-chips.is-collapsed .hc-chip:nth-child(n+4) { display: none; }
+
+.hc-list.is-expanded .hc-row:nth-child(n+7) { animation: hcMoreIn .35s cubic-bezier(.22,.61,.36,1) both; }
+
+.hc-others.is-expanded a:nth-child(n+7), .hc-chips.is-expanded .hc-chip:nth-child(n+4) { animation: hcMoreIn .35s cubic-bezier(.22,.61,.36,1) both; }
+
+.hc-cta, .hc-pager, .hc-rail { transition: opacity .3s var(--ease-apple), display .3s allow-discrete, visibility 0s; }
+
+html.hc-fs .hc-progress, html.hc-fs .hc-fab, html.hc-fs .hc-rail, html.hc-fs .hc-side-reveal {
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity .3s var(--ease-apple), transform .35s var(--ease-apple), visibility 0s .4s;
+}
+
+html.hc-fs .hc-fab, html.hc-fs .hc-rail, html.hc-fs .hc-side-reveal { transform: translateY(10px); }
+
+html.hc-fs footer.site, html.hc-fs .hc-cta, html.hc-fs .hc-rail {
+  display: none; opacity: 0; visibility: hidden;
+  transition: opacity .3s var(--ease-apple), display 0s .35s allow-discrete, visibility 0s .35s;
+}
+
+html.hc-fs .hc-art { max-width: none; }
+
+html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var(--green); }
+
+@media (max-width: 760px) {
+  .hc-try { margin-top: 20px; }
+
+  .hc-card { border-radius: 16px; }
+
+  .hc-pager { margin-bottom: 60px; }
+}
+
+@media (max-width: 640px) {
+  .hc-grid > .hc-cat { padding: 13px; }
+
+  .hc-grid .hc-cat-head { gap: 9px; }
+
+  .hc-grid .hc-cat-go { display: none; }
+
+  .hc-grid .hc-cat-prev { display: none; }
+}
+
+@media (max-width: 640px) {
+  .hc-cta { flex-wrap: wrap; }
+
+  .hc-cta .btn { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 860px) {
+  .hc-list { grid-template-columns: 1fr; column-gap: 0; }
+}
+
+@media (max-width: 640px) {
+  .hc-art { padding: 22px 18px 30px; border-radius: 14px; }
+
+  .hc-body, .hc-body * { overflow-wrap: anywhere; }
+
+  .hc-body .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 16px 0; }
+
+  .hc-body table {
+    width: 100%; border-collapse: collapse; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+  box-shadow: var(--shadow-sm); font-size: .9rem;
+  }
+
+  .hc-body th, .hc-body td {
+    padding: 10px 14px; text-align: left;
+  border-bottom: 1px solid var(--border);
+  }
+
+  .hc-body thead th {
+    background: color-mix(in srgb, var(--green) 14%, transparent);
+  font-weight: 700;
+  }
+
+  .hc-body tbody tr:last-child td { border-bottom: none; }
+
+  .hc-body tbody tr:nth-child(even) { background: color-mix(in srgb, var(--green) 5%, transparent); }
+
+  .hc-body td:not(:first-child), .hc-body th:not(:first-child) { text-align: center; }
+
+  .hc-body code { word-break: break-all; }
+}
+
+@media (max-width: 640px) {
+  .hc-pager { gap: 9px; }
+
+  .hc-pager a { padding: 12px 13px; gap: 9px; }
+
+  .hc-pager b { font-size: .84rem; }
+
+  .hc-pager svg { width: 15px; height: 15px; }
+}
+
+@media (hover: none) {
+  .hc-card:active { transform: scale(.985); transition: transform .12s; }
+
+  .hc-art:active { transform: none; transition: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .view.anim .hc-side-title, .view.anim .hc-nav-item, .view.anim .hc-card,
+   .view.anim .hc-cat, .view.anim .hc-art > *, .view.anim .hc-fa, .view.anim details,
+   .hc-chiprow .hc-chip, .hc-sbtn { animation: none; }
+
+  .hc-results, .hc-res, .hc-nav-item, .hc-card, .hc-chip, .hc-fab { transition: none; animation: none; }
+}
+
+@media (max-width: 1279px) {
+  .hc-rail { display: none; }
+}
+
+@media (max-width: 640px) {
+  .hc-grid > .hc-cat { padding: 14px; }
+
+  .hc-grid .hc-cat-head { gap: 9px; }
+
+  .hc-grid .hc-cat-go { display: none; }
+
+  .hc-grid .hc-cat-prev { display: none; }
+}
+
+@media (min-width: 1400px) {
+  .hc-list { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+@media (max-width: 760px) {
+  .hc-list { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 1279px) {
+  .doc-layout .hc-rail { display: none; }
+}
+
+@media (max-width: 760px) {
+  .hc-rail { display: none; }
+
+  .hc-pager { grid-template-columns: minmax(0, 1fr); }
+
+  .hc-body pre { font-size: .8rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+}
+
+@media (max-width: 1020px) {
+  .hc-feat { grid-template-columns: 1fr 1fr; }
+
+  .hc-band-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  .hc-feat { grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .hc-feat a { padding: 14px; }
+
+  .hc-band-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .hc-band-grid a { padding: 14px; }
+
+  .hc-tools .hc-tool.opt { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.hc-fs .hc-progress, html.hc-fs .hc-fab, html.hc-fs .hc-rail,
+   html.hc-fs .hc-side-reveal, html.hc-fs footer.site, html.hc-fs .hc-cta,
+   html.hc-fs .hc-side,
+   .hc-cta, .hc-pager, .hc-rail, .hc-progress, .hc-fab,
+   .hc-side-reveal { transition: none !important; }
+}
+
+@media print {
+  header.site, footer.site, .hc-cta, .hc-pager, .hc-search, .hc-crumbs, .hc-side, .hc-fab, .hc-progress, .hc-hsearch { display: none !important; }
+
+  .hc-card { border: 0; box-shadow: none; background: none; }
+}
+  </style>
+</head>
+<body>
+<header class="site"><div class="wrap nav nav-unified"><div class="nav-group nav-left"><a class="brand" href="../../ru/index.html" aria-label="Fast Scheduler — главная (FS)"><span class="brand-mark"><img src="../../brand-logo-128.png" alt="" width="30" height="30" decoding="async"></span><span class="brand-full">Fast Scheduler</span><span class="brand-short">FS</span></a></div><div class="nav-group nav-right"><a class="nav-link" href="../../ru/blog/index.html" aria-label="Блог"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><span>Блог</span></a><span class="site-menu-wrap"><a class="nav-link site-menu-row" href="../../ru/help.html" aria-label="Центр помощи" aria-haspopup="menu" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Центр помощи</span></a><div class="glass-pop site-menu-pop help-menu nav-menu-pop" id="siteMenu" role="dialog" aria-label="Быстрый поиск по справке"><form class="help-search" id="helpSearchForm" role="search"><svg class="sic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="search" id="helpSearchInput" placeholder="Поиск по справке…" autocomplete="off" aria-label="Поиск по справке"></form><div class="help-recent"><div class="help-recent-title" id="helpRecentTitle">Популярные статьи</div><div class="help-recent-list" id="helpRecentList"></div></div><a class="gp-row help-menu-open" aria-label="Открыть Центр помощи" href="../../ru/help.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Открыть Центр помощи</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></div></span><a class="btn btn-primary nav-cta" data-cta-short="Открыть" aria-label="Открыть бота" href="https://t.me/FastSchedulerSupport_bot?start=_t" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>Открыть бота</span><kbd class="tab-kbd" aria-hidden="true">B</kbd></a><span class="settings-wrap"><button type="button" class="icon-btn" id="settingsBtn" aria-haspopup="menu" aria-expanded="false" aria-label="Настройки" data-hk="settings dark anim fx keys"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button><div class="glass-pop" id="settingsMenu" role="group" aria-label="Настройки"><div class="gp-head" role="none">Настройки</div>
+        <button type="button" class="gp-row" aria-pressed="false" id="rowDark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span>Тёмная тема</span><span class="io-switch" aria-hidden="true"></span></button>
+        <button type="button" class="gp-row" aria-pressed="true" id="rowAnim"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span>Анимации</span><span class="io-switch" aria-hidden="true"></span></button>
+        <button type="button" class="gp-row" aria-pressed="true" id="rowFx"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg><span>Эффекты</span><span class="io-switch" aria-hidden="true"></span></button>
+        <button type="button" class="gp-row" aria-pressed="true" id="rowKeys"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2.5"/><path d="M6.5 10h.01M10.5 10h.01M14.5 10h.01M18 10h.01M8 13.5h8"/></svg><span>Горячие клавиши</span><span class="io-switch" aria-hidden="true"></span></button>
+        <div class="gp-row gp-fonts" data-fonts role="group" aria-label="Размер шрифта"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Размер шрифта</span><span class="hc-fonts"><button type="button" data-font="s" aria-label="Маленький">A</button><button type="button" data-font="m" aria-label="Обычный">A</button><button type="button" data-font="l" aria-label="Большой">A</button></span></div>
+        
+        <button type="button" class="gp-row gp-row-sub" id="rowKeysHelp"><svg viewBox="0 0 24 24" fill="none" stroke="none" aria-hidden="true" style="visibility:hidden;width:18px;height:18px"></svg><span class="gp-sub-label">Показать горячие клавиши</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div class="gp-sep" role="separator"></div>
+        <a class="gp-row" href="https://t.me/FastSchedulerSupport_bot" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>Чат поддержки</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></div></span></div></div></header>
+<main class="legal">
+<div class="wrap legal" style="max-width:860px;margin:0 auto"><p><a href="https://fastscheduler.github.io/legal/privacy.html" hreflang="en" lang="en">Читать на английском</a></p><article class="doc"><h1>Политика конфиденциальности</h1><p class="updated">Последнее обновление: 1 октября 2026</p><p class="effective">Действует с 8 октября 2026 года. Продолжение использования Сервисов после этой даты означает принятие обновлённой редакции.</p><div class="ver-changes" role="note"><b>Что изменилось в этой редакции.</b> <q>В этой редакции уточнены перечень данных, обработка на сайте, шифрование и сроки хранения/удаления.</q><ul><li>Добавлено пояснение, что Fast Support и Fast Community — элементы бренда, а русская версия переведена с помощью ИИ.</li></ul></div><div class="ver-dd"><button type="button" class="ver-pill" aria-haspopup="menu"><span class="ver-pill-dot" aria-hidden="true"></span>2026-10-01 · текущая версия</button><div class="glass-pop ver-menu" role="menu" aria-label="Версии документа"><div class="gp-head">Версии документа</div><span class="gp-row ver-opt on" role="menuitem" aria-current="true"><span class="ver-v">2026-10-01</span><span class="ver-s">текущая · действует с 8 октября 2026</span></span><a class="gp-row ver-opt" role="menuitem" href="../../legal/history/privacy-2026-09-26.html"><span class="ver-v">2026-09-26</span><span class="ver-s">архивная версия (английский)</span></a></div></div><div class="hc-body"><h2 id="1">1. Введение</h2>
+<p>Настоящая Политика конфиденциальности объясняет, как Максим Мкртчян, индивидуальный оператор из Армении («<strong>мы</strong>», «<strong>нас</strong>» или «<strong>наш</strong>»), собирает, использует, раскрывает и защищает персональные данные, когда вы («<strong>вы</strong>» или «<strong>Пользователь</strong>») используете:</p>
+<ol>
+<li><strong>Fast Scheduler</strong> — Telegram-бота для планирования и автоматизации сообщений в Telegram-каналы и группы, с дополнительными функциями оплаты, отчётности и управления данными («<strong>Основной сервис</strong>»); и</li>
+<li><strong>SetDate</strong> — бота-компаньона Telegram, который помогает строить расписания публикаций и импортировать их в Основной сервис («<strong>Сервис SetDate</strong>»).</li>
+<li><strong>Fast Support</strong> — бота-компаньона Telegram для диалогов поддержки, помощи, приёма отзывов и оценок («<strong>Сервис поддержки</strong>»); и</li>
+<li><strong>Наш сайт</strong> https://fastscheduler.github.io/ — лендинг, центр помощи, блог и юридические страницы на английском и русском языках («<strong>Сайт</strong>», а вместе с Основным сервисом, Сервисом SetDate и Сервисом поддержки — «<strong>Сервисы</strong>»).</li>
+</ol>
+<p>Настоящая политика применяется ко всем персональным данным, обрабатываемым через Сервисы, включая данные, собранные через:<br />
+- Основной сервис напрямую;<br />
+- Подключённые <strong>Боты-отправители</strong> (Telegram-боты, токены которых вы предоставляете, чтобы Сервисы могли публиковать от вашего имени);<br />
+- Сервис SetDate (когда вы решаете импортировать расписание);<br />
+- Сервис поддержки (когда вы обращаетесь в поддержку или отправляете отзывы и оценки);<br />
+- Сайт (как описано в разделе 4(m) — по сути только настройки на устройстве); и<br />
+- Взаимодействия по обработке платежей с нашими сторонними платёжными провайдерами.</p>
+<p>Если вы не согласны с настоящей политикой, пожалуйста, не используйте Сервисы.</p>
+<hr />
+<h2 id="2">2. Определения</h2>
+<ol>
+<li><strong>Персональные данные</strong> — любая информация, относящаяся к идентифицированному или идентифицируемому физическому лицу.</li>
+<li><strong>Обработка</strong> — любая операция, выполняемая с Персональными данными (сбор, хранение, использование, раскрытие, удаление и т.д.).</li>
+<li><strong>Контроллер (Controller)</strong> — лицо, определяющее цели и средства Обработки.</li>
+<li><strong>Процессор (Processor)</strong> — лицо, обрабатывающее Персональные данные от нашего имени.</li>
+<li><strong>Telegram</strong> — Telegram LLC / Telegram Messenger Inc. и связанные с ними сервисы.</li>
+<li><strong>Бот-отправитель</strong> — аккаунт Telegram-бота, токен которого вы предоставляете Основному сервису, чтобы Сервис мог публиковать от вашего имени в канале, который вы администрируете.</li>
+<li><strong>Premium</strong> — платный уровень подписки (месячный или годовой), предоставляемый Сервисами.</li>
+<li><strong>SetDate</strong> — отдельный Telegram-бот, управляемый нами, который помогает проектировать расписания публикаций для импорта в Основной сервис.</li>
+<li><strong>Сервис поддержки</strong> — <strong>Fast Support</strong>, отдельный Telegram-бот, управляемый нами, для диалогов поддержки, помощи, приёма отзывов и оценок.</li>
+<li><strong>Сайт</strong> — наш публичный информационный сайт https://fastscheduler.github.io/ (лендинг, центр помощи, блог, юридические страницы), размещённый как статические файлы на GitHub Pages. У Сайта нет учётных записей пользователей и нет серверной обработки данных посетителей.</li>
+</ol>
+<p><strong>Уточнение о названиях бренда:</strong> <strong>Fast Support</strong> и <strong>Fast Community</strong> — названия в линейке бренда Fast Scheduler. В этих названиях слово <strong>«Fast» является частью бренда</strong>, а не обещанием или описанием мгновенной либо более быстрой работы поддержки, модерации или сообщества по сравнению с другими сервисами.</p>
+<p><strong>Примечание о переводе:</strong> эта русская версия подготовлена с помощью ИИ и может содержать неточности, ошибки перевода или отличия в формулировках. При расхождении смыслов преимущественную силу имеет английская версия документа.</p>
+<hr />
+<h2 id="3">3. Кто мы (контроллер данных)</h2>
+<p>Контроллером данных, ответственным за ваши Персональные данные, является:</p>
+<blockquote>
+<p><strong>Максим Мкртчян</strong> (индивидуальный оператор, Армения — без офиса)<br />
+Контакт по защите данных: <a href="mailto:fastschedulebot@gmail.com">fastschedulebot@gmail.com</a><br />
+Поддержка: <a href="https://t.me/FastSchedulerSupport_bot">FastSchedulerSupport_bot</a> (предпочтительный контакт — пожалуйста, не спамьте в личные сообщения)<br />
+Личный Telegram: <a href="https://t.me/MaximalXP">@MaximalXP</a></p>
+</blockquote>
+<p>Наш хостинг и инфраструктура предоставляются надёжными сторонними облачными провайдерами и провайдерами баз данных, которые обрабатывают Персональные данные как наши Процессоры на серверах, расположенных в Европейском союзе.</p>
+<hr />
+<h2 id="4">4. Категории Персональных данных, которые мы обрабатываем</h2>
+<p>Мы обрабатываем следующие категории Персональных данных:</p>
+<h3 id="a-telegram">(a) Идентификация и профиль Telegram</h3>
+<ol>
+<li>ID пользователя Telegram (числовой идентификатор, присваиваемый Telegram).</li>
+<li>Имя пользователя Telegram (если задано), имя, фамилия (как предоставлено Telegram).</li>
+<li>Выбранный вами язык интерфейса и часовой пояс в Сервисах.</li>
+<li>Отметка создания аккаунта и отметка последнего посещения.</li>
+<li>Запись о принятии условий (отметка времени принятия, ваше имя пользователя на тот момент и был ли аккаунт новым или уже существующим).</li>
+</ol>
+<h3 id="b">(b) Данные каналов и групп</h3>
+<ol>
+<li>Идентификаторы подключённых вами Telegram-каналов и групп (числовые ID, названия, имена пользователей).</li>
+<li>Администрируется ли канал вами напрямую или Ботом-отправителем от вашего имени.</li>
+<li>Отметки подключения каналов и история отключений.</li>
+<li>Какой канал задан вашим каналом по умолчанию для планирования.</li>
+<li>Записи об администраторах каналов (ID пользователей Telegram назначенных администраторов каналов, их роли/разрешения, а также запросы на передачу владения или разрешений).</li>
+</ol>
+<h3 id="c">(c) Содержимое сообщений — отложенные и повторяющиеся посты</h3>
+<ol>
+<li>Полный текст, подписи, идентификаторы медиафайлов (file_id Telegram), форматирование, инлайн-кнопки и подписи, создаваемые вами для отложенных или повторяющихся постов. Сюда входят места и площадки, которые вы решили запланировать как содержимое сообщений (координаты, названия, адреса).</li>
+<li>Если вы отправляете живую геопозицию или координаты для автоопределения часового пояса, координаты обрабатываются только в памяти для определения названия часового пояса и никогда не сохраняются.</li>
+<li>Определения повторяющихся/календарных расписаний (частота в формате CRON, время, часовой пояс).</li>
+<li>Сохранённые шаблоны сообщений, конфигурации опросов, данные викторин/чек-листов.</li>
+<li>Импортированное содержимое расписаний, полученное от Сервиса SetDate.</li>
+<li>Уникальные ID заданий, присваиваемые каждому отложенному или повторяющемуся сообщению, используемые для отслеживания и доставки.</li>
+</ol>
+<h3 id="d-">(d) Учётные данные подключённых Ботов-отправителей</h3>
+<ol>
+<li>Токен Telegram-бота, отправляемый вами для подключения Бота-отправителя. Токены хранятся <strong>в зашифрованном виде</strong> (AES-GCM) в выделенной базе данных SQLite и <strong>маскируются</strong> во всех операционных журналах. Мы не используем эти токены ни для каких целей, кроме работы Бота-отправителя по вашим указаниям.</li>
+<li>Имя пользователя бота, ID бота и ID канала, к которому бот привязан.</li>
+<li>Статус передачи управления (передано ли основное управление Боту-отправителю).</li>
+</ol>
+<h3 id="e">(e) Отзывы, оценки и обращения в поддержку</h3>
+<ol>
+<li>Текстовые сообщения отзывов и вложения (скриншоты, журналы, документы), добровольно отправляемые вами через команду <code>/feedback</code> или меню отзывов (в Основном сервисе или Сервисе поддержки).</li>
+<li>Тикеты поддержки (жалобы): ваши сообщения тикетов, категория, статус и необязательные вложения.</li>
+<li>Оценки звёздами (1–5) и необязательные письменные рецензии, оставляемые вами через внутриботовые кнопки оценок.</li>
+<li>Каждая отправленная оценка создаёт внутреннее уведомление администратору, содержащее ваше имя, @имя пользователя, ID пользователя Telegram, число звёзд, текст рецензии, дату отправки и ваш текущий статус Free/Premium, чтобы рецензии можно было модерировать и на них отвечать (администраторы могут отвечать на вашу оценку внутри бота).</li>
+<li>Диагностическая информация, добровольно предоставляемая вами при сообщении о проблеме (например, через «показать мои действия» или «сообщить о проблеме»), которая может включать метаданные о вашей недавней активности в боте (использованные команды, отметки времени), необходимые для решения проблемы.</li>
+</ol>
+<h3 id="f-setdate">(f) Данные сессий SetDate</h3>
+<ol>
+<li>Выбранный вами язык в Сервисе SetDate.</li>
+<li>Разовая сессия построения расписания (выбранные вами даты и время), передаваемая в Основной сервис при использовании функции импорта. Эти данные временны и используются только для выполнения импорта.</li>
+</ol>
+<h3 id="g">(g) Статистика использования и операционные данные</h3>
+<ol>
+<li><strong>Статистика доставки сообщений</strong>: для каждого отправленного сообщения мы записываем ID канала, имя пользователя канала, отметку времени и тип сообщения. Они хранятся в выделенной базе данных статистики SQLite (<code>data/stats.db</code>) и используются для агрегированной отчётности.</li>
+<li><strong>Число реакций и просмотров сообщений</strong>: мы периодически собираем число реакций и просмотров сообщений, отправленных через Сервисы, храня их по каждому каналу для функций рейтингов и статистики.</li>
+<li><strong>Авторы комментариев</strong>: если у вашего канала есть привязанная группа обсуждений и один из наших ботов состоит в ней, мы записываем публичную идентификацию Telegram пользователей, комментирующих ваши отправленные ботом посты канала (их ID пользователя Telegram, @имя пользователя, имя и фамилию, как показано в Telegram), вместе с числом комментариев на пост. Это используется исключительно для построения рейтинга «топ-комментаторов» и атрибуции комментариев в отчётах статистики. Это охватывает только комментарии к сообщениям, отправленным через Сервисы, никогда — личные сообщения, и никогда не передаётся другим пользователям вне статистики, которую вы решили просмотреть.</li>
+<li><strong>Счётчики использования функций</strong>: число созданных отложенных сообщений, сообщений, отправляемых ежедневно, настроенных повторяющихся сообщений, созданных подписей, выполненных поисков и подобные операционные метрики.</li>
+<li><strong>Записи входа/доступа</strong> административного персонала, защищённые отдельными секретными учётными данными.</li>
+</ol>
+<h3 id="h">(h) Данные подписей</h3>
+<ol>
+<li>Сохранённые шаблоны подписей к сообщениям (текст, форматирование, инлайн-кнопки, file_id вложения, тип медиа вложения).</li>
+<li>Предпочтение позиции подписи (сверху или снизу сообщения).</li>
+<li>Настройки автоматического назначения подписей (конфигурация авто-добавления по каждому каналу).</li>
+</ol>
+<h3 id="i">(i) Данные поиска</h3>
+<ol>
+<li>Поисковые запросы, вводимые вами через внутриботовую функцию поиска. Поиск выполняется по вашим собственным отложенным/повторяющимся сообщениям и никому не передаётся.</li>
+</ol>
+<h3 id="j">(j) Данные промокодов и реферальной программы</h3>
+<ol>
+<li>Применяемые вами промокоды и история их использования (полученная скидка, ID подписки).</li>
+<li>Реферальный код, назначенный вашему аккаунту, пригласивший вас пользователь (если есть), заработанные и востребованные реферальные награды, а также список приглашённых вами пользователей.</li>
+<li>Истечение реферальных наград и статус востребования.</li>
+</ol>
+<h3 id="k">(k) Данные биллинга и подписок</h3>
+<ol>
+<li>Статус подписки (Free или Premium), уровень подписки (месячная или годовая), использованный платёжный провайдер, даты начала и окончания подписки.</li>
+<li>Подтверждения платежей Telegram за покупки Stars (сумма, валюта, идентификаторы списаний Telegram и провайдера).</li>
+<li>История повторов платежей и состояние замороженных активов (каналы/боты/расписания, помеченные для отключения при истечении premium).</li>
+<li>Состояние заморозки/льготного периода и даты истечения.</li>
+<li>Запросы на отмену и статус их обработки.</li>
+</ol>
+<h3 id="l-">(l) Операционные данные веб-сервера</h3>
+<ol>
+<li>При обработке платежей мы временно обрабатываем данные подтверждения платежа (ID подписки, ID пользователя, цена, валюта, статус транзакции) для предоставления или отзыва доступа Premium. Данные, полученные от платёжного провайдера, обрабатываются строго для управления подпиской и не используются ни для каких иных целей.</li>
+</ol>
+<h3 id="m">(m) Сайт и маркетинговая атрибуция</h3>
+<p>Наш Сайт — статический сайт (без учётных записей пользователей, без нашего серверного кода). Он <strong>не собирает персональные данные на наших серверах</strong>. Всё ниже остаётся в вашем собственном браузере, пока вы не нажмёте ссылку, открывающую нашего Telegram-бота:</p>
+<p><strong>Настройки, хранящиеся только в вашем браузере (локальное хранилище, нам никогда не передаются):</strong><br />
+| Ключ | Назначение |<br />
+| --- | --- |<br />
+| <code>theme</code> | Выбор светлой/тёмной темы |<br />
+| <code>fs-lang</code> | Язык сайта (английский/русский) |<br />
+| <code>fs-motion</code>, <code>fs-fx</code>, <code>fs-hotkeys</code>, <code>fs-hotkey-custom</code>, <code>fs-rail</code> | Настройки отображения и доступности (анимации, эффекты, горячие клавиши, панель навигации) |<br />
+| <code>fs-help-recents</code> | Ваши последние поиски по центру помощи (до 6), используются только для показа «недавних поисков» |<br />
+| <code>site_clicks</code> | Ваши последние клики по ссылкам на сайте (до 200), используются только для вашей собственной истории — никогда не передаются |<br />
+| <code>cookie_consent</code> | Приняли ли вы или отклонили cookie-баннер |</p>
+<p><strong>Один функциональный cookie:</strong> когда вы отвечаете на cookie-баннер, мы сохраняем cookie <code>consent=accepted|declined</code> (срок 1 год, только первой стороны), чтобы баннер не появлялся снова. Он не содержит идентификатора и никогда не используется для отслеживания. Выбор «отклонить» ничего больше не меняет — на сайте нет трекеров, которые нужно отключать, и он работает одинаково в любом случае.</p>
+<p><strong>Проверка флагов функций:</strong> сайт примерно раз в минуту запрашивает крошечный публичный файл (<code>storage_state.json</code>, несколько байт), чтобы знать, какие функции отображать. Это обычное анонимное скачивание — с ним не отправляется ни идентификатор, ни cookie, ни персональные данные.</p>
+<p><strong>Поисковый помощник центра помощи:</strong> помощник помощи на странице (<code>help-ai</code>) работает <strong>целиком в вашем браузере</strong> — ваш запрос никогда не покидает ваше устройство и не обрабатывается никаким сервером.</p>
+<p><strong>Открытие бота с Сайта:</strong> кнопки и ссылки тарифов открывают Telegram с меткой источника (например <code>?start=start__website</code>, <code>?start=premium_monthly__pricing</code>). Когда вы это делаете, мы записываем <strong>метку источника</strong> вместе с отметкой времени и вашим ID пользователя Telegram во внутренний файл аналитики с ограниченной ротацией (<code>data/tracking.json</code>, максимум 10 000 записей, старые перезаписываются автоматически). Это используется только агрегированно, чтобы понимать, какие страницы приводят пользователей в бота, и видно нашему персоналу через внутреннюю команду (<code>/track</code>). Просто просмотр Сайта — без открытия бота — ничего не записывает на нашей стороне.</p>
+<p><strong>Хостинг и третьи стороны:</strong> файлы Сайта обслуживаются <strong>GitHub Pages</strong> (GitHub, Inc., США). GitHub обязательно получает стандартные данные соединения (такие как ваш IP-адрес) для доставки страниц согласно собственному заявлению о конфиденциальности GitHub — у нас нет собственных журналов сервера. Все скрипты, стили и шрифты обслуживаются с того же сайта (без CDN, без внешних зависимостей). Сайт содержит <strong>ни аналитики, ни рекламных сетей, ни пикселей соцсетей, ни кросс-сайтовых трекинговых cookie, ни сторонних SDK какого-либо вида</strong>. Ссылки на Telegram, GitHub или поисковики естественным образом уводят с нашего сайта и регулируются политиками этих сервисов.</p>
+<p><strong>Публичная индексация:</strong> публичные страницы Сайта (лендинг, помощь, блог, юридические страницы) намеренно индексируются поисковиками и ИИ-ассистентами (см. <code>robots.txt</code>, <code>sitemap.xml</code>, <code>llms.txt</code> и RSS-ленту блога). Они не содержат персональных данных — только нашу собственную документацию и статьи.</p>
+<p>Мы <strong>не</strong> собираем намеренно специальные категории Персональных данных (например, данные о здоровье, биометрии, политике, религии, членстве в профсоюзах). Содержимое сообщений, которые вы решили запланировать, — ваша ответственность; избегайте планировать чувствительные персональные данные о себе или других.</p>
+<hr />
+<h2 id="5">5. Источники Персональных данных</h2>
+<p>Мы собираем Персональные данные из следующих источников:</p>
+<ol>
+<li><strong>Напрямую от вас</strong>, когда вы взаимодействуете с Сервисами:</li>
+<li>Отправляя команды и сообщения боту;</li>
+<li>Подключая каналы, предоставляя идентификатор Telegram-канала или группы;</li>
+<li>Отправляя токен Telegram-бота для подключения Бота-отправителя;</li>
+<li>Составляя и сохраняя отложенные сообщения, повторяющиеся расписания и подписи;</li>
+<li>Отправляя отзывы, оценки, рецензии и запросы в поддержку;</li>
+<li>Применяя промокоды;</li>
+<li>Участвуя в реферальной программе;</li>
+<li>Используя функцию поиска;</li>
+<li>
+<p>Настраивая язык, часовой пояс и другие предпочтения.</p>
+</li>
+<li>
+<p><strong>Автоматически от Telegram</strong>, как часть работы Telegram-бота:</p>
+</li>
+<li>Telegram предоставляет базовые поля пользователя/профиля (ID пользователя, имя пользователя, имя, фамилию) при каждом взаимодействии.</li>
+<li>
+<p>Метаданные сообщений, такие как отметки времени, ID чатов и контексты ответов, присущи протоколу Telegram Bot API.</p>
+</li>
+<li>
+<p><strong>От Сервиса SetDate</strong>, когда вы решаете импортировать расписание, построенное вами в SetDate, в Основной сервис:</p>
+</li>
+<li>
+<p>Ваши языковые предпочтения и данные расписания (даты/время) передаются через общий файл данных.</p>
+</li>
+<li>
+<p><strong>От платёжного провайдера</strong> (Telegram Stars):</p>
+</li>
+<li>Мы получаем подтверждения платежей, подтверждающие статус платежа, идентификаторы подписок и идентификаторы пользователей для предоставления или отзыва доступа Premium. Telegram обрабатывает все платёжные данные согласно собственным условиям.</li>
+</ol>
+<p>Мы <strong>не</strong> покупаем Персональные данные у сторонних брокеров данных.</p>
+<hr />
+<h2 id="6-6-gdpr">6. Правовые основания обработки (ст. 6 GDPR)</h2>
+<table>
+<thead>
+<tr>
+<th>Цель</th>
+<th>Правовое основание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Предоставление Сервисов по нашим Условиям использования (планирование и доставка сообщений, управление аккаунтом, работа Бота-отправителя, импорт/экспорт расписаний, управление подписями, поиск, оценки, обработка отзывов)</td>
+<td>Исполнение договора (ст. 6(1)(b))</td>
+</tr>
+<tr>
+<td>Обработка платежей, управление подписками, обработка отмен, обработка повторов</td>
+<td>Исполнение договора (ст. 6(1)(b))</td>
+</tr>
+<tr>
+<td>Защита Сервисов, выявление и предотвращение мошенничества, злоупотреблений, несанкционированного доступа и инцидентов безопасности</td>
+<td>Законные интересы (ст. 6(1)(f))</td>
+</tr>
+<tr>
+<td>Отладка, устранение неполадок и улучшение Сервисов</td>
+<td>Законные интересы (ст. 6(1)(f))</td>
+</tr>
+<tr>
+<td>Соблюдение обязанностей налогового, бухгалтерского и юридического хранения (например, сохраняемые записи подписок)</td>
+<td>Юридическая обязанность (ст. 6(1)(c))</td>
+</tr>
+<tr>
+<td>Соблюдение законных запросов властей (судебные приказы, повестки)</td>
+<td>Юридическая обязанность (ст. 6(1)(c))</td>
+</tr>
+<tr>
+<td>Необязательные функции, требующие явного выбора (например, уведомления без необходимости, на которые вы подписались, участие в реферальной программе)</td>
+<td>Согласие (ст. 6(1)(a))</td>
+</tr>
+<tr>
+<td>Запоминание вашего выбора в cookie-баннере Сайта (cookie первой стороны <code>consent</code>, без отслеживания)</td>
+<td>Согласие (ст. 6(1)(a)) — устанавливается только после вашего клика принять/отклонить; отказ ничего не отключает, потому что отключать нечего</td>
+</tr>
+<tr>
+<td>Доставка статического Сайта посетителям (обработка соединений на уровне хостинга GitHub Pages)</td>
+<td>Законные интересы (ст. 6(1)(f)) — работа публичного информационного сайта; профилирование посетителей не выполняется</td>
+</tr>
+</tbody>
+</table>
+<p>Там, где мы опираемся на законные интересы, мы взвесили эти интересы против ваших прав и свобод и пришли к выводу, что эксплуатация, защита и улучшение Сервисов представляют убедительный, соразмерный интерес. Вы имеете право возражать против любой Обработки, основанной на законных интересах (см. раздел 13).</p>
+<hr />
+<h2 id="7">7. Как мы используем Персональные данные</h2>
+<p>Мы используем Персональные данные для следующих конкретных целей:</p>
+<ol>
+<li><strong>Управление аккаунтом</strong>: создание и ведение вашего профиля пользователя, предпочтений (язык, часовой пояс, канал по умолчанию) и статуса подписки.</li>
+<li><strong>Планирование и доставка сообщений</strong>: хранение содержимого ваших отложенных и повторяющихся сообщений, доставка сообщений в подключённые вами каналы/группы в указанное время через Основной сервис или вашего Бота-отправителя.</li>
+<li><strong>Работа Бота-отправителя</strong>: использование предоставленного вами токена бота исключительно для аутентификации и работы Бота-отправителя для публикаций от вашего имени.</li>
+<li><strong>Импорт SetDate</strong>: получение и обработка разовых импортов расписаний от бота-компаньона SetDate.</li>
+<li><strong>Управление подписями</strong>: хранение и применение ваших сохранённых подписей к отложенным сообщениям.</li>
+<li><strong>Поиск</strong>: возможность искать среди ваших собственных отложенных и повторяющихся сообщений.</li>
+<li><strong>Обработка платежей и управление подпиской</strong>: обработка платежей через Telegram Stars, предоставление/отзыв доступа Premium, обработка повторов платежей, управление истечением premium (заморозка/льготный период, отключение активов).</li>
+<li><strong>Промокоды и рефералы</strong>: обработка промо-скидок и управление реферальной программой вознаграждений.</li>
+<li><strong>Поддержка клиентов</strong>: получение, хранение и ответы на отзывы, оценки и запросы в поддержку; исследование и решение сообщённых проблем.</li>
+<li><strong>Оценки и рецензии</strong>: сбор, отображение и модерация звёздных оценок и письменных рецензий.</li>
+<li><strong>Статистика и аналитика</strong>: генерация агрегированной, неидентифицирующей статистики использования (например, всего отправленных сообщений, популярных функций) для улучшения Сервисов.</li>
+<li><strong>Безопасность и предотвращение злоупотреблений</strong>: мониторинг и предотвращение мошеннического, злоупотребительного или несанкционированного использования Сервисов; ведение журналов аудита административных действий; применение ограничений частоты; сканирование угроз безопасности (например, инъекционных атак, утечек токенов).</li>
+<li><strong>Маркетинговая атрибуция</strong>: запись источника приходов пользователей с сайта/маркетинговых кампаний для агрегированного анализа (только неидентифицирующая отчётность).</li>
+<li><strong>Работа сайта</strong>: обслуживание публичных информационных страниц (лендинг, центр помощи, блог, юридические страницы) на английском и русском языках; запоминание чисто локальных настроек отображения (тема, язык, параметры доступности); запись метки источника только когда вы переходите с Сайта в наш Telegram-бот.</li>
+<li><strong>Соблюдение законодательства</strong>: соблюдение применимых правовых и регуляторных обязанностей.</li>
+</ol>
+<p>Мы <strong>не</strong>:<br />
+- Продаём ваши Персональные данные третьим лицам.<br />
+- Используем ваши Персональные данные для автоматизированного принятия индивидуальных решений или профилирования с юридическими последствиями.<br />
+- Используем токен вашего Бота-отправителя для каких-либо целей, кроме работы вашего Бота-отправителя по вашим указаниям.</p>
+<hr />
+<h2 id="8">8. Передача и раскрытие</h2>
+<p>Мы передаём Персональные данные только по мере необходимости для предоставления Сервисов:</p>
+<ol>
+<li>
+<p><strong>Telegram</strong> — все взаимодействия проходят через серверы Telegram. Telegram действует как независимый контроллер данных, которые он обрабатывает согласно собственной Политике конфиденциальности (https://telegram.org/privacy). Мы не контролируем, как Telegram обрабатывает данные, передаваемые через его платформу.</p>
+</li>
+<li>
+<p><strong>Telegram Stars</strong> (для платежей в приложении через Telegram) — платежи обрабатываются полностью в инфраструктуре Telegram. Telegram обрабатывает все платёжные данные согласно собственным условиям. Мы получаем от Telegram только подтверждение успешного платежа.</p>
+</li>
+<li>
+<p><strong>Инфраструктура (хостинг и базы данных)</strong> — все хранимые Персональные данные обрабатываются надёжными сторонними облачными провайдерами и провайдерами баз данных, действующими как наши Процессоры, с размещением данных в Европейском союзе. Их обработка покрывается их условиями обработки данных.</p>
+</li>
+<li>
+<p><strong>GitHub Pages (только хостинг Сайта)</strong> — статические файлы нашего публичного Сайта обслуживаются GitHub, Inc. (США). GitHub обрабатывает стандартные данные соединения (например, IP-адрес), необходимые для доставки страниц, согласно собственному заявлению о конфиденциальности GitHub. Мы не эксплуатируем серверный код на Сайте и не ведём собственных журналов посетителей.</p>
+</li>
+<li>
+<p><strong>Бот-компаньон SetDate</strong> — передаёт минимальный файл данных (предпочтение языка пользователя и временная сессия построения расписания) через локальный файл на том же сервере, только когда вы явно используете функцию импорта.</p>
+</li>
+<li>
+<p><strong>Власти и получатели по закону</strong> — мы раскрываем Персональные данные властям только там, где это требуется действительным юридическим процессом (например, судебным приказом или повесткой по законодательству Армении) или для защиты наших прав, пользователей либо общества от неминуемого вреда:</p>
+</li>
+<li>Мы раскрываем <strong>минимум данных, необходимый</strong> для соблюдения — никогда массовые выгрузки данных пользователей;</li>
+<li>Мы оспариваем чрезмерно широкие или неясные запросы, где это юридически допустимо;</li>
+<li>Мы уведомим вас о раскрытии, если это не запрещено законом или судебным приказом (например, запретом на разглашение);</li>
+<li>Мы добровольно не продаём и не передаём данные пользователей никакому правительству вне такого процесса.</li>
+<li>
+<p>Обратите внимание, что Telegram сам может быть принуждён в рамках собственной юрисдикции и раскрывать данные согласно собственным политикам — мы не контролируем эти независимые раскрытия.</p>
+</li>
+<li>
+<p><strong>Интеграции сервисов</strong>: мы эксплуатируем локальный API-сервер Node.js (если настроен) для генерации счетов на оплату. Данные пользователей не передаются внешним сервисам сверх перечисленных выше.</p>
+</li>
+</ol>
+<p>Мы требуем, чтобы все Процессоры были связаны договорными условиями защиты данных, обеспечивающими как минимум тот же уровень защиты, что и настоящая Политика конфиденциальности.</p>
+<hr />
+<h2 id="9">9. Международная передача данных</h2>
+<p>Персональные данные могут передаваться и обрабатываться в странах вне вашей страны проживания, включая:</p>
+<ol>
+<li><strong>Европейский союз</strong> — наши облачные провайдеры и провайдеры баз данных размещают данные на серверах в ЕС.</li>
+<li><strong>Соединённые Штаты и другие страны мира</strong> — Telegram работает глобально; GitHub, Inc. (США) обслуживает файлы нашего статического Сайта посетителям.</li>
+</ol>
+<p>При передачах из ЕЭЗ, Великобритании или Швейцарии в третьи страны, не получившие решения Европейской комиссии об адекватности, мы опираемся на надлежащие гарантии, такие как:</p>
+<ol>
+<li>От Европейской комиссии — <strong>Стандартные договорные положения (SCCs)</strong>, принятые по статье 46(2) GDPR;</li>
+<li>Действует <strong>Британское дополнение о международной передаче данных</strong> (где применимо);</li>
+<li>Гарантии, поддерживаемые нашими Процессорами.</li>
+</ol>
+<p>Вы можете запросить копию соответствующих гарантий, обратившись на fastschedulebot@gmail.com (с редактурами по мере необходимости для защиты коммерческой конфиденциальности).</p>
+<hr />
+<h2 id="10">10. Хранение данных</h2>
+<p>Мы храним Персональные данные только столько, сколько необходимо для выполнения целей, описанных в настоящей Политике, либо как требуется законом.</p>
+<table>
+<thead>
+<tr>
+<th>Категория данных</th>
+<th>Срок хранения</th>
+<th>Примечания</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Содержимое отложенных и повторяющихся сообщений</strong></td>
+<td>Пока вы не удалите отдельное сообщение или расписание, либо пока вы не удалите аккаунт</td>
+<td>Вы можете удалять отдельные сообщения в любой момент через интерфейс в приложении.</td>
+</tr>
+<tr>
+<td><strong>Токены Ботов-отправителей</strong></td>
+<td>Пока вы не отключите Бота-отправителя или не удалите аккаунт</td>
+<td>Токены удаляются навсегда при отключении; мягкого удаления или резервной копии не сохраняется.</td>
+</tr>
+<tr>
+<td><strong>Данные подключений каналов</strong></td>
+<td>Пока вы не отключите канал или не удалите аккаунт</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Профиль и предпочтения пользователя</strong></td>
+<td>Пока вы не удалите аккаунт</td>
+<td>Язык, часовой пояс, канал по умолчанию, статус подписки.</td>
+</tr>
+<tr>
+<td><strong>Статистика использования (stats.db)</strong></td>
+<td>Отдельные записи доставки: 365 дней (скользяще); агрегаты бессрочно</td>
+<td>Отдельные записи доставки сообщений (включая записанных авторов комментариев) удаляются через 365 дней; агрегированная статистика сохраняется для улучшения сервиса.</td>
+</tr>
+<tr>
+<td><strong>Журналы действий пользователя</strong></td>
+<td>30 дней (скользяще)</td>
+<td>Журнал недавних действий в боте (до 60 на пользователя) хранится для безопасности и поддержки. Они хранятся <strong>в зашифрованном виде</strong> (AES-GCM). Существует переключатель «режима приватности» для полного отключения сбора этих журналов.</td>
+</tr>
+<tr>
+<td><strong>Журналы проблем/диагностики</strong></td>
+<td>30 дней (скользяще)</td>
+<td>Журналы сообщённых проблем и диагностических данных хранятся <strong>в зашифрованном виде</strong> (AES-GCM) и автоматически удаляются.</td>
+</tr>
+<tr>
+<td><strong>Отзывы и оценки</strong></td>
+<td>Бессрочно или пока вы не запросите удаление</td>
+<td>Хранятся для работы поддержки и улучшения Сервисов. Вы можете запросить удаление конкретных отзывов или оценок.</td>
+</tr>
+<tr>
+<td><strong>Маркетинговая атрибуция (tracking.json)</strong></td>
+<td>Максимум 10 000 записей (ротация)</td>
+<td>Файл с ограничением; старые записи перезаписываются автоматически.</td>
+</tr>
+<tr>
+<td><strong>Данные Сайта на устройстве (только ваш браузер)</strong></td>
+<td>Пока вы их не очистите</td>
+<td>Тема, язык, настройки отображения, недавние поиски помощи, история кликов на устройстве и cookie <code>consent</code> (срок 1 год) живут исключительно в вашем браузере. Мы не можем их видеть, получать или удалять — очистка данных браузера их удаляет.</td>
+</tr>
+<tr>
+<td><strong>Доставка Сайта (GitHub Pages)</strong></td>
+<td>Согласно хранению GitHub</td>
+<td>Мы не ведём журналов посетителей; обработка данных соединения регулируется заявлением о конфиденциальности GitHub.</td>
+</tr>
+<tr>
+<td><strong>Данные реферальной программы</strong></td>
+<td>Пока вы не удалите аккаунт или пока не истекут реферальные награды</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Записи использования промокодов</strong></td>
+<td>Бессрочно</td>
+<td>Требуются для предотвращения мошенничества и финансового учёта.</td>
+</tr>
+<tr>
+<td><strong>Биллинговые записи и записи подписок</strong></td>
+<td>Как требуется налоговым/бухгалтерским законодательством (обычно 5–7 лет)</td>
+<td>Обработка платежей выполняется Telegram. Мы храним только минимальные записи статуса подписки.</td>
+</tr>
+<tr>
+<td><strong>Восстановительные снимки</strong></td>
+<td>45 дней после стирания аккаунта</td>
+<td>Когда ваш аккаунт стирается, восстановительный снимок хранится до 45 дней на случай ошибочного или несанкционированного запроса, после чего автоматически и навсегда удаляется.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">Процесс удаления аккаунта</h3>
+<p>Самостоятельного стирания аккаунта в боте нет: команда <strong><code>/delete</code></strong> удаляет только отложенные/повторяющиеся сообщения и сохранённые медиа.<br />
+Чтобы стереть весь аккаунт, обратитесь к боту поддержки (https://t.me/FastSchedulerSupport_bot) или fastschedulebot@gmail.com со своего аккаунта Telegram. Процесс работает так:<br />
+1. Вы запрашиваете стирание; мы проверяем, что запрос исходит от владельца аккаунта.<br />
+2. Ваши данные удаляются по всем категориям пользователя в течение 7 рабочих дней (сохраняются только биллинговые записи, требуемые налогами).<br />
+3. Восстановительный снимок хранится 45 дней, затем автоматически и навсегда стирается.</p>
+<p>Чтобы отменить ожидаемое стирание, обратитесь к нам до истечения срока снимка.</p>
+<h3 id="_2">Режим приватности</h3>
+<p>Сервисы включают <strong>Режим приватности</strong> (доступный администраторам), который при включении приостанавливает сбор несущественных диагностических журналов действий (<code>user_actions</code>). Существенные операционные данные (отложенные сообщения, подключения каналов, токены, статус подписки) никогда не затрагиваются Режимом приватности и всегда хранятся согласно графику хранения выше.</p>
+<hr />
+<h2 id="11">11. Безопасность</h2>
+<p>Мы применяем технические и организационные меры, соответствующие характеру и риску обрабатываемых нами Персональных данных:</p>
+<h3 id="_3">Шифрование</h3>
+<table>
+<thead>
+<tr>
+<th>Данные</th>
+<th>Метод шифрования</th>
+<th>Управление ключами</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Токены Ботов-отправителей</strong> (в базе SQLite <code>bot.db</code>)</td>
+<td><strong>AES-256-GCM</strong></td>
+<td>Ключ шифрования предоставляется через переменную окружения (<code>TOKEN_ENCRYPTION_KEY</code>, 32-байтовый в base64).</td>
+</tr>
+<tr>
+<td><strong>Журналы действий пользователя</strong> (файл <code>user_actions.json</code>)</td>
+<td><strong>AES-256-GCM</strong></td>
+<td>Ключ производится PBKDF2 из <code>TOKEN_ENCRYPTION_KEY</code> со случайной солью.</td>
+</tr>
+<tr>
+<td><strong>Журналы проблем/диагностики</strong> (файл <code>issues.json</code>)</td>
+<td><strong>AES-256-GCM</strong></td>
+<td>То же производство ключа, что и журналы действий пользователя.</td>
+</tr>
+<tr>
+<td><strong>Выгруженные файлы резервных копий</strong> (формат <code>.fspback</code> — Fast Scheduler Protected Backup)</td>
+<td><strong>AES-256-GCM + HMAC-SHA256</strong></td>
+<td>Шифруются ключом, произведённым из предоставленного пользователем пароля в сочетании с <code>FILE_ENCRYPTION_KEY</code>.</td>
+</tr>
+<tr>
+<td><strong>Стандартные файлы резервных копий</strong> (формат <code>.fsback</code> — Fast Scheduler Backup)</td>
+<td><strong>HMAC-SHA256</strong> (только целостность, без шифрования)</td>
+<td>Ключ производится из <code>FILE_ENCRYPTION_KEY</code>.</td>
+</tr>
+<tr>
+<td><strong>Домены хранения данных бота</strong> (JSON-файлы, такие как отложенные сообщения, каналы, настройки пользователя)</td>
+<td><strong>Без шифрования при хранении</strong></td>
+<td>Эти файлы содержат операционные данные (текст сообщений, ID каналов, предпочтения), но не учётные данные. Шифрование не применяется, так как данные должны часто читаться для работы бота. Данные защищены средствами контроля доступа на уровне файловой системы (см. ниже).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">Организационные и технические меры</h3>
+<ol>
+<li><strong>Маскирование учётных данных</strong>: все токены ботов и чувствительные учётные данные маскируются (скрываются) в операционных журналах.</li>
+<li><strong>Контроль административного доступа</strong>: административные функции защищены отдельными секретными учётными данными (<code>ADMIN_PASSWORD</code>), который не передаётся конечным пользователям. Административные панели требуют дополнительный токен (<code>ADMIN_DASHBOARD_TOKEN</code>).</li>
+<li><strong>Ограничение частоты</strong>: Сервисы реализуют ограничение частоты действий на пользователя для таких действий, как подключение каналов, планирование сообщений и создание ботов, для предотвращения злоупотреблений.</li>
+<li><strong>Мониторинг безопасности</strong>: Сервисы включают автоматический сканер безопасности, который выявляет и записывает потенциальные угрозы, включая попытки SQL-инъекций, попытки инъекций shell-команд, межсайтовый скриптинг (XSS), утечки токенов в сообщениях и атаки обхода пути.</li>
+<li><strong>Безопасность вебхуков</strong>: вебхуки платежей CryptoBot, где включены, проверяются с использованием <strong>SHA-256</strong> с API-ключом.</li>
+<li><strong>Подписание диплинков</strong>: определённые стартовые параметры подписываются секретом <code>DEEP_LINK_SECRET</code> для предотвращения подделки.</li>
+<li><strong>Защита IDOR</strong>: доступ к данным других пользователей (оценки, каналы, расписания) предотвращается явными проверками владения (<code>_owns_channel</code>, <code>_owns_rating</code>) по всему коду.</li>
+<li><strong>Заблокированные пользователи</strong>: пользователи, нарушающие Условия использования, могут быть заблокированы. Заблокированные пользователи не могут использовать Сервисы.</li>
+<li><strong>Регулярные резервные копии</strong>: операционные данные копируются периодически. Файлы резервных копий хранятся на том же сервере и подпадают под те же средства контроля доступа.</li>
+</ol>
+<p>Ни один метод передачи или хранения не безопасен на 100%. Хотя мы стремимся защищать ваши Персональные данные с помощью надлежащих технических и организационных мер, мы не можем гарантировать абсолютную безопасность.</p>
+<hr />
+<h2 id="12">12. Дети</h2>
+<p>Сервисы не направлены на детей младше 13 лет (или применимого минимального возраста в вашей юрисдикции). Telegram требует, чтобы пользователям было не менее 13 лет для использования его платформы.</p>
+<p>Сам Сайт — это информационный контент для общей аудитории (документация, руководства, юридические страницы) без аккаунтов, без возрастного барьера и без сбора данных от посетителей любого возраста. Требование 13+ применяется к использованию Telegram-ботов (согласно собственному возрастному требованию Telegram). Мы <strong>не</strong> собираем заведомо Персональные данные детей младше применимого минимального возраста. Если вы считаете, что ребёнок предоставил нам Персональные данные без необходимого согласия родителя или опекуна, пожалуйста, немедленно свяжитесь с нами по адресу fastschedulebot@gmail.com. Если нам станет известно, что мы непреднамеренно собрали Персональные данные ребёнка младше применимого минимального возраста, мы предпримем шаги для оперативного удаления этой информации.</p>
+<hr />
+<h2 id="13">13. Ваши права</h2>
+<p>Согласно применимому законодательству (включая Общий регламент ЕС о защите данных, UK GDPR, бразильский Lei Geral de Proteção de Dados и схожие режимы конфиденциальности), вы имеете следующие права в отношении ваших Персональных данных:</p>
+<table>
+<thead>
+<tr>
+<th>Право</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Доступ</strong></td>
+<td>Запросить копию Персональных данных, которые мы храним о вас.</td>
+</tr>
+<tr>
+<td><strong>Исправление</strong></td>
+<td>Запросить исправление неточных или неполных Персональных данных.</td>
+</tr>
+<tr>
+<td><strong>Стирание</strong> («право на забвение»)</td>
+<td>Запросить удаление ваших Персональных данных с учётом обязанностей юридического хранения.</td>
+</tr>
+<tr>
+<td><strong>Ограничение</strong></td>
+<td>Запросить ограничение Обработки в определённых обстоятельствах (например, пока рассматривается запрос на исправление).</td>
+</tr>
+<tr>
+<td><strong>Возражение</strong></td>
+<td>Возражать против Обработки, основанной на законных интересах, включая Обработку для прямого маркетинга.</td>
+</tr>
+<tr>
+<td><strong>Портативность данных</strong></td>
+<td>Получить ваши Персональные данные в структурированном, широко используемом, машиночитаемом формате (JSON).</td>
+</tr>
+<tr>
+<td><strong>Отзыв согласия</strong></td>
+<td>Отозвать согласие в любой момент, где Обработка основана на согласии. Отзыв не влияет на законность Обработки до отзыва.</td>
+</tr>
+<tr>
+<td><strong>Подача жалобы</strong></td>
+<td>Подать жалобу в местный надзорный орган по защите данных.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">Осуществление ваших прав в боте</h3>
+<p>Вы можете осуществить большинство своих прав напрямую через Сервисы:</p>
+<ol>
+<li><strong><code>/delete</code></strong> — удалить отложенные или повторяющиеся сообщения и сохранённые медиа (удаление на уровне контента, не стирание аккаунта).</li>
+<li><strong>Стирание аккаунта</strong> — самостоятельного стирания нет; запросите его через бота поддержки или email конфиденциальности (см. раздел 10).</li>
+<li><strong><code>/export</code></strong> / <strong><code>/backup</code></strong> — скачать полную резервную копию ваших данных (формат <code>.fsback</code> или <code>.fspback</code>), включая отложенные сообщения, повторяющиеся расписания, подключения каналов, настройки, подписи, реферальные данные и другое.</li>
+<li><strong><code>/signature</code></strong> — управлять и удалять ваши сохранённые подписи.</li>
+<li><strong>Отключение Ботов-отправителей</strong> — удаляет их токены и связанные связи из наших систем.</li>
+<li><strong>Отключение каналов</strong> — удаляет связи каналов и перенаправляет отложенные сообщения.</li>
+<li><strong><code>/cancel</code></strong> — отменить любую выполняющуюся операцию.</li>
+<li><strong><code>/legal</code></strong> — открыть юридическое меню со ссылками на Политику конфиденциальности, Условия использования и Политику возвратов.</li>
+<li><strong>Обращение в поддержку</strong> — если вы не можете использовать внутриботовые инструменты выше, напишите боту поддержки (https://t.me/FastSchedulerSupport_bot), и запросы на доступ, выгрузку или удаление будут обработаны вручную после вашей верификации через аккаунт Telegram.</li>
+</ol>
+<p>По запросам, которые нельзя выполнить через внутриботовый интерфейс (например, сложные запросы на доступ к данным, возражение против Обработки, основанной на законных интересах), пожалуйста, свяжитесь с нами по адресу fastschedulebot@gmail.com. Мы ответим на ваш запрос в срок, требуемый применимым законодательством (как правило, <strong>один месяц</strong> по GDPR, продлеваемый на два месяца для сложных запросов).</p>
+<p>Нам может потребоваться подтвердить вашу личность перед обработкой запроса. Мы не будем дискриминировать вас за осуществление ваших прав на конфиденциальность.</p>
+<hr />
+<h2 id="14">14. Обмен данными между ботами</h2>
+<p>Сервисы состоят из нескольких сотрудничающих Telegram-ботов. Настоящий раздел описывает, как данные перемещаются между ними.</p>
+<h3 id="setdate">Основной сервис и SetDate</h3>
+<ol>
+<li><strong>Что передаётся</strong>: когда вы используете SetDate для построения расписания публикаций и решаете импортировать его в Основной сервис, бот SetDate записывает ваш ID пользователя Telegram, выбранный язык и данные расписания (даты/время) в локальный общий файл на том же сервере.</li>
+<li><strong>Как используется</strong>: Основной сервис однократно читает этот файл для создания соответствующих отложенных сообщений, затем оставляет данные на месте (SetDate может перезаписать их в последующих сессиях).</li>
+<li><strong>Сколько хранится</strong>: общий файл не удаляется автоматически; однако он содержит только самую недавнюю сессию. Исторические данные расписаний не накапливаются.</li>
+</ol>
+<h3 id="-">Основной сервис и Боты-отправители</h3>
+<ol>
+<li><strong>Боты-отправители — это отдельные приложения Telegram-ботов</strong>, каждое со своим токеном, работающие в том же процессе, что и Основной сервис (управляются <code>BotLifecycleManager</code>).</li>
+<li><strong>Что передаётся</strong>: когда управление передаётся Боту-отправителю, Основной сервис перенаправляет определённые взаимодействия пользователя Боту-отправителю через диплинки Telegram. Отложенные сообщения доставляются через Бота-отправителя (с использованием его токена), а не через токен бота Основного сервиса. Бот-отправитель читает те же общие хранилища данных (отложенные сообщения, настройки пользователя, каналы) с того же сервера.</li>
+<li><strong>Шифрование</strong>: токен Бота-отправителя хранится зашифрованным при хранении (AES-GCM) в базе токенов и расшифровывается в памяти только когда боту нужно работать.</li>
+<li><strong>Разделение данных пользователей</strong>: Бот-отправитель обрабатывает данные только владеющего им пользователя. У него нет доступа к данным других пользователей.</li>
+</ol>
+<hr />
+<h2 id="15">15. Журналирование и мониторинг</h2>
+<h3 id="_6">Операционные журналы</h3>
+<p>Сервисы ведут несколько категорий журналов:<br />
+- <strong>Структурированные JSON-журналы</strong> (<code>data/logs/bot_structured.json</code>): ротируются при 5 МБ на файл, сохраняется до 3 резервных копий. Эти журналы записывают операционные события (полученные команды, отправленные сообщения, встреченные ошибки) и могут содержать ID пользователей и метаданные сообщений, но <strong>не</strong> содержат содержимое сообщений или токены ботов (токены маскируются).<br />
+- <strong>Стандартные файлы журналов</strong> (<code>data/logs/app.log</code>): общие журналы приложения с похожим содержимым и ротацией.</p>
+<h3 id="_7">Журнал аудита</h3>
+<p>Административные действия (например, предоставление Premium, блокировка пользователей, изменение настроек) записываются в постоянный <strong>журнал аудита</strong> (<code>data/admin/audit_log.json</code>) с ID пользователя администратора, описанием действия и отметкой времени. Этот журнал виден только уполномоченным администраторам.</p>
+<h3 id="-_1">Отчёты об ошибках (что видит администратор, когда что-то ломается)</h3>
+<p>Когда в боте происходит ошибка, вы всегда видите только общее сообщение («Произошла ошибка»). За кулисами администратор получает детальный отчёт об ошибке, содержащий: ваш ID пользователя Telegram, тип ошибки и технические детали (токены маскированы), а также ваши последние действия до ошибки (например, какую команду вы запустили или кнопку нажали — никогда содержимое сообщений). Последующие действия после ошибки могут дописываться. Отчёты хранятся в зашифрованном журнале проблем с уникальным ID проблемы, чтобы повторяющиеся ошибки можно было отслеживать и исправлять. Эта обработка необходима для эксплуатации и отладки Сервисов.</p>
+<h3 id="_8">Мониторинг безопасности</h3>
+<p>Сервисы включают автоматический сканер безопасности, который проверяет входящие сообщения и команды на шаблоны, указывающие на:<br />
+- Попытки SQL-инъекций<br />
+- Попытки инъекций shell-команд/команд<br />
+- Попытки межсайтового скриптинга (XSS)<br />
+- Утечки токенов Telegram-ботов<br />
+- Атаки обхода пути<br />
+- Шаблоны извлечения IP/имён хостов, указывающие на разведку</p>
+<p>Когда обнаруживается потенциальная угроза, событие записывается с ID пользователя, типом обнаруженного шаблона и нарушившим вводом (маскированным). Пользователь может быть заблокирован от использования Сервисов, если активность сочтена вредоносной. Никакие автоматические действия против пользователя не предпринимаются на основании лишь одного обнаружения.</p>
+<hr />
+<h2 id="16">16. Изменения настоящей Политики</h2>
+<p>Мы можем время от времени обновлять настоящую Политику конфиденциальности, чтобы отразить изменения в наших практиках данных, требованиях законодательства или самих Сервисах.</p>
+<ol>
+<li>Существенные изменения будут анонсированы через Сервисы (например, уведомлением в боте).</li>
+<li>Дата «Последнего обновления» вверху настоящей политики будет отражать дату последней редакции.</li>
+<li>Мы рекомендуем периодически просматривать настоящую Политику конфиденциальности.</li>
+</ol>
+<p>Продолжение использования вами Сервисов после вступления изменений в силу означает ваше принятие обновлённой политики.</p>
+<hr />
+<h2 id="17">17. Контакты</h2>
+<p>Вопросы, обращения или запросы касательно настоящей Политики конфиденциальности или наших практик данных:</p>
+<blockquote>
+<p><strong>Максим Мкртчян</strong> (индивидуальный оператор, Армения — без офиса)<br />
+Контакт по конфиденциальности: <a href="mailto:fastschedulebot@gmail.com">fastschedulebot@gmail.com</a><br />
+Поддержка: <a href="https://t.me/FastSchedulerSupport_bot">FastSchedulerSupport_bot</a> (предпочтительный контакт — пожалуйста, не спамьте в личные сообщения)<br />
+Личный Telegram: <a href="https://t.me/MaximalXP">@MaximalXP</a></p>
+</blockquote>
+<p>По контактной информации надзорных органов по защите данных в Европейской экономической зоне, Великобритании, Швейцарии или других юрисдикциях обращайтесь на сайт местного органа по защите данных.</p>
+<hr /></div></article></div>
+</main>
+<footer class="site">
+  <div class="wrap foot">
+    <span class="copy">© 2026 Fast Scheduler — бесплатный бот для планирования постов в Telegram</span>
+    <nav class="links" aria-label="Правовая информация">
+      <a href="../../ru/legal/terms.html">Условия</a>
+      <a href="../../ru/legal/privacy.html">Конфиденциальность</a>
+      <a href="../../ru/legal/refundpolicy.html">Возвраты</a>
+      <a href="../../ru/blog/index.html">Блог</a>
+      <a href="../../ru/help.html">Помощь</a>
+    </nav>
+  </div>
+</footer>
+<script src="../../scripts/theme.js?v=20260930a1"></script>
+<script src="../../scripts/settings.js?v=20261005d1"></script>
+<script src="../../scripts/ru-content.js?v=20261004b2"></script>
+
+<script src="../../scripts/ru-chrome.js?v=20261010a2"></script><script src="../../scripts/lang.js?v=20261010a2"></script>
+<script src="../../scripts/hotkeys-modal.js?v=20261006a1"></script>
+<script src="../../scripts/help-ai.js?v=20261022a1"></script>
+<script src="../../scripts/help-search.js?v=20261022a3"></script>
+<script src="../../scripts/hotkeys.js?v=20261005d1"></script>
+<script src="../../scripts/scroll-jump.js?v=20261005a1"></script>
+<script src="../../scripts/article-nav.js?v=20260930a2"></script>
+<script src="../../scripts/site-footer.js?v=20261018g2"></script>
+</body>
+</html>

@@ -40,7 +40,7 @@ try:
 except OSError:  # pragma: no cover - build must not die over styling
     HC_COMPONENT_CSS = ''
 
-SITE = 'https://fastschedulebot.github.io/Fast-Scheduler'
+SITE = 'https://fastscheduler.github.io'
 OUT = os.path.dirname(HERE)   # .../website
 import datetime as _dt
 BUILD_DATE = _dt.date.today().isoformat()
@@ -100,7 +100,7 @@ def page_head(title, desc, canonical, extra_ld='', og_type='article', noindex=Fa
 <meta name="description" content="{bh.esc(desc)}">
 {robots}
 <link rel="canonical" href="{canonical}">
-<link rel="describedby" href="https://fastschedulebot.github.io/Fast-Scheduler/llms.txt">
+<link rel="describedby" href="https://fastscheduler.github.io/llms.txt">
 <meta property="og:type" content="{og_type}">
 <meta property="og:site_name" content="Fast Scheduler">
 <meta property="og:title" content="{bh.esc(title)}">
@@ -581,7 +581,7 @@ def inject_existing():
             m = re.search(r'</title>', s)
             if m:
                 og = (f'\n<link rel="canonical" href="{canon}">\n'
-                      f'<link rel="describedby" href="https://fastschedulebot.github.io/Fast-Scheduler/llms.txt">\n'
+                      f'<link rel="describedby" href="https://fastscheduler.github.io/llms.txt">\n'
                       f'<meta property="og:url" content="{canon}">\n'
                       f'<meta property="og:image" content="{SITE}/og-cover-v2.png">\n'
                       f'<meta name="twitter:image" content="{SITE}/og-cover-v2.png">')

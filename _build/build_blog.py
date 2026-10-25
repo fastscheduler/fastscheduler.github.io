@@ -28,11 +28,15 @@ from blog_articles_f import BLOG_ARTICLES_F  # noqa: E402
 from blog_articles_g import BLOG_ARTICLES_G  # noqa: E402
 from blog_articles_h import BLOG_ARTICLES_H  # noqa: E402
 from blog_articles_i import BLOG_ARTICLES_I  # noqa: E402
+from blog_articles_j import BLOG_ARTICLES_J  # noqa: E402
+from blog_articles_m import BLOG_ARTICLES_M  # noqa: E402
 
 # Combined article list (source order = display order on the hub).
 ARTICLES = (BLOG_ARTICLES + BLOG_ARTICLES_B + BLOG_ARTICLES_C +
             BLOG_ARTICLES_D + BLOG_ARTICLES_E + BLOG_ARTICLES_F +
-            BLOG_ARTICLES_G + BLOG_ARTICLES_H + BLOG_ARTICLES_I)
+            BLOG_ARTICLES_G + BLOG_ARTICLES_H + BLOG_ARTICLES_I +
+            BLOG_ARTICLES_J +
+            BLOG_ARTICLES_M)
 
 # Optional per-article deep-dive sections (blog_extras.py). Merging happens
 # HERE, at load time, so reading time, search indexing, JSON-LD articleBody,
@@ -48,7 +52,7 @@ for _art in ARTICLES:
     if _x:
         _art['content'] = _art['content'] + _x
 
-SITE = 'https://fastschedulebot.github.io/Fast-Scheduler'
+SITE = 'https://fastscheduler.github.io'
 OUT = os.path.dirname(HERE)   # .../website
 BLOG_DIR = os.path.join(OUT, 'blog')
 BLOG_A_DIR = os.path.join(BLOG_DIR, 'a')
@@ -391,7 +395,7 @@ def page_head(title, desc, canonical, extra_ld='', og_type='article'):
 <meta name="description" content="{bh.esc(desc)}">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <link rel="canonical" href="{canonical}">
-<link rel="describedby" href="https://fastschedulebot.github.io/Fast-Scheduler/llms.txt">
+<link rel="describedby" href="https://fastscheduler.github.io/llms.txt">
 <meta property="og:type" content="{og_type}">
 <meta property="og:site_name" content="Fast Scheduler">
 <meta property="og:title" content="{bh.esc(title)}">

@@ -1,0 +1,34 @@
+{
+  "@context": "https://agenticresourcediscovery.org/context/v1",
+  "entries": [
+    {
+      "identifier": "urn:air:fastscheduler.github.io:telegram-post-scheduler",
+      "displayName": "Fast Scheduler Telegram post scheduler",
+      "type": "text/html",
+      "url": "https://fastscheduler.github.io/",
+      "description": "Official Fast Scheduler site: schedule, batch-schedule and auto-publish Telegram channel posts with @FastSchedulerBot, plus 345 help guides and a Telegram growth blog.",
+      "representativeQueries": [
+        "how do I schedule posts in a Telegram channel",
+        "telegram bot that posts on a schedule",
+        "batch schedule many telegram posts at once",
+        "fast scheduler telegram bot help",
+        "how to export scheduled telegram messages"
+      ],
+      "capabilities": ["TelegramPostScheduling", "BatchScheduling", "RecurringMessages", "ChannelAnalytics"]
+    },
+    {
+      "identifier": "urn:air:fastscheduler.github.io:help-center",
+      "displayName": "Fast Scheduler Help Center",
+      "type": "text/html",
+      "url": "https://fastscheduler.github.io/help/",
+      "description": "345 searchable Fast Scheduler guides covering scheduling, media, channels, sender bots, statistics, backups, premium and legal topics.",
+      "representativeQueries": [
+        "why did my scheduled telegram post not send",
+        "how to add a photo to a scheduled post",
+        "how to connect a sender bot to my telegram channel",
+        "fast scheduler free plan limits"
+      ],
+      "capabilities": ["DocumentationSearch", "Troubleshooting"]
+    }
+  ]
+}

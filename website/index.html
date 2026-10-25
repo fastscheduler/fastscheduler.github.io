@@ -6,11 +6,11 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; form-action 'self'; base-uri 'self'; upgrade-insecure-requests">
   <meta name="theme-color" content="#1faa59">
-  <title>Fast Scheduler | Telegram Fast Scheduler Bot</title>
-  <meta name="description" content="Fast Scheduler is a free Telegram bot that schedules, publishes and tracks your channel posts. Batch-schedule a week in one chat, post from your own bot.">
+  <title>Fast Scheduler — Telegram Post Scheduler Bot (@FastSchedulerBot)</title>
+  <meta name="description" content="Fast Scheduler (@FastSchedulerBot) is a free Telegram post scheduler bot. Paste many date + post blocks in one message — or upload a .txt — and it publishes each at the right time from your own bot.">
   <meta name="keywords" content="telegram scheduler, telegram channel bot, schedule telegram posts, telegram post scheduler, telegram scheduling bot, batch schedule telegram, telegram autopost, telegram bot for channels, scheduled posts telegram">
-  <link rel="canonical" href="https://fastschedulebot.github.io/Fast-Scheduler/">
-  <link rel="describedby" href="https://fastschedulebot.github.io/Fast-Scheduler/llms.txt">
+  <link rel="canonical" href="https://fastscheduler.github.io/">
+  <link rel="describedby" href="https://fastscheduler.github.io/llms.txt">
   <!-- No hreflang: Russian is currently a client-side translation of this same
        URL (?lang=ru never resolved to distinct content), so advertising it as
        an alternate only told Google two URLs were the same page. Real
@@ -28,31 +28,38 @@
   <meta name="duckduckbot" content="index, follow">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Fast Scheduler">
-  <meta property="og:title" content="Fast Scheduler | Telegram Fast Scheduler Bot">
-  <meta property="og:description" content="Batch-schedule weeks of Telegram channel posts in one chat. Post from your own bot, track views & comments, get reports in your timezone. Free to start.">
-  <meta property="og:url" content="https://fastschedulebot.github.io/Fast-Scheduler/">
-  <meta property="og:image" content="https://fastschedulebot.github.io/Fast-Scheduler/og-cover-v2.png">
+  <meta property="og:title" content="Fast Scheduler — Telegram Post Scheduler Bot (@FastSchedulerBot)">
+  <meta property="og:description" content="Fast Scheduler (@FastSchedulerBot) batch-schedules weeks of Telegram channel posts in one chat. Post from your own bot, give co-admins granular permissions, get reports in your timezone. Free to start.">
+  <meta property="og:url" content="https://fastscheduler.github.io/">
+  <meta property="og:image" content="https://fastscheduler.github.io/og-cover-v2.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Fast Scheduler | Telegram Fast Scheduler Bot">
+  <meta name="twitter:title" content="Fast Scheduler — Telegram Post Scheduler Bot (@FastSchedulerBot)">
   <meta name="twitter:description" content="Set it once. Fast Scheduler posts for you every day — batch-schedule weeks of content in minutes, free to start.">
-  <meta name="twitter:image" content="https://fastschedulebot.github.io/Fast-Scheduler/og-cover-v2.png">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="icon-48.png" sizes="48x48" type="image/png">
-  <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png">
-  <link rel="icon" href="brand-logo.png" sizes="256x256" type="image/png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
-  <link rel="manifest" href="site.webmanifest">
+  <meta name="twitter:image" content="https://fastscheduler.github.io/og-cover-v2.png">
+  <link rel="icon" href="favicon.ico?v=20261019a1" sizes="any">
+  <link rel="icon" href="favicon.svg?v=20261019a1" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png?v=20261019a1" sizes="32x32" type="image/png">
+  <link rel="icon" href="icon-48.png?v=20261019a1" sizes="48x48" type="image/png">
+  <link rel="icon" href="favicon-16.png?v=20261019a1" sizes="16x16" type="image/png">
+  <link rel="icon" href="icon-192.png?v=20261019a1" sizes="192x192" type="image/png">
+  <link rel="icon" href="icon-256.png?v=20261019a1" sizes="256x256" type="image/png">
+  <link rel="icon" href="icon-512.png?v=20261019a1" sizes="512x512" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=20261019a1" sizes="180x180">
+  <link rel="manifest" href="site.webmanifest?v=20261019a1">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Fast Scheduler",
+    "@id": "https://fastscheduler.github.io/#app",
+    "alternateName": ["FastScheduler", "Fast Scheduler Telegram bot", "@FastSchedulerBot"],
     "applicationCategory": "SocialMediaApplication",
+    "isAccessibleForFree": true,
+    "sameAs": ["https://t.me/FastSchedulerBot", "https://t.me/FastSchedulerSupport_bot", "https://fastscheduler.github.io/llms.txt"],
+    "publisher": {"@id": "https://fastscheduler.github.io/#organization"},
     "operatingSystem": "Telegram (any device)",
     "description": "Telegram bot that schedules, publishes and tracks channel posts on autopilot. Batch-schedule weeks of content in one chat.",
-    "url": "https://fastschedulebot.github.io/Fast-Scheduler/",
+    "url": "https://fastscheduler.github.io/",
     "offers": [
       { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
       { "@type": "Offer", "name": "Premium monthly", "price": "6.83", "priceCurrency": "USD" },
@@ -74,7 +81,11 @@
       { "@type": "Question", "name": "Do my posts come from my own bot?",
         "acceptedAnswer": { "@type": "Answer", "text": "Yes. Connect your own bot's token and all scheduled posts are published through it, so your brand signs every post." } },
       { "@type": "Question", "name": "Will a scheduled post be published if I'm offline?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Once a message is scheduled it is delivered at the exact date and time you chose, whether you are online or not. It runs in your own timezone." } }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Once a message is scheduled it is delivered at the exact date and time you chose, whether you are online or not. It runs in your own timezone." } },
+      { "@type": "Question", "name": "Do I have to make @FastSchedulerBot a channel admin?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Publishing runs through your own sender bot. The main bot is the chat for support and the optional emergency stand-in: if your sender bot's token is revoked it can deliver one post and keep going for up to 3 days, only after you opt in. Existing channels never need to be reconnected." } },
+      { "@type": "Question", "name": "Can other people help run my channel?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Channel administrators can join by sending the sender bot's @username or token; the bot verifies their Telegram rights and grants 15 granular permissions, notifies the owner, never names a hidden channel, and audits every change." } }
     ]
   }
   </script>
@@ -94,8 +105,8 @@
   </script>
   <link rel="preload" href="fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles/main.css?v=20261013m3">
-<link rel="stylesheet" href="styles/liquid-nav.css?v=20261005d1">
+<link rel="stylesheet" href="styles/main.min.css?v=20261022b1">
+<link rel="stylesheet" href="styles/liquid-nav.min.css?v=20261005d1">
   <style>
     :root {
       --glass: color-mix(in srgb, var(--surface) 55%, transparent);
@@ -589,6 +600,9 @@
     /* chat area scrolls between header and input */
     .phone-screen.tg .tg-chat {
       flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain;
+      /* the demo writes into this box at runtime — keep its layout from
+         pushing the composer and the device frame (CLS) */
+      contain: layout paint;
       overflow-anchor: none;   /* the demo scrolls by script, not the browser */
       /* Telegram Night wallpaper: doodle line-art tile over the dark base */
       background:
@@ -599,6 +613,16 @@
     }
     .phone-screen.tg .tg-chat::-webkit-scrollbar { display: none; }
     .phone-screen.tg .demo { gap: 3px; }
+    /* Composer: pinned to the screen bottom so the multi-line "typing" state
+       grows upward over the chat instead of resizing the flex column and
+       moving the input on every frame (CLS). */
+    .phone-screen.tg .tg-input {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 4;
+      margin: 0;
+    }
+    .phone-screen.tg .tg-chat {
+      padding-bottom: 84px;   /* room for the resting composer */
+    }
     /* date badge the client pins above the day's messages */
     .phone-screen.tg .demo .tg-date {
       align-self: center; margin: 2px 0 8px; padding: 4px 11px;
@@ -773,6 +797,12 @@
     }
     /* standing idle float: the device keeps its pose, breathing up/down */
     .phone.idle { animation: phoneFloat 8s ease-in-out infinite; }
+    /* The float is a transform animation on a 3D-transformed stage; on phones
+       it repainted the whole device every frame and Chrome attributed layout
+       shifts to the frame. Keep the pose still on small screens (CLS). */
+    @media (max-width: 560px), (prefers-reduced-motion: reduce) {
+      .phone.idle { animation: none; }
+    }
     @keyframes phoneFloat {
       0%, 100% { transform: rotateX(4deg) rotateY(-15deg) rotateZ(2deg) translateY(0); }
       50% { transform: rotateX(3.2deg) rotateY(-13deg) rotateZ(1.8deg) translateY(-10px); }
@@ -997,21 +1027,60 @@
       .reveal.in .save-num { animation: none; }
       .feat, .step { transition: none; }
     }
-  </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Fast Scheduler", "url": "https://fastschedulebot.github.io/Fast-Scheduler/", "logo": "https://fastschedulebot.github.io/Fast-Scheduler/og-cover-v2.png", "description": "Telegram bot that schedules and auto-publishes channel posts: batch scheduling, recurring messages, sender bots, statistics and backups.", "sameAs": ["https://t.me/FastSchedulerBot"], "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "fastschedulebot@gmail.com"}}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Fast Scheduler", "alternateName": "Fast Scheduler Telegram bot", "url": "https://fastschedulebot.github.io/Fast-Scheduler/", "potentialAction": {"@type": "SearchAction", "target": {"@type": "EntryPoint", "urlTemplate": "https://fastschedulebot.github.io/Fast-Scheduler/help.html?q={search_term_string}"}, "query-input": "required name=search_term_string"}}</script>
-<link rel="stylesheet" href="styles/hero-cinema.css?v=20261006a2">
-<link rel="stylesheet" href="styles/hotkeys-modal.css?v=20261006a1">
-<link rel="stylesheet" href="styles/mobile-fix.css?v=20261001b1">
+  
+    /* Batch-format showcase (homepage) */
+    .batch-glass { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+      gap: clamp(22px, 3.4vw, 46px); align-items: center; padding: clamp(22px, 3.2vw, 44px); }
+    .batch-copy h3 { font-size: clamp(1.15rem, 2.4vw, 1.6rem); margin: 0 0 10px; }
+    .batch-copy > p { color: var(--text-dim); line-height: 1.65; margin: 0 0 16px; }
+    .batch-list { list-style: none; margin: 0 0 20px; padding: 0; display: grid; gap: 10px; }
+    .batch-list li { display: flex; gap: 10px; align-items: flex-start; line-height: 1.5;
+      color: var(--text-dim); font-size: .95rem; }
+    .batch-list li > span { min-width: 0; }
+    .batch-list b { color: var(--text); }
+    .batch-list .bl-ic { width: 18px; height: 18px; flex: none; margin-top: 2px; color: var(--green-strong); }
+    .batch-list code, .batch-copy code { font-size: .86em; }
+    .batch-demo { background: var(--surface-2, var(--surface)); border: 1px solid var(--border);
+      border-radius: 16px; overflow: hidden; min-width: 0; }
+    .batch-demo-bar { display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+      border-bottom: 1px solid var(--border); font-size: .74rem; letter-spacing: .05em;
+      text-transform: uppercase; color: var(--text-dim); }
+    .bd-dots { display: inline-flex; gap: 5px; }
+    .bd-dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--border); }
+    .batch-demo pre { margin: 0; padding: 14px 16px; font-family: ui-monospace, SFMono-Regular, Menlo,
+      Consolas, monospace; font-size: clamp(.72rem, 1.55vw, .84rem); line-height: 1.55;
+      white-space: pre; overflow-x: auto; -webkit-overflow-scrolling: touch; color: var(--text); }
+    .batch-demo .bd-d { color: var(--green-strong); font-weight: 700; }
+    .batch-demo .bd-b { color: var(--text-dim); }
+    .batch-demo-foot { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center;
+      padding: 10px 14px; border-top: 1px solid var(--border); font-size: .78rem; color: var(--text-dim); }
+    .batch-demo-foot .chip { background: rgba(31, 170, 89, .14);
+      background: color-mix(in srgb, var(--green) 14%, transparent); color: var(--green-strong);
+      border-radius: 999px; padding: 3px 10px; font-weight: 700; }
+    /* One column until there is genuinely room for both the copy and the
+       unwrapped code sample (it must not wrap: a wrapped line would read like
+       a new post block). */
+    @media (max-width: 1120px) { .batch-glass { grid-template-columns: minmax(0, 1fr); } }
+    @media (max-width: 520px) {
+      .batch-demo pre { font-size: .7rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+    }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://fastscheduler.github.io/#organization", "name": "Fast Scheduler", "alternateName": ["FastScheduler", "Fast Scheduler Telegram bot", "@FastSchedulerBot"], "url": "https://fastscheduler.github.io/", "logo": "https://fastscheduler.github.io/icon-512.png", "description": "Fast Scheduler builds the Telegram post scheduler bot @FastSchedulerBot, which queues and auto-publishes channel posts.", "sameAs": ["https://t.me/FastSchedulerBot", "https://t.me/FastSchedulerSupport_bot", "https://fastscheduler.github.io/blog/", "https://fastscheduler.github.io/llms.txt"], "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "fastschedulebot@gmail.com"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Fast Scheduler", "alternateName": ["FastScheduler", "FastSchedulerBot", "@FastSchedulerBot", "Fast Scheduler Telegram bot"], "url": "https://fastscheduler.github.io/", "potentialAction": {"@type": "SearchAction", "target": {"@type": "EntryPoint", "urlTemplate": "https://fastscheduler.github.io/help/?q={search_term_string}"}, "query-input": "required name=search_term_string"}}</script>
+<link rel="stylesheet" href="styles/hero-cinema.min.css?v=20261006a2">
+<link rel="stylesheet" href="styles/hotkeys-modal.min.css?v=20261006a1">
+<link rel="stylesheet" href="styles/mobile-fix.min.css?v=20261001b1">
 <!--fs:ru-alt-->
-<link rel="alternate" hreflang="ru" href="https://fastschedulebot.github.io/Fast-Scheduler/ru/">
-<link rel="alternate" hreflang="en" href="https://fastschedulebot.github.io/Fast-Scheduler/">
-<link rel="alternate" hreflang="x-default" href="https://fastschedulebot.github.io/Fast-Scheduler/">
-<!--/fs:ru-alt--></head>
+<link rel="alternate" hreflang="ru" href="https://fastscheduler.github.io/ru/">
+<link rel="alternate" hreflang="en" href="https://fastscheduler.github.io/">
+<link rel="alternate" hreflang="x-default" href="https://fastscheduler.github.io/">
+<!--/fs:ru-alt--><link rel="ard" href="https://fastscheduler.github.io/.well-known/ard.json">
+</head>
 <body class="home">
+  <a class="skip-link" href="#main">Skip to content</a>
   <nav class="home-nav" aria-label="Main">
     <span class="brand">
-      <span class="logo-dot" aria-hidden="true"><img src="brand-logo.png" alt="" width="44" height="44" decoding="async"></span>
+      <span class="logo-dot" aria-hidden="true"><img src="brand-logo-128.png" alt="" width="44" height="44" decoding="async"></span>
       <span class="brand-full">Fast Scheduler</span><span class="brand-short" aria-hidden="true">FS</span>
     </span>
     <nav aria-label="Sections">
@@ -1021,8 +1090,8 @@
       <a href="#pricing" data-hk="sec4">Pricing</a>
       <a href="#faq" data-hk="sec5">FAQ</a>
       <span class="help-row">
-        <a href="blog/index.html">Blog</a>
-        <a href="help.html">Help</a>
+        <a href="blog/">Blog</a>
+        <a href="help/">Help</a>
       </span>
       <a class="nav-cta-sm" data-cta-short="Open" href="https://t.me/FastSchedulerBot?start=start__website" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
@@ -1030,23 +1099,23 @@
       </a>
       <span class="settings-wrap">
         <button class="icon-btn" id="settingsBtn" aria-haspopup="menu" aria-expanded="false" aria-label="Settings" data-hk="settings dark anim fx keys"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button>
-        <div class="glass-pop glass-pop-solid" id="settingsMenu" role="menu" aria-label="Settings">
-          <div class="gp-head">Settings</div>
-          <button type="button" class="gp-row" role="menuitemcheckbox" aria-checked="false" id="rowDark">
+        <div class="glass-pop glass-pop-solid" id="settingsMenu" role="group" aria-label="Settings">
+          <div class="gp-head" role="none">Settings</div>
+          <button type="button" class="gp-row" aria-pressed="false" id="rowDark">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span>Dark mode</span><span class="io-switch" aria-hidden="true"></span>
           </button>
-          <button type="button" class="gp-row" role="menuitemcheckbox" aria-checked="true" id="rowAnim">
+          <button type="button" class="gp-row" aria-pressed="true" id="rowAnim">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span>Animations</span><span class="io-switch" aria-hidden="true"></span>
           </button>
-          <button type="button" class="gp-row" role="menuitemcheckbox" aria-checked="true" id="rowFx">
+          <button type="button" class="gp-row" aria-pressed="true" id="rowFx">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg><span>Effects</span><span class="io-switch" aria-hidden="true"></span>
           </button>
-          <button type="button" class="gp-row" role="menuitemcheckbox" aria-checked="true" id="rowKeys"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2.5"/><path d="M6.5 10h.01M10.5 10h.01M14.5 10h.01M18 10h.01M8 13.5h8"/></svg><span>Hotkeys</span><span class="io-switch" aria-hidden="true"></span></button>
-          <div class="gp-row gp-fonts" data-fonts><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Font size</span><span class="hc-fonts"><button type="button" data-font="s" aria-label="Small">A</button><button type="button" data-font="m" aria-label="Default">A</button><button type="button" data-font="l" aria-label="Large">A</button></span></div>
-          <button type="button" class="gp-row gp-row-sub" id="rowKeysHelp" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="none" aria-hidden="true" style="visibility:hidden;width:18px;height:18px"></svg><span class="gp-sub-label">See hotkeys</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+          <button type="button" class="gp-row" aria-pressed="true" id="rowKeys"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2.5"/><path d="M6.5 10h.01M10.5 10h.01M14.5 10h.01M18 10h.01M8 13.5h8"/></svg><span>Hotkeys</span><span class="io-switch" aria-hidden="true"></span></button>
+          <div class="gp-row gp-fonts" data-fonts role="group" aria-label="Font size"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Font size</span><span class="hc-fonts"><button type="button" data-font="s" aria-label="Small">A</button><button type="button" data-font="m" aria-label="Default">A</button><button type="button" data-font="l" aria-label="Large">A</button></span></div>
+          <button type="button" class="gp-row gp-row-sub" id="rowKeysHelp"><svg viewBox="0 0 24 24" fill="none" stroke="none" aria-hidden="true" style="visibility:hidden;width:18px;height:18px"></svg><span class="gp-sub-label">See hotkeys</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
           <div class="gp-sep" role="separator"></div>
 
-          <a class="gp-row" role="menuitem" href="https://t.me/FastSchedulerSupport_bot" target="_blank" rel="noopener noreferrer">
+          <a class="gp-row" href="https://t.me/FastSchedulerSupport_bot" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>Support chat</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           </a>
         </div>
@@ -1061,18 +1130,19 @@
       <a href="#features" data-hk="sec2" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Features</a>
       <a href="#how" data-hk="sec3" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>How it works</a>
       <a href="#pricing" data-hk="sec4" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.2"/></svg>Pricing</a>
-      <a href="blog/index.html" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>Blog</a>
-      <a href="help.html" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Help Center</a>
+      <a href="blog/" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>Blog</a>
+      <a href="help/" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Help Center</a>
       <a class="nav-cta-m" data-cta-short="Open" href="https://t.me/FastSchedulerBot?start=start__website_mobile" target="_blank" rel="noopener noreferrer" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>Open Bot</a>
     </div>
   </nav>
 
+<main id="main">
 <div class="wrap">
   <!-- ============ HERO ============ -->
   <section class="hero" id="heroSec">
     <div class="hero-copy">
-      <h1>Fast Scheduler <span class="grad">| Telegram Fast Scheduler Bot</span></h1>
-      <p class="sub">Paste a week of posts into one chat — <b>Fast Scheduler</b> publishes each one at the exact time you chose, in your timezone, from <b>your own bot</b>. Set it once, then get on with life.</p>
+      <h1>Fast Scheduler <span class="grad">| Telegram post scheduler bot</span></h1>
+      <p class="sub"><b>Fast Scheduler</b> is a Telegram bot that schedules and publishes your channel posts for you. Paste a week of posts into one chat — one block per post, a blank line between them — and it publishes each one at the exact time you chose, in your timezone, from <b>your own bot</b>. Set it once, then get on with life.</p>
       <div class="hero-cta">
         <a class="cta-big" href="https://t.me/FastSchedulerBot?start=start__website_hero" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
@@ -1115,7 +1185,7 @@
             <div class="tg-header">
               <svg class="tg-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
               <span class="tg-back-t">Chats</span>
-              <div class="tg-titles"><span class="tg-name">Fast Schedule</span><span class="tg-user">bot</span></div>
+              <div class="tg-titles"><span class="tg-name">Fast Scheduler</span><span class="tg-user">bot</span></div>
               <span class="tg-avatar" aria-hidden="true">FS</span>
             </div>
             <div class="tg-chat" id="tgChat">
@@ -1129,7 +1199,7 @@
               <svg class="tg-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0014 0M12 19v3"/></svg>
             </div>
             <!-- floating file-explorer overlay (photo upload scene) -->
-            <div class="tg-explorer" id="tgExplorer" aria-hidden="true">
+            <div class="tg-explorer" id="tgExplorer" aria-hidden="true" inert>
               <div class="fx-bar"><span class="fx-dot"></span>Downloads<span class="fx-min">—</span><span class="fx-min">▢</span><span class="fx-min">✕</span></div>
               <div class="fx-list" id="fxList"></div>
               <div class="fx-actions">
@@ -1168,7 +1238,7 @@
               </div>
               <div class="rl-notif" id="iosNotif">
                 <span class="nt-ic"><svg viewBox="0 0 24 24" fill="#fff"><path d="M21.6 3.2c-.3-.3-.8-.4-1.3-.2L2.9 10.4c-.6.3-.6 1.1 0 1.3l4.3 1.5 1.6 4.9c.1.4.5.7 1 .5l2.4-1.9 3.4 2.5c.4.3 1 .2 1.2-.3l5.2-14.5c.1-.4 0-.9-.4-1.2zM9.6 13.1l8.2-5.5-6.6 6.6-.3 2.7-1.3-3.8z"/></svg></span>
-                <p><b>Fast Schedule</b>Posted to @fastschedule_test3 — right on time.</p>
+                <p><b>Fast Scheduler</b>Posted to @fastschedule_test3 — right on time.</p>
                 <span class="nt-t">now</span>
               </div>
             </div>
@@ -1176,24 +1246,24 @@
               <div class="sl-head chan-head">
                 <svg class="tg-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
                 <span class="tg-back-t">Chats</span>
-                <div class="sl-titles chan-titles"><span class="sl-name">Fast Schedule</span><span class="sl-sub">@fastschedule_test3</span></div>
+                <div class="sl-titles chan-titles"><span class="sl-name">Fast Scheduler</span><span class="sl-sub">@fastschedule_test3</span></div>
                 <span class="chan-avatar" aria-hidden="true">FS</span>
               </div>
               <div class="sl-body chan-body" id="chanBody">
                 <div class="chan-msgs" id="chanFeed"><div class="cp-date" id="chanDate">Today</div>
-                <div class="chan-msg chan-hist on"><span class="cp-sender"><b>Fast Schedule</b><i>channel</i></span>
+                <div class="chan-msg chan-hist on"><span class="cp-sender"><b>Fast Scheduler</b><i>channel</i></span>
                   <span class="chan-media" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27180%27%20height%3D%27120%27%3E%3Crect%20width%3D%27180%27%20height%3D%27120%27%20fill%3D%27%23f2c94c%27%2F%3E%3Crect%20y%3D%2754%27%20width%3D%27180%27%20height%3D%2766%27%20fill%3D%27%23e8862e%27%20opacity%3D%27.3%27%2F%3E%3Ccircle%20cx%3D%27135%27%20cy%3D%2740%27%20r%3D%2715%27%20fill%3D%27%23e8862e%27%20opacity%3D%27.92%27%2F%3E%3Cpath%20d%3D%27M0%2076%20Q36%2052%2072%2074%20T180%2066%20V120%20H0%20Z%27%20fill%3D%27%237a9d3f%27%20opacity%3D%27.85%27%2F%3E%3Cpath%20d%3D%27M0%2094%20Q44%2074%2082%2092%20T180%2086%20V120%20H0%20Z%27%20fill%3D%27%237a9d3f%27%2F%3E%3C%2Fsvg%3E')"></span>
                   <span class="chan-post-cap">posted from the queue — nothing to click</span>
                   <span class="cp-reacts"><span class="rx on"><i>👍</i><b>42</b></span><span class="rx on"><i>🔥</i><b>18</b></span><span class="rx rx-star on"><i>⭐</i><b>6</b></span></span>
                   <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b>1 148</b></span><span class="cp-time2">09:12</span></span>
                 <span class="cp-comments"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><b>Leave a comment</b><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
-                <div class="chan-msg chan-hist on"><span class="cp-sender"><b>Fast Schedule</b><i>channel</i></span>
+                <div class="chan-msg chan-hist on"><span class="cp-sender"><b>Fast Scheduler</b><i>channel</i></span>
                   <span class="chan-media" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27180%27%20height%3D%27120%27%3E%3Crect%20width%3D%27180%27%20height%3D%27120%27%20fill%3D%27%238a6a4a%27%2F%3E%3Crect%20y%3D%2754%27%20width%3D%27180%27%20height%3D%2766%27%20fill%3D%27%23d9b06a%27%20opacity%3D%27.3%27%2F%3E%3Ccircle%20cx%3D%27135%27%20cy%3D%2740%27%20r%3D%2715%27%20fill%3D%27%23d9b06a%27%20opacity%3D%27.92%27%2F%3E%3Cpath%20d%3D%27M0%2076%20Q36%2052%2072%2074%20T180%2066%20V120%20H0%20Z%27%20fill%3D%27%235d442e%27%20opacity%3D%27.85%27%2F%3E%3Cpath%20d%3D%27M0%2094%20Q44%2074%2082%2092%20T180%2086%20V120%20H0%20Z%27%20fill%3D%27%235d442e%27%2F%3E%3C%2Fsvg%3E')"></span>
                   <span class="chan-post-cap">one batch, a whole week of posts</span>
                   <span class="cp-reacts"><span class="rx on"><i>👍</i><b>31</b></span><span class="rx on"><i>❤️</i><b>9</b></span><span class="rx rx-star on"><i>⭐</i><b>3</b></span></span>
                   <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b>864</b></span><span class="cp-time2">14:05</span></span>
                 <span class="cp-comments"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><b>Leave a comment</b><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
-                <div class="chan-msg" id="chanMsg"><span class="cp-sender"><b>Fast Schedule</b><i>channel</i></span>
+                <div class="chan-msg" id="chanMsg"><span class="cp-sender"><b>Fast Scheduler</b><i>channel</i></span>
                   <span class="chan-media" id="chanImg" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27180%27%20height%3D%27120%27%3E%3Crect%20width%3D%27180%27%20height%3D%27120%27%20fill%3D%27%234e6b46%27%2F%3E%3Crect%20y%3D%2754%27%20width%3D%27180%27%20height%3D%2766%27%20fill%3D%27%2393b564%27%20opacity%3D%27.3%27%2F%3E%3Ccircle%20cx%3D%27135%27%20cy%3D%2740%27%20r%3D%2715%27%20fill%3D%27%2393b564%27%20opacity%3D%27.92%27%2F%3E%3Cpath%20d%3D%27M0%2076%20Q36%2052%2072%2074%20T180%2066%20V120%20H0%20Z%27%20fill%3D%27%232e4028%27%20opacity%3D%27.85%27%2F%3E%3Cpath%20d%3D%27M0%2094%20Q44%2074%2082%2092%20T180%2086%20V120%20H0%20Z%27%20fill%3D%27%232e4028%27%2F%3E%3C%2Fsvg%3E')"><span class="cp-shimmer"></span></span>
                   <span class="chan-post-cap">schedule multiple messages at once</span>
                   <span class="cp-reacts">
@@ -1205,13 +1275,13 @@
                     
                   </span>
                 <span class="cp-comments"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><b>Leave a comment</b><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
-                <div class="chan-msg chan-msg2"><span class="cp-sender"><b>Fast Schedule</b><i>channel</i></span>
+                <div class="chan-msg chan-msg2"><span class="cp-sender"><b>Fast Scheduler</b><i>channel</i></span>
                   <span class="chan-media" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27180%27%20height%3D%27120%27%3E%3Crect%20width%3D%27180%27%20height%3D%27120%27%20fill%3D%27%23d99a4e%27%2F%3E%3Crect%20y%3D%2754%27%20width%3D%27180%27%20height%3D%2766%27%20fill%3D%27%23f2c94c%27%20opacity%3D%27.3%27%2F%3E%3Ccircle%20cx%3D%27135%27%20cy%3D%2740%27%20r%3D%2715%27%20fill%3D%27%23f2c94c%27%20opacity%3D%27.92%27%2F%3E%3Cpath%20d%3D%27M0%2076%20Q36%2052%2072%2074%20T180%2066%20V120%20H0%20Z%27%20fill%3D%27%238a5a26%27%20opacity%3D%27.85%27%2F%3E%3Cpath%20d%3D%27M0%2094%20Q44%2074%2082%2092%20T180%2086%20V120%20H0%20Z%27%20fill%3D%27%238a5a26%27%2F%3E%3C%2Fsvg%3E')"></span>
                   <span class="chan-post-cap2">see everything in calendar</span>
                   <span class="cp-reacts"><span class="rx"><i>👍</i><b>0</b></span><span class="rx"><i>❤️</i><b>0</b></span><span class="rx rx-star"><i>⭐</i><b>0</b></span></span>
                   <span class="chan-foot"><span class="cp-views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1.6 11.3C4.2 6.6 7.9 4 12 4s7.8 2.6 10.4 7.3c-.4.8-1 1.6-1.6 2.3"/><path d="M21.9 12.7C19.4 17.2 15.9 19.7 12 19.7s-7.4-2.5-9.9-7"/><circle cx="12" cy="12" r="2.7"/></svg> <b>0</b></span><span class="cp-time2">18:16</span></span>
                 <span class="cp-comments"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><b>Leave a comment</b><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
-                <div class="chan-msg chan-msg3"><span class="cp-sender"><b>Fast Schedule</b><i>channel</i></span>
+                <div class="chan-msg chan-msg3"><span class="cp-sender"><b>Fast Scheduler</b><i>channel</i></span>
                   <span class="chan-media" style="background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27180%27%20height%3D%27120%27%3E%3Crect%20width%3D%27180%27%20height%3D%27120%27%20fill%3D%27%23f2c94c%27%2F%3E%3Crect%20y%3D%2754%27%20width%3D%27180%27%20height%3D%2766%27%20fill%3D%27%23e8862e%27%20opacity%3D%27.3%27%2F%3E%3Ccircle%20cx%3D%27135%27%20cy%3D%2740%27%20r%3D%2715%27%20fill%3D%27%23e8862e%27%20opacity%3D%27.92%27%2F%3E%3Cpath%20d%3D%27M0%2076%20Q36%2052%2072%2074%20T180%2066%20V120%20H0%20Z%27%20fill%3D%27%237a9d3f%27%20opacity%3D%27.85%27%2F%3E%3Cpath%20d%3D%27M0%2094%20Q44%2074%2082%2092%20T180%2086%20V120%20H0%20Z%27%20fill%3D%27%237a9d3f%27%2F%3E%3C%2Fsvg%3E')"></span>
                   <span class="chan-post-cap2">use stats for advanced statistics</span>
                   <span class="cp-reacts"><span class="rx"><i>👍</i><b>0</b></span><span class="rx"><i>🔥</i><b>0</b></span><span class="rx rx-star"><i>⭐</i><b>0</b></span></span>
@@ -1229,7 +1299,7 @@
             <div class="screen-layer bot-layer" id="botLayer" aria-hidden="true">
               <div class="sl-head">
                 <svg class="tg-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-                <div class="sl-titles"><span class="sl-name">Fast Schedule</span><span class="sl-sub">bot</span></div>
+                <div class="sl-titles"><span class="sl-name">Fast Scheduler</span><span class="sl-sub">bot</span></div>
                 <span class="tg-avatar" style="margin-left:auto">FS</span>
               </div>
               <div class="sl-body" style="display:flex;flex-direction:column;justify-content:flex-end;padding:12px 10px 0">
@@ -1305,10 +1375,51 @@
       <p>No app to install, no dashboard to learn — if you can send a Telegram message, you already know how to use it.</p>
     </div>
     <div class="steps">
-      <div class="glass step reveal"><span class="n">1</span><h3>Open the bot &amp; connect a channel</h3><p>Tap Start, add the bot as an admin to your channel. Pick your timezone so 9:00 always means <i>your</i> 9:00.</p><div class="mini" data-no-ru="1"><svg class="mi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg> t.me/FastSchedulerBot
+      <div class="glass step reveal"><span class="n">1</span><h3>Open the bot &amp; connect your sender bot</h3><p>Tap Start and connect your own sender bot: the green button adds it to your channel with <b>Post Messages</b> pre-ticked — the main bot does not need to be an admin. Then pick your timezone so 9:00 always means <i>your</i> 9:00.</p><div class="mini" data-no-ru="1"><svg class="mi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg> t.me/FastSchedulerBot
 <svg class="mi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg> /start</div></div>
       <div class="glass step reveal"><span class="n">2</span><h3>Schedule one post or fifty</h3><p>Send one date with its message — or paste several date + message blocks at once. Review, pick a photo mode, confirm: done.</p><div class="mini" data-no-ru="1">21.09.2026 09:00 · Morning news digest<br>22.09.2026 09:00 · Product update</div></div>
       <div class="glass step reveal"><span class="n">3</span><h3>Live your life</h3><p>Posts publish themselves — even while you sleep. Stats and reports find you, so you always know what performed.</p><div class="mini" data-no-ru="1">📊 Channel Statistics<br>📅 Scheduled: 3<br>📤 Sent today: 1<br>✅ Total sent: 127</div></div>
+    </div>
+  </section>
+
+  <!-- ============ BATCH FORMAT ============ -->
+  <section class="block" id="batch">
+    <div class="sec-head reveal">
+      <h2>One message. Your whole week.</h2>
+      <p>Write the date, then the post. Leave a blank line and write the next one. That is the whole format.</p>
+    </div>
+    <div class="glass batch-glass reveal">
+      <div class="batch-copy">
+        <h3>Paste a batch. Queue a batch.</h3>
+        <p>Fast Scheduler reads your message block by block: <b>the first line is when</b>, everything below it is <b>what gets published</b>. Five blocks in one message create five scheduled posts — and you can send another batch whenever you like.</p>
+        <ul class="batch-list">
+          <li><svg class="bl-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg><span><b>Any date you already write</b> — <code>today 10:23</code>, <code>tomorrow 7:24 PM</code>, <code>12.12.2026 18:28</code>, <code>23-10-2027 15:34</code>, <code>2026-12-12 18:28</code> or a bare <code>18:28</code>.</span></li>
+          <li><svg class="bl-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2a5 5 0 0 0 7 7l1-1"/></svg><span><b>Buttons per post</b> — <code>&lt;inline&gt;Text&lt;link="https://example.com"&gt;</code>, with <code>--</code> for one row and <code>//</code> for a new row.</span></li>
+          <li><svg class="bl-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg><span><b>Too long for one message?</b> Save the same text as a <code>.txt</code> file and upload it while scheduling — one blank line between posts.</span></li>
+          <li><svg class="bl-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Free and Premium</b> — batches are not paywalled. On Free the only ceiling is the 100-message pending queue.</span></li>
+        </ul>
+        <a class="btn btn-primary" href="help/a/qa_schedule_many_at_once/">See the full batch format</a>
+      </div>
+      <div class="batch-demo" aria-label="Example batch message sent to the bot">
+        <div class="batch-demo-bar"><span class="bd-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>One message to @FastSchedulerBot</span></div>
+        <pre><span class="bd-d">today 10:23</span>
+Morning news digest: three stories worth your time
+<span class="bd-b">&lt;inline&gt;Read more&lt;link="https://example.com/news"&gt;</span>
+
+<span class="bd-d">tomorrow 7:24 PM</span>
+Poll day — which topic should we cover next?
+
+<span class="bd-d">12.12.2026 18:28</span>
+New drop is live. Limited stock, 24 hours only.
+<span class="bd-b">&lt;inline&gt;Shop now&lt;link="https://example.com/shop" style="success"&gt;</span>
+
+<span class="bd-d">23-10-2027 15:34</span>
+Reminder: the community call starts in 30 minutes.
+
+<span class="bd-d">14/04/2027 4:05 PM</span>
+Weekend recap: the five most-read posts this week.</pre>
+        <div class="batch-demo-foot"><span class="chip">5 posts scheduled</span><span>a blank line starts the next post</span></div>
+      </div>
     </div>
   </section>
 
@@ -1383,7 +1494,7 @@
       </div>
     </div>
     </div><!-- /pricing-carousel -->
-    <p style="text-align:center;color:var(--text-dim);font-size:.88rem;margin-top:22px">Payments handled entirely by Telegram Stars. We never see your card. <a href="legal/refundpolicy.html">Refund policy</a>.</p>
+    <p style="text-align:center;color:var(--text-dim);font-size:.88rem;margin-top:22px">Payments handled entirely by Telegram Stars. We never see your card. <a href="legal/refund-policy/">Refund policy</a>.</p>
     <details class="cmp-wrap reveal">
       <summary>Full plan comparison <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
       <div class="cmp-clip"><div class="cmp-clip-in">
@@ -1550,11 +1661,13 @@
     <div class="sec-head reveal"><h2 id="faq">Questions, answered</h2></div>
     <div class="glass faq-glass reveal">
       <details><summary>Is Fast Scheduler really free?</summary><p>Yes. The free plan connects 1 channel and 1 sender bot with up to 100 pending scheduled messages and 100 sends per channel per month. Premium raises limits and unlocks leaderboards and custom reports — but you can run a small channel on Free forever.</p></details>
-      <details><summary>How does it save me time?</summary><p>Batch-scheduling turns "post every day" into one weekly 10-minute session: paste a week of date+message pairs in a single chat. Recurring posts make daily digests fully automatic, and reports come to you instead of you hunting analytics.</p></details>
+      <details><summary>How does it save me time?</summary><p>Batch scheduling turns "post every day" into one weekly 10-minute session. Paste several date + message blocks in a single message — a blank line between posts — and every block becomes its own scheduled post. The same text can be uploaded as a .txt file, and batches work on Free and Premium. Recurring posts make daily digests fully automatic, and reports come to you instead of you hunting analytics.</p></details>
       <details><summary>Do posts come from my own bot?</summary><p>Yes — create a bot in @BotFather, connect it once, and every scheduled post is published through it, keeping your brand on every message. The sender bot is required: scheduling unlocks only after your channel has one (the main bot steps in only as an emergency fallback if your bot's token fails).</p></details>
       <details><summary>Will posts go out if I'm offline or asleep?</summary><p>Yes. Scheduling happens on the bot's side: once a message is queued it publishes at the exact time you chose, in your timezone, whether you're online or not.</p></details>
       <details><summary>Can I see who comments on my posts?</summary><p>Premium leaderboards rank your top posts by views, comments and reactions, plus a top-commentators ranking. Add the bot to your channel's discussion group and it attributes comment authors automatically.</p></details>
-      <details><summary>Is my data safe?</summary><p>Bot tokens are encrypted at rest, backups support AES-256-GCM password encryption, and you can export or delete everything at any time. See our <a href="legal/privacy.html">Privacy Policy</a>.</p></details>
+      <details><summary>Do I have to make @FastSchedulerBot a channel admin?</summary><p>No. Publishing, scheduling, statistics and admin management all run through your own sender bot. The main bot is your chat for support and the optional emergency stand-in — if your sender bot's token is revoked it can deliver one post and keep going for up to 3 days, but only after you say yes. Existing channels never need to be reconnected.</p></details>
+      <details><summary>Can other people help me run the channel?</summary><p>Yes. Co-admins are real channel administrators: they send the sender bot's @username (or its token) once, the bot verifies their rights through that bot, and they get 15 granular permissions — scheduling, editing, deleting, statistics, export and more. The owner is notified, a channel marked "hide from strangers" is never named to them, requests are limited to one per permission per week, and every change is audited.</p></details>
+      <details><summary>Is my data safe?</summary><p>Bot tokens are encrypted at rest, backups support AES-256-GCM password encryption, and you can export or delete everything at any time. See our <a href="legal/privacy/">Privacy Policy</a>.</p></details>
     </div>
   </section>
 
@@ -1569,16 +1682,18 @@
   <footer class="home-foot">
     <div class="wrap">
       <nav class="links" aria-label="Legal">
-        <a href="legal/privacy.html">Privacy</a>
-        <a href="legal/terms.html">Terms</a>
-        <a href="legal/refundpolicy.html">Refunds</a>
-        <a href="blog/index.html">Blog</a>
-        <a href="help.html">Help Center</a>
+        <a href="legal/privacy/">Privacy</a>
+        <a href="legal/terms/">Terms</a>
+        <a href="legal/refund-policy/">Refunds</a>
+        <a href="blog/">Blog</a>
+        <a href="help/">Help Center</a>
       </nav>
       <span class="copy">© 2026 Fast Scheduler · Made for Telegram channels</span>
     </div>
+    <p class="foot-aliases">Fast Scheduler is also searched for as “TG Fast Scheduler”, “Fast Scheduler bot” and <b>@FastSchedulerBot</b> — the Telegram post scheduler.</p>
   </footer>
 </div>
+</main>
 
 <script>
   (function () {
@@ -1646,7 +1761,7 @@
   })();
 </script>
 <script defer src="scripts/liquid-nav.js?v=20261006a1"></script>
-<script defer src="scripts/help-search.js?v=20260930a1"></script>
+<script defer src="scripts/help-search.js?v=20261022a3"></script>
 <script defer src="scripts/hotkeys-modal.js?v=20261006a1"></script>
 <script>
   (function () {
@@ -1716,5 +1831,8 @@
 <script defer src="scripts/site-config.js?v=20261009a1"></script>
 <script defer src="scripts/main.js?v=20261007a1"></script>
 <script defer src="scripts/hero-demo.js?v=20261006a2"></script>
+<script src="scripts/site-footer.js?v=20261020a1"></script>
+
+<script>try{var S=[];new PerformanceObserver(function(l){l.getEntries().forEach(function(e){if(e.hadRecentInput)return;S.push({t:Math.round(e.startTime),v:+e.value.toFixed(4),s:(e.sources||[]).map(function(x){var n=x.node,r=x.previousRect,c=x.currentRect;return [n?(n.nodeName+(n.id?'#'+n.id:'')):'?',r?Math.round(r.top):-1,c?Math.round(c.top):-1,r?Math.round(r.height):-1,c?Math.round(c.height):-1].join('/')})});try{sessionStorage.setItem('clsdbg2',JSON.stringify(S))}catch(_){}})}).observe({type:'layout-shift',buffered:true})}catch(e){}</script>
 </body>
 </html>

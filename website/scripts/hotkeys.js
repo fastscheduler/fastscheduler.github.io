@@ -71,7 +71,7 @@
     { key: 'x', sel: '#rowFx',   name: 'Effects',    hint: 'inline', always: true },
     { key: 'k', sel: '#rowKeys', name: 'Hotkeys',    hint: 'inline', always: true },
 
-    { key: 'g', sel: 'a.nav-link[href*="blog"], .help-row a[href*="blog"], a[href$="blog/index.html"], a[href$="/blog/"], #navMobile a[href*="blog"], footer a[href$="blog/index.html"]',
+    { key: 'g', sel: 'a.nav-link[href*="blog"], .help-row a[href*="blog"], a[href$="blog/"], a[href$="/blog/"], #navMobile a[href*="blog"], footer a[href$="blog/"]',
       name: 'Blog', hint: 'rail' },
     /* S = search on blog pages: focuses the sticky search bar. Pressing S
        while already typing stands down (allow() normally guards this, but
@@ -83,7 +83,7 @@
         f.focus();
         try { f.setSelectionRange(f.value.length, f.value.length); } catch (err) {}
       } },
-    { key: 'h', sel: 'a.nav-link[href*="help"], .site-menu-row, a.gp-row[href*="help"], .help-row a[href*="help"], #navMobile a[href*="help"], footer a[href$="help.html"]',
+    { key: 'h', sel: 'a.nav-link[href*="help"], .site-menu-row, a.gp-row[href*="help"], .help-row a[href*="help"], #navMobile a[href*="help"], footer a[href$="help/"]',
       name: 'Help', hint: 'rail' },
 
     /* pricing: billing period, then act on whichever plan is centred */

@@ -128,7 +128,7 @@
   /* ---------- Dark mode ---------- */
   var rowDark = document.getElementById('rowDark');
   function syncDark() {
-    if (rowDark) rowDark.setAttribute('aria-checked', root.getAttribute('data-theme') === 'dark' ? 'true' : 'false');
+    if (rowDark) rowDark.setAttribute('aria-pressed', root.getAttribute('data-theme') === 'dark' ? 'true' : 'false');
   }
   if (rowDark) {
     rowDark.addEventListener('click', function (e) { e.stopPropagation();
@@ -142,7 +142,7 @@
   /* ---------- Animations (motion) ---------- */
   var rowAnim = document.getElementById('rowAnim');
   function syncAnim() {
-    if (rowAnim) rowAnim.setAttribute('aria-checked', root.getAttribute('data-motion') === 'off' ? 'false' : 'true');
+    if (rowAnim) rowAnim.setAttribute('aria-pressed', root.getAttribute('data-motion') === 'off' ? 'false' : 'true');
   }
   if (rowAnim) {
     rowAnim.addEventListener('click', function (e) { e.stopPropagation();
@@ -156,7 +156,7 @@
   /* ---------- Effects (shine, hover lifts, breathing, glow) ---------- */
   var rowFx = document.getElementById('rowFx');
   function syncFx() {
-    if (rowFx) rowFx.setAttribute('aria-checked', root.getAttribute('data-fx') === 'off' ? 'false' : 'true');
+    if (rowFx) rowFx.setAttribute('aria-pressed', root.getAttribute('data-fx') === 'off' ? 'false' : 'true');
   }
   if (rowFx) {
     rowFx.addEventListener('click', function (e) { e.stopPropagation();
@@ -195,7 +195,7 @@
 
   function syncKeys() {
     var on = FS_KEYS.enabled();
-    if (rowKeys) rowKeys.setAttribute('aria-checked', on ? 'true' : 'false');
+    if (rowKeys) rowKeys.setAttribute('aria-pressed', on ? 'true' : 'false');
   }
   if (rowKeys) {
     rowKeys.addEventListener('click', function (e) {
@@ -307,7 +307,7 @@
           try { localStorage.setItem('fs-blog-fs', 'off'); } catch (e2) {}
           root.classList.remove('blog-fs');
           Array.prototype.forEach.call(document.querySelectorAll('[data-blog-fs]'),
-            function (b) { b.classList.remove('on'); b.setAttribute('aria-checked', 'false'); });
+            function (b) { b.classList.remove('on'); b.setAttribute('aria-pressed', 'false'); });
         }
       } catch (e) {}
       paint();

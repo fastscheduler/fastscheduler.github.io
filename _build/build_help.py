@@ -604,8 +604,11 @@ def article_faq_ld(n):
         return ''
     ents = []
     for f in n['faq']:
-        a = ' '.join(re.sub(r'<[^>]+>', ' ', f['a']).split())
-        ents.append({'@type': 'Question', 'name': ' '.join(re.sub(r'<[^>]+>', ' ', f['q']).split()),
+        # Wiki links ([[id|Label]]) must be resolved before the tags are
+        # stripped: an unresolved marker is invisible on the page but ships
+        # straight into the FAQPage JSON-LD that Google reads.
+        a = ' '.join(re.sub(r'<[^>]+>', ' ', plain_links(f['a'])).split())
+        ents.append({'@type': 'Question', 'name': ' '.join(re.sub(r'<[^>]+>', ' ', plain_links(f['q'])).split()),
                      'acceptedAnswer': {'@type': 'Answer', 'text': a}})
     payload = {'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': ents}
     return ('\n  <script type="application/ld+json">'
@@ -2442,27 +2445,27 @@ def build_page(nodes, help_sec):
   <title>Help Center — Fast Scheduler for Telegram</title>
   <meta name="description" content="Searchable help center for Fast Scheduler: scheduling, recurring posts, sender bots, channels, statistics, premium and payments. {len(article_order)} answers, instantly searchable.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://fastschedulebot.github.io/Fast-Scheduler/help.html">
-  <link rel="describedby" href="https://fastschedulebot.github.io/Fast-Scheduler/llms.txt">
+  <link rel="canonical" href="https://fastscheduler.github.io/help.html">
+  <link rel="describedby" href="https://fastscheduler.github.io/llms.txt">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Help Center — Fast Scheduler for Telegram">
   <meta property="og:description" content="{len(article_order)} searchable help topics for the Fast Scheduler Telegram bot.">
-  <meta property="og:url" content="https://fastschedulebot.github.io/Fast-Scheduler/help.html">
-  <meta property="og:image" content="https://fastschedulebot.github.io/Fast-Scheduler/og-cover-v2.png">
+  <meta property="og:url" content="https://fastscheduler.github.io/help.html">
+  <meta property="og:image" content="https://fastscheduler.github.io/og-cover-v2.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Help Center — Fast Scheduler for Telegram">
   <meta name="twitter:description" content="{len(article_order)} searchable help topics for the Fast Scheduler Telegram bot.">
-  <meta name="twitter:image" content="https://fastschedulebot.github.io/Fast-Scheduler/og-cover-v2.png">
+  <meta name="twitter:image" content="https://fastscheduler.github.io/og-cover-v2.png">
   {FAVICON}
   <script type="application/ld+json">
   {{
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {{"@type": "ListItem", "position": 1, "name": "Fast Scheduler", "item": "https://fastschedulebot.github.io/Fast-Scheduler/"}},
-      {{"@type": "ListItem", "position": 2, "name": "Help Center", "item": "https://fastschedulebot.github.io/Fast-Scheduler/help.html"}}
+      {{"@type": "ListItem", "position": 1, "name": "Fast Scheduler", "item": "https://fastscheduler.github.io/"}},
+      {{"@type": "ListItem", "position": 2, "name": "Help Center", "item": "https://fastscheduler.github.io/help.html"}}
     ]
   }}
   </script>

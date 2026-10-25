@@ -200,4 +200,4 @@ Allow: /
 User-agent: MJ12bot
 Allow: /
 
-Sitemap: https://fastschedulebot.github.io/Fast-Scheduler/sitemap.xml
+Sitemap: https://fastscheduler.github.io/sitemap.xml

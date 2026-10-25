@@ -54,7 +54,7 @@ sys.path.insert(0, ROOT)
 import build_help as bh          # noqa: E402
 import build_static as bs       # noqa: E402
 
-BASE = 'https://fastschedulebot.github.io/Fast-Scheduler'
+BASE = 'https://fastscheduler.github.io'
 # Russian suffix. Cyrillic titles are much shorter than their English
 # equivalents (one word becomes "Облако", six characters), so the English
 # " — Fast Scheduler" suffix left 91 pages under the 30-character result

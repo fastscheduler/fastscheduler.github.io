@@ -145,11 +145,11 @@
 
   var META = {
     title: {
-      en: 'Fast Scheduler — Telegram Channel Post Scheduler',
+      en: 'Fast Scheduler — Telegram Post Scheduler Bot (@FastSchedulerBot)',
       ru: 'Fast Scheduler — Планировщик постов для Telegram-каналов'
     },
     desc: {
-      en: 'Fast Scheduler is a free Telegram bot that schedules, publishes and tracks your channel posts. Batch-schedule a week in one chat, post from your own bot.',
+      en: 'Fast Scheduler (@FastSchedulerBot) is a free Telegram post scheduler bot. Paste many date + post blocks in one message — or upload a .txt — and it publishes each at the right time from your own bot.',
       ru: 'Fast Scheduler — бесплатный Telegram-бот: планирование и публикация постов канала, аналитика. Планируйте неделю контента в одном чате и публикуйте от своего бота.'
     }
   };
@@ -188,15 +188,15 @@
     try {
       var p = location.pathname;
       if (lang === 'ru' && sectionKind(p)) return '';
-      var base = '/Fast-Scheduler/';
+      var base = '/';
       var isArchive = p.indexOf(base + 'legal/history/') === 0;
       var isRuArchive = p.indexOf(base + 'ru/legal/history/') === 0;
       var isStatic = !isArchive && !isRuArchive && (p === base || p === base + 'index.html' ||
-        p === base + 'help.html' || p.indexOf(base + 'help/') === 0 ||
+        p === base + 'help/' || p.indexOf(base + 'help/') === 0 ||
         p.indexOf(base + 'legal/') === 0 || p === base + '404.html' ||
         p.indexOf(base + 'blog/') === 0 ||
         p === base + 'ru/' || p === base + 'ru/index.html' ||
-        p === base + 'ru/help.html' || p.indexOf(base + 'ru/help/') === 0 ||
+        p === base + 'ru/help/' || p.indexOf(base + 'ru/help/') === 0 ||
         p.indexOf(base + 'ru/legal/') === 0 || p === base + 'ru/404.html' ||
         p.indexOf(base + 'ru/blog/') === 0);
       if (!isStatic) return '';

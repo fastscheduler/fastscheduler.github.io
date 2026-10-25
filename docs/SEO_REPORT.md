@@ -1,10 +1,10 @@
-# SEO report — fastschedulebot.github.io/Fast-Scheduler
+# SEO report — fastscheduler.github.io
 
 Date: 2026-10-04 · 676 HTML pages (408 English + 268 Russian) · audited with `tools/seo_audit.py`, `tools/crawl_graph.py`, `tools/seo_meta.py`, `tools/seo_ld.py`, `tools/ru_coverage.py`, `tools/build_ru.py`
 
 ## The short answer
 
-Exact-phrase searches did not surface the site because **only the homepage was indexed**. `site:fastschedulebot.github.io` returned exactly one result out of 408 pages. The cause was not content quality, not titles, not robots.txt, not server response codes — every page returned 200 and robots.txt allowed everything.
+Exact-phrase searches did not surface the site because **only the homepage was indexed**. `site:fastscheduler.github.io` returned exactly one result out of 408 pages. The cause was not content quality, not titles, not robots.txt, not server response codes — every page returned 200 and robots.txt allowed everything.
 
 `help.html` is a hash-router single-page app. Every category, article, breadcrumb and pager link on it is `href="#/a/<id>"`. **A crawler cannot follow URL fragments.** Measured with `tools/crawl_graph.py`:
 
@@ -144,9 +144,9 @@ Key: `5817133906fc4ab78b0f19ca52bf8f58`, hosted as a plain text file at the root
 - `website/5817133906fc4ab78b0f19ca52bf8f58.txt` (source)
 - `5817133906fc4ab78b0f19ca52bf8f58.txt` (repo root — this is the one served)
 
-Both are required, and both are in the `PUB` allowlist in `sync_root.py` / `sync_audit.py`. **The site lives in a repository subdirectory** (`/Fast-Scheduler/`), so the key must sit at the root of *that* deploy tree, not the repository root.
+Both are required, and both are in the `PUB` allowlist in `sync_root.py` / `sync_audit.py`. The site is now served from the domain root (`https://fastscheduler.github.io/`), so the key file at the repository root is also the one served at the site root.
 
-**Status: still not delivering — blocked on host verification, not on deployment.** With the key file confirmed served at `https://fastschedulebot.github.io/Fast-Scheduler/5817133906fc4ab78b0f19ca52bf8f58.txt` (HTTP 200), submissions still come back `403 {"errorCode":"UserForbiddedToAccessSite"}`. Serving the file is necessary but not sufficient: IndexNow also requires the key to be *registered and verified* for the host, and that step lives in a person's IndexNow / Bing Webmaster Tools account. Note that the key is **not** reachable at the domain apex (`https://fastschedulebot.github.io/<key>.txt` is 404, because the apex belongs to a different repository) — if verification asks for the apex, it cannot succeed from this repo. `tools/indexnow.py` now reports this case separately from the "key not pushed yet" case, since the two need opposite advice.
+**Status: still not delivering — blocked on host verification, not on deployment.** With the key file confirmed served at `https://fastscheduler.github.io/5817133906fc4ab78b0f19ca52bf8f58.txt` (HTTP 200), submissions still come back `403 {"errorCode":"UserForbiddedToAccessSite"}`. Serving the file is necessary but not sufficient: IndexNow also requires the key to be *registered and verified* for the host, and that step lives in a person's IndexNow / Bing Webmaster Tools account. The key is served at the site root (`https://fastscheduler.github.io/<key>.txt` returns 200), so there is no longer a separate apex/subdirectory mismatch to work around. `tools/indexnow.py` still reports an unreachable key separately from the "key not pushed yet" case, since the two need opposite advice.
 
 ```bash
 python tools/indexnow.py --check   # is the key actually reachable?
@@ -175,7 +175,7 @@ Sanity check: with the working tree fully dirty, `--changed` resolves to exactly
 
 ## Custom domain
 
-The site is served from `fastschedulebot.github.io/Fast-Scheduler/`. `*.github.io` carries little trust of its own, and every absolute URL, canonical, sitemap entry and JSON-LD `@id` hardcodes the `/Fast-Scheduler/` path segment. Moving to a real domain (e.g. `fastscheduler.app`) would consolidate link equity, remove the path prefix from every URL, and make the brand the ranking unit rather than the hosting provider. It is a one-afternoon DNS change plus a find-and-replace of the SITE constant — worth doing before you invest in link building, not after.
+The site is served from the root of `fastscheduler.github.io/` — the old `/Fast-Scheduler/` path segment was removed, so every absolute URL, canonical, sitemap entry and JSON-LD `@id` is now prefix-free. `*.github.io` still carries little trust of its own; moving to a custom domain (e.g. `fastscheduler.app`) would consolidate link equity and make the brand the ranking unit rather than the hosting provider. It is a one-afternoon DNS change plus a find-and-replace of the SITE constant — worth doing before you invest in link building, not after.
 
 ## Reproducing the audit
 

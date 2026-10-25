@@ -203,7 +203,7 @@ def _placeholders():
         'COMPANY_REGISTRATION_NUMBER': os.getenv('COMPANY_REGISTRATION_NUMBER', '—'),
         'PRIVACY_CONTACT_EMAIL': os.getenv('PRIVACY_CONTACT_EMAIL', 'privacy@fastestschedule.com'),
         'SUPPORT_TELEGRAM_HANDLE_OR_LINK': os.getenv('SUPPORT_TG', '@FastSchedulerBot'),
-        'WEBSITE': os.getenv('WEBSITE_URL', 'https://fastschedulebot.github.io/Fast-Scheduler'),
+        'WEBSITE': os.getenv('WEBSITE_URL', 'https://fastscheduler.github.io'),
         'CONTACT_EMAIL': os.getenv('CONTACT_EMAIL', 'support@fastestschedule.com'),
         'LEGAL_CONTACT_EMAIL': os.getenv('LEGAL_CONTACT_EMAIL', 'legal@fastestschedule.com'),
         'GOVERNING_JURISDICTION': os.getenv('GOVERNING_JURISDICTION', 'your jurisdiction'),
@@ -439,7 +439,7 @@ FOOTER = f'''
 
 def legal_page(title, body_html, updated, cta_url, toc_box, toc_side, sheet_html, card_a, card_b, see_also, doc=''):
     slug = doc.replace('.md', '.html') if doc else ''
-    canon = f'https://fastschedulebot.github.io/Fast-Scheduler/legal/{slug}' if slug else 'https://fastschedulebot.github.io/Fast-Scheduler/'
+    canon = f'https://fastscheduler.github.io/legal/{slug}' if slug else 'https://fastscheduler.github.io/'
     return f'''<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
@@ -453,7 +453,7 @@ def legal_page(title, body_html, updated, cta_url, toc_box, toc_side, sheet_html
 <meta property="og:site_name" content="Fast Scheduler">
 <meta property="og:title" content="{title} — Fast Scheduler">
 <meta property="og:url" content="{canon}">
-<meta property="og:image" content="https://fastschedulebot.github.io/Fast-Scheduler/og-cover-v2.png">
+<meta property="og:image" content="https://fastscheduler.github.io/og-cover-v2.png">
 <script>
   try {{
     var t = localStorage.getItem('theme');

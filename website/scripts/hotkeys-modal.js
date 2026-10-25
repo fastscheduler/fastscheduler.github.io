@@ -29,7 +29,7 @@
   function thisPage() {
     var p = location.pathname.split('/').pop() || 'index.html';
     if (p === '' || p === 'index.html') return 'home';
-    if (p === 'help.html' || location.pathname.indexOf('/help/') !== -1) return 'help';
+    if (p === 'help/' || location.pathname.indexOf('/help/') !== -1) return 'help';
     if (location.pathname.indexOf('/legal/') !== -1) return 'legal';
     if (location.pathname.indexOf('/blog/') !== -1) return 'blog';
     return 'other';
@@ -68,7 +68,7 @@
     { id: 'menu',     key: 'M',            page: 'home', name: 'Open menu',                 sel: '#navBurger', mobileOnly: true },
     { id: 'settings', key: ',',            page: 'all',  name: 'Settings',                  sel: '#settingsBtn' },
     { id: 'blog',     key: 'G',            page: 'all',  name: 'Blog',                      sel: 'a.nav-link[href*="blog"], .help-row a[href*="blog"], a[href$="blog/index.html"], a[href$="/blog/"], #navMobile a[href*="blog"], footer a[href$="blog/index.html"]' },
-    { id: 'help',     key: 'H',            page: 'all',  name: 'Help',                      sel: 'a.nav-link[href*="help"], .site-menu-row, a.gp-row[href*="help"], .help-row a[href*="help"], #navMobile a[href*="help"], footer a[href$="help.html"]' },
+    { id: 'help',     key: 'H',            page: 'all',  name: 'Help',                      sel: 'a.nav-link[href*="help"], .site-menu-row, a.gp-row[href*="help"], .help-row a[href*="help"], #navMobile a[href*="help"], footer a[href$="help/"]' },
     { id: 'sec1', key: '1', page: 'home', name: 'Time saved',  sel: 'a[href="#time"]' },
     { id: 'sec2', key: '2', page: 'home', name: 'Features',    sel: 'a[href="#features"]' },
     { id: 'sec3', key: '3', page: 'home', name: 'How it works', sel: 'a[href="#how"]' },

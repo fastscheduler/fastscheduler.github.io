@@ -4,14 +4,20 @@
   src: url('../fonts/space-grotesk-latin.woff2') format('woff2');
   font-weight: 400 700;
   font-style: normal;
-  font-display: swap;
+  /* optional: the display face is preloaded, so it is normally ready before
+     first paint. If it is not, the fallback is used for the whole page load
+     instead of swapping later and reflowing the hero (the phone mock and the
+     copy share one grid row, so a font swap moved the device ~130px = CLS). */
+  font-display: optional;
 }
 @font-face {
   font-family: 'Inter';
   src: url('../fonts/inter-latin.woff2') format('woff2');
   font-weight: 400 700;
   font-style: normal;
-  font-display: swap;
+  /* preloaded, so normally ready at first paint; optional avoids a late swap
+     reflowing the hero (which moved the phone and cost ~0.1 CLS). */
+  font-display: optional;
 }
 
 :root {
@@ -75,6 +81,31 @@ body {
 }
 
 a { color: var(--green-strong); text-decoration: none; }
+
+/* Skip link: first tab stop on every page, visible only when focused. */
+.skip-link {
+  position: absolute; left: 12px; top: -80px; z-index: 999;
+  padding: 10px 18px; border-radius: 8px; background: var(--green-strong); color: #fff;
+  font-weight: 700; text-decoration: none; transition: top .18s ease;
+}
+.skip-link:focus { top: 12px; color: #fff; }
+
+/* Filled green surfaces need a darker green in the dark theme: #2f9d72 with
+   white text is 3.4:1. The -strong token stays bright for text/links, these
+   overrides only touch backgrounds. */
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .cta-big,
+[data-theme="dark"] .nav-cta,
+[data-theme="dark"] .nav-cta-sm,
+[data-theme="dark"] .hc-fab { background: #1d7a57; }
+[data-theme="dark"] .btn-primary:hover,
+[data-theme="dark"] .cta-big:hover,
+[data-theme="dark"] .nav-cta:hover,
+[data-theme="dark"] .nav-cta-sm:hover { background: #176a49; }
+
+/* Inline links inside body copy are underlined, not colour-only. */
+.doc a:not(.btn):not(.hc-chip):not(.chip):not([class]),
+.legal p a, .legal li a, .blog-doc p a, .hc-body p a, .hc-fa a { text-decoration: underline; text-underline-offset: 2px; }
 a:hover { text-decoration: underline; }
 
 .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
@@ -223,6 +254,94 @@ header.site {
   opacity: 0; visibility: hidden; transform: translateY(-6px);
   transition: opacity .2s var(--ease-apple), transform .25s var(--ease-apple), visibility 0s .25s; }
 .nav-menu-pop.open { opacity: 1; visibility: visible; transform: translateY(0); transition-delay: 0s; }
+
+/* ---------- Nav search bar (every page, injected by help-search.js) ----------
+   Belongs to the top bar: hidden while the reader is at the top of the page
+   (the hero/header search is already there), slides in as soon as the page
+   scrolls so search never requires scrolling back up. Ctrl/Cmd+K focuses it
+   (or the page's own search field) without moving the scroll position. */
+.nav-search {
+  position: fixed; left: 50%; top: 10px; z-index: 48;
+  display: flex; align-items: center; gap: 9px;
+  width: min(440px, calc(100vw - 32px)); height: 46px;
+  padding: 0 10px 0 14px;
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  border: 1px solid var(--border); border-radius: 999px;
+  box-shadow: 0 8px 26px rgba(17, 24, 39, .12);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  opacity: 0; visibility: hidden; transform: translate(-50%, -12px);
+  transition: opacity .22s var(--ease-apple), transform .28s var(--ease-apple), visibility 0s .28s, border-color .2s, box-shadow .2s;
+}
+[data-theme="dark"] .nav-search { box-shadow: 0 10px 30px rgba(0, 0, 0, .5); }
+/* While the top bar is on screen, sit just below it instead of covering it. */
+html:not(.nav-hidden) .nav-search { top: calc(var(--nav-h, 64px) + 10px); }
+.nav-search.show { opacity: 1; visibility: visible; transform: translate(-50%, 0); transition-delay: 0s; }
+.nav-search.focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--green) 16%, transparent), 0 10px 30px rgba(17, 24, 39, .14);
+}
+.nav-search .ns-ic { flex: none; color: var(--text-dim); }
+.nav-search input {
+  flex: 1 1 auto; min-width: 0; height: 100%; border: 0; outline: none;
+  background: transparent; font: inherit; font-size: .95rem; color: var(--text);
+}
+.nav-search input::placeholder { color: var(--text-dim); }
+.nav-search input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+.nav-search .ns-kbd {
+  flex: none; font-family: inherit; font-size: .68rem; font-weight: 750;
+  letter-spacing: .01em; color: var(--text-dim);
+  border: 1px solid var(--border); border-radius: 7px; padding: 3px 6px;
+  background: color-mix(in srgb, var(--surface-2) 70%, transparent);
+}
+@media (max-width: 700px) {
+  .nav-search { width: calc(100vw - 20px); height: 44px; }
+  .nav-search .ns-kbd { display: none; }
+}
+@media print { .nav-search { display: none !important; } }
+
+/* results dropdown, anchored under the nav search bar */
+.nav-search .ns-pop {
+  position: absolute; left: 0; right: 0; top: calc(100% + 8px);
+  padding: 6px; max-height: min(60vh, 420px); overflow-y: auto;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+  box-shadow: 0 18px 44px rgba(17, 24, 39, .16);
+}
+[data-theme="dark"] .nav-search .ns-pop { box-shadow: 0 18px 44px rgba(0, 0, 0, .6); }
+.nav-search .ns-head {
+  padding: 8px 10px 6px; font-size: .72rem; font-weight: 800;
+  letter-spacing: .04em; text-transform: uppercase; color: var(--text-dim);
+}
+.nav-search .ns-res {
+  display: flex; flex-direction: column; gap: 3px; width: 100%;
+  padding: 9px 11px; border: 0; border-radius: 10px; background: none;
+  font: inherit; color: var(--text); text-align: left; cursor: pointer; text-decoration: none;
+}
+.nav-search .ns-res:hover, .nav-search .ns-res.cur {
+  background: color-mix(in srgb, var(--green) 10%, transparent);
+}
+.nav-search .ns-res .ns-s { font-size: .88rem; line-height: 1.45; }
+.nav-search .ns-res .ns-tag {
+  font-size: .72rem; font-weight: 700; color: var(--text-dim);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.nav-search .ns-res mark {
+  background: color-mix(in srgb, var(--green) 30%, transparent);
+  color: inherit; border-radius: 4px; padding: 0 1px;
+}
+.nav-search .ns-empty { padding: 14px 12px; font-size: .86rem; color: var(--text-dim); text-align: center; }
+
+/* legal-page in-text hit: flash the passage the visitor jumped to */
+@keyframes nsHit {
+  0%   { background: color-mix(in srgb, var(--green) 26%, transparent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--green) 18%, transparent); }
+  70%  { background: color-mix(in srgb, var(--green) 16%, transparent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--green) 8%, transparent); }
+  100% { background: transparent; box-shadow: 0 0 0 4px transparent; }
+}
+.ns-hit {
+  animation: nsHit 2.6s ease both;
+  border-radius: 6px;
+  scroll-margin-top: calc(var(--nav-h, 64px) + 20px);
+}
+html[data-motion="off"] .ns-hit { animation: none; background: color-mix(in srgb, var(--green) 14%, transparent); }
 /* Phones: keep the Open Bot CTA + gear on the left, sized compactly.
    The CTA text stays visible; only the kbd hint is dropped. */
 @media (max-width: 640px) {
@@ -459,6 +578,7 @@ footer.site { border-top: 1px solid var(--border); padding: 14px 0 14px; margin-
 .foot .links { display: flex; gap: 18px; flex-wrap: wrap; }
 .foot .links a { color: var(--text-dim); display: inline-flex; align-items: center; gap: 6px; }
 .foot .links a:hover { text-decoration: none; color: var(--green-strong); }
+.foot-aliases { display: block; max-width: 720px; margin: 10px auto 0; font-size: .78rem; color: var(--text-dim); text-align: center; }
 /* "See hotkeys" sub-row under the Hotkeys switch in the settings menu */
 .gp-row-sub { padding-top: 2px; padding-bottom: 8px; margin-top: -6px; }
 .gp-row-sub .gp-sub-label { font-size: .8rem; font-weight: 600; color: var(--green-strong); }
@@ -1031,10 +1151,10 @@ html[data-font="l"] { font-size: 112.5%; }
   box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
   transition: translate .42s var(--ease-spring);
 }
-.io-switch[aria-checked="true"], .gp-row[aria-checked="true"] .io-switch {
+.io-switch[aria-pressed="true"], .gp-row[aria-pressed="true"] .io-switch {
   background: var(--green); border-color: var(--green-strong);
 }
-.io-switch[aria-checked="true"]::after, .gp-row[aria-checked="true"] .io-switch::after { translate: 18px 0; }
+.io-switch[aria-pressed="true"]::after, .gp-row[aria-pressed="true"] .io-switch::after { translate: 18px 0; }
 .gp-row .io-switch { cursor: inherit; }
 
 /* ---------- Settings trigger (shared: home, help, legal) ---------- */

@@ -7,7 +7,6 @@
   try { SIDE = window.__HELP_SIDE || []; } catch (e) {}
   var CATS = {};
   SIDE.forEach(function (c) { CATS[c.id] = c.title; });
-  CATS.blog = 'Blog';
   var byId = {};
   DATA.forEach(function (s) { byId[s.id] = s; });
   /* AI intent per article: category id doubles as the intent tag the mini
@@ -76,6 +75,11 @@
 
   function navigate() {
     var r = parseHash();
+    /* Articles and categories are real pages now. Old hash links (bookmarks,
+       search results from before the clean-URL move) redirect instead of
+       rendering a second copy of the article inside the hub. */
+    if (r.view === 'article' && byId[r.id]) { location.replace('a/' + r.id + '/'); return; }
+    if (r.view === 'category' && CATS[r.id]) { location.replace('c/' + r.id + '/'); return; }
     if (r.legacy) {
       var valid = (r.view === 'article' && byId[r.id]) || (r.view === 'category' && CATS[r.id]);
       if (valid) { history.replaceState(null, '', (r.view === 'article' ? '#/a/' : '#/c/') + r.id); }
@@ -193,8 +197,8 @@
       else if (load('fs-help-side') !== 'closed') root.classList.remove('hc-collapsed');
       if (font) { root.setAttribute('data-font', font); root.setAttribute('data-hcfont', font); } else { root.removeAttribute('data-font'); root.removeAttribute('data-hcfont'); }
       var q = function (sel, fn) { Array.prototype.forEach.call(document.querySelectorAll(sel), fn); };
-      q('[data-wide-toggle]', function (b) { b.setAttribute('aria-checked', wide ? 'true' : 'false'); });
-      q('[data-rail-toggle]', function (b) { b.setAttribute('aria-checked', railOff ? 'false' : 'true'); });
+      q('[data-wide-toggle]', function (b) { b.setAttribute('aria-pressed', wide ? 'true' : 'false'); });
+      q('[data-rail-toggle]', function (b) { b.setAttribute('aria-pressed', railOff ? 'false' : 'true'); });
       q('[data-fonts]', function (box) { Array.prototype.forEach.call(box.querySelectorAll('button'), function (b) { b.classList.toggle('on', (font || 'm') === b.getAttribute('data-font')); }); });
       q('[data-fs-btn]', function (b) { b.classList.toggle('on', fs); });
       if (window.__hcReelPaint) { try { window.__hcReelPaint(); } catch (e) {} }
@@ -203,9 +207,9 @@
     document.addEventListener('click', function (ev) {
       if (!ev.target.closest) return;
       var w = ev.target.closest('[data-wide-toggle]');
-      if (w) { store('fs-help-wide', w.getAttribute('aria-checked') !== 'true' ? 'on' : 'off'); paintReader(); return; }
+      if (w) { store('fs-help-wide', w.getAttribute('aria-pressed') !== 'true' ? 'on' : 'off'); paintReader(); return; }
       var r = ev.target.closest('[data-rail-toggle]');
-      if (r) { store('fs-rail', r.getAttribute('aria-checked') === 'true' ? 'off' : 'on'); paintReader(); return; }
+      if (r) { store('fs-rail', r.getAttribute('aria-pressed') === 'true' ? 'off' : 'on'); paintReader(); return; }
       var f = ev.target.closest('[data-fonts] button');
       if (f) { var fv = f.getAttribute('data-font'); store('fs-font', fv); store('fs-help-font', fv); try { window.dispatchEvent(new CustomEvent('fs-font-change', { detail: { font: fv } })); } catch (e2) {} paintReader(); return; }
       var fb2 = ev.target.closest('[data-fs-btn]');
@@ -434,12 +438,12 @@
     SIDE.forEach(function (cc) { byCat[cc.id] = cc; });
     var emitted = {};
     function navRow(c) {
-      html += '<a class="hc-nav-item" data-cat="' + c.id + '" href="#/c/' + c.id + '">' +
+      html += '<a class="hc-nav-item" data-cat="' + c.id + '" href="c/' + c.id + '/">' +
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + c.icon + '</svg>' +
         '<span>' + c.title + '</span><span class="n">' + c.n + '</span></a>';
       if (c.kids && c.kids.length) {
         html += '<div class="hc-subnav" id="hc-sub-' + c.id + '"><div class="hc-subnav-in">';
-        c.kids.forEach(function (k) { html += '<a href="#/a/' + k.id + '" data-art="' + k.id + '">' + k.t + '</a>'; });
+        c.kids.forEach(function (k) { html += '<a href="a/' + k.id + '/" data-art="' + k.id + '">' + k.t + '</a>'; });
         html += '</div></div>';
       }
     }
@@ -452,12 +456,12 @@
     });
     SIDE.forEach(function (c) {
       if (emitted[c.id]) return;
-      html += '<a class="hc-nav-item" data-cat="' + c.id + '" href="#/c/' + c.id + '">' +
+      html += '<a class="hc-nav-item" data-cat="' + c.id + '" href="c/' + c.id + '/">' +
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + c.icon + '</svg>' +
         '<span>' + c.title + '</span><span class="n">' + c.n + '</span></a>';
       if (c.kids && c.kids.length) {
         html += '<div class="hc-subnav" id="hc-sub-' + c.id + '"><div class="hc-subnav-in">';
-        c.kids.forEach(function (k) { html += '<a href="#/a/' + k.id + '" data-art="' + k.id + '">' + k.t + '</a>'; });
+        c.kids.forEach(function (k) { html += '<a href="a/' + k.id + '/" data-art="' + k.id + '">' + k.t + '</a>'; });
         html += '</div></div>';
       }
     });
@@ -701,6 +705,12 @@
           .filter(function (x) { return x.s > 0; })
           .sort(function (a, b) { return b.s - a.s; });
       }
+      /* relevance floor: a single word that appears in every article
+         ("post") must not make the whole help center a "result" */
+      if (ranked.length) {
+        var floor = Math.max(30, ranked[0].s * 0.5);
+        ranked = ranked.filter(function (x) { return x.s >= floor; });
+      }
       var scored = ranked.slice(0, 6);
       if (!scored.length) renderEmpty(q, ex); else render(q, ex, scored, ranked.length);
     }
@@ -726,7 +736,7 @@
     });
     results.addEventListener('click', function (e) {
       var b = e.target.closest('.hc-res');
-      if (b) location.hash = '#/a/' + b.getAttribute('data-art');
+      if (b) location.href = 'a/' + b.getAttribute('data-art') + '/';
     });
     document.addEventListener('click', function (e) {
       var box = input.closest('.hc-search, .hc-hsearch');
@@ -755,7 +765,7 @@
   var CHEV_SVG = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>';
   var ILL_SVG = '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/><circle cx="10.5" cy="14" r="2.6"/><line x1="12.4" y1="15.9" x2="14.5" y2="18"/></svg>';
 
-  function docHref(sec) { return sec.href ? sec.href : ('#/a/' + sec.id); }
+  function docHref(sec) { return sec.href ? sec.href : ('a/' + sec.id + '/'); }
   function resultRow(sec, q) {
     return '<a class="hc-row" href="' + docHref(sec) + '"><span class="hc-row-t">' +
       markText(sec.t, q) + '</span><span class="hc-row-m">' +
@@ -771,7 +781,7 @@
     }).slice(0, cap);
     if (!sug.length) sug = DATA.slice(0, cap);
     return sug.map(function (sg) {
-      return '<a class="hc-row" href="#/a/' + sg.id + '"><span class="hc-row-t">' +
+      return '<a class="hc-row" href="a/' + sg.id + '/"><span class="hc-row-t">' +
         escapeHtml(sg.t) + '</span><span class="hc-row-m">' + escapeHtml(CATS[sg.c] || '') +
         '</span>' + CHEV_SVG + '</a>';
     }).join('');
@@ -783,8 +793,7 @@
     if (!el) return;
     var present = {};
     hits.forEach(function (x) { present[x.sec.c] = true; });
-    var order = Object.keys(present).sort(function (a, b) {
-      if (a === 'blog') return -1; if (b === 'blog') return 1; return 0; });
+    var order = Object.keys(present).sort();
     if (order.length < 2) { el.hidden = true; el.innerHTML = ''; return; }
     el.hidden = false;
     var html = '<button type="button" class="hc-fchip' + (searchCat === 'all' ? ' on' : '') +
@@ -825,6 +834,10 @@
         .filter(function (x) { return x.s > 0; })
         .sort(function (a, b) { return b.s - a.s; });
     }
+    if (hits.length) {
+      var hfloor = Math.max(30, hits[0].s * 0.5);
+      hits = hits.filter(function (x) { return x.s >= hfloor; });
+    }
     hits = hits.slice(0, 40);
     renderSearchFilters(hits, q);
     if (searchMeta) searchMeta.textContent = hits.length
@@ -845,7 +858,7 @@
           '<b>' + markText(top.sec.t, norm(q)) + '</b>' +
           '<span class="hc-best-cat">' + escapeHtml(CATS[top.sec.c] || '') + '</span>' +
           '<p>' + markText(snippet(top.sec.b, norm(q)), norm(q)) + '</p></a>';
-        if (rest.length) html += '<div class="hc-sempty-h" style="width:100%;max-width:760px;margin:0 auto 6px;text-align:left;grid-column:1/-1;font-size:.8rem;font-weight:700;color:var(--text-dim)">' + hcT('All results') + '</div>';
+        if (rest.length) html += '<div class="hc-sempty-h" style="max-width:760px;margin:0 auto 6px;font-size:.8rem;font-weight:700;color:var(--text-dim)">' + hcT('All results') + '</div>';
         html += rest.map(function (x) { return resultRow(x.sec, norm(q)); }).join('');
       } else {
         html = hits.map(function (x) { return resultRow(x.sec, norm(q)); }).join('');
@@ -1002,7 +1015,7 @@
   function syncTocFab() {
     var view = document.querySelector('.view[data-view="article"]:not([hidden])');
     var fab = view && view.querySelector('[data-toc-fab]');
-    if (fab) fab.hidden = !view.querySelector('.hc-toc-list a');
+    if (fab) fab.hidden = !view.querySelector('.hc-jump-pop a');
   }
   document.addEventListener('viewchange', syncTocFab);
   setTimeout(syncTocFab, 60);

@@ -21,31 +21,33 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; form-action 'self'; base-uri 'self'; upgrade-insecure-requests">
 <title>Permissions &amp; Requests — Fast Scheduler Help</title>
-<meta name="description" content="The Main Owner manages an RBAC-style permission list for every admin of the channel.">
+<meta name="description" content="Every grantable right, what it unlocks, the defaults a new admin gets, how changes are saved, how requests work (one per permission per week), and how">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<link rel="canonical" href="https://fastschedulebot.github.io/Fast-Scheduler/help/a/admins_permissions.html">
+<link rel="canonical" href="https://fastscheduler.github.io/help/a/admins_permissions.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Fast Scheduler">
 <meta property="og:title" content="Permissions &amp; Requests — Fast Scheduler Help">
-<meta property="og:description" content="The Main Owner manages an RBAC-style permission list for every admin of the channel.">
-<meta property="og:url" content="https://fastschedulebot.github.io/Fast-Scheduler/help/a/admins_permissions.html">
-<meta property="og:image" content="https://fastschedulebot.github.io/Fast-Scheduler/og-cover-v2.png">
+<meta property="og:description" content="Every grantable right, what it unlocks, the defaults a new admin gets, how changes are saved, how requests work (one per permission per week), and how">
+<meta property="og:url" content="https://fastscheduler.github.io/help/a/admins_permissions.html">
+<meta property="og:image" content="https://fastscheduler.github.io/og-cover-v2.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Permissions &amp; Requests — Fast Scheduler Help">
-<meta name="twitter:description" content="The Main Owner manages an RBAC-style permission list for every admin of the channel.">
-<meta name="twitter:image" content="https://fastschedulebot.github.io/Fast-Scheduler/og-cover-v2.png"><meta property="article:published_time" content="2026-10-04"><meta property="article:modified_time" content="2026-10-04"><meta property="article:section" content="Fast Scheduler">
+<meta name="twitter:description" content="Every grantable right, what it unlocks, the defaults a new admin gets, how changes are saved, how requests work (one per permission per week), and how">
+<meta name="twitter:image" content="https://fastscheduler.github.io/og-cover-v2.png"><meta property="article:published_time" content="2026-10-04"><meta property="article:modified_time" content="2026-10-04"><meta property="article:section" content="Fast Scheduler">
 <link rel="icon" href="../../favicon.ico" sizes="any">
   <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
   <link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
   <link rel="icon" href="../../icon-48.png" sizes="48x48" type="image/png">
-  <link rel="icon" href="../../favicon-16.png" sizes="16x16" type="image/png">
-  <link rel="icon" href="../../brand-logo.png" sizes="256x256" type="image/png">
+  <link rel="icon" href="../../icon-192.png" sizes="192x192" type="image/png">
+  <link rel="icon" href="../../icon-512.png" sizes="512x512" type="image/png">
   <link rel="apple-touch-icon" href="../../apple-touch-icon.png" sizes="180x180">
-  <link rel="manifest" href="../../site.webmanifest">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Permissions & Requests", "description": "The Main Owner manages an RBAC-style permission list for every admin of the channel.", "articleBody": "The Main Owner manages an RBAC-style permission list for every admin of the channel. What can be controlled: • Scheduling messages • Creating recurring messages • Viewing statistics • Leaderboard access • Exporting data • Managing messages (edit/delete) • Managing sender bots Editing: the owner opens an admin's profile and toggles permissions. Changes are collected into a draft — press Save Changes to apply them, and the bot shows a clear summary of exactly what changed before notifying the affected admin. Leaving the editor with unsaved changes prompts you to save or discard. Immediate effect: as soon as permissions are saved, buttons for disabled features disappear from that admin's menu, and enabled ones appear. If the admin taps an old button anyway, the bot replies \"You do not have permission…\" with a Request permission from the admin button. Auto-revocation: if an admin is removed from the channel in Telegram, or loses the Post Messages permission, all their bot-side permissions are revoked automatically on the next check — no manual cleanup needed. Requests: an admin who lacks a permission can request it (optionally with an explanation). The owner receives a Yes/No request and can send back a reply when declining. Anti-spam: one request per permission per user per week. The owner can also switch off request notifications for a specific admin.", "articleSection": "Admins", "author": {"@type": "Organization", "name": "Fast Scheduler", "url": "https://fastschedulebot.github.io/Fast-Scheduler"}, "publisher": {"@type": "Organization", "name": "Fast Scheduler", "url": "https://fastschedulebot.github.io/Fast-Scheduler", "logo": {"@type": "ImageObject", "url": "https://fastschedulebot.github.io/Fast-Scheduler/og-cover-v2.png"}}, "mainEntityOfPage": "https://fastschedulebot.github.io/Fast-Scheduler/help/a/admins_permissions.html", "datePublished": "2026-10-04", "dateModified": "2026-10-04", "isPartOf": {"@type": "WebSite", "name": "Fast Scheduler Help", "url": "https://fastschedulebot.github.io/Fast-Scheduler/help.html"}}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Fast Scheduler", "item": "https://fastschedulebot.github.io/Fast-Scheduler/"}, {"@type": "ListItem", "position": 2, "name": "Help Center", "item": "https://fastschedulebot.github.io/Fast-Scheduler/help.html"}, {"@type": "ListItem", "position": 3, "name": "Admins", "item": "https://fastschedulebot.github.io/Fast-Scheduler/help/c/admins.html"}, {"@type": "ListItem", "position": 4, "name": "Permissions & Requests", "item": "https://fastschedulebot.github.io/Fast-Scheduler/help/a/admins_permissions.html"}]}</script>
-<link rel="stylesheet" href="../../styles/main.css?v=20261014a3">
-<link rel="stylesheet" href="../../styles/hotkeys-modal.css?v=20261014a3">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://fastscheduler.github.io/#organization", "name": "Fast Scheduler", "alternateName": ["Fast Scheduler Bot", "FastSchedulerBot", "FastScheduler", "fastscheduler", "fastschedulerbot", "@FastSchedulerBot", "FastSchedule", "FastSchedule Bot", "Fast Scheduler Telegram bot", "fast scheduler telegram bot", "TG Scheduler", "Telegram Scheduler Bot", "Telegram post scheduler", "TG Fast Scheduler", "Fast Scheduler TG"], "url": "https://fastscheduler.github.io/", "logo": {"@type": "ImageObject", "@id": "https://fastscheduler.github.io/#logo", "url": "https://fastscheduler.github.io/icon-512.png", "contentUrl": "https://fastscheduler.github.io/icon-512.png", "width": 512, "height": 512, "caption": "Fast Scheduler"}, "image": "https://fastscheduler.github.io/icon-512.png", "description": "Fast Scheduler is a Telegram bot (@FastSchedulerBot) that batch-schedules, auto-publishes and tracks channel posts. It is unrelated to calendar, project-management or crew-scheduling products that share the name.", "email": "fastschedulebot@gmail.com", "sameAs": ["https://t.me/FastSchedulerBot", "https://t.me/FastSchedulerSupport_bot"], "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "fastschedulebot@gmail.com", "availableLanguage": ["English", "Russian", "Spanish"], "url": "https://t.me/FastSchedulerSupport_bot"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://fastscheduler.github.io/#website", "name": "Fast Scheduler", "alternateName": ["Fast Scheduler Bot", "FastSchedulerBot", "FastScheduler", "fastscheduler", "fastschedulerbot", "@FastSchedulerBot", "FastSchedule", "FastSchedule Bot", "Fast Scheduler Telegram bot", "fast scheduler telegram bot", "TG Scheduler", "Telegram Scheduler Bot", "Telegram post scheduler", "TG Fast Scheduler", "Fast Scheduler TG"], "url": "https://fastscheduler.github.io/", "publisher": {"@id": "https://fastscheduler.github.io/#organization"}, "inLanguage": ["en", "ru", "es"], "description": "Fast Scheduler is a Telegram bot (@FastSchedulerBot) that batch-schedules, auto-publishes and tracks channel posts. It is unrelated to calendar, project-management or crew-scheduling products that share the name.", "hasPart": [{"@type": "WebPage", "name": "Fast Scheduler Help Center", "url": "https://fastscheduler.github.io/help.html"}, {"@type": "Blog", "name": "Fast Scheduler Blog", "url": "https://fastscheduler.github.io/blog/"}, {"@type": "WebPage", "name": "Pricing and plans", "url": "https://fastscheduler.github.io/#pricing"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Permissions & Requests", "description": "Every grantable right, what it unlocks, the defaults a new admin gets, how changes are saved, how requests work (one per permission per week), and how", "articleBody": "The Main Owner controls exactly what each admin can do. There are 15 independent permissions; nothing is bundled behind a vague \"manage\" switch, and nothing is granted implicitly. The full list schedule — create scheduled messages. On by default. recurring — create recurring messages. On by default. message_list — open the message list. On by default. message_preview — preview a message before it goes out. On by default. message_edit — edit a queued message. On by default. message_change — move a message to another channel. Off by default. message_delete — delete a queued message. Off by default. message_search — search the channel's messages. On by default. stats_view — view statistics for the channel. On by default. leaderboard_view — view the channel leaderboard. Off by default. data_export — export the channel's data. Off by default. data_import — import messages into the channel. Off by default. data_backup — create a backup of the channel. Off by default. settings_hide_channel — turn \"Hide channel from strangers\" on or off. Off by default. settings_change_permissions — change other admins' permissions. Off by default. Grouped in the interface, separate in the database The editor groups them to keep the keyboard readable — Messages (list, preview, edit, change, delete, search), Statistics (stats, leaderboard), Data (export, import, backup), Settings (hide channel, change permissions). Tapping a group opens its individual switches. Saving the group saves each switch exactly as shown; there is no hidden \"group unlock\". Changing them Owner → ⚙️ Settings → 👥 Admins → pick the admin → toggle. Changes accumulate as a draft; Save Changes applies them and shows a summary of what changed. Leaving with unsaved toggles asks whether to save or discard, so a half-configured admin is never applied silently. Effect is immediate Disabled features disappear from that admin's keyboard on the next screen. If they press an old button from chat history, the bot refuses with \"you do not have permission\" and offers Request permission from the admin . The check happens when the button is pressed, not when it was drawn. Requests An admin who lacks a permission can request it, optionally with a one-line reason. The owner receives the request with Grant / Deny (and can reply when denying). Anti-spam: one request per permission per user per channel per week . A granted request is a normal permission change and appears in the audit log; a denied one does not block asking again after the cooldown. Removing and restoring Removing an admin revokes access at once and stores the record in Revoked with the reason, the actor and the timestamp. A revoked person cannot re-attach themselves through the @username path — only the owner can restore them. Queued posts stay with the channel; deleting an admin never deletes content they created. Automatic revocation from Telegram Rights Telegram takes away, the bot takes away: losing the administrator role or the Post Messages right revokes bot access on the next sync. The reverse is not automatic — becoming a Telegram administrator does not grant bot permissions; the owner or the self-attach flow does. What cannot be granted Ownership, the owner's bot token, adding or renaming bots, other channels, payment and billing data, and the RBAC audit log are never delegable. If an admin needs something that is not in the list above, the answer is a different role, not a wider permission. Related Admins &amp; Access , Join a Channel That Already Has a Bot , Ownership Transfer , Bot Permissions . What exactly does a brand-new admin get? Seven permissions on: schedule, recurring, message list, preview, edit, search and statistics. Everything else — move, delete, leaderboard, export, import, backup, hide channel, change permissions — stays off until the owner grants it. How often can an admin ask for a permission? Once per permission per week per channel. The cooldown is per permission, so asking for export does not delay a later request for statistics. Why did a granted permission stop working by itself? Either the admin lost the Telegram side (administrator role or Post Messages), or the owner saved a new permission set. Both are recorded in the audit log with the time and the actor. Does \"change permissions\" let an admin promote themselves? No. settings_change_permissions lets them edit other admins' switches, but never their own record and never ownership. Only the Main Owner can edit the owner record. Can I give someone temporary access? Yes, in practice: grant the permissions, and remove them when the work is done. Removal is immediate, and the restored-then-revoked history stays in the audit log.", "articleSection": "Admins & Access (RBAC)", "author": {"@id": "https://fastscheduler.github.io/#organization"}, "publisher": {"@id": "https://fastscheduler.github.io/#organization"}, "mainEntityOfPage": "https://fastscheduler.github.io/help/a/admins_permissions.html", "datePublished": "2026-10-04", "dateModified": "2026-10-04", "isPartOf": {"@id": "https://fastscheduler.github.io/#website"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Fast Scheduler", "item": "https://fastscheduler.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Help Center", "item": "https://fastscheduler.github.io/help.html"}, {"@type": "ListItem", "position": 3, "name": "Admins & Access (RBAC)", "item": "https://fastscheduler.github.io/help/c/admins.html"}, {"@type": "ListItem", "position": 4, "name": "Permissions & Requests", "item": "https://fastscheduler.github.io/help/a/admins_permissions.html"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What exactly does a brand-new admin get?", "acceptedAnswer": {"@type": "Answer", "text": "Seven permissions on: schedule, recurring, message list, preview, edit, search and statistics. Everything else — move, delete, leaderboard, export, import, backup, hide channel, change permissions — stays off until the owner grants it."}}, {"@type": "Question", "name": "How often can an admin ask for a permission?", "acceptedAnswer": {"@type": "Answer", "text": "Once per permission per week per channel. The cooldown is per permission, so asking for export does not delay a later request for statistics."}}, {"@type": "Question", "name": "Why did a granted permission stop working by itself?", "acceptedAnswer": {"@type": "Answer", "text": "Either the admin lost the Telegram side (administrator role or Post Messages), or the owner saved a new permission set. Both are recorded in the audit log with the time and the actor."}}, {"@type": "Question", "name": "Does \"change permissions\" let an admin promote themselves?", "acceptedAnswer": {"@type": "Answer", "text": "No. settings_change_permissions lets them edit other admins' switches, but never their own record and never ownership. Only the Main Owner can edit the owner record."}}, {"@type": "Question", "name": "Can I give someone temporary access?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, in practice: grant the permissions, and remove them when the work is done. Removal is immediate, and the restored-then-revoked history stays in the audit log."}}]}</script>
+<link rel="stylesheet" href="../../styles/main.css?v=20261022a1">
+<link rel="stylesheet" href="../../styles/hotkeys-modal.css?v=20261006a1">
 <style>.hc-card {
   background: var(--surface);
   border: 1px solid var(--border); border-radius: var(--hc-r);
@@ -72,6 +74,8 @@
 .hc-cat:hover { text-decoration: none; border-color: color-mix(in srgb, var(--green) 45%, var(--border)); transform: translateY(-2px); box-shadow: var(--shadow); }
 
 .hc-cat-head { display: flex; align-items: center; gap: 13px; }
+
+.hc-cat-head > * { min-width: 0; }
 
 .hc-grid > .hc-cat:nth-child(6n+2) .hc-ic { color: #2563eb; background: color-mix(in srgb, #2563eb 10%, transparent); border-color: color-mix(in srgb, #2563eb 24%, transparent); }
 
@@ -114,6 +118,27 @@
 .hc-cat-prev span { font-size: .82rem; color: var(--text-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 .hc-cat-prev span::before { content: ""; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: color-mix(in srgb, var(--green) 55%, transparent); margin: 2px 8px 2px 2px; vertical-align: 2px; }
+
+.hc-cat-d {
+  display: block; margin-top: 10px; font-size: .84rem; color: var(--text-dim); line-height: 1.5;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+.hc-cta {
+  display: flex; align-items: center; gap: 16px; margin: 30px 0 4px; padding: 20px 22px;
+  border-radius: 20px; background: color-mix(in srgb, var(--green) 8%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--green) 26%, var(--border));
+}
+
+.hc-cta .hc-ic { width: 44px; height: 44px; flex: none; }
+
+.hc-cta-t { flex: 1; min-width: 0; }
+
+.hc-cta-t b { display: block; font-size: 1rem; letter-spacing: -.01em; }
+
+.hc-cta-t span { color: var(--text-dim); font-size: .88rem; }
+
+.hc-cta .btn { flex: none; }
 
 .hc-crumbs { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; padding: 26px 0 0; font-size: .87rem; color: var(--text-dim); }
 
@@ -348,7 +373,19 @@ a.hc-card:hover .hc-ic { transform: rotate(-6deg) scale(1.08); }
   color: var(--text); margin-bottom: 6px;
 }
 
-.hc-pop { justify-content: center; }
+.hc-docs-head .hc-chip { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.26); color: #fff; }
+
+.hc-docs-head .hc-chip svg { color: #fff; }
+
+.hc-docs-head .hc-chip:hover { background: rgba(255,255,255,.22); border-color: rgba(255,255,255,.55); color: #fff; }
+
+.hc-docs-head .hc-pop { justify-content: center; margin: 18px 0 0; color: rgba(255,255,255,.78); }
+
+.hc-docs-head .hc-pop b { color: #fff; }
+
+.hc-docs-head .hc-pop a { color: #fff; background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.26); }
+
+.hc-docs-head .hc-pop a:hover { background: rgba(255,255,255,.20); border-color: rgba(255,255,255,.55); color: #fff; }
 
 .hc-pop {
   display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin: 20px 0 6px;
@@ -365,6 +402,14 @@ a.hc-card:hover .hc-ic { transform: rotate(-6deg) scale(1.08); }
 .hc-pop a:hover { border-color: var(--green); text-decoration: none; }
 
 .hc-cat { display: flex; flex-direction: column; gap: 10px; padding: 20px; text-decoration: none; }
+
+.hc-grid > .hc-cat { padding: 22px; gap: 8px; border-radius: 20px; }
+
+.hc-grid > .hc-cat .hc-ic { width: 54px; height: 54px; border-radius: 16px; margin-bottom: 2px; }
+
+.hc-grid > .hc-cat .hc-ic svg { width: 27px; height: 27px; }
+
+.hc-grid > .hc-cat .hc-cat-t { font-size: 1.06rem; }
 
 .hc-cat:hover { text-decoration: none; border-color: color-mix(in srgb, var(--green) 45%, var(--border)); transform: translateY(-2px); box-shadow: var(--shadow); }
 
@@ -508,6 +553,14 @@ a.hc-card:hover .hc-ic { transform: rotate(-6deg) scale(1.08); }
 
 .hc-row-m { margin-left: auto; flex: none; font-size: .8rem; color: var(--text-dim); font-weight: 650; }
 
+.hc-list > .hc-row { flex-wrap: wrap; row-gap: 8px; }
+
+.hc-list .hc-row-t { flex: 1 1 100%; }
+
+.hc-list .hc-row-m { margin-left: 0; }
+
+.hc-list > .hc-row > svg { margin-left: auto; width: 15px; height: 15px; flex: none; color: var(--text-dim); }
+
 .hc-grp { margin: 16px 8px 5px; font-size: .86rem; font-weight: 800; letter-spacing: -.01em; color: var(--text); }
 
 .hc-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 22px 0 0; }
@@ -552,7 +605,13 @@ html.rail-off .hc-rail { display: none; }
 
 .hc-feat span.s { color: var(--text-dim); font-size: .82rem; line-height: 1.45; }
 
-.hc-band { margin: 30px 0 8px; border-radius: 22px; padding: 28px; background: linear-gradient(135deg, #0b4a4e, #073236); color: #eef5f1; }
+.hc-band {
+  margin: 30px 0 8px; border-radius: 22px; padding: 28px; color: #fff;
+  background:
+    radial-gradient(700px 220px at 90% -20%, rgba(255,255,255,.14), transparent 60%),
+    linear-gradient(135deg, #07331d 0%, #0b6b38 60%, #12934e 100%);
+  border: 1px solid color-mix(in srgb, #1faa59 30%, transparent);
+}
 
 .hc-band h2 { margin: 0 0 4px; color: #fff; font-size: 1.3rem; }
 
@@ -623,6 +682,22 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
   .hc-pager { margin-bottom: 60px; }
 }
 
+@media (max-width: 640px) {
+  .hc-grid > .hc-cat { padding: 13px; }
+
+  .hc-grid .hc-cat-head { gap: 9px; }
+
+  .hc-grid .hc-cat-go { display: none; }
+
+  .hc-grid .hc-cat-prev { display: none; }
+}
+
+@media (max-width: 640px) {
+  .hc-cta { flex-wrap: wrap; }
+
+  .hc-cta .btn { width: 100%; justify-content: center; }
+}
+
 @media (max-width: 860px) {
   .hc-list { grid-template-columns: 1fr; column-gap: 0; }
 }
@@ -687,6 +762,16 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
   .hc-rail { display: none; }
 }
 
+@media (max-width: 640px) {
+  .hc-grid > .hc-cat { padding: 14px; }
+
+  .hc-grid .hc-cat-head { gap: 9px; }
+
+  .hc-grid .hc-cat-go { display: none; }
+
+  .hc-grid .hc-cat-prev { display: none; }
+}
+
 @media (min-width: 1400px) {
   .hc-list { grid-template-columns: 1fr 1fr 1fr; }
 }
@@ -704,7 +789,7 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
 
   .hc-pager { grid-template-columns: minmax(0, 1fr); }
 
-  .hc-body pre { font-size: .8rem; }
+  .hc-body pre { font-size: .8rem; white-space: pre-wrap; overflow-wrap: anywhere; }
 }
 
 @media (max-width: 1020px) {
@@ -714,9 +799,13 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
 }
 
 @media (max-width: 640px) {
-  .hc-feat { grid-template-columns: 1fr; }
+  .hc-feat { grid-template-columns: 1fr 1fr; gap: 10px; }
 
-  .hc-band-grid { grid-template-columns: 1fr; }
+  .hc-feat a { padding: 14px; }
+
+  .hc-band-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .hc-band-grid a { padding: 14px; }
 
   .hc-tools .hc-tool.opt { display: none; }
 }
@@ -735,32 +824,55 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
   .hc-card { border: 0; box-shadow: none; background: none; }
 }
   </style>
-</head>
+<!--fs:ru-alt-->
+<link rel="alternate" hreflang="ru" href="https://fastscheduler.github.io/ru/help/a/admins_permissions.html">
+<link rel="alternate" hreflang="en" href="https://fastscheduler.github.io/help/a/admins_permissions.html">
+<link rel="alternate" hreflang="x-default" href="https://fastscheduler.github.io/help/a/admins_permissions.html">
+<!--/fs:ru-alt--></head>
 <body class="help">
-<header class="site"><div class="wrap nav nav-unified"><div class="nav-group nav-left"><a class="brand" href="../../index.html" aria-label="Fast Scheduler — home"><span class="brand-mark"><img src="../../brand-logo.png" alt="" width="30" height="30" decoding="async"></span><span class="brand-full">Fast Scheduler</span><span class="brand-short">FS</span></a></div><div class="nav-group nav-right"><a class="nav-link" href="../../blog/index.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><span>Blog</span></a><span class="site-menu-wrap"><a class="nav-link site-menu-row" role="menuitem" href="../../help.html" aria-haspopup="menu" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Help Center</span></a><div class="glass-pop site-menu-pop help-menu nav-menu-pop" id="siteMenu" role="menu" aria-label="Help center quick search"><form class="help-search" id="helpSearchForm" role="search"><svg class="sic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="search" id="helpSearchInput" placeholder="Search the help center…" autocomplete="off" aria-label="Search the help center"></form><div class="help-recent"><div class="help-recent-title" id="helpRecentTitle">Popular articles</div><div class="help-recent-list" id="helpRecentList"></div></div><a class="gp-row help-menu-open" role="menuitem" href="../../help.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Open Help Center</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></div></span><a class="btn btn-primary nav-cta" data-cta-short="Open" href="https://t.me/FastSchedulerSupport_bot?start=_t" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>Open Bot</span><kbd class="tab-kbd" aria-hidden="true">B</kbd></a><span class="settings-wrap"><button type="button" class="icon-btn" id="settingsBtn" aria-haspopup="menu" aria-expanded="false" aria-label="Settings" data-hk="settings dark anim fx keys"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button><div class="glass-pop" id="settingsMenu" role="menu" aria-label="Settings"><div class="gp-head">Settings</div>
-        <button type="button" class="gp-row" role="menuitemcheckbox" aria-checked="false" id="rowDark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span>Dark mode</span><span class="io-switch" aria-hidden="true"></span></button>
-        <button type="button" class="gp-row" role="menuitemcheckbox" aria-checked="true" id="rowAnim"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span>Animations</span><span class="io-switch" aria-hidden="true"></span></button>
-        <button type="button" class="gp-row" role="menuitemcheckbox" aria-checked="true" id="rowFx"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg><span>Effects</span><span class="io-switch" aria-hidden="true"></span></button>
-        <button type="button" class="gp-row" role="menuitemcheckbox" aria-checked="true" id="rowKeys"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2.5"/><path d="M6.5 10h.01M10.5 10h.01M14.5 10h.01M18 10h.01M8 13.5h8"/></svg><span>Hotkeys</span><span class="io-switch" aria-hidden="true"></span></button>
+<header class="site"><div class="wrap nav nav-unified"><div class="nav-group nav-left"><a class="brand" href="../../index.html" aria-label="Fast Scheduler — home (FS)"><span class="brand-mark"><img src="../../brand-logo-128.png" alt="" width="30" height="30" decoding="async"></span><span class="brand-full">Fast Scheduler</span><span class="brand-short">FS</span></a></div><div class="nav-group nav-right"><a class="nav-link" href="../../blog/index.html" aria-label="Blog"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><span>Blog</span></a><span class="site-menu-wrap"><a class="nav-link site-menu-row" href="../../help.html" aria-label="Help Center" aria-haspopup="menu" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Help Center</span></a><div class="glass-pop site-menu-pop help-menu nav-menu-pop" id="siteMenu" role="dialog" aria-label="Help center quick search"><form class="help-search" id="helpSearchForm" role="search"><svg class="sic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="search" id="helpSearchInput" placeholder="Search the help center…" autocomplete="off" aria-label="Search the help center"></form><div class="help-recent"><div class="help-recent-title" id="helpRecentTitle">Popular articles</div><div class="help-recent-list" id="helpRecentList"></div></div><a class="gp-row help-menu-open" aria-label="Open Help Center" href="../../help.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Open Help Center</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></div></span><a class="btn btn-primary nav-cta" data-cta-short="Open" aria-label="Open Bot" href="https://t.me/FastSchedulerSupport_bot?start=_t" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>Open Bot</span><kbd class="tab-kbd" aria-hidden="true">B</kbd></a><span class="settings-wrap"><button type="button" class="icon-btn" id="settingsBtn" aria-haspopup="menu" aria-expanded="false" aria-label="Settings" data-hk="settings dark anim fx keys"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button><div class="glass-pop" id="settingsMenu" role="group" aria-label="Settings"><div class="gp-head">Settings</div>
+        <button type="button" class="gp-row" aria-pressed="false" id="rowDark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span>Dark mode</span><span class="io-switch" aria-hidden="true"></span></button>
+        <button type="button" class="gp-row" aria-pressed="true" id="rowAnim"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span>Animations</span><span class="io-switch" aria-hidden="true"></span></button>
+        <button type="button" class="gp-row" aria-pressed="true" id="rowFx"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg><span>Effects</span><span class="io-switch" aria-hidden="true"></span></button>
+        <button type="button" class="gp-row" aria-pressed="true" id="rowKeys"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2.5"/><path d="M6.5 10h.01M10.5 10h.01M14.5 10h.01M18 10h.01M8 13.5h8"/></svg><span>Hotkeys</span><span class="io-switch" aria-hidden="true"></span></button>
         <div class="gp-row gp-fonts" data-fonts><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Font size</span><span class="hc-fonts"><button type="button" data-font="s" aria-label="Small">A</button><button type="button" data-font="m" aria-label="Default">A</button><button type="button" data-font="l" aria-label="Large">A</button></span></div>
-        <button type="button" class="gp-row gp-row-sub" id="rowKeysHelp" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="none" aria-hidden="true" style="visibility:hidden;width:18px;height:18px"></svg><span class="gp-sub-label">See hotkeys</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <button type="button" class="gp-row gp-row-sub" id="rowKeysHelp"><svg viewBox="0 0 24 24" fill="none" stroke="none" aria-hidden="true" style="visibility:hidden;width:18px;height:18px"></svg><span class="gp-sub-label">See hotkeys</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
         <div class="gp-sep" role="separator"></div>
-        <a class="gp-row" role="menuitem" href="https://t.me/FastSchedulerSupport_bot" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>Support chat</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></div></span></div></div></header>
+        <a class="gp-row" href="https://t.me/FastSchedulerSupport_bot" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>Support chat</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></div></span></div></div></header>
 <main class="legal">
 <div class="wrap legal-layout" style="display:block;max-width:860px;margin:0 auto">
-  <nav class="hc-crumbs" aria-label="Breadcrumb"><a href="../../help.html">Help Center</a><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg><a href="../c/admins.html">Admins</a><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg><span aria-current="page">Permissions &amp; Requests</span></nav>
+  <nav class="hc-crumbs" aria-label="Breadcrumb"><a href="../../help.html">Help Center</a><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg><a href="../c/admins.html">Admins &amp; Access (RBAC)</a><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg><span aria-current="page">Permissions &amp; Requests</span></nav>
   <article class="doc">
     <h1>Permissions &amp; Requests</h1>
-    <div class="hc-body"><p>The Main Owner manages an RBAC-style permission list for every admin of the channel.</p>
-<p><b>What can be controlled:</b><br>• Scheduling messages<br>• Creating recurring messages<br>• Viewing statistics<br>• Leaderboard access<br>• Exporting data<br>• Managing messages (edit/delete)<br>• Managing sender bots</p>
-<p><b>Editing:</b> the owner opens an admin's profile and toggles permissions. Changes are collected into a draft — press <b>Save Changes</b> to apply them, and the bot shows a clear summary of exactly what changed before notifying the affected admin. Leaving the editor with unsaved changes prompts you to save or discard.</p>
-<p><b>Immediate effect:</b> as soon as permissions are saved, buttons for disabled features disappear from that admin's menu, and enabled ones appear. If the admin taps an old button anyway, the bot replies "You do not have permission…" with a <b>Request permission from the admin</b> button.</p>
-<p><b>Auto-revocation:</b> if an admin is removed from the channel in Telegram, or loses the <b>Post Messages</b> permission, all their bot-side permissions are revoked automatically on the next check — no manual cleanup needed.</p>
-<p><b>Requests:</b> an admin who lacks a permission can request it (optionally with an explanation). The owner receives a Yes/No request and can send back a reply when declining. Anti-spam: one request per permission per user per week. The owner can also switch off request notifications for a specific admin.</p></div>
-    
-    
+    <div class="hc-body"><p>The Main Owner controls exactly what each admin can do. There are 15 independent permissions; nothing is bundled behind a vague "manage" switch, and nothing is granted implicitly.</p>
+<h3>The full list</h3>
+<ul><li><code>schedule</code> — create scheduled messages. <i>On by default.</i></li><li><code>recurring</code> — create recurring messages. <i>On by default.</i></li><li><code>message_list</code> — open the message list. <i>On by default.</i></li><li><code>message_preview</code> — preview a message before it goes out. <i>On by default.</i></li><li><code>message_edit</code> — edit a queued message. <i>On by default.</i></li><li><code>message_change</code> — move a message to another channel. <i>Off by default.</i></li><li><code>message_delete</code> — delete a queued message. <i>Off by default.</i></li><li><code>message_search</code> — search the channel's messages. <i>On by default.</i></li><li><code>stats_view</code> — view statistics for the channel. <i>On by default.</i></li><li><code>leaderboard_view</code> — view the channel leaderboard. <i>Off by default.</i></li><li><code>data_export</code> — export the channel's data. <i>Off by default.</i></li><li><code>data_import</code> — import messages into the channel. <i>Off by default.</i></li><li><code>data_backup</code> — create a backup of the channel. <i>Off by default.</i></li><li><code>settings_hide_channel</code> — turn "Hide channel from strangers" on or off. <i>Off by default.</i></li><li><code>settings_change_permissions</code> — change other admins' permissions. <i>Off by default.</i></li></ul>
+<h3>Grouped in the interface, separate in the database</h3>
+<p>The editor groups them to keep the keyboard readable — Messages (list, preview, edit, change, delete, search), Statistics (stats, leaderboard), Data (export, import, backup), Settings (hide channel, change permissions). Tapping a group opens its individual switches. Saving the group saves each switch exactly as shown; there is no hidden "group unlock".</p>
+<h3>Changing them</h3>
+<p>Owner → <b>⚙️ Settings</b> → <b>👥 Admins</b> → pick the admin → toggle. Changes accumulate as a draft; <b>Save Changes</b> applies them and shows a summary of what changed. Leaving with unsaved toggles asks whether to save or discard, so a half-configured admin is never applied silently.</p>
+<h3>Effect is immediate</h3>
+<p>Disabled features disappear from that admin's keyboard on the next screen. If they press an old button from chat history, the bot refuses with "you do not have permission" and offers <b>Request permission from the admin</b>. The check happens when the button is pressed, not when it was drawn.</p>
+<h3>Requests</h3>
+<p>An admin who lacks a permission can request it, optionally with a one-line reason. The owner receives the request with <b>Grant</b> / <b>Deny</b> (and can reply when denying). Anti-spam: <b>one request per permission per user per channel per week</b>. A granted request is a normal permission change and appears in the audit log; a denied one does not block asking again after the cooldown.</p>
+<h3>Removing and restoring</h3>
+<p>Removing an admin revokes access at once and stores the record in <b>Revoked</b> with the reason, the actor and the timestamp. A revoked person cannot re-attach themselves through the @username path — only the owner can restore them. Queued posts stay with the channel; deleting an admin never deletes content they created.</p>
+<h3>Automatic revocation from Telegram</h3>
+<p>Rights Telegram takes away, the bot takes away: losing the administrator role or the <b>Post Messages</b> right revokes bot access on the next sync. The reverse is not automatic — becoming a Telegram administrator does not grant bot permissions; the owner or the self-attach flow does.</p>
+<h3>What cannot be granted</h3>
+<p>Ownership, the owner's bot token, adding or renaming bots, other channels, payment and billing data, and the RBAC audit log are never delegable. If an admin needs something that is not in the list above, the answer is a different role, not a wider permission.</p>
+<h3>Related</h3>
+<p><a class="hc-ilink" href="admins.html">Admins &amp; Access</a>, <a class="hc-ilink" href="admins_attach.html">Join a Channel That Already Has a Bot</a>, <a class="hc-ilink" href="admins_transfer.html">Ownership Transfer</a>, <a class="hc-ilink" href="bot_permissions.html">Bot Permissions</a>.</p></div>
+    <div class="hc-faq"><h2>Common questions</h2>
+<details><summary>What exactly does a brand-new admin get?</summary><div class="hc-fa"><p>Seven permissions on: schedule, recurring, message list, preview, edit, search and statistics. Everything else — move, delete, leaderboard, export, import, backup, hide channel, change permissions — stays off until the owner grants it.</p><div class="hc-chips" style="margin-top:10px"><a class="hc-chip" href="admins.html"><span>Admins &amp; Access (RBAC)</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div></details>
+<details><summary>How often can an admin ask for a permission?</summary><div class="hc-fa"><p>Once per permission per week per channel. The cooldown is per permission, so asking for export does not delay a later request for statistics.</p><div class="hc-chips" style="margin-top:10px"><a class="hc-chip" href="admins.html"><span>Admins &amp; Access (RBAC)</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div></details>
+<details><summary>Why did a granted permission stop working by itself?</summary><div class="hc-fa"><p>Either the admin lost the Telegram side (administrator role or Post Messages), or the owner saved a new permission set. Both are recorded in the audit log with the time and the actor.</p><div class="hc-chips" style="margin-top:10px"><a class="hc-chip" href="bot_permissions.html"><span>Bot Permissions</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div></details>
+<details><summary>Does &quot;change permissions&quot; let an admin promote themselves?</summary><div class="hc-fa"><p>No. <code>settings_change_permissions</code> lets them edit other admins' switches, but never their own record and never ownership. Only the Main Owner can edit the owner record.</p><div class="hc-chips" style="margin-top:10px"><a class="hc-chip" href="admins_transfer.html"><span>Ownership Transfer</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div></details>
+<details><summary>Can I give someone temporary access?</summary><div class="hc-fa"><p>Yes, in practice: grant the permissions, and remove them when the work is done. Removal is immediate, and the restored-then-revoked history stays in the audit log.</p><div class="hc-chips" style="margin-top:10px"><a class="hc-chip" href="admins.html"><span>Admins &amp; Access (RBAC)</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div></details>
+</div>
+    <div class="hc-related"><h2>Related topics</h2><div class="hc-chips"><a class="hc-chip" href="admins.html"><span>Admins &amp; Access (RBAC)</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><a class="hc-chip" href="bot_permissions.html"><span>Bot Permissions</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><a class="hc-chip" href="admins_transfer.html"><span>Ownership Transfer</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
   </article>
-  <nav class="hc-pager" aria-label="More articles"><a class="hc-card prev" href="admins_limits.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg><span><small>Previous</small><b>How Admins Share Limits</b></span></a><a class="hc-card next" href="admins_transfer.html"><span><small>Next</small><b>Ownership Transfer</b></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></nav>
+  <nav class="hc-pager" aria-label="More articles"><a class="hc-card prev" href="admins_attach.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg><span><small>Previous</small><b>Join a Channel That Already Has a Bot</b></span></a><a class="hc-card next" href="admins_limits.html"><span><small>Next</small><b>How Admins Share Limits</b></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></nav>
   <div class="hc-cta"><div><b>Still stuck?</b><p>The in-bot assistant answers the same questions &mdash; and a human reads every ticket.</p></div><a class="btn" href="https://t.me/FastSchedulerSupport_bot" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Ask in Telegram</a></div>
 </div>
 </main>
@@ -776,16 +888,17 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
     </nav>
   </div>
 </footer>
-<script src="../../scripts/theme.js?v=20261014a3"></script>
-<script src="../../scripts/settings.js?v=20261014a3"></script>
-<script src="../../scripts/ru-content.js?v=20261014a3"></script>
+<script src="../../scripts/theme.js?v=20260930a1"></script>
+<script src="../../scripts/settings.js?v=20261005d1"></script>
+<script src="../../scripts/ru-content.js?v=20261004b2"></script>
 
-<script src="../../scripts/ru-chrome.js?v=20261014a3"></script><script src="../../scripts/lang.js?v=20261014a3"></script>
-<script src="../../scripts/help-search.js?v=20261014a3"></script>
-<script src="../../scripts/hotkeys-modal.js?v=20261014a3"></script>
-<script src="../../scripts/help-ai.js?v=20261014a3"></script>
-<script src="../../scripts/hotkeys.js?v=20261014a3"></script>
-<script src="../../scripts/scroll-jump.js?v=20261014a3"></script>
-<script src="../../scripts/article-nav.js?v=20261014a3"></script>
+<script src="../../scripts/ru-chrome.js?v=20261010a2"></script><script src="../../scripts/lang.js?v=20261010a2"></script>
+<script src="../../scripts/hotkeys-modal.js?v=20261006a1"></script>
+<script src="../../scripts/help-ai.js?v=20261022a1"></script>
+<script src="../../scripts/help-search.js?v=20261022a3"></script>
+<script src="../../scripts/hotkeys.js?v=20261005d1"></script>
+<script src="../../scripts/scroll-jump.js?v=20260930a1"></script>
+<script src="../../scripts/article-nav.js?v=20260930a2"></script>
+<script src="../../scripts/site-footer.js?v=20261018g2"></script>
 </body>
 </html>
