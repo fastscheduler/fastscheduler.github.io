@@ -12,7 +12,7 @@ This policy applies to all personal data processed through the Services, includi
 - Connected **Sender Bots** (Telegram bots whose tokens you provide so the Services can post on your behalf);
 - The SetDate Service (when you choose to import a schedule);
 - The Support Service (when you contact support or submit feedback and ratings);
-- The Website (as described in Section 4(m) — essentially on-device preferences only); and
+- The Website (as described in Section 4(m) — on-device preferences, plus consent-gated analytics through Google Tag Manager); and
 - Payment processing interactions with our third-party payment providers.
 
 If you do not agree with this policy, please do not use the Services.
@@ -134,7 +134,17 @@ Our Website is a static site (no user accounts, no server-side code of ours). It
 | `site_clicks` | Your last link clicks on the site (up to 200), used for nothing but your own history — never transmitted |
 | `cookie_consent` | Whether you accepted or declined the cookie banner |
 
-**One functional cookie:** when you answer the cookie banner, we store a `consent=accepted|declined` cookie (1-year expiry, first-party only) so the banner does not reappear. It contains no identifier and is never used for tracking. Choosing "decline" changes nothing else — the site has no trackers to disable and works identically either way.
+**One functional cookie:** when you answer the cookie banner, we store a `consent=accepted|declined` cookie (1-year expiry, first-party only) so the banner does not reappear. It contains no identifier and is never used for tracking.
+
+**Analytics — loaded only if you accept:** the Website uses **Google Tag Manager** (container `GTM-P9L5JD26`, Google Ireland Limited / Google LLC) to load **Google Analytics 4** measurement tags. This is the only third-party code on the site, and it is gated behind the banner:
+
+- **Nothing loads before you choose.** The Tag Manager script is not merely paused or configured off — it is never inserted into the page. Until you click *Accept*, there is no request to `googletagmanager.com` or `google-analytics.com`, no `dataLayer`, and no analytics cookie. The site is fully functional without it.
+- **If you decline**, no analytics request is made for as long as the choice stands. If you had accepted earlier and then switch to *Decline* in *Cookie settings*, we also delete the Google Analytics cookies (`_ga`, `_ga_<id>`, `_gid`) that had been set in your browser.
+- **What the analytics records:** the page you opened (URL/path and title), the site you came from (referrer), an approximate location derived from your IP address (country/city level — Google truncates and does not expose your full IP to us), device type, browser and language, screen size, and basic interaction events such as scroll depth or outbound-link clicks. It does **not** record your name, your Telegram account, message content, or anything you type into the site (the help-center search box and the on-page help assistant never send your query anywhere).
+- **Cookies set while accepted:** `_ga` and `_ga_<container-id>` (up to 2 years) distinguish returning browsers; they are first-party cookies set on this domain by Google Analytics. They are used only for aggregate measurement — how many people read which pages, and which pages lead to the bot — never for advertising, profiling, or cross-site tracking, and we do not enable Google Signals or ad-personalisation in the container.
+- **Legal basis:** your consent (Art. 6(1)(a) GDPR), given by clicking *Accept* and withdrawable at any time through *Cookie settings* in the footer. Withdrawal is as easy as consent and does not affect the lawfulness of processing before it.
+- **Google as a processor:** Google processes this data on our behalf under its own terms, including standard contractual clauses for transfers outside the EEA and the EU–US Data Privacy Framework where applicable. See Google's [Privacy Policy](https://policies.google.com/privacy) and [How Google uses information from sites that use its services](https://policies.google.com/technologies/partner-sites). Beyond this, the Website contains **no** advertising networks, social-media pixels, cross-site tracking cookies, or other third-party SDKs.
+- **Declining is free:** with analytics declined the Website behaves identically — no feature, page, or download is restricted.
 
 **Feature-flag check:** the site fetches a tiny public file (`storage_state.json`, a few bytes) about once a minute to know which features to display. This is a plain anonymous download — no identifier, cookie, or personal data is sent with it.
 
@@ -142,7 +152,7 @@ Our Website is a static site (no user accounts, no server-side code of ours). It
 
 **Opening the bot from the Website:** buttons and pricing links open Telegram with a source tag (for example `?start=start__website`, `?start=premium_monthly__pricing`). The same mechanism also powers marketing source links shared anywhere (for example `?start=threads`, `?start=threads__post_1`). When you do, we record the **source tag** together with a timestamp and your Telegram user ID in an internal rotation-limited analytics file (`data/tracking.json`, capped at 10,000 entries, oldest overwritten automatically). This is used only in aggregate to understand which pages bring users to the bot, and is viewable by our staff via an internal command (`/track`). Simply browsing the Website — without opening the bot — records nothing on our side.
 
-**Hosting and third parties:** the Website's files are served by **GitHub Pages** (GitHub, Inc., USA). GitHub necessarily receives standard connection data (such as your IP address) to deliver the pages, under GitHub's own privacy statement — we have no server logs of our own. All scripts, styles, and fonts are served from the same site (no CDNs, no external dependencies). The Website contains **no analytics, no advertising networks, no social-media pixels, no cross-site tracking cookies, and no third-party SDKs of any kind**. Links to Telegram, GitHub, or search engines naturally leave our site and are governed by those services' policies.
+**Hosting and third parties:** the Website's files are served by **GitHub Pages** (GitHub, Inc., USA). GitHub necessarily receives standard connection data (such as your IP address) to deliver the pages, under GitHub's own privacy statement — we have no server logs of our own. All scripts, styles, and fonts are served from the same site (no CDNs, no external font services). The only third-party code that can run on the Website is **Google Tag Manager with Google Analytics 4**, and only after you click *Accept* (see above). The Website contains **no advertising networks, no social-media pixels, no cross-site tracking cookies, and no other third-party SDKs**. Links to Telegram, GitHub, or search engines naturally leave our site and are governed by those services' policies.
 
 **Public indexing:** the Website's public pages (landing, help, blog, legal) are intentionally indexable by search engines and AI assistants (see `robots.txt`, `sitemap.xml`, `llms.txt`, and the blog RSS feed). They contain no personal data — only our own documentation and articles.
 
@@ -190,7 +200,8 @@ We do **not** purchase Personal Data from third-party data brokers.
 | Complying with tax, accounting, and legal retention obligations (e.g., retained subscription records) | Legal obligation (Art. 6(1)(c)) |
 | Complying with lawful requests from authorities (court orders, subpoenas) | Legal obligation (Art. 6(1)(c)) |
 | Optional features requiring explicit choice (e.g., non-essential notifications you opt into, referral program participation) | Consent (Art. 6(1)(a)) |
-| Remembering your Website cookie-banner choice (first-party `consent` cookie, no tracking) | Consent (Art. 6(1)(a)) — set only after you click accept/decline; declining disables nothing because there is nothing to disable |
+| Remembering your Website cookie-banner choice (first-party `consent` cookie, no tracking) | Consent (Art. 6(1)(a)) — set when you click accept or decline |
+| Website analytics via Google Tag Manager / Google Analytics 4 (pages viewed, referrer, approximate location, device, language) | Consent (Art. 6(1)(a)) — the tag is never loaded unless you click *Accept*, and the choice can be withdrawn at any time |
 | Delivering the static Website to visitors (hosting-level connection handling by GitHub Pages) | Legitimate interests (Art. 6(1)(f)) — operating a public informational website; no visitor profiling is performed |
 
 Where we rely on legitimate interests, we have balanced those interests against your rights and freedoms and conclude that operating, securing, and improving the Services represents a compelling, proportionate interest. You have the right to object to any Processing based on legitimate interests (see Section 13).
@@ -284,6 +295,7 @@ We retain Personal Data only for as long as necessary to fulfil the purposes des
 | **Feedback and ratings** | Indefinite, or until you request removal | Retained to operate support and improve the Services. You may request removal of specific feedback or ratings. |
 | **Marketing attribution (tracking.json)** | Maximum 10,000 entries (rotation) | Capped file; oldest entries are overwritten automatically. |
 | **Website on-device data (your browser only)** | Until you clear it | Theme, language, display preferences, recent help searches, on-device click history, and the `consent` cookie (1-year expiry) live exclusively in your browser. We cannot see, access, or delete them — clearing your browser data removes them. |
+| **Website analytics (Google Analytics 4, only after consent)** | Up to 14 months in Google Analytics; `_ga`/`_ga_<id>` cookies expire after up to 2 years or when you clear them | Aggregate page-view data described in Section 4(m). Withdraw consent in *Cookie settings* and we delete the `_ga*` cookies from your browser. |
 | **Website delivery (GitHub Pages)** | Per GitHub's retention | We keep no visitor logs; connection data handling is governed by GitHub's privacy statement. |
 | **Referral program data** | Until you delete your account or until referral rewards expire | |
 | **Promo code usage records** | Indefinite | Required for fraud prevention and financial record-keeping. |

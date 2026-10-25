@@ -51,8 +51,8 @@ HELP_C = OUT + os.sep + 'help' + os.sep + 'c'
 SECURITY_METAS = (
     '<meta name="referrer" content="strict-origin-when-cross-origin">\n'
     '<meta http-equiv="Content-Security-Policy" content="default-src \'self\'; '
-    'script-src \'self\' \'unsafe-inline\'; style-src \'self\' \'unsafe-inline\'; '
-    'img-src \'self\' data:; font-src \'self\'; connect-src \'self\'; '
+    'script-src \'self\' \'unsafe-inline\' https://www.googletagmanager.com; style-src \'self\' \'unsafe-inline\'; '
+    'img-src \'self\' data: https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://www.google.com; font-src \'self\'; connect-src \'self\' https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://region1.google-analytics.com https://www.google.com; frame-src https://www.googletagmanager.com; '
     # NB: frame-ancestors is deliberately absent from this meta CSP — browsers
     # ignore it when it arrives in a <meta> tag and only log a console error.
     # Framing is blocked by the real headers in website/_headers, which any

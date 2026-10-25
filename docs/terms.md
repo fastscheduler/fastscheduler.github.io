@@ -84,7 +84,7 @@ The Services provide a comprehensive message-automation platform for Telegram. T
 
 18. **Support conversations**: Contact support, get help, and submit feedback or ratings through the Support Service.
 
-19. **Public website**: Browse landing, help-center, blog, and legal pages in English or Russian with no account required. The Website stores display preferences (theme, language, accessibility options) only in your own browser, shows a cookie banner recording a first-party consent choice, and links into the Telegram bots with source tags used for aggregate arrival analytics (see Privacy Policy). The Website contains no analytics, trackers, or third-party scripts.
+19. **Public website**: Browse landing, help-center, blog, and legal pages in English or Russian with no account required. The Website stores display preferences (theme, language, accessibility options) only in your own browser, shows a cookie banner recording a first-party consent choice, and links into the Telegram bots with source tags used for aggregate arrival analytics (see Privacy Policy). Analytics on the Website runs through Google Tag Manager (`GTM-P9L5JD26`, loading Google Analytics 4) and is loaded only after you press *Accept*: if you decline, no analytics script is requested and no analytics cookie is set, and you can change the choice at any time through *Cookie settings* in the footer. The Website contains no advertising networks, social pixels, or other third-party scripts.
 
 The Services are provided "as is" and "as available" (see Section 15). Features may be added, modified, or removed with reasonable notice.
 

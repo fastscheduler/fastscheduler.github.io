@@ -6,6 +6,7 @@ pruned article root/help/a/channel_default.html.
 """
 import os
 import shutil
+import sys
 
 PUB = ['index.html', 'help.html', '404.html', 'robots.txt', 'sitemap.xml',
        'llms.txt', 'llms-full.txt', 'blog', 'help', 'legal', 'ru', 'scripts',
@@ -60,3 +61,9 @@ for p in PRUNE:
         print('pruned', p)
 
 print('copied/updated: %d  removed: %d' % (copied, removed))
+
+# Consent gate last: every page needs the cookie banner + a CSP that allows the
+# tag, including pages this script just copied. Idempotent (see the tool).
+import subprocess
+subprocess.run([sys.executable, os.path.join('tools', 'inject_consent.py')],
+               check=True)

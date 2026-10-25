@@ -19,7 +19,7 @@
 <meta name="theme-color" content="#1faa59">
 <meta name="color-scheme" content="light dark">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; form-action 'self'; base-uri 'self'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://www.google.com; font-src 'self'; connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://region1.google-analytics.com https://www.google.com; frame-src https://www.googletagmanager.com; object-src 'none'; form-action 'self'; base-uri 'self'; upgrade-insecure-requests">
 <title>Send Your First Post — Fast Scheduler Help</title>
 <meta name="description" content="A complete first run: open the scheduler, send date and text, choose media, review the card and confirm the queue.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -824,6 +824,7 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
   .hc-card { border: 0; box-shadow: none; background: none; }
 }
   </style>
+<script src="../../scripts/consent.js?v=20261025a1" defer></script>
 <!--fs:ru-alt-->
 <link rel="alternate" hreflang="ru" href="https://fastscheduler.github.io/ru/help/a/start_schedule.html">
 <link rel="alternate" hreflang="en" href="https://fastscheduler.github.io/help/a/start_schedule.html">
