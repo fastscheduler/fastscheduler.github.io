@@ -238,8 +238,13 @@
     return banner;
   }
 
-  function showBanner() {
+  /* manualOpen marks a banner the visitor deliberately reopened through
+     "Cookie settings": an existing choice must not close it on them. */
+  var manualOpen = false;
+
+  function showBanner(byUser) {
     var el = buildBanner();
+    manualOpen = !!byUser;
     clearTimeout(thanksTimer);
     resetBanner();
     setTimeout(function () { el.classList.add('show'); }, 600);
@@ -274,6 +279,7 @@
   var thanksTimer = null;
 
   function decide(choice) {
+    manualOpen = false;
     saveChoice(choice);
     if (choice === 'accepted') {
       playThanks(buildBanner());
@@ -302,7 +308,7 @@
       btn.setAttribute('data-cookie-settings', '');
       btn.addEventListener('click', function (ev) {
         ev.preventDefault();
-        showBanner();
+        showBanner(true);
       });
       wrap.appendChild(btn);
       footer.appendChild(wrap);
@@ -310,6 +316,31 @@
     }
     host.textContent = copy().settings;
   }
+
+  /* ---------- pages that were already open ------------------------------ */
+
+  /* A choice made in another tab, or made before returning to this page from
+     the back/forward cache, is still the same visit: adopt it silently instead
+     of asking a second time. */
+  function adoptStoredChoice() {
+    if (manualOpen) return;
+    var choice = readChoice();
+    if (!choice) return;
+    if (choice === 'accepted') loadAnalytics();
+    if (banner) {
+      clearTimeout(thanksTimer);
+      banner.classList.remove('show', 'fs-done', 'fs-leave');
+      resetBanner();
+    }
+    syncSettingsLink();
+  }
+
+  window.addEventListener('storage', function (ev) {
+    if (!ev.key || ev.key === STORE_KEY || ev.key === 'consent') adoptStoredChoice();
+  });
+  window.addEventListener('pageshow', function (ev) {
+    if (ev.persisted) adoptStoredChoice();
+  });
 
   /* ---------- boot ------------------------------------------------------ */
 
