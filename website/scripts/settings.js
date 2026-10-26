@@ -344,6 +344,60 @@
     paint();
   })();
 
+  /* ---- Legal pages: "document versions" dropdown ----
+     The pill sits inside the legal text, which on phones scrolls in its own
+     pane (main.legal is overflow:auto there). The popover therefore opened as
+     a full-width sheet at the top of the screen — nowhere near the pill that
+     was tapped — and, anchored in the text, it was clipped by that pane.
+     Place it in viewport coordinates right next to the pill and flip it above
+     when the space below is too small. */
+  function placeVersionMenu(dd) {
+    var menu = dd.querySelector('.ver-menu');
+    var pill = dd.querySelector('.ver-pill');
+    if (!menu || !pill) return;
+    var mobile = !!(window.matchMedia && matchMedia('(max-width: 860px)').matches);
+    if (!mobile) {
+      menu.style.position = menu.style.top = menu.style.left = menu.style.right = menu.style.maxHeight = '';
+      return;
+    }
+    menu.style.maxHeight = '';
+    var pr = pill.getBoundingClientRect();
+    var vw = window.innerWidth, vh = window.innerHeight;
+    /* offsetWidth/offsetHeight ignore the closed state's scale(.9) transform */
+    var w = Math.min(menu.offsetWidth || 290, vw - 24);
+    var h = menu.offsetHeight || 0;
+    var left = Math.max(12, Math.min(pr.left, vw - w - 12));
+    var below = vh - pr.bottom - 22;
+    var above = pr.top - 22;
+    menu.style.position = 'fixed';
+    menu.style.right = 'auto';
+    menu.style.left = left + 'px';
+    if (h > below && above > below) {
+      menu.style.top = Math.max(12, pr.top - h - 10) + 'px';
+      if (h > above) menu.style.maxHeight = Math.max(120, above) + 'px';
+    } else {
+      menu.style.top = (pr.bottom + 10) + 'px';
+      if (h > below) menu.style.maxHeight = Math.max(120, below) + 'px';
+    }
+  }
+  var verDDs = document.querySelectorAll('.ver-dd');
+  if (verDDs.length) {
+    Array.prototype.forEach.call(verDDs, function (dd) {
+      var place = function () { placeVersionMenu(dd); };
+      ['pointerenter', 'focusin', 'click', 'touchstart'].forEach(function (ev) {
+        dd.addEventListener(ev, function () { setTimeout(place, 0); }, true);
+      });
+    });
+    var replaceOpen = function () {
+      Array.prototype.forEach.call(document.querySelectorAll('.ver-dd'), function (dd) {
+        if (dd.matches(':focus-within')) placeVersionMenu(dd);
+      });
+    };
+    /* the pane scrolls, so follow the pill while the menu is focused */
+    window.addEventListener('scroll', replaceOpen, true);
+    window.addEventListener('resize', replaceOpen);
+  }
+
   syncDark(); syncAnim(); syncFx(); syncKeys();
   applyFont(readFont());
 

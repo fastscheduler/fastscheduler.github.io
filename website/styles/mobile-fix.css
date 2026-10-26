@@ -16,6 +16,11 @@ img,svg,video,canvas{max-width:100%;height:auto}
 .ver-pill .chev{width:14px;height:14px;opacity:.6}
 .ver-dd:hover .ver-pill,.ver-dd:focus-within .ver-pill{border-color:var(--green)}
 .ver-menu{left:0;right:auto;min-width:290px;transform-origin:top left}
+/* The document-version menu is a dropdown inside the legal text, but main.css
+   turns every .glass-pop into a full-width sheet hung from the navbar below
+   860px, so on phones it opened at the top of the screen instead of under its
+   pill. Keep it anchored to .ver-dd and clamp it to the viewport instead. */
+@media(max-width:860px){.ver-menu{position:absolute;top:calc(100% + 10px);bottom:auto;left:0;right:auto;width:max-content;min-width:min(290px,calc(100vw - 40px));max-width:calc(100vw - 40px);max-height:min(56vh,380px);overflow-y:auto;transform-origin:top left}}
 .ver-menu::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}
 .ver-dd:hover .ver-menu,.ver-dd:focus-within .ver-menu{opacity:1;transform:none;pointer-events:auto}
 .ver-dd:hover .ver-menu .gp-row,.ver-dd:focus-within .ver-menu .gp-row{opacity:1;transform:none}
