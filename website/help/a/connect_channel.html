@@ -46,7 +46,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Connecting a Channel", "description": "Requirements, every accepted channel format, multiple channels, permissions and the exact error messages you may hit.", "articleBody": "A connection is a three-way agreement: your Telegram account is an admin, @FastSchedulerBot is an admin with posting rights, and the bot can resolve which channel you mean. Requirements You are an administrator of the channel. @FastSchedulerBot is an administrator with at least Post Messages . For posting through a sender bot, that bot is also an admin with Post Messages. Connect in the bot 📢 Channels → 📢 Connect Channel , then send: • @yourchannel • https://t.me/yourchannel • an invite link • a forwarded post from the channel • the numeric ID, e.g. -1001234567890 Forwarding works for private channels and is the most reliable method: it carries the channel identity without exposing a username. What happens after connecting The channel appears in the overview with its time zone and a \"no sender bot\" state. Scheduling is locked until a sender bot is attached — that is the next step: Step 2: Connect a Sender Bot . Multiple channels Free plan: 1 channel. Premium: up to 3 . Every channel has its own sender bot, time zone, signature, queue and statistics. Use the channel picker before scheduling to choose where a post goes; managed channels appear as 🤖 Managed: … and redirect to their sender bot. Per-channel details on the card Open the channel from 📢 Channels to see its sender bot, time zone and counts. Actions: • 🕐 Time Zone: … — set the channel's own zone. • 🔄 Change Channel — move the sender bot to another channel you own. • 🔗 Disconnect Channel — remove the link; queued posts pause, nothing is lost. Exact errors and fixes \"Bot is not an admin\" — promote @FastSchedulerBot with Post Messages, then send the channel again. \"Channel not found\" — wrong username or a private channel; forward a post. \"Invalid format\" — send the link alone, or the @username alone. \"You are not an admin of this channel\" — ask the owner to promote you. \"This channel is already connected\" — it belongs to this account already; open it from the channel overview instead of adding it twice. Related Add a Channel , Channel Permissions , Unlink vs Delete , Remove a Channel . Why can’t I schedule right after connecting? Because the channel has no sender bot yet. Add one from 🤖 Bots → 🔑 I Have a Token and make it an administrator of the channel. Can two accounts manage one channel? Ownership belongs to the account that connected it. Other people can be added as channel admins inside the sender bot with limited permissions, but not as a second independent Fast Scheduler owner.", "articleSection": "More topics", "author": {"@id": "https://fastscheduler.github.io/#organization"}, "publisher": {"@id": "https://fastscheduler.github.io/#organization"}, "mainEntityOfPage": "https://fastscheduler.github.io/help/a/connect_channel.html", "datePublished": "2026-10-04", "dateModified": "2026-10-04", "isPartOf": {"@id": "https://fastscheduler.github.io/#website"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Fast Scheduler", "item": "https://fastscheduler.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Help Center", "item": "https://fastscheduler.github.io/help.html"}, {"@type": "ListItem", "position": 3, "name": "More topics", "item": "https://fastscheduler.github.io/help/c/misc.html"}, {"@type": "ListItem", "position": 4, "name": "Connecting a Channel", "item": "https://fastscheduler.github.io/help/a/connect_channel.html"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why can’t I schedule right after connecting?", "acceptedAnswer": {"@type": "Answer", "text": "Because the channel has no sender bot yet. Add one from 🤖 Bots → 🔑 I Have a Token and make it an administrator of the channel."}}, {"@type": "Question", "name": "Can two accounts manage one channel?", "acceptedAnswer": {"@type": "Answer", "text": "Ownership belongs to the account that connected it. Other people can be added as channel admins inside the sender bot with limited permissions, but not as a second independent Fast Scheduler owner."}}]}</script>
-<link rel="stylesheet" href="../../styles/main.css?v=20261025b4">
+<link rel="stylesheet" href="../../styles/main.css?v=20261026c4">
 <link rel="stylesheet" href="../../styles/hotkeys-modal.css?v=20261006a1">
 <style>.hc-card {
   background: var(--surface);
@@ -136,7 +136,7 @@
 
 .hc-cta-t b { display: block; font-size: 1rem; letter-spacing: -.01em; }
 
-.hc-cta-t span { color: var(--text-dim); font-size: .88rem; }
+.hc-cta-t span { color: rgba(255, 255, 255, .92); font-size: .88rem; }
 
 .hc-cta .btn { flex: none; }
 
@@ -884,15 +884,15 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
   </div>
 </footer>
 <script src="../../scripts/theme.js?v=20260930a1"></script>
-<script src="../../scripts/settings.js?v=20261026c2"></script>
+<script src="../../scripts/settings.js?v=20261026c4"></script>
 <script src="../../scripts/ru-content.js?v=20261004b2"></script>
 
-<script src="../../scripts/ru-chrome.js?v=20261026c2"></script><script src="../../scripts/lang.js?v=20261026c2"></script>
+<script src="../../scripts/ru-chrome.js?v=20261026c4"></script><script src="../../scripts/lang.js?v=20261026c4"></script>
 <script src="../../scripts/hotkeys-modal.js?v=20261006a1"></script>
 <script src="../../scripts/help-ai.js?v=20261022a1"></script>
-<script src="../../scripts/help-search.js?v=20261026c2"></script>
+<script src="../../scripts/help-search.js?v=20261026c4"></script>
 <script src="../../scripts/hotkeys.js?v=20261005d1"></script>
-<script src="../../scripts/scroll-jump.js?v=20261026c2"></script>
+<script src="../../scripts/scroll-jump.js?v=20261026c4"></script>
 <script src="../../scripts/article-nav.js?v=20260930a2"></script>
 <script src="../../scripts/site-footer.js?v=20261018g2"></script>
 </body>

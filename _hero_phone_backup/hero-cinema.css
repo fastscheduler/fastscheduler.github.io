@@ -1,0 +1,427 @@
+/* ==================================================================
+   Fast Scheduler — hero cinema styles
+   Chat engine · file explorer · drag & drop upload · roulette ·
+   calendar reminder · iOS home screen · channel + bot layers · finale
+   ================================================================== */
+
+/* ---------- chat engine ---------- */
+.phone-screen.tg .demo { position: static; }
+.phone-screen.tg .demo .msg { animation: none; }
+.phone-screen.tg .demo .msg:not(.shown) { opacity: 0; transform: translateY(14px) scale(.97); }
+.phone-screen.tg .demo .msg.shown { transition: opacity .45s var(--ease-apple), transform .45s var(--ease-apple); opacity: 1; transform: none; }
+.tg-typing {
+  display: inline-flex; gap: 4px; align-items: center; align-self: flex-start;
+  margin: 2px 0 4px; padding: 10px 14px; border-radius: 12px 12px 12px 4px;
+  background: #182533; opacity: 0; transform: translateY(8px); transition: opacity .3s, transform .3s;
+}
+.tg-typing.on { opacity: 1; transform: none; }
+.tg-typing span { width: 6px; height: 6px; border-radius: 50%; background: #7d8e9e; animation: tgTdot 1.1s ease-in-out infinite; }
+.tg-typing span:nth-child(2) { animation-delay: .18s; }
+.tg-typing span:nth-child(3) { animation-delay: .36s; }
+@keyframes tgTdot { 0%, 60%, 100% { transform: translateY(0); opacity: .45; } 30% { transform: translateY(-4px); opacity: 1; } }
+
+.mono-caret { display: inline-block; width: 7px; height: 1em; vertical-align: -2px; background: #8ecdf7; animation: tgCaret .7s steps(1) infinite; }
+@keyframes tgCaret { 50% { opacity: 0; } }
+.phone-screen.tg .demo .msg .mono { white-space: pre-line; }
+
+/* user "tap" feedback: bubble presses in like a real keyboard key */
+.phone-screen.tg .demo .msg.pressed { transform: translateY(1px) scale(.955); filter: brightness(.85);
+  transition: transform .12s ease, filter .12s ease; }
+
+/* reply keyboard color accents from the real bot */
+.kb.kb-green { background: #4d8b4f !important; color: #fff !important; }
+.kb.kb-red   { background: #a3564c !important; color: #fff !important; }
+
+/* ---------- outgoing photo album (matches Telegram's 2-col grid) ---------- */
+.upl-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-top: 6px;
+  width: 218px; }   /* explicit width: 1fr collapses to 0 inside a shrink-to-fit bubble */
+.upl-thumb { width: 100%; height: 104px; border-radius: 8px; background-size: cover; background-position: center;
+  position: relative; overflow: hidden; opacity: 0; transform: scale(.55); }
+.upl-thumb.in { transition: opacity .35s var(--ease-apple), transform .45s var(--ease-spring); opacity: 1; transform: none; }
+.upl-name { display: none; }
+
+/* green "uploading" pulse ring while a thumb lands */
+.upl-thumb.landing::after { content: ""; position: absolute; inset: 0; border-radius: 8px;
+  border: 2px solid rgba(111,208,140,.9); animation: landPulse .55s ease-out both; }
+@keyframes landPulse { from { opacity: 1; transform: scale(.9); } to { opacity: 0; transform: scale(1.12); } }
+
+/* ---------- file explorer (side window) ---------- */
+.tg-explorer {
+  position: absolute; z-index: 8; right: -46px; top: 13%; width: 246px;
+  border-radius: 12px; overflow: visible; transform: translateX(30px) scale(.92); opacity: 0; pointer-events: none;
+  background: #1f1f1f; border: 1px solid #3c3c3c;
+  box-shadow: 0 24px 60px -12px rgba(0,0,0,.7), 0 4px 14px rgba(0,0,0,.4);
+  transition: transform .55s var(--ease-apple), opacity .45s;
+  transform-origin: left center;
+}
+.tg-explorer.on { transform: translateX(0) scale(1); opacity: 1; }
+.fx-bar { display: flex; align-items: center; gap: 7px; padding: 8px 10px; background: #2b2b2b; border-bottom: 1px solid #3c3c3c;
+  font-size: .68rem; font-weight: 700; color: #ddd; border-radius: 12px 12px 0 0; }
+.fx-dot { width: 8px; height: 8px; border-radius: 50%; background: #f6c445; }
+.fx-min { margin-left: auto; color: #999; font-size: .6rem; }
+.fx-min + .fx-min { margin-left: 6px; }
+.fx-list { padding: 6px; display: flex; flex-direction: column; gap: 2px; background: #1f1f1f; }
+.fx-item { display: flex; align-items: center; gap: 8px; padding: 5px 7px; border-radius: 7px; position: relative;
+  transition: background .25s, box-shadow .25s, opacity .3s; }
+.fx-item .fx-ic { width: 26px; height: 26px; border-radius: 5px; background-size: cover; background-position: center; flex: none;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); }
+.fx-item .fx-nm { font-size: .66rem; color: #eee; white-space: nowrap; }
+.fx-item .fx-sz { font-size: .56rem; color: #8a8a8a; }
+.fx-item .fx-info { display: flex; flex-direction: column; min-width: 0; }
+.fx-item.selected { background: #2f5d8a; box-shadow: inset 0 0 0 1px #4a7fb5; }
+.fx-item.selected::after { content: "✓"; position: absolute; right: 8px; color: #fff; font-size: .68rem; font-weight: 800;
+  animation: fxCheck .3s var(--ease-spring); }
+@keyframes fxCheck { from { transform: scale(0); } to { transform: scale(1); } }
+.fx-item.lifted { opacity: .25; }
+.fx-actions { display: flex; justify-content: flex-end; gap: 6px; padding: 8px 10px; border-top: 1px solid #3c3c3c; background: #2b2b2b; border-radius: 0 0 12px 12px; }
+.fx-btn { font-size: .62rem; font-weight: 700; padding: 5px 14px; border-radius: 6px; border: 1px solid #4a4a4a;
+  background: #383838; color: #ddd; font-family: inherit; }
+.fx-btn.fx-open { background: #2f5d8a; border-color: #4a7fb5; color: #fff; }
+
+/* cursor is a screen-level layer so it can travel between explorer and chat */
+.fx-cursor { position: absolute; z-index: 40; width: 20px; height: 20px; left: 0; top: 0; opacity: 0;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.65)); transition: opacity .3s; pointer-events: none; }
+.fx-cursor.on { opacity: 1; }
+.fx-cursor .fx-hold { position: absolute; inset: -7px; border-radius: 50%; border: 2px solid rgba(255,255,255,.85);
+  opacity: 0; transform: scale(.6); }
+.fx-cursor.holding .fx-hold { opacity: 1; animation: holdPulse 1.1s ease-in-out infinite; }
+@keyframes holdPulse { 0%,100% { transform: scale(.85); opacity: .9; } 50% { transform: scale(1.08); opacity: .45; } }
+.fx-click { position: absolute; width: 26px; height: 26px; border-radius: 50%; border: 2px solid rgba(255,255,255,.9);
+  transform: translate(-50%,-50%) scale(0); pointer-events: none; }
+.fx-click.on { animation: fxClick .45s ease-out both; }
+@keyframes fxClick { 0% { transform: translate(-50%,-50%) scale(.2); opacity: 1; } 100% { transform: translate(-50%,-50%) scale(1.5); opacity: 0; } }
+
+/* drop-target glow while the dragged stack hovers over the chat.
+   inset:0 + border-radius keeps it clamped INSIDE the rounded screen —
+   the old 12px inset let it spill past the bezel at the corners. */
+.drop-target-glow { position: absolute; inset: 0; border-radius: 42px; z-index: 7; pointer-events: none;
+  opacity: 0; transition: opacity .35s;
+  background: radial-gradient(62% 42% at 50% 68%, rgba(111,208,140,.20), transparent 72%);
+  box-shadow: inset 0 0 0 2px rgba(111,208,140,.6); }
+.drop-target-glow.on { opacity: 1; animation: glowBreath 1.1s ease-in-out infinite; }
+@keyframes glowBreath { 0%,100% { box-shadow: inset 0 0 0 2px rgba(111,208,140,.55); } 50% { box-shadow: inset 0 0 0 3px rgba(111,208,140,.85); } }
+
+/* dragged photo stack + trailing ghosts */
+.fx-drag { position: absolute; z-index: 30; width: 54px; height: 54px; border-radius: 8px; background-size: cover;
+  background-position: center; box-shadow: 0 14px 34px rgba(0,0,0,.6), 0 0 0 2px rgba(255,255,255,.25); pointer-events: none; }
+.fx-ghost { position: absolute; z-index: 29; width: 46px; height: 46px; border-radius: 8px; background-size: cover;
+  background-position: center; opacity: .5; box-shadow: 0 6px 18px rgba(0,0,0,.45); pointer-events: none; }
+
+/* uploading bar animation, Telegram-style */
+.upl-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-top: 6px; width: 218px; }
+.upl-cell { height: 104px; border-radius: 8px; background-size: cover; background-position: center; position: relative; overflow: hidden; }
+.upl-cell .upl-fill { position: absolute; left: 0; right: 0; bottom: 0; height: 0%;
+  background: linear-gradient(0deg, rgba(15,30,22,.85), rgba(15,30,22,0)); }
+.upl-cell .upl-ring { position: absolute; inset: 0; display: grid; place-items: center; }
+.upl-cell .upl-ring i { width: 22px; height: 22px; border-radius: 50%;
+  border: 2.5px solid rgba(255,255,255,.28); border-top-color: #6fd08c; animation: spin .8s linear infinite; }
+.upl-cell .upl-pct { position: absolute; left: 0; right: 0; bottom: 3px; text-align: center;
+  font-size: .54rem; font-weight: 800; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.8); }
+.upl-cell.done .upl-ring, .upl-cell.done .upl-pct { opacity: 0; transition: opacity .3s; }
+.upl-cell.done .upl-fill { opacity: 0; transition: opacity .4s; }
+.upl-cell.done::after { content: "✓"; position: absolute; right: 4px; bottom: 3px; width: 14px; height: 14px; border-radius: 50%;
+  background: #4d8b4f; color: #fff; font-size: .55rem; font-weight: 800; display: grid; place-items: center;
+  animation: fxCheck .3s var(--ease-spring); }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---------- roulette / calendar / finale stage ---------- */
+.rl-stage { position: absolute; inset: 0; z-index: 12; display: none; flex-direction: column; align-items: center;
+  justify-content: center; gap: 14px; padding: 20px 16px; background: #0e1621; color: #e8edf2; }
+.rl-stage.on { display: flex; }
+.rl-stage.cinema { background: radial-gradient(120% 90% at 50% 0%, #17222e 0%, #0e1621 62%); }
+
+.rl-card { width: 100%; max-width: 300px; border-radius: 18px; background: #182533; border: 1px solid rgba(255,255,255,.07);
+  box-shadow: 0 18px 50px -14px rgba(0,0,0,.7); overflow: hidden; }
+.rl-img { display: block; height: 168px; background-size: cover; background-position: center; position: relative;
+  border-radius: 12px 12px 0 0; overflow: hidden; }
+.rl-img.cp-shimmer { position: absolute; inset: 0; }
+.rl-cap { padding: 12px 14px; font-size: .84rem; line-height: 1.5; color: #e8edf2; }
+.rl-cap .cp-time { display: block; margin-top: 5px; font-size: .66rem; color: #7d8e9e; }
+.rl-msg-in { animation: rlIn .6s var(--ease-apple) both; }
+@keyframes rlIn { from { opacity: 0; transform: translateY(22px) scale(.96); } to { opacity: 1; transform: none; } }
+
+.rl-holder { position: relative; height: 74px; width: 100%; max-width: 300px; }
+.rl-tile { position: absolute; top: 0; width: 56px; height: 56px; border-radius: 10px; background-size: cover;
+  background-position: center; box-shadow: 0 6px 16px rgba(0,0,0,.5), inset 0 0 0 1px rgba(255,255,255,.14);
+  transition: left .55s var(--ease-apple), transform .45s var(--ease-apple), opacity .35s, box-shadow .35s; }
+.rl-tile.focused { transform: scale(1.12); box-shadow: 0 0 0 2.5px #6fd08c, 0 10px 26px rgba(0,0,0,.55); }
+.rl-tile.dim { opacity: .35; }
+.rl-tile.ghost { opacity: .25; }
+.rl-question { font-size: .72rem; color: #7d8e9e; letter-spacing: .02em; }
+
+/* attach fly from the roulette to the message card */
+.rl-fly { position: absolute; z-index: 14; width: 74px; height: 74px; border-radius: 10px; background-size: cover;
+  background-position: center; box-shadow: 0 14px 40px rgba(0,0,0,.65); pointer-events: none; will-change: transform; }
+/* glow burst when the photo lands in the card */
+.rl-burst { position: absolute; z-index: 13; width: 90px; height: 90px; border-radius: 18px; pointer-events: none;
+  translate: -50% -50%; border: 2.5px solid rgba(111,208,140,.85); box-shadow: 0 0 40px rgba(111,208,140,.5);
+  animation: burstOut .8s ease-out both; }
+@keyframes burstOut { 0% { transform: scale(.35); opacity: 1; } 100% { transform: scale(2.1); opacity: 0; } }
+.rl-card.landed { animation: cardLand .55s var(--ease-spring); }
+@keyframes cardLand { 0% { transform: scale(1); } 35% { transform: scale(1.035) translateY(-3px); } 100% { transform: scale(1); } }
+.rl-img.settled { animation: imgSettle .5s var(--ease-spring); }
+@keyframes imgSettle { 0% { filter: brightness(1.5); } 100% { filter: brightness(1); } }
+
+/* attached banner on the message card */
+.rl-attach { position: absolute; left: 12px; bottom: 12px; z-index: 3; display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 10px; border-radius: 999px; background: rgba(0,0,0,.55); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  font-size: .62rem; font-weight: 700; color: #b8e6c6; opacity: 0; transform: translateY(8px);
+  transition: opacity .4s var(--ease-apple), transform .4s var(--ease-apple); }
+.rl-attach.on { opacity: 1; transform: none; }
+
+/* calendar reminder card — richer, with staggered cell reveal + pulsing today */
+.rl-cal { position: relative; width: 100%; max-width: 310px; border-radius: 20px; overflow: hidden; background: linear-gradient(180deg, #1d2a3a, #16212e 60%, #131d29);
+  border: 1px solid rgba(255,255,255,.09); box-shadow: 0 24px 60px -14px rgba(0,0,0,.75), 0 0 60px rgba(46,166,255,.08);
+  opacity: 0; transform: translateY(30px) scale(.94) rotateX(6deg);
+  transition: opacity .55s var(--ease-apple), transform .6s var(--ease-apple); }
+.rl-cal.on { opacity: 1; transform: none; }
+.cal-head { display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: rgba(255,255,255,.04); font-size: .72rem; font-weight: 800;
+  color: #fff; letter-spacing: .05em; border-bottom: 1px solid rgba(255,255,255,.06); }
+.cal-dot { width: 8px; height: 8px; border-radius: 50%; background: #e05555; box-shadow: 0 0 0 3px rgba(224,85,85,.25);
+  animation: calPing 1.6s ease-out infinite; }
+@keyframes calPing { 0% { box-shadow: 0 0 0 0 rgba(224,85,85,.45); } 100% { box-shadow: 0 0 0 10px rgba(224,85,85,0); } }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; padding: 12px 14px 6px; }
+.cal-grid b { text-align: center; font-size: .52rem; font-weight: 800; color: #6d8093; padding-bottom: 3px; letter-spacing: .08em; }
+.cal-grid span { display: grid; place-items: center; height: 27px; border-radius: 8px; font-size: .64rem; font-weight: 600; color: #c7d4e0;
+  background: rgba(255,255,255,.025); opacity: 0; transform: translateY(8px) scale(.8);
+  animation: calCellIn .4s var(--ease-apple) both; animation-delay: calc(var(--i, 0) * 28ms + .15s); }
+@keyframes calCellIn { to { opacity: 1; transform: none; } }
+.cal-blank { visibility: hidden; }
+.cal-cell.today { position: relative; background: rgba(111,208,140,.2); color: #c9f0d8; font-weight: 800;
+  box-shadow: 0 0 0 1.5px rgba(111,208,140,.65), 0 0 16px rgba(111,208,140,.35); animation: calCellIn .4s var(--ease-apple) both,
+    todayPulse 1.8s 1s ease-in-out infinite; }
+@keyframes todayPulse { 0%,100% { box-shadow: 0 0 0 1.5px rgba(111,208,140,.65), 0 0 16px rgba(111,208,140,.35); }
+  50% { box-shadow: 0 0 0 2.5px rgba(111,208,140,.9), 0 0 26px rgba(111,208,140,.55); } }
+.cal-cell.ev::after { content: ""; position: absolute; bottom: 3px; left: 50%; translate: -50% 0; width: 4px; height: 4px;
+  border-radius: 50%; background: #e0b155; }
+.cal-ev { padding: 12px 14px 14px; }
+.cal-row { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 13px; background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.07); opacity: 0; transform: translateY(10px); animation: calCellIn .5s .75s var(--ease-apple) both; }
+.cal-ic { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; flex: none;
+  background: linear-gradient(135deg,#e05555,#c23c3c); font-size: .95rem; box-shadow: 0 6px 16px rgba(224,85,85,.35); }
+.cal-row b { font-size: .75rem; color: #e8edf2; display: block; }
+.cal-row small { font-size: .6rem; color: #7d8e9e; }
+.cal-badge { margin-left: auto; font-size: .56rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+  padding: 4px 9px; border-radius: 999px; background: rgba(111,208,140,.16); color: #b8e6c6; border: 1px solid rgba(111,208,140,.4);
+  opacity: 0; transform: scale(.6); }
+.cal-badge.on { opacity: 1; transform: none; transition: opacity .35s, transform .4s var(--ease-spring); }
+
+/* countdown chip under the calendar */
+.rl-count { font-variant-numeric: tabular-nums; font-size: .72rem; font-weight: 800; color: #8ecdf7; letter-spacing: .04em;
+  opacity: 0; transition: opacity .4s; }
+.rl-count.on { opacity: 1; }
+
+/* ---------- iOS home screen layer ---------- */
+.rl-ios { position: absolute; inset: 0; z-index: 13; display: none; overflow: hidden;
+  background: linear-gradient(165deg, #2b3f63 0%, #1d2b47 45%, #131c31 100%); color: #fff; }
+.rl-ios.on { display: block; }
+.ios-blur { position: absolute; inset: 0;
+  background: radial-gradient(90% 55% at 50% 8%, rgba(255,255,255,.12), transparent 60%); }
+.ios-status { position: absolute; top: 8px; left: 0; right: 0; display: flex; justify-content: space-between;
+  padding: 0 20px; font-size: .72rem; font-weight: 700; color: #fff; z-index: 3; }
+/* magnifier highlight — a real magnifying glass (lens centered on the
+   clock, handle to the bottom-right), rendered ABOVE the text */
+.ios-spot { position: absolute; left: 0; right: 0; top: 23%; z-index: 2; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  opacity: 1; }
+/* ---------- responsive ---------- */
+@keyframes magSpringIn { 0% { transform: translate(120px, 120px) scale(.18) rotate(14deg); opacity: 0; }
+  45% { opacity: 1; }
+  72% { transform: translate(0, 0) scale(1.06) rotate(-2deg); opacity: 1; }
+  100% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 1; } }
+.ios-mag circle { fill: rgba(255,255,255,.05); stroke: currentColor; stroke-width: 2.2; }
+.ios-mag line { stroke: currentColor; stroke-width: 5; stroke-linecap: round; }
+.ios-clock { font-size: 3rem; font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums;
+  text-shadow: 0 2px 18px rgba(0,0,0,.35); transition: transform .18s ease; }
+.ios-clock.tick { animation: clockWind 3.4s linear; transform-origin: center; }
+@keyframes clockWind { 0% { transform: scale(1); } 6% { transform: scale(1.07); } 14% { transform: scale(1); } 100% { transform: scale(1); } }
+.ios-date { margin-top: 2px; font-size: .78rem; font-weight: 600; color: rgba(255,255,255,.85); }
+.ios-icons { position: absolute; left: 18px; right: 18px; top: 47%; display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 12px 8px; z-index: 1; }
+.ios-app { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.ios-app i { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; font-style: normal; font-size: 1.1rem;
+  box-shadow: 0 6px 14px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.25); }
+.ios-app i svg { width: 26px; height: 26px; }
+.ios-app span { font-size: .52rem; color: rgba(255,255,255,.85); }
+.ios-dock { position: absolute; left: 14px; right: 14px; bottom: 14px; display: flex; justify-content: space-around;
+  padding: 8px 10px; border-radius: 22px; background: rgba(255,255,255,.14); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); z-index: 1; }
+.rl-notif { position: absolute; left: 12px; right: 12px; top: 40px; z-index: 4; display: flex; gap: 9px; align-items: center;
+  padding: 10px 12px; border-radius: 16px; background: rgba(28,32,40,.88); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+  box-shadow: 0 14px 34px rgba(0,0,0,.5); opacity: 0; transform: translateY(-16px) scale(.96);
+  transition: opacity .45s var(--ease-apple), transform .55s var(--ease-spring); }
+.rl-notif.on { opacity: 1; transform: none; }
+.nt-ic { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; flex: none; font-weight: 800; font-size: .68rem;
+  background: linear-gradient(135deg,#2ea6ff,#1c7fd6); }
+.rl-notif p { margin: 0; font-size: .66rem; line-height: 1.4; color: #e8edf2; }
+.rl-notif p b { display: block; font-size: .7rem; }
+.nt-t { margin-left: auto; align-self: flex-start; font-size: .56rem; color: #8a97a5; flex: none; }
+
+/* ---------- channel / bot full-screen layers ---------- */
+.screen-layer { position: absolute; inset: 0; z-index: 11; display: none; flex-direction: column;
+  background: #0e1621; color: #e8edf2; }
+.screen-layer.on { display: flex; animation: layerIn .5s var(--ease-apple) both; }
+@keyframes layerIn { from { opacity: 0; transform: scale(1.03); } to { opacity: 1; transform: none; } }
+.sl-head { display: flex; align-items: center; gap: 10px; padding: 8px 12px 10px; background: #17212b; border-bottom: 1px solid rgba(0,0,0,.35); flex: none; }
+.sl-titles { display: flex; flex-direction: column; min-width: 0; }
+.sl-name { font-weight: 800; font-size: .92rem; color: #fff; line-height: 1.15; }
+.sl-sub { font-size: .72rem; color: #7d8e9e; }
+.sl-body { flex: 1 1 auto; min-height: 0; overflow: hidden; padding: 14px 12px 10px;
+  background: radial-gradient(1200px 500px at 85% -5%, rgba(46,166,255,.06), transparent 60%), #0e1621; }
+.sl-foot { display: flex; align-items: center; gap: 8px; margin: auto 10px 12px; padding: 10px 14px; flex: none;
+  background: #17212b; border-radius: 18px; color: #7d8e9e; font-size: .82rem; }
+.sl-foot svg { width: 16px; height: 16px; }
+
+.chan-msgs { display: flex; flex-direction: column; gap: 14px; overflow: hidden; padding: 6px 2px; }
+.chan-msg { max-width: 86%; border-radius: 14px; overflow: hidden; background: #182533; border: 1px solid rgba(255,255,255,.06);
+  opacity: 0; transform: translateY(22px) scale(.97); transition: opacity .5s var(--ease-apple), transform .55s var(--ease-apple); }
+.chan-msg.on { opacity: 1; transform: none; }
+/* channel-name tag ABOVE the bubble, like Telegram desktop */
+.chan-from { display: inline-flex; align-items: center; gap: 5px; margin: 0 0 -6px 4px; font-size: .72rem; font-weight: 800;
+  color: #f60; letter-spacing: .01em; }
+.chan-from svg { width: 12px; height: 12px; }
+.cp-views svg { width: 13px; height: 13px; }
+.cal-ic svg { width: 17px; height: 17px; }
+.chan-msg2 { max-width: 70%; align-self: flex-end; }
+.chan-post-img { display: block; height: 150px; background-size: cover; background-position: center; position: relative; }
+.chan-post-img .cp-shimmer { position: absolute; inset: 0; background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.14) 50%, transparent 70%);
+  transform: translateX(-100%); }
+.chan-msg.loading .cp-shimmer { animation: cpShimmer 1.1s linear infinite; }
+.chan-post-cap { display: block; padding: 9px 12px 4px; font-size: .8rem; line-height: 1.45; }
+.chan-post-cap2 { display: block; padding: 10px 12px 2px; font-size: .8rem; line-height: 1.45; }
+.chan-post-cap .cp-time { display: inline-block; margin-left: 8px; font-size: .62rem; color: #7d8e9e; }
+/* footer row: reaction pills · views · time — like the real app */
+.chan-foot { display: flex; align-items: center; gap: 8px; padding: 6px 12px 10px; }
+.reactions { display: inline-flex; gap: 4px; flex-wrap: wrap; }
+.rx { display: inline-flex; align-items: center; gap: 3px; font-size: .58rem; font-weight: 700; color: #cfd8e2;
+  background: rgba(255,255,255,.07); padding: 2px 7px; border-radius: 999px; border: 1px solid rgba(255,255,255,.05);
+  opacity: 0; transform: scale(.4); animation: rxPop .4s var(--ease-spring) both; }
+.rx:nth-child(1) { animation-delay: 1.9s; } .rx:nth-child(2) { animation-delay: 2.1s; }
+.rx:nth-child(3) { animation-delay: 2.3s; } .rx:nth-child(4) { animation-delay: 2.5s; }
+@keyframes rxPop { to { opacity: 1; transform: none; } }
+.cp-views { display: inline-flex; align-items: center; gap: 3px; margin-left: auto; font-size: .6rem; color: #7d8e9e; }
+.cp-time2 { font-size: .6rem; color: #7d8e9e; }
+
+/* ---------- finale: cinematic logo scene ---------- */
+.rl-stage.finale { background: radial-gradient(120% 90% at 50% 8%, #1b2b40 0%, #0e1621 58%, #0a1017 100%); }
+.rl-logo { display: none; width: 84px; height: 84px; border-radius: 22px; z-index: 3; place-items: center;
+  background: linear-gradient(135deg,#2ea6ff,#1faa59); box-shadow: 0 0 0 1px rgba(255,255,255,.18) inset,
+    0 22px 70px rgba(31,170,89,.45), 0 0 90px rgba(46,166,255,.25); font-size: 2.1rem; font-weight: 800;
+  animation: logoGlow 3.2s ease-in-out infinite; }
+@keyframes logoGlow { 0%,100% { box-shadow: 0 0 0 1px rgba(255,255,255,.18) inset, 0 22px 70px rgba(31,170,89,.45), 0 0 90px rgba(46,166,255,.25); }
+  50% { box-shadow: 0 0 0 1px rgba(255,255,255,.28) inset, 0 22px 80px rgba(31,170,89,.6), 0 0 130px rgba(46,166,255,.4); } }
+.rl-stage.finale .rl-logo { display: grid; animation: logoPop .7s var(--ease-spring) both, logoGlow 3.2s 1s ease-in-out infinite; }
+.rl-logo::after { content: ""; position: absolute; inset: -14px; border-radius: 30px; border: 2px solid rgba(255,255,255,.22);
+  animation: ringPulse 2.4s ease-out infinite; }
+@keyframes ringPulse { 0% { transform: scale(.9); opacity: .8; } 100% { transform: scale(1.5); opacity: 0; } }
+@keyframes logoPop { 0% { opacity: 0; transform: scale(.3) rotate(-14deg); } 70% { transform: scale(1.1) rotate(3deg); } 100% { opacity: 1; transform: none; } }
+/* rising sparkles */
+.rl-spark { position: absolute; left: 50%; bottom: 30%; width: 5px; height: 5px; border-radius: 50%; z-index: 2;
+  background: rgba(255,255,255,.85); box-shadow: 0 0 8px rgba(140,220,255,.9); pointer-events: none;
+  animation: sparkUp 3s linear infinite; }
+@keyframes sparkUp { 0% { transform: translate(0, 0) scale(.5); opacity: 0; }
+  18% { opacity: .95; }
+  100% { transform: translate(var(--sx, 0px), var(--sy, -160px)) scale(1); opacity: 0; } }
+.rl-finale-sub { display: none; font-size: .8rem; font-weight: 650; letter-spacing: .04em; color: #b9c6d4; }
+.rl-stage.finale .rl-finale-sub { display: block; animation: subIn .8s .35s var(--ease-apple) both; }
+@keyframes subIn { 0% { opacity: 0; transform: translateY(14px); letter-spacing: .18em; }
+  100% { opacity: 1; transform: none; letter-spacing: .04em; } }
+.rl-replay { display: none; margin-top: 10px; padding: 11px 26px; border-radius: 999px; border: 1px solid rgba(255,255,255,.25);
+  background: rgba(255,255,255,.1); color: #fff; font-weight: 750; font-size: .84rem; cursor: pointer; font-family: inherit;
+  transition: background .25s, transform .25s; }
+.rl-stage.finale .rl-replay { display: inline-block; animation: rlIn .5s .6s var(--ease-apple) both; }
+.rl-replay:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
+
+/* ---------- phone cinema choreography ---------- */
+.phone-stage.cinema { position: relative; z-index: 2; }
+/* hero copy fades out → the phone glides to the CENTER of the hero.
+   The exact offset is measured in JS (--cinema-dx); 0 is the safe default
+   for single-column layouts where the phone is already centered. */
+.phone.cinema { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(var(--cinema-dx, 0px)) scale(1.02) !important; animation: none !important;
+  transition: transform 1.1s cubic-bezier(.3,.73,.3,1); }
+.phone.finale { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(var(--cinema-dx, 0px)) scale(1.02) !important; animation: none !important;
+  transition: transform 1.1s cubic-bezier(.3,.73,.3,1); }
+
+/* center-stage finale: hero copy fades and slides to center */
+.hero-copy { transition: opacity .6s var(--ease-apple), transform .7s var(--ease-apple); }
+.hero.cinema .hero-copy { opacity: 0; transform: translateY(26px) scale(.96); pointer-events: none; }
+.hero-finale-head { opacity: 0; transform: translateY(18px); transition: opacity .55s var(--ease-apple), transform .6s var(--ease-apple);
+  position: absolute; left: 50%; top: 50%; translate: -50% -50%; z-index: 5; text-align: center; pointer-events: none; width: min(92%, 560px); }
+.hero.cinema .hero-finale-head { opacity: 1; transform: none; pointer-events: auto; }
+.hero-finale-head h2 { font-size: clamp(1.7rem, 4.6vw, 3rem); margin: 0 0 10px; letter-spacing: -.03em; line-height: 1.12; }
+.hero-finale-head h2 .grad { background: linear-gradient(120deg, var(--green-strong), var(--green) 55%, #6fe0a0);
+  -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero-finale-head p { color: var(--text-dim); margin: 0 0 18px; }
+
+/* oversized clickable CTA in the finale */
+.cta-big.finale-cta { padding: 18px 34px; font-size: 1.08rem; border-radius: 999px; position: relative; }
+.cta-big.finale-cta::after { content: ""; position: absolute; inset: -3px; border-radius: 999px; border: 2px solid var(--green);
+  opacity: 0; animation: ctaPulse 1.8s ease-out infinite; }
+@keyframes ctaPulse { 0% { opacity: .7; transform: scale(1); } 100% { opacity: 0; transform: scale(1.12); } }
+.cta-big.finale-cta:hover { transform: translateY(-2px) scale(1.02); }
+.cta-big.finale-cta svg { width: 22px; height: 22px; }
+
+/* replay pill under the hero CTA */
+.hero-replay { display: inline-flex; align-items: center; gap: 7px; margin-top: 16px; padding: 8px 16px; border-radius: 999px;
+  border: 1px solid var(--border); background: color-mix(in srgb, var(--surface) 55%, transparent); color: var(--text-dim);
+  font: inherit; font-size: .8rem; font-weight: 700; cursor: pointer; transition: color .2s, border-color .2s, background .2s; }
+.hero-replay:hover { color: var(--text); border-color: var(--green); background: color-mix(in srgb, var(--green) 8%, transparent); }
+
+/* ---------- responsive ---------- */
+@media (max-width: 1150px) {
+  .phone.cinema { translate: 16% 0; scale: .92; }
+  .tg-explorer { right: -18px; }
+}
+@media (max-width: 860px) {
+  .phone.cinema, .phone.finale { transform: none !important; translate: 0 0; scale: 1; }
+  .tg-explorer { right: 6px; top: 12%; width: 210px; }
+  .rl-img { height: 130px; }
+  .hero-finale-head { position: static; translate: 0 0; margin: 8px auto 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tg-explorer, .rl-tile, .fx-cursor .fx-hold, .drop-target-glow { transition: none !important; animation: none !important; }
+}
+
+/* ============================================================
+   POLISH PASS (later rules win) — magnifier with a real lens,
+   real-Telegram channel posts, richer calendar, icon polish
+   ============================================================ */
+
+/* --- magnifier: absolute lens wrapper (JS pins it to the clock's exact
+   position); a zoomed clock tick sits inside the lens, glass ring +
+   handle drawn on top --- */
+.ios-mag-wrap { position: absolute; left: 50%; top: 46%; width: 200px; height: 200px;
+  translate: -50% -50%; z-index: 3; pointer-events: none;
+  transform: translate(130px, 130px) scale(.15) rotate(16deg); opacity: 0; }
+.ios-spot.grow .ios-mag-wrap { animation: magSpringIn .95s cubic-bezier(.2,1.35,.35,1) .15s both; }
+.ios-clock-zoom { position: absolute; inset: 26px; border-radius: 50%; overflow: hidden;
+  display: grid; place-items: center; background: rgba(255,255,255,.05); }
+.ios-clock-zoom span { font-size: 2.55rem; font-weight: 700; letter-spacing: -.02em;
+  font-variant-numeric: tabular-nums; color: #fff;
+  text-shadow: 0 2px 18px rgba(0,0,0,.4); transform: scale(1.08); }
+.ios-mag { position: static; width: 100%; height: 100%;
+  color: rgba(255,255,255,.45); filter: drop-shadow(0 4px 10px rgba(0,0,0,.25)); }
+.ios-mag circle { fill: none; stroke: currentColor; stroke-width: 2.2; }
+
+/* --- channel: real Telegram photo post (caption overlaid on the image) --- */
+.chan-msg { position: relative; box-shadow: 0 4px 16px rgba(0,0,0,.25); }
+.chan-post-img { height: 170px; }
+.chan-post-img .chan-from { position: absolute; top: 8px; left: 10px; z-index: 2;
+  padding: 3px 8px; border-radius: 8px; background: rgba(14,22,33,.62);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); margin: 0; }
+.chan-post-img .chan-post-cap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+  margin: 0; padding: 26px 12px 7px; font-size: .82rem; line-height: 1.4;
+  background: linear-gradient(180deg, transparent, rgba(10,16,24,.78) 55%); }
+.cp-clock { position: absolute; right: 10px; bottom: 8px; z-index: 3; width: 15px; height: 15px; color: #fff; opacity: 0;
+  transition: opacity .3s; display: none; }
+.cp-clock svg { width: 100%; height: 100%; }
+.chan-msg.loading .cp-clock { display: block; opacity: .9; animation: cpPulse 1s ease-in-out infinite; }
+@keyframes cpPulse { 50% { opacity: .35; } }
+.rx svg { width: 12px; height: 12px; }
+.rx { gap: 4px; padding: 3px 8px; border-radius: 999px; background: rgba(255,255,255,.06); }
+
+/* --- calendar: month title row, roomier grid --- */
+.cal-title { padding: 10px 16px 0; font-size: .8rem; color: #e8edf2; }
+
+/* --- iOS status icons --- */
+.ios-sig { display: inline-flex; gap: 4px; align-items: center; }
+.ios-sig svg { width: 13px; height: 13px; }

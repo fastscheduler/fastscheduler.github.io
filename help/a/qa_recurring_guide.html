@@ -46,7 +46,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "How to Automate Recurring Posts in Telegram (Daily Digests, Weekly Roundups)", "description": "Recurring rules done right: every supported interval, expiry behavior, combining recurrences with signatures, and real channel patterns that run", "articleBody": "Anything your channel repeats should never be scheduled by hand twice. Recurring rules encode the pattern once — “daily at 9:00”, “every Monday 18:30”, “every 6 hours” — and the bot keeps generating posts on time, forever (or until the rule expires). Creating a rule 1. Tap 🔄 Recurring Messages in the bot (or send /recurring ) and follow the flow. 2. Compose the message — text, media, the works — exactly like a normal post. 3. Pick the pattern: daily, weekly (with weekday picker), or custom interval. 4. Set the time in the channel's time zone and confirm. The rule's future posts expand in the Calendar like any others, and the rule itself is listed with your recurring messages — so there is always a truthful picture of what will publish. Expiry — the part people forget On Free , the single recurring rule runs for 365 days , then expires with a notice — create a new rule to continue. It is the anti-zombie mechanism: dead rules can't silently post forever. Premium rules never expire, and you can run unlimited rules — one per content type is the usual pattern. Patterns that work in real channels Daily digest — a template message (“Top 3 of the day”) with the signature carrying credit; edit the rule weekly, not daily. Weekly roundup — Monday 9:00 rule; combine with the calendar to dodge holidays. Scheduled reminders — every-6-hours service posts for community managers; Premium's unlimited rules shine here. Editing and stopping Rules are editable — change text, time, or pattern, and future instances follow. Pause or delete when a campaign ends. Deleting a rule never deletes already-posted messages. Why did my recurring rule stop working? On Free, rules expire after 365 days and you get an expiry notice — create a new rule to continue. Premium rules never expire. Also check the sender bot is still admin — a failed delivery stops the chain. Can two rules post at the same time? Yes, and they will — in the order created. If they are too close together, Telegram may throttle the burst; space rules by a few minutes.", "articleSection": "Scheduling Messages", "author": {"@id": "https://fastscheduler.github.io/#organization"}, "publisher": {"@id": "https://fastscheduler.github.io/#organization"}, "mainEntityOfPage": "https://fastscheduler.github.io/help/a/qa_recurring_guide.html", "datePublished": "2026-10-04", "dateModified": "2026-10-04", "isPartOf": {"@id": "https://fastscheduler.github.io/#website"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Fast Scheduler", "item": "https://fastscheduler.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Help Center", "item": "https://fastscheduler.github.io/help.html"}, {"@type": "ListItem", "position": 3, "name": "Scheduling Messages", "item": "https://fastscheduler.github.io/help/c/scheduling.html"}, {"@type": "ListItem", "position": 4, "name": "How to Automate Recurring Posts in Telegram (Daily Digests, Weekly Roundups)", "item": "https://fastscheduler.github.io/help/a/qa_recurring_guide.html"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why did my recurring rule stop working?", "acceptedAnswer": {"@type": "Answer", "text": "On Free, rules expire after 365 days and you get an expiry notice — create a new rule to continue. Premium rules never expire. Also check the sender bot is still admin — a failed delivery stops the chain."}}, {"@type": "Question", "name": "Can two rules post at the same time?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and they will — in the order created. If they are too close together, Telegram may throttle the burst; space rules by a few minutes."}}]}</script>
-<link rel="stylesheet" href="../../styles/main.css?v=20261025b4">
+<link rel="stylesheet" href="../../styles/main.css?v=20261026c4">
 <link rel="stylesheet" href="../../styles/hotkeys-modal.css?v=20261006a1">
 <style>.hc-card {
   background: var(--surface);
@@ -136,7 +136,7 @@
 
 .hc-cta-t b { display: block; font-size: 1rem; letter-spacing: -.01em; }
 
-.hc-cta-t span { color: var(--text-dim); font-size: .88rem; }
+.hc-cta-t span { color: rgba(255, 255, 255, .92); font-size: .88rem; }
 
 .hc-cta .btn { flex: none; }
 
@@ -869,15 +869,15 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
   </div>
 </footer>
 <script src="../../scripts/theme.js?v=20260930a1"></script>
-<script src="../../scripts/settings.js?v=20261026c2"></script>
+<script src="../../scripts/settings.js?v=20261026c4"></script>
 <script src="../../scripts/ru-content.js?v=20261004b2"></script>
 
-<script src="../../scripts/ru-chrome.js?v=20261026c2"></script><script src="../../scripts/lang.js?v=20261026c2"></script>
+<script src="../../scripts/ru-chrome.js?v=20261026c4"></script><script src="../../scripts/lang.js?v=20261026c4"></script>
 <script src="../../scripts/hotkeys-modal.js?v=20261006a1"></script>
 <script src="../../scripts/help-ai.js?v=20261022a1"></script>
-<script src="../../scripts/help-search.js?v=20261026c2"></script>
+<script src="../../scripts/help-search.js?v=20261026c4"></script>
 <script src="../../scripts/hotkeys.js?v=20261005d1"></script>
-<script src="../../scripts/scroll-jump.js?v=20261026c2"></script>
+<script src="../../scripts/scroll-jump.js?v=20261026c4"></script>
 <script src="../../scripts/article-nav.js?v=20260930a2"></script>
 <script src="../../scripts/site-footer.js?v=20261018g2"></script>
 </body>

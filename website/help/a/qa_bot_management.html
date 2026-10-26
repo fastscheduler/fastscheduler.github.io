@@ -46,7 +46,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "How to Manage Your Sender Bots: Rotate, Rename, and Keep Them Healthy", "description": "Day-to-day sender bot management: checking status, rotating a compromised token, renaming the public face of your bot, one-bot-per-channel hygiene, and", "articleBody": "Your sender bot is the public face of every post, so a little hygiene goes a long way. Everything below lives in Sender Bots (or /bots ) in Fast Scheduler. Check status before you check anything else The bots screen shows each bot's connection state and which channels it serves. If a send ever fails, this is the first screen: a bot showing disconnected means a revoked token or a BotFather change — fix it there, not in the schedule. Rotating a token (the right way) 1. @BotFather → /mybots → your bot → Revoke current token . 2. Copy the new token. 3. Fast Scheduler → Bots → 🔁 Replace Token under the bot → paste. The swap is instant and schedules keep running. Do it the other way around (revoke and forget) and every send fails until you paste the new token. Rename = rebrand A bot's public name and avatar come from @BotFather ( /setname , /setuserpic ) — change them there and every future post instantly carries the new look. No re-pairing needed; Fast Scheduler stores the token, not the cosmetics. Fleet hygiene One bot per channel keeps branding separate and failures isolated (Premium: up to 3 bots). Remove bots you no longer use — removal deletes the token from storage; the bot account itself lives on in BotFather. After any BotFather change, glance at the status screen once — 10 seconds that prevent a silent failed-post day. Can I use the same bot for multiple channels? Yes — a sender bot can serve several of your channels. Separate bots per channel remain the cleaner default for branding and debugging. I deleted a bot in BotFather. What happens in Fast Scheduler? Its sends fail with an invalid-token error and the status screen shows it disconnected. Remove the bot from Sender Bots and pair a replacement.", "articleSection": "Sender Bots", "author": {"@id": "https://fastscheduler.github.io/#organization"}, "publisher": {"@id": "https://fastscheduler.github.io/#organization"}, "mainEntityOfPage": "https://fastscheduler.github.io/help/a/qa_bot_management.html", "datePublished": "2026-10-04", "dateModified": "2026-10-04", "isPartOf": {"@id": "https://fastscheduler.github.io/#website"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Fast Scheduler", "item": "https://fastscheduler.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Help Center", "item": "https://fastscheduler.github.io/help.html"}, {"@type": "ListItem", "position": 3, "name": "Sender Bots", "item": "https://fastscheduler.github.io/help/c/bots.html"}, {"@type": "ListItem", "position": 4, "name": "How to Manage Your Sender Bots: Rotate, Rename, and Keep Them Healthy", "item": "https://fastscheduler.github.io/help/a/qa_bot_management.html"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I use the same bot for multiple channels?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — a sender bot can serve several of your channels. Separate bots per channel remain the cleaner default for branding and debugging."}}, {"@type": "Question", "name": "I deleted a bot in BotFather. What happens in Fast Scheduler?", "acceptedAnswer": {"@type": "Answer", "text": "Its sends fail with an invalid-token error and the status screen shows it disconnected. Remove the bot from Sender Bots and pair a replacement."}}]}</script>
-<link rel="stylesheet" href="../../styles/main.css?v=20261025b4">
+<link rel="stylesheet" href="../../styles/main.css?v=20261026c4">
 <link rel="stylesheet" href="../../styles/hotkeys-modal.css?v=20261006a1">
 <style>.hc-card {
   background: var(--surface);
@@ -136,7 +136,7 @@
 
 .hc-cta-t b { display: block; font-size: 1rem; letter-spacing: -.01em; }
 
-.hc-cta-t span { color: var(--text-dim); font-size: .88rem; }
+.hc-cta-t span { color: rgba(255, 255, 255, .92); font-size: .88rem; }
 
 .hc-cta .btn { flex: none; }
 
@@ -869,15 +869,15 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
   </div>
 </footer>
 <script src="../../scripts/theme.js?v=20260930a1"></script>
-<script src="../../scripts/settings.js?v=20261026c2"></script>
+<script src="../../scripts/settings.js?v=20261026c4"></script>
 <script src="../../scripts/ru-content.js?v=20261004b2"></script>
 
-<script src="../../scripts/ru-chrome.js?v=20261026c2"></script><script src="../../scripts/lang.js?v=20261026c2"></script>
+<script src="../../scripts/ru-chrome.js?v=20261026c4"></script><script src="../../scripts/lang.js?v=20261026c4"></script>
 <script src="../../scripts/hotkeys-modal.js?v=20261006a1"></script>
 <script src="../../scripts/help-ai.js?v=20261022a1"></script>
-<script src="../../scripts/help-search.js?v=20261026c2"></script>
+<script src="../../scripts/help-search.js?v=20261026c4"></script>
 <script src="../../scripts/hotkeys.js?v=20261005d1"></script>
-<script src="../../scripts/scroll-jump.js?v=20261026c2"></script>
+<script src="../../scripts/scroll-jump.js?v=20261026c4"></script>
 <script src="../../scripts/article-nav.js?v=20260930a2"></script>
 <script src="../../scripts/site-footer.js?v=20261018g2"></script>
 </body>

@@ -1851,3 +1851,29 @@ html.jump-idle .jump-menu { display: none; }
   .jump-menu [data-jump="pageup"],
   .jump-menu [data-jump="pagedown"] { display: none; }
 }
+
+/* ---------- translated bodies keep their line breaks ----------
+   lang.js marks the block instead of rewriting the text node, so switching
+   back to English restores the original sentence verbatim. */
+[data-fs-nl] { white-space: pre-line; }
+
+/* ---------- "Still stuck?" band: legible on the brand green ----------
+   White on #4bb98b measured ~2.3:1, so the subtitle washed out and the
+   heading read as a smudge. Deep green + white clears 6:1, and the button
+   flips to a solid white pill with dark green text. The doubled class beats
+   the page-level rule without !important. */
+.hc-cta.hc-cta {
+  background: #0d6b48;
+  color: #fff;
+  border-color: transparent;
+}
+.hc-cta.hc-cta b, .hc-cta.hc-cta strong { color: #fff; }
+.hc-cta.hc-cta p,
+.hc-cta.hc-cta .hc-cta-t span { color: rgba(255, 255, 255, .95); opacity: 1; }
+.hc-cta.hc-cta .btn,
+.hc-cta.hc-cta .btn:hover {
+  background: #fff; color: #0b5a3d; border: 1px solid transparent;
+}
+.hc-cta.hc-cta .btn:hover { background: #eafff5; color: #08422d; }
+.hc-cta.hc-cta .btn svg,
+.hc-cta.hc-cta .hc-ic svg { color: currentColor; }

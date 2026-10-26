@@ -46,7 +46,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Why Did My Post Go Out at the Wrong Time? Time Zones, Explained Simply", "description": "Scheduled posts firing an hour early or late? The channel time zone, daylight-saving shifts, and per-channel settings explain 99% of these surprises.", "articleBody": "“I scheduled 9:00 and it posted at 12:00” — before anything else, check which clock the number 9:00 belongs to. Fast Scheduler schedules posts in a time zone , and the zone that matters is the one set for the channel, not the one on your watch. How the bot decides “when 9:00 is” Every channel has a time zone setting . When you schedule 9:00, the bot stores 9:00 in the channel's zone and converts it to UTC behind the scenes. If the zone is UTC (the default) and you are in, say, New York, your 9:00 local is 13:00 or 14:00 UTC — the post will “move” by 4–5 hours from your point of view. Set the channel's zone to your own city once, and from then on 9:00 means your 9:00, every time. The daylight-saving trap Zones that observe DST shift twice a year. A post scheduled for 9:00 in March may land at 8:00 or 10:00 relative to the wall clock in November, depending on how the zone handles the shift. If your audience notices a one-hour drift in spring or autumn, that is why. The schedule did not break — the zone's definition of 9:00 changed. Reschedule around the shift week if you post at a strict local hour. Checking and fixing the zone Open Time Zone in the bot (or /timezone ), pick the channel, and choose the city/zone that matches your audience — the list uses proper zone names like Europe/Berlin , so DST is handled by the same rules your phone uses. Upcoming posts keep their stored times; only new schedules use the new zone, so double-check anything queued for the same day you change it. Quick diagnosis table Off by a whole number of hours, constant — wrong zone set for the channel. Off by one hour, only in spring/autumn — DST shift; the zone is working correctly. Off by a few minutes, growing over weeks — rare; send /feedback with two examples. Does changing the time zone move my scheduled posts? No. Existing posts keep their stored times; the new zone applies to schedules you create afterwards. Verify the next few posts after changing the zone. What time zone should I pick for an international audience? Pick the zone of your largest audience segment, or UTC if you think in UTC. Consistency matters more than the specific zone.", "articleSection": "Time Zone", "author": {"@id": "https://fastscheduler.github.io/#organization"}, "publisher": {"@id": "https://fastscheduler.github.io/#organization"}, "mainEntityOfPage": "https://fastscheduler.github.io/help/a/qa_timezones.html", "datePublished": "2026-10-04", "dateModified": "2026-10-04", "isPartOf": {"@id": "https://fastscheduler.github.io/#website"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Fast Scheduler", "item": "https://fastscheduler.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Help Center", "item": "https://fastscheduler.github.io/help.html"}, {"@type": "ListItem", "position": 3, "name": "Time Zone", "item": "https://fastscheduler.github.io/help/c/timezone.html"}, {"@type": "ListItem", "position": 4, "name": "Why Did My Post Go Out at the Wrong Time? Time Zones, Explained Simply", "item": "https://fastscheduler.github.io/help/a/qa_timezones.html"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does changing the time zone move my scheduled posts?", "acceptedAnswer": {"@type": "Answer", "text": "No. Existing posts keep their stored times; the new zone applies to schedules you create afterwards. Verify the next few posts after changing the zone."}}, {"@type": "Question", "name": "What time zone should I pick for an international audience?", "acceptedAnswer": {"@type": "Answer", "text": "Pick the zone of your largest audience segment, or UTC if you think in UTC. Consistency matters more than the specific zone."}}]}</script>
-<link rel="stylesheet" href="../../styles/main.css?v=20261025b4">
+<link rel="stylesheet" href="../../styles/main.css?v=20261026c4">
 <link rel="stylesheet" href="../../styles/hotkeys-modal.css?v=20261006a1">
 <style>.hc-card {
   background: var(--surface);
@@ -136,7 +136,7 @@
 
 .hc-cta-t b { display: block; font-size: 1rem; letter-spacing: -.01em; }
 
-.hc-cta-t span { color: var(--text-dim); font-size: .88rem; }
+.hc-cta-t span { color: rgba(255, 255, 255, .92); font-size: .88rem; }
 
 .hc-cta .btn { flex: none; }
 
@@ -869,15 +869,15 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
   </div>
 </footer>
 <script src="../../scripts/theme.js?v=20260930a1"></script>
-<script src="../../scripts/settings.js?v=20261026c2"></script>
+<script src="../../scripts/settings.js?v=20261026c4"></script>
 <script src="../../scripts/ru-content.js?v=20261004b2"></script>
 
-<script src="../../scripts/ru-chrome.js?v=20261026c2"></script><script src="../../scripts/lang.js?v=20261026c2"></script>
+<script src="../../scripts/ru-chrome.js?v=20261026c4"></script><script src="../../scripts/lang.js?v=20261026c4"></script>
 <script src="../../scripts/hotkeys-modal.js?v=20261006a1"></script>
 <script src="../../scripts/help-ai.js?v=20261022a1"></script>
-<script src="../../scripts/help-search.js?v=20261026c2"></script>
+<script src="../../scripts/help-search.js?v=20261026c4"></script>
 <script src="../../scripts/hotkeys.js?v=20261005d1"></script>
-<script src="../../scripts/scroll-jump.js?v=20261026c2"></script>
+<script src="../../scripts/scroll-jump.js?v=20261026c4"></script>
 <script src="../../scripts/article-nav.js?v=20260930a2"></script>
 <script src="../../scripts/site-footer.js?v=20261018g2"></script>
 </body>

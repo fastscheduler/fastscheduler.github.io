@@ -46,7 +46,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Why Was My Scheduled Telegram Post Published at the Wrong Time?", "description": "A post set for 9:00 went out at 6:00 or 12:00? The cause is almost always a time-zone mismatch.", "articleBody": "When a scheduled message fires at an unexpected hour, the clock itself is almost never wrong — the time zone used to interpret &ldquo;9:00&rdquo; is. Fast Scheduler resolves every time through two settings, and a mismatch between them explains nearly every &ldquo;wrong time&rdquo; report. The two clocks: user time zone and channel time zone Your user time zone — set once via /timezone and used whenever you type a time into the scheduling conversation. Each channel&rsquo;s own time zone — set per channel, because the audience that reads the channel may live in a different zone than you do. Schedules for that channel are interpreted in the channel&rsquo;s zone. If your user zone says UTC+3 but the channel zone says UTC+0, a message you schedule for 9:00 is stored as 9:00 channel time — and lands six hours earlier than you visually expected. Check both: /timezone for yourself, and the channel settings inside the bot for the channel. Daylight saving time Zones with DST shift by one hour twice a year. Fast Scheduler stores schedules in absolute terms, so a post that crossed a DST boundary can appear to &ldquo;move&rdquo; by an hour. If you live in a DST zone and noticed the shift right after the clocks changed, re-check the channel&rsquo;s zone — picking a zone like Europe/Berlin (which follows DST rules) versus a fixed UTC offset produces different results across the year. Quick diagnosis checklist Off by a round number of hours (3, 4, 6…) → time-zone mismatch; fix the channel time zone or your user zone. Off by exactly one hour right after late March / late October → DST; confirm the zone uses the right convention. AM/PM confusion — schedule with the 24-hour clock (14:00, not 2:00) to remove ambiguity entirely. Around midnight — double-check you scheduled the day you meant; the date picker always shows the resolved local date and time for final confirmation before saving. One more tip: the confirmation screen before saving shows the exact send time. Reading that single line — not the input you typed — is the ground truth for when the post will fire. Does each Telegram channel have its own time zone in Fast Scheduler? Yes. Every channel carries its own time zone, and schedules for that channel are interpreted in the channel zone. Your personal /timezone setting applies to how you enter times while chatting with the bot. How do I change the time zone of a channel? Open the bot, go to the channel settings, and set its time zone there. Existing scheduled messages keep their stored times, so new schedules pick up the change immediately.", "articleSection": "Time Zone", "author": {"@id": "https://fastscheduler.github.io/#organization"}, "publisher": {"@id": "https://fastscheduler.github.io/#organization"}, "mainEntityOfPage": "https://fastscheduler.github.io/help/a/qa_timezone_wrong_time.html", "datePublished": "2026-10-04", "dateModified": "2026-10-04", "isPartOf": {"@id": "https://fastscheduler.github.io/#website"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Fast Scheduler", "item": "https://fastscheduler.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Help Center", "item": "https://fastscheduler.github.io/help.html"}, {"@type": "ListItem", "position": 3, "name": "Time Zone", "item": "https://fastscheduler.github.io/help/c/timezone.html"}, {"@type": "ListItem", "position": 4, "name": "Why Was My Scheduled Telegram Post Published at the Wrong Time?", "item": "https://fastscheduler.github.io/help/a/qa_timezone_wrong_time.html"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does each Telegram channel have its own time zone in Fast Scheduler?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every channel carries its own time zone, and schedules for that channel are interpreted in the channel zone. Your personal /timezone setting applies to how you enter times while chatting with the bot."}}, {"@type": "Question", "name": "How do I change the time zone of a channel?", "acceptedAnswer": {"@type": "Answer", "text": "Open the bot, go to the channel settings, and set its time zone there. Existing scheduled messages keep their stored times, so new schedules pick up the change immediately."}}]}</script>
-<link rel="stylesheet" href="../../styles/main.css?v=20261025b4">
+<link rel="stylesheet" href="../../styles/main.css?v=20261026c4">
 <link rel="stylesheet" href="../../styles/hotkeys-modal.css?v=20261006a1">
 <style>.hc-card {
   background: var(--surface);
@@ -136,7 +136,7 @@
 
 .hc-cta-t b { display: block; font-size: 1rem; letter-spacing: -.01em; }
 
-.hc-cta-t span { color: var(--text-dim); font-size: .88rem; }
+.hc-cta-t span { color: rgba(255, 255, 255, .92); font-size: .88rem; }
 
 .hc-cta .btn { flex: none; }
 
@@ -869,15 +869,15 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
   </div>
 </footer>
 <script src="../../scripts/theme.js?v=20260930a1"></script>
-<script src="../../scripts/settings.js?v=20261026c2"></script>
+<script src="../../scripts/settings.js?v=20261026c4"></script>
 <script src="../../scripts/ru-content.js?v=20261004b2"></script>
 
-<script src="../../scripts/ru-chrome.js?v=20261026c2"></script><script src="../../scripts/lang.js?v=20261026c2"></script>
+<script src="../../scripts/ru-chrome.js?v=20261026c4"></script><script src="../../scripts/lang.js?v=20261026c4"></script>
 <script src="../../scripts/hotkeys-modal.js?v=20261006a1"></script>
 <script src="../../scripts/help-ai.js?v=20261022a1"></script>
-<script src="../../scripts/help-search.js?v=20261026c2"></script>
+<script src="../../scripts/help-search.js?v=20261026c4"></script>
 <script src="../../scripts/hotkeys.js?v=20261005d1"></script>
-<script src="../../scripts/scroll-jump.js?v=20261026c2"></script>
+<script src="../../scripts/scroll-jump.js?v=20261026c4"></script>
 <script src="../../scripts/article-nav.js?v=20260930a2"></script>
 <script src="../../scripts/site-footer.js?v=20261018g2"></script>
 </body>

@@ -46,7 +46,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Do You Need a Sender Bot to Schedule Posts? (Yes — Here Is Why)", "description": "Fast Scheduler requires a sender bot for every channel: what it does, why the main bot cannot post alone, how to create one in 60 seconds, and security", "articleBody": "Short answer: yes — a sender bot is required for scheduling and sending. The scheduling menu stays locked until every connected channel has one paired. Here is the why and the 60-second setup. Why the main bot cannot just post itself Two reasons, one technical and one yours: Architecture: channel posts are delivered by a bot account with admin rights. If @FastSchedulerBot delivered them, every message on every customer channel would carry the same name — and one bot hitting rate limits would slow thousands of channels. Your brand: with your own sender bot, posts appear from your bot's name and avatar. Subscribers see your brand, and your bot's admin rights are yours to revoke. Creating one in 60 seconds 1. Open @BotFather → /newbot → pick a name and username. 2. Copy the token (digits, colon, letters — the whole string). 3. In Fast Scheduler: Bots → ➕ Add Another Bot , pick the channel when asked, paste the token. Pairing is automatic. 4. Make the new bot an admin of the channel with Post Messages permission — or let Fast Scheduler promote it automatically when it can. Scheduling unlocks instantly. The in-bot wizard walks these exact steps and checks each one, so you cannot get the order wrong. Security, briefly Your token is stored encrypted and used only to deliver your posts. You can rotate it any time via @BotFather ( /revoke ) and update it in the bot — or remove the bot entirely, which deletes the token from Fast Scheduler's storage. If a token leaks, revoke it in BotFather first; a revoked token is dead everywhere. One bot per channel (Premium: 3×3) Free pairs 1 sender bot with 1 channel; Premium allows 3 bots across 3 channels. Multiple channels can share one sender bot, but the clean setup — one bot per channel — keeps branding separate and failures isolated. Can one sender bot serve two channels? Yes, a sender bot can be paired with multiple channels you own. One bot per channel is still recommended for cleaner branding and simpler troubleshooting. What happens if I remove the sender bot from the channel? Scheduling locks (no sender paired for that channel) and queued sends fail until you re-add the bot as admin. The schedules themselves stay saved. Is my bot token safe with Fast Scheduler? Tokens are stored encrypted and never displayed in full after saving. Rotating the token in @BotFather instantly invalidates the old one everywhere.", "articleSection": "Sender Bots", "author": {"@id": "https://fastscheduler.github.io/#organization"}, "publisher": {"@id": "https://fastscheduler.github.io/#organization"}, "mainEntityOfPage": "https://fastscheduler.github.io/help/a/qa_sender_bot_required.html", "datePublished": "2026-10-04", "dateModified": "2026-10-04", "isPartOf": {"@id": "https://fastscheduler.github.io/#website"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Fast Scheduler", "item": "https://fastscheduler.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Help Center", "item": "https://fastscheduler.github.io/help.html"}, {"@type": "ListItem", "position": 3, "name": "Sender Bots", "item": "https://fastscheduler.github.io/help/c/bots.html"}, {"@type": "ListItem", "position": 4, "name": "Do You Need a Sender Bot to Schedule Posts? (Yes — Here Is Why)", "item": "https://fastscheduler.github.io/help/a/qa_sender_bot_required.html"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can one sender bot serve two channels?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, a sender bot can be paired with multiple channels you own. One bot per channel is still recommended for cleaner branding and simpler troubleshooting."}}, {"@type": "Question", "name": "What happens if I remove the sender bot from the channel?", "acceptedAnswer": {"@type": "Answer", "text": "Scheduling locks (no sender paired for that channel) and queued sends fail until you re-add the bot as admin. The schedules themselves stay saved."}}, {"@type": "Question", "name": "Is my bot token safe with Fast Scheduler?", "acceptedAnswer": {"@type": "Answer", "text": "Tokens are stored encrypted and never displayed in full after saving. Rotating the token in @BotFather instantly invalidates the old one everywhere."}}]}</script>
-<link rel="stylesheet" href="../../styles/main.css?v=20261025b4">
+<link rel="stylesheet" href="../../styles/main.css?v=20261026c4">
 <link rel="stylesheet" href="../../styles/hotkeys-modal.css?v=20261006a1">
 <style>.hc-card {
   background: var(--surface);
@@ -136,7 +136,7 @@
 
 .hc-cta-t b { display: block; font-size: 1rem; letter-spacing: -.01em; }
 
-.hc-cta-t span { color: var(--text-dim); font-size: .88rem; }
+.hc-cta-t span { color: rgba(255, 255, 255, .92); font-size: .88rem; }
 
 .hc-cta .btn { flex: none; }
 
@@ -870,15 +870,15 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
   </div>
 </footer>
 <script src="../../scripts/theme.js?v=20260930a1"></script>
-<script src="../../scripts/settings.js?v=20261026c2"></script>
+<script src="../../scripts/settings.js?v=20261026c4"></script>
 <script src="../../scripts/ru-content.js?v=20261004b2"></script>
 
-<script src="../../scripts/ru-chrome.js?v=20261026c2"></script><script src="../../scripts/lang.js?v=20261026c2"></script>
+<script src="../../scripts/ru-chrome.js?v=20261026c4"></script><script src="../../scripts/lang.js?v=20261026c4"></script>
 <script src="../../scripts/hotkeys-modal.js?v=20261006a1"></script>
 <script src="../../scripts/help-ai.js?v=20261022a1"></script>
-<script src="../../scripts/help-search.js?v=20261026c2"></script>
+<script src="../../scripts/help-search.js?v=20261026c4"></script>
 <script src="../../scripts/hotkeys.js?v=20261005d1"></script>
-<script src="../../scripts/scroll-jump.js?v=20261026c2"></script>
+<script src="../../scripts/scroll-jump.js?v=20261026c4"></script>
 <script src="../../scripts/article-nav.js?v=20260930a2"></script>
 <script src="../../scripts/site-footer.js?v=20261018g2"></script>
 </body>

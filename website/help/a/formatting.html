@@ -46,7 +46,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Formatting & Inline Buttons", "description": "Every markup the bot understands, plus the full inline-button syntax with rows, colours and validation rules.", "articleBody": "The scheduler keeps Telegram formatting and adds one extra layer: inline buttons written as text. Text formatting **bold** → bold __italic__ → italic ___underline___ → underline ~~strikethrough~~ → strikethrough ||spoiler|| → hidden until tapped `code` → inline code ```block``` → code block [label](https://example.com) → link Nesting works the way Telegram expects: bold inside a link label, italic inside bold, and so on. Unclosed markup is sent literally, so check the preview. Inline buttons There is no button builder in the bot; buttons are typed into the post text, usually at the end. One button &lt;inline&gt;Read more&lt;link=\"https://example.com\"&gt; Several buttons, one per row &lt;inline&gt;Catalog&lt;link=\"https://shop.com\"&gt; &lt;inline&gt;Support&lt;link=\"https://support.com\"&gt; Side by side with -- &lt;inline&gt;Buy&lt;link=\"https://shop.com\"&gt; -- &lt;inline&gt;Info&lt;link=\"https://info.com\"&gt; New row with // &lt;inline&gt;Catalog&lt;link=\"https://shop.com\"&gt; // &lt;inline&gt;Support&lt;link=\"https://support.com\"&gt; Colours Add style=\"success\" (green), style=\"primary\" (blue) or style=\"danger\" (red): &lt;inline&gt;Buy&lt;link=\"https://shop.com\" style=\"success\"&gt; Unknown styles are ignored. Rules and validation Use full URLs with https:// . Keep labels to a few words so they fit on phones. Each button tag must have a &lt;link=\"…\"&gt; . The bot validates the markup before scheduling and refuses to save a post with broken button syntax, so you fix it instead of publishing raw tags. Markup lines are removed from the published text; buttons appear below it. Callback buttons Buttons that trigger bot actions use a &lt;callback=\"data\"&gt; attribute. They only make sense for bots that handle that callback; for channel posts a link button is the safe choice. What is not supported Premium/custom emoji, Telegram date formatting, Articles and checklists. Standard emoji and all the markup above are fine. Related: Text Posts , Supported Content Types , Captions &amp; Formatting . Why were my buttons rejected? The validator found broken syntax — a missing link, an unclosed tag, or a link without https://. Fix the line it points to and schedule again. Do buttons work in albums? Yes, buttons attach to the album as a whole, like the caption.", "articleSection": "Scheduling Messages", "author": {"@id": "https://fastscheduler.github.io/#organization"}, "publisher": {"@id": "https://fastscheduler.github.io/#organization"}, "mainEntityOfPage": "https://fastscheduler.github.io/help/a/formatting.html", "datePublished": "2026-10-04", "dateModified": "2026-10-04", "isPartOf": {"@id": "https://fastscheduler.github.io/#website"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Fast Scheduler", "item": "https://fastscheduler.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Help Center", "item": "https://fastscheduler.github.io/help.html"}, {"@type": "ListItem", "position": 3, "name": "Scheduling Messages", "item": "https://fastscheduler.github.io/help/c/scheduling.html"}, {"@type": "ListItem", "position": 4, "name": "Formatting & Inline Buttons", "item": "https://fastscheduler.github.io/help/a/formatting.html"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why were my buttons rejected?", "acceptedAnswer": {"@type": "Answer", "text": "The validator found broken syntax — a missing link, an unclosed tag, or a link without https://. Fix the line it points to and schedule again."}}, {"@type": "Question", "name": "Do buttons work in albums?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, buttons attach to the album as a whole, like the caption."}}]}</script>
-<link rel="stylesheet" href="../../styles/main.css?v=20261025b4">
+<link rel="stylesheet" href="../../styles/main.css?v=20261026c4">
 <link rel="stylesheet" href="../../styles/hotkeys-modal.css?v=20261006a1">
 <style>.hc-card {
   background: var(--surface);
@@ -136,7 +136,7 @@
 
 .hc-cta-t b { display: block; font-size: 1rem; letter-spacing: -.01em; }
 
-.hc-cta-t span { color: var(--text-dim); font-size: .88rem; }
+.hc-cta-t span { color: rgba(255, 255, 255, .92); font-size: .88rem; }
 
 .hc-cta .btn { flex: none; }
 
@@ -886,15 +886,15 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
   </div>
 </footer>
 <script src="../../scripts/theme.js?v=20260930a1"></script>
-<script src="../../scripts/settings.js?v=20261026c2"></script>
+<script src="../../scripts/settings.js?v=20261026c4"></script>
 <script src="../../scripts/ru-content.js?v=20261004b2"></script>
 
-<script src="../../scripts/ru-chrome.js?v=20261026c2"></script><script src="../../scripts/lang.js?v=20261026c2"></script>
+<script src="../../scripts/ru-chrome.js?v=20261026c4"></script><script src="../../scripts/lang.js?v=20261026c4"></script>
 <script src="../../scripts/hotkeys-modal.js?v=20261006a1"></script>
 <script src="../../scripts/help-ai.js?v=20261022a1"></script>
-<script src="../../scripts/help-search.js?v=20261026c2"></script>
+<script src="../../scripts/help-search.js?v=20261026c4"></script>
 <script src="../../scripts/hotkeys.js?v=20261005d1"></script>
-<script src="../../scripts/scroll-jump.js?v=20261026c2"></script>
+<script src="../../scripts/scroll-jump.js?v=20261026c4"></script>
 <script src="../../scripts/article-nav.js?v=20260930a2"></script>
 <script src="../../scripts/site-footer.js?v=20261018g2"></script>
 </body>

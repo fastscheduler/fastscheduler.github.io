@@ -46,7 +46,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Find and Delete Duplicate Posts", "description": "Where duplicate posts come from, how to spot them in the list, and how to remove the copies without losing the original.", "articleBody": "Duplicates are two or more queue entries with the same content and time. They are rarely a bug — usually one of four things created them. Where duplicates come from Restoring a backup with \"Add to existing data\". When you send a .fsback file the bot asks for a restore mode. ➕ Add to existing data keeps what is already in the queue and adds the backup's messages next to it, so restoring the same backup twice leaves two of everything. This is the most common cause. Importing the same text, CSV or JSON file twice. Every imported message becomes a new queue entry with a new ID; the importer does not check whether that post is already there. /dub ID . The duplicate command copies a post and schedules it one day later; run it twice and you have two copies. Sending the scheduling text twice. If the bot was waiting for a date and you resend a block, both can be accepted. Reconnecting a channel. Reconnecting normally resumes the existing queue; importing or restoring data on top of it can double entries. How to spot them Open 📋 Message List → Scheduled messages . Entries are listed with their ID and time. Duplicates share text and often differ only by ID or by a minute. The 📅 Calendar shows them stacked on the same day. For a text match, use 🔍 Search : send a distinctive phrase from the post. Results show every message that contains it, including duplicates. See Searching Messages . Delete the copies, keep the original 1. Note the IDs of the entries you want to remove. The original is usually the one with the earliest created/scheduled ID — keep that one. 2. Open /delete → 🗑 Delete by ID . 3. Send the IDs separated by commas, exactly as they appear in the list, e.g. s482913_9, s482913_12 . 4. The bot confirms each deletion. Only the entries you listed are removed. You can also delete one at a time from the list with 🗑 . Prevent them When restoring a backup, choose 🔄 Overwrite existing data unless you deliberately want the two sets side by side. Do not re-import the same backup after restoring it. Check the queue after reconnecting a channel. Use /dub once, then edit the copy instead of duplicating again. If both copies already sent Deleting the queue entry does nothing — the posts are in the channel. Delete the unwanted message in Telegram (you or the sender bot need Delete Messages permission there). Related: Delete Messages , Importing Your Data , Message List . Why did importing create duplicates? The import offered “Add all (keep duplicates)” and that option was chosen. Re-import with “Overwrite existing”, or delete the extra copies by ID. Does /dub create a duplicate at the same time? No. It creates a copy scheduled one day after the original, so both can publish. Delete the copy if you only wanted a template. Can I delete all duplicates at once? Not selectively — Delete All clears everything. Delete by ID is the safe way to remove only the copies.", "articleSection": "Scheduling Messages", "author": {"@id": "https://fastscheduler.github.io/#organization"}, "publisher": {"@id": "https://fastscheduler.github.io/#organization"}, "mainEntityOfPage": "https://fastscheduler.github.io/help/a/duplicates.html", "datePublished": "2026-10-21", "dateModified": "2026-10-21", "isPartOf": {"@id": "https://fastscheduler.github.io/#website"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Fast Scheduler", "item": "https://fastscheduler.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Help Center", "item": "https://fastscheduler.github.io/help.html"}, {"@type": "ListItem", "position": 3, "name": "Scheduling Messages", "item": "https://fastscheduler.github.io/help/c/scheduling.html"}, {"@type": "ListItem", "position": 4, "name": "Find and Delete Duplicate Posts", "item": "https://fastscheduler.github.io/help/a/duplicates.html"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why did importing create duplicates?", "acceptedAnswer": {"@type": "Answer", "text": "The import offered “Add all (keep duplicates)” and that option was chosen. Re-import with “Overwrite existing”, or delete the extra copies by ID."}}, {"@type": "Question", "name": "Does /dub create a duplicate at the same time?", "acceptedAnswer": {"@type": "Answer", "text": "No. It creates a copy scheduled one day after the original, so both can publish. Delete the copy if you only wanted a template."}}, {"@type": "Question", "name": "Can I delete all duplicates at once?", "acceptedAnswer": {"@type": "Answer", "text": "Not selectively — Delete All clears everything. Delete by ID is the safe way to remove only the copies."}}]}</script>
-<link rel="stylesheet" href="../../styles/main.css?v=20261025b4">
+<link rel="stylesheet" href="../../styles/main.css?v=20261026c4">
 <link rel="stylesheet" href="../../styles/hotkeys-modal.css?v=20261006a1">
 <style>.hc-card {
   background: var(--surface);
@@ -136,7 +136,7 @@
 
 .hc-cta-t b { display: block; font-size: 1rem; letter-spacing: -.01em; }
 
-.hc-cta-t span { color: var(--text-dim); font-size: .88rem; }
+.hc-cta-t span { color: rgba(255, 255, 255, .92); font-size: .88rem; }
 
 .hc-cta .btn { flex: none; }
 
@@ -879,15 +879,15 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
   </div>
 </footer>
 <script src="../../scripts/theme.js?v=20260930a1"></script>
-<script src="../../scripts/settings.js?v=20261026c2"></script>
+<script src="../../scripts/settings.js?v=20261026c4"></script>
 <script src="../../scripts/ru-content.js?v=20261004b2"></script>
 
-<script src="../../scripts/ru-chrome.js?v=20261026c2"></script><script src="../../scripts/lang.js?v=20261026c2"></script>
+<script src="../../scripts/ru-chrome.js?v=20261026c4"></script><script src="../../scripts/lang.js?v=20261026c4"></script>
 <script src="../../scripts/hotkeys-modal.js?v=20261006a1"></script>
 <script src="../../scripts/help-ai.js?v=20261022a1"></script>
-<script src="../../scripts/help-search.js?v=20261026c2"></script>
+<script src="../../scripts/help-search.js?v=20261026c4"></script>
 <script src="../../scripts/hotkeys.js?v=20261005d1"></script>
-<script src="../../scripts/scroll-jump.js?v=20261026c2"></script>
+<script src="../../scripts/scroll-jump.js?v=20261026c4"></script>
 <script src="../../scripts/article-nav.js?v=20260930a2"></script>
 <script src="../../scripts/site-footer.js?v=20261018g2"></script>
 </body>

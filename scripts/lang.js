@@ -104,6 +104,11 @@
     'Maybe you meant:': 'Возможно, вы имели в виду:',
     'Still stuck?': 'Не нашли ответ?',
     'Ask in the bot': 'Спросите в боте',
+    /* support strip on the help hub: title and subtitle are separate text
+       nodes, so the sentence needs its own entry — without it the Russian
+       strip read "Не нашли ответ?" above an English sentence */
+    'Ask in Telegram — a human answers every ticket.': 'Спросите в Telegram — на каждый вопрос отвечает человек.',
+    'Ask in Telegram': 'Спросить в Telegram',
     'You mean:': 'Вы имеете в виду:',
     'On this page': 'На этой странице',
     // NOTE: 'Privacy Policy' / 'Refund Policy' intentionally absent here —
@@ -207,42 +212,41 @@
     return '';
   }
 
-  /* Keep <link rel=canonical> / og:url in sync with the visible URL after
-     an instant language switch (history API changes the address bar
-     without reloading, so the tags would otherwise point at the old one.
-     Crawlers fetch the static URLs directly, this is only for correctness
-     of the live document: copy/share actions read these tags. */
-  function syncCanonical(path) {
+  /* Pages with a server-rendered twin (the landing page, its /ru/ copy and
+     404) must switch by NAVIGATING to that twin. Re-translating the loaded
+     document in place could only ever be partial — a /ru/ page never carried
+     the English text to restore — and rewriting the address bar with
+     history.replaceState broke every relative link on the page: on /ru/
+     index.html a bare href="help/" resolves to /ru/help/, which does not
+     exist. Help / blog / legal bodies have no twin (staticLanguageCounterpart
+     returns '' for them); there the chrome is translated in place, which is
+     fully reversible because the document started in English. */
+  var SERVED_RU = (function () {
     try {
-      var abs = location.origin + path;
-      var c = document.querySelector('link[rel="canonical"]');
-      if (c) c.setAttribute('href', abs);
-      var og = document.querySelector('meta[property="og:url"]');
-      if (og) og.setAttribute('content', abs);
-    } catch (e) {}
+      return document.documentElement.getAttribute('lang') === 'ru' ||
+        location.pathname.indexOf('/ru/') === 0 || /\/ru$/.test(location.pathname);
+    } catch (e) { return false; }
+  })();
+
+  function gotoLanguage(lang) {
+    var twin = staticLanguageCounterpart(lang);
+    if (!twin || twin === location.pathname) return false;
+    try {
+      location.assign(twin + (location.search || '') + (location.hash || ''));
+      return true;
+    } catch (e) { return false; }
   }
+
   function set(lang) {
     lang = lang === 'ru' ? 'ru' : 'en';
     try { localStorage.setItem('fs-lang', lang); } catch (e) {}
-    /* Instant switch: translate this document in place (chrome is
-       synchronous; the article-body dictionary streams in a moment later
-       on first use) and move the address bar with the history API — no
-       reload. The /ru/ static copies remain for SEO/direct links; a
-       refresh lands on the equivalent server-rendered page. */
+    /* Complete switch first: land on the page that really is in that
+       language. Only pages without a twin fall through to the in-place path
+       (chrome only; the article bodies stay English by design). */
+    if (gotoLanguage(lang)) return;
     document.documentElement.setAttribute('lang', lang);
     apply(lang);
     try { window.dispatchEvent(new CustomEvent('fs-lang-change', { detail: { lang: lang } })); } catch (e) {}
-    var paired = staticLanguageCounterpart(lang);
-    if (paired && paired !== location.pathname) {
-      var next = paired + (location.search || '') + (location.hash || '');
-      try {
-        history.replaceState({ 'fs-lang': lang }, '', next);
-        syncCanonical(paired);
-      } catch (e) {
-        /* Very old browsers without the history API: classic navigation. */
-        location.replace(next);
-      }
-    }
   }
   function t(key) { return (STR[get()] || STR.en)[key] || STR.en[key] || key; }
 
@@ -593,17 +597,25 @@
   function contentSet(n, val) {
     if (n.nodeValue === val) return;
     contentTouch(n);
-    /* translated bodies carry \n for the paragraph breaks the English page
-       gets from <br>/<p>. Setting nodeValue painted them as spaces, so whole
-       sections collapsed onto one line; turn the newlines into real breaks. */
-    if (val.indexOf('\n') !== -1 && n.parentNode) {
-      var parts = val.split('\n'), frag = document.createDocumentFragment();
-      parts.forEach(function (p, i) {
-        if (i) frag.appendChild(document.createElement('br'));
-        if (p) frag.appendChild(document.createTextNode(p));
-      });
-      n.parentNode.replaceChild(frag, n);
-      return;
+    /* Translated bodies carry \n for the paragraph breaks the English page
+       gets from <br>/<p>. Setting nodeValue alone painted them as spaces, so
+       whole sections collapsed onto one line. Marking the block with
+       data-fs-nl (white-space: pre-line) keeps the breaks WITHOUT replacing
+       the text node — replacing it detached the recorded original, which is
+       why switching back to English left those paragraphs in Russian. */
+    if (val.indexOf('\n') !== -1) {
+      var host = n.parentNode;
+      while (host && host.nodeType === 1 && !/^(p|li|div|td|dd|blockquote|section|article|h[1-6])$/i.test(host.tagName)) {
+        host = host.parentNode;
+      }
+      if (host && host.nodeType === 1) {
+        host.setAttribute('data-fs-nl', '');
+        if (contentOrig) {
+          for (var ri = 0; ri < contentOrig.length; ri++) {
+            if (contentOrig[ri].n === n) { contentOrig[ri].nl = host; break; }
+          }
+        }
+      }
     }
     n.nodeValue = val;
   }
@@ -716,7 +728,12 @@
   function translateContent(ru) {
     if (!ru) {
       if (contentOrig) {
-        contentOrig.forEach(function (rec) { try { rec.n.nodeValue = rec.t; } catch (e) {} });
+        contentOrig.forEach(function (rec) {
+          try { rec.n.nodeValue = rec.t; } catch (e) {}
+          /* drop the pre-line marker too, or the restored English keeps the
+             translated line breaks */
+          if (rec.nl) { try { rec.nl.removeAttribute('data-fs-nl'); } catch (e2) {} }
+        });
         contentOrig = null;
       }
       contentDone = false;
@@ -728,6 +745,12 @@
     contentStarted = true;
     ensureContent(function () {
       if (contentDone) return;
+      /* The body dictionary is a ~400KB lazy download. Switching RU -> EN
+         before it lands used to restore the page and THEN run this callback,
+         which re-translated every body sentence into Russian while the site
+         was in English — the classic "switch back and half the page stays
+         Russian until you reload". Apply only if Russian is still selected. */
+      if (get() !== 'ru') { contentStarted = false; return; }
       contentOrig = [];
       try { applyContent(); } catch (e) {}
       try {
@@ -796,6 +819,13 @@
   function boot() {
     inject();
     var lang = get();
+    /* A stored preference that disagrees with the language the server sent
+       (a /ru/ link opened by an English visitor, or the reverse) used to be
+       applied over the document, which cannot restore text it never held —
+       the page stayed half translated until a manual reload. Send the visitor
+       to the matching twin instead; pages without one keep the in-place
+       chrome translation below. */
+    if ((lang === 'ru') !== SERVED_RU && gotoLanguage(lang)) return;
     document.documentElement.setAttribute('lang', lang);
     apply(lang);
     observeLate();
