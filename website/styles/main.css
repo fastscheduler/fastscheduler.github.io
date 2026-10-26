@@ -1811,3 +1811,43 @@ body.help header.site a.nav-link[href*="help.html"] { display: none !important; 
     max-width: calc(100% - 24px);
   }
 }
+
+/* ---------- settings gear: green acknowledgement, then back to normal ----------
+   The tap used to leave a green ring on the button for as long as it kept
+   focus, which read as "stuck". The gear itself now flashes green with a soft
+   halo and settles back; settings.js also releases pointer focus. */
+@keyframes gearFlash {
+  0%   { color: var(--text); box-shadow: 0 0 0 0 rgba(31,170,89,0); }
+  18%  { color: var(--green-strong);
+         box-shadow: 0 0 0 3px color-mix(in srgb, var(--green) 30%, transparent),
+                     0 0 22px 2px color-mix(in srgb, var(--green) 42%, transparent); }
+  70%  { color: var(--green-strong);
+         box-shadow: 0 0 0 3px color-mix(in srgb, var(--green) 22%, transparent),
+                     0 0 16px 1px color-mix(in srgb, var(--green) 26%, transparent); }
+  100% { color: var(--text); box-shadow: none; }
+}
+.settings-wrap .icon-btn.gear-flash,
+.settings-wrap .icon-btn.gear-flash:hover {
+  animation: gearFlash 1.5s cubic-bezier(.2,.7,.3,1) both;
+  animation-name: gearFlash;
+  color: var(--green-strong);
+}
+html[data-motion="off"] .settings-wrap .icon-btn.gear-flash,
+html[data-fx="off"] .settings-wrap .icon-btn.gear-flash { animation: none; color: var(--green-strong); }
+
+/* ---------- jump FAB: fades away when the page is idle ----------
+   It came back after being removed, so the rule now only applies once the
+   reader has stopped touching the page (scroll-jump.js owns the class). */
+html.jump-idle .jump-fab.show {
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transform: translateX(-50%) translateY(8px);
+  transition-delay: 0s;
+}
+html.jump-idle .jump-menu { display: none; }
+
+/* phones: the jump menu offers the two destinations that matter, not
+   screen-sized hops (the page is a single column there anyway) */
+@media (max-width: 760px) {
+  .jump-menu [data-jump="pageup"],
+  .jump-menu [data-jump="pagedown"] { display: none; }
+}

@@ -202,13 +202,23 @@
     if (k === 'u') { e.preventDefault(); go(Math.max(0, y() - window.innerHeight * 0.9)); setOpen(false); return; }
   });
 
-  /* Always visible once the reader is actually in the page. It used to fade
-     out after ~3s of no scrolling/clicking/typing and fade back on the next
-     event, which read as a broken control: you looked down for it and it was
-     gone. The jump menu is the only route to "go up" / "go to the end" without
-     scrolling, so it stays put on both phones and desktop. */
+  /* The FAB fades out after a few seconds without scrolling, tapping or
+     typing, and comes straight back on the next interaction — the legal pages
+     already behaved like this and the rest of the site looked stuck by
+     comparison. It never hides while its own menu is open or while a field
+     has focus, so it cannot vanish mid-task. */
+  var idleT = null;
+  function goIdle() {
+    if (open) return;
+    var a = document.activeElement;
+    var tag = (a && a.tagName) || '';
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || (a && a.isContentEditable)) return;
+    document.documentElement.classList.add('jump-idle');
+  }
   function awake() {
     document.documentElement.classList.remove('jump-idle');
+    clearTimeout(idleT);
+    idleT = setTimeout(goIdle, 4200);
     tick();
   }
   function tick() { btn.classList.toggle('show', forced || y() > 480); }

@@ -845,9 +845,25 @@ def write_legal():
             see_also = (f'<p class="see-also">See also: <a href="{o1}">{t1}</a> · '
                         f'<a href="{o2}">{t2}</a></p>')
         out_path = os.path.join(LEGAL_DIR, out)
+        page = legal_page(title, html, updated, cta_url, toc_box, toc_side, sheet_html,
+                          card_a, card_b, see_also, doc=out)
+        # The version pill / effective line / changelog used to be stamped by
+        # tools/build_legal_history.py after a build. This function rewrites the
+        # three pages from markdown, so every rebuild silently dropped that
+        # block (it survived on the page someone had hand-stamped last, and
+        # disappeared from the others). Stamp it here, inside the builder, so a
+        # regenerated page can never lose its version history again.
+        try:
+            import sys as _sys
+            _root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            if _root not in _sys.path:
+                _sys.path.insert(0, _root)
+            from tools.legal_versions import stamp_html as _stamp
+            page = _stamp(page, doc.replace('.md', ''))
+        except Exception as _exc:  # never fail a build over a decorative block
+            print(f"[warn] version block not stamped for {doc}: {_exc}")
         with open(out_path, 'w', encoding='utf-8') as f:
-            f.write(legal_page(title, html, updated, cta_url, toc_box, toc_side, sheet_html,
-                               card_a, card_b, see_also, doc=out))
+            f.write(page)
         print(f"[ok] wrote {out_path}")
 
 

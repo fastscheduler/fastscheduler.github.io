@@ -101,7 +101,9 @@
   function buildLegalIndex() {
     if (legalBlocks) return legalBlocks;
     legalBlocks = [];
-    var doc = document.querySelector('main.legal .doc, main .doc, article.doc');
+    var doc = (SCOPE === 'legal')
+      ? document.querySelector('main.legal .doc, main .doc, article.doc')
+      : pageRoot();
     if (!doc) return legalBlocks;
     var seen = {};
     var heading = '';
@@ -310,9 +312,140 @@
     return out + esc(raw.slice(i));
   }
 
+  /* ---------------- legal: highlight every match + walk them ----------------
+     The popover used to list the sections and jump to one of them, then blur
+     the field, so nobody could see what else matched or keep going. Now every
+     occurrence inside a matching block is wrapped in <mark>, the head shows
+     how many there are, and Enter / the arrows step through them while the
+     input keeps focus. */
+  var LG = { q: '', marks: [], i: -1, blocks: [] };
+
+  (function findCss() {
+    if (SCOPE !== 'legal' || document.getElementById('fs-find-css')) return;
+    var st = document.createElement('style');
+    st.id = 'fs-find-css';
+    st.textContent =
+      'mark.fs-find{background:color-mix(in srgb,#ffd84d 55%,transparent);color:inherit;' +
+      'border-radius:3px;padding:0 1px;scroll-margin-top:120px;' +
+      'transition:background .18s ease,box-shadow .18s ease}' +
+      'mark.fs-find-cur{background:var(--green-strong,#1faa59);color:#fff;' +
+      'box-shadow:0 0 0 2px color-mix(in srgb,var(--green) 45%,transparent)}' +
+      '.ns-hit-all{background:color-mix(in srgb,var(--green) 7%,transparent)}' +
+      '.ns-head{display:flex;align-items:center;gap:10px;justify-content:space-between}' +
+      '.ns-nav{display:inline-flex;gap:4px;flex:none}' +
+      '.ns-navbtn{width:26px;height:26px;border-radius:8px;border:1px solid var(--border);' +
+      'background:var(--surface-2);color:var(--text);font:inherit;font-size:.78rem;' +
+      'font-weight:700;cursor:pointer;display:grid;place-items:center;padding:0}' +
+      '.ns-navbtn:hover{border-color:var(--green);color:var(--green-strong)}';
+    document.head.appendChild(st);
+  })();
+
+  /* One content root per page type: the same find engine drives the legal
+     clauses, a blog article and the open help view. */
+  function pageRoot() {
+    if (SCOPE === 'legal') return document.querySelector('article.doc') || document.body;
+    if (SCOPE === 'blog') return document.querySelector('.blog-doc, .blog-art, article.doc, main') || document.body;
+    if (SCOPE === 'help') return document.querySelector('section.view:not([hidden]) .hc-art, section.view:not([hidden])') || document.body;
+    return document.body;
+  }
+  function legalRoot() { return pageRoot(); }
+  function clearLegalMarks() {
+    var root = legalRoot();
+    Array.prototype.forEach.call(root.querySelectorAll('mark.fs-find'), function (m) {
+      var p = m.parentNode; if (!p) return;
+      p.replaceChild(document.createTextNode(m.textContent), m);
+      p.normalize();
+    });
+    Array.prototype.forEach.call(root.querySelectorAll('.ns-hit, .ns-hit-all'), function (b) {
+      b.classList.remove('ns-hit', 'ns-hit-all');
+    });
+    LG.marks = []; LG.i = -1; LG.blocks = [];
+  }
+
+  function termRegex(q) {
+    var words = String(q).toLowerCase().split(/\s+/).filter(function (w) { return w.length > 1 && !LEGAL_STOP[w]; });
+    if (!words.length) words = String(q).toLowerCase().split(/\s+/).filter(function (w) { return w.length > 1; });
+    if (!words.length) return null;
+    var src = words.map(function (w) { return esc(w).replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); })
+      .sort(function (a, b) { return b.length - a.length; }).join('|');
+    return new RegExp('(' + src + ')', 'gi');
+  }
+
+  function markNode(node, re) {
+    var text = node.nodeValue;
+    re.lastIndex = 0;
+    if (!re.test(text)) return 0;
+    re.lastIndex = 0;
+    var pieces = text.split(new RegExp(re.source, 'gi'));
+    if (pieces.length < 2) return 0;
+    var frag = document.createDocumentFragment(), made = 0;
+    pieces.forEach(function (piece, i) {
+      if (!piece) return;
+      if (i % 2) {
+        var mk = document.createElement('mark');
+        mk.className = 'fs-find';
+        mk.textContent = piece;
+        frag.appendChild(mk);
+        made++;
+      } else {
+        frag.appendChild(document.createTextNode(piece));
+      }
+    });
+    if (!made) return 0;
+    node.parentNode.replaceChild(frag, node);
+    return made;
+  }
+
+  function markBlock(el, re) {
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+    var list = [], n;
+    while ((n = walker.nextNode())) {
+      var p = n.parentNode, skip = false;
+      while (p && p !== el) {
+        var t = (p.tagName || '').toLowerCase();
+        if (t === 'code' || t === 'pre' || t === 'script' || t === 'style' || t === 'mark') { skip = true; break; }
+        p = p.parentNode;
+      }
+      if (!skip && n.nodeValue && /\S/.test(n.nodeValue)) list.push(n);
+    }
+    var count = 0;
+    list.forEach(function (node) { count += markNode(node, re); });
+    return count;
+  }
+
+  function focusMark(i, smooth) {
+    if (!LG.marks.length) return;
+    var n = LG.marks.length;
+    LG.i = ((i % n) + n) % n;
+    Array.prototype.forEach.call(LG.marks, function (m, k) { m.classList.toggle('fs-find-cur', k === LG.i); });
+    var m = LG.marks[LG.i];
+    try { m.scrollIntoView({ behavior: smooth === false ? 'auto' : 'smooth', block: 'center' }); }
+    catch (e) { m.scrollIntoView(); }
+    /* the block flash lives on the enclosing block, the mark carries the ring */
+    var b = m.closest('p, li, td, h2, h3, dt, dd');
+    if (b) {
+      Array.prototype.forEach.call(legalRoot().querySelectorAll('.ns-hit'), function (x) { x.classList.remove('ns-hit'); });
+      b.classList.add('ns-hit');
+    }
+    paintHead();
+  }
+
+  function paintHead() {
+    var head = pop && pop.querySelector('.ns-head');
+    if (!head) return;
+    var total = LG.marks.length;
+    var label = head.querySelector('.ns-head-t');
+    if (!label) return;
+    label.textContent = total
+      ? (LG.i >= 0 ? (LG.i + 1) + ' / ' + nMatches(total) : nMatches(total))
+      : label.textContent;
+  }
+
   var rows = [], cur = -1;
   function paintLegal(q) {
     var hits = legalSearch(q);
+    clearLegalMarks();
+    LG.q = q;
     if (!hits.length) {
       pop.innerHTML = '<div class="ns-empty">' + esc(T.noMatch) + '</div>';
       pop.hidden = false;
@@ -320,7 +453,18 @@
       rows = []; cur = -1;
       return;
     }
-    var head = '<div class="ns-head">' + hits.length + ' ' + esc(T.matches) + '</div>';
+    /* highlight every occurrence inside every matching block, in place */
+    var re = termRegex(q);
+    if (re) {
+      hits.forEach(function (h) {
+        if (markBlock(h.block.el, re)) h.block.el.classList.add('ns-hit-all');
+      });
+      LG.marks = Array.prototype.slice.call(legalRoot().querySelectorAll('mark.fs-find'));
+    }
+    var total = LG.marks.length || hits.length;
+    var head = '<div class="ns-head"><span class="ns-head-t">' + esc(nMatches(total)) + '</span>' +
+      '<span class="ns-nav"><button type="button" class="ns-navbtn" data-find="prev" aria-label="' + esc(T.prevMatch || 'Previous match') + '">\u2191</button>' +
+      '<button type="button" class="ns-navbtn" data-find="next" aria-label="' + esc(T.nextMatch || 'Next match') + '">\u2193</button></span></div>';
     pop.innerHTML = head + hits.slice(0, 8).map(function (h, i) {
       var b = h.block;
       var label = (b.tag === 'h2' || b.tag === 'h3') ? '' : b.heading;
@@ -335,11 +479,152 @@
     if (rows[0]) rows[0].classList.add('cur');
     rows.forEach(function (r) {
       r.addEventListener('mousedown', function (e) { e.preventDefault(); });
-      r.addEventListener('click', function () {
+      r.addEventListener('click', function (e) {
+        e.preventDefault();
         var i = parseInt(r.getAttribute('data-i'), 10);
-        if (hits[i]) { jumpTo(hits[i].block.el); closePop(); input.blur(); }
+        var hit = hits[i];
+        if (!hit) return;
+        /* land on the first occurrence in that block and keep the field
+           focused so Enter can carry on from there */
+        var k = -1;
+        LG.marks.forEach(function (m, idx) {
+          if (k === -1 && hit.block.el.contains(m)) k = idx;
+        });
+        if (k >= 0) focusMark(k);
+        else jumpTo(hit.block.el);
+        try { input.focus({ preventScroll: true }); } catch (err) {}
       });
     });
+    var prev = pop.querySelector('[data-find="prev"]');
+    var next = pop.querySelector('[data-find="next"]');
+    if (prev) { prev.addEventListener('mousedown', function (e) { e.preventDefault(); }); prev.addEventListener('click', function () { focusMark(LG.i < 0 ? 0 : LG.i - 1); }); }
+    if (next) { next.addEventListener('mousedown', function (e) { e.preventDefault(); }); next.addEventListener('click', function () { focusMark(LG.i < 0 ? 0 : LG.i + 1); }); }
+  }
+
+  /* ---------------- Articles / On this page ----------------
+     One bar, two targets. "Articles" searches the hub or the blog index;
+     "On this page" finds text inside the document you are reading, exactly
+     like the legal pages: every hit highlighted, a live count, Enter/arrows
+     to step through them. */
+  var MODE = 'articles';
+  var ML = IS_RU
+    ? { a: 'Статьи', p: 'На странице', n: 'совпадений', one: 'совпадение', none: 'На этой странице ничего не найдено', in: 'Где искать' }
+    : { a: 'Articles', p: 'On this page', n: 'matches', one: 'match', none: 'Nothing on this page matches', in: 'Search in' };
+  function nMatches(n) { return n + ' ' + (n === 1 ? ML.one : ML.n); }
+
+  function buildModeSeg() {
+    var seg = document.createElement('div');
+    seg.className = 'ns-mode';
+    seg.setAttribute('role', 'group');
+    seg.setAttribute('aria-label', ML.in);
+    seg.innerHTML = '<button type="button" data-mode="articles" aria-pressed="true">' + esc(ML.a) +
+      '</button><button type="button" data-mode="page" aria-pressed="false">' + esc(ML.p) + '</button>';
+    return seg;
+  }
+
+  /* highlight + count inside the current document */
+  function pageFind(q) {
+    legalBlocks = null;                 /* the help hub swaps views in place */
+    clearLegalMarks();
+    if (!q || q.length < 2) return 0;
+    var re = termRegex(q);
+    if (!re) return 0;
+    var hits = legalSearch(q);
+    hits.forEach(function (h) {
+      if (markBlock(h.block.el, re)) h.block.el.classList.add('ns-hit-all');
+    });
+    LG.marks = Array.prototype.slice.call(legalRoot().querySelectorAll('mark.fs-find'));
+    LG.i = -1;
+    return LG.marks.length;
+  }
+
+  function setMode(m, seg, inputEl) {
+    MODE = m === 'page' ? 'page' : 'articles';
+    if (seg) {
+      Array.prototype.forEach.call(seg.querySelectorAll('[data-mode]'), function (b) {
+        b.setAttribute('aria-pressed', b.getAttribute('data-mode') === MODE ? 'true' : 'false');
+      });
+    }
+    if (inputEl) {
+      inputEl.placeholder = MODE === 'page' ? ML.p + '…' : (SCOPE === 'blog' ? (T.blogPh || '') : (T.helpPh || ''));
+      inputEl.value = '';
+    }
+    clearLegalMarks();
+    closePop();
+  }
+
+  (function modeCss() {
+    if (document.getElementById('fs-mode-css')) return;
+    var st = document.createElement('style');
+    st.id = 'fs-mode-css';
+    st.textContent =
+      '.ns-mode{display:inline-flex;align-items:center;flex:none;gap:2px;padding:2px;' +
+      'border-radius:9px;background:var(--surface-2);border:1px solid var(--border)}' +
+      '.ns-mode button{font:inherit;font-size:.72rem;font-weight:700;line-height:1;' +
+      'padding:5px 8px;border-radius:7px;border:0;background:transparent;color:var(--text-dim);cursor:pointer;white-space:nowrap}' +
+      '.ns-mode button[aria-pressed="true"]{background:var(--surface);color:var(--green-strong);box-shadow:var(--shadow-sm)}' +
+      '.ns-mode button:hover{color:var(--green-strong)}' +
+      '.fs-find-count{margin:8px 2px 0;font-size:.78rem;font-weight:700;color:var(--text-dim)}' +
+      '.hc-search .ns-mode{margin:8px 0 0;order:9}' +
+      '@media (max-width:700px){.nav-search .ns-mode{display:none}}';
+    document.head.appendChild(st);
+  })();
+
+  /* blog: the switch lives in the navbar bar */
+  if (SCOPE === 'blog' && form && input) {
+    var bseg = buildModeSeg();
+    form.insertBefore(bseg, form.querySelector('.ns-ic'));
+    bseg.addEventListener('click', function (ev) {
+      var b = ev.target.closest && ev.target.closest('[data-mode]');
+      if (!b) return;
+      setMode(b.getAttribute('data-mode'), bseg, input);
+      try { input.focus({ preventScroll: true }); } catch (e) {}
+    });
+  }
+
+  /* help: the switch rides under the hub's own field; in page mode the hub's
+     routing is bypassed (document-level capture runs before its handlers) */
+  if (SCOPE === 'help') {
+    var hIn = document.getElementById('hcSearch'),
+        hIn2 = document.getElementById('hcSearchH');
+    var hHost = hIn && hIn.closest('.hc-search');
+    if (hHost) {
+      var hseg = buildModeSeg();
+      hHost.appendChild(hseg);
+      var chip = document.createElement('div');
+      chip.className = 'fs-find-count';
+      chip.hidden = true;
+      hHost.parentNode.insertBefore(chip, hHost.nextSibling);
+      hseg.addEventListener('click', function (ev) {
+        var b = ev.target.closest && ev.target.closest('[data-mode]');
+        if (!b) return;
+        setMode(b.getAttribute('data-mode'), hseg, hIn);
+        chip.hidden = true;
+        try { hIn.focus({ preventScroll: true }); } catch (e) {}
+      });
+      document.addEventListener('input', function (ev) {
+        if (MODE !== 'page' || (ev.target !== hIn && ev.target !== hIn2)) return;
+        ev.stopPropagation();
+        var q = ev.target.value.trim();
+        var n = pageFind(q);
+        chip.hidden = !q;
+        chip.textContent = n ? nMatches(n) : ML.none;
+      }, true);
+      document.addEventListener('keydown', function (ev) {
+        if (MODE !== 'page' || (ev.target !== hIn && ev.target !== hIn2)) return;
+        if (ev.key === 'Enter') {
+          ev.preventDefault();
+          ev.stopPropagation();
+          if (!LG.marks.length) pageFind(ev.target.value.trim());
+          if (LG.marks.length) focusMark(LG.i + 1);
+          chip.hidden = false;
+          chip.textContent = LG.marks.length ? ((LG.i + 1) + ' / ' + nMatches(LG.marks.length)) : ML.none;
+        } else if (ev.key === 'Escape') {
+          clearLegalMarks();
+          chip.hidden = true;
+        }
+      }, true);
+    }
   }
 
   /* ---------------- blog suggestions ---------------- */
@@ -365,7 +650,7 @@
     if (!input || !pop) return;
     var q = input.value.trim();
     if (q.length < 2) { closePop(); return; }
-    if (SCOPE === 'legal') paintLegal(q);
+    if (SCOPE === 'legal' || MODE === 'page') paintLegal(q);
     else if (SCOPE === 'blog') paintBlog(q);
     else closePop();
   }
@@ -374,9 +659,15 @@
     if (!input) return;
     var q = input.value.trim();
     if (!q) return;
+    if (MODE === 'page') {
+      update();
+      if (LG.marks.length) focusMark(0);
+      return;
+    }
     if (SCOPE === 'legal') {
-      var hits = legalSearch(q);
-      if (hits.length) { jumpTo(hits[0].block.el); closePop(); return; }
+      /* stay in the field: the popover keeps the count and the arrows live */
+      update();
+      if (LG.marks.length) focusMark(0);
       return;
     }
     var hash = encodeURIComponent(q.slice(0, 160)).replace(/%20/g, '+');
@@ -412,10 +703,24 @@
       }
       if (e.key === 'Enter') {
         e.preventDefault();
-        if (rows.length && cur > -1 && SCOPE === 'legal') {
-          var i = parseInt(rows[cur].getAttribute('data-i'), 10);
-          var hits = legalSearch(input.value.trim());
-          if (hits[i]) { jumpTo(hits[i].block.el); closePop(); input.blur(); }
+        if (SCOPE === 'legal' || MODE === 'page') {
+          /* Enter walks the matches: first press lands on the highlighted
+             row, every press after that steps to the next occurrence. The
+             field keeps focus the whole time, so it can be repeated. */
+          if (LG.marks.length && LG.i >= 0) { focusMark(LG.i + 1); return; }
+          if (rows.length && cur > -1) {
+            var i = parseInt(rows[cur].getAttribute('data-i'), 10);
+            var hits = legalSearch(input.value.trim());
+            var hit = hits[i];
+            var k = -1;
+            if (hit) {
+              LG.marks.forEach(function (m, idx) {
+                if (k === -1 && hit.block.el.contains(m)) k = idx;
+              });
+              if (k >= 0) focusMark(k); else jumpTo(hit.block.el);
+            }
+            return;
+          }
           return;
         }
         if (SCOPE === 'blog' && rows.length && cur > -1 && rows[cur].getAttribute('href')) {

@@ -33,10 +33,10 @@
 
 /* ---------- outgoing photo album (matches Telegram's 2-col grid) ---------- */
 .upl-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-top: 6px;
-  width: 218px; }   /* explicit width: 1fr collapses to 0 inside a shrink-to-fit bubble */
+  width: 218px; max-width: 100%; box-sizing: border-box; }   /* explicit width: 1fr collapses to 0 inside a shrink-to-fit bubble */
 /* same cell metrics as .upl-bar: the upload bar converts into this album with
    a plain node swap that is pixel-identical — nothing disappears, nothing pops */
-.upl-thumb { width: 100%; height: 104px; border-radius: 8px; background-size: cover; background-position: center; }
+.upl-thumb { position: relative; box-sizing: border-box; width: 100%; height: 104px; border-radius: 8px; background-size: cover; background-position: center; }
 .upl-thumb.in { transition: opacity .35s var(--ease-apple), transform .45s var(--ease-spring); opacity: 1; transform: none; }
 .upl-name { display: none; }
 
@@ -108,7 +108,7 @@
   background-position: center; opacity: .5; box-shadow: 0 6px 18px rgba(0,0,0,.45); pointer-events: none; }
 
 /* uploading bar animation, Telegram-style */
-.upl-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-top: 6px; width: 218px; }
+.upl-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-top: 6px; width: 218px; max-width: 100%; box-sizing: border-box; }
 .upl-cell { height: 104px; border-radius: 8px; background-size: cover; background-position: center; position: relative; overflow: hidden; }
 .upl-cell .upl-fill { position: absolute; left: 0; right: 0; bottom: 0; height: 0%;
   /* the darkening wash used to hug the very bottom edge, reading as a stray
@@ -544,14 +544,24 @@ html[data-fx="off"] .phone-glare::before, html[data-motion="off"] .phone-glare::
 /* cinematic brand title overlay, shown ONLY during the finale. It must be
    inert (invisible + unpaintable) during every other scene: leftover letters
    used to bleed through the roulette screen when a replay re-entered cinema */
-.hero-cine { position: absolute; left: 50%; top: 50%; translate: -50% -50%; z-index: 6;
-  display: none; flex-direction: column; align-items: center; gap: 18px; text-align: center;
-  width: min(94%, 640px); pointer-events: none;
+/* The hero had no positioning context, so both finale overlays (this one and
+   .hero-finale-head) were absolutely positioned against the page instead of
+   the hero: the title landed wherever the document happened to be, painting
+   over the phone and leaving a hole where the hero should be. */
+.hero { position: relative; }
+.hero-cine { position: fixed; inset: 0; z-index: 70;
+  display: none; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
+  text-align: center; padding: 24px; pointer-events: none;
   opacity: 0; visibility: hidden; transition: opacity .5s var(--ease-apple), visibility 0s .5s; }
 /* the overlay exists ONLY while the finale has it on (.cine-on is added by the
    finale beat and removed at teardown / reset): every other scene — roulette,
    channel, a replay mid-flight — can never paint the title again */
 .hero-cine.cine-on { display: flex; }
+/* its own scrim: the title is written while the device drops away, and on
+   phones the two used to overlap (title straight across the Telegram header) */
+.hero-cine::before { content: ""; position: absolute; z-index: -1; inset: 0;
+  pointer-events: none;
+  background: radial-gradient(64% 58% at 50% 50%, rgba(11,18,27,.96) 0%, rgba(11,18,27,.88) 52%, rgba(11,18,27,.55) 78%, rgba(11,18,27,.28) 100%); }
 .hero.cinema .hero-cine.cine-on { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity .5s var(--ease-apple); }
 /* the brand is empty until the finale writes it — never show an empty box */
 .hero-cine .cine-brand:empty { display: none; }
@@ -559,6 +569,9 @@ html[data-fx="off"] .phone-glare::before, html[data-motion="off"] .phone-glare::
 .hero.cinema .hero-cine.done .cine-line { opacity: 1; transition: opacity .7s var(--ease-apple); }
 /* when the film hands back to the page, the title fades with everything else */
 .hero:not(.cinema) .hero-cine { opacity: 0; visibility: hidden; pointer-events: none; }
+/* once the film hands the frame back, the title has no reason to stay in the
+   DOM: a leftover copy sat under the returning headline */
+.hero.cinema.hero-back .hero-cine { display: none; }
 .hero-finale-head { opacity: 0; transform: translateY(18px); transition: opacity .55s var(--ease-apple), transform .6s var(--ease-apple);
   position: absolute; left: 50%; top: 50%; translate: -50% -50%; z-index: 5; text-align: center; pointer-events: none; width: min(92%, 560px); }
 .hero.cinema.hero-back .hero-finale-head { opacity: 1; transform: none; pointer-events: auto; }

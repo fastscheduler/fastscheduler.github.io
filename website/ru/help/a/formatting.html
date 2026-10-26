@@ -847,67 +847,67 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
   <p style="margin:0 0 18px;font-size:.92rem"><a href="https://fastscheduler.github.io/help/a/formatting.html" hreflang="en" lang="en">Читать на английском</a></p>
   <article class="doc">
     <h1>Форматирование и инлайн-кнопки</h1>
-    <div class="hc-body">В сообщениях можно использовать форматирование в стиле Telegram markdown:
-
-<code>**жирный**</code> — <b>жирный</b>
-<code>__курсив__</code> — <i>курсив</i>
-<code>___подчёркнутый___</code> — <u>подчёркнутый</u>
-<code>~~зачёркнутый~~</code> — <s>зачёркнутый</s>
-<code>||спойлер||</code> — <tg-spoiler>спойлер</tg-spoiler>
-<code>`код`</code> — <code>строчный код</code>
-<code>```блок```</code> — блок кода
-<code>[текст](url)</code> — <a href="https://example.com">текстовая ссылка</a>
-
-<b>Внимание:</b> URL в тексте автоматически не становятся кликабельными в отправленных сообщениях. Для кликабельных ссылок используйте инлайн-кнопки.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━
-<b>Инлайн-кнопки — полное руководство</b>
-━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Добавляйте кликабельные кнопки в конец любого поста.
-
-<b>Базовый синтаксис</b>
-<code>&lt;inline&gt;Текст кнопки&lt;link=&quot;https://url.com&quot;&gt;</code>
-
-<b>Несколько кнопок (каждая на своей строке)</b>
-<code>&lt;inline&gt;Купить&lt;link=&quot;https://shop.com&quot;&gt;
-&lt;inline&gt;Подробнее&lt;link=&quot;https://info.com&quot;&gt;</code>
-
-<b>Рядом с помощью --</b>
-<code>&lt;inline&gt;Купить&lt;link=&quot;shop.com&quot;&gt; -- &lt;inline&gt;Инфо&lt;link=&quot;info.com&quot;&gt;</code>
-Результат: [Купить] [Инфо] (одна строка)
-
-<b>Новая строка с //</b>
-<code>&lt;inline&gt;Строка1&lt;link=&quot;a.com&quot;&gt; // &lt;inline&gt;Строка2&lt;link=&quot;b.com&quot;&gt;</code>
-Результат: [Строка1]
- [Строка2]
-
-<b>Полный пример раскладки</b>
-<code>&lt;inline&gt;A&lt;link=&quot;a.com&quot;&gt; -- &lt;inline&gt;B&lt;link=&quot;b.com&quot;&gt; // &lt;inline&gt;C&lt;link=&quot;c.com&quot;&gt; -- &lt;inline&gt;D&lt;link=&quot;d.com&quot;&gt;</code>
-Результат:
-[A] [B]
-[C] [D]
-
-<b>Важно:</b>
-• Используйте полные URL с <code>https://</code>
-• Текст кнопки ограничен ~64 символами
-• Максимум 8 кнопок (4 строки × 2 колонки)
-• Кнопки появляются ПОД текстом сообщения
-
-<b>Примеры</b>
-• Кнопка-ссылка: <code>&lt;inline&gt;На сайт&lt;link=&quot;https://example.com&quot;&gt;</code>
-• Рядом: <code>&lt;inline&gt;Нравится&lt;link=&quot;t.me/yourbot?start=like&quot;&gt; -- &lt;inline&gt;Не нравится&lt;link=&quot;t.me/yourbot?start=dislike&quot;&gt;</code>
-
-<b>Callback-кнопки</b>
-<code>&lt;inline&gt;Название действия&lt;callback=&quot;action_data&quot;&gt;</code>
-
-Callback-кнопки отправляют данные боту вместо открытия ссылки — используйте их для действий, подтверждений и интерактивных постов. Они следуют тем же правилам раскладки (<code>--</code> для одной строки, <code>//</code> для новой) и могут смешиваться с кнопками-ссылками.
-
-<b>Важно:</b>
-• Текст кнопки ограничен ~64 символами
-• Callback-данные ограничены 64 байтами
-• Максимум 8 кнопок (4 строки × 2 колонки)
-• Некорректная разметка <code>&lt;inline&gt;</code> покажет предупреждение — исправьте синтаксис и отправьте снова
+    <div class="hc-body">В сообщениях можно использовать форматирование в стиле Telegram markdown:<br>
+<br>
+<code>**жирный**</code> — <b>жирный</b><br>
+<code>__курсив__</code> — <i>курсив</i><br>
+<code>___подчёркнутый___</code> — <u>подчёркнутый</u><br>
+<code>~~зачёркнутый~~</code> — <s>зачёркнутый</s><br>
+<code>||спойлер||</code> — <tg-spoiler>спойлер</tg-spoiler><br>
+<code>`код`</code> — <code>строчный код</code><br>
+<code>```блок```</code> — блок кода<br>
+<code>[текст](url)</code> — <a href="https://example.com">текстовая ссылка</a><br>
+<br>
+<b>Внимание:</b> URL в тексте автоматически не становятся кликабельными в отправленных сообщениях. Для кликабельных ссылок используйте инлайн-кнопки.<br>
+<br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━<br>
+<b>Инлайн-кнопки — полное руководство</b><br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━<br>
+<br>
+Добавляйте кликабельные кнопки в конец любого поста.<br>
+<br>
+<b>Базовый синтаксис</b><br>
+<code>&lt;inline&gt;Текст кнопки&lt;link=&quot;https://url.com&quot;&gt;</code><br>
+<br>
+<b>Несколько кнопок (каждая на своей строке)</b><br>
+<code>&lt;inline&gt;Купить&lt;link=&quot;https://shop.com&quot;&gt;<br>
+&lt;inline&gt;Подробнее&lt;link=&quot;https://info.com&quot;&gt;</code><br>
+<br>
+<b>Рядом с помощью --</b><br>
+<code>&lt;inline&gt;Купить&lt;link=&quot;shop.com&quot;&gt; -- &lt;inline&gt;Инфо&lt;link=&quot;info.com&quot;&gt;</code><br>
+Результат: [Купить] [Инфо] (одна строка)<br>
+<br>
+<b>Новая строка с //</b><br>
+<code>&lt;inline&gt;Строка1&lt;link=&quot;a.com&quot;&gt; // &lt;inline&gt;Строка2&lt;link=&quot;b.com&quot;&gt;</code><br>
+Результат: [Строка1]<br>
+ [Строка2]<br>
+<br>
+<b>Полный пример раскладки</b><br>
+<code>&lt;inline&gt;A&lt;link=&quot;a.com&quot;&gt; -- &lt;inline&gt;B&lt;link=&quot;b.com&quot;&gt; // &lt;inline&gt;C&lt;link=&quot;c.com&quot;&gt; -- &lt;inline&gt;D&lt;link=&quot;d.com&quot;&gt;</code><br>
+Результат:<br>
+[A] [B]<br>
+[C] [D]<br>
+<br>
+<b>Важно:</b><br>
+• Используйте полные URL с <code>https://</code><br>
+• Текст кнопки ограничен ~64 символами<br>
+• Максимум 8 кнопок (4 строки × 2 колонки)<br>
+• Кнопки появляются ПОД текстом сообщения<br>
+<br>
+<b>Примеры</b><br>
+• Кнопка-ссылка: <code>&lt;inline&gt;На сайт&lt;link=&quot;https://example.com&quot;&gt;</code><br>
+• Рядом: <code>&lt;inline&gt;Нравится&lt;link=&quot;t.me/yourbot?start=like&quot;&gt; -- &lt;inline&gt;Не нравится&lt;link=&quot;t.me/yourbot?start=dislike&quot;&gt;</code><br>
+<br>
+<b>Callback-кнопки</b><br>
+<code>&lt;inline&gt;Название действия&lt;callback=&quot;action_data&quot;&gt;</code><br>
+<br>
+Callback-кнопки отправляют данные боту вместо открытия ссылки — используйте их для действий, подтверждений и интерактивных постов. Они следуют тем же правилам раскладки (<code>--</code> для одной строки, <code>//</code> для новой) и могут смешиваться с кнопками-ссылками.<br>
+<br>
+<b>Важно:</b><br>
+• Текст кнопки ограничен ~64 символами<br>
+• Callback-данные ограничены 64 байтами<br>
+• Максимум 8 кнопок (4 строки × 2 колонки)<br>
+• Некорректная разметка <code>&lt;inline&gt;</code> покажет предупреждение — исправьте синтаксис и отправьте снова<br>
 • Callback-кнопки работают, только если бот узнаёт данные — перед планированием вас предупредят, если обработчика нет</div>
     <div class="hc-faq"><h2>Частые вопросы</h2>
 <details><summary>Какие варианты форматирования поддерживаются?</summary><div class="hc-fa"><p>Поддерживаются: жирный, курсив, подчёркивание, зачёркивание, код, pre, спойлер (||текст||), инлайн-ссылки и инлайн-кнопки через [text=link="url"]. HTML-теги тоже работают, если предпочитаете их.</p><div class="hc-chips" style="margin-top:10px"><a class="hc-chip" href="content_types.html"><span>Поддерживаемые типы контента (Free)</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><a class="hc-chip" href="media_types.html"><span>Типы выбора медиа</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div></details>
@@ -931,15 +931,15 @@ Callback-кнопки отправляют данные боту вместо о
   </div>
 </footer>
 <script src="../../../scripts/theme.js?v=20260930a1"></script>
-<script src="../../../scripts/settings.js?v=20261005d1"></script>
+<script src="../../../scripts/settings.js?v=20261026c2"></script>
 <script src="../../../scripts/ru-content.js?v=20261004b2"></script>
 
-<script src="../../../scripts/ru-chrome.js?v=20261010a2"></script><script src="../../../scripts/lang.js?v=20261010a2"></script>
+<script src="../../../scripts/ru-chrome.js?v=20261026c2"></script><script src="../../../scripts/lang.js?v=20261026c2"></script>
 <script src="../../../scripts/hotkeys-modal.js?v=20261006a1"></script>
 <script src="../../../scripts/help-ai.js?v=20261022a1"></script>
-<script src="../../../scripts/help-search.js?v=20261025b2"></script>
+<script src="../../../scripts/help-search.js?v=20261026c2"></script>
 <script src="../../../scripts/hotkeys.js?v=20261005d1"></script>
-<script src="../../../scripts/scroll-jump.js?v=20261005a1"></script>
+<script src="../../../scripts/scroll-jump.js?v=20261026c2"></script>
 <script src="../../../scripts/article-nav.js?v=20260930a2"></script>
 <script src="../../../scripts/site-footer.js?v=20261018g2"></script>
 </body>

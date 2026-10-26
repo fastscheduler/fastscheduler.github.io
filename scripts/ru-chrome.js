@@ -25,6 +25,37 @@
       desc: 'Fast Scheduler — бесплатный Telegram-бот: планирование и публикация постов канала, аналитика. Планируйте неделю контента в одном чате и публикуйте от своего бота.'
     },
     MAP: {
+      // landing: batch + steps blocks that were added in English only, and the
+      // step-1 sentence that used to be half-translated (the lone <i>your</i>
+      // fixup produced "ваши 9:00" inside an otherwise English paragraph)
+      'Paste a batch. Queue a batch.': 'Вставьте пакет. Получите очередь.',
+      'One message. Your whole week.': 'Одно сообщение. Целая неделя.',
+      'Write the date, then the post. Leave a blank line and write the next one. That is the whole format.':
+        'Сначала дата, потом текст поста. Пустая строка — и следующее сообщение. Вот и весь формат.',
+      'Open the bot & connect your sender bot': 'Откройте бота и подключите своего бота-отправителя',
+      /* the sentence is split by <b>Post Messages</b> and <i>your</i>, so it is
+         translated segment by segment and the inline tags survive */
+      'Tap Start and connect your own sender bot: the green button adds it to your channel with':
+        'Нажмите Start и подключите своего бота-отправителя: зелёная кнопка добавляет его в канал с правом',
+      'Post Messages': '«Публикация сообщений»',
+      'pre-ticked — the main bot does not need to be an admin. Then pick your timezone so 9:00 always means':
+        'уже отмеченным — главному боту админка не нужна. Затем выберите часовой пояс, чтобы 9:00 означало',
+      'your': 'ваши',
+      'Schedule one post or fifty': 'Запланируйте один пост или пятьдесят',
+      'Send one date with its message — or paste several date + message blocks at once. Review, pick a photo mode, confirm: done.':
+        'Отправьте дату вместе с сообщением — или вставьте сразу несколько блоков «дата + сообщение». Проверьте, выберите режим фото, подтвердите — готово.',
+      'Live your life': 'Живите своей жизнью',
+      'Posts publish themselves — even while you sleep. Stats and reports find you, so you always know what performed.':
+        'Посты публикуются сами — даже пока вы спите. Статистика и отчёты приходят к вам, чтобы вы всегда знали, что сработало.',
+      'No app to install, no dashboard to learn — if you can send a Telegram message, you already know how to use it.':
+        'Не нужно ставить приложение и учить панель — если вы умеете писать в Telegram, вы уже умеете этим пользоваться.',
+      'Fast Scheduler reads your message block by block:':
+        'Fast Scheduler читает сообщение блок за блоком:',
+      'the first line is when': 'первая строка — это когда',
+      ', everything below it is': ', всё ниже — это',
+      'what gets published': 'что будет опубликовано',
+      '. Five blocks in one message create five scheduled posts — and you can send another batch whenever you like.':
+        '. Пять блоков в одном сообщении создают пять отложенных постов — и новый пакет можно отправить в любой момент.',
       // nav (desktop + mobile sheet)
       'Time saved': 'Экономия времени',
       'Features': 'Возможности',
@@ -485,7 +516,8 @@
       ['#blog-q', 'placeholder', 'Search the blog — titles, topics, tools…', 'Поиск по блогу — заголовки, темы, инструменты…'],
       ['#tocBurger', 'aria-label', 'Open contents', 'Открыть содержание'],
       ['#tocSideTab', 'aria-label', 'Hide contents', 'Скрыть содержание'],
-      ['#how .step p i', null, 'your', 'ваши'],
+      ['#hcSearch', 'placeholder', 'Search articles…', 'Поиск по статьям…'],
+      ['#hcSearch', 'aria-label', 'Search help topics', 'Поиск по темам помощи'],
       ['#carPrev', 'aria-label', 'Previous plan', 'Предыдущий тариф'],
       ['#carNext', 'aria-label', 'Next plan', 'Следующий тариф'],
     ]

@@ -47,9 +47,25 @@
       wrap.addEventListener('mouseenter', function () { clearTimeout(closeT); hoverT = setTimeout(openMenu, 70); });
       wrap.addEventListener('mouseleave', function () { clearTimeout(hoverT); closeT = setTimeout(closeMenu, 160); });
     }
+    /* The gear answers the tap itself: it flashes green with a soft glow and
+       settles back to the normal icon colour, and the focus ring (which used
+       to stay green for as long as the button kept focus) is released once
+       the animation is over — but only for pointer clicks, so keyboard users
+       never lose their position. */
     btn.addEventListener('click', function (e) {
       e.stopPropagation(); clearTimeout(hoverT);
       menu.classList.contains('open') ? closeMenu() : openMenu();
+      btn.classList.remove('gear-flash');
+      void btn.offsetWidth;
+      btn.classList.add('gear-flash');
+      clearTimeout(btn._gearT);
+      btn._gearT = setTimeout(function () { btn.classList.remove('gear-flash'); }, 1500);
+    });
+    btn.addEventListener('pointerdown', function (e) {
+      if (e.pointerType === 'mouse' || e.pointerType === 'touch' || e.pointerType === 'pen') {
+        clearTimeout(btn._gearBlur);
+        btn._gearBlur = setTimeout(function () { try { btn.blur(); } catch (err) {} }, 1000);
+      }
     });
     menu.addEventListener('click', function (e) { if (e.target.closest('a')) closeMenu(); });
     document.addEventListener('click', function (e) { if (!wrap.contains(e.target)) closeMenu(); });

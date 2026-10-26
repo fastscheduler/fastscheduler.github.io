@@ -593,6 +593,18 @@
   function contentSet(n, val) {
     if (n.nodeValue === val) return;
     contentTouch(n);
+    /* translated bodies carry \n for the paragraph breaks the English page
+       gets from <br>/<p>. Setting nodeValue painted them as spaces, so whole
+       sections collapsed onto one line; turn the newlines into real breaks. */
+    if (val.indexOf('\n') !== -1 && n.parentNode) {
+      var parts = val.split('\n'), frag = document.createDocumentFragment();
+      parts.forEach(function (p, i) {
+        if (i) frag.appendChild(document.createElement('br'));
+        if (p) frag.appendChild(document.createTextNode(p));
+      });
+      n.parentNode.replaceChild(frag, n);
+      return;
+    }
     n.nodeValue = val;
   }
   function skipContentNode(n) {

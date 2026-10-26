@@ -417,6 +417,9 @@
   /* ---------- full flow ---------- */
   var started = false;
   var timers = [];
+  /* shared by finale() (inside play) and resetAll(), so a second hand-off in
+     the same run is ignored instead of writing the title twice */
+  var finaleLive = false;
   function later(fn, ms) { timers.push(setTimeout(fn, ms)); }
   function clearTimers() { timers.forEach(clearTimeout); timers = []; }
 
@@ -683,16 +686,30 @@
       m.appendChild(bar);
       show(m);
       var cells = bar.querySelectorAll('.upl-cell');
-      var t0 = performance.now(), dur = reduce ? 60 : 1900;
-      (function tick(now) {
-        var k = Math.min(1, (now - t0) / dur);
+      /* Wall-clock driven, not rAF-timestamp driven. The rAF callback argument
+         is a frame-start time whose origin and drift differ per engine (Firefox
+         ahead, some WebViews behind), so the same 1900ms bar ran visibly fast
+         in one browser and slow in another. Date.now() is identical everywhere,
+         and a plain interval keeps ticking when frames are throttled. */
+      var t0 = Date.now(), dur = reduce ? 60 : 1900, finished = false;
+      var timer = setInterval(tick, 32);
+      function tick() {
+        var k = Math.min(1, (Date.now() - t0) / dur);
         cells.forEach(function (cell, i) {
           var p = Math.min(1, Math.max(0, k * 1.25 - i * 0.08));
           cell.querySelector('.upl-fill').style.height = (p * 72) + '%';
           cell.querySelector('.upl-pct').textContent = Math.round(p * 100) + '%';
           if (p >= 1) cell.classList.add('done');
         });
-        if (k < 1) raf(tick); else {
+        if (k < 1) return;
+        clearInterval(timer);
+        finish();
+      }
+      function finish() {
+        if (finished) return;
+        finished = true;
+        clearInterval(timer);
+        {
           sleep(420).then(function () {
             /* swap the uploading bar for the real Telegram album. The bar and
                the strip are the SAME 2-column grid with the same cell size, and
@@ -712,7 +729,11 @@
             later(function () { upDone(); }, 3 * 160 + 900);
           });
         }
-      })(t0);
+      }
+      /* safety net: if frames or timers were suspended mid-bar (background tab,
+         embedded webview), the scene still has to finish so the film continues */
+      setTimeout(function () { if (!finished) { cells.forEach(function (c) { c.classList.add('done'); }); finish(); } }, dur + 700);
+      tick();
       });
     }
 
@@ -1171,6 +1192,12 @@
        5. the phone slides back up from the ground on the right with the
           hero headline + replay menu — the page is whole again. */
     function finale() {
+      /* The confirmation chain could hand off here twice (a replay started
+         during the last beat, or the QA hook opening the scene by hand).
+         Two runs appended the letters twice, so "fast scheduler" was written
+         over itself and the stage kept the extra copy. */
+      if (finaleLive) return;
+      finaleLive = true;
       phone.classList.remove('glare-still');             /* the glass sweep may return */
       chanLayer.classList.remove('on');
       iosLayer.classList.remove('on', 'launch');
@@ -1190,7 +1217,7 @@
       if (cine) cine.classList.add('cine-on');   /* the title overlay is ON only for the finale */
       var word = 'fast scheduler';
       if (brand) {
-        brand.innerHTML = '';
+        brand.innerHTML = '';   /* never write into a container that still holds letters */
         word.split('').forEach(function (ch, i) {
           var s = document.createElement('span');
           s.className = 'cl';
@@ -1216,6 +1243,7 @@
       later(function () {
         rlStage.classList.add('hero-back');
         if (heroSec) heroSec.classList.add('hero-back');
+        if (cine) cine.classList.remove('done');
         phone.classList.remove('cine-hide');
         phone.classList.add('cine-restore');
         /* replay returns as a small pill INSIDE the hero copy (hidden in the
@@ -1233,6 +1261,10 @@
         if (heroSec) heroSec.classList.remove('cinema');
         if (heroSec) heroSec.classList.remove('hero-back');
         if (cine) { cine.classList.remove('done'); cine.classList.remove('cine-on'); }
+        /* empty the overlay once it is off screen: a stored copy of the word
+           used to reappear the next time the hero entered cinema mode */
+        if (brand) brand.innerHTML = '';
+        finaleLive = false;
       }, writeMs + 3500);
       later(function () {
         phone.classList.remove('cine-restore');
@@ -1273,6 +1305,7 @@
     dropGlow.classList.remove('on');
     rlStage.classList.remove('on', 'cinema', 'finale');
     rlStage.innerHTML = '';
+    finaleLive = false;
     iosLayer.classList.remove('on');
     chanLayer.classList.remove('on');
     botLayer.classList.remove('on');
