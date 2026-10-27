@@ -244,12 +244,6 @@ def build_article(aid, tr, cat_titles, title_override=None):
     return bs.page_shell(head, content, rel='../../..', lang='ru')
 
 
-def _strip_h1(html):
-    """The document title is rendered as the page <h1>; drop the duplicate
-    the markdown produced so the page has exactly one."""
-    return re.sub(r'<h1[^>]*>.*?</h1>\s*', '', html, count=1, flags=re.S)
-
-
 def _en_category(help_dir, aid):
     """(English category name, is_landing_article) for an article.
 
@@ -266,80 +260,6 @@ def _en_category(help_dir, aid):
     if not m:
         return '', False
     return bs.strip_html(m.group(2)), m.group(1) == aid
-
-
-# ------------------------------------------------------------- ru legal ----
-# The Russian policy sources, like the English ones, start at "## 1. ..." with
-# no document title -- build_site.py supplies the English titles from
-# LEGAL_PAGES, so the Russian titles must be supplied here. Without them the
-# page fell back to the filename and rendered <h1>privacy</h1>.
-LEGAL_TITLE_RU = {
-    'privacy': 'Политика конфиденциальности',
-    'terms': 'Условия использования',
-    'refundpolicy': 'Политика возвратов',
-}
-LEGAL_DESC_RU = {
-    'privacy': 'Как мы собираем, используем, раскрываем и защищаем ваши данные.',
-    'terms': 'Правила использования Fast Scheduler и SetDate.',
-    'refundpolicy': 'Как работают возвраты Premium, продление и chargeback.',
-}
-
-LEGAL_CHANGE_RU = {
-    'privacy': ('В этой редакции уточнены перечень данных, обработка на сайте, '
-                'шифрование и сроки хранения/удаления.',
-                'Добавлено пояснение, что Fast Support и Fast Community — элементы бренда, '
-                'а русская версия переведена с помощью ИИ.'),
-    'terms': ('Уточнены лимиты тарифов, окончание Premium и льготный период, '
-              'реферальные дни, удаление аккаунта и уведомления об изменениях сервиса.',
-              'Добавлено пояснение о названиях Fast Support и Fast Community и о том, '
-              'что «Fast» является частью бренда, а не обещанием скорости.'),
-    'refundpolicy': ('Уточнены правила Telegram Stars, случаи возможного возврата, '
-                     'отмена и отсутствие автопродления у предоплаченных тарифов.',
-                     'Добавлено пояснение о названиях Fast Support и Fast Community и уведомление '
-                     'о возможных неточностях AI-перевода.'),
-}
-
-
-def build_legal(name):
-    src = os.path.join(DOCS_RU, name + '.md')
-    if not os.path.exists(src):
-        return None
-    text = io.open(src, encoding='utf-8-sig').read()
-    text = re.sub(r'\[\[([^\]]+)\]\]', r'<span data-ph="\1">[[\1]]</span>', text)
-    import markdown
-    html = markdown.markdown(text, extensions=['tables', 'fenced_code', 'nl2br', 'toc'])
-    html = html.replace('<ul>', '<ol>').replace('</ul>', '</ol>')
-    title_ru = LEGAL_TITLE_RU.get(name, name)
-    d_src = '%s. %s' % (title_ru, LEGAL_DESC_RU.get(name, ''))
-    t, d = ru_meta(title_ru, d_src)
-    url_en = BASE + '/legal/%s.html' % name
-    url_ru = BASE + '/ru/legal/%s.html' % name
-    pub = bs.publish_date('legal', name)
-    head = bs.page_head(t, d, url_ru, extra_ld=bs.jsonld({
-        '@context': 'https://schema.org', '@type': 'WebPage',
-        'name': t, 'description': d, 'url': url_ru, 'inLanguage': 'ru',
-        'dateModified': pub, 'isPartOf': {'@type': 'WebSite', 'name': 'Fast Scheduler',
-                                          'url': BASE + '/'}}), og_type='article')
-    head = head + '\n<link rel="stylesheet" href="../../styles/mobile-fix.css?v=20261006a1">\n' + alt_links(url_ru, url_en)
-    summary, detail = LEGAL_CHANGE_RU.get(name, ('В редакцию внесены уточнения.', ''))
-    versions = ('<div class="ver-changes" role="note"><b>Что изменилось в этой редакции.</b> '
-                '<q>%s</q><ul><li>%s</li></ul></div>' % (summary, detail))
-    switcher = ('<div class="ver-dd"><button type="button" class="ver-pill" '
-                'aria-haspopup="menu"><span class="ver-pill-dot" aria-hidden="true"></span>'
-                '2026-10-01 · текущая версия</button><div class="glass-pop ver-menu" '
-                'role="menu" aria-label="Версии документа"><div class="gp-head">Версии документа</div>'
-                '<span class="gp-row ver-opt on" role="menuitem" aria-current="true">'
-                '<span class="ver-v">2026-10-01</span><span class="ver-s">текущая · действует с 8 октября 2026</span></span>'
-                '<a class="gp-row ver-opt" role="menuitem" href="../../legal/history/%s-2026-09-26.html">'
-                '<span class="ver-v">2026-09-26</span><span class="ver-s">архивная версия (английский)</span></a>'
-                '</div></div>' % name)
-    body = ('<div class="wrap legal" style="max-width:860px;margin:0 auto">'
-            '<p><a href="%s" hreflang="en" lang="en">Читать на английском</a></p>'
-            '<article class="doc"><h1>%s</h1><p class="updated">Последнее обновление: 1 октября 2026</p>'
-            '<p class="effective">Действует с 8 октября 2026 года. Продолжение использования Сервисов после этой даты означает принятие обновлённой редакции.</p>%s%s'
-            '<div class="hc-body">%s</div></article></div>'
-            % (url_en, bh.esc(title_ru), versions, switcher, _strip_h1(html)))
-    return bs.page_shell(head, body, rel='../..', lang='ru')
 
 
 # ----------------------------------------------------------------- main ----
@@ -432,20 +352,11 @@ def main():
                                  BASE + '/help/a/%s.html' % aid)):
             linked += 1
 
-    legal_dir = os.path.join(SITE, 'ru', 'legal')
-    os.makedirs(legal_dir, exist_ok=True)
-    legal_written = []
-    for name in ('privacy', 'terms', 'refundpolicy'):
-        html = build_legal(name)
-        if not html:
-            continue
-        html = html.replace('<html lang="en"', '<html lang="ru"')
-        io.open(os.path.join(legal_dir, name + '.html'), 'w',
-                encoding='utf-8', newline='\n').write(html)
-        legal_written.append(name)
-        inject_alts(os.path.join(SITE, 'legal', name + '.html'),
-                    alt_links(BASE + '/ru/legal/%s.html' % name,
-                              BASE + '/legal/%s.html' % name))
+    # Legal pages are no longer built here: website/_build/build_site.py renders
+    # both locales from ONE template (docs/ for English, docs/ru/ for Russian)
+    # and writes the hreflang pair itself. This list only feeds the sitemap.
+    legal_written = [n for n in ('privacy', 'terms', 'refundpolicy')
+                     if os.path.isfile(os.path.join(SITE, 'ru', 'legal', n + '.html'))]
 
     # drop stale /ru/ files for articles we no longer translate
     keep = set(aid + '.html' for aid in written)

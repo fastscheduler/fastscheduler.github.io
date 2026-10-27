@@ -52,7 +52,15 @@ venv/
 
 # ── Website build artifacts ───────────────────────────────────────────
 website/storage_state.json
-website/_build/
+# The live generators. They were ignored wholesale while a stale copy sat in
+# _build/, so template and translation changes were invisible to review and the
+# two trees drifted. The four files the site is actually generated from are
+# tracked; the one-off patch scripts in the same folder stay ignored.
+website/_build/*
+!website/_build/build_help.py
+!website/_build/build_static.py
+!website/_build/build_site.py
+!website/_build/site_i18n.py
 
 # ── IDE / editor / OS ─────────────────────────────────────────────────
 .idea/
@@ -67,3 +75,4 @@ Thumbs.db
 .scripts/import_report.json
 .scripts/import_patch_report.json
 .scripts/lazy_patch_report.json
+/freebuff-sites-build/

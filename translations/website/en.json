@@ -1,0 +1,109 @@
+{
+  "_note": "Website-only UI copy. Bot copy lives in translations/en.json; this file covers the published GitHub Pages site. Every page (EN and RU) is rendered by the same templates, so the two locales differ only by the strings here and by their document bodies (docs/ vs docs/ru/).",
+  "locale": "en",
+  "htmlLang": "en",
+  "chrome": {
+    "settings": "Settings",
+    "dark": "Dark mode",
+    "anim": "Animations",
+    "fx": "Effects",
+    "keys": "Hotkeys",
+    "font_size": "Font size",
+    "font_s": "Small",
+    "font_m": "Default",
+    "font_l": "Large",
+    "see_keys": "See hotkeys",
+    "support": "Support chat",
+    "open_bot": "Open Bot",
+    "open_short": "Open",
+    "brand_home": "Fast Scheduler — home",
+    "search_ph": "Search the help center…",
+    "search_aria": "Search the help center",
+    "pop_aria": "Help center quick search",
+    "popular": "Popular articles",
+    "open_help": "Open Help Center",
+    "blog": "Blog",
+    "help_center": "Help Center",
+    "reading": "Reading",
+    "wide": "Wide format",
+    "rail": "Article navigation",
+    "fullscreen": "Fullscreen",
+    "footer_copy": "© 2026 Fast Scheduler — free Telegram scheduling bot",
+    "footer_legal": "Legal",
+    "footer_home": "Home",
+    "footer_terms": "Terms",
+    "footer_privacy": "Privacy",
+    "footer_refunds": "Refunds",
+    "footer_help": "Help",
+    "footer_open": "Open Bot"
+  },
+  "legal": {
+    "ui": {
+      "home_aria": "Fast Scheduler — home",
+      "docs_aria": "Legal documents",
+      "tab_privacy": "Privacy",
+      "tab_terms": "Terms",
+      "tab_refundpolicy": "Refunds",
+      "cta_tip": "Opens the bot in Telegram. The page you came from is recorded for first-time users.",
+      "contents": "Contents",
+      "hide_contents": "Hide contents",
+      "show_contents": "Show contents",
+      "hide_contents_key": "Hide contents (C)",
+      "show_contents_key": "Show contents (C)",
+      "open_contents": "Open contents",
+      "close_contents": "Close contents",
+      "last_updated": "Last updated: {date}",
+      "see_also": "See also:",
+      "continue_reading": "Continue reading",
+      "read": "Read",
+      "open_bot": "Open bot",
+      "doc_versions": "Document versions",
+      "current": "current",
+      "archived": "archived",
+      "effective": "Effective <b>{date}</b>. This edition replaces the {old} text; every earlier edition stays published below.",
+      "what_changed": "What changed in this version.",
+      "read_en": "Read in English"
+    },
+    "docs": {
+      "privacy": {
+        "title": "Privacy Policy",
+        "description": "How we collect, use, share and protect your data.",
+        "meta": "Privacy Policy for the Fast Scheduler Telegram bot: scheduling, recurring posts, sender bots, channels, statistics and payments.",
+        "changelog": {
+          "summary": "This edition adds the website’s analytics disclosure: Google Analytics 4, delivered through Google Tag Manager and loaded only after you press Accept.",
+          "bullets": [
+            "A named analytics section: Google Tag Manager / GA4, what is measured, and the two cookies it sets.",
+            "Consent is stated as the gate: before a choice, nothing is inserted into the page at all.",
+            "Declining is described as leaving every page, feature and download fully available."
+          ]
+        }
+      },
+      "terms": {
+        "title": "Terms of Service",
+        "description": "The rules for using Fast Scheduler and SetDate.",
+        "meta": "Terms of Service for the Fast Scheduler Telegram bot: scheduling, recurring posts, sender bots, channels, statistics and payments.",
+        "changelog": {
+          "summary": "The effective date moved with the privacy refresh; the rules themselves are unchanged.",
+          "bullets": [
+            "References to the website’s measurement tools point at the updated Privacy Policy."
+          ]
+        }
+      },
+      "refundpolicy": {
+        "title": "Refund Policy",
+        "description": "How Premium refunds, renewals and chargebacks work.",
+        "meta": "Fast Scheduler refund policy: how Telegram Stars refunds work for @FastSchedulerBot Premium, the 7-day per-payment window, cancellations and how to request a refund.",
+        "changelog": {
+          "summary": "The effective date moved with the privacy refresh; refund terms are unchanged.",
+          "bullets": [
+            "No change to Stars finality, cancellation or the discretionary cases."
+          ]
+        }
+      }
+    },
+    "dates": {
+      "current": "October 26, 2026",
+      "old": "September 26, 2026"
+    }
+  }
+}

@@ -1,4 +1,4 @@
-/* Cookie consent + Google Tag Manager loader.
+/* Cookie consent + Google tag (GA4) loader.
  *
  * Rules this file enforces:
  *   1. Nothing is loaded from Google until the visitor clicks Accept. Declining
@@ -17,7 +17,10 @@
 (function () {
   'use strict';
 
-  var GTM_ID = 'GTM-P9L5JD26';
+  /* GA4 measurement ID. The documented "install manually" snippet is not in
+     any page: it is injected from here, after a choice, so it cannot fire
+     before consent. */
+  var GA4_ID = 'G-ESSXSFV4XZ';
   var STORE_KEY = 'cookie_consent';
   var COOKIE_MAX_AGE = 31536000; /* 1 year, same as the legal text */
 
@@ -60,24 +63,25 @@
 
   var ROOT = rootPath();
 
-  /* ---------- Google Tag Manager --------------------------------------- */
+  /* ---------- Google tag (GA4) ------------------------------------------ */
 
-  var gtmLoaded = false;
+  var analyticsLoaded = false;
 
-  function loadGTM() {
-    if (gtmLoaded) return;
-    gtmLoaded = true;
+  function loadAnalytics() {
+    if (analyticsLoaded) return;
+    analyticsLoaded = true;
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    /* Google's own gtag.js snippet, only the injection is deferred: dataLayer
+       receives the js/config commands first, exactly as if it sat in <head>. */
+    window.gtag = window.gtag || function () {
+      window.dataLayer.push(arguments);
+    };
+    window.gtag('js', new Date());
+    window.gtag('config', GA4_ID, { send_page_view: true });
     var first = document.getElementsByTagName('script')[0];
     var tag = document.createElement('script');
     tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtm.js?id=' + GTM_ID;
-    /* re-push the consent signal once the container has booted, so tags that
-       listen for it fire with the right state */
-    tag.addEventListener('load', function () {
-      window.dataLayer.push({ event: 'consent_update', consent: 'accepted' });
-    });
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
     first.parentNode.insertBefore(tag, first);
   }
 
@@ -101,7 +105,7 @@
   var COPY = {
     en: {
       text: 'We use cookies to measure how this site is used. Accepting loads ' +
-            'Google Tag Manager; if you decline, nothing is loaded and no data ' +
+            'Google Analytics; if you decline, nothing is loaded and no data ' +
             'is collected.',
       accept: 'Accept',
       decline: 'Decline',
@@ -112,7 +116,7 @@
     },
     ru: {
       text: 'Мы используем cookie, чтобы понимать, как используется сайт. При ' +
-            'согласии загружается Google Tag Manager; при отказе ничего не ' +
+            'согласии загружается Google Analytics; при отказе ничего не ' +
             'загружается и данные не собираются.',
       accept: 'Принять',
       decline: 'Отклонить',
@@ -123,7 +127,7 @@
     },
     es: {
       text: 'Usamos cookies para medir cómo se utiliza este sitio. Al aceptar se ' +
-            'carga Google Tag Manager; si lo rechazas, no se carga nada y no se ' +
+            'carga Google Analytics; si lo rechazas, no se carga nada y no se ' +
             'recogen datos.',
       accept: 'Aceptar',
       decline: 'Rechazar',
@@ -234,8 +238,13 @@
     return banner;
   }
 
-  function showBanner() {
+  /* manualOpen marks a banner the visitor deliberately reopened through
+     "Cookie settings": an existing choice must not close it on them. */
+  var manualOpen = false;
+
+  function showBanner(byUser) {
     var el = buildBanner();
+    manualOpen = !!byUser;
     clearTimeout(thanksTimer);
     resetBanner();
     setTimeout(function () { el.classList.add('show'); }, 600);
@@ -270,16 +279,16 @@
   var thanksTimer = null;
 
   function decide(choice) {
+    manualOpen = false;
     saveChoice(choice);
     if (choice === 'accepted') {
       playThanks(buildBanner());
-      loadGTM();
+      loadAnalytics();
     } else {
       hideBanner();
       dropAnalyticsCookies();
-      /* keep the object for pages that probe it, but nothing is sent */
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: 'consent_update', consent: 'declined' });
+      /* nothing is created or sent: a declined visitor leaves no dataLayer,
+         no analytics cookie and makes no request to Google */
     }
     syncSettingsLink();
   }
@@ -299,7 +308,7 @@
       btn.setAttribute('data-cookie-settings', '');
       btn.addEventListener('click', function (ev) {
         ev.preventDefault();
-        showBanner();
+        showBanner(true);
       });
       wrap.appendChild(btn);
       footer.appendChild(wrap);
@@ -308,12 +317,37 @@
     host.textContent = copy().settings;
   }
 
+  /* ---------- pages that were already open ------------------------------ */
+
+  /* A choice made in another tab, or made before returning to this page from
+     the back/forward cache, is still the same visit: adopt it silently instead
+     of asking a second time. */
+  function adoptStoredChoice() {
+    if (manualOpen) return;
+    var choice = readChoice();
+    if (!choice) return;
+    if (choice === 'accepted') loadAnalytics();
+    if (banner) {
+      clearTimeout(thanksTimer);
+      banner.classList.remove('show', 'fs-done', 'fs-leave');
+      resetBanner();
+    }
+    syncSettingsLink();
+  }
+
+  window.addEventListener('storage', function (ev) {
+    if (!ev.key || ev.key === STORE_KEY || ev.key === 'consent') adoptStoredChoice();
+  });
+  window.addEventListener('pageshow', function (ev) {
+    if (ev.persisted) adoptStoredChoice();
+  });
+
   /* ---------- boot ------------------------------------------------------ */
 
   function boot() {
     var choice = readChoice();
     if (choice === 'accepted') {
-      loadGTM();
+      loadAnalytics();
     } else if (choice === 'declined') {
       /* nothing to undo: no tag was ever injected */
     } else {
@@ -336,7 +370,7 @@
         document.cookie = 'consent=;path=/;max-age=0';
         showBanner();
       },
-      gtmId: GTM_ID
+      analyticsId: GA4_ID
     };
   }
 
