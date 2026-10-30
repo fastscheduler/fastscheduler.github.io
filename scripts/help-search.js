@@ -540,11 +540,13 @@
 
   function setMode(m, seg, inputEl) {
     MODE = m === 'page' ? 'page' : 'articles';
-    if (seg) {
-      Array.prototype.forEach.call(seg.querySelectorAll('[data-mode]'), function (b) {
+    /* Every visible switch follows the mode: the navbar bar and the hub hero
+       each own a copy, and they must never disagree. */
+    Array.prototype.forEach.call(document.querySelectorAll('.ns-mode'), function (s) {
+      Array.prototype.forEach.call(s.querySelectorAll('[data-mode]'), function (b) {
         b.setAttribute('aria-pressed', b.getAttribute('data-mode') === MODE ? 'true' : 'false');
       });
-    }
+    });
     if (inputEl) {
       inputEl.placeholder = MODE === 'page' ? ML.p + '…' : (SCOPE === 'blog' ? (T.blogPh || '') : (T.helpPh || ''));
       inputEl.value = '';
@@ -565,8 +567,23 @@
       '.ns-mode button[aria-pressed="true"]{background:var(--surface);color:var(--green-strong);box-shadow:var(--shadow-sm)}' +
       '.ns-mode button:hover{color:var(--green-strong)}' +
       '.fs-find-count{margin:8px 2px 0;font-size:.78rem;font-weight:700;color:var(--text-dim)}' +
+      /* On wide screens the hub's hero field keeps the switch hidden (the
+         navbar field carries it) — but below the navbar-search breakpoint the
+         hero field IS the search box, so hiding it there removed the feature
+         entirely on phones. */
       '.hc-search .ns-mode{display:none}' +
-      '@media (max-width:700px){.nav-search .ns-mode{display:none}}';
+      '@media (max-width:1100px){.hc-search{flex-wrap:wrap}.hc-search .ns-mode{display:inline-flex;' +
+      'order:9;flex-basis:100%;justify-content:center;margin:8px 0 0}}' +
+      /* mobile menu popup: the field sits on its own row above the switch */
+      '#helpSearchForm{flex-wrap:wrap}#helpSearchForm .ns-mode{order:9;flex-basis:100%;' +
+      'justify-content:center;margin:8px 0 2px}' +
+      /* the navbar bar carries the switch on help pages */
+      '.hc-hsearch .ns-mode{margin-left:6px}' +
+      '@media (max-width:860px){.hc-hsearch{flex-wrap:wrap}.hc-hsearch .ns-mode{order:9;flex-basis:100%;' +
+      'justify-content:center;margin:6px 0 0}}' +
+      /* Mobile keeps the switch too: it is the only way to look inside the
+         article you are reading, and hiding it made the feature look gone. */
+      '@media (max-width:520px){.nav-search .ns-mode{transform:scale(.94);transform-origin:right center}}';
     document.head.appendChild(st);
   })();
 
@@ -625,6 +642,25 @@
         }
       }, true);
     }
+    /* Every field that can actually be seen on a help page carries a switch:
+       the navbar bar on desktop, the hero field on phones, and the search
+       field inside the mobile menu popup. Fixing only one of them is why the
+       feature kept "disappearing" depending on the screen size. */
+    function attachSwitch(host, inputEl) {
+      if (!host || host.querySelector('.ns-mode')) return;
+      var seg = buildModeSeg();
+      host.appendChild(seg);
+      seg.addEventListener('click', function (ev) {
+        var b = ev.target.closest && ev.target.closest('[data-mode]');
+        if (!b) return;
+        setMode(b.getAttribute('data-mode'), seg, inputEl);
+        try { inputEl.focus({ preventScroll: true }); } catch (e) {}
+      });
+    }
+    attachSwitch(hIn2 && hIn2.closest('.hc-hsearch'), hIn2);
+    var mForm = document.getElementById('helpSearchForm');
+    var mInput = document.getElementById('helpSearchInput');
+    attachSwitch(mForm, mInput || hIn2);
   }
 
   /* ---------------- blog suggestions ---------------- */

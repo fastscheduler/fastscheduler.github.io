@@ -3850,7 +3850,7 @@ def build_page(nodes, help_sec):
 
 <script src="scripts/settings.js?v=20261005d1"></script>
   <script src="scripts/ru-chrome.js?v=20261006b1"></script><script src="scripts/lang.js?v=20261030a1"></script>
-<script src="scripts/help-search.js?v=20261030a2"></script>
+<script src="scripts/help-search.js?v=20261030a5"></script>
 <script src="scripts/hotkeys-modal.js?v=20261006a1"></script>
 <script src="scripts/hotkeys.js?v=20261005d1"></script>
 <script src="scripts/scroll-jump.js?v=20261005a1"></script>

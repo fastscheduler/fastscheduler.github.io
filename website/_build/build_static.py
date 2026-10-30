@@ -233,7 +233,7 @@ def page_shell(title_html, body, rel='../..', lang='en'):
             + '<script src="' + rel + '/scripts/lang.js?v=20261030a1"></script>' + chr(10)
             + '<script src="' + rel + '/scripts/hotkeys-modal.js?v=20261006a1"></script>' + chr(10)
             + '<script src="' + rel + '/scripts/help-ai.js?v=20261022a1"></script>' + chr(10)
-            + '<script src="' + rel + '/scripts/help-search.js?v=20261030a2"></script>' + chr(10)
+            + '<script src="' + rel + '/scripts/help-search.js?v=20261030a5"></script>' + chr(10)
             + '<script src="' + rel + '/scripts/hotkeys.js?v=20261005d1"></script>' + chr(10)
             + '<script src="' + rel + '/scripts/scroll-jump.js?v=20260930a1"></script>' + chr(10)
             + '<script src="' + rel + '/scripts/article-nav.js?v=20260930a2"></script>' + chr(10)

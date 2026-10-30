@@ -39,6 +39,7 @@
   },
   "legal": {
     "ui": {
+      "archive_en_note": "English edition",
       "home_aria": "Fast Scheduler — home",
       "docs_aria": "Legal documents",
       "tab_privacy": "Privacy",
@@ -94,9 +95,10 @@
         "description": "How Premium refunds, renewals and chargebacks work.",
         "meta": "Fast Scheduler refund policy: how Telegram Stars refunds work for @FastSchedulerBot Premium, the 7-day per-payment window, cancellations and how to request a refund.",
         "changelog": {
-          "summary": "The effective date moved with the privacy refresh; refund terms are unchanged.",
+          "summary": "Premium is now non-refundable once it has been delivered. The only refund case is non-delivery — paid but never activated, or the same period charged twice — and the request must reach us within 7 days of that payment.",
           "bullets": [
-            "No change to Stars finality, cancellation or the discretionary cases."
+            "The discretionary-refund list is gone: delivery and use make the purchase final.",
+            "The 7-day window now applies to non-delivery requests only, still counted per payment."
           ]
         }
       }

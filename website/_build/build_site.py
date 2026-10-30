@@ -820,7 +820,7 @@ def legal_page(title, body_html, updated, cta_url, toc_box, toc_side, sheet_html
 <script src="{pre}/scripts/hotkeys-modal.js?v=20261006a1"></script>
 <script src="{pre}/scripts/hotkeys.js?v=20261005d1"></script>
 <script src="{pre}/scripts/scroll-jump.js?v=20260930a1"></script>
-<script src="{pre}/scripts/help-search.js?v=20261030a2"></script>
+<script src="{pre}/scripts/help-search.js?v=20261030a5"></script>
 <script src="{pre}/scripts/main.js?v=20260930a1"></script>
 <script src="{pre}/scripts/liquid-nav.js?v=20261005d1"></script>
 <script>
