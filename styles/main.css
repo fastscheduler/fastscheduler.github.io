@@ -163,6 +163,13 @@ a.brand:hover { text-decoration: none; }
 .wrap.nav { gap: 12px; }
 header.site .btn.nav-cta { margin-left: 0; }
 
+/* Inside a section the section's own pill is redundant: on a blog page
+   "Blog" would reload the page you are already on, and on a help page
+   "Help Center" does the same (the help pill also owns the search popover,
+   which is replaced by the article's own search field). */
+body.blog header.site .nav-link[href$="blog/index.html"] { display: none; }
+body.help header.site .site-menu-wrap { display: none; }
+
 /* ---------- Cross-platform / browser / device optimizations ---------- */
 /* 1) Apple: safe areas (notch / home indicator) for PWA + Safari */
 @supports (padding: max(0px)) {

@@ -28,8 +28,10 @@
     css = document.createElement('style');
     css.id = 'fs-topics-css';
     css.textContent =
-      '.hc-area{display:grid;grid-template-columns:264px minmax(0,1fr);gap:34px;' +
-      'align-items:start;max-width:1200px;margin:0 auto;padding:22px 20px 40px}' +
+      /* Same container as the header/footer (--maxw, 20px gutters), so the
+         rail starts under the logo instead of hanging outside the page. */
+      '.hc-area{display:grid;grid-template-columns:240px minmax(0,1fr);gap:32px;' +
+      'align-items:start;max-width:var(--maxw);margin:0 auto;padding:20px 20px 40px}' +
       '.hc-area>.hc-art-col{min-width:0}' +
       '.hc-area .wrap{max-width:none!important;margin:0!important;padding:0!important}' +
       '.hc-topics{position:sticky;top:78px;max-height:calc(100vh - 100px);overflow-y:auto;' +

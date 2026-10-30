@@ -9,6 +9,26 @@
   SIDE.forEach(function (c) { CATS[c.id] = c.title; });
   var byId = {};
   DATA.forEach(function (s) { byId[s.id] = s; });
+
+  /* The hub is served both as /help.html (site root) and as /help/ (its
+     directory index, which is where the navbar search lands). "help/a/x.html"
+     in an href is resolved against the CURRENT page, so from /help/ it became
+     /help/help/a/x.html — a 404 on every article click. Links are built from
+     this script's own src instead, which is correct at both depths. */
+  var ROOT = '';
+  try {
+    var self = document.querySelector('script[src*="help-hub.js"]');
+    var src = (self && self.getAttribute('src')) || '';
+    var cut = src.indexOf('scripts/help-hub.js');
+    if (cut > -1) ROOT = src.slice(0, cut);
+  } catch (e) {}
+  function hubLink(href) {
+    if (!href) return href;
+    /* absolute, protocol-relative or explicitly relative paths are returned
+       untouched so nothing can be prefixed twice */
+    if (/^(?:[a-z][a-z0-9+.-]*:|\/|\.\.?\/)/i.test(href)) return href;
+    return ROOT + href;
+  }
   /* AI intent per article: category id doubles as the intent tag the mini
      engine matches queries against (schedule, media, payment, ...) */
   if (window.HelpAI) {
@@ -83,8 +103,8 @@
     /* Articles and categories are real pages now. Old hash links (bookmarks,
        search results from before the clean-URL move) redirect instead of
        rendering a second copy of the article inside the hub. */
-    if (r.view === 'article' && byId[r.id]) { location.replace('help/a/' + r.id + '.html'); return; }
-    if (r.view === 'category' && CATS[r.id]) { location.replace('help/c/' + r.id + '.html'); return; }
+    if (r.view === 'article' && byId[r.id]) { location.replace(hubLink('help/a/' + r.id + '.html')); return; }
+    if (r.view === 'category' && CATS[r.id]) { location.replace(hubLink('help/c/' + r.id + '.html')); return; }
     if (r.legacy) {
       var valid = (r.view === 'article' && byId[r.id]) || (r.view === 'category' && CATS[r.id]);
       if (valid) { history.replaceState(null, '', (r.view === 'article' ? '#/a/' : '#/c/') + r.id); }
@@ -486,7 +506,7 @@
     var emitted = {};
     function navRow(c) {
       var hasKids = !!(c.kids && c.kids.length);
-      html += '<a class="hc-nav-item" data-cat="' + c.id + '" href="help/c/' + c.id + '.html"' +
+      html += '<a class="hc-nav-item" data-cat="' + c.id + '" href="' + hubLink('help/c/' + c.id + '.html') + '"' +
         (hasKids ? ' aria-expanded="false" aria-controls="hc-sub-' + c.id + '"' : '') + '>' +
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + c.icon + '</svg>' +
         '<span>' + c.title + '</span><span class="n">' + c.n + '</span>' +
@@ -494,11 +514,11 @@
         '</a>';
       if (hasKids) {
         html += '<div class="hc-subnav" id="hc-sub-' + c.id + '"><div class="hc-subnav-in">';
-        c.kids.forEach(function (k) { html += '<a href="help/a/' + k.id + '.html" data-art="' + k.id + '">' + k.t + '</a>'; });
+        c.kids.forEach(function (k) { html += '<a href="' + hubLink('help/a/' + k.id + '.html') + '" data-art="' + k.id + '">' + k.t + '</a>'; });
         /* the category page still exists (it is the browsable "all topics"
            view); this keeps it one click away without making the row itself
            navigate */
-        html += '<a class="hc-sub-all" href="help/c/' + c.id + '.html">Open all ' + c.n + ' articles</a>';
+        html += '<a class="hc-sub-all" href="' + hubLink('help/c/' + c.id + '.html') + '">Open all ' + c.n + ' articles</a>';
         html += '</div></div>';
       }
     }
@@ -817,7 +837,7 @@
     });
     results.addEventListener('click', function (e) {
       var b = e.target.closest('.hc-res');
-      if (b) location.href = 'help/a/' + b.getAttribute('data-art') + '.html';
+      if (b) location.href = hubLink('help/a/' + b.getAttribute('data-art') + '.html');
     });
     document.addEventListener('click', function (e) {
       var box = input.closest('.hc-search, .hc-hsearch');
@@ -846,7 +866,7 @@
   var CHEV_SVG = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>';
   var ILL_SVG = '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/><circle cx="10.5" cy="14" r="2.6"/><line x1="12.4" y1="15.9" x2="14.5" y2="18"/></svg>';
 
-  function docHref(sec) { return sec.href ? sec.href : ('help/a/' + sec.id + '.html'); }
+  function docHref(sec) { return sec.href ? hubLink(sec.href) : hubLink('help/a/' + sec.id + '.html'); }
   function resultRow(sec, q) {
     return '<a class="hc-row" href="' + docHref(sec) + '"><span class="hc-row-t">' +
       markText(sec.t, q) + '</span><span class="hc-row-m">' +
@@ -873,7 +893,7 @@
     sug = shuffle(sug).slice(0, cap);
     if (!sug.length) sug = shuffle(DATA).slice(0, cap);
     return sug.map(function (sg) {
-      return '<a class="hc-row" href="help/a/' + sg.id + '.html"><span class="hc-row-t">' +
+      return '<a class="hc-row" href="' + hubLink('help/a/' + sg.id + '.html') + '"><span class="hc-row-t">' +
         escapeHtml(sg.t) + '</span><span class="hc-row-m">' + escapeHtml(CATS[sg.c] || '') +
         '</span>' + CHEV_SVG + '</a>';
     }).join('');

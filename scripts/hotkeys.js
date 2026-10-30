@@ -83,7 +83,7 @@
         f.focus();
         try { f.setSelectionRange(f.value.length, f.value.length); } catch (err) {}
       } },
-    { key: 'h', sel: 'a.nav-link[href*="help"], .site-menu-row, a.gp-row[href*="help"], .help-row a[href*="help"], #navMobile a[href*="help"], footer a[href$="help/"]',
+    { key: 'h', sel: 'a.nav-link[href*="help"], .site-menu-row, a.gp-row[href*="help"], .help-row a[href*="help"], #navMobile a[href*="help"], footer a[href$="help.html"]',
       name: 'Help', hint: 'rail' },
 
     /* pricing: billing period, then act on whichever plan is centred */
