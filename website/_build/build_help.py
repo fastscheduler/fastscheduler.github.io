@@ -1246,7 +1246,15 @@ CSS = r'''
     .hc-hero h1 .grad { color: var(--green); }
     .hc-sub { color: var(--text-dim); font-size: 1.03rem; margin: 16px auto 0; max-width: 560px; line-height: 1.55; }
 
-    .hc-search { position: relative; max-width: 680px; margin: 30px auto 0; }
+    /* The field and the Articles / On this page switch are one control: the
+       pill keeps its own box (so the magnifier and the Ctrl K hint stay
+       optically centred on it) and the switch sits on its own row beneath,
+       centred and spaced. Before this, both were children of the same box,
+       so "50%" meant the middle of pill + switch and the whole thing looked
+       crooked. */
+    .hc-search { position: relative; max-width: 680px; margin: 30px auto 0;
+      display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .hc-search .hc-field { position: relative; width: 100%; }
     .hc-search .sic { position: absolute; left: 21px; top: 50%; translate: 0 -50%; width: 20px; height: 20px; color: var(--text-dim); pointer-events: none; z-index: 2; }
     #hcSearch {
       width: 100%; min-height: 60px; padding: 15px 76px 15px 54px; font-size: 1.04rem;
@@ -1273,6 +1281,7 @@ CSS = r'''
     }
     .hc-sbtn:hover { color: var(--green-strong); border-color: color-mix(in srgb, var(--green) 45%, var(--border)); }
     .hc-search .hc-results { left: 0; right: 0; width: auto; max-width: none; }
+    .hc-search .ns-mode { display: inline-flex; }
     @media (max-width: 560px) { .hc-sbtn { display: none; } #hcSearch { padding-right: 20px; } }
 
     /* "Try asking" chips (Canva-style) */
@@ -3268,10 +3277,12 @@ def render_home(groups, quick, n_articles):
           <h1 class="hc-title">Help Center</h1>
           <p class="hc-sub">Everything about Fast Scheduler &mdash; scheduling, recurring posts, sender bots, channels, statistics and payments. Search it or browse by topic.</p>
           <div class="hc-search">
-            {svg('search', 'sic')}
-            <input id="hcSearch" type="search" role="combobox" aria-autocomplete="list" aria-haspopup="listbox" aria-expanded="false" aria-controls="hcResults" placeholder="Search articles&hellip;" aria-label="Search help topics" autocomplete="off" enterkeyhint="search">
-            <button class="hc-sbtn" id="hcSBtn" type="button" aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)">Ctrl K</button>
-            <div class="hc-results" id="hcResults" role="listbox" aria-label="Search results" hidden></div>
+            <div class="hc-field">
+              {svg('search', 'sic')}
+              <input id="hcSearch" type="search" role="combobox" aria-autocomplete="list" aria-haspopup="listbox" aria-expanded="false" aria-controls="hcResults" placeholder="Search articles&hellip;" aria-label="Search help topics" autocomplete="off" enterkeyhint="search">
+              <button class="hc-sbtn" id="hcSBtn" type="button" aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)">Ctrl K</button>
+              <div class="hc-results" id="hcResults" role="listbox" aria-label="Search results" hidden></div>
+            </div>
           </div>
           {try_html}
           {quick_html}
@@ -3850,7 +3861,7 @@ def build_page(nodes, help_sec):
 
 <script src="scripts/settings.js?v=20261005d1"></script>
   <script src="scripts/ru-chrome.js?v=20261006b1"></script><script src="scripts/lang.js?v=20261030a1"></script>
-<script src="scripts/help-search.js?v=20261030a5"></script>
+<script src="scripts/help-search.js?v=20261030b1"></script>
 <script src="scripts/hotkeys-modal.js?v=20261006a1"></script>
 <script src="scripts/hotkeys.js?v=20261005d1"></script>
 <script src="scripts/scroll-jump.js?v=20261005a1"></script>

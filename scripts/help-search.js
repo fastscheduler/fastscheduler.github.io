@@ -567,23 +567,22 @@
       '.ns-mode button[aria-pressed="true"]{background:var(--surface);color:var(--green-strong);box-shadow:var(--shadow-sm)}' +
       '.ns-mode button:hover{color:var(--green-strong)}' +
       '.fs-find-count{margin:8px 2px 0;font-size:.78rem;font-weight:700;color:var(--text-dim)}' +
-      /* On wide screens the hub's hero field keeps the switch hidden (the
-         navbar field carries it) — but below the navbar-search breakpoint the
-         hero field IS the search box, so hiding it there removed the feature
-         entirely on phones. */
-      '.hc-search .ns-mode{display:none}' +
-      '@media (max-width:1100px){.hc-search{flex-wrap:wrap}.hc-search .ns-mode{display:inline-flex;' +
-      'order:9;flex-basis:100%;justify-content:center;margin:8px 0 0}}' +
-      /* mobile menu popup: the field sits on its own row above the switch */
-      '#helpSearchForm{flex-wrap:wrap}#helpSearchForm .ns-mode{order:9;flex-basis:100%;' +
-      'justify-content:center;margin:8px 0 2px}' +
-      /* the navbar bar carries the switch on help pages */
-      '.hc-hsearch .ns-mode{margin-left:6px}' +
-      '@media (max-width:860px){.hc-hsearch{flex-wrap:wrap}.hc-hsearch .ns-mode{order:9;flex-basis:100%;' +
-      'justify-content:center;margin:6px 0 0}}' +
-      /* Mobile keeps the switch too: it is the only way to look inside the
-         article you are reading, and hiding it made the feature look gone. */
-      '@media (max-width:520px){.nav-search .ns-mode{transform:scale(.94);transform-origin:right center}}';
+      /* The switch belongs to the field it searches: in the hub hero it is
+         the second row of the same control, and in the compact pills it sits
+         inline at the end of the row. When a pill is too narrow for both, the
+         pill grows to two rows — it must never leak out of its rounded edge. */
+      '.hc-search .ns-mode{margin:0 auto}' +
+      '#helpSearchForm{flex-wrap:nowrap}' +
+      '#helpSearchForm .ns-mode,.nav-search .ns-mode,.hc-hsearch .ns-mode{flex:none;margin-left:2px}' +
+      '@media (max-width:560px){' +
+      '#helpSearchForm{flex-wrap:wrap;height:auto;min-height:44px;padding-bottom:8px}' +
+      '#helpSearchForm .ns-mode{flex:1 0 100%;justify-content:center;margin:6px auto 0}' +
+      '.nav-search{flex-wrap:wrap;height:auto;min-height:44px;padding-top:7px;padding-bottom:7px}' +
+      '.nav-search .ns-mode{flex:1 0 100%;justify-content:center;margin:4px auto 0}' +
+      '}' +
+      '@media (max-width:860px){.hc-hsearch{flex-wrap:wrap}' +
+      '.hc-hsearch .ns-mode{flex:1 0 100%;justify-content:center;margin:6px auto 0}}';
+
     document.head.appendChild(st);
   })();
 
