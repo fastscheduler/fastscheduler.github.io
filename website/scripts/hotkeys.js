@@ -73,16 +73,8 @@
 
     { key: 'g', sel: 'a.nav-link[href*="blog"], .help-row a[href*="blog"], a[href$="blog/"], a[href$="/blog/"], #navMobile a[href*="blog"], footer a[href$="blog/"]',
       name: 'Blog', hint: 'rail' },
-    /* S = search on blog pages: focuses the sticky search bar. Pressing S
-       while already typing stands down (allow() normally guards this, but
-       the field itself must not steal focus back mid-typing). */
-    { key: 's', name: 'Search the blog', hint: false, run: function () {
-        var f = document.getElementById('blog-q');
-        if (!f) return;
-        if (window.FS_KEYS && FS_KEYS.typing()) return;
-        f.focus();
-        try { f.setSelectionRange(f.value.length, f.value.length); } catch (err) {}
-      } },
+    /* Blog search is Ctrl/Cmd+K (see the dispatcher below). It is NOT a
+       single letter: unmodified letters belong to the shortcuts above. */
     { key: 'h', sel: 'a.nav-link[href*="help"], .site-menu-row, a.gp-row[href*="help"], .help-row a[href*="help"], #navMobile a[href*="help"], footer a[href$="help/"]',
       name: 'Help', hint: 'rail' },
 

@@ -91,27 +91,6 @@ ICONS = {
     'gear':      '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>',
 }
 
-# Crawlable article index (see index_html below). help.html is a
-# hash-router SPA, so its cards, breadcrumbs and pagers are all
-# href="#/a/<id>" -- invisible to a crawler. This block is the same content
-# behind real URLs, in one multi-column index at the foot of the page.
-INDEX_CSS = r'''
-.hc-index { margin-top: 46px; padding: 34px 0 12px; border-top: 1px solid var(--border); }
-.hc-idx-wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
-.hc-index h2 { font-size: 1.45rem; letter-spacing: -.02em; margin: 0 0 6px; }
-.hc-idx-lead { color: var(--text-dim); margin: 0 0 24px; font-size: .95rem; }
-.hc-idx-cols { columns: 4 230px; column-gap: 30px; }
-.hc-idx-g { break-inside: avoid; -webkit-column-break-inside: avoid; margin: 0 0 22px; }
-.hc-idx-g h3 { font-size: .92rem; margin: 0 0 7px; line-height: 1.3; }
-.hc-idx-g h3 a { color: var(--green-strong); text-decoration: none; }
-.hc-idx-g h3 a:hover { text-decoration: underline; }
-.hc-idx-g h3 span { display: block; color: var(--text-dim); font-weight: 500; font-size: .76rem; }
-.hc-idx-g ul { list-style: none; margin: 0; padding: 0; }
-.hc-idx-g li { margin: 0 0 4px; font-size: .87rem; line-height: 1.4; }
-.hc-idx-g li a { color: var(--text); text-decoration: none; }
-.hc-idx-g li a:hover { color: var(--green-strong); text-decoration: underline; }
-@media (max-width: 760px) { .hc-idx-cols { columns: 2 150px; column-gap: 20px; } }
-'''
 
 CAT_ICONS = {
     'start': 'compass', 'scheduling': 'calendar', 'channels': 'megaphone', 'bots': 'bot',
@@ -2882,7 +2861,7 @@ JS = r'''
   var CHEV_SVG = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>';
   var ILL_SVG = '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/><circle cx="10.5" cy="14" r="2.6"/><line x1="12.4" y1="15.9" x2="14.5" y2="18"/></svg>';
 
-  function docHref(sec) { return sec.href ? sec.href : ('a/' + sec.id + '/'); }
+  function docHref(sec) { return sec.href ? sec.href : ('help/a/' + sec.id + '.html'); }
   function resultRow(sec, q) {
     return '<a class="hc-row" href="' + docHref(sec) + '"><span class="hc-row-t">' +
       markText(sec.t, q) + '</span><span class="hc-row-m">' +
@@ -3220,7 +3199,7 @@ def render_home(groups, quick, n_articles):
     band_html = ''.join(f'<a href="help/c/{esc(g["cat"]["id"])}"><b>{esc(g["cat"]["title"])}</b><span>{len(g["kids"])} articles</span></a>' for g in _band_src)
     quick_html = ''
     if quick:
-        links = ''.join(f'<a href="help/a/{esc(nid)}">{esc(title)}</a>' for nid, title in quick)
+        links = ''.join(f'<a href="help/a/{esc(nid)}.html">{esc(title)}</a>' for nid, title in quick)
         quick_html = f'<div class="hc-pop"><b>Popular:</b>{links}</div>'
 
     try_chips = ''.join(
@@ -3281,14 +3260,14 @@ def render_category(g, groups, by_id):
     rows = []
     if kids:
         if art_eligible(cat):
-            rows.append(f'<a class="hc-row hc-row-lead" href="help/a/{esc(cat["id"])}">'
+            rows.append(f'<a class="hc-row hc-row-lead" href="help/a/{esc(cat["id"])}.html">'
                         f'<span class="hc-row-t">Overview: {esc(cat["title"])}</span>'
                         f'<span class="hc-row-m">Start here</span>{svg("chev")}</a>')
         for n in kids:
             if not art_eligible(n):
                 continue
             meta = f'{len(n["faq"])} Q&amp;A' if n['faq'] else 'Guide'
-            rows.append(f'<a class="hc-row" href="help/a/{esc(n["id"])}">'
+            rows.append(f'<a class="hc-row" href="help/a/{esc(n["id"])}.html">'
                         f'<span class="hc-row-t">{esc(n["title"])}</span>'
                         f'<span class="hc-row-m">{meta}</span>{svg("chev")}</a>')
     elif art_eligible(cat):
@@ -3303,7 +3282,7 @@ def render_category(g, groups, by_id):
                 if t and art_eligible(t) and lid not in WEB_DROPS:
                     seen.add(lid)
                     meta = f'{len(t["faq"])} Q&amp;A' if t['faq'] else 'Guide'
-                    rows.append(f'<a class="hc-row" href="help/a/{esc(lid)}">'
+                    rows.append(f'<a class="hc-row" href="help/a/{esc(lid)}.html">'
                                 f'<span class="hc-row-t">{esc(t["title"])}</span>'
                                 f'<span class="hc-row-m">{meta}</span>{svg("chev")}</a>')
         if not rows:
@@ -3610,47 +3589,6 @@ def build_page(nodes, help_sec):
         f.write(JS.replace('__BOTURL__', SUPPORT_URL))
     year = datetime.date.today().year
 
-    # --- crawlable index ------------------------------------------------
-    # Every in-page link on this page is href="#/a/<id>" or "#/c/<id>".
-    # Crawlers do not follow fragments, so before this block every one of the
-    # 323 help pages (help.html, help/c/*, help/a/*) was an orphan reachable
-    # only from the sitemap, and Google had indexed the homepage and nothing
-    # else. Emit the same content behind real hrefs.
-    _idx_titles = {}
-    for g in groups:
-        for k in ([g['cat']] if art_eligible(g['cat']) else []) + \
-                  [x for x in g['kids'] if art_eligible(x)]:
-            _idx_titles[k['title']] = _idx_titles.get(k['title'], 0) + 1
-    _idx_groups = []
-    for g in groups:
-        _cid, _ctitle = g['cat']['id'], g['cat']['title']
-        _entries = ([g['cat']] if art_eligible(g['cat']) else []) + \
-                   [k for k in g['kids'] if art_eligible(k)]
-        if not _entries:
-            continue
-        def _idx_label(k):
-            if k['id'] == _cid:
-                return k['title'] + ' Overview'
-            if _idx_titles.get(k['title'], 0) > 1 and \
-                    _ctitle.lower() != k['title'].lower():
-                return '%s (%s)' % (k['title'], _ctitle)
-            return k['title']
-        _items = ''.join(
-            '<li><a href="help/a/%s.html">%s</a></li>'
-            % (esc(k['id']), esc(_idx_label(k)))
-            for k in _entries)
-        _idx_groups.append(
-            '<section class="hc-idx-g"><h3><a href="help/c/%s.html">%s</a>'
-            '<span>%d guides</span></h3><ul>%s</ul></section>'
-            % (esc(_cid), esc(_ctitle), len(_entries), _items))
-    index_html = (
-        '<section class="hc-index" aria-labelledby="hcIndexH">'
-        '<div class="wrap hc-idx-wrap">'
-        '<h2 id="hcIndexH">Every help article, by topic</h2>'
-        '<p class="hc-idx-lead">Each guide below also has its own page, so you '
-        'can link to it, bookmark it or search for it directly.</p>'
-        '<div class="hc-idx-cols">' + ''.join(_idx_groups) + '</div>'
-        '</div></section>')
     n_cats = len(groups)
 
     # Index-page schema: an explicit list of every article's canonical URL.
@@ -3779,10 +3717,10 @@ def build_page(nodes, help_sec):
   </script>
   <link rel="preload" href="fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles/main.css?v=20261022a1">
+  <link rel="stylesheet" href="styles/main.css?v=20261030a1">
   <link rel="stylesheet" href="styles/liquid-nav.css?v=20261007a1">
 <link rel="stylesheet" href="styles/hotkeys-modal.css?v=20261006a1">
-  <style>{CSS}{INDEX_CSS}
+  <style>{CSS}
   </style>
 </head>
 <body class="help">
@@ -3837,7 +3775,6 @@ def build_page(nodes, help_sec):
         </section>
       </div>
     </div>
-{index_html}
   </main>
 
   <div class="hc-reel" data-reel hidden aria-hidden="true"><button type="button" data-reel-prev tabindex="-1"><span></span></button><button type="button" data-reel-cur tabindex="-1"><span></span></button><button type="button" data-reel-next tabindex="-1"><span></span></button></div>

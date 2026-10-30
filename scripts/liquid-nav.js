@@ -51,7 +51,7 @@ if (!document.documentElement.animate) return;
     var rail = document.createElement('aside');
     rail.className = 'nav-rail';
     rail.setAttribute('aria-label', 'Sections');
-    rail.innerHTML = '<div class="rail-inner"><button type="button" class="rail-tab" aria-label="Hide panel" title="Hide panel (S)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg><kbd class="tab-kbd" aria-hidden="true">S</kbd></button><span class="rail-pill"></span><div class="rail-links"></div><div class="rail-foot"></div></div>';
+    rail.innerHTML = '<div class="rail-inner"><button type="button" class="rail-tab" aria-label="Hide panel" title="Hide panel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button><span class="rail-pill"></span><div class="rail-links"></div><div class="rail-foot"></div></div>';
     var railInner = rail.querySelector('.rail-inner');
     var railLinks = rail.querySelector('.rail-links');
     var railPill = rail.querySelector('.rail-pill');
@@ -376,31 +376,8 @@ if (!document.documentElement.animate) return;
       });
     }
 
-    /* S = toggle the rail panel (desktop only). FS_KEYS from settings.js owns
-       the site-wide Hotkeys switch and the "never fire while typing" rule;
-       fall back to an inline guard if the settings script has not loaded. */
-    document.addEventListener('keydown', function (e) {
-      if (e.key !== 's' && e.key !== 'S') return;
-      /* Unshifted S only: Shift+S is a combo for the hotkeys editor, never
-         the panel toggle. While the editor is open (or recording) keys
-         belong to it. */
-      if (e.shiftKey) return;
-      if (window.FS_HK_RECORDING) return;
-      if (document.querySelector('.hk-overlay.open')) return;
-      if (window.innerWidth <= 860) return;
-      if (!railTab) return;
-      var K = window.FS_KEYS;
-      if (K) {
-        if (!K.allow(e)) return;
-      } else {
-        if (e.ctrlKey || e.metaKey || e.altKey) return;
-        var el = document.activeElement;
-        var tag = (el && el.tagName) || '';
-        if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (el && el.isContentEditable)) return;
-      }
-      e.preventDefault();
-      railTab.click();
-    });
+    /* No keyboard shortcut for the rail: unmodified letters are used by the
+       page's content shortcuts, and search is Ctrl/Cmd+K (hotkeys.js). */
 
     /* Settings > Hotkeys and the rail switch both write fs-rail to localStorage.
        settings.js re-broadcasts cross-tab changes, so the collapsed/shown state

@@ -24,7 +24,7 @@
 
    Other scripts own their own keys and already respect FS_KEYS: the glass
    rail's panel toggle (S, liquid-nav.js), the jump button (G / Home / End,
-   scroll-jump.js) and the help center's search + topics keys (S / K / T).
+   scroll-jump.js) and the help center's search key (Ctrl/Cmd+K, help-hub.js).
    ===================================================================== */
 (function () {
   var root = document.documentElement;
@@ -73,16 +73,8 @@
 
     { key: 'g', sel: 'a.nav-link[href*="blog"], .help-row a[href*="blog"], a[href$="blog/"], a[href$="/blog/"], #navMobile a[href*="blog"], footer a[href$="blog/"]',
       name: 'Blog', hint: 'rail' },
-    /* S = search on blog pages: focuses the sticky search bar. Pressing S
-       while already typing stands down (allow() normally guards this, but
-       the field itself must not steal focus back mid-typing). */
-    { key: 's', name: 'Search the blog', hint: false, run: function () {
-        var f = document.getElementById('blog-q');
-        if (!f) return;
-        if (window.FS_KEYS && FS_KEYS.typing()) return;
-        f.focus();
-        try { f.setSelectionRange(f.value.length, f.value.length); } catch (err) {}
-      } },
+    /* Blog search is Ctrl/Cmd+K (see the dispatcher below). It is NOT a
+       single letter: unmodified letters belong to the shortcuts above. */
     { key: 'h', sel: 'a.nav-link[href*="help"], .site-menu-row, a.gp-row[href*="help"], .help-row a[href*="help"], #navMobile a[href*="help"], footer a[href$="help.html"]',
       name: 'Help', hint: 'rail' },
 
@@ -267,6 +259,27 @@
     if (ck === 'k') return 'k';
     return null;
   }
+  /* Ctrl/Cmd+K = search. Unmodified letters are taken by the MAP above, so
+     the one modified shortcut lives in its own listener: blog search bar on
+     blog pages. Help pages own their Ctrl+K (help-search.js / help-hub.js),
+     which is why they are skipped here. */
+  function focusPageSearch() {
+    var f = document.getElementById('blog-q');
+    if (!f) return false;
+    if (window.FS_KEYS && FS_KEYS.typing && FS_KEYS.typing()) return false;
+    try { f.focus(); f.select(); } catch (err) { try { f.focus(); } catch (e2) {} }
+    return true;
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.defaultPrevented || e.repeat) return;
+    if (!(e.ctrlKey || e.metaKey) || e.altKey) return;
+    if (String(e.key).toLowerCase() !== 'k') return;
+    if (window.FS_HK_RECORDING) return;
+    if (document.querySelector('.hk-overlay.open')) return;
+    if (document.getElementById('hcSearch') || document.getElementById('hcSearchH')) return;
+    if (focusPageSearch()) e.preventDefault();
+  });
+
   document.addEventListener('keydown', function (e) {
     if (e.defaultPrevented || e.repeat) return;
     /* While the hotkeys editor is open (or recording a binding) every key

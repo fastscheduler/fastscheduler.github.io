@@ -103,72 +103,9 @@ def smart_desc(text, floor=70, limit=DESC_LIMIT):
 def esc_q(text):'''
 edit('build_help.py', HELP_ANCHOR, HELP_HELPERS, 'fit_title/smart_desc helpers')
 
-INDEX_CSS_CONST = """CAT_ICONS = {"""
-edit('build_help.py', INDEX_CSS_CONST, """# Crawlable article index (see index_html below). help.html is a
-# hash-router SPA, so its cards, breadcrumbs and pagers are all
-# href="#/a/<id>" -- invisible to a crawler. This block is the same content
-# behind real URLs, in one multi-column index at the foot of the page.
-INDEX_CSS = r'''
-.hc-index { margin-top: 46px; padding: 34px 0 12px; border-top: 1px solid var(--border); }
-.hc-idx-wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
-.hc-index h2 { font-size: 1.45rem; letter-spacing: -.02em; margin: 0 0 6px; }
-.hc-idx-lead { color: var(--text-dim); margin: 0 0 24px; font-size: .95rem; }
-.hc-idx-cols { columns: 4 230px; column-gap: 30px; }
-.hc-idx-g { break-inside: avoid; -webkit-column-break-inside: avoid; margin: 0 0 22px; }
-.hc-idx-g h3 { font-size: .92rem; margin: 0 0 7px; line-height: 1.3; }
-.hc-idx-g h3 a { color: var(--green-strong); text-decoration: none; }
-.hc-idx-g h3 a:hover { text-decoration: underline; }
-.hc-idx-g h3 span { display: block; color: var(--text-dim); font-weight: 500; font-size: .76rem; }
-.hc-idx-g ul { list-style: none; margin: 0; padding: 0; }
-.hc-idx-g li { margin: 0 0 4px; font-size: .87rem; line-height: 1.4; }
-.hc-idx-g li a { color: var(--text); text-decoration: none; }
-.hc-idx-g li a:hover { color: var(--green-strong); text-decoration: underline; }
-@media (max-width: 760px) { .hc-idx-cols { columns: 2 150px; column-gap: 20px; } }
-'''
+# The crawlable "Every help article, by topic" index was removed from the
+# help center. Do not re-add it: see tools/apply_site_footer.py.
 
-CAT_ICONS = {""", 'INDEX_CSS constant')
-
-edit('build_help.py', '  <style>{CSS}\n  </style>',
-     '  <style>{CSS}{INDEX_CSS}\n  </style>', 'INDEX_CSS injected')
-
-edit('build_help.py',
-     "    year = datetime.date.today().year\n",
-     '''    year = datetime.date.today().year
-
-    # --- crawlable index ------------------------------------------------
-    # Every in-page link on this page is href="#/a/<id>" or "#/c/<id>".
-    # Crawlers do not follow fragments, so before this block every one of the
-    # 323 help pages (help.html, help/c/*, help/a/*) was an orphan reachable
-    # only from the sitemap, and Google had indexed the homepage and nothing
-    # else. Emit the same content behind real hrefs.
-    _idx_groups = []
-    for g in groups:
-        _cid, _ctitle = g['cat']['id'], g['cat']['title']
-        _entries = ([g['cat']] if art_eligible(g['cat']) else []) + \\
-                   [k for k in g['kids'] if art_eligible(k)]
-        if not _entries:
-            continue
-        _items = ''.join(
-            '<li><a href="help/a/%s.html">%s</a></li>' % (esc(k['id']), esc(k['title']))
-            for k in _entries)
-        _idx_groups.append(
-            '<section class="hc-idx-g"><h3><a href="help/c/%s.html">%s</a>'
-            '<span>%d guides</span></h3><ul>%s</ul></section>'
-            % (esc(_cid), esc(_ctitle), len(_entries), _items))
-    index_html = (
-        '<section class="hc-index" aria-labelledby="hcIndexH">'
-        '<div class="wrap hc-idx-wrap">'
-        '<h2 id="hcIndexH">Every help article, by topic</h2>'
-        '<p class="hc-idx-lead">Each guide below also has its own page, so you '
-        'can link to it, bookmark it or search for it directly.</p>'
-        '<div class="hc-idx-cols">' + ''.join(_idx_groups) + '</div>'
-        '</div></section>')
-''', 'index_html build')
-
-edit('build_help.py',
-     "        </section>\n      </div>\n    </div>\n  </main>\n",
-     "        </section>\n      </div>\n    </div>\n{index_html}\n  </main>\n",
-     'index_html in <main>')
 
 # ----------------------------------------------------- build_static.py -----
 edit('build_static.py',

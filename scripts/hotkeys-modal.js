@@ -90,10 +90,9 @@
     { id: 'pageup',  key: 'U',           page: 'all', name: 'Jump up a screen',  act: function () { return jump('pageUp'); }, desktopOnly: true },
     { id: 'pagedown', key: 'J',          page: 'all', name: 'Jump down a screen', act: function () { return jump('pageDown'); }, desktopOnly: true },
     { id: 'end',     key: 'Shift+Enter', page: 'all', name: 'Go to the end',     act: function () { return jump('bottom'); } },
-    { id: 'railToggle', key: 'S', page: 'home+legal', name: 'Show/hide side panel', act: function () { return clickSel('.rail-tab'); }, desktopOnly: true },
     { id: 'tocToggle',  key: 'C', page: 'legal', name: 'Show/hide contents', act: function () { return clickSel('#tocSideTab'); }, desktopOnly: true },
-    { id: 'hcSearch',   key: 'S', page: 'help', name: 'Search the help center',
-      act: function () { return clickSel('#hcSBtn') || clickSel('#hcSearch'); } },
+    { id: 'hcSearch',   key: 'Ctrl+K', page: 'help', name: 'Search the help center',
+      act: function () { return clickSel('#hcSearch'); } },
     { id: 'hcTopics',   key: 'O', page: 'help', name: 'Show/hide topics', act: function () { return clickSel('#hcSideToggle'); }, desktopOnly: true }
   ];
 

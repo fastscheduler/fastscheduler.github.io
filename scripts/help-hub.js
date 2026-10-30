@@ -557,9 +557,8 @@
   }
   buildSidebar();
 
-  /* The search button advertised "S" while the shortcut everybody tries is
-     Ctrl/Cmd+K (help-search.js binds it). Show the key people actually use,
-     and keep S working — the hotkeys layer still owns it. */
+  /* The search button shows the key that actually opens help search:
+     Ctrl/Cmd+K. There is no single-letter search shortcut. */
   (function searchKeyLabel() {
     var b = document.getElementById('hcSBtn');
     if (!b) return;
@@ -1014,13 +1013,9 @@
     if (target) { target.focus(); target.select(); }
   }
 
-  /* hero "S" button */
-  var sBtn = document.getElementById('hcSBtn');
-  if (sBtn) sBtn.addEventListener('click', function () {
-    if (heroInput) { heroInput.focus(); heroInput.select(); }
-  });
-
-  /* keyboard shortcuts: S or Ctrl/Cmd+K = search, T = topics sidebar */
+  /* keyboard shortcuts: Ctrl/Cmd+K = search, O = topics sidebar.
+     There is deliberately NO single-letter search key: unmodified letters
+     are reserved for the site-wide shortcuts (S toggles the glass rail). */
   document.addEventListener('keydown', function (e) {
     var el = document.activeElement;
     var tag = (el && el.tagName) || '';
@@ -1030,8 +1025,7 @@
        with every other shortcut, and the keycap hints disappear with them. */
     if (document.documentElement.getAttribute('data-keys') === 'off') return;
     var isK = (e.key === 'k' || e.key === 'K') && (e.ctrlKey || e.metaKey);
-    var isS = (e.key === 's' || e.key === 'S') && !mod;
-    if (isK || isS) { e.preventDefault(); focusSearch(); return; }
+    if (isK) { e.preventDefault(); focusSearch(); return; }
     /* O = topics. Guard: ignore chords mid-recording in the hotkeys editor
        (its capture-phase handler stops them; this belt-and-suspenders check
        keeps a sequence like O then B from flipping the sidebar mid-chord). */
