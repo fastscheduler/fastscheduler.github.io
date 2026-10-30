@@ -46,8 +46,8 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Send Your First Post", "description": "A complete first run: open the scheduler, send date and text, choose media, review the card and confirm the queue.", "articleBody": "This is the shortest complete path from an empty queue to a post that publishes itself. It assumes the channel is connected and has a sender bot — if not, start with Getting Started . ## Open the right chat Open your sender bot (the bot you created in @BotFather), not the main bot. If you are in the main bot, 📢 Channels → the managed channel → 🤖 Open Sender Bot takes you there. ## Start the scheduler Tap 📅 Schedule a Message . A prompt appears with the format and an example. ## Send the date and the post together 25.12.2026 10:00 Our first scheduled post — hello! The first line must be the date/time. Everything below it is the post. If you only send a time ( 18:30 ), the bot schedules it for today, or tomorrow if that moment has passed. ## Choose media If you do not need files, tap ⏭ Skip Photos . Otherwise: 📷 Normal — the same file on every post (logo, watermark). 🎲 Random — one random file from the set you send. 🔀 Sequential — files in order, one per post. 💾From storage — reuse files already saved in Media Storage. Send the files, watch the counter, then tap ✅ Done (N) . Details: Media Modes Explained . ## Review The card shows the channel, the exact time, a preview, media and inline-button counts. Check the time and time zone first — they are the usual surprises. Then: ✅ Schedule — queue it. ✏️ Edit — change the text. 💾 Change media — replace files. 📢 Change channel — choose another destination. ## Confirm and verify The bot confirms and assigns an ID. Check 📋 Message List → Scheduled messages or 📅 Calendar . Both show the post before it goes out. ## After it is sent It disappears from the scheduled list and appears in statistics for the channel. If it failed, the calendar marks it ❌ Failed and the bot reports the reason — see Common Errors . First-post mistakes to avoid Sending the text before the date line — the bot needs the first line to be the date. Using a past date — refused on purpose. Forgetting the sender bot — scheduling stays locked. Putting a blank line inside one post — that starts a new message block. Scheduling on the Free plan with 100 messages already queued — see Scheduled Limit . Can I write the post first and set the date later? No. In the scheduling flow the first line is parsed as the date/time. Send the date first, then the text. To change the time of an existing post, use Edit from the Message List. How do I send the same post to two channels? On the review card tap 📢 Choose channels and tick every destination. Each copy is sent by that channel’s own sender bot. Multi-channel targeting is a Premium capability.", "articleSection": "More topics", "author": {"@id": "https://fastscheduler.github.io/#organization"}, "publisher": {"@id": "https://fastscheduler.github.io/#organization"}, "mainEntityOfPage": "https://fastscheduler.github.io/help/a/start_schedule.html", "datePublished": "2026-10-04", "dateModified": "2026-10-04", "isPartOf": {"@id": "https://fastscheduler.github.io/#website"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Fast Scheduler", "item": "https://fastscheduler.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Help Center", "item": "https://fastscheduler.github.io/help.html"}, {"@type": "ListItem", "position": 3, "name": "More topics", "item": "https://fastscheduler.github.io/help/c/misc.html"}, {"@type": "ListItem", "position": 4, "name": "Send Your First Post", "item": "https://fastscheduler.github.io/help/a/start_schedule.html"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I write the post first and set the date later?", "acceptedAnswer": {"@type": "Answer", "text": "No. In the scheduling flow the first line is parsed as the date/time. Send the date first, then the text. To change the time of an existing post, use Edit from the Message List."}}, {"@type": "Question", "name": "How do I send the same post to two channels?", "acceptedAnswer": {"@type": "Answer", "text": "On the review card tap 📢 Choose channels and tick every destination. Each copy is sent by that channel’s own sender bot. Multi-channel targeting is a Premium capability."}}]}</script>
-<link rel="stylesheet" href="../../styles/main.css?v=20261030b1">
-<link rel="stylesheet" href="../../styles/hotkeys-modal.css?v=20261030b1">
+<link rel="stylesheet" href="../../styles/main.css?v=20261030c1">
+<link rel="stylesheet" href="../../styles/hotkeys-modal.css?v=20261030c1">
 <style>.hc-card {
   background: var(--surface);
   border: 1px solid var(--border); border-radius: var(--hc-r);
@@ -259,6 +259,9 @@
 .hc-related h2 { font-size: .9rem; font-weight: 650; letter-spacing: 0; color: var(--text-dim); margin: 0 0 12px; }
 
 .hc-pager { max-width: 860px; margin: 16px auto 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+
+/* One neighbour only: it takes the whole row instead of half of it. */
+.hc-pager a:only-of-type { grid-column: 1 / -1; }
 
 .hc-pager a { display: flex; align-items: center; gap: 12px; padding: 14px 17px; color: var(--text); }
 
@@ -787,7 +790,18 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
 @media (max-width: 760px) {
   .hc-rail { display: none; }
 
-  .hc-pager { grid-template-columns: minmax(0, 1fr); }
+  /* Side by side on phones as well: stacking doubled the scroll for two
+     cards whose titles wrap to two lines anyway. */
+  .hc-pager { gap: 8px; }
+
+  .hc-pager a { padding: 11px 11px; gap: 7px; align-items: flex-start; }
+
+  .hc-pager small { font-size: .7rem; }
+
+  .hc-pager b { font-size: .82rem; white-space: normal; overflow: visible; text-overflow: clip;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+
+  .hc-pager svg { width: 15px; height: 15px; margin-top: 2px; }
 
   .hc-body pre { font-size: .8rem; white-space: pre-wrap; overflow-wrap: anywhere; }
 }
@@ -828,7 +842,7 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
 <link rel="alternate" hreflang="ru" href="https://fastscheduler.github.io/ru/help/a/start_schedule.html">
 <link rel="alternate" hreflang="en" href="https://fastscheduler.github.io/help/a/start_schedule.html">
 <link rel="alternate" hreflang="x-default" href="https://fastscheduler.github.io/help/a/start_schedule.html">
-<!--/fs:ru-alt--><script src="../../scripts/consent.js?v=20261030b1" defer></script>
+<!--/fs:ru-alt--><script src="../../scripts/consent.js?v=20261030c1" defer></script>
 </head>
 <body class="help">
 <header class="site"><div class="wrap nav nav-unified"><div class="nav-group nav-left"><a class="brand" href="../../index.html" aria-label="Fast Scheduler — home (FS)"><span class="brand-mark"><img src="../../brand-logo-128.png" alt="" width="30" height="30" decoding="async"></span><span class="brand-full">Fast Scheduler</span><span class="brand-short">FS</span></a></div><div class="nav-group nav-right"><a class="nav-link" href="../../blog/index.html" aria-label="Blog"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><span>Blog</span></a><span class="site-menu-wrap"><a class="nav-link site-menu-row" href="../../help.html" aria-label="Help Center" aria-haspopup="menu" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Help Center</span></a><div class="glass-pop site-menu-pop help-menu nav-menu-pop" id="siteMenu" role="dialog" aria-label="Help center quick search"><form class="help-search" id="helpSearchForm" role="search"><svg class="sic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="search" id="helpSearchInput" placeholder="Search the help center…" autocomplete="off" aria-label="Search the help center"></form><div class="help-recent"><div class="help-recent-title" id="helpRecentTitle">Popular articles</div><div class="help-recent-list" id="helpRecentList"></div></div><a class="gp-row help-menu-open" aria-label="Open Help Center" href="../../help.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Open Help Center</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></div></span><a class="btn btn-primary nav-cta" data-cta-short="Open" aria-label="Open Bot" href="https://t.me/FastSchedulerSupport_bot?start=_t" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>Open Bot</span><kbd class="tab-kbd" aria-hidden="true">B</kbd></a><span class="settings-wrap"><button type="button" class="icon-btn" id="settingsBtn" aria-haspopup="menu" aria-expanded="false" aria-label="Settings" data-hk="settings dark anim fx keys"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button><div class="glass-pop" id="settingsMenu" role="group" aria-label="Settings"><div class="gp-head" role="none">Settings</div>
@@ -896,17 +910,17 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
     </nav>
   </div>
 </footer>
-<script src="../../scripts/theme.js?v=20261030b1"></script>
-<script src="../../scripts/settings.js?v=20261030b1"></script>
-<script src="../../scripts/ru-content.js?v=20261030b1"></script>
-<script src="../../scripts/ru-chrome.js?v=20261030b1"></script>
-<script src="../../scripts/lang.js?v=20261030b1"></script>
-<script src="../../scripts/hotkeys-modal.js?v=20261030b1"></script>
-<script src="../../scripts/help-ai.js?v=20261030b1"></script>
-<script src="../../scripts/help-search.js?v=20261030b1"></script>
-<script src="../../scripts/hotkeys.js?v=20261030b1"></script>
-<script src="../../scripts/scroll-jump.js?v=20261030b1"></script>
-<script src="../../scripts/article-nav.js?v=20261030b1"></script>
-<script src="../../scripts/site-footer.js?v=20261030b1"></script>
+<script src="../../scripts/theme.js?v=20261030c1"></script>
+<script src="../../scripts/settings.js?v=20261030c1"></script>
+<script src="../../scripts/ru-content.js?v=20261030c1"></script>
+<script src="../../scripts/ru-chrome.js?v=20261030c1"></script>
+<script src="../../scripts/lang.js?v=20261030c1"></script>
+<script src="../../scripts/hotkeys-modal.js?v=20261030c1"></script>
+<script src="../../scripts/help-ai.js?v=20261030c1"></script>
+<script src="../../scripts/help-search.js?v=20261030c1"></script>
+<script src="../../scripts/hotkeys.js?v=20261030c1"></script>
+<script src="../../scripts/scroll-jump.js?v=20261030c1"></script>
+<script src="../../scripts/article-nav.js?v=20261030c1"></script>
+<script src="../../scripts/site-footer.js?v=20261030c1"></script>
 </body>
 </html>

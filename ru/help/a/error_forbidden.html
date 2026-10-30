@@ -50,8 +50,8 @@
 <link rel="alternate" hreflang="en" href="https://fastscheduler.github.io/help/a/error_forbidden.html">
 <link rel="alternate" hreflang="x-default" href="https://fastscheduler.github.io/help/a/error_forbidden.html">
 <!--/fs:ru-alt-->
-<link rel="stylesheet" href="../../../styles/main.css?v=20261030b1">
-<link rel="stylesheet" href="../../../styles/hotkeys-modal.css?v=20261030b1">
+<link rel="stylesheet" href="../../../styles/main.css?v=20261030c1">
+<link rel="stylesheet" href="../../../styles/hotkeys-modal.css?v=20261030c1">
 <style>.hc-card {
   background: var(--surface);
   border: 1px solid var(--border); border-radius: var(--hc-r);
@@ -263,6 +263,9 @@
 .hc-related h2 { font-size: .9rem; font-weight: 650; letter-spacing: 0; color: var(--text-dim); margin: 0 0 12px; }
 
 .hc-pager { max-width: 860px; margin: 16px auto 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+
+/* One neighbour only: it takes the whole row instead of half of it. */
+.hc-pager a:only-of-type { grid-column: 1 / -1; }
 
 .hc-pager a { display: flex; align-items: center; gap: 12px; padding: 14px 17px; color: var(--text); }
 
@@ -791,7 +794,18 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
 @media (max-width: 760px) {
   .hc-rail { display: none; }
 
-  .hc-pager { grid-template-columns: minmax(0, 1fr); }
+  /* Side by side on phones as well: stacking doubled the scroll for two
+     cards whose titles wrap to two lines anyway. */
+  .hc-pager { gap: 8px; }
+
+  .hc-pager a { padding: 11px 11px; gap: 7px; align-items: flex-start; }
+
+  .hc-pager small { font-size: .7rem; }
+
+  .hc-pager b { font-size: .82rem; white-space: normal; overflow: visible; text-overflow: clip;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+
+  .hc-pager svg { width: 15px; height: 15px; margin-top: 2px; }
 
   .hc-body pre { font-size: .8rem; white-space: pre-wrap; overflow-wrap: anywhere; }
 }
@@ -828,7 +842,7 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
   .hc-card { border: 0; box-shadow: none; background: none; }
 }
   </style>
-<script src="../../../scripts/consent.js?v=20261030b1" defer></script>
+<script src="../../../scripts/consent.js?v=20261030c1" defer></script>
 </head>
 <body class="help">
 <header class="site"><div class="wrap nav nav-unified"><div class="nav-group nav-left"><a class="brand" href="../../../ru/index.html" aria-label="Fast Scheduler — главная (FS)"><span class="brand-mark"><img src="../../../brand-logo-128.png" alt="" width="30" height="30" decoding="async"></span><span class="brand-full">Fast Scheduler</span><span class="brand-short">FS</span></a></div><div class="nav-group nav-right"><a class="nav-link" href="../../../ru/blog/index.html" aria-label="Блог"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><span>Блог</span></a><span class="site-menu-wrap"><a class="nav-link site-menu-row" href="../../../ru/help.html" aria-label="Центр помощи" aria-haspopup="menu" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Центр помощи</span></a><div class="glass-pop site-menu-pop help-menu nav-menu-pop" id="siteMenu" role="dialog" aria-label="Быстрый поиск по справке"><form class="help-search" id="helpSearchForm" role="search"><svg class="sic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="search" id="helpSearchInput" placeholder="Поиск по справке…" autocomplete="off" aria-label="Поиск по справке"></form><div class="help-recent"><div class="help-recent-title" id="helpRecentTitle">Популярные статьи</div><div class="help-recent-list" id="helpRecentList"></div></div><a class="gp-row help-menu-open" aria-label="Открыть Центр помощи" href="../../../ru/help.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Открыть Центр помощи</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></div></span><a class="btn btn-primary nav-cta" data-cta-short="Открыть" aria-label="Открыть бота" href="https://t.me/FastSchedulerSupport_bot?start=_t" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>Открыть бота</span><kbd class="tab-kbd" aria-hidden="true">B</kbd></a><span class="settings-wrap"><button type="button" class="icon-btn" id="settingsBtn" aria-haspopup="menu" aria-expanded="false" aria-label="Настройки" data-hk="settings dark anim fx keys"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button><div class="glass-pop" id="settingsMenu" role="group" aria-label="Настройки"><div class="gp-head" role="none">Настройки</div>
@@ -866,17 +880,17 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
     </nav>
   </div>
 </footer>
-<script src="../../../scripts/theme.js?v=20261030b1"></script>
-<script src="../../../scripts/settings.js?v=20261030b1"></script>
-<script src="../../../scripts/ru-content.js?v=20261030b1"></script>
-<script src="../../../scripts/ru-chrome.js?v=20261030b1"></script>
-<script src="../../../scripts/lang.js?v=20261030b1"></script>
-<script src="../../../scripts/hotkeys-modal.js?v=20261030b1"></script>
-<script src="../../../scripts/help-ai.js?v=20261030b1"></script>
-<script src="../../../scripts/help-search.js?v=20261030b1"></script>
-<script src="../../../scripts/hotkeys.js?v=20261030b1"></script>
-<script src="../../../scripts/scroll-jump.js?v=20261030b1"></script>
-<script src="../../../scripts/article-nav.js?v=20261030b1"></script>
-<script src="../../../scripts/site-footer.js?v=20261030b1"></script>
+<script src="../../../scripts/theme.js?v=20261030c1"></script>
+<script src="../../../scripts/settings.js?v=20261030c1"></script>
+<script src="../../../scripts/ru-content.js?v=20261030c1"></script>
+<script src="../../../scripts/ru-chrome.js?v=20261030c1"></script>
+<script src="../../../scripts/lang.js?v=20261030c1"></script>
+<script src="../../../scripts/hotkeys-modal.js?v=20261030c1"></script>
+<script src="../../../scripts/help-ai.js?v=20261030c1"></script>
+<script src="../../../scripts/help-search.js?v=20261030c1"></script>
+<script src="../../../scripts/hotkeys.js?v=20261030c1"></script>
+<script src="../../../scripts/scroll-jump.js?v=20261030c1"></script>
+<script src="../../../scripts/article-nav.js?v=20261030c1"></script>
+<script src="../../../scripts/site-footer.js?v=20261030c1"></script>
 </body>
 </html>

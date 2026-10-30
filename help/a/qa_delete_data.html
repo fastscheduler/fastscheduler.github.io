@@ -46,8 +46,8 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "How Do I Delete My Fast Scheduler Account and All My Data?", "description": "Want everything removed? Here is how account deletion works, what exactly gets erased, why you should export a backup first, and what happens on Telegram", "articleBody": "You can leave Fast Scheduler completely — no subscriptions to cancel by email, no dark patterns, no &ldquo;are you sure&rdquo; maze. One message, and everything tied to your Telegram account is erased. How to request deletion Contact @MaximalXP in Telegram and ask to delete your account. Deletion is permanent and covers all data associated with your user ID: scheduled and recurring messages, media storage, sender-bot tokens, channel connections, settings, statistics and referral records. Export first — deletion has no undo Before deleting, create a backup with /backup (a Premium toolkit) or export individual lists, so your content plan survives the account. Once deletion runs, there is no recovery path — the data no longer exists to restore. What happens on Telegram&rsquo;s side Your sender bots keep existing in @BotFather — they are your bots, created with your account. If you want them gone too, revoke or delete them there after deletion. Revoke first if you plan to keep using them elsewhere. The bot loses admin rights relevance immediately, but you can also remove @FastSchedulerBot and your sender bot from your channels&rsquo; admin lists yourself — a good hygiene step that takes ten seconds per channel. Already-published posts stay in your channel, of course — deletion cannot rewrite history. How long data is kept normally While you are an active user, every category of data is kept only while it is useful: schedules until they are deleted or sent, bot tokens until you disconnect the bot, and account records until you delete the account. The Privacy Policy&rsquo;s retention table lists each category with its exact lifetime. Who do I contact to delete my Fast Scheduler account? Message @MaximalXP on Telegram and request account deletion. The deletion is permanent and removes all data linked to your Telegram ID. Can I delete everything but keep the bot? Yes — you can delete individual schedules, media and sender bots from inside the bot without deleting your account. Full deletion is only for leaving the service entirely. Should I export a backup before deleting? Definitely. After deletion there is no way to restore anything, so create a backup with /backup first if there is any chance you will return.", "articleSection": "Privacy", "author": {"@id": "https://fastscheduler.github.io/#organization"}, "publisher": {"@id": "https://fastscheduler.github.io/#organization"}, "mainEntityOfPage": "https://fastscheduler.github.io/help/a/qa_delete_data.html", "datePublished": "2026-10-04", "dateModified": "2026-10-04", "isPartOf": {"@id": "https://fastscheduler.github.io/#website"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Fast Scheduler", "item": "https://fastscheduler.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Help Center", "item": "https://fastscheduler.github.io/help.html"}, {"@type": "ListItem", "position": 3, "name": "Privacy", "item": "https://fastscheduler.github.io/help/c/privacy.html"}, {"@type": "ListItem", "position": 4, "name": "How Do I Delete My Fast Scheduler Account and All My Data?", "item": "https://fastscheduler.github.io/help/a/qa_delete_data.html"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Who do I contact to delete my Fast Scheduler account?", "acceptedAnswer": {"@type": "Answer", "text": "Message @MaximalXP on Telegram and request account deletion. The deletion is permanent and removes all data linked to your Telegram ID."}}, {"@type": "Question", "name": "Can I delete everything but keep the bot?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — you can delete individual schedules, media and sender bots from inside the bot without deleting your account. Full deletion is only for leaving the service entirely."}}, {"@type": "Question", "name": "Should I export a backup before deleting?", "acceptedAnswer": {"@type": "Answer", "text": "Definitely. After deletion there is no way to restore anything, so create a backup with /backup first if there is any chance you will return."}}]}</script>
-<link rel="stylesheet" href="../../styles/main.css?v=20261030b1">
-<link rel="stylesheet" href="../../styles/hotkeys-modal.css?v=20261030b1">
+<link rel="stylesheet" href="../../styles/main.css?v=20261030c1">
+<link rel="stylesheet" href="../../styles/hotkeys-modal.css?v=20261030c1">
 <style>.hc-card {
   background: var(--surface);
   border: 1px solid var(--border); border-radius: var(--hc-r);
@@ -259,6 +259,9 @@
 .hc-related h2 { font-size: .9rem; font-weight: 650; letter-spacing: 0; color: var(--text-dim); margin: 0 0 12px; }
 
 .hc-pager { max-width: 860px; margin: 16px auto 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+
+/* One neighbour only: it takes the whole row instead of half of it. */
+.hc-pager a:only-of-type { grid-column: 1 / -1; }
 
 .hc-pager a { display: flex; align-items: center; gap: 12px; padding: 14px 17px; color: var(--text); }
 
@@ -787,7 +790,18 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
 @media (max-width: 760px) {
   .hc-rail { display: none; }
 
-  .hc-pager { grid-template-columns: minmax(0, 1fr); }
+  /* Side by side on phones as well: stacking doubled the scroll for two
+     cards whose titles wrap to two lines anyway. */
+  .hc-pager { gap: 8px; }
+
+  .hc-pager a { padding: 11px 11px; gap: 7px; align-items: flex-start; }
+
+  .hc-pager small { font-size: .7rem; }
+
+  .hc-pager b { font-size: .82rem; white-space: normal; overflow: visible; text-overflow: clip;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+
+  .hc-pager svg { width: 15px; height: 15px; margin-top: 2px; }
 
   .hc-body pre { font-size: .8rem; white-space: pre-wrap; overflow-wrap: anywhere; }
 }
@@ -828,7 +842,7 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
 <link rel="alternate" hreflang="ru" href="https://fastscheduler.github.io/ru/help/a/qa_delete_data.html">
 <link rel="alternate" hreflang="en" href="https://fastscheduler.github.io/help/a/qa_delete_data.html">
 <link rel="alternate" hreflang="x-default" href="https://fastscheduler.github.io/help/a/qa_delete_data.html">
-<!--/fs:ru-alt--><script src="../../scripts/consent.js?v=20261030b1" defer></script>
+<!--/fs:ru-alt--><script src="../../scripts/consent.js?v=20261030c1" defer></script>
 </head>
 <body class="help">
 <header class="site"><div class="wrap nav nav-unified"><div class="nav-group nav-left"><a class="brand" href="../../index.html" aria-label="Fast Scheduler — home (FS)"><span class="brand-mark"><img src="../../brand-logo-128.png" alt="" width="30" height="30" decoding="async"></span><span class="brand-full">Fast Scheduler</span><span class="brand-short">FS</span></a></div><div class="nav-group nav-right"><a class="nav-link" href="../../blog/index.html" aria-label="Blog"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><span>Blog</span></a><span class="site-menu-wrap"><a class="nav-link site-menu-row" href="../../help.html" aria-label="Help Center" aria-haspopup="menu" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Help Center</span></a><div class="glass-pop site-menu-pop help-menu nav-menu-pop" id="siteMenu" role="dialog" aria-label="Help center quick search"><form class="help-search" id="helpSearchForm" role="search"><svg class="sic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="search" id="helpSearchInput" placeholder="Search the help center…" autocomplete="off" aria-label="Search the help center"></form><div class="help-recent"><div class="help-recent-title" id="helpRecentTitle">Popular articles</div><div class="help-recent-list" id="helpRecentList"></div></div><a class="gp-row help-menu-open" aria-label="Open Help Center" href="../../help.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Open Help Center</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></div></span><a class="btn btn-primary nav-cta" data-cta-short="Open" aria-label="Open Bot" href="https://t.me/FastSchedulerSupport_bot?start=_t" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>Open Bot</span><kbd class="tab-kbd" aria-hidden="true">B</kbd></a><span class="settings-wrap"><button type="button" class="icon-btn" id="settingsBtn" aria-haspopup="menu" aria-expanded="false" aria-label="Settings" data-hk="settings dark anim fx keys"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button><div class="glass-pop" id="settingsMenu" role="group" aria-label="Settings"><div class="gp-head" role="none">Settings</div>
@@ -870,17 +884,17 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
     </nav>
   </div>
 </footer>
-<script src="../../scripts/theme.js?v=20261030b1"></script>
-<script src="../../scripts/settings.js?v=20261030b1"></script>
-<script src="../../scripts/ru-content.js?v=20261030b1"></script>
-<script src="../../scripts/ru-chrome.js?v=20261030b1"></script>
-<script src="../../scripts/lang.js?v=20261030b1"></script>
-<script src="../../scripts/hotkeys-modal.js?v=20261030b1"></script>
-<script src="../../scripts/help-ai.js?v=20261030b1"></script>
-<script src="../../scripts/help-search.js?v=20261030b1"></script>
-<script src="../../scripts/hotkeys.js?v=20261030b1"></script>
-<script src="../../scripts/scroll-jump.js?v=20261030b1"></script>
-<script src="../../scripts/article-nav.js?v=20261030b1"></script>
-<script src="../../scripts/site-footer.js?v=20261030b1"></script>
+<script src="../../scripts/theme.js?v=20261030c1"></script>
+<script src="../../scripts/settings.js?v=20261030c1"></script>
+<script src="../../scripts/ru-content.js?v=20261030c1"></script>
+<script src="../../scripts/ru-chrome.js?v=20261030c1"></script>
+<script src="../../scripts/lang.js?v=20261030c1"></script>
+<script src="../../scripts/hotkeys-modal.js?v=20261030c1"></script>
+<script src="../../scripts/help-ai.js?v=20261030c1"></script>
+<script src="../../scripts/help-search.js?v=20261030c1"></script>
+<script src="../../scripts/hotkeys.js?v=20261030c1"></script>
+<script src="../../scripts/scroll-jump.js?v=20261030c1"></script>
+<script src="../../scripts/article-nav.js?v=20261030c1"></script>
+<script src="../../scripts/site-footer.js?v=20261030c1"></script>
 </body>
 </html>

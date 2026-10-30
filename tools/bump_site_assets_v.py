@@ -10,13 +10,30 @@ like it never shipped.
     python tools/bump_site_assets_v.py 20261014a1
     python tools/bump_site_assets_v.py --check
 """
-import io, os, re, sys
+import io, os, re, sys, time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP = ('.git', 'node_modules', 'venv', '.venv', '__pycache__', '_build', 'tools', 'src',
         'tests', 'website', '.kilo', 'backup', 'local', 'data', 'docs', 'SetDate',
         'Support Bot', '_hero_phone_backup', '.scripts', 'alwaysdata')
 PAT = re.compile(r'((?:\.\./)*styles/[A-Za-z0-9_\-]+\.css|(?:\.\./)*scripts/[A-Za-z0-9_\-]+\.js)\?v=([^"\'&]+)')
+
+
+def _write(path, text, attempts=6):
+    """Write a page, retrying transient Windows sharing violations.
+
+    Antivirus/indexers briefly hold a handle right after a file is rewritten;
+    Windows answers the next open with EINVAL ("Invalid argument"), which used
+    to abort the whole bump half way through the tree. Retrying settles it.
+    """
+    for i in range(attempts):
+        try:
+            io.open(path, 'w', encoding='utf-8', newline='\n').write(text)
+            return
+        except OSError:
+            if i == attempts - 1:
+                raise
+            time.sleep(0.15 * (i + 1))
 
 
 def main():
@@ -41,7 +58,7 @@ def main():
                 continue
             out = PAT.sub(lambda m: m.group(1) + '?v=' + new, s)
             if out != s:
-                io.open(full, 'w', encoding='utf-8', newline='\n').write(out)
+                _write(full, out)
                 touched += 1
             files += 1
     print(('checked' if check_only else 'bumped to %s in' % new), files, 'page(s),', touched, 'rewritten')

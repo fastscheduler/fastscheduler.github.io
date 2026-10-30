@@ -7,6 +7,7 @@ pruned article root/help/a/channel_default.html.
 import os
 import shutil
 import sys
+import time
 
 PUB = ['index.html', 'help.html', '404.html', 'robots.txt', 'sitemap.xml',
        'llms.txt', 'llms-full.txt', 'blog', 'help', 'legal', 'ru', 'scripts',
@@ -28,17 +29,38 @@ PRUNE = [os.path.join('help', 'a', 'channel_default.html')]
 copied = removed = 0
 
 
+def _write_bytes(path, data, attempts=6):
+    """Write a file, retrying transient Windows sharing violations.
+
+    Antivirus/indexers briefly hold a handle on a file just after it changes;
+    Windows answers the next open with EINVAL ("Invalid argument"), which used
+    to abort the whole sync part way through. A short backoff settles it and a
+    real permission problem still raises after the last attempt.
+    """
+    for i in range(attempts):
+        try:
+            with open(path, 'wb') as f:
+                f.write(data)
+            return
+        except OSError:
+            if i == attempts - 1:
+                raise
+            time.sleep(0.15 * (i + 1))
+
+
 def sync_file(src, dst):
     global copied
     with open(src, 'rb') as f:
         data = f.read()
     if os.path.isfile(dst):
-        with open(dst, 'rb') as f:
-            if f.read() == data:
-                return
+        try:
+            with open(dst, 'rb') as f:
+                if f.read() == data:
+                    return
+        except OSError:
+            pass
     os.makedirs(os.path.dirname(dst) or '.', exist_ok=True)
-    with open(dst, 'wb') as f:
-        f.write(data)
+    _write_bytes(dst, data)
     copied += 1
 
 

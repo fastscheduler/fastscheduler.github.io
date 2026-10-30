@@ -1569,6 +1569,9 @@ CSS = r'''
     .hc-related h2 { font-size: .9rem; font-weight: 650; letter-spacing: 0; color: var(--text-dim); margin: 0 0 12px; }
 
     .hc-pager { max-width: 860px; margin: 16px auto 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+    /* One neighbour only: let it use the full row instead of leaving half the
+       width empty next to it. */
+    .hc-pager a:only-of-type { grid-column: 1 / -1; }
     @media (max-width: 640px) {
       .hc-pager { gap: 9px; }
       .hc-pager a { padding: 12px 13px; gap: 9px; }
@@ -1990,7 +1993,15 @@ CSS = r'''
       .hc-doc { grid-template-columns: minmax(0, 1fr); }
       .hc-rail { display: none; }
       .hc-docs-head h1 { font-size: 1.9rem; }
-      .hc-pager { grid-template-columns: minmax(0, 1fr); }
+      /* Prev and Next stay side by side on phones too — stacking them doubled
+         the scroll for a three-line caption. Titles wrap to two lines instead
+         of being cut off at half width. */
+      .hc-pager { gap: 8px; }
+      .hc-pager a { padding: 11px 11px; gap: 7px; align-items: flex-start; }
+      .hc-pager small { font-size: .7rem; }
+      .hc-pager b { font-size: .82rem; white-space: normal; overflow: visible; text-overflow: clip;
+        display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+      .hc-pager svg { width: 15px; height: 15px; margin-top: 2px; }
       /* Phone-width code samples wrap instead of hiding half the line behind a
          horizontal swipe — the batch format is the content, not decoration. */
       .hc-body pre { font-size: .8rem; white-space: pre-wrap; overflow-wrap: anywhere; }

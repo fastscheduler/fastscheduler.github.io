@@ -264,6 +264,9 @@
 
 .hc-pager { max-width: 860px; margin: 16px auto 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
 
+/* One neighbour only: it takes the whole row instead of half of it. */
+.hc-pager a:only-of-type { grid-column: 1 / -1; }
+
 .hc-pager a { display: flex; align-items: center; gap: 12px; padding: 14px 17px; color: var(--text); }
 
 .hc-pager a:hover { text-decoration: none; transform: translateY(-2px); border-color: color-mix(in srgb, var(--green) 45%, var(--border)); }
@@ -791,7 +794,18 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
 @media (max-width: 760px) {
   .hc-rail { display: none; }
 
-  .hc-pager { grid-template-columns: minmax(0, 1fr); }
+  /* Side by side on phones as well: stacking doubled the scroll for two
+     cards whose titles wrap to two lines anyway. */
+  .hc-pager { gap: 8px; }
+
+  .hc-pager a { padding: 11px 11px; gap: 7px; align-items: flex-start; }
+
+  .hc-pager small { font-size: .7rem; }
+
+  .hc-pager b { font-size: .82rem; white-space: normal; overflow: visible; text-overflow: clip;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+
+  .hc-pager svg { width: 15px; height: 15px; margin-top: 2px; }
 
   .hc-body pre { font-size: .8rem; white-space: pre-wrap; overflow-wrap: anywhere; }
 }
