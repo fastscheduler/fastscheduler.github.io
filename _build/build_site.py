@@ -867,7 +867,27 @@ def write_legal():
         print(f"[ok] wrote {out_path}")
 
 
+def check_version_blocks():
+    """Fail loudly when a rebuilt page lost its version history or archive link.
+
+    The block used to be hand-stamped after a build, so a rebuild quietly
+    removed it from every page except the last one edited. Stamping fixes
+    that; this check is what proves it stayed fixed, and it reports a broken
+    archived link (the Russian pages used to point at a 404) instead of
+    letting it ship.
+    """
+    import sys as _sys
+    _root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    if _root not in _sys.path:
+        _sys.path.insert(0, _root)
+    from tools.legal_versions import verify
+    problems = verify()
+    if problems:
+        raise SystemExit('[legal] version block check failed:\n  - ' + '\n  - '.join(problems))
+
+
 if __name__ == '__main__':
     write_site_config()
     write_legal()
+    check_version_blocks()
     print("Done.")

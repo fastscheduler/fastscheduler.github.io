@@ -46,7 +46,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Add a Channel", "description": "The exact steps to connect another channel, including the channel picker shortcut inside scheduling.", "articleBody": "Before you start You must be an administrator of the channel, and the sender bot that will serve it must be an administrator there with Post Messages . The main bot does not need any rights in the channel. Connect it 1. Open 📢 Channels → 📢 Connect Channel . The bot lists your idle sender bots — pick one and it opens with the connect flow already running. You can also use ➕ Add New Channel inside a scheduling channel picker. 2. Send the channel identity: @yourchannel , a https://t.me/… link, an invite link, a forwarded post, or the numeric ID -100… . 3. The bot verifies admin rights and adds the channel to your list. After connecting If you picked a sender bot, the channel is linked to it and the time zone is the last step. If you connected the channel without a bot (the escape hatch), scheduling stays locked until you attach one — every channel needs its own sender bot. Limits Free: 1 channel; Premium: up to 3. Adding past the limit shows an upgrade prompt. If it fails Bot is not an admin — tap the green ➕ Add bot to a channel button inside the sender bot, or promote it by hand with Post Messages . Channel not found — wrong username or a private channel; forward a post. Invalid format — send the link alone. Already connected — open it from the list instead of adding it twice. Related: Connecting a Channel , Channel Permissions . Can I add a channel from a different account? The channel is linked to the account that connects it. Other people can be added as channel admins inside the sender bot, with permissions you choose.", "articleSection": "Channels", "author": {"@id": "https://fastscheduler.github.io/#organization"}, "publisher": {"@id": "https://fastscheduler.github.io/#organization"}, "mainEntityOfPage": "https://fastscheduler.github.io/help/a/channel_add.html", "datePublished": "2026-10-04", "dateModified": "2026-10-04", "isPartOf": {"@id": "https://fastscheduler.github.io/#website"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Fast Scheduler", "item": "https://fastscheduler.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Help Center", "item": "https://fastscheduler.github.io/help.html"}, {"@type": "ListItem", "position": 3, "name": "Channels", "item": "https://fastscheduler.github.io/help/c/channels.html"}, {"@type": "ListItem", "position": 4, "name": "Add a Channel", "item": "https://fastscheduler.github.io/help/a/channel_add.html"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I add a channel from a different account?", "acceptedAnswer": {"@type": "Answer", "text": "The channel is linked to the account that connects it. Other people can be added as channel admins inside the sender bot, with permissions you choose."}}]}</script>
-<link rel="stylesheet" href="../../styles/main.css?v=20261026c4">
+<link rel="stylesheet" href="../../styles/main.css?v=20261030b2">
 <link rel="stylesheet" href="../../styles/hotkeys-modal.css?v=20261006a1">
 <style>.hc-card {
   background: var(--surface);
@@ -878,7 +878,7 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
   </div>
 </footer>
 <script src="../../scripts/theme.js?v=20260930a1"></script>
-<script src="../../scripts/settings.js?v=20261026c6"></script>
+<script src="../../scripts/settings.js?v=20261030b1"></script>
 <script src="../../scripts/ru-content.js?v=20261004b2"></script>
 
 <script src="../../scripts/ru-chrome.js?v=20261026c4"></script><script src="../../scripts/lang.js?v=20261026c4"></script>
@@ -889,5 +889,7 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
 <script src="../../scripts/scroll-jump.js?v=20261026c4"></script>
 <script src="../../scripts/article-nav.js?v=20260930a2"></script>
 <script src="../../scripts/site-footer.js?v=20261018g2"></script>
+<script src="../../scripts/help-topics.js"></script>
+<script src="../../scripts/topics-nav.js"></script>
 </body>
 </html>

@@ -1,9 +1,151 @@
-=== index: 5 unmapped ===
-[x1] Fast Scheduler — Telegram Channel Post Scheduler
+=== index: 29 unmapped ===
+[x1] , with
+[x1] 5 posts scheduled
+[x1] Any date you already write
+[x1] Batch scheduling turns "post every day" into one weekly 10-minute session. Paste several date + message blocks in a single message — a blank line between posts — and every block becomes its own scheduled post. The same t
+[x1] Buttons per post
+[x1] Can other people help me run the channel?
+[x1] Do I have to make @FastSchedulerBot a channel admin?
+[x1] Fast Scheduler is also searched for as “TG Fast Scheduler”, “Fast Scheduler bot” and
+[x1] Fast Scheduler — Telegram Post Scheduler Bot (@FastSchedulerBot)
+[x1] Free and Premium
+[x1] No. Publishing, scheduling, statistics and admin management all run through your own sender bot. The main bot is your chat for support and the optional emergency stand-in — if your sender bot's token is revoked it can de
+[x1] One message to @FastSchedulerBot
 [x1] Privacy Policy
+[x1] Save the same text as a
+[x1] See the full batch format
+[x1] Skip to content
+[x1] Too long for one message?
+[x1] Yes. Co-admins are real channel administrators: they send the sender bot's @username (or its token) once, the bot verifies their rights through that bot, and they get 15 granular permissions — scheduling, editing, deleti
+[x1] a blank line starts the next post
+[x1] file and upload it while scheduling — one blank line between posts.
+[x1] for a new row.
+[x1] for one row and
+[x1] is a Telegram bot that schedules and publishes your channel posts for you. Paste a week of posts into one chat — one block per post, a blank line between them — and it publishes each one at the exact time you chose, in y
+[x1] or a bare
 [x1] premium
-[x1] your
+[x1] | Telegram post scheduler bot
 [x1] ~2.5 h
-=== help-hub: 0 unmapped ===
-=== 404: 1 unmapped ===
-[x1] Page not found — Fast Scheduler
+[x1] — batches are not paywalled. On Free the only ceiling is the 100-message pending queue.
+[x1] — the Telegram post scheduler.
+=== help-hub: 516 unmapped ===
+[x50] 1 Q&A
+[x35] 2 Q&A
+[x26] Limits
+[x25] Sender Bots
+[x24] Admins & Access (RBAC)
+[x24] Channels
+[x24] Getting Started
+[x24] Referrals
+[x24] Scheduling Messages
+[x24] Time Zone
+[x23] Backup, Export & Import
+[x23] Contact & Support
+[x23] Feedback & Support
+[x23] Frequently Asked Questions
+[x23] Legal & Terms
+[x23] Pro Tips
+[x23] Settings & Configuration
+[x23] Text Commands
+[x23] Tools
+[x23] Troubleshooting
+[x20] 3 Q&A
+[x15] 4 Q&A
+[x7] 5 Q&A
+[x6] and
+[x5] Export
+[x5] Import
+[x4] Related
+[x3] 15 articles
+[x3] 20 articles
+[x3] Add a Channel
+[x3] Add a Sender Bot
+[x3] Backup
+[x3] Buy Premium
+[x3] Create a Backup
+[x3] Every Menu and Button: the Interface Map
+[x3] Signature
+[x2] 13 articles
+[x2] 14 articles
+[x2] 5 articles
+[x2] 7 articles
+[x2] 8 articles
+[x2] 9 articles
+[x2] Abuse
+[x2] Activate Days
+[x2] Auto Detect
+[x2] Automatic Time Zone
+[x2] Best Practices
+[x2] Bot Permissions
+[x2] Bot Status
+[x2] Change Language
+[x2] Channel Permissions
+[x2] Compare Plans
+[x2] Create a Box
+[x2] Examples
+[x2] Export Data
+[x2] Find and Delete Duplicate Posts
+[x2] How Posting Works: Sender Bots
+[x2] How Referrals Work
+[x2] Importing Your Data
+[x2] Languages
+[x2] Manage Channels
+[x2] Manage Sender Bots
+[x2] Message List
+[x2] Missing Language?
+[x2] October 2026 Policy Refresh
+[x2] Payments
+[x2] Premium Expiry
+[x2] Premium Features
+[x2] Premium Status
+[x2] Referral Rewards
+[x2] Remove a Channel
+[x2] Remove a Sender Bot
+[x2] Rotate Token
+[x2] Rules
+[x2] Save Media
+[x2] Sender Bot Management
+[x2] Set Time Zone
+[x2] Storage
+[x2] Storage Boxes
+[x2] Supported Zones
+[x2] Sync Across Bots
+[x2] Unlink vs Delete
+[x2] Your Data
+[x2] Your Link
+[x2] data
+[x1] , and the channel is linked to your account. Then it appears in
+[x1] , then
+[x1] . Commands
+[x1] . Each extra channel needs its own sender bot.
+[x1] . It unlocks only after your own account has a connected channel and at least one scheduled message, so rewards go to real channel owners.
+[x1] . One bot per channel.
+[x1] . The change is immediate and stored per Telegram account, so it follows you across devices.
+[x1] . The screen has two buttons:
+[x1] . Uploading:
+[x1] 1. Create it in @BotFather.
+[x1] 10 articles
+[x1] 11 articles
+[x1] 15 Q&A
+[x1] 16 articles
+[x1] 2 articles
+[x1] 2. Connect its token in
+[x1] 20 storage boxes with 500 items and stored video.
+[x1] 26 articles
+[x1] 3 Premium days
+[x1] 3 channels and 3 sender bots instead of 1/1.
+[x1] 3. Assign it to a channel.
+[x1] 30 articles
+[x1] 32 articles
+[x1] 33 articles
+[x1] 37 articles
+[x1] 4 articles
+[x1] 4. Promote it in that channel with Post Messages.
+[x1] 5. Manage it later: change token, replace, switch channel, swap, remove.
+[x1] 6 Q&A
+[x1] 6 articles
+[x1] A channel is the destination. Everything else in Fast Scheduler exists to publish into it reliably.
+[x1] A scheduled
+[x1] A sender bot is a Telegram bot you own, connected to exactly one channel, that publishes your posts under its own name.
+[x1] API FAQ
+[x1] Account FAQ

@@ -155,7 +155,10 @@ def inject_alts(path, block):
 def build_article(aid, tr, cat_titles, title_override=None):
     """One Russian help article page, reusing the English page chrome."""
     title_ru = clean_ru(tr.get('title') or '').strip()
-    body = clean_ru(tr.get('content') or '')
+    # Render through the same converter the English pages use: a raw string
+    # dropped into .hc-body collapses every blank line in HTML, so the whole
+    # Russian article was one wall of text with no paragraphs or bullets.
+    body = bh.text_to_html(clean_ru(tr.get('content') or ''))
     faq = []
     for f in (tr.get('faq') or []):
         if not isinstance(f, dict):

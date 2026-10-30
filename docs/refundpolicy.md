@@ -2,9 +2,9 @@
 
 ## Fast Scheduler refund policy: quick answers
 
-**Can I get a refund for Fast Scheduler Premium?** Premium is paid with Telegram Stars. Refunds are discretionary and limited to **7 days from that specific payment**. Email fastschedulebot@gmail.com with the transaction ID and your Telegram username.
+**Can I get a refund for Fast Scheduler Premium?** Premium is **non-refundable** once it has been delivered. The one exception is **non-delivery**: you paid and Premium never arrived (for example a technical fault on our side meant the payment went through but the plan was never activated). In that case email fastschedulebot@gmail.com with the transaction ID and your Telegram username.
 
-**How long do I have to request a Fast Scheduler refund?** Each Stars payment has its own 7-day window counted from the charge date. After 7 days that payment is not refundable, unless Fast Scheduler failed to deliver the paid feature.
+**How long do I have to request a Fast Scheduler refund?** A non-delivery request must reach us within **7 days of the charge date**, counted per payment. After those 7 days — or once Premium has been delivered and used — that payment is not refundable.
 
 **How do I cancel Fast Scheduler Premium?** Open `/premium` in @FastSchedulerBot and cancel — see [Cancel Premium](../help/a/premium_cancel.html). Cancelling stops the next charge; the current paid period is not refunded.
 
@@ -32,16 +32,17 @@ Because Telegram Stars purchases are governed by Telegram's own policies, refund
 
 ---
 
-## 3. Discretionary Refunds — 7-Day Per-Payment Window
+## 3. Non-Refundable — Except Non-Delivery, Within 7 Days
 
-We **do not** refund Telegram Stars purchases as a rule — Stars transactions are final under Telegram's policies. Outside mandatory consumer rights, we may grant a refund at our sole discretion where, for example:
-- You were charged twice for the same subscription period;
-- A technical fault on our side prevented you from using the Service you paid for; or
-- We terminated your access without cause.
+**Once Premium has been delivered to your account, the purchase is final.** We do not refund a subscription that has been delivered and used: not for a change of mind, not for an accidental, forgotten or unwanted renewal, not for a period you did not use, and not because you cancelled after a renewal. Telegram Stars transactions are final under Telegram's policies.
 
-**Refund window (exact rule):** each Stars payment has its own **7-day** refund window counted from the **date of that specific payment**. Eligibility is evaluated **per payment, not per user or per month** — for example, if month 1 was used normally and month 2 auto-renewed by accident, only the month 2 payment can be refunded (and only if it is still within 7 days of the month 2 charge). **After 7 days from a payment, that payment is not refundable, even if premium was unused.** Exception: a technical failure on our side (paid but premium was not activated, double charge) may be approved manually as an admin override.
+**The only case we refund is non-delivery.** If you paid for Premium and did not receive it — for example a technical fault on our side meant the payment succeeded but Premium was never activated, or the same period was charged twice — that payment is refundable in full. This is the single exception to the rule above.
 
-Discretionary refunds are evaluated case by case, and only where Telegram's platform permits a reversal. Granting a refund in one case does not create a precedent.
+**Refund window (exact rule):** a non-delivery refund request must reach us within **7 days from the date of that specific payment**. Eligibility is evaluated **per payment, not per user or per month**. After those 7 days the payment is not refundable.
+
+We do not offer discretionary or goodwill refunds. Where a refund is due, it is processed as described below and only where Telegram's platform permits a reversal.
+
+This rule applies to payments made on or after **28 October 2026**. Payments made earlier are governed by the refund policy that was in force on their payment date.
 
 ### How an approved refund is processed
 - Your Premium access is revoked immediately, the refund is recorded with a timestamp, and you receive an in-bot notification.
@@ -53,10 +54,11 @@ Discretionary refunds are evaluated case by case, and only where Telegram's plat
 
 ## 4. How to Request a Refund
 
-1. Email fastschedulebot@gmail.com with your **transaction ID**, Telegram username, and reason.
-2. Include the date of purchase and the email/account used where applicable.
+1. Email fastschedulebot@gmail.com with your **transaction ID**, Telegram username, the payment date, and what did not arrive (for example “paid, but Premium was never activated”).
+2. A screenshot of the Stars receipt and of the Premium screen in the bot (showing Free) makes verification faster.
 
-We aim to acknowledge refund requests within **7 business days**.
+Requests that are not about non-delivery, and requests that arrive more than 7 days after the payment, are declined.
+We aim to acknowledge non-delivery requests within **7 business days**.
 
 ---
 
@@ -86,7 +88,7 @@ We aim to acknowledge refund requests within **7 business days**.
 
 ## 8. Processing Times
 
-- **Approved refunds** are processed within **7 business days** where technically feasible, and appear according to Telegram's own timelines.
+- **Approved non-delivery refunds** are processed within **7 business days** where technically feasible, and appear according to Telegram's own timelines.
 
 ---
 

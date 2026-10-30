@@ -819,13 +819,21 @@
   function boot() {
     inject();
     var lang = get();
-    /* A stored preference that disagrees with the language the server sent
-       (a /ru/ link opened by an English visitor, or the reverse) used to be
-       applied over the document, which cannot restore text it never held —
-       the page stayed half translated until a manual reload. Send the visitor
-       to the matching twin instead; pages without one keep the in-place
-       chrome translation below. */
-    if ((lang === 'ru') !== SERVED_RU && gotoLanguage(lang)) return;
+    /* An explicit /ru/ URL is the visitor's choice and must win over a stored
+       preference: typing fastscheduler.github.io/ru/ used to be bounced back to
+       the English page by the stored 'en', which made the Russian site look
+       unreachable. The served document already IS Russian, so adopt it (and
+       remember it) instead of navigating away. */
+    if (SERVED_RU) {
+      if (lang !== 'ru') {
+        lang = 'ru';
+        try { localStorage.setItem('fs-lang', 'ru'); } catch (e) {}
+      }
+    } else if (lang === 'ru' && gotoLanguage('ru')) {
+      /* English page + stored Russian preference: the twin has the real
+         Russian text, so go there rather than half-translating this one. */
+      return;
+    }
     document.documentElement.setAttribute('lang', lang);
     apply(lang);
     observeLate();

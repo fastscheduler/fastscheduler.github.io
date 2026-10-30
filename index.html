@@ -105,7 +105,7 @@
   </script>
   <link rel="preload" href="fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles/main.min.css?v=20261026c4">
+<link rel="stylesheet" href="styles/main.min.css?v=20261030b1">
 <link rel="stylesheet" href="styles/liquid-nav.min.css?v=20261005d1">
   <style>
     :root {
@@ -219,7 +219,12 @@
        size in Settings, which widens the Russian labels again), let the brand
        ellipsize rather than push the burger off-screen. */
     html[lang="ru"] .home-nav > .brand {
-      min-width: 0; flex: 0 1 auto; overflow: hidden; text-overflow: ellipsis;
+      min-width: 0; flex: 0 1 auto;
+    }
+    /* The mark must never shrink or be cut: only the wordmark gives way. */
+    .home-nav .brand .logo-dot { flex: 0 0 auto; }
+    .home-nav .brand .brand-full {
+      min-width: 0; overflow: hidden; text-overflow: ellipsis;
     }
     /* burger + mobile menu */
     .nav-burger {
@@ -1067,7 +1072,7 @@
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://fastscheduler.github.io/#organization", "name": "Fast Scheduler", "alternateName": ["FastScheduler", "Fast Scheduler Telegram bot", "@FastSchedulerBot"], "url": "https://fastscheduler.github.io/", "logo": "https://fastscheduler.github.io/icon-512.png", "description": "Fast Scheduler builds the Telegram post scheduler bot @FastSchedulerBot, which queues and auto-publishes channel posts.", "sameAs": ["https://t.me/FastSchedulerBot", "https://t.me/FastSchedulerSupport_bot", "https://fastscheduler.github.io/blog/", "https://fastscheduler.github.io/llms.txt"], "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "fastschedulebot@gmail.com"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Fast Scheduler", "alternateName": ["FastScheduler", "FastSchedulerBot", "@FastSchedulerBot", "Fast Scheduler Telegram bot"], "url": "https://fastscheduler.github.io/", "potentialAction": {"@type": "SearchAction", "target": {"@type": "EntryPoint", "urlTemplate": "https://fastscheduler.github.io/help/?q={search_term_string}"}, "query-input": "required name=search_term_string"}}</script>
-<link rel="stylesheet" href="styles/hero-cinema.min.css?v=20261026c4">
+<link rel="stylesheet" href="styles/hero-cinema.min.css?v=20261030a1">
 <link rel="stylesheet" href="styles/hotkeys-modal.min.css?v=20261006a1">
 <link rel="stylesheet" href="styles/mobile-fix.min.css?v=20261026c8">
 <!--fs:ru-alt-->
@@ -1151,6 +1156,7 @@
         </a>
       </div>
       <p class="cta-note">No app. No signup. Works inside Telegram you already use.</p>
+      <p class="cta-note"><a href="help/a/getting_started.html">New here? Read the two-minute setup guide</a></p>
       <!-- shown again after the demo's finale (moved here by hero-demo.js) -->
       <button type="button" class="hero-replay" hidden>↺ Replay demo</button>
       <div class="trust-row">
@@ -1720,7 +1726,7 @@ Weekend recap: the five most-read posts this week.</pre>
 </script>
 <script src="scripts/theme.js?v=20260930a1"></script>
 <script defer src="scripts/nav-hide.js?v=20260930a2"></script>
-<script defer src="scripts/settings.js?v=20261026c6"></script>
+<script defer src="scripts/settings.js?v=20261030b1"></script>
   <script defer src="scripts/ru-chrome.js?v=20261026c4"></script><script defer src="scripts/lang.js?v=20261026c4"></script>
 <script defer src="scripts/hotkeys.js?v=20261006a1"></script>
 <script defer src="scripts/scroll-jump.js?v=20261026c4"></script>

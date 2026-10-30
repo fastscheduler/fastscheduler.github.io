@@ -128,9 +128,15 @@ def main():
         print('all sections aligned 1:1')
     # merge into existing dict (keep help/blog pairs)
     path = os.path.join(REPO_ROOT, 'website', 'scripts', 'ru-content.js')
-    raw = open(path, encoding='utf-8').read()
+    # The file is written with a trailing CRLF on Windows, and a rebuild that
+    # assumed the semicolon was the very last character died with
+    # "Extra data" instead of merging. Strip the wrapper explicitly.
+    raw = open(path, encoding='utf-8').read().strip()
     assert raw.startswith('window.FS_RU_CONTENT='), 'unexpected ru-content.js format'
-    cur = json.loads(raw[len('window.FS_RU_CONTENT='):-1])
+    payload = raw[len('window.FS_RU_CONTENT='):].strip()
+    if payload.endswith(';'):
+        payload = payload[:-1]
+    cur = json.loads(payload)
     n0 = len(cur)
     cur.update(pairs)
     for k in DELETE_KEYS:

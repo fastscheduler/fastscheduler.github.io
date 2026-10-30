@@ -128,6 +128,74 @@ NOFLASH = '''<script>
 </script>'''
 
 
+TOPIC_NAV_CSS = '''
+  /* Topics rail next to an article: every category with every article, so a
+     reader can jump sideways without going back to the hub. */
+  .hc-area { display: grid; grid-template-columns: 264px minmax(0, 1fr);
+    gap: 34px; align-items: start; max-width: 1200px; margin: 0 auto;
+    padding: 22px 20px 40px; }
+  .hc-area > .hc-art-col { min-width: 0; }
+  .hc-topics { position: sticky; top: 78px; max-height: calc(100vh - 100px);
+    overflow-y: auto; padding: 4px 6px 16px 0; font-size: .88rem; }
+  .hc-topics-h { font-weight: 800; font-size: .95rem; letter-spacing: -.01em;
+    padding: 0 8px 10px; color: var(--text); }
+  .hc-topics details { border-radius: 10px; }
+  .hc-topics summary { list-style: none; cursor: pointer; display: flex;
+    align-items: center; gap: 6px; padding: 8px 8px; border-radius: 8px;
+    font-weight: 700; color: var(--text-dim); }
+  .hc-topics summary::-webkit-details-marker { display: none; }
+  .hc-topics summary:hover { color: var(--green-strong); background: color-mix(in srgb, var(--green) 8%, transparent); }
+  .hc-topics summary .n { margin-left: auto; font-size: .72rem; font-weight: 700; opacity: .7; }
+  .hc-topics ul { list-style: none; margin: 2px 0 8px; padding: 0 0 0 10px; }
+  .hc-topics li a { display: block; padding: 5px 8px; border-radius: 7px;
+    color: var(--text-dim); line-height: 1.4; }
+  .hc-topics li a:hover { color: var(--green-strong); background: color-mix(in srgb, var(--green) 8%, transparent); text-decoration: none; }
+  .hc-topics li a[aria-current="page"] { color: var(--green-strong);
+    background: color-mix(in srgb, var(--green) 12%, transparent); font-weight: 700; }
+  .hc-topics-toggle { display: none; }
+  @media (max-width: 980px) {
+    .hc-area { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+    .hc-topics { position: static; max-height: none; order: -1;
+      border: 1px solid var(--border); border-radius: 12px; padding: 6px 10px;
+      margin-bottom: 14px; background: var(--surface); }
+    .hc-topics-h { display: none; }
+    .hc-topics-toggle { display: flex; align-items: center; gap: 8px;
+      width: 100%; padding: 10px 4px; font: inherit; font-weight: 750;
+      color: var(--text); background: 0 0; border: 0; cursor: pointer; }
+    .hc-topics-toggle svg { width: 17px; height: 17px; color: var(--green-strong); }
+    .hc-topics[data-open="0"] details { display: none; }
+  }
+'''
+
+
+def topics_nav(groups, art_ids, current_id, current_cat):
+    """Every category with EVERY article — the rail is a full index, not a
+    preview. The category being read starts expanded."""
+    parts = ['<aside class="hc-topics" data-open="0" aria-label="All help topics">',
+             '<div class="hc-topics-h">All topics</div>',
+             '<button type="button" class="hc-topics-toggle" data-topics-toggle aria-expanded="false">',
+             bh.svg('book'), '<span>Browse all topics</span>', bh.svg('chev'), '</button>']
+    for g in groups:
+        cat = g['cat']
+        kids = [k for k in g['kids'] if k['id'] in art_ids]
+        if not kids and cat['id'] not in art_ids:
+            continue
+        rows = []
+        if cat['id'] in art_ids:
+            cur = ' aria-current="page"' if cat['id'] == current_id else ''
+            rows.append(f'<li><a href="{bh.esc(cat["id"])}.html"{cur}>{bh.esc(cat["title"])}</a></li>')
+        for k in kids:
+            cur = ' aria-current="page"' if k['id'] == current_id else ''
+            rows.append(f'<li><a href="{bh.esc(k["id"])}.html"{cur}>{bh.esc(k["title"])}</a></li>')
+        opened = ' open' if cat['id'] == current_cat else ''
+        parts.append(
+            f'<details{opened}><summary>{bh.esc(cat["title"])}'
+            f'<span class="n">{len(rows)}</span></summary>'
+            f'<ul>{"".join(rows)}</ul></details>')
+    parts.append('</aside>')
+    return ''.join(parts)
+
+
 def page_shell(title_html, body, rel='../..'):
     """rel: prefix for assets from the page location (help/a|c are 2 levels deep)."""
     return f'''<!DOCTYPE html>
@@ -138,6 +206,7 @@ def page_shell(title_html, body, rel='../..'):
 <link rel="stylesheet" href="{rel}/styles/main.css?v=20261013m3">
 <link rel="stylesheet" href="{rel}/styles/hotkeys-modal.css?v=20261006a1">
 <style>{HC_COMPONENT_CSS}
+{TOPIC_NAV_CSS}
   </style>
 </head>
 <body class="help">
@@ -198,6 +267,16 @@ def page_shell(title_html, body, rel='../..'):
 <script src="{rel}/scripts/help-ai.js?v=20260930a1"></script>
 <script src="{rel}/scripts/hotkeys.js?v=20260930a1"></script>
 <script src="{rel}/scripts/scroll-jump.js?v=20260930a1"></script>
+<script>
+/* Topics rail on narrow screens: one tap opens the full index. */
+document.querySelectorAll('[data-topics-toggle]').forEach(function (b) {{
+  b.addEventListener('click', function () {{
+    var box = b.parentElement, open = box.getAttribute('data-open') === '1';
+    box.setAttribute('data-open', open ? '0' : '1');
+    b.setAttribute('aria-expanded', open ? 'false' : 'true');
+  }});
+}});
+</script>
 </body>
 </html>'''
 
@@ -290,16 +369,20 @@ def main():
                f'<p>The in-bot assistant answers the same questions &mdash; and a human reads every ticket.</p></div>'
                f'<a class="btn" href="{bh.SUPPORT_URL}" target="_blank" rel="noopener noreferrer">{bh.svg("send")} Ask in Telegram</a></div>')
 
-        content = f'''<div class="wrap legal-layout" style="display:block;max-width:860px;margin:0 auto">
-  {crumbs}
-  <article class="doc">
-    <h1>{bh.esc(n['title'])}</h1>
-    <div class="hc-body">{body}</div>
-    {faq_html}
-    {related_html}
-  </article>
-  {pager_html}
-  {cta}
+        topics = topics_nav(groups, art_ids, aid, cat_id)
+        content = f'''<div class="hc-area">
+  {topics}
+  <div class="hc-art-col">
+    {crumbs}
+    <article class="doc">
+      <h1>{bh.esc(n['title'])}</h1>
+      <div class="hc-body">{body}</div>
+      {faq_html}
+      {related_html}
+    </article>
+    {pager_html}
+    {cta}
+  </div>
 </div>'''
 
         # --- head metadata

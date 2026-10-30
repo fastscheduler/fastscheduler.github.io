@@ -2429,7 +2429,7 @@ def build_page(nodes, help_sec):
         {'id': g['cat']['id'], 'title': g['cat']['title'],
          'n': len(g['kids']) + (1 if art_eligible(g['cat']) else 0),
          'icon': ICONS[CAT_ICONS.get(g['cat']['id'], DEFAULT_ICON)],
-         'kids': [{'id': k['id'], 't': k['title']} for k in g['kids'] if art_eligible(k)][:8]}
+         'kids': [{'id': k['id'], 't': k['title']} for k in g['kids'] if art_eligible(k)]}
         for g in groups if g['cat']['id'] != 'misc'], ensure_ascii=False)
     search_payload = build_search_json(article_order, groups)
     year = datetime.date.today().year

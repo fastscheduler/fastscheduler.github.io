@@ -94,7 +94,7 @@
   </script>
   <link rel="preload" href="../fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../styles/main.min.css?v=20261026c4">
+<link rel="stylesheet" href="../styles/main.min.css?v=20261030b1">
 <link rel="stylesheet" href="../styles/liquid-nav.min.css?v=20261005d1">
   <style>
     :root {
@@ -208,7 +208,12 @@
        size in Settings, which widens the Russian labels again), let the brand
        ellipsize rather than push the burger off-screen. */
     html[lang="ru"] .home-nav > .brand {
-      min-width: 0; flex: 0 1 auto; overflow: hidden; text-overflow: ellipsis;
+      min-width: 0; flex: 0 1 auto;
+    }
+    /* The mark must never shrink or be cut: only the wordmark gives way. */
+    .home-nav .brand .logo-dot { flex: 0 0 auto; }
+    .home-nav .brand .brand-full {
+      min-width: 0; overflow: hidden; text-overflow: ellipsis;
     }
     /* burger + mobile menu */
     .nav-burger {
@@ -1000,7 +1005,7 @@
   </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Fast Scheduler", "url": "https://fastscheduler.github.io/", "logo": "https://fastscheduler.github.io/og-cover-v2.png", "description": "Telegram bot that schedules and auto-publishes channel posts: batch scheduling, recurring messages, sender bots, statistics and backups.", "sameAs": ["https://t.me/FastSchedulerBot"], "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "fastschedulebot@gmail.com"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Fast Scheduler", "alternateName": "Fast Scheduler Telegram bot", "url": "https://fastscheduler.github.io/", "potentialAction": {"@type": "SearchAction", "target": {"@type": "EntryPoint", "urlTemplate": "https://fastscheduler.github.io/help/?q={search_term_string}"}, "query-input": "required name=search_term_string"}}</script>
-<link rel="stylesheet" href="../styles/hero-cinema.min.css?v=20261026c4">
+<link rel="stylesheet" href="../styles/hero-cinema.min.css?v=20261030a1">
 <link rel="stylesheet" href="../styles/hotkeys-modal.min.css?v=20261006a1">
 <link rel="stylesheet" href="../styles/mobile-fix.min.css?v=20261026c8">
 <!--fs:ru-alt-->
@@ -1314,6 +1319,47 @@
     </div>
   </section>
 
+  <!-- ============ BATCH FORMAT ============ -->
+  <section class="block" id="batch">
+    <div class="sec-head reveal">
+      <h2>Одно сообщение. Целая неделя.</h2>
+      <p>Напишите дату, затем пост. Оставьте пустую строку и напишите следующий. Это весь формат.</p>
+    </div>
+    <div class="glass batch-glass reveal">
+      <div class="batch-copy">
+        <h3>Вставляете пачку — в очередь встаёт пачка.</h3>
+        <p>Fast Scheduler читает сообщение блок за блоком: <b>первая строка — это когда</b>, всё, что ниже — <b>что публикуется</b>. Пять блоков в одном сообщении создают пять запланированных постов, а следующую пачку можно отправить когда угодно.</p>
+        <ul class="batch-list">
+          <li><svg class="bl-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg><span><b>Любая дата, которую вы и так пишете</b> — <code>today 10:23</code>, <code>tomorrow 7:24 PM</code>, <code>12.12.2026 18:28</code>, <code>23-10-2027 15:34</code>, <code>2026-12-12 18:28</code> или просто <code>18:28</code>.</span></li>
+          <li><svg class="bl-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2a5 5 0 0 0 7 7l1-1"/></svg><span><b>Кнопки в каждом посте</b> — <code>&lt;inline&gt;Текст&lt;link="https://example.com"&gt;</code>, <code>--</code> для одной строки кнопок и <code>//</code> для новой строки.</span></li>
+          <li><svg class="bl-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg><span><b>Не влезает в одно сообщение?</b> Сохраните тот же текст в файл <code>.txt</code> и загрузите его при планировании — одна пустая строка между постами.</span></li>
+          <li><svg class="bl-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Free и Premium</b> — пачки не за плату. На Free единственный предел — очередь на 100 сообщений.</span></li>
+        </ul>
+        <a class="btn btn-primary" href="help/a/qa_schedule_many_at_once.html">Смотреть полный формат пачки</a>
+      </div>
+      <div class="batch-demo" aria-label="Пример пачки, отправленной боту">
+        <div class="batch-demo-bar"><span class="bd-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Одно сообщение для @FastSchedulerBot</span></div>
+        <pre><span class="bd-d">today 10:23</span>
+Дайджест новостей: три истории, которые стоят вашего времени
+<span class="bd-b">&lt;inline&gt;Читать дальше&lt;link="https://example.com/news"&gt;</span>
+
+<span class="bd-d">tomorrow 7:24 PM</span>
+День опроса — какую тему взять следующей?
+
+<span class="bd-d">12.12.2026 18:28</span>
+Новый дроп уже здесь. Ограниченный тираж, только 24 часа.
+<span class="bd-b">&lt;inline&gt;Купить сейчас&lt;link="https://example.com/shop" style="success"&gt;</span>
+
+<span class="bd-d">23-10-2027 15:34</span>
+Напоминание: звонок сообщества начнётся через 30 минут.
+
+<span class="bd-d">14/04/2027 4:05 PM</span>
+Итоги недели: пять самых читаемых постов.</pre>
+        <div class="batch-demo-foot"><span class="chip">5 постов в очереди</span><span>пустая строка запускает следующий пост</span></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ PRICING ============ -->
   <section class="block" id="pricing">
     <div class="sec-head reveal">
@@ -1606,7 +1652,7 @@
 </script>
 <script src="../scripts/theme.js?v=20260930a1"></script>
 <script defer src="../scripts/nav-hide.js?v=20260930a2"></script>
-<script defer src="../scripts/settings.js?v=20261026c6"></script>
+<script defer src="../scripts/settings.js?v=20261030b1"></script>
   <script defer src="../scripts/ru-chrome.js?v=20261026c4"></script><script defer src="../scripts/lang.js?v=20261026c4"></script>
 <script defer src="../scripts/hotkeys.js?v=20261006a1"></script>
 <script defer src="../scripts/scroll-jump.js?v=20261026c4"></script>

@@ -566,6 +566,7 @@
       '.ns-mode button:hover{color:var(--green-strong)}' +
       '.fs-find-count{margin:8px 2px 0;font-size:.78rem;font-weight:700;color:var(--text-dim)}' +
       '.hc-search .ns-mode{margin:8px 0 0;order:9}' +
+      '.ns-mode[hidden]{display:none!important}' +
       '@media (max-width:700px){.nav-search .ns-mode{display:none}}';
     document.head.appendChild(st);
   })();
@@ -591,6 +592,18 @@
     if (hHost) {
       var hseg = buildModeSeg();
       hHost.appendChild(hseg);
+      /* The hub home has no document to search inside, so the switch only
+         exists while an article (or legal) page is open. On the front page it
+         was two buttons that could only ever do nothing. */
+      function syncHelpSegVisibility() {
+        var onPage = /^#\/(a|c)\//.test(location.hash || '');
+        hseg.hidden = !onPage;
+        hseg.setAttribute('aria-hidden', onPage ? 'false' : 'true');
+        if (!onPage && MODE === 'page') setMode('articles', hseg, hIn);
+      }
+      syncHelpSegVisibility();
+      window.addEventListener('hashchange', syncHelpSegVisibility);
+      window.addEventListener('popstate', syncHelpSegVisibility);
       var chip = document.createElement('div');
       chip.className = 'fs-find-count';
       chip.hidden = true;
@@ -635,7 +648,7 @@
     if (!ranked.length) { closePop(); return; }
     pop.innerHTML = '<div class="ns-head">' + esc(T.sections) + '</div>' + ranked.map(function (r, i) {
       var d = r.doc;
-      return '<a class="ns-res" role="option" data-i="' + i + '" href="' + esc(d.href || ('a/' + d.id + '/)')) + '">' +
+      return '<a class="ns-res" role="option" data-i="' + i + '" href="' + esc(d.href || ('help/a/' + d.id + '.html')) + '">' +
         '<span class="ns-s">' + markText(d.t || '', q) + '</span>' +
         (d.d ? '<span class="ns-tag">' + esc(String(d.d).slice(0, 90)) + '</span>' : '') +
         '</a>';
