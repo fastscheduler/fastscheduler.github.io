@@ -676,7 +676,8 @@
       if (onHub) { location.hash = '#q=' + hash; }
       else { location.href = ROOT + 'blog/#q=' + hash; }
     } else if (SCOPE === 'helpnav') {
-      location.href = ROOT + 'help/#/s/' + hash;
+      /* /help.html is the maintained hub; /help/ is only a redirect stub. */
+      location.href = ROOT + 'help.html#/s/' + hash;
     }
   }
 
@@ -842,7 +843,9 @@
   if (!menu || !hform || !hinput || !list) return;
 
   var KEY = 'fs-help-recents';
-  var HELP_URL = ROOT + 'help/';
+  /* /help.html is the maintained hub; /help/ is a redirect stub, so linking
+     to the stub cost a redirect on every "see all results" click. */
+  var HELP_URL = ROOT + 'help.html';
   (function () {
     var open = menu.querySelector('a.help-menu-open');
     if (open && open.getAttribute('href')) HELP_URL = open.getAttribute('href');

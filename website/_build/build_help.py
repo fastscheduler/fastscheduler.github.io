@@ -2217,8 +2217,13 @@ JS = r'''
     /* Articles and categories are real pages now. Old hash links (bookmarks,
        search results from before the clean-URL move) redirect instead of
        rendering a second copy of the article inside the hub. */
-    if (r.view === 'article' && byId[r.id]) { location.replace('a/' + r.id + '/'); return; }
-    if (r.view === 'category' && CATS[r.id]) { location.replace('c/' + r.id + '/'); return; }
+    /* Old hash links (bookmarks, search results) point at a route, not a
+       document. Send them to the maintained page for that article; the path
+       is root-absolute because the hub is served at /help.html while the
+       articles live under /help/a/ -- a relative path resolved to /a/<id>/,
+       which 404s. */
+    if (r.view === 'article' && byId[r.id]) { location.replace('/help/a/' + r.id + '.html'); return; }
+    if (r.view === 'category' && CATS[r.id]) { location.replace('/help/c/' + r.id + '.html'); return; }
     if (r.legacy) {
       var valid = (r.view === 'article' && byId[r.id]) || (r.view === 'category' && CATS[r.id]);
       if (valid) { history.replaceState(null, '', (r.view === 'article' ? '#/a/' : '#/c/') + r.id); }
@@ -2875,7 +2880,7 @@ JS = r'''
     });
     results.addEventListener('click', function (e) {
       var b = e.target.closest('.hc-res');
-      if (b) location.href = 'a/' + b.getAttribute('data-art') + '/';
+      if (b) location.href = '/help/a/' + b.getAttribute('data-art') + '.html';
     });
     document.addEventListener('click', function (e) {
       var box = input.closest('.hc-search, .hc-hsearch');
@@ -3845,14 +3850,14 @@ def build_page(nodes, help_sec):
 
 <script src="scripts/settings.js?v=20261005d1"></script>
   <script src="scripts/ru-chrome.js?v=20261006b1"></script><script src="scripts/lang.js?v=20261030a1"></script>
-<script src="scripts/help-search.js?v=20261030a1"></script>
+<script src="scripts/help-search.js?v=20261030a2"></script>
 <script src="scripts/hotkeys-modal.js?v=20261006a1"></script>
 <script src="scripts/hotkeys.js?v=20261005d1"></script>
 <script src="scripts/scroll-jump.js?v=20261005a1"></script>
 <script src="scripts/liquid-nav.js?v=20261005d1"></script>
 <script src="scripts/help-data.js?v=20261022a1"></script>
 <script src="scripts/help-ai.js?v=20261022a1"></script>
-<script src="scripts/help-hub.js?v=20261022a4"></script>
+<script src="scripts/help-hub.js?v=20261030a2"></script>
 <script src="scripts/site-footer.js?v=20261018g2"></script>
 </body>
 </html>'''
