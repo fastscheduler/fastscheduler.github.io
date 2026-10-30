@@ -163,13 +163,6 @@ a.brand:hover { text-decoration: none; }
 .wrap.nav { gap: 12px; }
 header.site .btn.nav-cta { margin-left: 0; }
 
-/* Inside a section the section's own pill is redundant: on a blog page
-   "Blog" would reload the page you are already on, and on a help page
-   "Help Center" does the same (the help pill also owns the search popover,
-   which is replaced by the article's own search field). */
-body.blog header.site .nav-link[href$="blog/index.html"] { display: none; }
-body.help header.site .site-menu-wrap { display: none; }
-
 /* ---------- Cross-platform / browser / device optimizations ---------- */
 /* 1) Apple: safe areas (notch / home indicator) for PWA + Safari */
 @supports (padding: max(0px)) {
@@ -675,12 +668,6 @@ html:not([data-motion="off"]) .hc-faq details[open] summary::after { transition:
 @media (min-width: 1024px) { .legal { padding-top: 0; } }
 .legal .doc { max-width: 820px; margin: 0 auto; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 40px; box-shadow: var(--shadow-sm); font-size: 1rem; line-height: 1.7; }
 body.legal { --maxw: 1280px; }
-/* Legal pages on phones/tablets: the header CTA collapses to a bare green
-   icon wedged against the settings button. It duplicates the "Open bot"
-   link in the contents bar, so drop it from the header there. */
-@media (max-width: 900px) {
-  body.legal header.site .nav-cta { display: none; }
-}
 @media (min-width: 761px) {
   body.legal { min-height: 100vh; display: flex; flex-direction: column; }
   body.legal main.legal { flex: 1 1 auto; }
@@ -1775,10 +1762,7 @@ nav.hc-pager > span.hc-card.next.none > span {
 @media (max-width: 560px) { .brand-mark img { width: 32px !important; height: 32px !important; } }
 .brand-dock .brand .logo-dot { width: 40px !important; height: 40px !important; border-radius: 28% !important; overflow: hidden !important; background: none !important; }
 .home-nav .brand .logo-dot, .home-nav .brand .logo-dot img { width: 44px !important; height: 44px !important; border-radius: 28% !important; }
-.home-nav .brand .logo-dot { overflow: hidden !important; background: none !important; flex: 0 0 auto !important; }
-/* Only the wordmark may ellipsize in a tight bar — a shrinking logo read as a
-   broken, half-invisible mark (worst on the wider Russian labels). */
-.home-nav .brand-full, .brand-text .brand-full { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.home-nav .brand .logo-dot { overflow: hidden !important; background: none !important; }
 .home-nav .brand .logo-dot img { object-fit: contain; display: block; border-radius: inherit !important; }
 .home-nav .brand-full { font-size: 1.12rem !important; }
 @media (max-width: 560px) {
@@ -1893,41 +1877,3 @@ html.jump-idle .jump-menu { display: none; }
 .hc-cta.hc-cta .btn:hover { background: #eafff5; color: #08422d; }
 .hc-cta.hc-cta .btn svg,
 .hc-cta.hc-cta .hc-ic svg { color: currentColor; }
-
-/* Batch-format showcase (homepage) — lives here so every language page
-   (/, /ru/, /es/) renders the same section without a per-page copy. */
-.batch-glass { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
-  gap: clamp(22px, 3.4vw, 46px); align-items: center; padding: clamp(22px, 3.2vw, 44px); }
-.batch-copy h3 { font-size: clamp(1.15rem, 2.4vw, 1.6rem); margin: 0 0 10px; }
-.batch-copy > p { color: var(--text-dim); line-height: 1.65; margin: 0 0 16px; }
-.batch-list { list-style: none; margin: 0 0 20px; padding: 0; display: grid; gap: 10px; }
-.batch-list li { display: flex; gap: 10px; align-items: flex-start; line-height: 1.5;
-  color: var(--text-dim); font-size: .95rem; }
-.batch-list li > span { min-width: 0; }
-.batch-list b { color: var(--text); }
-.batch-list .bl-ic { width: 18px; height: 18px; flex: none; margin-top: 2px; color: var(--green-strong); }
-.batch-list code, .batch-copy code { font-size: .86em; }
-.batch-demo { background: var(--surface-2, var(--surface)); border: 1px solid var(--border);
-  border-radius: 16px; overflow: hidden; min-width: 0; }
-.batch-demo-bar { display: flex; align-items: center; gap: 10px; padding: 10px 14px;
-  border-bottom: 1px solid var(--border); font-size: .74rem; letter-spacing: .05em;
-  text-transform: uppercase; color: var(--text-dim); }
-.bd-dots { display: inline-flex; gap: 5px; }
-.bd-dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--border); }
-.batch-demo pre { margin: 0; padding: 14px 16px; font-family: ui-monospace, SFMono-Regular, Menlo,
-  Consolas, monospace; font-size: clamp(.72rem, 1.55vw, .84rem); line-height: 1.55;
-  white-space: pre; overflow-x: auto; -webkit-overflow-scrolling: touch; color: var(--text); }
-.batch-demo .bd-d { color: var(--green-strong); font-weight: 700; }
-.batch-demo .bd-b { color: var(--text-dim); }
-.batch-demo-foot { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center;
-  padding: 10px 14px; border-top: 1px solid var(--border); font-size: .78rem; color: var(--text-dim); }
-.batch-demo-foot .chip { background: rgba(31, 170, 89, .14);
-  background: color-mix(in srgb, var(--green) 14%, transparent); color: var(--green-strong);
-  border-radius: 999px; padding: 3px 10px; font-weight: 700; }
-/* One column until there is genuinely room for both the copy and the
-   unwrapped code sample (it must not wrap: a wrapped line would read like
-   a new post block). */
-@media (max-width: 1120px) { .batch-glass { grid-template-columns: minmax(0, 1fr); } }
-@media (max-width: 520px) {
-  .batch-demo pre { font-size: .7rem; white-space: pre-wrap; overflow-wrap: anywhere; }
-}

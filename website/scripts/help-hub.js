@@ -63,12 +63,7 @@
       var on = a.getAttribute('data-cat') === cat;
       a.classList.toggle('active', on);
       var sub = document.getElementById('hc-sub-' + a.getAttribute('data-cat'));
-      /* reveal the active topic's list, but never collapse a list the reader
-         opened by hand just because they landed on another page */
-      if (sub && on) {
-        sub.classList.add('open');
-        a.setAttribute('aria-expanded', 'true');
-      }
+      if (sub) sub.classList.toggle('open', on);
     });
     var home = document.getElementById('hcSideHome');
     if (home) home.classList.toggle('active', r.view === 'home');
@@ -433,48 +428,6 @@
   navigate();
 
   /* ---------------- sidebar ---------------- */
-  /* Caret + "open all" row styling rides along with the script: the sidebar
-     markup is generated here, and the page's stylesheet is generated too. */
-  (function sidebarCss() {
-    if (document.getElementById('fs-hc-side-css')) return;
-    var st = document.createElement('style');
-    st.id = 'fs-hc-side-css';
-    st.textContent =
-      '.hc-caret{display:inline-flex;flex:none;margin-left:2px;color:var(--text-dim);' +
-      'transition:transform .3s var(--ease-apple,cubic-bezier(.3,.7,.3,1))}' +
-      '.hc-caret svg{width:14px;height:14px;transform:none}' +
-      '.hc-nav-item[aria-expanded="true"] .hc-caret{transform:rotate(90deg)}' +
-      '.hc-subnav a.hc-sub-all{padding-left:38px;font-weight:700;font-size:.8rem;' +
-      'color:var(--green-strong);margin-top:2px}' +
-      '.hc-subnav a.hc-sub-all::before{content:"↗ ";font-weight:600;opacity:.75}';
-    document.head.appendChild(st);
-  })();
-
-  /* one open topic at a time: the sidebar is a stack of accordions, not a
-     second copy of the category pages */
-  function openCat(row, sub, open) {
-    if (!sideNav) return;
-    Array.prototype.forEach.call(sideNav.querySelectorAll('.hc-subnav.open'), function (s) {
-      if (s === sub) return;
-      s.classList.remove('open');
-      var r = sideNav.querySelector('.hc-nav-item[data-cat="' + s.id.replace('hc-sub-', '') + '"]');
-      if (r) r.setAttribute('aria-expanded', 'false');
-    });
-    sub.classList.toggle('open', !!open);
-    row.setAttribute('aria-expanded', open ? 'true' : 'false');
-    if (open) {
-      /* keep the freshly opened list in view inside the sidebar's own scroll
-         box (the sidebar is sticky and scrollable on desktop) */
-      var side = document.getElementById('hcSide');
-      if (side && side.scrollHeight > side.clientHeight + 4) {
-        var rr = row.getBoundingClientRect(), sr = side.getBoundingClientRect();
-        if (rr.top < sr.top || rr.bottom > sr.bottom) {
-          side.scrollTo({ top: side.scrollTop + (rr.top - sr.top) - 12, behavior: 'smooth' });
-        }
-      }
-    }
-  }
-
   function buildSidebar() {
     if (!sideNav) return;
     var html = '<a class="hc-nav-item" id="hcSideHome" href="#/">' +
@@ -485,20 +438,12 @@
     SIDE.forEach(function (cc) { byCat[cc.id] = cc; });
     var emitted = {};
     function navRow(c) {
-      var hasKids = !!(c.kids && c.kids.length);
-      html += '<a class="hc-nav-item" data-cat="' + c.id + '" href="c/' + c.id + '/"' +
-        (hasKids ? ' aria-expanded="false" aria-controls="hc-sub-' + c.id + '"' : '') + '>' +
+      html += '<a class="hc-nav-item" data-cat="' + c.id + '" href="c/' + c.id + '/">' +
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + c.icon + '</svg>' +
-        '<span>' + c.title + '</span><span class="n">' + c.n + '</span>' +
-        (hasKids ? '<span class="hc-caret" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>' : '') +
-        '</a>';
-      if (hasKids) {
+        '<span>' + c.title + '</span><span class="n">' + c.n + '</span></a>';
+      if (c.kids && c.kids.length) {
         html += '<div class="hc-subnav" id="hc-sub-' + c.id + '"><div class="hc-subnav-in">';
         c.kids.forEach(function (k) { html += '<a href="a/' + k.id + '/" data-art="' + k.id + '">' + k.t + '</a>'; });
-        /* the category page still exists (it is the browsable "all topics"
-           view); this keeps it one click away without making the row itself
-           navigate */
-        html += '<a class="hc-sub-all" href="c/' + c.id + '/">Open all ' + c.n + ' articles</a>';
         html += '</div></div>';
       }
     }
@@ -511,44 +456,19 @@
     });
     SIDE.forEach(function (c) {
       if (emitted[c.id]) return;
-      navRow(c);
+      html += '<a class="hc-nav-item" data-cat="' + c.id + '" href="c/' + c.id + '/">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + c.icon + '</svg>' +
+        '<span>' + c.title + '</span><span class="n">' + c.n + '</span></a>';
+      if (c.kids && c.kids.length) {
+        html += '<div class="hc-subnav" id="hc-sub-' + c.id + '"><div class="hc-subnav-in">';
+        c.kids.forEach(function (k) { html += '<a href="a/' + k.id + '/" data-art="' + k.id + '">' + k.t + '</a>'; });
+        html += '</div></div>';
+      }
     });
     sideNav.innerHTML = html;
-    sideNav.addEventListener('click', function (ev) {
-      var row = ev.target.closest && ev.target.closest('.hc-nav-item[data-cat]');
-      var sub = row && document.getElementById('hc-sub-' + row.getAttribute('data-cat'));
-      /* A topic row with articles expands its list right here in the sidebar.
-         It used to navigate to the category page, so picking a topic threw the
-         reader onto another page instead of showing what is inside. */
-      if (row && sub) {
-        ev.preventDefault();
-        openCat(row, sub, !sub.classList.contains('open'));
-      }
-      document.body.classList.remove('hc-side-open');
-    });
-    sideNav.addEventListener('keydown', function (ev) {
-      if (ev.key !== 'Enter' && ev.key !== ' ') return;
-      var row = ev.target.closest && ev.target.closest('.hc-nav-item[data-cat]');
-      var sub = row && document.getElementById('hc-sub-' + row.getAttribute('data-cat'));
-      if (!sub) return;
-      ev.preventDefault();
-      openCat(row, sub, !sub.classList.contains('open'));
-    });
+    sideNav.addEventListener('click', function () { document.body.classList.remove('hc-side-open'); });
   }
   buildSidebar();
-
-  /* The search button shows the key that actually opens help search:
-     Ctrl/Cmd+K. There is no single-letter search shortcut. */
-  (function searchKeyLabel() {
-    var b = document.getElementById('hcSBtn');
-    if (!b) return;
-    var mac = false;
-    try { mac = /Mac|iPhone|iPad|iPod/.test(navigator.platform || navigator.userAgent || ''); } catch (e) {}
-    var label = mac ? '\u2318K' : 'Ctrl K';
-    b.textContent = label;
-    b.title = 'Search (' + (mac ? '\u2318' : 'Ctrl') + '+K)';
-    b.setAttribute('aria-label', 'Search help topics (' + (mac ? '\u2318' : 'Ctrl') + '+K)');
-  })();
 
   var scrim = document.getElementById('hcScrim');
   var menuBtn = document.getElementById('hcMenuBtn');
@@ -845,32 +765,21 @@
   var CHEV_SVG = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>';
   var ILL_SVG = '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/><circle cx="10.5" cy="14" r="2.6"/><line x1="12.4" y1="15.9" x2="14.5" y2="18"/></svg>';
 
-  function docHref(sec) { return sec.href ? sec.href : ('a/' + sec.id + '/'); }
+  function docHref(sec) { return sec.href ? sec.href : ('help/a/' + sec.id + '.html'); }
   function resultRow(sec, q) {
     return '<a class="hc-row" href="' + docHref(sec) + '"><span class="hc-row-t">' +
       markText(sec.t, q) + '</span><span class="hc-row-m">' +
       escapeHtml(CATS[sec.c] || '') + '</span>' + CHEV_SVG + '</a>';
   }
 
-  function shuffle(a) {
-    var out = a.slice();
-    for (var i = out.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var t = out[i]; out[i] = out[j]; out[j] = t;
-    }
-    return out;
-  }
   function suggestionsFor(ex, cap) {
     var sug = DATA.filter(function (sec) {
       var t = norm(sec.t);
       return ex.all.some(function (w) {
         return w.length > 2 && (t.indexOf(w) !== -1 || t.split(/\s+/).some(function (x) { return x.indexOf(w) === 0; }));
       });
-    });
-    /* "try these instead" is a fresh draw every time, not the same first six
-       documents in source order on every empty search */
-    sug = shuffle(sug).slice(0, cap);
-    if (!sug.length) sug = shuffle(DATA).slice(0, cap);
+    }).slice(0, cap);
+    if (!sug.length) sug = DATA.slice(0, cap);
     return sug.map(function (sg) {
       return '<a class="hc-row" href="a/' + sg.id + '/"><span class="hc-row-t">' +
         escapeHtml(sg.t) + '</span><span class="hc-row-m">' + escapeHtml(CATS[sg.c] || '') +
@@ -990,8 +899,13 @@
     if (target) { target.focus(); target.select(); }
   }
 
-  /* keyboard shortcuts: Ctrl/Cmd+K = search, O = topics sidebar.
-     There is deliberately NO single-letter search key. */
+  /* hero "S" button */
+  var sBtn = document.getElementById('hcSBtn');
+  if (sBtn) sBtn.addEventListener('click', function () {
+    if (heroInput) { heroInput.focus(); heroInput.select(); }
+  });
+
+  /* keyboard shortcuts: S or Ctrl/Cmd+K = search, T = topics sidebar */
   document.addEventListener('keydown', function (e) {
     var el = document.activeElement;
     var tag = (el && el.tagName) || '';

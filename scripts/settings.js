@@ -12,20 +12,10 @@
      short viewport) there may be no room below, which used to park the
      bottom rows off-screen with no way to reach them — flip it above the
      gear instead and let it scroll internally as a last resort. */
-  function resetMenuHost() {
-    if (!menu || !wrap) return;
-    if (menu.parentElement === document.body) wrap.appendChild(menu);
-    menu.style.position = '';
-    menu.style.left = '';
-    menu.style.right = '';
-    menu.style.top = '';
-    menu.style.width = '';
-    menu.style.maxHeight = '';
-  }
   function placeMenu() {
     if (!menu || !wrap || !btn) return;
-    resetMenuHost();
     menu.classList.remove('menu-up');
+    menu.style.maxHeight = '';
     var r = menu.getBoundingClientRect();
     var gearTop = btn.getBoundingClientRect().top;
     var below = window.innerHeight - 8 - r.top;   /* room under the gear */
@@ -35,27 +25,6 @@
       if (r.height > above) menu.style.maxHeight = Math.max(120, above) + 'px';
     } else if (r.height > below) {
       menu.style.maxHeight = Math.max(120, below) + 'px';
-    }
-    /* The rail can be collapsed: its contents (this gear included) slide
-       100% to the right, and a popover anchored to them opens off-screen —
-       the right third of the menu was unreachable. Clamp the panel into the
-       viewport after the flip logic above has had its say. */
-    var b = menu.getBoundingClientRect();
-    var vw = document.documentElement.clientWidth;
-    var vh = window.innerHeight;
-    if (b.right > vw - 8 || b.left < 8 || b.top < 8 || b.bottom > vh - 8) {
-      /* A transformed ancestor (the collapsed nav rail) becomes the containing
-         block for position:fixed, so the panel has to leave it to be clamped
-         against the real viewport. closeMenu puts it back where it belongs. */
-      document.body.appendChild(menu);
-      menu.style.position = 'fixed';
-      menu.style.right = 'auto';
-      var w = Math.min(b.width || 300, vw - 16);
-      var h = Math.min(b.height || 0, vh - 16);
-      menu.style.width = Math.round(w) + 'px';
-      if (h) menu.style.maxHeight = Math.round(h) + 'px';
-      menu.style.left = Math.round(Math.min(Math.max(8, b.left), vw - w - 8)) + 'px';
-      menu.style.top = Math.round(Math.min(Math.max(8, b.top), vh - h - 8)) + 'px';
     }
   }
   function openMenu() {
@@ -71,7 +40,6 @@
       menu.classList.remove('open');
       if (btn) btn.setAttribute('aria-expanded', 'false');
     }
-    resetMenuHost();
   }
 
   if (btn && menu && wrap) {
@@ -100,9 +68,7 @@
       }
     });
     menu.addEventListener('click', function (e) { if (e.target.closest('a')) closeMenu(); });
-    document.addEventListener('click', function (e) {
-      if (!wrap.contains(e.target) && !menu.contains(e.target)) closeMenu();
-    });
+    document.addEventListener('click', function (e) { if (!wrap.contains(e.target)) closeMenu(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeSiteMenu(); closeMenu(); } });
   }
 

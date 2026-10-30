@@ -377,7 +377,7 @@ if (!document.documentElement.animate) return;
     }
 
     /* No keyboard shortcut for the rail: unmodified letters are used by the
-       page's content shortcuts, and search is Ctrl/Cmd+K (hotkeys.js). */
+       page's own shortcuts, and search is Ctrl/Cmd+K (hotkeys.js). */
 
     /* Settings > Hotkeys and the rail switch both write fs-rail to localStorage.
        settings.js re-broadcasts cross-tab changes, so the collapsed/shown state

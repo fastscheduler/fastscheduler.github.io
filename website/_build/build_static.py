@@ -215,7 +215,7 @@ def page_shell(title_html, body, rel='../..', lang='en'):
             + '<head>' + chr(10)
             + NOFLASH + chr(10)
             + title_html + chr(10)
-            + '<link rel="stylesheet" href="' + rel + '/styles/main.css?v=20261022a1">' + chr(10)
+            + '<link rel="stylesheet" href="' + rel + '/styles/main.css?v=20261030a1">' + chr(10)
             + '<link rel="stylesheet" href="' + rel + '/styles/hotkeys-modal.css?v=20261006a1">' + chr(10)
             + '<style>' + HC_COMPONENT_CSS + chr(10)
             + '  </style>' + chr(10)
@@ -230,10 +230,10 @@ def page_shell(title_html, body, rel='../..', lang='en'):
             + '<script src="' + rel + '/scripts/settings.js?v=20261005d1"></script>' + chr(10)
             + '<script src="' + rel + '/scripts/ru-content.js?v=20261004b2"></script>' + chr(10)
             + '<script src="' + rel + '/scripts/ru-chrome.js?v=20261005e1"></script>' + chr(10)
-            + '<script src="' + rel + '/scripts/lang.js?v=20261007a1"></script>' + chr(10)
+            + '<script src="' + rel + '/scripts/lang.js?v=20261030a1"></script>' + chr(10)
             + '<script src="' + rel + '/scripts/hotkeys-modal.js?v=20261006a1"></script>' + chr(10)
             + '<script src="' + rel + '/scripts/help-ai.js?v=20261022a1"></script>' + chr(10)
-            + '<script src="' + rel + '/scripts/help-search.js?v=20261022a3"></script>' + chr(10)
+            + '<script src="' + rel + '/scripts/help-search.js?v=20261030a1"></script>' + chr(10)
             + '<script src="' + rel + '/scripts/hotkeys.js?v=20261005d1"></script>' + chr(10)
             + '<script src="' + rel + '/scripts/scroll-jump.js?v=20260930a1"></script>' + chr(10)
             + '<script src="' + rel + '/scripts/article-nav.js?v=20260930a2"></script>' + chr(10)
@@ -699,7 +699,7 @@ def main():
                'not exist. Search the Help Center or open the blog for guides on '
                'scheduling Telegram channel posts.">'
                + '<meta name="robots" content="noindex, follow">'
-               + f'<link rel="stylesheet" href="./styles/main.css?v=20261022a1">'
+               + f'<link rel="stylesheet" href="./styles/main.css?v=20261030a1">'
                + f'<link rel="stylesheet" href="./styles/hotkeys-modal.css?v=20261006a1">'
                + bh.site_entity_ld())
     # full site header: settings menu + "See hotkeys" row so the hotkeys
@@ -728,7 +728,7 @@ def main():
 <script src="./scripts/settings.js?v=20261005d1"></script>
 <script src="./scripts/ru-content.js?v=20261004b2"></script>
 <script src="./scripts/ru-chrome.js?v=20261005e1"></script>
-<script src="./scripts/lang.js?v=20261007a1"></script>
+<script src="./scripts/lang.js?v=20261030a1"></script>
 <script src="./scripts/hotkeys.js?v=20261005d1"></script>
 <script src="./scripts/hotkeys-modal.js?v=20261006a1"></script>
 <script src="./scripts/site-footer.js?v=20261018g2"></script>

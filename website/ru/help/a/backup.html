@@ -50,7 +50,7 @@
 <link rel="alternate" hreflang="en" href="https://fastscheduler.github.io/help/a/backup.html">
 <link rel="alternate" hreflang="x-default" href="https://fastscheduler.github.io/help/a/backup.html">
 <!--/fs:ru-alt-->
-<link rel="stylesheet" href="../../../styles/main.css?v=20261022a1">
+<link rel="stylesheet" href="../../../styles/main.css?v=20261030a1">
 <link rel="stylesheet" href="../../../styles/hotkeys-modal.css?v=20261006a1">
 <style>.hc-card {
   background: var(--surface);
@@ -849,13 +849,19 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
     <h1>Резервные копии</h1>
     <div class="hc-body"></div>
     <div class="hc-faq"><h2>Частые вопросы</h2>
-<details><summary>Как экспортировать данные?</summary><div class="hc-fa"><p>Пошагово:<br>1. Нажмите <b>Экспорт</b> в главном меню (страница 2) или используйте <code>/export</code><br>2. Выберите, что экспортировать: <b>Отложенные сообщения</b>, <b>Повторяющиеся сообщения</b> или <b>Хранилище медиа</b><br>3. Выберите формат:<br>• <b>.txt</b> — обычный текст, читается человеком<br>• <b>.csv</b> — таблица (открывается в Excel/Google Sheets)<br>• <b>.json</b> — структурированные данные для разработчиков<br>4. Файл придёт вам документом</p>
+<details><summary>Как экспортировать данные?</summary><div class="hc-fa"><p>Пошагово:</p>
+<ol><li>Нажмите <b>Экспорт</b> в главном меню (страница 2) или используйте <code>/export</code></li><li>Выберите, что экспортировать: <b>Отложенные сообщения</b>, <b>Повторяющиеся сообщения</b> или <b>Хранилище медиа</b></li><li>Выберите формат:</li></ol>
+<ul><li><b>.txt</b> — обычный текст, читается человеком</li><li><b>.csv</b> — таблица (открывается в Excel/Google Sheets)</li><li><b>.json</b> — структурированные данные для разработчиков</li></ul>
+<ol><li>Файл придёт вам документом</li></ol>
 <p>Для <b>полной резервной копии</b> (Premium): используйте <code>/backup</code> → выберите защиту паролем (по желанию) → файл .fsback придёт вам. Для восстановления: <code>/import</code> и отправьте файл .fsback.</p></div></details>
-<details><summary>Как восстановить резервную копию?</summary><div class="hc-fa"><p>Пошагово:<br>1. Нажмите <b>Импорт</b> в главном меню (страница 2) или используйте <code>/import</code><br>2. Отправьте файл резервной копии (.fsback или .fspback)<br>3. Если он защищён паролем, введите пароль по запросу<br>4. Бот восстановит все ваши данные — сообщения, каналы, ботов, настройки<br>5. По завершении вы получите подтверждение</p>
+<details><summary>Как восстановить резервную копию?</summary><div class="hc-fa"><p>Пошагово:</p>
+<ol><li>Нажмите <b>Импорт</b> в главном меню (страница 2) или используйте <code>/import</code></li><li>Отправьте файл резервной копии (.fsback или .fspback)</li><li>Если он защищён паролем, введите пароль по запросу</li><li>Бот восстановит все ваши данные — сообщения, каналы, ботов, настройки</li><li>По завершении вы получите подтверждение</li></ol>
 <p><b>Внимание:</b> восстановление <b>заменяет</b> текущие данные. Сначала экспортируйте текущие данные, если хотите их сохранить.</p></div></details>
-<details><summary>Можно ли настроить автоматические резервные копии?</summary><div class="hc-fa"><p>Автоматические копии пока недоступны как встроенная функция. Но вы можете экспортировать вручную в любой момент:<br>• <code>/export</code> — выборочный экспорт (отложенные, повторяющиеся или медиа)<br>• <code>/backup</code> — полная копия (Premium, может быть защищена паролем)</p>
+<details><summary>Можно ли настроить автоматические резервные копии?</summary><div class="hc-fa"><p>Автоматические копии пока недоступны как встроенная функция. Но вы можете экспортировать вручную в любой момент:</p>
+<ul><li><code>/export</code> — выборочный экспорт (отложенные, повторяющиеся или медиа)</li><li><code>/backup</code> — полная копия (Premium, может быть защищена паролем)</li></ul>
 <p>Рекомендация: экспортируйте данные регулярно, особенно перед серьёзными изменениями.</p></div></details>
-<details><summary>Как создать копию, защищённую паролем?</summary><div class="hc-fa"><p>Функция Premium. Пошагово:<br>1. Используйте команду <code>/backup</code><br>2. По запросу выберите <b>Включить защиту паролем</b><br>3. Введите пароль (он понадобится для восстановления — не забудьте его!)<br>4. Файл .fspback будет создан и отправлен вам<br>5. Для восстановления: <code>/import</code> → отправьте файл .fspback → введите пароль</p>
+<details><summary>Как создать копию, защищённую паролем?</summary><div class="hc-fa"><p>Функция Premium. Пошагово:</p>
+<ol><li>Используйте команду <code>/backup</code></li><li>По запросу выберите <b>Включить защиту паролем</b></li><li>Введите пароль (он понадобится для восстановления — не забудьте его!)</li><li>Файл .fspback будет создан и отправлен вам</li><li>Для восстановления: <code>/import</code> → отправьте файл .fspback → введите пароль</li></ol>
 <p><b>Внимание:</b> без пароля копию восстановить <b>нельзя</b>. Храните пароль в безопасности!</p></div></details>
 <details><summary>Что входит в полную резервную копию?</summary><div class="hc-fa"><p>Полная копия (.fsback / .fspback) включает: все отложенные сообщения (текст, медиа, настройки), все повторяющиеся сообщения, элементы и боксы хранилища медиа, подключения каналов и настройки, токены и привязки ботов, предпочтения пользователя (язык, часовой пояс) и реферальные данные. Всё, что нужно, чтобы восстановить аккаунт ровно в прежнем состоянии.</p></div></details>
 <details><summary>Чем отличается .fsback от .fspback?</summary><div class="hc-fa"><p><b>.fsback</b> — стандартная полная копия (без пароля). <b>.fspback</b> — копия с шифрованием и защитой паролем (только Premium). Данные в них одинаковые, но .fspback требует пароль для восстановления. Чтобы создать .fspback: <code>/backup</code> → выберите защиту паролем → введите пароль.</p></div></details>
@@ -880,10 +886,10 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
 <script src="../../../scripts/settings.js?v=20261005d1"></script>
 <script src="../../../scripts/ru-content.js?v=20261004b2"></script>
 <script src="../../../scripts/ru-chrome.js?v=20261005e1"></script>
-<script src="../../../scripts/lang.js?v=20261007a1"></script>
+<script src="../../../scripts/lang.js?v=20261030a1"></script>
 <script src="../../../scripts/hotkeys-modal.js?v=20261006a1"></script>
 <script src="../../../scripts/help-ai.js?v=20261022a1"></script>
-<script src="../../../scripts/help-search.js?v=20261022a3"></script>
+<script src="../../../scripts/help-search.js?v=20261030a1"></script>
 <script src="../../../scripts/hotkeys.js?v=20261005d1"></script>
 <script src="../../../scripts/scroll-jump.js?v=20260930a1"></script>
 <script src="../../../scripts/article-nav.js?v=20260930a2"></script>

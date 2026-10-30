@@ -565,7 +565,7 @@
       '.ns-mode button[aria-pressed="true"]{background:var(--surface);color:var(--green-strong);box-shadow:var(--shadow-sm)}' +
       '.ns-mode button:hover{color:var(--green-strong)}' +
       '.fs-find-count{margin:8px 2px 0;font-size:.78rem;font-weight:700;color:var(--text-dim)}' +
-      '.hc-search .ns-mode{margin:8px 0 0;order:9}' +
+      '.hc-search .ns-mode{display:none}' +
       '@media (max-width:700px){.nav-search .ns-mode{display:none}}';
     document.head.appendChild(st);
   })();

@@ -50,7 +50,7 @@
 <link rel="alternate" hreflang="en" href="https://fastscheduler.github.io/help/a/qa_bot_management.html">
 <link rel="alternate" hreflang="x-default" href="https://fastscheduler.github.io/help/a/qa_bot_management.html">
 <!--/fs:ru-alt-->
-<link rel="stylesheet" href="../../../styles/main.css?v=20261022a1">
+<link rel="stylesheet" href="../../../styles/main.css?v=20261030a1">
 <link rel="stylesheet" href="../../../styles/hotkeys-modal.css?v=20261006a1">
 <style>.hc-card {
   background: var(--surface);
@@ -847,25 +847,14 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
   <p style="margin:0 0 18px;font-size:.92rem"><a href="https://fastscheduler.github.io/help/a/qa_bot_management.html" hreflang="en" lang="en">Читать на английском</a></p>
   <article class="doc">
     <h1>Как управлять ботами-отправителями</h1>
-    <div class="hc-body">Ваш бот-отправитель — публичное лицо каждого поста, так что немного гигиены окупается сторицей. Всё ниже живёт в разделе <b>Боты-отправители</b> (или <code>/bots</code>) в Fast Scheduler.
-
-<b>Сначала проверяйте статус</b>
-Экран ботов показывает состояние подключения каждого бота и какие каналы он обслуживает. Если отправка хоть раз fails — этот экран первый: бот в статусе «отключён» означает отозванный токен или изменение в BotFather — чините там, а не в расписании.
-
-<b>Ротация токена (правильный способ)</b>
-• @BotFather → <code>/mybots</code> → ваш бот → <b>Отозвать текущий токен</b>.
-• Скопируйте новый токен.
-• Fast Scheduler → <b>Боты</b> → <b>🔁 Заменить токен</b> под ботом → вставьте.
-
-Замена мгновенная, расписания продолжают работать. Сделаете наоборот (отзовёте и забудете) — каждая отправка будет падать, пока не вставите новый токен.
-
-<b>Переименование = ребрендинг</b>
-Публичное имя и аватар бота берутся из @BotFather (<code>/setname</code>, <code>/setuserpic</code>) — меняйте их там, и каждый следующий пост мгновенно выйдет в новом виде. Перепривязка не нужна: Fast Scheduler хранит токен, а не внешность.
-
-<b>Гигиена парка</b>
-• <b>Один бот на канал</b> — брендинг раздельный, сбои изолированы (Premium: до 3 ботов).
-• <b>Удаляйте</b> ботов, которыми больше не пользуетесь, — удаление стирает токен из хранилища; сам аккаунт бота продолжает жить в BotFather.
-• После любого изменения в BotFather один раз гляньте на экран статуса — 10 секунд, которые предотвращают день тихих несработавших постов.</div>
+    <div class="hc-body"><p>Ваш бот-отправитель — публичное лицо каждого поста, так что немного гигиены окупается сторицей. Всё ниже живёт в разделе <b>Боты-отправители</b> (или <code>/bots</code>) в Fast Scheduler.</p>
+<p><b>Сначала проверяйте статус</b><br>Экран ботов показывает состояние подключения каждого бота и какие каналы он обслуживает. Если отправка хоть раз fails — этот экран первый: бот в статусе «отключён» означает отозванный токен или изменение в BotFather — чините там, а не в расписании.</p>
+<p><b>Ротация токена (правильный способ)</b></p>
+<ul><li>@BotFather → <code>/mybots</code> → ваш бот → <b>Отозвать текущий токен</b>.</li><li>Скопируйте новый токен.</li><li>Fast Scheduler → <b>Боты</b> → <b>🔁 Заменить токен</b> под ботом → вставьте.</li></ul>
+<p>Замена мгновенная, расписания продолжают работать. Сделаете наоборот (отзовёте и забудете) — каждая отправка будет падать, пока не вставите новый токен.</p>
+<p><b>Переименование = ребрендинг</b><br>Публичное имя и аватар бота берутся из @BotFather (<code>/setname</code>, <code>/setuserpic</code>) — меняйте их там, и каждый следующий пост мгновенно выйдет в новом виде. Перепривязка не нужна: Fast Scheduler хранит токен, а не внешность.</p>
+<p><b>Гигиена парка</b></p>
+<ul><li><b>Один бот на канал</b> — брендинг раздельный, сбои изолированы (Premium: до 3 ботов).</li><li><b>Удаляйте</b> ботов, которыми больше не пользуетесь, — удаление стирает токен из хранилища; сам аккаунт бота продолжает жить в BotFather.</li><li>После любого изменения в BotFather один раз гляньте на экран статуса — 10 секунд, которые предотвращают день тихих несработавших постов.</li></ul></div>
     <div class="hc-faq"><h2>Частые вопросы</h2>
 <details><summary>Можно ли использовать одного бота для нескольких каналов?</summary><div class="hc-fa"><p>Да, бот-отправитель может обслуживать несколько ваших каналов. Но отдельные боты на канал остаются более чистым вариантом по умолчанию — для брендинга и отладки.</p><div class="hc-chips" style="margin-top:10px"><a class="hc-chip" href="bot_fleet.html"><span>Флот ботов</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div></details>
 <details><summary>Я удалил бота в BotFather. Что будет в Fast Scheduler?</summary><div class="hc-fa"><p>Его отправки будут падать с ошибкой неверного токена, а экран статуса покажет его отключённым. Удалите бота из раздела ботов и привяжите замену.</p><div class="hc-chips" style="margin-top:10px"><a class="hc-chip" href="bot_remove.html"><span>Удалить бота-отправителя</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div></details>
@@ -890,10 +879,10 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
 <script src="../../../scripts/settings.js?v=20261005d1"></script>
 <script src="../../../scripts/ru-content.js?v=20261004b2"></script>
 <script src="../../../scripts/ru-chrome.js?v=20261005e1"></script>
-<script src="../../../scripts/lang.js?v=20261007a1"></script>
+<script src="../../../scripts/lang.js?v=20261030a1"></script>
 <script src="../../../scripts/hotkeys-modal.js?v=20261006a1"></script>
 <script src="../../../scripts/help-ai.js?v=20261022a1"></script>
-<script src="../../../scripts/help-search.js?v=20261022a3"></script>
+<script src="../../../scripts/help-search.js?v=20261030a1"></script>
 <script src="../../../scripts/hotkeys.js?v=20261005d1"></script>
 <script src="../../../scripts/scroll-jump.js?v=20260930a1"></script>
 <script src="../../../scripts/article-nav.js?v=20260930a2"></script>

@@ -248,32 +248,6 @@
     else navRight.appendChild(btn);
   })();
 
-  /* Help article pages: a visible magnifier in the navbar, so the article's
-     search is one click away instead of waiting for a scroll. */
-  (function helpNavButton() {
-    if (SCOPE !== 'helpnav' || !form) return;
-    var navRight = document.querySelector('header.site .nav-right');
-    if (!navRight || navRight.querySelector('.nav-search-btn')) return;
-    var st = document.createElement('style');
-    st.id = 'fs-nav-search-help-css';
-    st.textContent =
-      '.nav-unified .nav-link.nav-search-btn{display:inline-flex;width:42px;height:42px;' +
-      'padding:0;justify-content:center;align-items:center;flex:none}' +
-      '@media (max-width:700px){.nav-unified .nav-link.nav-search-btn{width:38px;height:38px}}';
-    document.head.appendChild(st);
-    var btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'nav-link nav-search-btn';
-    btn.setAttribute('aria-label', T.helpAria);
-    btn.title = T.helpAria;
-    btn.innerHTML = SEARCH_ICON;
-    btn.addEventListener('click', function (ev) {
-      ev.preventDefault();
-      focusBar();
-    });
-    navRight.insertBefore(btn, navRight.firstChild);
-  })();
-
   function showBar() {
     if (!form) return;
     form.classList.add('show');
@@ -372,8 +346,6 @@
     if (SCOPE === 'legal') return document.querySelector('article.doc') || document.body;
     if (SCOPE === 'blog') return document.querySelector('.blog-doc, .blog-art, article.doc, main') || document.body;
     if (SCOPE === 'help') return document.querySelector('section.view:not([hidden]) .hc-art, section.view:not([hidden])') || document.body;
-    /* a static help article: search its body, never the chrome around it */
-    if (SCOPE === 'helpnav') return document.querySelector('main.legal article.doc, main article.doc, article.doc') || document.body;
     return document.body;
   }
   function legalRoot() { return pageRoot(); }
@@ -536,16 +508,16 @@
      to step through them. */
   var MODE = 'articles';
   var ML = IS_RU
-    ? { a: 'Статьи', h: 'В справке', p: 'На странице', n: 'совпадений', one: 'совпадение', none: 'На этой странице ничего не найдено', in: 'Где искать' }
-    : { a: 'Articles', h: 'In help center', p: 'On this page', n: 'matches', one: 'match', none: 'Nothing on this page matches', in: 'Search in' };
+    ? { a: 'Статьи', p: 'На странице', n: 'совпадений', one: 'совпадение', none: 'На этой странице ничего не найдено', in: 'Где искать' }
+    : { a: 'Articles', p: 'On this page', n: 'matches', one: 'match', none: 'Nothing on this page matches', in: 'Search in' };
   function nMatches(n) { return n + ' ' + (n === 1 ? ML.one : ML.n); }
 
-  function buildModeSeg(labelArticles) {
+  function buildModeSeg() {
     var seg = document.createElement('div');
     seg.className = 'ns-mode';
     seg.setAttribute('role', 'group');
     seg.setAttribute('aria-label', ML.in);
-    seg.innerHTML = '<button type="button" data-mode="articles" aria-pressed="true">' + esc(labelArticles || ML.a) +
+    seg.innerHTML = '<button type="button" data-mode="articles" aria-pressed="true">' + esc(ML.a) +
       '</button><button type="button" data-mode="page" aria-pressed="false">' + esc(ML.p) + '</button>';
     return seg;
   }
@@ -593,20 +565,8 @@
       '.ns-mode button[aria-pressed="true"]{background:var(--surface);color:var(--green-strong);box-shadow:var(--shadow-sm)}' +
       '.ns-mode button:hover{color:var(--green-strong)}' +
       '.fs-find-count{margin:8px 2px 0;font-size:.78rem;font-weight:700;color:var(--text-dim)}' +
-      '.hc-search .ns-mode{margin:8px 0 0;order:9}' +
-      '.ns-mode[hidden]{display:none!important}' +
-      '.nav-search.ns-wide{width:min(560px, calc(100vw - 24px))}' +
-      '.nav-search.ns-wide .ns-mode{display:inline-flex}' +
-      '@media (max-width:700px){.nav-search .ns-mode{display:none}' +
-      /* phones: the scope switch gets its own full-width row instead of
-         squeezing the query field into ~100px */
-      '.nav-search.ns-wide{width:calc(100vw - 32px);height:auto;flex-wrap:wrap;' +
-      'padding:8px 10px;row-gap:2px;border-radius:18px}' +
-      '.nav-search.ns-wide input{height:34px;flex:1 1 110px;font-size:.9rem}' +
-      '.nav-search.ns-wide .ns-kbd{display:none}' +
-      '.nav-search.ns-wide .ns-mode{order:9;display:flex;width:100%;justify-content:center;' +
-      'margin-top:2px;padding:2px}' +
-      '.nav-search.ns-wide .ns-mode button{flex:1;font-size:.72rem;padding:7px 6px}}';
+      '.hc-search .ns-mode{display:none}' +
+      '@media (max-width:700px){.nav-search .ns-mode{display:none}}';
     document.head.appendChild(st);
   })();
 
@@ -622,21 +582,6 @@
     });
   }
 
-  /* help article pages: the bar carries the switch — "In help center" runs the
-     query against the hub, "On this page" highlights matches in the article
-     itself (with a live count and Enter to step through them) */
-  if (SCOPE === 'helpnav' && form && input) {
-    var heSeg = buildModeSeg(ML.h);
-    form.insertBefore(heSeg, form.querySelector('.ns-ic'));
-    form.classList.add('ns-wide');
-    heSeg.addEventListener('click', function (ev) {
-      var b = ev.target.closest && ev.target.closest('[data-mode]');
-      if (!b) return;
-      setMode(b.getAttribute('data-mode'), heSeg, input);
-      try { input.focus({ preventScroll: true }); } catch (e) {}
-    });
-  }
-
   /* help: the switch rides under the hub's own field; in page mode the hub's
      routing is bypassed (document-level capture runs before its handlers) */
   if (SCOPE === 'help') {
@@ -646,18 +591,6 @@
     if (hHost) {
       var hseg = buildModeSeg();
       hHost.appendChild(hseg);
-      /* The hub home has no document to search inside, so the switch only
-         exists while an article (or legal) page is open. On the front page it
-         was two buttons that could only ever do nothing. */
-      function syncHelpSegVisibility() {
-        var onPage = /^#\/(a|c)\//.test(location.hash || '');
-        hseg.hidden = !onPage;
-        hseg.setAttribute('aria-hidden', onPage ? 'false' : 'true');
-        if (!onPage && MODE === 'page') setMode('articles', hseg, hIn);
-      }
-      syncHelpSegVisibility();
-      window.addEventListener('hashchange', syncHelpSegVisibility);
-      window.addEventListener('popstate', syncHelpSegVisibility);
       var chip = document.createElement('div');
       chip.className = 'fs-find-count';
       chip.hidden = true;
@@ -702,7 +635,7 @@
     if (!ranked.length) { closePop(); return; }
     pop.innerHTML = '<div class="ns-head">' + esc(T.sections) + '</div>' + ranked.map(function (r, i) {
       var d = r.doc;
-      return '<a class="ns-res" role="option" data-i="' + i + '" href="' + esc(d.href || ('help/a/' + d.id + '.html')) + '">' +
+      return '<a class="ns-res" role="option" data-i="' + i + '" href="' + esc(d.href || ('a/' + d.id + '/)')) + '">' +
         '<span class="ns-s">' + markText(d.t || '', q) + '</span>' +
         (d.d ? '<span class="ns-tag">' + esc(String(d.d).slice(0, 90)) + '</span>' : '') +
         '</a>';
@@ -743,7 +676,7 @@
       if (onHub) { location.hash = '#q=' + hash; }
       else { location.href = ROOT + 'blog/#q=' + hash; }
     } else if (SCOPE === 'helpnav') {
-      location.href = ROOT + 'help.html#/s/' + hash;
+      location.href = ROOT + 'help/#/s/' + hash;
     }
   }
 
@@ -909,7 +842,7 @@
   if (!menu || !hform || !hinput || !list) return;
 
   var KEY = 'fs-help-recents';
-  var HELP_URL = ROOT + 'help.html';
+  var HELP_URL = ROOT + 'help/';
   (function () {
     var open = menu.querySelector('a.help-menu-open');
     if (open && open.getAttribute('href')) HELP_URL = open.getAttribute('href');

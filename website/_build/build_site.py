@@ -722,15 +722,16 @@ def legal_page(title, body_html, updated, cta_url, toc_box, toc_side, sheet_html
                 {'@type': 'Question',
                  'name': 'Can I get a refund for Fast Scheduler Premium?',
                  'acceptedAnswer': {'@type': 'Answer', 'text':
-                     'Premium is paid with Telegram Stars. Refunds are discretionary and '
-                     'limited to 7 days from that specific payment. Email '
-                     'fastschedulebot@gmail.com with the transaction ID and Telegram username.'}},
+                     'Premium is paid with Telegram Stars and is non-refundable once '
+                     'delivered. The only exception is non-delivery: you paid and Premium '
+                     'never arrived. Email fastschedulebot@gmail.com with the transaction ID '
+                     'and Telegram username.'}},
                 {'@type': 'Question',
                  'name': 'How long do I have to request a Fast Scheduler refund?',
                  'acceptedAnswer': {'@type': 'Answer', 'text':
-                     'Each Stars payment has its own 7-day window counted from the charge date. '
-                     'After 7 days that payment is not refundable, unless Fast Scheduler failed '
-                     'to deliver the paid feature.'}},
+                     'A non-delivery request must reach us within 7 days of the charge date, '
+                     'counted per payment. After those 7 days — or once Premium has been '
+                     'delivered — that payment is not refundable.'}},
                 {'@type': 'Question',
                  'name': 'How do I cancel Fast Scheduler Premium?',
                  'acceptedAnswer': {'@type': 'Answer', 'text':
@@ -785,7 +786,7 @@ def legal_page(title, body_html, updated, cta_url, toc_box, toc_side, sheet_html
     if (_ffs) {{ document.documentElement.setAttribute('data-font', _ffs); }}
   }} catch (e) {{}}
 </script>
-<link rel="stylesheet" href="{pre}/styles/main.css?v=20261026c4">
+<link rel="stylesheet" href="{pre}/styles/main.css?v=20261030a1">
 <link rel="stylesheet" href="{pre}/styles/liquid-nav.css?v=20261007a1">
 <link rel="stylesheet" href="{pre}/styles/hotkeys-modal.css?v=20261006a1">
 <link rel="stylesheet" href="{pre}/styles/mobile-fix.css?v=20261026c8">
@@ -815,11 +816,11 @@ def legal_page(title, body_html, updated, cta_url, toc_box, toc_side, sheet_html
 {sheet_html}
 {_legal_footer(lang)}
 <script src="{pre}/scripts/settings.js?v=20261005d1"></script>
-  <script src="{pre}/scripts/lang.js?v=20261007a1"></script>
+  <script src="{pre}/scripts/lang.js?v=20261030a1"></script>
 <script src="{pre}/scripts/hotkeys-modal.js?v=20261006a1"></script>
 <script src="{pre}/scripts/hotkeys.js?v=20261005d1"></script>
 <script src="{pre}/scripts/scroll-jump.js?v=20260930a1"></script>
-<script src="{pre}/scripts/help-search.js?v=20261022a3"></script>
+<script src="{pre}/scripts/help-search.js?v=20261030a1"></script>
 <script src="{pre}/scripts/main.js?v=20260930a1"></script>
 <script src="{pre}/scripts/liquid-nav.js?v=20261005d1"></script>
 <script>
@@ -1005,7 +1006,21 @@ def write_legal():
             print(f"[ok] wrote {os.path.join(out_dir, out)}")
 
 
+def check_version_blocks():
+    """Fail loudly when a rebuilt page lost its version history or archive link.
+
+    ``stamp_html`` is applied inside ``write_legal()``; this is the guard that
+    proves it worked, and it also reports a link to an archived edition that is
+    not on disk (the Russian pages used to point at a 404) instead of shipping
+    it.
+    """
+    problems = _lv.verify()
+    if problems:
+        raise SystemExit('[legal] version block check failed:\n  - ' + '\n  - '.join(problems))
+
+
 if __name__ == '__main__':
     write_site_config()
     write_legal()
+    check_version_blocks()
     print("Done.")

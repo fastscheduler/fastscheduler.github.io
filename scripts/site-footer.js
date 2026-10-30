@@ -45,7 +45,7 @@
           ['Media Storage', 'help/c/media_storage/']
         ] },
         { h: 'Resources', links: [
-          ['Help Center', 'help.html'],
+          ['Help Center', 'help/'],
           ['Getting Started', 'help/c/start/'],
           ['Blog', 'blog/index.html'],
           ['Premium', 'help/c/premium/'],
@@ -82,7 +82,7 @@
           ['\u041c\u0435\u0434\u0438\u0430\u0442\u0435\u043a\u0430', 'help/c/media_storage/']
         ] },
         { h: '\u0420\u0435\u0441\u0443\u0440\u0441\u044b', links: [
-          ['\u0426\u0435\u043d\u0442\u0440 \u043f\u043e\u043c\u043e\u0449\u0438', 'help.html'],
+          ['\u0426\u0435\u043d\u0442\u0440 \u043f\u043e\u043c\u043e\u0449\u0438', 'help/'],
           ['\u041d\u0430\u0447\u0430\u043b\u043e \u0440\u0430\u0431\u043e\u0442\u044b', 'help/c/start/'],
           ['\u0411\u043b\u043e\u0433', 'blog/index.html'],
           ['\u041f\u0440\u0435\u043c\u0438\u0443\u043c', 'help/c/premium/'],

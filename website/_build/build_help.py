@@ -807,6 +807,15 @@ def text_to_html(text):
         lambda m: '<a class="hc-ilink" href="#/a/%s">%s</a>'
                   % (m.group(1), m.group(2) or m.group(1).replace('_', ' ').title()),
         text)
+    # Source strings carry whole lists inline ("Requirements • Bot must be an
+    # admin • Post messages ..." or "1. Open the bot 2. Tap ..."), so nothing
+    # ever became a list and the article read as one wall of text. Break every
+    # bullet and numbered step onto its own line before the block splitter.
+    text = re.sub(r'[ \t]*\u2022[ \t]*', '\n\u2022 ', text)
+    text = re.sub(r'[ \t]+(?=[1-9][0-9]?\.[ \t])', '\n', text)
+    # Bullets already on their own lines just gained a leading newline above;
+    # keep the list together instead of turning every item into its own block.
+    text = re.sub(r'\n{2,}\u2022 ', '\n\u2022 ', text)
     blocks = re.split(r'\n\s*\n', text)
     out = []
     for block in blocks:
@@ -816,14 +825,31 @@ def text_to_html(text):
         lines = [ln.strip() for ln in block.split('\n') if ln.strip()]
 
         def _flush(seg):
+            """Emit prose, bullets and numbered steps as separate blocks."""
             if not seg:
                 return
-            bullets = [ln for ln in seg if ln.startswith(('\u2022', '-', '*'))]
-            if bullets and len(bullets) == len(seg):
-                items = ''.join('<li>%s</li>' % re.sub(r'^[\u2022\-*]\s*', '', ln) for ln in bullets)
-                out.append('<ul>%s</ul>' % items)
-            else:
-                out.append('<p>%s</p>' % '<br>'.join(seg))
+            chunk, kind = [], None
+
+            def emit(k, items):
+                if not items or not k:
+                    return
+                if k == 'p':
+                    out.append('<p>%s</p>' % '<br>'.join(items))
+                else:
+                    out.append('<%s>%s</%s>' % (k, ''.join('<li>%s</li>' % i for i in items), k))
+
+            for ln in seg:
+                m = re.match(r'^(?:\u2022|[-*])[ \t]+(.*)$', ln)
+                if m:
+                    k, val = 'ul', m.group(1)
+                else:
+                    m = re.match(r'^[0-9]{1,2}\.[ \t]+(.*)$', ln)
+                    k, val = ('ol', m.group(1)) if m else ('p', ln)
+                if k != kind:
+                    emit(kind, chunk)
+                    chunk, kind = [], k
+                chunk.append(val)
+            emit(kind, chunk)
 
         # A "## Heading" line becomes a real section heading, so long guides
         # get the jump-to-section rail on the article page. It works no matter
@@ -1804,8 +1830,25 @@ CSS = r'''
     .hc-docs-head .hc-pop b { color: #fff; }
     .hc-docs-head .hc-pop a { color: #fff; background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.26); }
     .hc-docs-head .hc-pop a:hover { background: rgba(255,255,255,.20); border-color: rgba(255,255,255,.55); color: #fff; }
-    @media (max-width: 640px) {
-      .hc-docs-head { margin-top: 14px; border-radius: 20px; padding: 38px 18px 34px; }
+    /* Phones: the hero is a full-bleed green band — no floating card, no
+       rounded corners — and the ask-chips become one clean left-aligned
+       column instead of a ragged wrap. */
+    @media (max-width: 760px) {
+      .hc-docs-head {
+        margin: 0 -18px; border-radius: 0; border-left: 0; border-right: 0;
+        padding: 28px 18px 30px;
+      }
+      .hc-docs-head .hc-kicker { font-size: .74rem; padding: 5px 12px; }
+      .hc-docs-head .hc-title { font-size: clamp(2.3rem, 11vw, 3rem); margin-top: 14px; }
+      .hc-docs-head .hc-sub { margin-top: 12px; font-size: .95rem; line-height: 1.55; max-width: 44ch; }
+      .hc-docs-head .hc-search { margin-top: 20px; }
+      .hc-docs-head .hc-try { margin-top: 18px; }
+      .hc-docs-head .hc-try-label { font-size: .8rem; }
+      .hc-docs-head .hc-chiprow { flex-direction: column; gap: 8px; justify-content: stretch; margin-top: 10px; }
+      .hc-docs-head .hc-chip { width: 100%; justify-content: flex-start; text-align: left;
+        border-radius: 14px; padding: 12px 14px; font-size: .87rem; line-height: 1.35; }
+      .hc-docs-head .hc-chip svg { width: 16px; height: 16px; }
+      .hc-docs-head .hc-pop { margin-top: 16px; }
     }
     .hc-pop { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin: 20px 0 6px;
       font-size: .87rem; color: var(--text-dim); }
@@ -3011,8 +3054,7 @@ JS = r'''
        with every other shortcut, and the keycap hints disappear with them. */
     if (document.documentElement.getAttribute('data-keys') === 'off') return;
     var isK = (e.key === 'k' || e.key === 'K') && (e.ctrlKey || e.metaKey);
-    var isS = (e.key === 's' || e.key === 'S') && !mod;
-    if (isK || isS) { e.preventDefault(); focusSearch(); return; }
+    if (isK) { e.preventDefault(); focusSearch(); return; }
     /* O = topics. Guard: ignore chords mid-recording in the hotkeys editor
        (its capture-phase handler stops them; this belt-and-suspenders check
        keeps a sequence like O then B from flipping the sidebar mid-chord). */
@@ -3223,7 +3265,7 @@ def render_home(groups, quick, n_articles):
           <div class="hc-search">
             {svg('search', 'sic')}
             <input id="hcSearch" type="search" role="combobox" aria-autocomplete="list" aria-haspopup="listbox" aria-expanded="false" aria-controls="hcResults" placeholder="Search articles&hellip;" aria-label="Search help topics" autocomplete="off" enterkeyhint="search">
-            <button class="hc-sbtn" id="hcSBtn" type="button" aria-label="Search (press S)" title="Search (press S)">S</button>
+            <button class="hc-sbtn" id="hcSBtn" type="button" aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)">Ctrl K</button>
             <div class="hc-results" id="hcResults" role="listbox" aria-label="Search results" hidden></div>
           </div>
           {try_html}
@@ -3802,8 +3844,8 @@ def build_page(nodes, help_sec):
 </footer>
 
 <script src="scripts/settings.js?v=20261005d1"></script>
-  <script src="scripts/ru-chrome.js?v=20261006b1"></script><script src="scripts/lang.js?v=20261007a1"></script>
-<script src="scripts/help-search.js?v=20261022a3"></script>
+  <script src="scripts/ru-chrome.js?v=20261006b1"></script><script src="scripts/lang.js?v=20261030a1"></script>
+<script src="scripts/help-search.js?v=20261030a1"></script>
 <script src="scripts/hotkeys-modal.js?v=20261006a1"></script>
 <script src="scripts/hotkeys.js?v=20261005d1"></script>
 <script src="scripts/scroll-jump.js?v=20261005a1"></script>

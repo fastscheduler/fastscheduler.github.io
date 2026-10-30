@@ -50,7 +50,7 @@
 <link rel="alternate" hreflang="en" href="https://fastscheduler.github.io/help/a/qa_signature_guide.html">
 <link rel="alternate" hreflang="x-default" href="https://fastscheduler.github.io/help/a/qa_signature_guide.html">
 <!--/fs:ru-alt-->
-<link rel="stylesheet" href="../../../styles/main.css?v=20261022a1">
+<link rel="stylesheet" href="../../../styles/main.css?v=20261030a1">
 <link rel="stylesheet" href="../../../styles/hotkeys-modal.css?v=20261006a1">
 <style>.hc-card {
   background: var(--surface);
@@ -847,22 +847,13 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
   <p style="margin:0 0 18px;font-size:.92rem"><a href="https://fastscheduler.github.io/help/a/qa_signature_guide.html" hreflang="en" lang="en">Читать на английском</a></p>
   <article class="doc">
     <h1>Как добавить автоподпись к постам</h1>
-    <div class="hc-body">Подпись — это подвал, появляющийся под каждым постом канала: кредит, призыв к действию, хештеги, промо. Настройте один раз в Fast Scheduler — и каждое отложенное сообщение несёт её: вы перестаёте дописывать «@вашканал» в конец всего.
-
-<b>Настройка</b>
-• Откройте <b>Подпись</b> через <code>/signature</code> (или нажмите <b>📝 Подпись</b> на экране проверки). Функция Premium.
-• Выберите канал — подписи <b>на канал</b>, так что главный канал может нести промо, а канал анонсов оставаться чистым.
-• Отправьте текст. Форматирование работает: <b>жирный</b>, <i>курсив</i>, ссылки, даже эмодзи-фри минимализм, если это ваш стиль.
-
-Со следующей отправки подпись дописывается к каждому посту этого канала. Уже отложенные посты подхватывают её автоматически в момент отправки — перепланировать ничего не нужно.
-
-<b>Что должно быть в хорошей подписи</b>
-• <b>Хэндл канала</b> — классическая строка «@вашканал», ведь пересланные копии сохраняют кредит.
-• <b>Одно действие</b> — «Ответить для покупки», «Детали: ссылка». У подписи с тремя призывами — ноль.
-• <b>Хештеги для навигации</b> — если канал использует индекс по тегам, подпись — идеальное место для постоянных.
-
-<b>Изменение и удаление</b>
-То же меню правит или очищает подпись; очистка останавливает дописывание немедленно (опять же, применяется в момент отправки — так что уже опубликованные посты свой подвал сохраняют: это фича, а не баг). Покональный контроль означает, что эксперименты дёшевы.</div>
+    <div class="hc-body"><p>Подпись — это подвал, появляющийся под каждым постом канала: кредит, призыв к действию, хештеги, промо. Настройте один раз в Fast Scheduler — и каждое отложенное сообщение несёт её: вы перестаёте дописывать «@вашканал» в конец всего.</p>
+<p><b>Настройка</b></p>
+<ul><li>Откройте <b>Подпись</b> через <code>/signature</code> (или нажмите <b>📝 Подпись</b> на экране проверки). Функция Premium.</li><li>Выберите канал — подписи <b>на канал</b>, так что главный канал может нести промо, а канал анонсов оставаться чистым.</li><li>Отправьте текст. Форматирование работает: <b>жирный</b>, <i>курсив</i>, ссылки, даже эмодзи-фри минимализм, если это ваш стиль.</li></ul>
+<p>Со следующей отправки подпись дописывается к каждому посту этого канала. Уже отложенные посты подхватывают её автоматически в момент отправки — перепланировать ничего не нужно.</p>
+<p><b>Что должно быть в хорошей подписи</b></p>
+<ul><li><b>Хэндл канала</b> — классическая строка «@вашканал», ведь пересланные копии сохраняют кредит.</li><li><b>Одно действие</b> — «Ответить для покупки», «Детали: ссылка». У подписи с тремя призывами — ноль.</li><li><b>Хештеги для навигации</b> — если канал использует индекс по тегам, подпись — идеальное место для постоянных.</li></ul>
+<p><b>Изменение и удаление</b><br>То же меню правит или очищает подпись; очистка останавливает дописывание немедленно (опять же, применяется в момент отправки — так что уже опубликованные посты свой подвал сохраняют: это фича, а не баг). Покональный контроль означает, что эксперименты дёшевы.</p></div>
     <div class="hc-faq"><h2>Частые вопросы</h2>
 <details><summary>Можно ли разные подписи для разных каналов?</summary><div class="hc-fa"><p>Да — подписи настраиваются на канал. Каждый подключённый канал получает свой текст (или никакого).</p><div class="hc-chips" style="margin-top:10px"><a class="hc-chip" href="signature.html"><span>Подписи (Premium)</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div></details>
 <details><summary>Подпись считается в длину сообщения?</summary><div class="hc-fa"><p>Она часть итогового текста сообщения, так что экстремально длинные подписи поверх длинных постов могут упереться в лимит Telegram 4096 символов. Короткие подписи в любом случае лучше.</p><div class="hc-chips" style="margin-top:10px"><a class="hc-chip" href="signature.html"><span>Подписи (Premium)</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div></details>
@@ -887,10 +878,10 @@ html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var
 <script src="../../../scripts/settings.js?v=20261005d1"></script>
 <script src="../../../scripts/ru-content.js?v=20261004b2"></script>
 <script src="../../../scripts/ru-chrome.js?v=20261005e1"></script>
-<script src="../../../scripts/lang.js?v=20261007a1"></script>
+<script src="../../../scripts/lang.js?v=20261030a1"></script>
 <script src="../../../scripts/hotkeys-modal.js?v=20261006a1"></script>
 <script src="../../../scripts/help-ai.js?v=20261022a1"></script>
-<script src="../../../scripts/help-search.js?v=20261022a3"></script>
+<script src="../../../scripts/help-search.js?v=20261030a1"></script>
 <script src="../../../scripts/hotkeys.js?v=20261005d1"></script>
 <script src="../../../scripts/scroll-jump.js?v=20260930a1"></script>
 <script src="../../../scripts/article-nav.js?v=20260930a2"></script>

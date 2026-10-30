@@ -390,6 +390,10 @@
   function paintNoRu(show) {
     removeNoRu();
     if (!show) return;
+    /* A server-rendered /ru/ document is already Russian: there is nothing
+       to warn about, and the banner was painting itself over translated
+       help articles and legal pages. */
+    try { if (location.pathname.indexOf('/ru/') === 0) return; } catch (e) {}
     var kind = sectionKind();
     if (!kind) return;
     // Dismissed this session: stay dismissed (per section).

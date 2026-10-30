@@ -10,6 +10,8 @@
     if (localStorage.getItem('fs-fx') === 'off') document.documentElement.setAttribute('data-fx', 'off');
     if (localStorage.getItem('fs-hotkeys') === 'off') document.documentElement.setAttribute('data-keys', 'off');
     if (localStorage.getItem('fs-rail') === 'off') document.documentElement.classList.add('rail-off');
+    var _ffs = localStorage.getItem('fs-font') || localStorage.getItem('fs-help-font') || localStorage.getItem('fs-blog-font');
+    if (_ffs) { document.documentElement.setAttribute('data-font', _ffs); }
   } catch (e) {}
 </script>
 <meta charset="utf-8">
@@ -19,31 +21,31 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://www.google.com; font-src 'self'; connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://region1.google-analytics.com https://www.google.com; frame-src https://www.googletagmanager.com; object-src 'none'; form-action 'self'; base-uri 'self'; upgrade-insecure-requests">
 <title>Getting Started — Fast Scheduler Help</title>
-<meta name="description" content="New here? This section takes you from an empty chat to a published post: connect your channel, connect a sender bot, schedule the first message — then explore t">
+<meta name="description" content="New here? This section takes you from an empty chat to a published post: connect your channel, connect a sender bot, schedule the first message - then">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <link rel="canonical" href="https://fastscheduler.github.io/help/a/start.html">
-<link rel="describedby" href="https://fastscheduler.github.io/llms.txt">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Fast Scheduler">
 <meta property="og:title" content="Getting Started — Fast Scheduler Help">
-<meta property="og:description" content="New here? This section takes you from an empty chat to a published post: connect your channel, connect a sender bot, schedule the first message — then explore t">
+<meta property="og:description" content="New here? This section takes you from an empty chat to a published post: connect your channel, connect a sender bot, schedule the first message - then">
 <meta property="og:url" content="https://fastscheduler.github.io/help/a/start.html">
 <meta property="og:image" content="https://fastscheduler.github.io/og-cover-v2.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Getting Started — Fast Scheduler Help">
-<meta name="twitter:description" content="New here? This section takes you from an empty chat to a published post: connect your channel, connect a sender bot, schedule the first message — then explore t">
-<meta name="twitter:image" content="https://fastscheduler.github.io/og-cover-v2.png">
-<link rel="icon" href="{rel}/favicon.ico" sizes="any">
-  <link rel="icon" href="{rel}/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="{rel}/favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="{rel}/icon-48.png" sizes="48x48" type="image/png">
-  <link rel="icon" href="{rel}/favicon-16.png" sizes="16x16" type="image/png">
-  <link rel="icon" href="{rel}/brand-logo.png" sizes="256x256" type="image/png">
-  <link rel="apple-touch-icon" href="{rel}/apple-touch-icon.png" sizes="180x180">
-  <link rel="manifest" href="{rel}/site.webmanifest">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Getting Started", "description": "New here? This section takes you from an empty chat to a published post: connect your channel, connect a sender bot, schedule the first message — then explore t", "articleBody": "New here? This section takes you from an empty chat to a published post: connect your channel, connect a sender bot, schedule the first message — then explore the tools that keep a channel running on autopilot. The three setup steps are short guides with pictures of what to tap. After that, the glossary explains any term you meet along the way, and the SetDate topic covers bulk-creating schedules from a file.", "articleSection": "Getting Started", "author": {"@type": "Organization", "name": "Fast Scheduler", "url": "https://fastscheduler.github.io"}, "publisher": {"@type": "Organization", "name": "Fast Scheduler", "url": "https://fastscheduler.github.io", "logo": {"@type": "ImageObject", "url": "https://fastscheduler.github.io/og-cover-v2.png"}}, "mainEntityOfPage": "https://fastscheduler.github.io/help/a/start.html", "datePublished": "2026-10-30", "dateModified": "2026-10-30", "isPartOf": {"@type": "WebSite", "name": "Fast Scheduler Help", "url": "https://fastscheduler.github.io/help.html"}}</script>
+<meta name="twitter:description" content="New here? This section takes you from an empty chat to a published post: connect your channel, connect a sender bot, schedule the first message - then">
+<meta name="twitter:image" content="https://fastscheduler.github.io/og-cover-v2.png"><meta property="article:published_time" content="2026-10-04"><meta property="article:modified_time" content="2026-10-04"><meta property="article:section" content="Fast Scheduler">
+<link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="../../icon-48.png" sizes="48x48" type="image/png">
+  <link rel="icon" href="../../icon-192.png" sizes="192x192" type="image/png">
+  <link rel="icon" href="../../icon-512.png" sizes="512x512" type="image/png">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png" sizes="180x180">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://fastscheduler.github.io/#organization", "name": "Fast Scheduler", "alternateName": ["Fast Scheduler Bot", "FastSchedulerBot", "FastScheduler", "fastscheduler", "fastschedulerbot", "@FastSchedulerBot", "FastSchedule", "FastSchedule Bot", "Fast Scheduler Telegram bot", "fast scheduler telegram bot", "TG Scheduler", "Telegram Scheduler Bot", "Telegram post scheduler", "TG Fast Scheduler", "Fast Scheduler TG"], "url": "https://fastscheduler.github.io/", "logo": {"@type": "ImageObject", "@id": "https://fastscheduler.github.io/#logo", "url": "https://fastscheduler.github.io/icon-512.png", "contentUrl": "https://fastscheduler.github.io/icon-512.png", "width": 512, "height": 512, "caption": "Fast Scheduler"}, "image": "https://fastscheduler.github.io/icon-512.png", "description": "Fast Scheduler is a Telegram bot (@FastSchedulerBot) that batch-schedules, auto-publishes and tracks channel posts. It is unrelated to calendar, project-management or crew-scheduling products that share the name.", "email": "fastschedulebot@gmail.com", "sameAs": ["https://t.me/FastSchedulerBot", "https://t.me/FastSchedulerSupport_bot"], "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "fastschedulebot@gmail.com", "availableLanguage": ["English", "Russian", "Spanish"], "url": "https://t.me/FastSchedulerSupport_bot"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://fastscheduler.github.io/#website", "name": "Fast Scheduler", "alternateName": ["Fast Scheduler Bot", "FastSchedulerBot", "FastScheduler", "fastscheduler", "fastschedulerbot", "@FastSchedulerBot", "FastSchedule", "FastSchedule Bot", "Fast Scheduler Telegram bot", "fast scheduler telegram bot", "TG Scheduler", "Telegram Scheduler Bot", "Telegram post scheduler", "TG Fast Scheduler", "Fast Scheduler TG"], "url": "https://fastscheduler.github.io/", "publisher": {"@id": "https://fastscheduler.github.io/#organization"}, "inLanguage": ["en", "ru", "es"], "description": "Fast Scheduler is a Telegram bot (@FastSchedulerBot) that batch-schedules, auto-publishes and tracks channel posts. It is unrelated to calendar, project-management or crew-scheduling products that share the name.", "hasPart": [{"@type": "WebPage", "name": "Fast Scheduler Help Center", "url": "https://fastscheduler.github.io/help.html"}, {"@type": "Blog", "name": "Fast Scheduler Blog", "url": "https://fastscheduler.github.io/blog/"}, {"@type": "WebPage", "name": "Pricing and plans", "url": "https://fastscheduler.github.io/#pricing"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Getting Started", "description": "New here? This section takes you from an empty chat to a published post: connect your channel, connect a sender bot, schedule the first message - then", "articleBody": "New here? This section takes you from an empty chat to a published post: connect your channel, connect a sender bot, schedule the first message — then explore the tools that keep a channel running on autopilot. The three setup steps are short guides with pictures of what to tap. After that, the glossary explains any term you meet along the way, and the SetDate topic covers bulk-creating schedules from a file.", "articleSection": "Getting Started", "author": {"@id": "https://fastscheduler.github.io/#organization"}, "publisher": {"@id": "https://fastscheduler.github.io/#organization"}, "mainEntityOfPage": "https://fastscheduler.github.io/help/a/start.html", "datePublished": "2026-10-04", "dateModified": "2026-10-04", "isPartOf": {"@id": "https://fastscheduler.github.io/#website"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Fast Scheduler", "item": "https://fastscheduler.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Help Center", "item": "https://fastscheduler.github.io/help.html"}, {"@type": "ListItem", "position": 3, "name": "Getting Started", "item": "https://fastscheduler.github.io/help/c/start.html"}, {"@type": "ListItem", "position": 4, "name": "Getting Started", "item": "https://fastscheduler.github.io/help/a/start.html"}]}</script>
-<link rel="stylesheet" href="../../styles/main.css?v=20261031a2">
+<link rel="stylesheet" href="../../styles/main.css?v=20261030a1">
 <link rel="stylesheet" href="../../styles/hotkeys-modal.css?v=20261006a1">
 <style>.hc-card {
   background: var(--surface);
@@ -62,7 +64,80 @@
 
 .hc-chip svg { width: 15px; height: 15px; flex: none; color: var(--green-strong); }
 
-.hc-chip:hover { border-color: color-mix(in srgb, var(--green) 50%, transparent); color: var(--green-strong); transform: translateY(-1px); box-shadow: var(--shadow-sm); text-decoration: none; }
+.hc-chip:hover { border-color: color-mix(in srgb, var(--green) 50%, transparent); color: var(--green-strong); text-decoration: none; }
+
+.hc-grid > .hc-cat, .hc-list > .hc-row { min-width: 0; }
+
+.hc-cat { display: block; padding: 18px; color: var(--text); transition: transform .2s, border-color .2s, box-shadow .2s; }
+
+.hc-cat:hover { text-decoration: none; border-color: color-mix(in srgb, var(--green) 45%, var(--border)); transform: translateY(-2px); box-shadow: var(--shadow); }
+
+.hc-cat-head { display: flex; align-items: center; gap: 13px; }
+
+.hc-cat-head > * { min-width: 0; }
+
+.hc-grid > .hc-cat:nth-child(6n+2) .hc-ic { color: #2563eb; background: color-mix(in srgb, #2563eb 10%, transparent); border-color: color-mix(in srgb, #2563eb 24%, transparent); }
+
+.hc-grid > .hc-cat:nth-child(6n+3) .hc-ic { color: #7c3aed; background: color-mix(in srgb, #7c3aed 10%, transparent); border-color: color-mix(in srgb, #7c3aed 24%, transparent); }
+
+.hc-grid > .hc-cat:nth-child(6n+4) .hc-ic { color: #b45309; background: color-mix(in srgb, #b45309 10%, transparent); border-color: color-mix(in srgb, #b45309 24%, transparent); }
+
+.hc-grid > .hc-cat:nth-child(6n+5) .hc-ic { color: #0e7490; background: color-mix(in srgb, #0e7490 10%, transparent); border-color: color-mix(in srgb, #0e7490 24%, transparent); }
+
+.hc-grid > .hc-cat:nth-child(6n+6) .hc-ic { color: #be123c; background: color-mix(in srgb, #be123c 10%, transparent); border-color: color-mix(in srgb, #be123c 24%, transparent); }
+
+.hc-grid > .hc-cat:nth-child(6n+2) { border-radius: 20px; }
+
+.hc-grid > .hc-cat:nth-child(6n+4) { border-radius: 12px; }
+
+.hc-grid > .hc-cat:nth-child(6n+5) { border-radius: 22px 16px 22px 16px; }
+
+.hc-band-grid > a:nth-child(6n+2) { border-color: color-mix(in srgb, #2563eb 35%, var(--border)); }
+
+.hc-band-grid > a:nth-child(6n+3) { border-color: color-mix(in srgb, #7c3aed 35%, var(--border)); }
+
+.hc-band-grid > a:nth-child(6n+4) { border-color: color-mix(in srgb, #b45309 35%, var(--border)); }
+
+.hc-band-grid > a:nth-child(6n+5) { border-color: color-mix(in srgb, #0e7490 35%, var(--border)); }
+
+.hc-band-grid > a:nth-child(6n+6) { border-color: color-mix(in srgb, #be123c 35%, var(--border)); }
+
+.hc-cat-t { font-weight: 800; font-size: .98rem; letter-spacing: -.01em; }
+
+.hc-cat-c { display: block; font-size: .78rem; color: var(--text-dim); margin-top: 1px; }
+
+.hc-cat-go { margin-left: auto; color: var(--text-dim); transition: transform .2s, color .2s; }
+
+.hc-cat-go svg { width: 17px; height: 17px; display: block; }
+
+.hc-cat:hover .hc-cat-go { color: var(--green-strong); transform: translateX(3px); }
+
+.hc-cat-prev { margin: 13px 0 0; padding: 11px 0 0; border-top: 1px dashed var(--border); display: flex; flex-direction: column; gap: 5px; }
+
+.hc-cat-prev span { font-size: .82rem; color: var(--text-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.hc-cat-prev span::before { content: ""; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: color-mix(in srgb, var(--green) 55%, transparent); margin: 2px 8px 2px 2px; vertical-align: 2px; }
+
+.hc-cat-d {
+  display: block; margin-top: 10px; font-size: .84rem; color: var(--text-dim); line-height: 1.5;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+.hc-cta {
+  display: flex; align-items: center; gap: 16px; margin: 30px 0 4px; padding: 20px 22px;
+  border-radius: 20px; background: color-mix(in srgb, var(--green) 8%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--green) 26%, var(--border));
+}
+
+.hc-cta .hc-ic { width: 44px; height: 44px; flex: none; }
+
+.hc-cta-t { flex: 1; min-width: 0; }
+
+.hc-cta-t b { display: block; font-size: 1rem; letter-spacing: -.01em; }
+
+.hc-cta-t span { color: rgba(255, 255, 255, .92); font-size: .88rem; }
+
+.hc-cta .btn { flex: none; }
 
 .hc-crumbs { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; padding: 26px 0 0; font-size: .87rem; color: var(--text-dim); }
 
@@ -73,6 +148,47 @@
 .hc-crumbs svg { width: 13px; height: 13px; opacity: .6; }
 
 .hc-crumbs [aria-current] { color: var(--text); font-weight: 650; }
+
+.hc-cat-head { display: flex; align-items: center; gap: 16px; padding: 26px 0 6px; scroll-margin-top: 84px; }
+
+.hc-cat-head .hc-ic { width: 56px; height: 56px; border-radius: 16px; }
+
+.hc-cat-head .hc-ic svg { width: 26px; height: 26px; }
+
+.hc-cat-head h1, .hc-cat-head h2 { margin: 0; font-size: clamp(1.55rem, 3.4vw, 2.15rem); letter-spacing: -.025em; }
+
+.hc-cat-head p { margin: 3px 0 0; color: var(--text-dim); font-size: .92rem; }
+
+.hc-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; padding: 14px 0 26px; }
+
+.hc-row {
+  display: flex; align-items: center; gap: 12px; padding: 14px 6px;
+  color: var(--text); border-bottom: 1px solid color-mix(in srgb, var(--border) 62%, transparent);
+  transition: color .15s;
+}
+
+.hc-row:hover { text-decoration: none; color: var(--green-strong); }
+
+.hc-row-t { flex: 1; min-width: 0; font-weight: 650; font-size: .95rem; line-height: 1.4; }
+
+.hc-row:hover .hc-row-t { color: var(--green-strong); }
+
+.hc-row-m {
+  flex: none; font-size: .73rem; font-weight: 700; color: var(--text-dim);
+  background: var(--surface-2); border-radius: 999px; padding: 3px 9px; white-space: nowrap;
+}
+
+.hc-row-lead .hc-row-m { color: var(--green-strong); background: color-mix(in srgb, var(--green) 11%, transparent); }
+
+.hc-row > svg { flex: none; width: 15px; height: 15px; color: var(--text-dim); transition: transform .15s, color .15s; }
+
+.hc-row:hover > svg { color: var(--green-strong); transform: translateX(2px); }
+
+.hc-sempty .hc-list { text-align: left; }
+
+.hc-art { max-width: 860px; margin: 12px auto 0; padding: clamp(26px, 4.5vw, 48px); }
+
+.hc-art > h1, .hc-art > h2 { margin: 0; font-size: clamp(1.65rem, 3.6vw, 2.25rem); letter-spacing: -.025em; line-height: 1.15; }
 
 .hc-body { margin-top: 16px; }
 
@@ -98,6 +214,8 @@
 
 .hc-faq details:last-child { border-bottom: 0; }
 
+.hc-faq summary code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em; background: var(--surface-2); padding: 1px 5px; border-radius: 6px; }
+
 .hc-faq summary {
   cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between;
   gap: 14px; padding: 14px 0; font-weight: 700; font-size: .95rem;
@@ -105,12 +223,19 @@
 
 .hc-faq summary::-webkit-details-marker { display: none; }
 
-.hc-faq summary::after {
-  content: "+"; flex: none; font-size: 1.35rem; font-weight: 500; line-height: 1;
-  color: var(--green-strong); transition: transform .25s;
+.hc-faq summary { position: relative; padding-right: 28px; }
+
+.hc-faq summary::before, .hc-faq summary::after {
+  content: ""; position: absolute; top: 50%; background: var(--green-strong);
+  border-radius: 2px; transition: transform .25s var(--ease-spring, ease);
 }
 
-.hc-faq details[open] summary::after { transform: rotate(45deg); }
+.hc-faq summary::before { right: 1px; width: 14px; height: 2px; transform: translateY(-50%); }
+
+.hc-faq summary::after { right: 7px; width: 2px; height: 14px; transform: translateY(-50%); }
+
+.hc-faq details[open] summary::before,
+    .hc-faq details[open] summary::after { transform: translateY(-50%) rotate(135deg); }
 
 .hc-fa { padding: 0 0 16px; }
 
@@ -118,7 +243,6 @@
 
 .hc-fa ul { margin: 0 0 8px; padding-left: 20px; color: var(--text-dim); font-size: .92rem; line-height: 1.65; }
 
-.hc-faq summary code, .blog-faq summary code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em; background: var(--surface-2); padding: 1px 5px; border-radius: 6px; }
 .hc-fa code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em; background: var(--surface-2); padding: 1px 5px; border-radius: 6px; }
 
 .hc-chips { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -133,7 +257,7 @@
 
 .hc-related h2 { font-size: .9rem; font-weight: 650; letter-spacing: 0; color: var(--text-dim); margin: 0 0 12px; }
 
-.hc-pager { max-width: 860px; margin: 16px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.hc-pager { max-width: 860px; margin: 16px auto 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
 
 .hc-pager a { display: flex; align-items: center; gap: 12px; padding: 14px 17px; color: var(--text); }
 
@@ -148,6 +272,7 @@
 .hc-pager small { display: block; font-size: .78rem; font-weight: 650; letter-spacing: 0; color: var(--text-dim); }
 
 .hc-pager a span { min-width: 0; flex: 1 1 auto; }
+
 .hc-pager b { display: block; font-size: .9rem; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; }
 
 .hc-cta {
@@ -168,6 +293,18 @@
 
 .view.anim .hc-side-title, .view.anim .hc-nav-item, .view.anim .hc-card,
     .view.anim .hc-cat, .view.anim .hc-art > *, .view.anim .hc-fa, .view.anim details { animation: hcRise .6s var(--ease-apple) both; }
+
+.view.anim .hc-nav-item:nth-child(1), .view.anim .hc-cat:nth-of-type(1), .view.anim .hc-art > *:nth-child(1) { animation-delay: .04s; }
+
+.view.anim .hc-nav-item:nth-child(2), .view.anim .hc-cat:nth-of-type(2), .view.anim .hc-art > *:nth-child(2) { animation-delay: .08s; }
+
+.view.anim .hc-nav-item:nth-child(3), .view.anim .hc-cat:nth-of-type(3), .view.anim .hc-art > *:nth-child(3) { animation-delay: .12s; }
+
+.view.anim .hc-nav-item:nth-child(4), .view.anim .hc-cat:nth-of-type(4), .view.anim .hc-art > *:nth-child(4) { animation-delay: .16s; }
+
+.view.anim .hc-nav-item:nth-child(5), .view.anim .hc-cat:nth-of-type(5), .view.anim .hc-art > *:nth-child(5) { animation-delay: .2s; }
+
+.view.anim .hc-art > *:nth-child(n+6) { animation-delay: .24s; }
 
 .hc-chiprow .hc-chip { animation: hcRise .55s var(--ease-apple) both; }
 
@@ -191,9 +328,13 @@
 
 .hc-card { transition: border-color .25s, box-shadow .3s; -webkit-tap-highlight-color: transparent; }
 
-.hc-card:hover { box-shadow: var(--shadow); }
+a.hc-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
 
-.hc-card:hover .hc-ic { transform: rotate(-6deg) scale(1.08); }
+.hc-card { transition: border-color .25s, box-shadow .3s, transform .25s var(--ease-apple); }
+
+[data-theme="dark"] a.hc-card:hover { box-shadow: 0 1px 2px rgba(0,0,0,.5), 0 10px 26px rgba(0,0,0,.35); }
+
+a.hc-card:hover .hc-ic { transform: rotate(-6deg) scale(1.08); }
 
 .hc-faq details { transition: transform .3s var(--ease-apple); }
 
@@ -202,6 +343,335 @@
 .hc-faq summary { transition: color .18s; }
 
 .hc-faq summary:hover { color: var(--green-strong); }
+
+.hc-rail {
+  position: sticky; top: calc(var(--hc-head) + 28px); max-height: calc(100vh - var(--hc-head) - 56px);
+  overflow-y: auto; scrollbar-width: thin; font-size: .83rem; padding-bottom: 24px;
+}
+
+.hc-rail-t {
+  font-weight: 800; font-size: .92rem; letter-spacing: -.01em;
+  color: var(--text); margin: 4px 0 10px;
+}
+
+.hc-rail nav { display: flex; flex-direction: column; gap: 1px; border-left: 2px solid var(--border); }
+
+.hc-rail a {
+  display: block; padding: 4px 0 4px 14px; margin-left: -2px; border-left: 2px solid transparent;
+  color: var(--text-dim); line-height: 1.45;
+}
+
+.hc-rail a:hover { color: var(--green-strong); text-decoration: none; }
+
+.hc-rail a.on { color: var(--green-strong); font-weight: 700; border-left-color: var(--green); }
+
+.hc-rail .hc-rail-rel { margin-top: 14px; }
+
+.hc-rail .hc-rail-rel span {
+  display: block; font-weight: 800; font-size: .88rem; letter-spacing: -.01em;
+  color: var(--text); margin-bottom: 6px;
+}
+
+.hc-docs-head .hc-chip { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.26); color: #fff; }
+
+.hc-docs-head .hc-chip svg { color: #fff; }
+
+.hc-docs-head .hc-chip:hover { background: rgba(255,255,255,.22); border-color: rgba(255,255,255,.55); color: #fff; }
+
+.hc-docs-head .hc-pop { justify-content: center; margin: 18px 0 0; color: rgba(255,255,255,.78); }
+
+.hc-docs-head .hc-pop b { color: #fff; }
+
+.hc-docs-head .hc-pop a { color: #fff; background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.26); }
+
+.hc-docs-head .hc-pop a:hover { background: rgba(255,255,255,.20); border-color: rgba(255,255,255,.55); color: #fff; }
+
+.hc-pop {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin: 20px 0 6px;
+  font-size: .87rem; color: var(--text-dim);
+}
+
+.hc-pop b { font-weight: 750; color: var(--text); }
+
+.hc-pop a {
+  color: var(--green-strong); font-weight: 600; padding: 4px 10px; border-radius: 999px;
+  border: 1px solid var(--border); background: var(--surface); white-space: nowrap;
+}
+
+.hc-pop a:hover { border-color: var(--green); text-decoration: none; }
+
+.hc-cat { display: flex; flex-direction: column; gap: 10px; padding: 20px; text-decoration: none; }
+
+.hc-grid > .hc-cat { padding: 22px; gap: 8px; border-radius: 20px; }
+
+.hc-grid > .hc-cat .hc-ic { width: 54px; height: 54px; border-radius: 16px; margin-bottom: 2px; }
+
+.hc-grid > .hc-cat .hc-ic svg { width: 27px; height: 27px; }
+
+.hc-grid > .hc-cat .hc-cat-t { font-size: 1.06rem; }
+
+.hc-cat:hover { text-decoration: none; border-color: color-mix(in srgb, var(--green) 45%, var(--border)); transform: translateY(-2px); box-shadow: var(--shadow); }
+
+.hc-cat-head { display: flex; align-items: center; gap: 12px; }
+
+.hc-cat-t { display: block; font-weight: 750; font-size: .98rem; color: var(--text); }
+
+.hc-cat-c { display: block; font-size: .8rem; color: var(--text-dim); font-weight: 600; margin-top: 2px; }
+
+.hc-cat-go { margin-left: auto; color: var(--text-dim); }
+
+.hc-cat-go svg { width: 16px; height: 16px; }
+
+.hc-cat:hover .hc-cat-go { color: var(--green-strong); }
+
+.hc-cat-prev { border-top: 1px dashed var(--border); padding-top: 10px; }
+
+.hc-art {
+  background: none; border: 0; box-shadow: none; border-radius: 0;
+  max-width: 780px; margin: 0; padding: 0;
+}
+
+.hc-crumbs { padding: 24px 0 0; font-size: .82rem; }
+
+.hc-art > h1, .hc-art > h2 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); margin: 12px 0 6px; }
+
+.hc-art-meta {
+  color: var(--text-dim); font-size: .87rem; margin: 0 0 18px; display: flex; gap: 8px;
+  align-items: center; flex-wrap: wrap;
+}
+
+.hc-art-meta .dot::before { content: "·"; margin-right: 8px; }
+
+.hc-body { font-size: 1.0rem; }
+
+.hc-body p, .hc-body li { line-height: 1.72; }
+
+.hc-body p { margin: 0 0 14px; }
+
+.hc-body ul { margin: 0 0 16px; padding-left: 22px; display: flex; flex-direction: column; gap: 7px; }
+
+.hc-body li::marker { color: var(--green-strong); }
+
+.hc-body a {
+  text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, var(--green-strong) 55%, transparent);
+}
+
+.hc-body a:hover { text-decoration-color: var(--green-strong); }
+
+.hc-body h2, .hc-body h3 { letter-spacing: -.015em; line-height: 1.3; margin: 30px 0 10px; }
+
+.hc-body h2 { font-size: 1.28rem; }
+
+.hc-body h3 { font-size: 1.08rem; }
+
+.hc-body code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em;
+  background: var(--surface-2); border: 1px solid var(--border); padding: 1px 6px; border-radius: 6px;
+}
+
+.hc-body pre {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  padding: 14px 16px; overflow-x: auto; font-size: .85rem; line-height: 1.6;
+}
+
+.hc-body table { border-collapse: collapse; width: 100%; font-size: .9rem; margin: 0 0 18px; }
+
+.hc-body th, .hc-body td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; }
+
+.hc-body th { background: var(--surface-2); font-weight: 750; }
+
+.hc-body img { max-width: 100%; border-radius: 12px; border: 1px solid var(--border); }
+
+.hc-faq { margin-top: 30px; }
+
+.hc-faq > h2 { font-size: 1.02rem; font-weight: 800; letter-spacing: -.01em; }
+
+.hc-faq details { border: 1px solid var(--border); border-radius: 12px; padding: 0 16px; margin-bottom: 8px; }
+
+.hc-faq details[open] { border-color: color-mix(in srgb, var(--green) 40%, var(--border)); }
+
+.hc-faq summary { padding: 13px 0; font-weight: 700; font-size: .95rem; cursor: pointer; list-style: none; }
+
+.hc-faq summary::-webkit-details-marker { display: none; }
+
+.hc-faq summary { position: relative; padding-right: 28px; }
+
+.hc-faq summary::before, .hc-faq summary::after {
+  content: ""; position: absolute; top: 50%; background: var(--green-strong);
+  border-radius: 2px; transition: transform .25s var(--ease-spring, ease);
+}
+
+.hc-faq summary::before { right: 1px; width: 14px; height: 2px; transform: translateY(-50%); }
+
+.hc-faq summary::after { right: 7px; width: 2px; height: 14px; transform: translateY(-50%); }
+
+.hc-faq details[open] summary::before,
+    .hc-faq details[open] summary::after { transform: translateY(-50%) rotate(135deg); }
+
+.hc-fa { padding: 0 0 16px; color: var(--text); }
+
+.hc-fa p, .hc-fa li { line-height: 1.7; }
+
+.hc-related { margin-top: 26px; }
+
+.hc-related > h2 {
+  font-size: 1.02rem; font-weight: 800; letter-spacing: -.01em;
+  color: var(--text); margin: 0 0 10px;
+}
+
+.hc-pager { max-width: 780px; margin: 30px 0 0; }
+
+.hc-pager a { border-radius: 14px; background: var(--surface); }
+
+.hc-pager small {
+  display: block; font-size: .82rem; font-weight: 700; letter-spacing: 0;
+  color: var(--text-dim); margin-bottom: 3px;
+}
+
+.hc-pager b { font-size: .95rem; }
+
+.hc-cta { max-width: 780px; border-radius: 16px; margin-top: 26px; }
+
+.hc-cat-head { display: flex; gap: 14px; align-items: center; margin: 14px 0 4px; }
+
+.hc-cat-head h1, .hc-cat-head h2 { margin: 0; font-size: clamp(1.6rem, 3.2vw, 2.1rem); letter-spacing: -.02em; }
+
+.hc-cat-head p { margin: 4px 0 0; color: var(--text-dim); }
+
+.hc-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; max-width: 960px; }
+
+.hc-row {
+  display: flex; align-items: center; gap: 12px; padding: 13px 16px; border: 1px solid var(--border);
+  border-radius: 12px; background: var(--surface);
+}
+
+.hc-row:hover { border-color: color-mix(in srgb, var(--green) 45%, var(--border)); text-decoration: none; }
+
+.hc-row-t { font-weight: 650; color: var(--text); }
+
+.hc-row-m { margin-left: auto; flex: none; font-size: .8rem; color: var(--text-dim); font-weight: 650; }
+
+.hc-list > .hc-row { flex-wrap: wrap; row-gap: 8px; }
+
+.hc-list .hc-row-t { flex: 1 1 100%; }
+
+.hc-list .hc-row-m { margin-left: 0; }
+
+.hc-list > .hc-row > svg { margin-left: auto; width: 15px; height: 15px; flex: none; color: var(--text-dim); }
+
+.hc-grp { margin: 16px 8px 5px; font-size: .86rem; font-weight: 800; letter-spacing: -.01em; color: var(--text); }
+
+.hc-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 22px 0 0; }
+
+.hc-toolbar .hc-crumbs { padding: 0; flex: 1; min-width: 0; }
+
+.hc-tools { position: relative; display: flex; align-items: center; gap: 6px; flex: none; }
+
+.hc-tool { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 9px; border: 1px solid transparent; background: var(--surface-2); color: var(--text-dim); cursor: pointer; }
+
+.hc-tool:hover { border-color: var(--border); color: var(--text); background: var(--surface); }
+
+.hc-tool.on { color: var(--green-strong); border-color: var(--green); }
+
+.hc-tool svg { width: 16px; height: 16px; }
+
+html[data-hcfont="s"] .hc-body { font-size: .88rem; }
+
+html[data-hcfont="l"] .hc-body { font-size: 1.22rem; }
+
+html[data-hcfont="l"] .hc-art > h1, html[data-hcfont="l"] .hc-art > h2 { font-size: clamp(1.9rem, 3.6vw, 2.5rem); }
+
+html[data-hcfont="s"] .hc-body { font-size: .94rem; }
+
+html[data-hcfont="l"] .hc-body { font-size: 1.12rem; }
+
+html.hc-wide .hc-rail { display: none; }
+
+html.hc-wide .hc-art, html.hc-wide .hc-pager, html.hc-wide .hc-cta { max-width: 960px; }
+
+html.rail-off .hc-rail { display: none; }
+
+.hc-feat { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 26px 0 6px; }
+
+.hc-feat a { display: flex; flex-direction: column; gap: 8px; padding: 18px; border-radius: 16px; background: var(--surface); border: 1px solid var(--border); text-decoration: none; }
+
+.hc-feat a:hover { border-color: var(--green); text-decoration: none; }
+
+.hc-feat .hc-ic { width: 38px; height: 38px; }
+
+.hc-feat b { color: var(--text); font-size: .93rem; }
+
+.hc-feat span.s { color: var(--text-dim); font-size: .82rem; line-height: 1.45; }
+
+.hc-band {
+  margin: 30px 0 8px; border-radius: 22px; padding: 28px; color: #fff;
+  background:
+    radial-gradient(700px 220px at 90% -20%, rgba(255,255,255,.14), transparent 60%),
+    linear-gradient(135deg, #07331d 0%, #0b6b38 60%, #12934e 100%);
+  border: 1px solid color-mix(in srgb, #1faa59 30%, transparent);
+}
+
+.hc-band h2 { margin: 0 0 4px; color: #fff; font-size: 1.3rem; }
+
+.hc-band p.sub { margin: 0 0 18px; color: rgba(255,255,255,.72); font-size: .9rem; }
+
+.hc-band-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+
+.hc-band-grid a { display: block; padding: 16px 18px; border-radius: 14px; text-decoration: none; background: #f2f0e8; color: #12312f; }
+
+.hc-band-grid a:hover { text-decoration: none; }
+
+.hc-band-grid b { display: block; font-size: .94rem; }
+
+.hc-band-grid span { display: block; margin-top: 3px; font-size: .8rem; color: rgba(18,49,47,.68); }
+
+.hc-fonts { display: inline-flex; align-items: baseline; gap: 2px; margin-left: auto; }
+
+.hc-fonts button {
+  font: inherit; background: none; border: 0; cursor: pointer; color: var(--text-dim);
+  padding: 3px 8px; border-radius: 8px; font-weight: 800; line-height: 1;
+}
+
+.hc-fonts button:hover { color: var(--green-strong); }
+
+.hc-fonts button.on { color: #fff; background: var(--green-strong); }
+
+.hc-fonts button:nth-child(1) { font-size: .78rem; }
+
+.hc-fonts button:nth-child(2) { font-size: .95rem; }
+
+.hc-fonts button:nth-child(3) { font-size: 1.12rem; }
+
+.hc-chips.has-more, .hc-others.has-more { align-items: center; }
+
+.hc-chips > .hc-more, .hc-others > .hc-more { margin: 0 0 0 auto; align-self: center; flex: none; }
+
+.hc-list.is-collapsed .hc-row:nth-child(n+7) { display: none; }
+
+.hc-chips.is-collapsed .hc-chip:nth-child(n+4) { display: none; }
+
+.hc-list.is-expanded .hc-row:nth-child(n+7) { animation: hcMoreIn .35s cubic-bezier(.22,.61,.36,1) both; }
+
+.hc-others.is-expanded a:nth-child(n+7), .hc-chips.is-expanded .hc-chip:nth-child(n+4) { animation: hcMoreIn .35s cubic-bezier(.22,.61,.36,1) both; }
+
+.hc-cta, .hc-pager, .hc-rail { transition: opacity .3s var(--ease-apple), display .3s allow-discrete, visibility 0s; }
+
+html.hc-fs .hc-progress, html.hc-fs .hc-fab, html.hc-fs .hc-rail, html.hc-fs .hc-side-reveal {
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity .3s var(--ease-apple), transform .35s var(--ease-apple), visibility 0s .4s;
+}
+
+html.hc-fs .hc-fab, html.hc-fs .hc-rail, html.hc-fs .hc-side-reveal { transform: translateY(10px); }
+
+html.hc-fs footer.site, html.hc-fs .hc-cta, html.hc-fs .hc-rail {
+  display: none; opacity: 0; visibility: hidden;
+  transition: opacity .3s var(--ease-apple), display 0s .35s allow-discrete, visibility 0s .35s;
+}
+
+html.hc-fs .hc-art { max-width: none; }
+
+html.hc-fs .hc-tool[data-fs-btn] { color: var(--green-strong); border-color: var(--green); }
 
 @media (max-width: 760px) {
   .hc-try { margin-top: 20px; }
@@ -212,10 +682,55 @@
 }
 
 @media (max-width: 640px) {
+  .hc-grid > .hc-cat { padding: 13px; }
+
+  .hc-grid .hc-cat-head { gap: 9px; }
+
+  .hc-grid .hc-cat-go { display: none; }
+
+  .hc-grid .hc-cat-prev { display: none; }
+}
+
+@media (max-width: 640px) {
+  .hc-cta { flex-wrap: wrap; }
+
+  .hc-cta .btn { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 860px) {
+  .hc-list { grid-template-columns: 1fr; column-gap: 0; }
+}
+
+@media (max-width: 640px) {
+  .hc-art { padding: 22px 18px 30px; border-radius: 14px; }
+
   .hc-body, .hc-body * { overflow-wrap: anywhere; }
 
-  .hc-body code { word-break: break-all; }
+  .hc-body .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 16px 0; }
 
+  .hc-body table {
+    width: 100%; border-collapse: collapse; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+  box-shadow: var(--shadow-sm); font-size: .9rem;
+  }
+
+  .hc-body th, .hc-body td {
+    padding: 10px 14px; text-align: left;
+  border-bottom: 1px solid var(--border);
+  }
+
+  .hc-body thead th {
+    background: color-mix(in srgb, var(--green) 14%, transparent);
+  font-weight: 700;
+  }
+
+  .hc-body tbody tr:last-child td { border-bottom: none; }
+
+  .hc-body tbody tr:nth-child(even) { background: color-mix(in srgb, var(--green) 5%, transparent); }
+
+  .hc-body td:not(:first-child), .hc-body th:not(:first-child) { text-align: center; }
+
+  .hc-body code { word-break: break-all; }
 }
 
 @media (max-width: 640px) {
@@ -230,6 +745,8 @@
 
 @media (hover: none) {
   .hc-card:active { transform: scale(.985); transition: transform .12s; }
+
+  .hc-art:active { transform: none; transition: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -240,113 +757,101 @@
   .hc-results, .hc-res, .hc-nav-item, .hc-card, .hc-chip, .hc-fab { transition: none; animation: none; }
 }
 
+@media (max-width: 1279px) {
+  .hc-rail { display: none; }
+}
+
+@media (max-width: 640px) {
+  .hc-grid > .hc-cat { padding: 14px; }
+
+  .hc-grid .hc-cat-head { gap: 9px; }
+
+  .hc-grid .hc-cat-go { display: none; }
+
+  .hc-grid .hc-cat-prev { display: none; }
+}
+
+@media (min-width: 1400px) {
+  .hc-list { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+@media (max-width: 760px) {
+  .hc-list { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 1279px) {
+  .doc-layout .hc-rail { display: none; }
+}
+
+@media (max-width: 760px) {
+  .hc-rail { display: none; }
+
+  .hc-pager { grid-template-columns: minmax(0, 1fr); }
+
+  .hc-body pre { font-size: .8rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+}
+
+@media (max-width: 1020px) {
+  .hc-feat { grid-template-columns: 1fr 1fr; }
+
+  .hc-band-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  .hc-feat { grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .hc-feat a { padding: 14px; }
+
+  .hc-band-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .hc-band-grid a { padding: 14px; }
+
+  .hc-tools .hc-tool.opt { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.hc-fs .hc-progress, html.hc-fs .hc-fab, html.hc-fs .hc-rail,
+   html.hc-fs .hc-side-reveal, html.hc-fs footer.site, html.hc-fs .hc-cta,
+   html.hc-fs .hc-side,
+   .hc-cta, .hc-pager, .hc-rail, .hc-progress, .hc-fab,
+   .hc-side-reveal { transition: none !important; }
+}
+
 @media print {
   header.site, footer.site, .hc-cta, .hc-pager, .hc-search, .hc-crumbs, .hc-side, .hc-fab, .hc-progress, .hc-hsearch { display: none !important; }
 
   .hc-card { border: 0; box-shadow: none; background: none; }
 }
-    .hc-body .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 16px 0; }
-    .hc-body table { width: 100%; border-collapse: collapse; background: var(--surface);
-      border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
-      box-shadow: var(--shadow-sm); font-size: .9rem; }
-    .hc-body th, .hc-body td { padding: 10px 14px; text-align: left;
-      border-bottom: 1px solid var(--border); }
-    .hc-body thead th { background: color-mix(in srgb, var(--green) 14%, transparent);
-      font-weight: 700; }
-    .hc-body tbody tr:last-child td { border-bottom: none; }
-    .hc-body tbody tr:nth-child(even) { background: color-mix(in srgb, var(--green) 5%, transparent); }
-    .hc-body td:not(:first-child), .hc-body th:not(:first-child) { text-align: center; }
-
-
-  /* Topics rail next to an article: every category with every article, so a
-     reader can jump sideways without going back to the hub. */
-  .hc-area { display: grid; grid-template-columns: 264px minmax(0, 1fr);
-    gap: 34px; align-items: start; max-width: 1200px; margin: 0 auto;
-    padding: 22px 20px 40px; }
-  .hc-area > .hc-art-col { min-width: 0; }
-  .hc-topics { position: sticky; top: 78px; max-height: calc(100vh - 100px);
-    overflow-y: auto; padding: 4px 6px 16px 0; font-size: .88rem; }
-  .hc-topics-h { font-weight: 800; font-size: .95rem; letter-spacing: -.01em;
-    padding: 0 8px 10px; color: var(--text); }
-  .hc-topics details { border-radius: 10px; }
-  .hc-topics summary { list-style: none; cursor: pointer; display: flex;
-    align-items: center; gap: 6px; padding: 8px 8px; border-radius: 8px;
-    font-weight: 700; color: var(--text-dim); }
-  .hc-topics summary::-webkit-details-marker { display: none; }
-  .hc-topics summary:hover { color: var(--green-strong); background: color-mix(in srgb, var(--green) 8%, transparent); }
-  .hc-topics summary .n { margin-left: auto; font-size: .72rem; font-weight: 700; opacity: .7; }
-  .hc-topics ul { list-style: none; margin: 2px 0 8px; padding: 0 0 0 10px; }
-  .hc-topics li a { display: block; padding: 5px 8px; border-radius: 7px;
-    color: var(--text-dim); line-height: 1.4; }
-  .hc-topics li a:hover { color: var(--green-strong); background: color-mix(in srgb, var(--green) 8%, transparent); text-decoration: none; }
-  .hc-topics li a[aria-current="page"] { color: var(--green-strong);
-    background: color-mix(in srgb, var(--green) 12%, transparent); font-weight: 700; }
-  .hc-topics-toggle { display: none; }
-  @media (max-width: 980px) {
-    .hc-area { grid-template-columns: minmax(0, 1fr); gap: 6px; }
-    .hc-topics { position: static; max-height: none; order: -1;
-      border: 1px solid var(--border); border-radius: 12px; padding: 6px 10px;
-      margin-bottom: 14px; background: var(--surface); }
-    .hc-topics-h { display: none; }
-    .hc-topics-toggle { display: flex; align-items: center; gap: 8px;
-      width: 100%; padding: 10px 4px; font: inherit; font-weight: 750;
-      color: var(--text); background: 0 0; border: 0; cursor: pointer; }
-    .hc-topics-toggle svg { width: 17px; height: 17px; color: var(--green-strong); }
-    .hc-topics[data-open="0"] details { display: none; }
-  }
-
   </style>
+<!--fs:ru-alt-->
+<link rel="alternate" hreflang="ru" href="https://fastscheduler.github.io/ru/help/a/start.html">
+<link rel="alternate" hreflang="en" href="https://fastscheduler.github.io/help/a/start.html">
+<link rel="alternate" hreflang="x-default" href="https://fastscheduler.github.io/help/a/start.html">
+<!--/fs:ru-alt--><script src="../../scripts/consent.js?v=20261025a1" defer></script>
 </head>
 <body class="help">
-<header class="site">
-  <div class="wrap nav">
-    <a class="brand" href="../../index.html" aria-label="Fast Scheduler — home"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span><span class="brand-full">Fast Scheduler</span></a>
-    <a class="nav-link" href="../../blog/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg> Blog</a>
-    <a class="nav-link" href="../../help.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Help Center</a>
-    <a class="btn btn-primary nav-cta" data-cta-short="Open" href="https://t.me/FastSchedulerSupport_bot?start=_t" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>Open Bot</span></a>
-    <span class="settings-wrap">
-      <button type="button" class="icon-btn" id="settingsBtn" aria-haspopup="menu" aria-expanded="false" aria-label="Settings" data-hk="settings dark anim fx keys"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button>
-      <div class="glass-pop" id="settingsMenu" role="menu" aria-label="Settings">
-        <div class="gp-head">Settings</div>
-        <button type="button" class="gp-row" role="menuitemcheckbox" aria-checked="false" id="rowDark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span>Dark mode</span><span class="io-switch" aria-hidden="true"></span></button>
-        <button type="button" class="gp-row" role="menuitemcheckbox" aria-checked="true" id="rowAnim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span>Animations</span><span class="io-switch" aria-hidden="true"></span></button>
-        <button type="button" class="gp-row" role="menuitemcheckbox" aria-checked="true" id="rowFx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg><span>Effects</span><span class="io-switch" aria-hidden="true"></span></button>
-        <button type="button" class="gp-row" role="menuitemcheckbox" aria-checked="true" id="rowKeys"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2.5"/><path d="M6.5 10h.01M10.5 10h.01M14.5 10h.01M18 10h.01M8 13.5h8"/></svg><span>Hotkeys</span><span class="io-switch" aria-hidden="true"></span></button>
-        <button type="button" class="gp-row gp-row-sub" id="rowKeysHelp" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="none" aria-hidden="true" style="visibility:hidden;width:18px;height:18px"></svg><span class="gp-sub-label">See hotkeys</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+<header class="site"><div class="wrap nav nav-unified"><div class="nav-group nav-left"><a class="brand" href="../../index.html" aria-label="Fast Scheduler — home (FS)"><span class="brand-mark"><img src="../../brand-logo-128.png" alt="" width="30" height="30" decoding="async"></span><span class="brand-full">Fast Scheduler</span><span class="brand-short">FS</span></a></div><div class="nav-group nav-right"><a class="nav-link" href="../../blog/index.html" aria-label="Blog"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><span>Blog</span></a><span class="site-menu-wrap"><a class="nav-link site-menu-row" href="../../help.html" aria-label="Help Center" aria-haspopup="menu" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Help Center</span></a><div class="glass-pop site-menu-pop help-menu nav-menu-pop" id="siteMenu" role="dialog" aria-label="Help center quick search"><form class="help-search" id="helpSearchForm" role="search"><svg class="sic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="search" id="helpSearchInput" placeholder="Search the help center…" autocomplete="off" aria-label="Search the help center"></form><div class="help-recent"><div class="help-recent-title" id="helpRecentTitle">Popular articles</div><div class="help-recent-list" id="helpRecentList"></div></div><a class="gp-row help-menu-open" aria-label="Open Help Center" href="../../help.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Open Help Center</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></div></span><a class="btn btn-primary nav-cta" data-cta-short="Open" aria-label="Open Bot" href="https://t.me/FastSchedulerSupport_bot?start=_t" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>Open Bot</span><kbd class="tab-kbd" aria-hidden="true">B</kbd></a><span class="settings-wrap"><button type="button" class="icon-btn" id="settingsBtn" aria-haspopup="menu" aria-expanded="false" aria-label="Settings" data-hk="settings dark anim fx keys"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button><div class="glass-pop" id="settingsMenu" role="group" aria-label="Settings"><div class="gp-head" role="none">Settings</div>
+        <button type="button" class="gp-row" aria-pressed="false" id="rowDark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span>Dark mode</span><span class="io-switch" aria-hidden="true"></span></button>
+        <button type="button" class="gp-row" aria-pressed="true" id="rowAnim"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span>Animations</span><span class="io-switch" aria-hidden="true"></span></button>
+        <button type="button" class="gp-row" aria-pressed="true" id="rowFx"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg><span>Effects</span><span class="io-switch" aria-hidden="true"></span></button>
+        <button type="button" class="gp-row" aria-pressed="true" id="rowKeys"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2.5"/><path d="M6.5 10h.01M10.5 10h.01M14.5 10h.01M18 10h.01M8 13.5h8"/></svg><span>Hotkeys</span><span class="io-switch" aria-hidden="true"></span></button>
+        <div class="gp-row gp-fonts" data-fonts role="group" aria-label="Font size"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Font size</span><span class="hc-fonts"><button type="button" data-font="s" aria-label="Small">A</button><button type="button" data-font="m" aria-label="Default">A</button><button type="button" data-font="l" aria-label="Large">A</button></span></div>
+        
+        <button type="button" class="gp-row gp-row-sub" id="rowKeysHelp"><svg viewBox="0 0 24 24" fill="none" stroke="none" aria-hidden="true" style="visibility:hidden;width:18px;height:18px"></svg><span class="gp-sub-label">See hotkeys</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
         <div class="gp-sep" role="separator"></div>
-        <span class="site-menu-wrap"><a class="gp-row site-menu-row" role="menuitem" href="../../help.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Help</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a>
-          <div class="glass-pop site-menu-pop help-menu" id="siteMenu" role="menu" aria-label="Help center quick search">
-            <form class="help-search" id="helpSearchForm" role="search">
-              <svg class="sic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              <input type="search" id="helpSearchInput" placeholder="Search the help center…" autocomplete="off" aria-label="Search the help center">
-            </form>
-            <div class="help-recent">
-              <div class="help-recent-title" id="helpRecentTitle">Popular articles</div>
-              <div class="help-recent-list" id="helpRecentList"></div>
-            </div>
-            <a class="gp-row help-menu-open" role="menuitem" href="../../help.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Open Help Center</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a>
-          </div>
-        </span>
-        <a class="gp-row" role="menuitem" href="https://t.me/FastSchedulerSupport_bot" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>Support chat</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a>
-      </div>
-    </span>
-  </div>
-</header>
+        <a class="gp-row" href="https://t.me/FastSchedulerSupport_bot" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>Support chat</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a></div></span></div></div></header>
 <main class="legal">
-<div class="hc-area">
-  <aside class="hc-topics" data-open="0" aria-label="All help topics"><div class="hc-topics-h">All topics</div><button type="button" class="hc-topics-toggle" data-topics-toggle aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Browse all topics</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button><details open><summary>Getting Started<span class="n">21</span></summary><ul><li><a href="start.html" aria-current="page">Getting Started</a></li><li><a href="getting_started.html">Get Started: What Fast Scheduler Does</a></li><li><a href="connect_channel.html">Connecting a Channel</a></li><li><a href="connect_bot.html">Connecting a Bot</a></li><li><a href="onboarding_step1.html">Tutorial Step 1: Connect Your Sender Bot</a></li><li><a href="onboarding_step2.html">Tutorial Step 2: Channel and Time Zone (in the Sender Bot)</a></li><li><a href="start_account.html">Your Account</a></li><li><a href="start_schedule.html">Send Your First Post</a></li><li><a href="start_tips.html">Quick Tips</a></li><li><a href="glossary.html">Glossary</a></li><li><a href="glossary_channel.html">Channel</a></li><li><a href="glossary_sender.html">Sender Bot</a></li><li><a href="glossary_signature.html">Signature</a></li><li><a href="glossary_recurring.html">Recurring</a></li><li><a href="glossary_premium.html">Premium</a></li><li><a href="glossary_import.html">Import</a></li><li><a href="glossary_export.html">Export</a></li><li><a href="glossary_storage.html">Storage</a></li><li><a href="glossary_feedback.html">Feedback</a></li><li><a href="setdate.html">SetDate Integration</a></li><li><a href="advertising.html">Advertising &amp; Promotion</a></li></ul></details><details><summary>Scheduling Messages<span class="n">19</span></summary><ul><li><a href="scheduling.html">Scheduling Messages</a></li><li><a href="schedule_media.html">Photo &amp; Video Posts</a></li><li><a href="schedule_poll.html">Polls</a></li><li><a href="schedule_forward.html">Forwarding</a></li><li><a href="formatting.html">Formatting &amp; Inline Buttons</a></li><li><a href="content_types.html">Supported Content Types (Free Plan)</a></li><li><a href="media_types.html">Media Modes Explained</a></li><li><a href="edit.html">Edit Messages</a></li><li><a href="delete.html">Delete Messages</a></li><li><a href="recurring.html">Recurring Messages</a></li><li><a href="recurring_uses.html">How You Can Use Recurring Messages</a></li><li><a href="recurring_pause_resume.html">Pause &amp; Resume</a></li><li><a href="multichannel.html">Multi-Channel Scheduling</a></li><li><a href="schedule_advanced.html">Advanced Scheduling: Edit, Delete, Polls &amp; More</a></li><li><a href="qa_edit_scheduled_post.html">Can I Edit a Scheduled Post After Scheduling It?</a></li><li><a href="qa_schedule_many_at_once.html">How to Schedule Many Telegram Posts at Once (Bulk Workflow)</a></li><li><a href="qa_recurring_guide.html">How to Automate Recurring Posts in Telegram (Daily Digests, Weekly Roundups)</a></li><li><a href="qa_media_types.html">What Types of Content Can You Schedule With Fast Scheduler?</a></li><li><a href="qa_formatting.html">How Do I Format Telegram Posts? (Bold, Italic, Links, Spoilers and Buttons)</a></li></ul></details><details><summary>Channels<span class="n">15</span></summary><ul><li><a href="channels.html">Channels</a></li><li><a href="channel_add.html">Add a Channel</a></li><li><a href="channel_connect.html">Connect the Bot</a></li><li><a href="channel_manage.html">Manage Channels</a></li><li><a href="channel_permissions.html">Channel Permissions</a></li><li><a href="channel_posting.html">How Posting Works: Sender Bots</a></li><li><a href="channel_link.html">Permanent Link</a></li><li><a href="channel_unlink.html">Unlink vs Delete</a></li><li><a href="channel_remove.html">Remove a Channel</a></li><li><a href="channel_signature.html">Signature</a></li><li><a href="channel_signature_position.html">Signature Position</a></li><li><a href="channel_stats.html">Channel Stats</a></li><li><a href="signature.html">Signatures (Premium)</a></li><li><a href="qa_add_channel_guide.html">How to Connect a Telegram Channel to Fast Scheduler (Full Walkthrough)</a></li><li><a href="qa_private_channel_connect.html">How Do I Connect a Private Telegram Channel to Fast Scheduler?</a></li></ul></details><details><summary>Sender Bots<span class="n">13</span></summary><ul><li><a href="bots.html">Sender Bots</a></li><li><a href="bot_add.html">Add a Sender Bot</a></li><li><a href="bot_manage.html">Manage Sender Bots</a></li><li><a href="sender_bot_management.html">Sender Bot Management</a></li><li><a href="bot_permissions.html">Bot Permissions</a></li><li><a href="bot_sender.html">Posting as Your Bot</a></li><li><a href="bot_status.html">Bot Status</a></li><li><a href="bot_stats.html">Channel Stats &amp; Leaderboards</a></li><li><a href="bot_rotate.html">Rotate Token</a></li><li><a href="bot_remove.html">Remove a Sender Bot</a></li><li><a href="bot_fleet.html">Bot Fleet</a></li><li><a href="qa_sender_bot_required.html">Do You Need a Sender Bot to Schedule Posts? (Yes — Here Is Why)</a></li><li><a href="qa_bot_management.html">How to Manage Your Sender Bots: Rotate, Rename, and Keep Them Healthy</a></li></ul></details><details><summary>Admins &amp; Access (RBAC)<span class="n">5</span></summary><ul><li><a href="admins.html">Admins &amp; Access (RBAC)</a></li><li><a href="admins_attach.html">Join a Channel That Already Has a Bot</a></li><li><a href="admins_permissions.html">Permissions &amp; Requests</a></li><li><a href="admins_limits.html">How Admins Share Limits</a></li><li><a href="admins_transfer.html">Ownership Transfer</a></li></ul></details><details><summary>Premium<span class="n">33</span></summary><ul><li><a href="premium.html">Premium</a></li><li><a href="premium_features.html">Premium Features</a></li><li><a href="premium_compare.html">Compare Plans</a></li><li><a href="premium_buy.html">Buy Premium</a></li><li><a href="payment.html">Payments</a></li><li><a href="payment_stars.html">Telegram Stars</a></li><li><a href="payment_crypto.html">Crypto</a></li><li><a href="payment_currencies.html">Currencies</a></li><li><a href="payment_invoice_pay.html">Pay Invoice</a></li><li><a href="payment_confirm.html">Confirmation</a></li><li><a href="payment_status.html">Payment Status</a></li><li><a href="payment_promo_apply.html">Apply Promo</a></li><li><a href="payment_failed.html">Failed Payment</a></li><li><a href="premium_trial.html">Trial</a></li><li><a href="premium_welcome.html">Welcome to Premium</a></li><li><a href="promocode.html">Promo Codes</a></li><li><a href="premium_cancel.html">Cancel Premium</a></li><li><a href="premium_status.html">Premium Status</a></li><li><a href="premium_expiry.html">Premium Expiry</a></li><li><a href="premium_grace.html">Grace Period</a></li><li><a href="premium_renew.html">Renew</a></li><li><a href="premium_freeze.html">Frozen Assets</a></li><li><a href="premium_reactivate.html">Reactivate</a></li><li><a href="premium_refund.html">Refunds</a></li><li><a href="premium_troubleshooting.html">Premium Troubleshooting</a></li><li><a href="premium_activate.html">Premium Activation</a></li><li><a href="premium_invoice.html">Invoices</a></li><li><a href="premium_referral.html">Referral Program</a></li><li><a href="premium_welcome_bonus.html">Referral Bonus</a></li><li><a href="qa_premium_worth.html">Is Fast Scheduler Premium Worth It? An Honest Breakdown</a></li><li><a href="qa_pay_stars_crypto.html">How to Pay for Fast Scheduler Premium (Stars and What Happens After)</a></li><li><a href="qa_which_plan.html">Free vs Premium: Which Fast Scheduler Plan Fits Your Channel?</a></li><li><a href="qa_refund_how.html">How Do I Get a Refund on My Fast Scheduler Premium Purchase?</a></li></ul></details><details><summary>Referrals<span class="n">14</span></summary><ul><li><a href="referral.html">Referrals</a></li><li><a href="referral_how.html">How Referrals Work</a></li><li><a href="referral_link.html">Your Link</a></li><li><a href="referral_share.html">Share</a></li><li><a href="referral_rewards.html">Referral Rewards</a></li><li><a href="referral_activate.html">Activate Days</a></li><li><a href="referral_stats.html">Your Referral Stats</a></li><li><a href="referral_history.html">Referral History</a></li><li><a href="referral_rules.html">Rules</a></li><li><a href="referral_fraud.html">Abuse</a></li><li><a href="referral_verify.html">Why Verification Is Required</a></li><li><a href="referral_beta.html">Beta Program</a></li><li><a href="referral_credit.html">How Crediting Works</a></li><li><a href="referral_stats_detail.html">Detailed Stats</a></li></ul></details><details><summary>Limits<span class="n">16</span></summary><ul><li><a href="limits.html">Limits</a></li><li><a href="limits_free.html">Free Plan Limits</a></li><li><a href="limits_premium.html">Premium Plan Limits</a></li><li><a href="limit_daily.html">Monthly Send Limit</a></li><li><a href="limit_scheduled.html">Scheduled Limit</a></li><li><a href="limit_recurring.html">Recurring Limit</a></li><li><a href="limit_channels.html">Channel Limit</a></li><li><a href="limit_bots.html">Sender Bot Limit</a></li><li><a href="limit_media.html">Media Limit</a></li><li><a href="limit_storage_detail.html">Storage Limit</a></li><li><a href="limit_increase.html">Raise Limits</a></li><li><a href="limit_raise_channels.html">Raise Channels</a></li><li><a href="limit_raise_bots.html">Raise Bots</a></li><li><a href="limit_raise_daily.html">Raise Send Limits</a></li><li><a href="limit_raise_storage.html">Raise Storage</a></li><li><a href="qa_free_limits.html">What Do I Get With Fast Scheduler for Free? (Exact Limits)</a></li></ul></details><details><summary>Time Zone<span class="n">5</span></summary><ul><li><a href="timezone.html">Time Zone</a></li><li><a href="timezone_set.html">Set Time Zone</a></li><li><a href="timezone_list.html">Supported Zones</a></li><li><a href="qa_timezones.html">Why Did My Post Go Out at the Wrong Time? Time Zones, Explained Simply</a></li><li><a href="qa_timezone_wrong_time.html">Why Was My Scheduled Telegram Post Published at the Wrong Time?</a></li></ul></details><details><summary>Language<span class="n">4</span></summary><ul><li><a href="language.html">Language</a></li><li><a href="language_change.html">Change Language</a></li><li><a href="language_list.html">Languages</a></li><li><a href="language_add.html">Missing Language?</a></li></ul></details><details><summary>Backup, Export &amp; Import<span class="n">30</span></summary><ul><li><a href="data.html">Backup, Export &amp; Import</a></li><li><a href="export.html">Export</a></li><li><a href="export_data.html">Export Data</a></li><li><a href="export_chat.html">Export a Chat</a></li><li><a href="export_formats.html">Formats</a></li><li><a href="export_text.html">Plain Text</a></li><li><a href="export_csv.html">CSV Export</a></li><li><a href="export_json.html">JSON Export</a></li><li><a href="export_rtf.html">RTF Export</a></li><li><a href="export_odt.html">ODT Export</a></li><li><a href="import.html">Import</a></li><li><a href="import_data.html">Importing Your Data</a></li><li><a href="import_chat.html">Import a Chat</a></li><li><a href="import_csv.html">CSV Import</a></li><li><a href="import_json.html">JSON Import</a></li><li><a href="import_formats.html">Supported Import Formats</a></li><li><a href="import_from_storage.html">Import From Storage</a></li><li><a href="backup.html">Backup</a></li><li><a href="backup_create.html">Create a Backup</a></li><li><a href="backup_include.html">What Is Backed Up</a></li><li><a href="backup_exclude.html">What Is Excluded</a></li><li><a href="backup_password.html">Backup Password</a></li><li><a href="backup_size.html">Backup Size</a></li><li><a href="backup_schedule.html">Scheduled Backups</a></li><li><a href="backup_restore.html">Restore Backup</a></li><li><a href="backup_verify.html">Verify</a></li><li><a href="backup_cloud.html">Cloud</a></li><li><a href="backup_download.html">Download</a></li><li><a href="qa_fsback_vs_fspback.html">What Is the Difference Between .fsback and .fspback?</a></li><li><a href="qa_backup_full_guide.html">How to Back Up All Scheduled Posts in Telegram (and Restore Them Anywhere)</a></li></ul></details><details><summary>Media Storage<span class="n">16</span></summary><ul><li><a href="media_storage.html">Media Storage</a></li><li><a href="storage_use_case.html">When to Use Storage</a></li><li><a href="ms_boxes.html">Storage Boxes</a></li><li><a href="ms_create.html">Create a Box</a></li><li><a href="ms_rename.html">Rename Box</a></li><li><a href="ms_archive.html">Archive</a></li><li><a href="ms_quota.html">Quota</a></li><li><a href="ms_preview.html">Preview</a></li><li><a href="ms_box_manage.html">Manage Box</a></li><li><a href="ms_save.html">Save Media</a></li><li><a href="ms_manage.html">Manage Storage</a></li><li><a href="ms_limits.html">Storage Limits</a></li><li><a href="ms_premium.html">Storage on Premium</a></li><li><a href="media_retention.html">Media Compression &amp; Retention</a></li><li><a href="storage_lifecycle.html">Lifecycle</a></li><li><a href="qa_media_storage_guide.html">What Is Media Storage and How Do You Use It Without Losing Your Mind?</a></li></ul></details><details><summary>Tools<span class="n">9</span></summary><ul><li><a href="tools.html">Tools</a></li><li><a href="message_list.html">Message List</a></li><li><a href="search.html">Search</a></li><li><a href="search_messages.html">Search Messages</a></li><li><a href="search_filter.html">Search Filters</a></li><li><a href="search_delete.html">Deleting Found Messages</a></li><li><a href="calendar.html">Calendar</a></li><li><a href="statistics.html">Statistics</a></li><li><a href="qa_stats_views.html">How Can I See Views, Reactions and Comments on My Telegram Channel Posts?</a></li></ul></details><details><summary>Pro Tips<span class="n">20</span></summary><ul><li><a href="tips.html">Pro Tips</a></li><li><a href="tips_backup.html">Backup Tips</a></li><li><a href="tips_bulk.html">Bulk Tips</a></li><li><a href="tips_channels.html">Channel Tips</a></li><li><a href="tips_feedback.html">Feedback Tips</a></li><li><a href="tips_language.html">Language Tips</a></li><li><a href="tips_migration.html">Migration Tips</a></li><li><a href="tips_payment.html">Payment Tips</a></li><li><a href="tips_premium.html">Premium Tips</a></li><li><a href="tips_preview.html">Preview Tips</a></li><li><a href="tips_queue.html">Queue Tips</a></li><li><a href="tips_recurring.html">Recurring Tips</a></li><li><a href="tips_referral.html">Referral Tips</a></li><li><a href="tips_search.html">Search Tips</a></li><li><a href="tips_security.html">Security Tips</a></li><li><a href="tips_signature.html">Signature Tips</a></li><li><a href="tips_storage.html">Storage Tips</a></li><li><a href="tips_timezone.html">Time Zone Tips</a></li><li><a href="tips_troubleshoot.html">Troubleshoot Tips</a></li><li><a href="tg_best_posting_times.html">The Best Times to Post in Telegram (and How to Test Them Properly)</a></li></ul></details><details><summary>Feedback &amp; Support<span class="n">11</span></summary><ul><li><a href="feedback.html">Feedback &amp; Support</a></li><li><a href="feedback_new.html">Send Feedback</a></li><li><a href="feedback_category_bug_detail.html">Bug Reports</a></li><li><a href="feedback_category_feature_detail.html">Feature Requests</a></li><li><a href="feedback_category_payment_detail.html">Payment Issues</a></li><li><a href="feedback_category_other_detail.html">Other</a></li><li><a href="feedback_view.html">View My Feedback</a></li><li><a href="feedback_history.html">History</a></li><li><a href="feedback_status_help.html">Status Meanings</a></li><li><a href="feedback_reply.html">Replies</a></li><li><a href="feedback_file.html">Attachments</a></li></ul></details><details><summary>Frequently Asked Questions<span class="n">20</span></summary><ul><li><a href="faq.html">Frequently Asked Questions</a></li><li><a href="faq_schedule.html">Scheduling FAQ</a></li><li><a href="faq_bot.html">Sender Bot FAQ</a></li><li><a href="faq_payment.html">Payment FAQ</a></li><li><a href="faq_billing.html">Billing FAQ</a></li><li><a href="faq_account.html">Account FAQ</a></li><li><a href="faq_security.html">Security FAQ</a></li><li><a href="faq_storage.html">Storage FAQ</a></li><li><a href="faq_migration.html">Migration FAQ</a></li><li><a href="faq_tips.html">Tips FAQ</a></li><li><a href="faq_troubleshoot.html">Troubleshooting FAQ</a></li><li><a href="faq_telegram.html">Telegram FAQ</a></li><li><a href="faq_api.html">API FAQ</a></li><li><a href="faq_best_practices.html">Best Practices</a></li><li><a href="qa_move_channel_account.html">How to Move Fast Scheduler to a New Phone or Another Telegram Account</a></li><li><a href="qa_duplicate_posts.html">Why Is My Telegram Channel Posting Twice? (Duplicate Posts, Explained)</a></li><li><a href="tg_channels_explained.html">Telegram Channels vs Groups vs Bots: The Difference That Actually Matters</a></li><li><a href="qa_setdate_bulk.html">How Do I Schedule Many Telegram Posts at Once? (Bulk Scheduling with SetDate)</a></li><li><a href="tg_channel_vs_group.html">Telegram Channel vs Group: What Is the Difference and Which One Do You Need?</a></li><li><a href="qa_what_is_fast_scheduler.html">What Is Fast Scheduler? The Telegram Post Scheduling Bot Explained</a></li></ul></details><details><summary>Text Commands<span class="n">8</span></summary><ul><li><a href="commands.html">Text Commands</a></li><li><a href="commands_list.html">All Commands</a></li><li><a href="commands_schedule.html">/schedule</a></li><li><a href="commands_search.html">/search</a></li><li><a href="commands_premium.html">/premium</a></li><li><a href="commands_referral.html">/referral</a></li><li><a href="commands_settings.html">Settings</a></li><li><a href="commands_language.html">/language</a></li></ul></details><details><summary>Troubleshooting<span class="n">15</span></summary><ul><li><a href="errors.html">Troubleshooting</a></li><li><a href="error_common.html">Common Errors</a></li><li><a href="error_network.html">Network Errors</a></li><li><a href="error_timeout.html">Timeouts</a></li><li><a href="error_rate.html">Rate Limited</a></li><li><a href="error_media.html">Media Errors</a></li><li><a href="error_channel.html">Channel Errors</a></li><li><a href="error_forbidden.html">Forbidden</a></li><li><a href="error_payment.html">Payment Errors</a></li><li><a href="troubleshoot_nopost.html">No Post Sent</a></li><li><a href="troubleshoot_late.html">Late Post</a></li><li><a href="troubleshoot_media.html">Media Fails</a></li><li><a href="troubleshoot_perm.html">Permission</a></li><li><a href="troubleshoot_bot.html">Bot Down</a></li><li><a href="qa_post_not_sent.html">Scheduled Message Didn’t Post? The 6 Real Causes, In Order of Likelihood</a></li></ul></details><details><summary>Privacy<span class="n">10</span></summary><ul><li><a href="privacy.html">Privacy</a></li><li><a href="privacy_data.html">Your Data</a></li><li><a href="privacy_consent.html">Consent</a></li><li><a href="privacy_thirdparty.html">Third Parties</a></li><li><a href="privacy_export.html">Export Data</a></li><li><a href="privacy_delete.html">Delete Account</a></li><li><a href="security_token.html">Token Safety</a></li><li><a href="security_2fa.html">Account Safety</a></li><li><a href="security_data.html">Data Safety</a></li><li><a href="qa_delete_data.html">How Do I Delete My Fast Scheduler Account and All My Data?</a></li></ul></details><details><summary>Contact &amp; Support<span class="n">7</span></summary><ul><li><a href="contact.html">Contact &amp; Support</a></li><li><a href="contact_support.html">Support</a></li><li><a href="contact_telegram.html">Telegram Support</a></li><li><a href="contact_email.html">Email</a></li><li><a href="contact_bug.html">Report a Bug</a></li><li><a href="contact_feature_detail.html">Request a Feature</a></li><li><a href="contact_response.html">Response Time</a></li></ul></details><details><summary>Settings &amp; Configuration<span class="n">2</span></summary><ul><li><a href="config.html">Settings &amp; Configuration</a></li><li><a href="qa_signature_guide.html">How to Add an Automatic Signature to Every Telegram Post</a></li></ul></details><details><summary>More topics<span class="n">21</span></summary><ul><li><a href="ms_copy.html">Copying Items</a></li><li><a href="ms_delete.html">Delete Media</a></li><li><a href="ms_document_storage.html">Stored Documents</a></li><li><a href="ms_move.html">Move Media</a></li><li><a href="ms_photo.html">Stored Photos</a></li><li><a href="ms_replace.html">Replace Media</a></li><li><a href="ms_video.html">Stored Videos</a></li><li><a href="schedule_timezone.html">Scheduling Time Zone</a></li><li><a href="ms_bulk.html">Bulk Move, Copy &amp; Box Download</a></li><li><a href="interface_map.html">Every Menu and Button: the Interface Map</a></li><li><a href="tutorial_walkthrough.html">The First-Run Tutorial, Step by Step</a></li><li><a href="onboarding_step3.html">After the Tutorial: Your Sender Bot Dashboard</a></li><li><a href="duplicates.html">Find and Delete Duplicate Posts</a></li><li><a href="dates.html">Date &amp; Time Formats</a></li><li><a href="add_photo.html">Adding Photos &amp; Videos</a></li><li><a href="commands_data.html">/data, /export, /import, /backup</a></li><li><a href="commands_edit.html">/edit</a></li><li><a href="commands_dub.html">/dub</a></li><li><a href="commands_cancel.html">/cancel</a></li><li><a href="sender_bot_setup.html">Sender Bot First: the New Setup</a></li><li><a href="main_bot_stand_in.html">Main-Bot Stand-In</a></li></ul></details></aside>
-  <div class="hc-art-col">
-    <nav class="hc-crumbs" aria-label="Breadcrumb"><a href="../../help.html">Help Center</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg><a href="../c/start.html">Getting Started</a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg><span aria-current="page">Getting Started</span></nav>
-    <article class="doc">
-      <h1>Getting Started</h1>
-      <div class="hc-body"><p>New here? This section takes you from an empty chat to a published post: connect your channel, connect a sender bot, schedule the first message — then explore the tools that keep a channel running on autopilot.</p>
+<div class="wrap legal-layout" style="display:block;max-width:860px;margin:0 auto">
+  <nav class="hc-crumbs" aria-label="Breadcrumb"><a href="../../help.html">Help Center</a><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg><a href="../c/start.html">Getting Started</a><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg><span aria-current="page">Getting Started</span></nav>
+  <article class="doc">
+    <h1>Getting Started</h1>
+    <div class="hc-body"><p>New here? This section takes you from an empty chat to a published post: connect your channel, connect a sender bot, schedule the first message — then explore the tools that keep a channel running on autopilot.</p>
 <p>The three setup steps are short guides with pictures of what to tap. After that, the glossary explains any term you meet along the way, and the SetDate topic covers bulk-creating schedules from a file.</p></div>
-      
-      
-    </article>
-    <nav class="hc-pager" aria-label="More articles"><span></span><a class="hc-card next" href="getting_started.html"><span><small>Next</small><b>Get Started: What Fast Scheduler Does</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></nav>
-    <div class="hc-cta"><div><b>Still stuck?</b><p>The in-bot assistant answers the same questions &mdash; and a human reads every ticket.</p></div><a class="btn" href="https://t.me/FastSchedulerSupport_bot" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Ask in Telegram</a></div>
-  </div>
+    
+    
+  </article>
+  <nav class="hc-pager" aria-label="More articles"><span></span><a class="hc-card next" href="getting_started.html"><span><small>Next</small><b>Get Started: What Fast Scheduler Does</b></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></nav>
+  <div class="hc-cta"><div><b>Still stuck?</b><p>The in-bot assistant answers the same questions &mdash; and a human reads every ticket.</p></div><a class="btn" href="https://t.me/FastSchedulerSupport_bot" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Ask in Telegram</a></div>
 </div>
 </main>
 <footer class="site">
@@ -362,24 +867,16 @@
   </div>
 </footer>
 <script src="../../scripts/theme.js?v=20260930a1"></script>
-<script src="../../scripts/settings.js"></script>
-  <script src="../../scripts/lang.js?v=20261030c3"></script>
-<script src="../../scripts/help-search.js?v=20261031a4"></script>
+<script src="../../scripts/settings.js?v=20261005d1"></script>
+<script src="../../scripts/ru-content.js?v=20261004b2"></script>
+<script src="../../scripts/ru-chrome.js?v=20261005e1"></script>
+<script src="../../scripts/lang.js?v=20261030a1"></script>
 <script src="../../scripts/hotkeys-modal.js?v=20261006a1"></script>
-<script src="../../scripts/help-ai.js?v=20260930a1"></script>
-<script src="../../scripts/hotkeys.js?v=20261031a2"></script>
+<script src="../../scripts/help-ai.js?v=20261022a1"></script>
+<script src="../../scripts/help-search.js?v=20261030a1"></script>
+<script src="../../scripts/hotkeys.js?v=20261005d1"></script>
 <script src="../../scripts/scroll-jump.js?v=20260930a1"></script>
-<script>
-/* Topics rail on narrow screens: one tap opens the full index. */
-document.querySelectorAll('[data-topics-toggle]').forEach(function (b) {
-  b.addEventListener('click', function () {
-    var box = b.parentElement, open = box.getAttribute('data-open') === '1';
-    box.setAttribute('data-open', open ? '0' : '1');
-    b.setAttribute('aria-expanded', open ? 'false' : 'true');
-  });
-});
-</script>
-<script src="../../scripts/help-topics.js"></script>
-<script src="../../scripts/topics-nav.js?v=20261031a2"></script>
+<script src="../../scripts/article-nav.js?v=20260930a2"></script>
+<script src="../../scripts/site-footer.js?v=20261018g2"></script>
 </body>
 </html>
