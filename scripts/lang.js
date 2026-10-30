@@ -186,13 +186,32 @@
   function isContentSection() { return !!sectionKind(); }
 
   function staticLanguageCounterpart(lang) {
-    /* Only the landing page (and 404) have a server-rendered Russian copy.
-       Help, blog and legal stay on the English document when switching to
-       RU: lang.js translates the chrome client-side and paints the
-       "not yet translated" notice over the English bodies. */
+    /* The landing page (and 404), the legal documents and their RU copies
+       are server-rendered twins, so switching navigates to the real page.
+       Help and blog stay on the English document when switching to RU:
+       lang.js translates the chrome client-side and paints the "not yet
+       translated" notice over the English bodies. Archived legal editions
+       have no RU twin — stay put rather than linking to a 404. */
     try {
       var p = location.pathname;
-      if (lang === 'ru' && sectionKind(p)) return '';
+      /* Pages that really exist in the other language declare it with an
+         hreflang alternate. Follow the declaration first: 337 of the 693
+         help articles, all three legal documents and the landing page have
+         a Russian twin, while untranslated articles and archived legal
+         editions declare nothing and keep the in-place fallback. */
+      var alt = document.querySelector('link[rel="alternate"][hreflang="' + (lang === 'ru' ? 'ru' : 'en') + '"]');
+      if (alt && alt.href) {
+        var u = new URL(alt.href, location.href);
+        var isRuPath = u.pathname.indexOf('/ru/') === 0;
+        /* Navigate by path so the same rule works on the canonical domain,
+           a custom domain and a local preview server. */
+        if (u.pathname && (lang === 'ru') === isRuPath) {
+          return u.pathname === p ? '' : u.pathname;
+        }
+      }
+      var kind = sectionKind(p);
+      var legalArchive = kind === 'legal' && p.indexOf('/legal/history/') === 0;
+      if (lang === 'ru' && (kind === 'help' || kind === 'blog' || legalArchive)) return '';
       var base = '/';
       var isArchive = p.indexOf(base + 'legal/history/') === 0;
       var isRuArchive = p.indexOf(base + 'ru/legal/history/') === 0;
@@ -513,7 +532,10 @@
     // ru-content.js dictionary — but never on help/blog/legal pages, which
     // are English-only: bodies stay in English and a notice is shown instead.
     try {
-      if (isContentSection()) { translateContent(false); paintNoRu(ru); }
+      /* Never paint the "not yet translated" notice on a document that is
+         already served in Russian (the /ru/ legal and help copies): it
+         claimed a fully translated page had no Russian version. */
+      if (isContentSection()) { translateContent(false); paintNoRu(ru && !SERVED_RU); }
       else { removeNoRu(); translateContent(ru); }
     } catch (e) {}
     // segmented control state + label
