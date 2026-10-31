@@ -3313,11 +3313,15 @@ def render_category(g, groups, by_id):
     icon = CAT_ICONS.get(cat['id'], DEFAULT_ICON)
 
     def link_href(lid):
+        # Root-absolute: this FAQ renderer is used by the hub (at /help.html),
+        # by category pages (at /help/c/<id>.html) and by article pages, and a
+        # bare `a/<id>` only ever resolved correctly from one depth - from the
+        # hub it hit /a/<id> and 404'd.
         target = by_id.get(lid)
         if target and art_eligible(target) and lid not in WEB_DROPS:
-            return f'a/{esc(lid)}'
+            return f'/help/a/{esc(lid)}.html'
         if target and target.get('title'):
-            return f'c/{esc(lid)}'
+            return f'/help/c/{esc(lid)}.html'
         return '#/'
 
     def link_label(lid):
