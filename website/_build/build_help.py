@@ -3879,7 +3879,7 @@ def build_page(nodes, help_sec):
 <script src="scripts/liquid-nav.js?v=20261005d1"></script>
 <script src="scripts/help-data.js?v=20261022a1"></script>
 <script src="scripts/help-ai.js?v=20261022a1"></script>
-<script src="scripts/help-hub.js?v=20261030a2"></script>
+<script src="scripts/help-hub.js?v=20261031b1"></script>
 <script src="scripts/site-footer.js?v=20261018g2"></script>
 </body>
 </html>'''
